@@ -9,8 +9,8 @@
 #import "ViewController.h"
 #import "RequestHelper.h"
 #import "Reachability.h"
-#import "subMenuViewController.h"
-#import "townWIzardNavigationBar.h"
+#import "SubMenuViewController.h"
+#import "TownWizardNavigationBar.h"
 #import "UIApplication+NetworkActivity.h"
 #import "AppDelegate.h"
 
@@ -72,7 +72,7 @@
 }
 
 
--(void)animateNavigationBarOnScreen:(TownWIzardNavigationBar *)bar
+-(void)animateNavigationBarOnScreen:(TownWizardNavigationBar *)bar
 {        
         bar.frame = CGRectMake(self.view.frame.size.width, 0, 
                                self.view.frame.size.width, NAVIGATION_BAR_HEIGHT);
@@ -83,7 +83,7 @@
         }];
 }
 
--(void)hideBackgroundImageOfTheNavigationBar:(TownWIzardNavigationBar *)bar
+-(void)hideBackgroundImageOfTheNavigationBar:(TownWizardNavigationBar *)bar
 {
     bar.backgroundImageView.frame = CGRectMake(0, -60, 320, 60);
 }
@@ -179,7 +179,7 @@
     self.tableView.separatorColor = [UIColor colorWithRed:0.792 green:0.769 blue:0.678 alpha:1];
  
     partnersList = [[NSMutableArray alloc] init];
-    customNavigationBar = [[TownWIzardNavigationBar alloc] 
+    customNavigationBar = [[TownWizardNavigationBar alloc] 
                            initWithFrame:CGRectMake(self.view.frame.size.width, 0, 
                                                     self.view.frame.size.width, NAVIGATION_BAR_HEIGHT)];
     
@@ -198,9 +198,7 @@
     
     if(partnerDict != nil && partnerSect != nil) {
         selectedPartnerSections = partnerSect;
-        PartnerMenuViewController *subMenu = [[PartnerMenuViewController alloc] 
-                                                        initWithNibName:@"PartnerMenuViewController" 
-                                                                 bundle:nil];
+        PartnerMenuViewController *subMenu = [[PartnerMenuViewController alloc] init];
         subMenu.customNavigationBar = customNavigationBar;
         subMenu.partnerInfoDictionary = partnerDict;
         
@@ -224,8 +222,15 @@
                                          LOGO_PORTRAIT_WIDTH, LOGO_PORTRAIT_HEIGHT);
             customNavigationBar.frame = CGRectMake(0, 0, 
                                                    self.view.frame.size.width, NAVIGATION_BAR_HEIGHT);
-    
+//        [self showMenuForPartner:partnerDict];
     }
+}
+
+- (void) showMenuForPartner:(NSDictionary *) partnerInfo {
+    PartnerMenuViewController *controller = [[PartnerMenuViewController alloc] init];
+    [controller setPartnerInfoDictionary:partnerInfo];
+    [[self navigationController] pushViewController:controller animated:YES];
+    [controller release];
 }
 
 
@@ -386,7 +391,6 @@
         
         menu.partnerSections = selectedPartnerSections;
         dispatch_async(dispatch_get_main_queue(), ^{
-            [menu removeSpinnerFromView:menu.view];
             [menu reloadMenu];
         });
         [menu release];
@@ -414,8 +418,8 @@
     [self animateNavigationBarOnScreen:subMenu.customNavigationBar];
     //------
     
-    [subMenu showSpinnerAtViewCenter:subMenu.view];
-//submenu is released here:
+//    [subMenu showSpinnerAtViewCenter:subMenu.view];
+////submenu is released here:
     [self LoadSectionsForSectionMenu:subMenu]; //asynchronous call
 
 }
@@ -451,17 +455,15 @@
     else return 1; // Load more section
 }
 
-- (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
-{
-    if (indexPath.section == 0)
-    {
+- (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
         NSDictionary *partnerDict = [partnersList objectAtIndex:indexPath.row];
      
         [self.searchBar resignFirstResponder];
         
-        if ([[partnerDict objectForKey:@"itunes_app_id"] isEqual:@""])
-        {
+        if ([[partnerDict objectForKey:@"itunes_app_id"] isEqual:@""]) {
             [self loadSectionMenuForPartnerWithInfo:partnerDict];
+//            [self showMenuForPartner:partnerDict];
             [self saveDefaultPartner:partnerDict];
             if ([partnerDict objectForKey:@"facebook_app_id"]) 
             {
@@ -621,5 +623,10 @@
     [self releaseOutlets];
     [super dealloc];
 }
+
+
+
+#pragma mark -
+#pragma mark 
 
 @end

@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "TownWIzardNavigationBar.h"
+#import "TownWizardNavigationBar.h"
 #import <QuartzCore/QuartzCore.h>
 
-@implementation TownWIzardNavigationBar
+@implementation TownWizardNavigationBar
 
 @synthesize backButton;
 @synthesize menuButton;

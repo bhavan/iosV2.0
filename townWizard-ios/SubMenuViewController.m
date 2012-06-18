@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "subMenuViewController.h"
-#import "townWIzardNavigationBar.h"
+#import "SubMenuViewController.h"
+#import "TownWizardNavigationBar.h"
 #import "Reachability.h"
 #import "UIApplication+NetworkActivity.h"
 #import "AppDelegate.h"

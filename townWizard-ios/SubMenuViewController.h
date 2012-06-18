@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class TownWIzardNavigationBar;
+@class TownWizardNavigationBar;
 
 @protocol SubMenuViewControllerDelegate
 @optional
@@ -26,7 +26,7 @@ UIImagePickerControllerDelegate,UINavigationControllerDelegate> {
 @property (nonatomic, retain) NSDictionary *partnerInfoDictionary;
 @property (nonatomic, retain) NSString *url;
 @property (nonatomic, retain) NSDictionary * sectionDictionary;
-@property (nonatomic, retain) TownWIzardNavigationBar * customNavigationBar;
+@property (nonatomic, retain) TownWizardNavigationBar * customNavigationBar;
 @property (retain, nonatomic) IBOutlet UIToolbar *bottomBar;
 
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *backButton;

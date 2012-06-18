@@ -21,26 +21,24 @@
 @synthesize delegate;
 @synthesize currentSectionName=_currentSectionName;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+#pragma mark - View lifecycle
+
+- (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    if (self = [super initWithNibName:nil bundle:nil]) {
+        partnerMenuButtons = [[NSMutableArray alloc] init];
+        sectionImagesDictionary = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
 
-#pragma mark - View lifecycle
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.hidesBackButton = YES;
-    partnerMenuButtons = [[NSMutableArray alloc] init];
-    sectionImagesDictionary = [[NSMutableDictionary alloc] init];
+    [[self navigationItem] setHidesBackButton:YES];
 }
 
 
--(void)setNameForNavigationBar
-{
-    NSString *partnerName = [self.partnerInfoDictionary objectForKey:@"name"];
+- (void)setNameForNavigationBar {
+    NSString *partnerName = [[self partnerInfoDictionary] objectForKey:@"name"];
     if (self.currentSectionName == nil) { 
         self.customNavigationBar.titleLabel.text = [NSString stringWithFormat:@"%@",
                                                     partnerName];
@@ -52,13 +50,22 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
     subSections = nil;
     [self reloadMenu];
     [self.customNavigationBar.menuButton addTarget:self 
                                             action:@selector(menuButtonPressed) 
                                   forControlEvents:UIControlEventTouchUpInside];
     [self setNameForNavigationBar];
-    [super viewWillAppear:animated];
+
+    
+//    if (![self partnerSections]) {
+//        [self loadSections];
+//    } 
+//    else {
+//        [self reloadMenu];
+//    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -68,6 +75,7 @@
     [[UIApplication sharedApplication] hideNetworkActivityIndicator];
     if (self.delegate)
         self.currentSectionName = nil;
+    
     [super viewWillDisappear:animated];
 }
 
@@ -114,36 +122,6 @@
     
 }
 
-#pragma  mark -
-#pragma mark Spinner methods
-
-#define BIG_SPINNER_SIZE 50
-
--(void)showSpinnerAtViewCenter:(UIView *)view
-{
-    UIActivityIndicatorView * spinner = [[UIActivityIndicatorView alloc] 
-                                         initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    
-    CGSize cellSize = view.frame.size;
-    spinner.frame = CGRectMake(cellSize.width/2-BIG_SPINNER_SIZE/2, cellSize.height/2 - BIG_SPINNER_SIZE/2, 
-                               BIG_SPINNER_SIZE, BIG_SPINNER_SIZE);
-   
-    [view addSubview:spinner];
-    [spinner startAnimating];
-    [spinner release];
-}
-
--(void)removeSpinnerFromView:(UIView *)view
-{
-    for (UIView * contentView in view.subviews)
-    {
-        if ([contentView isKindOfClass:[UIActivityIndicatorView class]])
-        {
-            [contentView removeFromSuperview];
-        }
-    }
-}
-
 #pragma mark -
 #pragma mark Navigation
 
@@ -169,12 +147,10 @@
 #define MINIMUM_SCROLL_VIEW_HEIGHT 400
 
 - (void)reloadMenu {
-
     [partnerMenuButtons removeAllObjects];
     int i = 0;               
     NSArray * partnerSectionsArray = self.partnerSections;
     if(subSections != nil){
-        [TestFlight passCheckpoint:@"Subsection loaded"];
         PartnerMenuViewController *subMenu = [[PartnerMenuViewController alloc] 
                                               initWithNibName:@"PartnerMenuViewController" 
                                                        bundle:nil];
@@ -314,11 +290,41 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
 
 - (void)viewDidUnload {
     [self cleanUp];
+    [activityIndicator release];
+    activityIndicator = nil;
     [super viewDidUnload]; 
 }
 
 - (void)dealloc {
     [self cleanUp];
+    [activityIndicator release];
     [super dealloc];
 }
+
+#pragma mark -
+#pragma mark load sections
+
+- (void) loadSections {
+    NSString *partnerId = [[self partnerInfoDictionary] objectForKey:@"id"];
+    RWRequestHelper *helper = [[RWRequestHelper alloc] init];
+    RWRequest *request = [helper sectionsRequestForPartnerWithId:partnerId];
+    [helper performRequest:request withObserver:self];
+}
+
+#pragma mark -
+#pragma mark RWRequestDelegate methods
+
+- (void) requestDidStartLoading:(RWRequest *) request {
+    [activityIndicator startAnimating];
+}
+
+- (void) requestDidFinishLoading:(RWRequest *) request {
+    [self reloadMenu];
+    [activityIndicator stopAnimating];
+}
+
+- (void) requestDidFail:(RWRequest *) request {
+    [activityIndicator stopAnimating];
+}
+
 @end

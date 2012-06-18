@@ -14,9 +14,7 @@
 @class ViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate,UIAlertViewDelegate> {
-
     NSString *phoneNumberToCall;
-    
 }
 
 @property (strong, nonatomic) UIWindow *window;

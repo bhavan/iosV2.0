@@ -15,7 +15,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8483F24214D03FBE005E4216"
                BuildableName = "TownWizard.app"
-               BlueprintName = "townWizard-ios"
+               BlueprintName = "townWizard-container"
                ReferencedContainer = "container:townWizard-ios.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,14 +33,14 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8483F24214D03FBE005E4216"
             BuildableName = "TownWizard.app"
-            BlueprintName = "townWizard-ios"
+            BlueprintName = "townWizard-container"
             ReferencedContainer = "container:townWizard-ios.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
    <LaunchAction
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Debug"
@@ -52,7 +52,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8483F24214D03FBE005E4216"
             BuildableName = "TownWizard.app"
-            BlueprintName = "townWizard-ios"
+            BlueprintName = "townWizard-container"
             ReferencedContainer = "container:townWizard-ios.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -70,7 +70,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8483F24214D03FBE005E4216"
             BuildableName = "TownWizard.app"
-            BlueprintName = "townWizard-ios"
+            BlueprintName = "townWizard-container"
             ReferencedContainer = "container:townWizard-ios.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

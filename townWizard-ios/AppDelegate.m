@@ -34,6 +34,7 @@ static NSString* teamToken = @"5c115b5c0ce101b8b0367b329e68db27_MzE2NjMyMDExLTEx
 {
     [_window release];
     [_viewController release];
+    [_facebookHelper release];
     [super dealloc];
 }
 
@@ -57,8 +58,7 @@ static NSString* teamToken = @"5c115b5c0ce101b8b0367b329e68db27_MzE2NjMyMDExLTEx
     return [self.manager location].coordinate.longitude;
 }
 
-- (BOOL)application:(UIApplication *)application 
-                                        didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 #if !RUN_KIF_TESTS
     _manager = [[CLLocationManager alloc] init];

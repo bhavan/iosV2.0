@@ -32,7 +32,7 @@
 @property (nonatomic, assign) BOOL bShowDirection;
 @property (nonatomic, retain) MapAnnotation *placeMarker;
 
-@property (nonatomic, retain) TownWIzardNavigationBar * customNavigationBar;
+@property (nonatomic, retain) TownWizardNavigationBar * customNavigationBar;
 
 - (void)loadGoogleMap;
 - (IBAction)directionBtnClicked:(id)sender;

@@ -36,7 +36,7 @@
 @property (nonatomic,retain) IBOutlet UITextField *searchView;
 @property (nonatomic,retain) IBOutlet UITableView *friendsListView;
 
-@property (nonatomic,retain) TownWIzardNavigationBar * customNavigationBar;
+@property (nonatomic,retain) TownWizardNavigationBar * customNavigationBar;
 
 - (id) initWithSelectedPlace:(Place *)place;
 

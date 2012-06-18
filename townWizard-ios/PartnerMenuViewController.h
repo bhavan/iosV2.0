@@ -7,35 +7,35 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RWRequestHelper.h"
 
-@class TownWIzardNavigationBar;
+@class TownWizardNavigationBar;
 
 @protocol PartnerMenuViewControllerDelegate
 @optional
 -(void)menuButtonPressed:(id)sender;
 @end
 
-@interface PartnerMenuViewController : UIViewController <UIAlertViewDelegate>
+@interface PartnerMenuViewController : UIViewController <UIAlertViewDelegate,RWRequestDelegate>
 {
     NSMutableArray * partnerMenuButtons;
-    NSArray * subSections;
+    NSDictionary *partnerInfoDictionary;
+    NSArray *subSections;
     NSMutableDictionary * sectionImagesDictionary;
    
     id <PartnerMenuViewControllerDelegate> delegate;
+    IBOutlet UIActivityIndicatorView *activityIndicator;
 }
 
 @property (retain, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, retain) NSArray * partnerSections;
 @property (nonatomic, retain) NSDictionary * partnerInfoDictionary;
-@property (nonatomic, retain) TownWIzardNavigationBar * customNavigationBar;
+@property (nonatomic, retain) TownWizardNavigationBar * customNavigationBar;
 @property (nonatomic, weak) id <PartnerMenuViewControllerDelegate> delegate;
 @property (nonatomic, retain) NSString * currentSectionName;
 
 - (void) goToSection:(id)sender;
 - (void) reloadMenu;
 - (void) loadImageForButton:(UIButton *)btn;
-
--(void) showSpinnerAtViewCenter:(UIView *)view;
--(void) removeSpinnerFromView:(UIView *)view;
 
 @end

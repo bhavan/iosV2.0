@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TownWIzardNavigationBar : UIView {
+@interface TownWizardNavigationBar : UIView {
     UIView *view;
 }
 

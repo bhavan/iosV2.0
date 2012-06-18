@@ -44,7 +44,7 @@ UITableViewDelegate, UITableViewDataSource,CLLocationManagerDelegate,FBSessionDe
 @property (nonatomic,retain) PlaceInfo *placeInfo;
 @property (nonatomic,retain) NSMutableArray *places;
 @property (nonatomic, assign) UIViewController *parent;
-@property (nonatomic, retain) TownWIzardNavigationBar * customNavigationBar;
+@property (nonatomic, retain) TownWizardNavigationBar * customNavigationBar;
 
 
 - (id) initWithPlaces:(NSMutableArray *)thePlaces;

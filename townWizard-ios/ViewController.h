@@ -1,4 +1,3 @@
-//
 //  ViewController.h
 //  townWizard-ios
 //
@@ -10,16 +9,17 @@
 #import <CoreLocation/CoreLocation.h>
 #import "PartnerMenuViewController.h"
 #import "subMenuViewController.h"
+#import "RWRequestHelper.h"
 
-@class TownWIzardNavigationBar;
+@class TownWizardNavigationBar;
 
 @interface ViewController : UIViewController 
 <UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource,CLLocationManagerDelegate,
-PartnerMenuViewControllerDelegate,SubMenuViewControllerDelegate,UIAlertViewDelegate>
+PartnerMenuViewControllerDelegate,SubMenuViewControllerDelegate,UIAlertViewDelegate,RWRequestDelegate>
 {
     NSMutableArray *partnersList;
     NSArray *selectedPartnerSections;
-    TownWIzardNavigationBar *customNavigationBar;   
+    TownWizardNavigationBar *customNavigationBar;   
     
     NSInteger nextOffset; // add offset to query to load more partners. ex: &offset=...
     BOOL loadingMorePartnersInProgress;
