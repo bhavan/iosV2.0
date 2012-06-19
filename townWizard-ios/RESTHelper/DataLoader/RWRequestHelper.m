@@ -57,6 +57,18 @@ static NSOperationQueue *operationQueue = nil;
 #pragma mark -
 #pragma mark loading methods
 
+- (RWRequest *) partnerDetailsRequest:(NSString *) partnerId {
+    NSString *apiPath = [NSString stringWithFormat:@"/api/partner/%@",partnerId];
+    [requestBuilder setApiPath:apiPath];
+    
+    RWRequest *request = [[RWRequest alloc] initWithRequest:[requestBuilder buildGetRequest]];
+    [request setParsingBlock:^(JSONDataParser *parser){
+        return [parser getResponseData];
+    }];
+    [request setUserInfo:@"partnerDetails"];
+    return [request autorelease];
+}
+
 - (RWRequest *) sectionsRequestForPartnerWithId:(NSString *) partnerId {
     NSString *apiPath = [NSString stringWithFormat:@"/api/section/partner/%@",partnerId];
     [requestBuilder setApiPath:apiPath];
@@ -65,6 +77,7 @@ static NSOperationQueue *operationQueue = nil;
     [request setParsingBlock:^(JSONDataParser *parser){
         return [parser getResponseData];
     }];
+    [request setUserInfo:@"sectionsRequest"];
     return [request autorelease];
 }
 

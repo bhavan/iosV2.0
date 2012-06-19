@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "RWRequestHelper.h"
+#import "ImageLoader.h"
 
 @class TownWizardNavigationBar;
 
@@ -16,10 +17,12 @@
 -(void)menuButtonPressed:(id)sender;
 @end
 
-@interface PartnerMenuViewController : UIViewController <UIAlertViewDelegate,RWRequestDelegate>
+@interface PartnerMenuViewController : UIViewController 
+    <UIAlertViewDelegate,
+    RWRequestDelegate,
+    ImageLoaderDelegate>
 {
     NSMutableArray * partnerMenuButtons;
-    NSDictionary *partnerInfoDictionary;
     NSArray *subSections;
     NSMutableDictionary * sectionImagesDictionary;
    

@@ -31,6 +31,8 @@
 @property (nonatomic,readonly) CLLocationManager * manager;
 
 + (AppDelegate *) sharedDelegate;
++ (NSString *) partnerId;
+
 - (void)makeCall:(NSString *)phoneNumber;
 
 @end

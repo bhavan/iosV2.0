@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+
 #ifdef RUN_KIF_TESTS
 #import "EXTestController.h"
 #endif
@@ -16,12 +17,17 @@
 @dynamic latitude;
 @dynamic longitude;
 
+static NSString *partnerId = @"1";
 static NSString* teamToken = @"5c115b5c0ce101b8b0367b329e68db27_MzE2NjMyMDExLTExLTA3IDAzOjQ5OjEyLjkyNjU4Ng";
 
 @synthesize window = _window;
 @synthesize viewController = _viewController;
 @synthesize facebookHelper=_facebookHelper;
 @synthesize manager=_manager;
+
++ (NSString *) partnerId {
+    return partnerId;
+}
 
 - (FacebookHelper*) facebookHelper {
 	if (_facebookHelper == nil) {
@@ -60,29 +66,30 @@ static NSString* teamToken = @"5c115b5c0ce101b8b0367b329e68db27_MzE2NjMyMDExLTEx
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-#if !RUN_KIF_TESTS
-    _manager = [[CLLocationManager alloc] init];
-
-    [self.manager setDesiredAccuracy:kCLLocationAccuracyThreeKilometers]; //should be enough
-    
-    [self.manager startUpdatingLocation];
-#endif
     [TestFlight takeOff:teamToken];
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-   
-    ViewController *viewContr = [[[ViewController alloc] 
-                                  initWithNibName:@"ViewController" bundle:nil] autorelease];
-    
-    self.manager.delegate = viewContr; 
-    
-     UINavigationController *navController = [[[UINavigationController alloc] 
-                                               initWithRootViewController:viewContr] autorelease];
+
+    UIViewController *rootController;
+#ifdef CONTAINER_APP
+    rootController = [[[ViewController alloc] init] autorelease];
+    [[self manager] setDelegate:(ViewController *)rootController];
+#else
+    rootController = [[[PartnerMenuViewController alloc] init] autorelease];
+#endif
+
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:rootController];
     self.viewController = navController;
-    //navController.navigationBarHidden = YES;
+    [navController release];
+
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     
-#if RUN_KIF_TESTS
+#if !RUN_KIF_TESTS
+    _manager = [[CLLocationManager alloc] init];
+    
+    [self.manager setDesiredAccuracy:kCLLocationAccuracyThreeKilometers]; //should be enough
+    [self.manager startUpdatingLocation];
+#else
     [[EXTestController sharedInstance] startTestingWithCompletionBlock:^{
         // Exit after the tests complete so that CI knows we're done
         exit([[EXTestController sharedInstance] failureCount]);

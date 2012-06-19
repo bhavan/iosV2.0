@@ -7,6 +7,9 @@
 //
 
 #import "PartnerMenuViewController.h"
+#import "TownWIzardNavigationBar.h"
+#import "ImageLoader.h"
+
 #import "subMenuViewController.h"
 #import "townWIzardNavigationBar.h"
 #import "UIApplication+NetworkActivity.h"
@@ -34,6 +37,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[self navigationItem] setHidesBackButton:YES];
+#ifdef PARTNER_APP
+    CGRect barFrame = CGRectMake(0, 0, [[self view] frame].size.width, 60);
+    TownWizardNavigationBar *bar = [[TownWizardNavigationBar alloc] initWithFrame:barFrame];
+    [self setCustomNavigationBar:bar];
+    [self.navigationController.navigationBar addSubview:bar];
+    [bar release];
+    
+    [self restorePartnerDetails];
+    [self loadPartnerLogo];
+#endif
 }
 
 
@@ -51,21 +64,28 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-
+#ifdef CONTAINER_APP
     subSections = nil;
     [self reloadMenu];
     [self.customNavigationBar.menuButton addTarget:self 
                                             action:@selector(menuButtonPressed) 
                                   forControlEvents:UIControlEventTouchUpInside];
     [self setNameForNavigationBar];
-
+#else
+    if ([self partnerInfoDictionary] == nil) {
+        [self loadPartnerDetails];
+    }
+    else {
+        if ([self partnerSections] == nil) {
+            [self loadPartnerSections];
+        }
+        else {
+            [self reloadMenu];
+        }
+    }    
     
-//    if (![self partnerSections]) {
-//        [self loadSections];
-//    } 
-//    else {
-//        [self reloadMenu];
-//    }
+    [[[self customNavigationBar] menuButton] setHidden:YES];
+#endif
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -77,6 +97,9 @@
         self.currentSectionName = nil;
     
     [super viewWillDisappear:animated];
+#ifdef PARTNER_APP
+    [[[self customNavigationBar] menuButton] setHidden:NO];
+#endif
 }
 
 #pragma mark -
@@ -147,6 +170,9 @@
 #define MINIMUM_SCROLL_VIEW_HEIGHT 400
 
 - (void)reloadMenu {
+    NSString *partnerName = [[self partnerInfoDictionary] objectForKey:@"name"];
+    [[[self customNavigationBar] titleLabel] setText:partnerName];
+    
     [partnerMenuButtons removeAllObjects];
     int i = 0;               
     NSArray * partnerSectionsArray = self.partnerSections;
@@ -302,13 +328,40 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
 }
 
 #pragma mark -
-#pragma mark load sections
+#pragma mark store partner details 
 
-- (void) loadSections {
+- (void) restorePartnerDetails {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [self setPartnerInfoDictionary:[userDefaults objectForKey:@"partnerDetails"]];
+    [self setPartnerSections:[userDefaults objectForKey:@"partnerSections"]];
+}
+
+- (void) savePartnerDetails {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:[self partnerInfoDictionary] forKey:@"partnerDetails"];
+    [userDefaults setObject:[self partnerSections] forKey:@"partnerSections"];
+    [userDefaults synchronize];
+}
+
+#pragma mark -
+#pragma mark load partner info
+
+- (void) loadPartnerDetails {
+    RWRequestHelper *helper = [[RWRequestHelper alloc] init];
+    RWRequest *request = [helper partnerDetailsRequest:PARTNER_ID];
+    [helper performRequest:request withObserver:self];
+}
+
+- (void) loadPartnerSections {
     NSString *partnerId = [[self partnerInfoDictionary] objectForKey:@"id"];
     RWRequestHelper *helper = [[RWRequestHelper alloc] init];
     RWRequest *request = [helper sectionsRequestForPartnerWithId:partnerId];
     [helper performRequest:request withObserver:self];
+}
+
+- (void) loadPartnerLogo {
+    NSString *imagePath = [NSString stringWithFormat:@"%@%@",SERVER_URL,[[self partnerInfoDictionary] objectForKey:@"image"]];
+    [[ImageLoader instance] loadImageByUrl:[NSURL URLWithString:imagePath] observer:self];
 }
 
 #pragma mark -
@@ -319,12 +372,36 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
 }
 
 - (void) requestDidFinishLoading:(RWRequest *) request {
-    [self reloadMenu];
-    [activityIndicator stopAnimating];
+    NSLog(@"response = %@",[request response]);
+    if ([[request userInfo] isEqual:@"partnerDetails"]) {
+        [self setPartnerInfoDictionary:[request response]];
+        [self loadPartnerSections];
+        [self loadPartnerLogo];
+    }
+    else {
+        [self setPartnerSections:[request response]];
+        
+        [self reloadMenu];        
+        [self savePartnerDetails];        
+        [activityIndicator stopAnimating];
+    }
 }
 
 - (void) requestDidFail:(RWRequest *) request {
     [activityIndicator stopAnimating];
+}
+
+#pragma mark -
+#pragma mark partner logo loading
+
+- (void) imageLoadingCompleted:(UIImage *) image byUrlPath:(NSString *) urlPath {
+    //wtf
+    [[self customNavigationBar].backgroundImageView setFrame:CGRectMake(0, -60, 320, 60)];
+    [[self customNavigationBar].backgroundImageView setImage:image];
+    [UIView animateWithDuration:0.5 animations:^{
+        [self customNavigationBar].backgroundImageView.frame = CGRectMake(0, 0, 320, 60);
+    }];
+    //
 }
 
 @end

@@ -20,7 +20,7 @@ typedef id (^ParsingBlock)(JSONDataParser * parser);
     NSMutableData *receivedData;
     
     id userInfo;
-    NSObject *response;
+    id response;
     NSError *error;
     
     BOOL finished;
@@ -36,7 +36,7 @@ typedef id (^ParsingBlock)(JSONDataParser * parser);
 @property (nonatomic,assign) NSInteger attempsToRemain;
 @property (nonatomic,retain) ParsingBlock parsingBlock;
 
-@property (nonatomic,readonly) NSObject *response;
+@property (nonatomic,readonly) id response;
 @property (nonatomic,readonly) NSError *error;
 @property (nonatomic,retain) id userInfo;
 @property (nonatomic,readonly) BOOL isFinished;

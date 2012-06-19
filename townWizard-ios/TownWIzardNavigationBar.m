@@ -42,9 +42,6 @@
         [self.menuButton setImage:[UIImage imageNamed:@"back_arrow_retina.png"] 
                          forState:UIControlStateNormal];
         self.menuButton.accessibilityLabel = @"Back";
-        /*[self.menuButton setImage:[UIImage imageNamed:@"back_arrow_retina.png"]
-                                             forState:UIControlStateHighlighted];*/
-        
         self.menuButton.frame = CGRectMake(10, 9, 40, 40);
         [self addSubview:self.menuButton];
         

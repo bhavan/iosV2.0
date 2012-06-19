@@ -17,6 +17,7 @@
 
 - (void) performRequest:(RWRequest *) aRequest withObserver:(id<RWRequestDelegate>) observer;
 
+- (RWRequest *) partnerDetailsRequest:(NSString *) partnerId;
 - (RWRequest *) sectionsRequestForPartnerWithId:(NSString *) partnerId;
 
 @end

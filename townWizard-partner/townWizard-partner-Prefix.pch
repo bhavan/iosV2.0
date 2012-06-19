@@ -9,6 +9,12 @@
 #endif
 
 #ifdef __OBJC__
+    #import "SBJson.h"
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import "TestFlight.h"   
+
+#define SERVER_URL @"http://container.mlsdev.com/"//@"http://townwizard.com/api/v1/"
+#define PARTNER_ID @"19"
+
 #endif
