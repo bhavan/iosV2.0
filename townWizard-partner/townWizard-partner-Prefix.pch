@@ -15,6 +15,6 @@
     #import "TestFlight.h"   
 
 #define SERVER_URL @"http://container.mlsdev.com/"//@"http://townwizard.com/api/v1/"
-#define PARTNER_ID @"19"
+//#define PARTNER_ID @"1"
 
 #endif

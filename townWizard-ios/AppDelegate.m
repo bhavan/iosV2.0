@@ -66,6 +66,18 @@ static NSString* teamToken = @"5c115b5c0ce101b8b0367b329e68db27_MzE2NjMyMDExLTEx
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+    if ([dic isKindOfClass:[NSDictionary class]]) {
+        NSLog(@"1");
+    }
+    if ([dic isMemberOfClass:[NSMutableDictionary class]]) {
+        NSLog(@"2");
+    }
+    if ([NSMutableDictionary isSubclassOfClass:[NSDictionary class]]) {
+        NSLog(@"3");
+    }
+    //
     [TestFlight takeOff:teamToken];
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
 

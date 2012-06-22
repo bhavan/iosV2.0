@@ -37,7 +37,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[self navigationItem] setHidesBackButton:YES];
-#ifdef PARTNER_APP
+#ifdef PARTNER_ID
     CGRect barFrame = CGRectMake(0, 0, [[self view] frame].size.width, 60);
     TownWizardNavigationBar *bar = [[TownWizardNavigationBar alloc] initWithFrame:barFrame];
     [self setCustomNavigationBar:bar];
@@ -97,7 +97,7 @@
         self.currentSectionName = nil;
     
     [super viewWillDisappear:animated];
-#ifdef PARTNER_APP
+#ifdef PARTNER_ID
     [[[self customNavigationBar] menuButton] setHidden:NO];
 #endif
 }
@@ -347,9 +347,11 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
 #pragma mark load partner info
 
 - (void) loadPartnerDetails {
+#ifdef PARTNER_ID
     RWRequestHelper *helper = [[RWRequestHelper alloc] init];
     RWRequest *request = [helper partnerDetailsRequest:PARTNER_ID];
     [helper performRequest:request withObserver:self];
+#endif
 }
 
 - (void) loadPartnerSections {

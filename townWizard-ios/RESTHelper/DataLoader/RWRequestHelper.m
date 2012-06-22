@@ -57,8 +57,8 @@ static NSOperationQueue *operationQueue = nil;
 #pragma mark -
 #pragma mark loading methods
 
-- (RWRequest *) partnerDetailsRequest:(NSString *) partnerId {
-    NSString *apiPath = [NSString stringWithFormat:@"/api/partner/%@",partnerId];
+- (RWRequest *) partnerDetailsRequest:(NSInteger) partnerId {
+    NSString *apiPath = [NSString stringWithFormat:@"/api/partner/%d",partnerId];
     [requestBuilder setApiPath:apiPath];
     
     RWRequest *request = [[RWRequest alloc] initWithRequest:[requestBuilder buildGetRequest]];

@@ -143,9 +143,6 @@
 		D9FA2C7C1590751B006FFF7E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C781590751B006FFF7E /* Default@2x.png */; };
 		D9FA2C7D1590751B006FFF7E /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C791590751B006FFF7E /* icon.png */; };
 		D9FA2C7E1590751B006FFF7E /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C7A1590751B006FFF7E /* icon@2x.png */; };
-		D9FA2C8315907693006FFF7E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C8015907693006FFF7E /* Default.png */; };
-		D9FA2C8415907693006FFF7E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C8115907693006FFF7E /* Icon.png */; };
-		D9FA2C8515907693006FFF7E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C8215907693006FFF7E /* Icon@2x.png */; };
 		E61A4DDC14E166BC0039E970 /* UIApplication+NetworkActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = E61A4DDB14E166BC0039E970 /* UIApplication+NetworkActivity.m */; };
 		E61A960F14FD26D1006E5F24 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483F24714D03FBE005E4216 /* UIKit.framework */; };
 		E61A961014FD26D1006E5F24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483F24914D03FBE005E4216 /* Foundation.framework */; };
@@ -332,7 +329,7 @@
 		848854F414D1793A0030BD03 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		848854F614D179700030BD03 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8488550914D1ABAA0030BD03 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
-		D90D0DF2158F06500026828E /* townWizard-partner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "townWizard-partner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D90D0DF2158F06500026828E /* townWizard-partner-template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "townWizard-partner-template.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90D0DF9158F06500026828E /* townWizard-partner-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "townWizard-partner-Info.plist"; sourceTree = "<group>"; };
 		D90D0DFB158F06500026828E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D90D0DFD158F06500026828E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -367,9 +364,6 @@
 		D9FA2C781590751B006FFF7E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Images/Application/Default@2x.png"; sourceTree = "<group>"; };
 		D9FA2C791590751B006FFF7E /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Images/Application/icon.png; sourceTree = "<group>"; };
 		D9FA2C7A1590751B006FFF7E /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "Images/Application/icon@2x.png"; sourceTree = "<group>"; };
-		D9FA2C8015907693006FFF7E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = "townWizard-partner/Images/Application/Default.png"; sourceTree = SOURCE_ROOT; };
-		D9FA2C8115907693006FFF7E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = "townWizard-partner/Images/Application/Icon.png"; sourceTree = SOURCE_ROOT; };
-		D9FA2C8215907693006FFF7E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "townWizard-partner/Images/Application/Icon@2x.png"; sourceTree = SOURCE_ROOT; };
 		E61A4DDA14E166BC0039E970 /* UIApplication+NetworkActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+NetworkActivity.h"; sourceTree = "<group>"; };
 		E61A4DDB14E166BC0039E970 /* UIApplication+NetworkActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+NetworkActivity.m"; sourceTree = "<group>"; };
 		E61A960D14FD26D1006E5F24 /* CedarTesting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CedarTesting.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -540,7 +534,7 @@
 				8483F24314D03FBE005E4216 /* TownWizard.app */,
 				E61A960D14FD26D1006E5F24 /* CedarTesting.app */,
 				E690233214FE447A008F52B2 /* KIF tests.app */,
-				D90D0DF2158F06500026828E /* townWizard-partner.app */,
+				D90D0DF2158F06500026828E /* townWizard-partner-template.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -744,6 +738,14 @@
 			name = Application;
 			sourceTree = "<group>";
 		};
+		D94CA23C1594543E0027A223 /* Application Icons */ = {
+			isa = PBXGroup;
+			children = (
+				D92B0ED61589D3B6006894BE /* ContainerApp */,
+			);
+			name = "Application Icons";
+			sourceTree = "<group>";
+		};
 		D98C3680158A0928005411E8 /* RESTWebServices */ = {
 			isa = PBXGroup;
 			children = (
@@ -801,16 +803,6 @@
 				E691FF9414E50D94003DE64B /* Btn-Directions.png */,
 			);
 			name = Facebook;
-			sourceTree = "<group>";
-		};
-		D9FA2C7F15907524006FFF7E /* PartnerApp */ = {
-			isa = PBXGroup;
-			children = (
-				D9FA2C8015907693006FFF7E /* Default.png */,
-				D9FA2C8115907693006FFF7E /* Icon.png */,
-				D9FA2C8215907693006FFF7E /* Icon@2x.png */,
-			);
-			name = PartnerApp;
 			sourceTree = "<group>";
 		};
 		E61A961214FD26D1006E5F24 /* CedarTesting */ = {
@@ -909,8 +901,7 @@
 		E691001414E55898003DE64B /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				D92B0ED61589D3B6006894BE /* ContainerApp */,
-				D9FA2C7F15907524006FFF7E /* PartnerApp */,
+				D94CA23C1594543E0027A223 /* Application Icons */,
 				D92B0ED71589D3D0006894BE /* Interface */,
 			);
 			name = Images;
@@ -947,9 +938,9 @@
 			productReference = 8483F24314D03FBE005E4216 /* TownWizard.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D90D0DF1158F06500026828E /* townWizard-partner */ = {
+		D90D0DF1158F06500026828E /* townWizard-partner-template */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D90D0E03158F06500026828E /* Build configuration list for PBXNativeTarget "townWizard-partner" */;
+			buildConfigurationList = D90D0E03158F06500026828E /* Build configuration list for PBXNativeTarget "townWizard-partner-template" */;
 			buildPhases = (
 				D90D0DEE158F06500026828E /* Sources */,
 				D90D0DEF158F06500026828E /* Frameworks */,
@@ -959,9 +950,9 @@
 			);
 			dependencies = (
 			);
-			name = "townWizard-partner";
+			name = "townWizard-partner-template";
 			productName = "townWizard-partner";
-			productReference = D90D0DF2158F06500026828E /* townWizard-partner.app */;
+			productReference = D90D0DF2158F06500026828E /* townWizard-partner-template.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E61A960C14FD26D1006E5F24 /* CedarTesting */ = {
@@ -1025,7 +1016,7 @@
 			projectRoot = "";
 			targets = (
 				8483F24214D03FBE005E4216 /* townWizard-container */,
-				D90D0DF1158F06500026828E /* townWizard-partner */,
+				D90D0DF1158F06500026828E /* townWizard-partner-template */,
 				E61A960C14FD26D1006E5F24 /* CedarTesting */,
 				E69022DA14FE447A008F52B2 /* KIF testing */,
 			);
@@ -1122,9 +1113,6 @@
 				D9FA2C72159074E5006FFF7E /* tag640x810.png in Resources */,
 				D9FA2C74159074E5006FFF7E /* topBar.png in Resources */,
 				D9FA2C76159074E5006FFF7E /* twHeader.png in Resources */,
-				D9FA2C8315907693006FFF7E /* Default.png in Resources */,
-				D9FA2C8415907693006FFF7E /* Icon.png in Resources */,
-				D9FA2C8515907693006FFF7E /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1465,13 +1453,11 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "townWizard-partner/townWizard-partner-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					PARTNER_APP,
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "PARTNER_ID=1";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				INFOPLIST_FILE = "townWizard-partner/townWizard-partner-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK\"",
@@ -1491,10 +1477,11 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "townWizard-partner/townWizard-partner-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = PARTNER_APP;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "PARTNER_ID=1";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				INFOPLIST_FILE = "townWizard-partner/townWizard-partner-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK\"",
@@ -1657,7 +1644,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D90D0E03158F06500026828E /* Build configuration list for PBXNativeTarget "townWizard-partner" */ = {
+		D90D0E03158F06500026828E /* Build configuration list for PBXNativeTarget "townWizard-partner-template" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D90D0E04158F06500026828E /* Debug */,
