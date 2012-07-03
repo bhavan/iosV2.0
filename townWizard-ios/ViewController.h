@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "PartnerMenuViewController.h"
-#import "subMenuViewController.h"
+#import "SubMenuViewController.h"
 #import "RWRequestHelper.h"
 
 @class TownWizardNavigationBar;

@@ -111,7 +111,7 @@
 -(void)infoButtonPressed:(id)sender
 {
     SubMenuViewController *subMenu=[[SubMenuViewController alloc] 
-                                        initWithNibName:@"subMenuViewController" bundle:nil];
+                                        initWithNibName:@"SubMenuViewController" bundle:nil];
     subMenu.customNavigationBar = customNavigationBar;
     
     subMenu.delegate = self;

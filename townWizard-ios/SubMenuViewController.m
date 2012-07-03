@@ -1,5 +1,5 @@
 //
-//  subMenuViewController.m
+//  SubMenuViewController.m
 //  townWizard-ios
 //
 //  Created by admin on 1/26/12.

@@ -224,7 +224,7 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-   //self.presentingViewController = imagePicker; self.presentingViewController.presentingViewController = subMenuViewController
+   //self.presentingViewController = imagePicker; self.presentingViewController.presentingViewController = SubMenuViewController
     
     [self.presentingViewController.presentingViewController dismissModalViewControllerAnimated:YES];
 }

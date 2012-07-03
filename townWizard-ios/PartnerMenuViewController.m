@@ -10,7 +10,7 @@
 #import "TownWIzardNavigationBar.h"
 #import "ImageLoader.h"
 
-#import "subMenuViewController.h"
+#import "SubMenuViewController.h"
 #import "townWIzardNavigationBar.h"
 #import "UIApplication+NetworkActivity.h"
 #import "Reachability.h"
@@ -257,7 +257,7 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
     NSArray *aSubSections = [dict objectForKey:@"sub_sections"];
     if([aSubSections count] == 0) {
         SubMenuViewController *subMenu=[[SubMenuViewController alloc] 
-                                        initWithNibName:@"subMenuViewController" bundle:nil];
+                                        initWithNibName:@"SubMenuViewController" bundle:nil];
         subMenu.customNavigationBar = self.customNavigationBar;
         if(dict != nil) {       
             subMenu.partnerInfoDictionary = self.partnerInfoDictionary;
