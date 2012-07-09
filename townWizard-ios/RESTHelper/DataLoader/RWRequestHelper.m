@@ -18,7 +18,8 @@ static NSOperationQueue *operationQueue = nil;
 
 - (id) init {
     if (self = [super init]) {
-        requestBuilder = [[RWURLRequestBuilder alloc] initWithHostName:@"container.mlsdev.com"];
+        //requestBuilder = [[RWURLRequestBuilder alloc] initWithHostName:@"container.mlsdev.com"];
+        requestBuilder = [[RWURLRequestBuilder alloc] initWithHostName:@"www.townwizardcontainerapp.com"];
     }
     return self;
 }

@@ -13,6 +13,8 @@
     #import "TestFlight.h"   
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
-#define SERVER_URL @"http://container.mlsdev.com/"//@"http://townwizard.com/api/v1/"
+//#define SERVER_URL @"http://container.mlsdev.com/"//@"http://townwizard.com/api/v1/"
+#define SERVER_URL @"http://www.townwizardcontainerapp.com/"
+
 //#define PARTNER_ID @"1"
 #endif
