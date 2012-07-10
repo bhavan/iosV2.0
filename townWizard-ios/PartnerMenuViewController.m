@@ -1,30 +1,28 @@
 //
 //  PartnerMenuViewController.m
-//  townWizard-ios
+//  TownWizard-ios
 //
 //  Created by admin on 1/30/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import "PartnerMenuViewController.h"
-#import "TownWIzardNavigationBar.h"
-#import "ImageLoader.h"
-
 #import "SubMenuViewController.h"
-#import "townWIzardNavigationBar.h"
+#import "TownWizardNavigationBar.h"
+#import "ImageLoader.h"
 #import "UIApplication+NetworkActivity.h"
 #import "Reachability.h"
 #import "AppDelegate.h"
 
+#define URL_HEADER @"http://"
+
 @implementation PartnerMenuViewController
 @synthesize scrollView=_scrollView;
 @synthesize partnerSections=_partnerSections;
-@synthesize partnerInfoDictionary=_partnerInfoDictionary;
+@synthesize partnerInfoDictionary;
 @synthesize customNavigationBar=_customNavigationBar;
 @synthesize delegate;
 @synthesize currentSectionName=_currentSectionName;
-
-#pragma mark - View lifecycle
 
 - (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nil bundle:nil]) {
@@ -33,6 +31,9 @@
     }
     return self;
 }
+
+
+#pragma mark - View lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -47,11 +48,13 @@
     [self restorePartnerDetails];
     [self loadPartnerLogo];
 #endif
+
 }
 
 
-- (void)setNameForNavigationBar {
-    NSString *partnerName = [[self partnerInfoDictionary] objectForKey:@"name"];
+-(void)setNameForNavigationBar
+{
+    NSString *partnerName = [self.partnerInfoDictionary objectForKey:@"name"];
     if (self.currentSectionName == nil) { 
         self.customNavigationBar.titleLabel.text = [NSString stringWithFormat:@"%@",
                                                     partnerName];
@@ -65,12 +68,14 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 #ifdef CONTAINER_APP
+
     subSections = nil;
     [self reloadMenu];
     [self.customNavigationBar.menuButton addTarget:self 
                                             action:@selector(menuButtonPressed) 
                                   forControlEvents:UIControlEventTouchUpInside];
     [self setNameForNavigationBar];
+    
 #else
     if ([self partnerInfoDictionary] == nil) {
         [self loadPartnerDetails];
@@ -83,10 +88,11 @@
             [self reloadMenu];
         }
     }    
-    
     [[[self customNavigationBar] menuButton] setHidden:YES];
 #endif
+
 }
+
 
 - (void)viewWillDisappear:(BOOL)animated {
     [self.customNavigationBar.menuButton removeTarget:self 
@@ -96,10 +102,11 @@
     if (self.delegate)
         self.currentSectionName = nil;
     
-    [super viewWillDisappear:animated];
 #ifdef PARTNER_ID
     [[[self customNavigationBar] menuButton] setHidden:NO];
 #endif
+
+    [super viewWillDisappear:animated];
 }
 
 #pragma mark -
@@ -172,7 +179,7 @@
 - (void)reloadMenu {
     NSString *partnerName = [[self partnerInfoDictionary] objectForKey:@"name"];
     [[[self customNavigationBar] titleLabel] setText:partnerName];
-    
+
     [partnerMenuButtons removeAllObjects];
     int i = 0;               
     NSArray * partnerSectionsArray = self.partnerSections;
@@ -262,9 +269,17 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
         if(dict != nil) {       
             subMenu.partnerInfoDictionary = self.partnerInfoDictionary;
             subMenu.sectionDictionary = dict;
-            NSString *sectionUrl = [NSString stringWithFormat:@"%@/%@",
-                                    [self.partnerInfoDictionary objectForKey:@"website_url"],
-                                    [dict objectForKey:@"url"]];
+            NSString *urlString =  [dict objectForKey:@"url"];
+            NSString *urlHeader = [urlString substringToIndex:7];
+            NSString *sectionUrl = nil;
+            if([urlHeader isEqualToString:URL_HEADER]) {
+                sectionUrl = urlString;
+            }
+            else {  
+                sectionUrl = [NSString stringWithFormat:@"%@/%@",
+                              [self.partnerInfoDictionary objectForKey:@"website_url"],
+                              [dict objectForKey:@"url"]];
+            }
             subMenu.url = [sectionUrl stringByAppendingFormat:@"?&lat=%f&lon=%f",
                            [AppDelegate sharedDelegate].doubleLatitude,
                            [AppDelegate sharedDelegate].doubleLongitude];
@@ -302,37 +317,16 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
 }
 
 #pragma mark -
-#pragma mark CleanUp
-
--(void)cleanUp
-{
-    self.scrollView = nil;
-    self.partnerSections = nil;
-    [partnerMenuButtons release];
-    [sectionImagesDictionary release];
-    _currentSectionName = nil;
-    [[UIApplication sharedApplication] setActivityindicatorToZero];
-}
-
-- (void)viewDidUnload {
-    [self cleanUp];
-    [activityIndicator release];
-    activityIndicator = nil;
-    [super viewDidUnload]; 
-}
-
-- (void)dealloc {
-    [self cleanUp];
-    [activityIndicator release];
-    [super dealloc];
-}
-
-#pragma mark -
 #pragma mark store partner details 
 
 - (void) restorePartnerDetails {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [self setPartnerInfoDictionary:[userDefaults objectForKey:@"partnerDetails"]];
+    if ([self.partnerInfoDictionary objectForKey:@"facebook_app_id"]) 
+    {
+        [AppDelegate sharedDelegate].facebookHelper.appId = [self.partnerInfoDictionary
+                                                             objectForKey:@"facebook_app_id"];
+    }
     [self setPartnerSections:[userDefaults objectForKey:@"partnerSections"]];
 }
 
@@ -346,6 +340,7 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
 #pragma mark -
 #pragma mark load partner info
 
+
 - (void) loadPartnerDetails {
 #ifdef PARTNER_ID
     RWRequestHelper *helper = [[RWRequestHelper alloc] init];
@@ -355,6 +350,7 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
 }
 
 - (void) loadPartnerSections {
+
     NSString *partnerId = [[self partnerInfoDictionary] objectForKey:@"id"];
     RWRequestHelper *helper = [[RWRequestHelper alloc] init];
     RWRequest *request = [helper sectionsRequestForPartnerWithId:partnerId];
@@ -379,6 +375,12 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
         [self setPartnerInfoDictionary:[request response]];
         [self loadPartnerSections];
         [self loadPartnerLogo];
+        NSLog(@"appid = %@",[[request response] objectForKey:@"facebook_app_id"]);
+        if ([[request response] objectForKey:@"facebook_app_id"]) 
+        {
+            [AppDelegate sharedDelegate].facebookHelper.appId = [[request response]
+                                                                 objectForKey:@"facebook_app_id"];
+        }
     }
     else {
         [self setPartnerSections:[request response]];
@@ -387,11 +389,13 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
         [self savePartnerDetails];        
         [activityIndicator stopAnimating];
     }
+
 }
 
 - (void) requestDidFail:(RWRequest *) request {
     [activityIndicator stopAnimating];
 }
+
 
 #pragma mark -
 #pragma mark partner logo loading
@@ -406,4 +410,30 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
     //
 }
 
+#pragma mark -
+#pragma mark CleanUp
+
+-(void)cleanUp
+{
+    self.scrollView = nil;
+    self.partnerSections = nil;
+    [partnerMenuButtons release];
+    [sectionImagesDictionary release];
+    _currentSectionName = nil;
+    [[UIApplication sharedApplication] setActivityindicatorToZero];
+}
+
+- (void)viewDidUnload {
+    [self cleanUp];
+    [activityIndicator release];
+    activityIndicator = nil;
+
+    [super viewDidUnload]; 
+}
+
+- (void)dealloc {
+    [self cleanUp];
+    [activityIndicator release];
+    [super dealloc];
+}
 @end
