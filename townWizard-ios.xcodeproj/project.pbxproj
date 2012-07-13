@@ -209,6 +209,431 @@
 		848854EC14D172FE0030BD03 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854E014D172FE0030BD03 /* SBJsonWriter.m */; };
 		848854F714D179700030BD03 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848854F614D179700030BD03 /* SystemConfiguration.framework */; };
 		8488550A14D1ABAB0030BD03 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8488550914D1ABAA0030BD03 /* ViewController.xib */; };
+		9535251515AE021500857F12 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483F25A14D03FBE005E4216 /* ViewController.m */; };
+		9535251615AE021500857F12 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483F25714D03FBE005E4216 /* AppDelegate.m */; };
+		9535251715AE021500857F12 /* RWRequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D9209D6E158A2BE90074A719 /* RWRequestHelper.m */; };
+		9535251815AE021500857F12 /* RWRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D98C3687158A0928005411E8 /* RWRequest.m */; };
+		9535251915AE021500857F12 /* JSONDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D98C368C158A0928005411E8 /* JSONDataParser.m */; };
+		9535251A15AE021500857F12 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854C914D172FE0030BD03 /* NSObject+SBJson.m */; };
+		9535251B15AE021500857F12 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854CC14D172FE0030BD03 /* SBJsonParser.m */; };
+		9535251C15AE021500857F12 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854CE14D172FE0030BD03 /* SBJsonStreamParser.m */; };
+		9535251D15AE021500857F12 /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854D014D172FE0030BD03 /* SBJsonStreamParserAccumulator.m */; };
+		9535251E15AE021500857F12 /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854D214D172FE0030BD03 /* SBJsonStreamParserAdapter.m */; };
+		9535251F15AE021500857F12 /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854D414D172FE0030BD03 /* SBJsonStreamParserState.m */; };
+		9535252015AE021500857F12 /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854D614D172FE0030BD03 /* SBJsonStreamWriter.m */; };
+		9535252115AE021500857F12 /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854D814D172FE0030BD03 /* SBJsonStreamWriterAccumulator.m */; };
+		9535252215AE021500857F12 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854DA14D172FE0030BD03 /* SBJsonStreamWriterState.m */; };
+		9535252315AE021500857F12 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854DC14D172FE0030BD03 /* SBJsonTokeniser.m */; };
+		9535252415AE021500857F12 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854DE14D172FE0030BD03 /* SBJsonUTF8Stream.m */; };
+		9535252515AE021500857F12 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854E014D172FE0030BD03 /* SBJsonWriter.m */; };
+		9535252615AE021500857F12 /* TownWIzardNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E691001E14E56B7E003DE64B /* TownWIzardNavigationBar.m */; };
+		9535252715AE021500857F12 /* FacebookHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F275C14E949FE0040F281 /* FacebookHelper.m */; };
+		9535252815AE021500857F12 /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F271E14E9448B0040F281 /* Facebook.m */; };
+		9535252915AE021500857F12 /* FBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F272214E9448B0040F281 /* FBDialog.m */; };
+		9535252A15AE021500857F12 /* FBLoginDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F272414E9448B0040F281 /* FBLoginDialog.m */; };
+		9535252B15AE021500857F12 /* FBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F272614E9448B0040F281 /* FBRequest.m */; };
+		9535252C15AE021500857F12 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854C414D16F620030BD03 /* Reachability.m */; };
+		9535252D15AE021500857F12 /* RequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854B314D146490030BD03 /* RequestHelper.m */; };
+		9535252E15AE021500857F12 /* UIApplication+NetworkActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = E61A4DDB14E166BC0039E970 /* UIApplication+NetworkActivity.m */; };
+		9535252F15AE021500857F12 /* DataHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F279514E9613D0040F281 /* DataHolder.m */; };
+		9535253015AE021500857F12 /* FacebookCheckinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F277D14E960CA0040F281 /* FacebookCheckinViewController.m */; };
+		9535253115AE021500857F12 /* FacebookFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F278014E960CA0040F281 /* FacebookFriend.m */; };
+		9535253215AE021500857F12 /* FacebookFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F278214E960CA0040F281 /* FacebookFriendCell.m */; };
+		9535253315AE021500857F12 /* FacebookPlacesViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F278514E960CA0040F281 /* FacebookPlacesViewCell.m */; };
+		9535253415AE021500857F12 /* FacebookPlacesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F278714E960CA0040F281 /* FacebookPlacesViewController.m */; };
+		9535253515AE021500857F12 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F278914E960CA0040F281 /* Place.m */; };
+		9535253615AE021500857F12 /* AddCaptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E691000814E550B3003DE64B /* AddCaptionViewController.m */; };
+		9535253715AE021500857F12 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E691FF8B14E50981003DE64B /* MapAnnotation.m */; };
+		9535253815AE021500857F12 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E691FF8D14E50981003DE64B /* MapViewController.m */; };
+		9535253915AE021500857F12 /* SubMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854AA14D142430030BD03 /* SubMenuViewController.m */; };
+		9535253A15AE021500857F12 /* PartnerMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F875E14D6C81F005EE200 /* PartnerMenuViewController.m */; };
+		9535253B15AE021500857F12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D90D0DFD158F06500026828E /* main.m */; };
+		9535253C15AE021500857F12 /* RWURLRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = D90D0E07158F237F0026828E /* RWURLRequestBuilder.m */; };
+		9535253D15AE021500857F12 /* ImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D9C19B7D158F5D88005F2F31 /* ImageLoader.m */; };
+		9535253E15AE021500857F12 /* ImageLoadingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D9C19B7F158F5D88005F2F31 /* ImageLoadingOperation.m */; };
+		9535254015AE021500857F12 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483F24714D03FBE005E4216 /* UIKit.framework */; };
+		9535254115AE021500857F12 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 847F877114D6E862005EE200 /* libTestFlight.a */; };
+		9535254215AE021500857F12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483F24914D03FBE005E4216 /* Foundation.framework */; };
+		9535254315AE021500857F12 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848854F414D1793A0030BD03 /* CFNetwork.framework */; };
+		9535254415AE021500857F12 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848854F614D179700030BD03 /* SystemConfiguration.framework */; };
+		9535254515AE021500857F12 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E691FF9214E50A03003DE64B /* MapKit.framework */; };
+		9535254615AE021500857F12 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848854F214D179190030BD03 /* Security.framework */; };
+		9535254715AE021500857F12 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84818E0514D7DE0600BBCD7F /* CoreLocation.framework */; };
+		9535254815AE021500857F12 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483F24B14D03FBE005E4216 /* CoreGraphics.framework */; };
+		9535254A15AE021500857F12 /* FacebookCheckinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E63F277E14E960CA0040F281 /* FacebookCheckinViewController.xib */; };
+		9535254B15AE021500857F12 /* FacebookFriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E63F278314E960CA0040F281 /* FacebookFriendCell.xib */; };
+		9535254C15AE021500857F12 /* PlacesViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E63F278A14E960CA0040F281 /* PlacesViewCell.xib */; };
+		9535254D15AE021500857F12 /* post_button.png in Resources */ = {isa = PBXBuildFile; fileRef = E663F04214EA4883004AB94C /* post_button.png */; };
+		9535254E15AE021500857F12 /* Image-Upload-Bar.png in Resources */ = {isa = PBXBuildFile; fileRef = E63F271214E917930040F281 /* Image-Upload-Bar.png */; };
+		9535254F15AE021500857F12 /* Image-Border.png in Resources */ = {isa = PBXBuildFile; fileRef = E691002414E5720F003DE64B /* Image-Border.png */; };
+		9535255015AE021500857F12 /* Btn-Camera.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000C14E55890003DE64B /* Btn-Camera.png */; };
+		9535255115AE021500857F12 /* Btn-Cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000D14E55890003DE64B /* Btn-Cancel.png */; };
+		9535255215AE021500857F12 /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
+		9535255315AE021500857F12 /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
+		9535255415AE021500857F12 /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
+		9535255515AE021500857F12 /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
+		9535255615AE021500857F12 /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
+		9535255715AE021500857F12 /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
+		9535255815AE021500857F12 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
+		9535255915AE021500857F12 /* AddCaptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691000914E550B3003DE64B /* AddCaptionViewController.xib */; };
+		9535255A15AE021500857F12 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D90D0DFA158F06500026828E /* InfoPlist.strings */; };
+		9535255B15AE021500857F12 /* back_arrow_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C50159074E5006FFF7E /* back_arrow_retina.png */; };
+		9535255C15AE021500857F12 /* back_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C51159074E5006FFF7E /* back_arrow.png */; };
+		9535255D15AE021500857F12 /* go_background.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C52159074E5006FFF7E /* go_background.png */; };
+		9535255E15AE021500857F12 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C53159074E5006FFF7E /* info.png */; };
+		9535255F15AE021500857F12 /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C54159074E5006FFF7E /* left.png */; };
+		9535256015AE021500857F12 /* post.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C55159074E5006FFF7E /* post.png */; };
+		9535256115AE021500857F12 /* post@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C56159074E5006FFF7E /* post@2x.png */; };
+		9535256215AE021500857F12 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C57159074E5006FFF7E /* right.png */; };
+		9535256315AE021500857F12 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C58159074E5006FFF7E /* search.png */; };
+		9535256415AE021500857F12 /* tag_320x405.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C59159074E5006FFF7E /* tag_320x405.png */; };
+		9535256515AE021500857F12 /* tag640x810.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C5A159074E5006FFF7E /* tag640x810.png */; };
+		9535256615AE021500857F12 /* topBar.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C5B159074E5006FFF7E /* topBar.png */; };
+		9535256715AE021500857F12 /* twHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C5C159074E5006FFF7E /* twHeader.png */; };
+		9535257915AE128B00857F12 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483F25A14D03FBE005E4216 /* ViewController.m */; };
+		9535257A15AE128B00857F12 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483F25714D03FBE005E4216 /* AppDelegate.m */; };
+		9535257B15AE128B00857F12 /* RWRequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D9209D6E158A2BE90074A719 /* RWRequestHelper.m */; };
+		9535257C15AE128B00857F12 /* RWRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D98C3687158A0928005411E8 /* RWRequest.m */; };
+		9535257D15AE128B00857F12 /* JSONDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D98C368C158A0928005411E8 /* JSONDataParser.m */; };
+		9535257E15AE128B00857F12 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854C914D172FE0030BD03 /* NSObject+SBJson.m */; };
+		9535257F15AE128B00857F12 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854CC14D172FE0030BD03 /* SBJsonParser.m */; };
+		9535258015AE128B00857F12 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854CE14D172FE0030BD03 /* SBJsonStreamParser.m */; };
+		9535258115AE128B00857F12 /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854D014D172FE0030BD03 /* SBJsonStreamParserAccumulator.m */; };
+		9535258215AE128B00857F12 /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854D214D172FE0030BD03 /* SBJsonStreamParserAdapter.m */; };
+		9535258315AE128B00857F12 /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854D414D172FE0030BD03 /* SBJsonStreamParserState.m */; };
+		9535258415AE128B00857F12 /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854D614D172FE0030BD03 /* SBJsonStreamWriter.m */; };
+		9535258515AE128B00857F12 /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854D814D172FE0030BD03 /* SBJsonStreamWriterAccumulator.m */; };
+		9535258615AE128B00857F12 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854DA14D172FE0030BD03 /* SBJsonStreamWriterState.m */; };
+		9535258715AE128B00857F12 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854DC14D172FE0030BD03 /* SBJsonTokeniser.m */; };
+		9535258815AE128B00857F12 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854DE14D172FE0030BD03 /* SBJsonUTF8Stream.m */; };
+		9535258915AE128B00857F12 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854E014D172FE0030BD03 /* SBJsonWriter.m */; };
+		9535258A15AE128B00857F12 /* TownWIzardNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E691001E14E56B7E003DE64B /* TownWIzardNavigationBar.m */; };
+		9535258B15AE128B00857F12 /* FacebookHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F275C14E949FE0040F281 /* FacebookHelper.m */; };
+		9535258C15AE128B00857F12 /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F271E14E9448B0040F281 /* Facebook.m */; };
+		9535258D15AE128B00857F12 /* FBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F272214E9448B0040F281 /* FBDialog.m */; };
+		9535258E15AE128B00857F12 /* FBLoginDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F272414E9448B0040F281 /* FBLoginDialog.m */; };
+		9535258F15AE128B00857F12 /* FBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F272614E9448B0040F281 /* FBRequest.m */; };
+		9535259015AE128B00857F12 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854C414D16F620030BD03 /* Reachability.m */; };
+		9535259115AE128B00857F12 /* RequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854B314D146490030BD03 /* RequestHelper.m */; };
+		9535259215AE128B00857F12 /* UIApplication+NetworkActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = E61A4DDB14E166BC0039E970 /* UIApplication+NetworkActivity.m */; };
+		9535259315AE128B00857F12 /* DataHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F279514E9613D0040F281 /* DataHolder.m */; };
+		9535259415AE128B00857F12 /* FacebookCheckinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F277D14E960CA0040F281 /* FacebookCheckinViewController.m */; };
+		9535259515AE128B00857F12 /* FacebookFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F278014E960CA0040F281 /* FacebookFriend.m */; };
+		9535259615AE128B00857F12 /* FacebookFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F278214E960CA0040F281 /* FacebookFriendCell.m */; };
+		9535259715AE128B00857F12 /* FacebookPlacesViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F278514E960CA0040F281 /* FacebookPlacesViewCell.m */; };
+		9535259815AE128B00857F12 /* FacebookPlacesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F278714E960CA0040F281 /* FacebookPlacesViewController.m */; };
+		9535259915AE128B00857F12 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F278914E960CA0040F281 /* Place.m */; };
+		9535259A15AE128B00857F12 /* AddCaptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E691000814E550B3003DE64B /* AddCaptionViewController.m */; };
+		9535259B15AE128B00857F12 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E691FF8B14E50981003DE64B /* MapAnnotation.m */; };
+		9535259C15AE128B00857F12 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E691FF8D14E50981003DE64B /* MapViewController.m */; };
+		9535259D15AE128B00857F12 /* SubMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854AA14D142430030BD03 /* SubMenuViewController.m */; };
+		9535259E15AE128B00857F12 /* PartnerMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F875E14D6C81F005EE200 /* PartnerMenuViewController.m */; };
+		9535259F15AE128B00857F12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D90D0DFD158F06500026828E /* main.m */; };
+		953525A015AE128B00857F12 /* RWURLRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = D90D0E07158F237F0026828E /* RWURLRequestBuilder.m */; };
+		953525A115AE128B00857F12 /* ImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D9C19B7D158F5D88005F2F31 /* ImageLoader.m */; };
+		953525A215AE128B00857F12 /* ImageLoadingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D9C19B7F158F5D88005F2F31 /* ImageLoadingOperation.m */; };
+		953525A415AE128B00857F12 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483F24714D03FBE005E4216 /* UIKit.framework */; };
+		953525A515AE128B00857F12 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 847F877114D6E862005EE200 /* libTestFlight.a */; };
+		953525A615AE128B00857F12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483F24914D03FBE005E4216 /* Foundation.framework */; };
+		953525A715AE128B00857F12 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848854F414D1793A0030BD03 /* CFNetwork.framework */; };
+		953525A815AE128B00857F12 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848854F614D179700030BD03 /* SystemConfiguration.framework */; };
+		953525A915AE128B00857F12 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E691FF9214E50A03003DE64B /* MapKit.framework */; };
+		953525AA15AE128B00857F12 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848854F214D179190030BD03 /* Security.framework */; };
+		953525AB15AE128B00857F12 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84818E0514D7DE0600BBCD7F /* CoreLocation.framework */; };
+		953525AC15AE128B00857F12 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483F24B14D03FBE005E4216 /* CoreGraphics.framework */; };
+		953525AE15AE128B00857F12 /* FacebookCheckinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E63F277E14E960CA0040F281 /* FacebookCheckinViewController.xib */; };
+		953525AF15AE128B00857F12 /* FacebookFriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E63F278314E960CA0040F281 /* FacebookFriendCell.xib */; };
+		953525B015AE128B00857F12 /* PlacesViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E63F278A14E960CA0040F281 /* PlacesViewCell.xib */; };
+		953525B115AE128B00857F12 /* post_button.png in Resources */ = {isa = PBXBuildFile; fileRef = E663F04214EA4883004AB94C /* post_button.png */; };
+		953525B215AE128B00857F12 /* Image-Upload-Bar.png in Resources */ = {isa = PBXBuildFile; fileRef = E63F271214E917930040F281 /* Image-Upload-Bar.png */; };
+		953525B315AE128B00857F12 /* Image-Border.png in Resources */ = {isa = PBXBuildFile; fileRef = E691002414E5720F003DE64B /* Image-Border.png */; };
+		953525B415AE128B00857F12 /* Btn-Camera.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000C14E55890003DE64B /* Btn-Camera.png */; };
+		953525B515AE128B00857F12 /* Btn-Cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000D14E55890003DE64B /* Btn-Cancel.png */; };
+		953525B615AE128B00857F12 /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
+		953525B715AE128B00857F12 /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
+		953525B815AE128B00857F12 /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
+		953525B915AE128B00857F12 /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
+		953525BA15AE128B00857F12 /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
+		953525BB15AE128B00857F12 /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
+		953525BC15AE128B00857F12 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
+		953525BD15AE128B00857F12 /* AddCaptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691000914E550B3003DE64B /* AddCaptionViewController.xib */; };
+		953525BE15AE128B00857F12 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D90D0DFA158F06500026828E /* InfoPlist.strings */; };
+		953525BF15AE128B00857F12 /* back_arrow_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C50159074E5006FFF7E /* back_arrow_retina.png */; };
+		953525C015AE128B00857F12 /* back_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C51159074E5006FFF7E /* back_arrow.png */; };
+		953525C115AE128B00857F12 /* go_background.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C52159074E5006FFF7E /* go_background.png */; };
+		953525C215AE128B00857F12 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C53159074E5006FFF7E /* info.png */; };
+		953525C315AE128B00857F12 /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C54159074E5006FFF7E /* left.png */; };
+		953525C415AE128B00857F12 /* post.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C55159074E5006FFF7E /* post.png */; };
+		953525C515AE128B00857F12 /* post@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C56159074E5006FFF7E /* post@2x.png */; };
+		953525C615AE128B00857F12 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C57159074E5006FFF7E /* right.png */; };
+		953525C715AE128B00857F12 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C58159074E5006FFF7E /* search.png */; };
+		953525C815AE128B00857F12 /* tag_320x405.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C59159074E5006FFF7E /* tag_320x405.png */; };
+		953525C915AE128B00857F12 /* tag640x810.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C5A159074E5006FFF7E /* tag640x810.png */; };
+		953525CA15AE128B00857F12 /* topBar.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C5B159074E5006FFF7E /* topBar.png */; };
+		953525CB15AE128B00857F12 /* twHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C5C159074E5006FFF7E /* twHeader.png */; };
+		953525E615AE1E6800857F12 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483F25A14D03FBE005E4216 /* ViewController.m */; };
+		953525E715AE1E6800857F12 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483F25714D03FBE005E4216 /* AppDelegate.m */; };
+		953525E815AE1E6800857F12 /* RWRequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D9209D6E158A2BE90074A719 /* RWRequestHelper.m */; };
+		953525E915AE1E6800857F12 /* RWRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D98C3687158A0928005411E8 /* RWRequest.m */; };
+		953525EA15AE1E6800857F12 /* JSONDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D98C368C158A0928005411E8 /* JSONDataParser.m */; };
+		953525EB15AE1E6800857F12 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854C914D172FE0030BD03 /* NSObject+SBJson.m */; };
+		953525EC15AE1E6800857F12 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854CC14D172FE0030BD03 /* SBJsonParser.m */; };
+		953525ED15AE1E6800857F12 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854CE14D172FE0030BD03 /* SBJsonStreamParser.m */; };
+		953525EE15AE1E6800857F12 /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854D014D172FE0030BD03 /* SBJsonStreamParserAccumulator.m */; };
+		953525EF15AE1E6800857F12 /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854D214D172FE0030BD03 /* SBJsonStreamParserAdapter.m */; };
+		953525F015AE1E6800857F12 /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854D414D172FE0030BD03 /* SBJsonStreamParserState.m */; };
+		953525F115AE1E6800857F12 /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854D614D172FE0030BD03 /* SBJsonStreamWriter.m */; };
+		953525F215AE1E6800857F12 /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854D814D172FE0030BD03 /* SBJsonStreamWriterAccumulator.m */; };
+		953525F315AE1E6800857F12 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854DA14D172FE0030BD03 /* SBJsonStreamWriterState.m */; };
+		953525F415AE1E6800857F12 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854DC14D172FE0030BD03 /* SBJsonTokeniser.m */; };
+		953525F515AE1E6800857F12 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854DE14D172FE0030BD03 /* SBJsonUTF8Stream.m */; };
+		953525F615AE1E6800857F12 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854E014D172FE0030BD03 /* SBJsonWriter.m */; };
+		953525F715AE1E6800857F12 /* TownWIzardNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E691001E14E56B7E003DE64B /* TownWIzardNavigationBar.m */; };
+		953525F815AE1E6800857F12 /* FacebookHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F275C14E949FE0040F281 /* FacebookHelper.m */; };
+		953525F915AE1E6800857F12 /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F271E14E9448B0040F281 /* Facebook.m */; };
+		953525FA15AE1E6800857F12 /* FBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F272214E9448B0040F281 /* FBDialog.m */; };
+		953525FB15AE1E6800857F12 /* FBLoginDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F272414E9448B0040F281 /* FBLoginDialog.m */; };
+		953525FC15AE1E6800857F12 /* FBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F272614E9448B0040F281 /* FBRequest.m */; };
+		953525FD15AE1E6800857F12 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854C414D16F620030BD03 /* Reachability.m */; };
+		953525FE15AE1E6800857F12 /* RequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854B314D146490030BD03 /* RequestHelper.m */; };
+		953525FF15AE1E6800857F12 /* UIApplication+NetworkActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = E61A4DDB14E166BC0039E970 /* UIApplication+NetworkActivity.m */; };
+		9535260015AE1E6800857F12 /* DataHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F279514E9613D0040F281 /* DataHolder.m */; };
+		9535260115AE1E6800857F12 /* FacebookCheckinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F277D14E960CA0040F281 /* FacebookCheckinViewController.m */; };
+		9535260215AE1E6800857F12 /* FacebookFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F278014E960CA0040F281 /* FacebookFriend.m */; };
+		9535260315AE1E6800857F12 /* FacebookFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F278214E960CA0040F281 /* FacebookFriendCell.m */; };
+		9535260415AE1E6800857F12 /* FacebookPlacesViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F278514E960CA0040F281 /* FacebookPlacesViewCell.m */; };
+		9535260515AE1E6800857F12 /* FacebookPlacesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F278714E960CA0040F281 /* FacebookPlacesViewController.m */; };
+		9535260615AE1E6800857F12 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F278914E960CA0040F281 /* Place.m */; };
+		9535260715AE1E6800857F12 /* AddCaptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E691000814E550B3003DE64B /* AddCaptionViewController.m */; };
+		9535260815AE1E6800857F12 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E691FF8B14E50981003DE64B /* MapAnnotation.m */; };
+		9535260915AE1E6800857F12 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E691FF8D14E50981003DE64B /* MapViewController.m */; };
+		9535260A15AE1E6800857F12 /* SubMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854AA14D142430030BD03 /* SubMenuViewController.m */; };
+		9535260B15AE1E6800857F12 /* PartnerMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F875E14D6C81F005EE200 /* PartnerMenuViewController.m */; };
+		9535260C15AE1E6800857F12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D90D0DFD158F06500026828E /* main.m */; };
+		9535260D15AE1E6800857F12 /* RWURLRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = D90D0E07158F237F0026828E /* RWURLRequestBuilder.m */; };
+		9535260E15AE1E6800857F12 /* ImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D9C19B7D158F5D88005F2F31 /* ImageLoader.m */; };
+		9535260F15AE1E6800857F12 /* ImageLoadingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D9C19B7F158F5D88005F2F31 /* ImageLoadingOperation.m */; };
+		9535261115AE1E6800857F12 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483F24714D03FBE005E4216 /* UIKit.framework */; };
+		9535261215AE1E6800857F12 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 847F877114D6E862005EE200 /* libTestFlight.a */; };
+		9535261315AE1E6800857F12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483F24914D03FBE005E4216 /* Foundation.framework */; };
+		9535261415AE1E6800857F12 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848854F414D1793A0030BD03 /* CFNetwork.framework */; };
+		9535261515AE1E6800857F12 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848854F614D179700030BD03 /* SystemConfiguration.framework */; };
+		9535261615AE1E6800857F12 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E691FF9214E50A03003DE64B /* MapKit.framework */; };
+		9535261715AE1E6800857F12 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848854F214D179190030BD03 /* Security.framework */; };
+		9535261815AE1E6800857F12 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84818E0514D7DE0600BBCD7F /* CoreLocation.framework */; };
+		9535261915AE1E6800857F12 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483F24B14D03FBE005E4216 /* CoreGraphics.framework */; };
+		9535261B15AE1E6800857F12 /* FacebookCheckinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E63F277E14E960CA0040F281 /* FacebookCheckinViewController.xib */; };
+		9535261C15AE1E6800857F12 /* FacebookFriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E63F278314E960CA0040F281 /* FacebookFriendCell.xib */; };
+		9535261D15AE1E6800857F12 /* PlacesViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E63F278A14E960CA0040F281 /* PlacesViewCell.xib */; };
+		9535261E15AE1E6800857F12 /* post_button.png in Resources */ = {isa = PBXBuildFile; fileRef = E663F04214EA4883004AB94C /* post_button.png */; };
+		9535261F15AE1E6800857F12 /* Image-Upload-Bar.png in Resources */ = {isa = PBXBuildFile; fileRef = E63F271214E917930040F281 /* Image-Upload-Bar.png */; };
+		9535262015AE1E6800857F12 /* Image-Border.png in Resources */ = {isa = PBXBuildFile; fileRef = E691002414E5720F003DE64B /* Image-Border.png */; };
+		9535262115AE1E6800857F12 /* Btn-Camera.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000C14E55890003DE64B /* Btn-Camera.png */; };
+		9535262215AE1E6800857F12 /* Btn-Cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000D14E55890003DE64B /* Btn-Cancel.png */; };
+		9535262315AE1E6800857F12 /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
+		9535262415AE1E6800857F12 /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
+		9535262515AE1E6800857F12 /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
+		9535262615AE1E6800857F12 /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
+		9535262715AE1E6800857F12 /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
+		9535262815AE1E6800857F12 /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
+		9535262915AE1E6800857F12 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
+		9535262A15AE1E6800857F12 /* AddCaptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691000914E550B3003DE64B /* AddCaptionViewController.xib */; };
+		9535262B15AE1E6800857F12 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D90D0DFA158F06500026828E /* InfoPlist.strings */; };
+		9535262C15AE1E6800857F12 /* back_arrow_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C50159074E5006FFF7E /* back_arrow_retina.png */; };
+		9535262D15AE1E6800857F12 /* back_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C51159074E5006FFF7E /* back_arrow.png */; };
+		9535262E15AE1E6800857F12 /* go_background.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C52159074E5006FFF7E /* go_background.png */; };
+		9535262F15AE1E6800857F12 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C53159074E5006FFF7E /* info.png */; };
+		9535263015AE1E6800857F12 /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C54159074E5006FFF7E /* left.png */; };
+		9535263115AE1E6800857F12 /* post.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C55159074E5006FFF7E /* post.png */; };
+		9535263215AE1E6800857F12 /* post@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C56159074E5006FFF7E /* post@2x.png */; };
+		9535263315AE1E6800857F12 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C57159074E5006FFF7E /* right.png */; };
+		9535263415AE1E6800857F12 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C58159074E5006FFF7E /* search.png */; };
+		9535263515AE1E6800857F12 /* tag_320x405.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C59159074E5006FFF7E /* tag_320x405.png */; };
+		9535263615AE1E6800857F12 /* tag640x810.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C5A159074E5006FFF7E /* tag640x810.png */; };
+		9535263715AE1E6800857F12 /* topBar.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C5B159074E5006FFF7E /* topBar.png */; };
+		9535263815AE1E6800857F12 /* twHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C5C159074E5006FFF7E /* twHeader.png */; };
+		954628B115AF615D00A39C65 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483F25A14D03FBE005E4216 /* ViewController.m */; };
+		954628B215AF615D00A39C65 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483F25714D03FBE005E4216 /* AppDelegate.m */; };
+		954628B315AF615D00A39C65 /* RWRequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D9209D6E158A2BE90074A719 /* RWRequestHelper.m */; };
+		954628B415AF615D00A39C65 /* RWRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D98C3687158A0928005411E8 /* RWRequest.m */; };
+		954628B515AF615D00A39C65 /* JSONDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D98C368C158A0928005411E8 /* JSONDataParser.m */; };
+		954628B615AF615D00A39C65 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854C914D172FE0030BD03 /* NSObject+SBJson.m */; };
+		954628B715AF615D00A39C65 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854CC14D172FE0030BD03 /* SBJsonParser.m */; };
+		954628B815AF615D00A39C65 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854CE14D172FE0030BD03 /* SBJsonStreamParser.m */; };
+		954628B915AF615D00A39C65 /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854D014D172FE0030BD03 /* SBJsonStreamParserAccumulator.m */; };
+		954628BA15AF615D00A39C65 /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854D214D172FE0030BD03 /* SBJsonStreamParserAdapter.m */; };
+		954628BB15AF615D00A39C65 /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854D414D172FE0030BD03 /* SBJsonStreamParserState.m */; };
+		954628BC15AF615D00A39C65 /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854D614D172FE0030BD03 /* SBJsonStreamWriter.m */; };
+		954628BD15AF615D00A39C65 /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854D814D172FE0030BD03 /* SBJsonStreamWriterAccumulator.m */; };
+		954628BE15AF615D00A39C65 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854DA14D172FE0030BD03 /* SBJsonStreamWriterState.m */; };
+		954628BF15AF615D00A39C65 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854DC14D172FE0030BD03 /* SBJsonTokeniser.m */; };
+		954628C015AF615D00A39C65 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854DE14D172FE0030BD03 /* SBJsonUTF8Stream.m */; };
+		954628C115AF615D00A39C65 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854E014D172FE0030BD03 /* SBJsonWriter.m */; };
+		954628C215AF615D00A39C65 /* TownWIzardNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E691001E14E56B7E003DE64B /* TownWIzardNavigationBar.m */; };
+		954628C315AF615D00A39C65 /* FacebookHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F275C14E949FE0040F281 /* FacebookHelper.m */; };
+		954628C415AF615D00A39C65 /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F271E14E9448B0040F281 /* Facebook.m */; };
+		954628C515AF615D00A39C65 /* FBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F272214E9448B0040F281 /* FBDialog.m */; };
+		954628C615AF615D00A39C65 /* FBLoginDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F272414E9448B0040F281 /* FBLoginDialog.m */; };
+		954628C715AF615D00A39C65 /* FBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F272614E9448B0040F281 /* FBRequest.m */; };
+		954628C815AF615D00A39C65 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854C414D16F620030BD03 /* Reachability.m */; };
+		954628C915AF615D00A39C65 /* RequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854B314D146490030BD03 /* RequestHelper.m */; };
+		954628CA15AF615D00A39C65 /* UIApplication+NetworkActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = E61A4DDB14E166BC0039E970 /* UIApplication+NetworkActivity.m */; };
+		954628CB15AF615D00A39C65 /* DataHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F279514E9613D0040F281 /* DataHolder.m */; };
+		954628CC15AF615D00A39C65 /* FacebookCheckinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F277D14E960CA0040F281 /* FacebookCheckinViewController.m */; };
+		954628CD15AF615D00A39C65 /* FacebookFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F278014E960CA0040F281 /* FacebookFriend.m */; };
+		954628CE15AF615D00A39C65 /* FacebookFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F278214E960CA0040F281 /* FacebookFriendCell.m */; };
+		954628CF15AF615D00A39C65 /* FacebookPlacesViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F278514E960CA0040F281 /* FacebookPlacesViewCell.m */; };
+		954628D015AF615D00A39C65 /* FacebookPlacesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F278714E960CA0040F281 /* FacebookPlacesViewController.m */; };
+		954628D115AF615D00A39C65 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F278914E960CA0040F281 /* Place.m */; };
+		954628D215AF615D00A39C65 /* AddCaptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E691000814E550B3003DE64B /* AddCaptionViewController.m */; };
+		954628D315AF615D00A39C65 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E691FF8B14E50981003DE64B /* MapAnnotation.m */; };
+		954628D415AF615D00A39C65 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E691FF8D14E50981003DE64B /* MapViewController.m */; };
+		954628D515AF615D00A39C65 /* SubMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854AA14D142430030BD03 /* SubMenuViewController.m */; };
+		954628D615AF615D00A39C65 /* PartnerMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F875E14D6C81F005EE200 /* PartnerMenuViewController.m */; };
+		954628D715AF615D00A39C65 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D90D0DFD158F06500026828E /* main.m */; };
+		954628D815AF615D00A39C65 /* RWURLRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = D90D0E07158F237F0026828E /* RWURLRequestBuilder.m */; };
+		954628D915AF615D00A39C65 /* ImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D9C19B7D158F5D88005F2F31 /* ImageLoader.m */; };
+		954628DA15AF615D00A39C65 /* ImageLoadingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D9C19B7F158F5D88005F2F31 /* ImageLoadingOperation.m */; };
+		954628DC15AF615D00A39C65 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483F24714D03FBE005E4216 /* UIKit.framework */; };
+		954628DD15AF615D00A39C65 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 847F877114D6E862005EE200 /* libTestFlight.a */; };
+		954628DE15AF615D00A39C65 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483F24914D03FBE005E4216 /* Foundation.framework */; };
+		954628DF15AF615D00A39C65 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848854F414D1793A0030BD03 /* CFNetwork.framework */; };
+		954628E015AF615D00A39C65 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848854F614D179700030BD03 /* SystemConfiguration.framework */; };
+		954628E115AF615D00A39C65 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E691FF9214E50A03003DE64B /* MapKit.framework */; };
+		954628E215AF615D00A39C65 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848854F214D179190030BD03 /* Security.framework */; };
+		954628E315AF615D00A39C65 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84818E0514D7DE0600BBCD7F /* CoreLocation.framework */; };
+		954628E415AF615D00A39C65 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483F24B14D03FBE005E4216 /* CoreGraphics.framework */; };
+		954628E615AF615D00A39C65 /* FacebookCheckinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E63F277E14E960CA0040F281 /* FacebookCheckinViewController.xib */; };
+		954628E715AF615D00A39C65 /* FacebookFriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E63F278314E960CA0040F281 /* FacebookFriendCell.xib */; };
+		954628E815AF615D00A39C65 /* PlacesViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E63F278A14E960CA0040F281 /* PlacesViewCell.xib */; };
+		954628E915AF615D00A39C65 /* post_button.png in Resources */ = {isa = PBXBuildFile; fileRef = E663F04214EA4883004AB94C /* post_button.png */; };
+		954628EA15AF615D00A39C65 /* Image-Upload-Bar.png in Resources */ = {isa = PBXBuildFile; fileRef = E63F271214E917930040F281 /* Image-Upload-Bar.png */; };
+		954628EB15AF615D00A39C65 /* Image-Border.png in Resources */ = {isa = PBXBuildFile; fileRef = E691002414E5720F003DE64B /* Image-Border.png */; };
+		954628EC15AF615D00A39C65 /* Btn-Camera.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000C14E55890003DE64B /* Btn-Camera.png */; };
+		954628ED15AF615D00A39C65 /* Btn-Cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000D14E55890003DE64B /* Btn-Cancel.png */; };
+		954628EE15AF615D00A39C65 /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
+		954628EF15AF615D00A39C65 /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
+		954628F015AF615D00A39C65 /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
+		954628F115AF615D00A39C65 /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
+		954628F215AF615D00A39C65 /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
+		954628F315AF615D00A39C65 /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
+		954628F415AF615D00A39C65 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
+		954628F515AF615D00A39C65 /* AddCaptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691000914E550B3003DE64B /* AddCaptionViewController.xib */; };
+		954628F615AF615D00A39C65 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D90D0DFA158F06500026828E /* InfoPlist.strings */; };
+		954628F715AF615D00A39C65 /* back_arrow_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C50159074E5006FFF7E /* back_arrow_retina.png */; };
+		954628F815AF615D00A39C65 /* back_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C51159074E5006FFF7E /* back_arrow.png */; };
+		954628F915AF615D00A39C65 /* go_background.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C52159074E5006FFF7E /* go_background.png */; };
+		954628FA15AF615D00A39C65 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C53159074E5006FFF7E /* info.png */; };
+		954628FB15AF615D00A39C65 /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C54159074E5006FFF7E /* left.png */; };
+		954628FC15AF615D00A39C65 /* post.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C55159074E5006FFF7E /* post.png */; };
+		954628FD15AF615D00A39C65 /* post@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C56159074E5006FFF7E /* post@2x.png */; };
+		954628FE15AF615D00A39C65 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C57159074E5006FFF7E /* right.png */; };
+		954628FF15AF615D00A39C65 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C58159074E5006FFF7E /* search.png */; };
+		9546290015AF615D00A39C65 /* tag_320x405.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C59159074E5006FFF7E /* tag_320x405.png */; };
+		9546290115AF615D00A39C65 /* tag640x810.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C5A159074E5006FFF7E /* tag640x810.png */; };
+		9546290215AF615D00A39C65 /* topBar.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C5B159074E5006FFF7E /* topBar.png */; };
+		9546290315AF615D00A39C65 /* twHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C5C159074E5006FFF7E /* twHeader.png */; };
+		9546290F15AF631000A39C65 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9546290B15AF631000A39C65 /* Default.png */; };
+		9546291015AF631000A39C65 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9546290C15AF631000A39C65 /* Default@2x.png */; };
+		9546291115AF631000A39C65 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9546290D15AF631000A39C65 /* Icon.png */; };
+		9546291215AF631000A39C65 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9546290E15AF631000A39C65 /* Icon@2x.png */; };
+		95F1E0D615AF513B005FAB38 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F1E0D215AF513B005FAB38 /* Default.png */; };
+		95F1E0D715AF513B005FAB38 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F1E0D315AF513B005FAB38 /* Default@2x.png */; };
+		95F1E0D815AF513B005FAB38 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F1E0D415AF513B005FAB38 /* Icon.png */; };
+		95F1E0D915AF513B005FAB38 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F1E0D515AF513B005FAB38 /* Icon@2x.png */; };
+		95F1E0DF15AF5216005FAB38 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F1E0DB15AF5216005FAB38 /* Default.png */; };
+		95F1E0E015AF5216005FAB38 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F1E0DC15AF5216005FAB38 /* Default@2x.png */; };
+		95F1E0E115AF5216005FAB38 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F1E0DD15AF5216005FAB38 /* Icon.png */; };
+		95F1E0E215AF5216005FAB38 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F1E0DE15AF5216005FAB38 /* Icon@2x.png */; };
+		95F1E0E815AF522C005FAB38 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F1E0E415AF522C005FAB38 /* Default.png */; };
+		95F1E0E915AF522C005FAB38 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F1E0E515AF522C005FAB38 /* Default@2x.png */; };
+		95F1E0EA15AF522C005FAB38 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F1E0E615AF522C005FAB38 /* Icon.png */; };
+		95F1E0EB15AF522C005FAB38 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F1E0E715AF522C005FAB38 /* Icon@2x.png */; };
+		95F1E0EE15AF59AC005FAB38 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483F25A14D03FBE005E4216 /* ViewController.m */; };
+		95F1E0EF15AF59AC005FAB38 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483F25714D03FBE005E4216 /* AppDelegate.m */; };
+		95F1E0F015AF59AC005FAB38 /* RWRequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D9209D6E158A2BE90074A719 /* RWRequestHelper.m */; };
+		95F1E0F115AF59AC005FAB38 /* RWRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D98C3687158A0928005411E8 /* RWRequest.m */; };
+		95F1E0F215AF59AC005FAB38 /* JSONDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D98C368C158A0928005411E8 /* JSONDataParser.m */; };
+		95F1E0F315AF59AC005FAB38 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854C914D172FE0030BD03 /* NSObject+SBJson.m */; };
+		95F1E0F415AF59AC005FAB38 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854CC14D172FE0030BD03 /* SBJsonParser.m */; };
+		95F1E0F515AF59AC005FAB38 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854CE14D172FE0030BD03 /* SBJsonStreamParser.m */; };
+		95F1E0F615AF59AC005FAB38 /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854D014D172FE0030BD03 /* SBJsonStreamParserAccumulator.m */; };
+		95F1E0F715AF59AC005FAB38 /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854D214D172FE0030BD03 /* SBJsonStreamParserAdapter.m */; };
+		95F1E0F815AF59AC005FAB38 /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854D414D172FE0030BD03 /* SBJsonStreamParserState.m */; };
+		95F1E0F915AF59AC005FAB38 /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854D614D172FE0030BD03 /* SBJsonStreamWriter.m */; };
+		95F1E0FA15AF59AC005FAB38 /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854D814D172FE0030BD03 /* SBJsonStreamWriterAccumulator.m */; };
+		95F1E0FB15AF59AC005FAB38 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854DA14D172FE0030BD03 /* SBJsonStreamWriterState.m */; };
+		95F1E0FC15AF59AC005FAB38 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854DC14D172FE0030BD03 /* SBJsonTokeniser.m */; };
+		95F1E0FD15AF59AC005FAB38 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854DE14D172FE0030BD03 /* SBJsonUTF8Stream.m */; };
+		95F1E0FE15AF59AC005FAB38 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854E014D172FE0030BD03 /* SBJsonWriter.m */; };
+		95F1E0FF15AF59AC005FAB38 /* TownWIzardNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E691001E14E56B7E003DE64B /* TownWIzardNavigationBar.m */; };
+		95F1E10015AF59AC005FAB38 /* FacebookHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F275C14E949FE0040F281 /* FacebookHelper.m */; };
+		95F1E10115AF59AC005FAB38 /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F271E14E9448B0040F281 /* Facebook.m */; };
+		95F1E10215AF59AC005FAB38 /* FBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F272214E9448B0040F281 /* FBDialog.m */; };
+		95F1E10315AF59AC005FAB38 /* FBLoginDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F272414E9448B0040F281 /* FBLoginDialog.m */; };
+		95F1E10415AF59AC005FAB38 /* FBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F272614E9448B0040F281 /* FBRequest.m */; };
+		95F1E10515AF59AC005FAB38 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854C414D16F620030BD03 /* Reachability.m */; };
+		95F1E10615AF59AC005FAB38 /* RequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854B314D146490030BD03 /* RequestHelper.m */; };
+		95F1E10715AF59AC005FAB38 /* UIApplication+NetworkActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = E61A4DDB14E166BC0039E970 /* UIApplication+NetworkActivity.m */; };
+		95F1E10815AF59AC005FAB38 /* DataHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F279514E9613D0040F281 /* DataHolder.m */; };
+		95F1E10915AF59AC005FAB38 /* FacebookCheckinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F277D14E960CA0040F281 /* FacebookCheckinViewController.m */; };
+		95F1E10A15AF59AC005FAB38 /* FacebookFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F278014E960CA0040F281 /* FacebookFriend.m */; };
+		95F1E10B15AF59AC005FAB38 /* FacebookFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F278214E960CA0040F281 /* FacebookFriendCell.m */; };
+		95F1E10C15AF59AC005FAB38 /* FacebookPlacesViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F278514E960CA0040F281 /* FacebookPlacesViewCell.m */; };
+		95F1E10D15AF59AC005FAB38 /* FacebookPlacesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F278714E960CA0040F281 /* FacebookPlacesViewController.m */; };
+		95F1E10E15AF59AC005FAB38 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F278914E960CA0040F281 /* Place.m */; };
+		95F1E10F15AF59AC005FAB38 /* AddCaptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E691000814E550B3003DE64B /* AddCaptionViewController.m */; };
+		95F1E11015AF59AC005FAB38 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E691FF8B14E50981003DE64B /* MapAnnotation.m */; };
+		95F1E11115AF59AC005FAB38 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E691FF8D14E50981003DE64B /* MapViewController.m */; };
+		95F1E11215AF59AC005FAB38 /* SubMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854AA14D142430030BD03 /* SubMenuViewController.m */; };
+		95F1E11315AF59AC005FAB38 /* PartnerMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F875E14D6C81F005EE200 /* PartnerMenuViewController.m */; };
+		95F1E11415AF59AC005FAB38 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D90D0DFD158F06500026828E /* main.m */; };
+		95F1E11515AF59AC005FAB38 /* RWURLRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = D90D0E07158F237F0026828E /* RWURLRequestBuilder.m */; };
+		95F1E11615AF59AC005FAB38 /* ImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D9C19B7D158F5D88005F2F31 /* ImageLoader.m */; };
+		95F1E11715AF59AC005FAB38 /* ImageLoadingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D9C19B7F158F5D88005F2F31 /* ImageLoadingOperation.m */; };
+		95F1E11915AF59AC005FAB38 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483F24714D03FBE005E4216 /* UIKit.framework */; };
+		95F1E11A15AF59AC005FAB38 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 847F877114D6E862005EE200 /* libTestFlight.a */; };
+		95F1E11B15AF59AC005FAB38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483F24914D03FBE005E4216 /* Foundation.framework */; };
+		95F1E11C15AF59AC005FAB38 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848854F414D1793A0030BD03 /* CFNetwork.framework */; };
+		95F1E11D15AF59AC005FAB38 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848854F614D179700030BD03 /* SystemConfiguration.framework */; };
+		95F1E11E15AF59AC005FAB38 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E691FF9214E50A03003DE64B /* MapKit.framework */; };
+		95F1E11F15AF59AC005FAB38 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848854F214D179190030BD03 /* Security.framework */; };
+		95F1E12015AF59AC005FAB38 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84818E0514D7DE0600BBCD7F /* CoreLocation.framework */; };
+		95F1E12115AF59AC005FAB38 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483F24B14D03FBE005E4216 /* CoreGraphics.framework */; };
+		95F1E12315AF59AC005FAB38 /* FacebookCheckinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E63F277E14E960CA0040F281 /* FacebookCheckinViewController.xib */; };
+		95F1E12415AF59AC005FAB38 /* FacebookFriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E63F278314E960CA0040F281 /* FacebookFriendCell.xib */; };
+		95F1E12515AF59AC005FAB38 /* PlacesViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E63F278A14E960CA0040F281 /* PlacesViewCell.xib */; };
+		95F1E12615AF59AC005FAB38 /* post_button.png in Resources */ = {isa = PBXBuildFile; fileRef = E663F04214EA4883004AB94C /* post_button.png */; };
+		95F1E12715AF59AC005FAB38 /* Image-Upload-Bar.png in Resources */ = {isa = PBXBuildFile; fileRef = E63F271214E917930040F281 /* Image-Upload-Bar.png */; };
+		95F1E12815AF59AC005FAB38 /* Image-Border.png in Resources */ = {isa = PBXBuildFile; fileRef = E691002414E5720F003DE64B /* Image-Border.png */; };
+		95F1E12915AF59AC005FAB38 /* Btn-Camera.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000C14E55890003DE64B /* Btn-Camera.png */; };
+		95F1E12A15AF59AC005FAB38 /* Btn-Cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000D14E55890003DE64B /* Btn-Cancel.png */; };
+		95F1E12B15AF59AC005FAB38 /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
+		95F1E12C15AF59AC005FAB38 /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
+		95F1E12D15AF59AC005FAB38 /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
+		95F1E12E15AF59AC005FAB38 /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
+		95F1E12F15AF59AC005FAB38 /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
+		95F1E13015AF59AC005FAB38 /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
+		95F1E13115AF59AC005FAB38 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
+		95F1E13215AF59AC005FAB38 /* AddCaptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691000914E550B3003DE64B /* AddCaptionViewController.xib */; };
+		95F1E13315AF59AC005FAB38 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D90D0DFA158F06500026828E /* InfoPlist.strings */; };
+		95F1E13415AF59AC005FAB38 /* back_arrow_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C50159074E5006FFF7E /* back_arrow_retina.png */; };
+		95F1E13515AF59AC005FAB38 /* back_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C51159074E5006FFF7E /* back_arrow.png */; };
+		95F1E13615AF59AC005FAB38 /* go_background.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C52159074E5006FFF7E /* go_background.png */; };
+		95F1E13715AF59AC005FAB38 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C53159074E5006FFF7E /* info.png */; };
+		95F1E13815AF59AC005FAB38 /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C54159074E5006FFF7E /* left.png */; };
+		95F1E13915AF59AC005FAB38 /* post.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C55159074E5006FFF7E /* post.png */; };
+		95F1E13A15AF59AC005FAB38 /* post@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C56159074E5006FFF7E /* post@2x.png */; };
+		95F1E13B15AF59AC005FAB38 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C57159074E5006FFF7E /* right.png */; };
+		95F1E13C15AF59AC005FAB38 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C58159074E5006FFF7E /* search.png */; };
+		95F1E13D15AF59AC005FAB38 /* tag_320x405.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C59159074E5006FFF7E /* tag_320x405.png */; };
+		95F1E13E15AF59AC005FAB38 /* tag640x810.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C5A159074E5006FFF7E /* tag640x810.png */; };
+		95F1E13F15AF59AC005FAB38 /* topBar.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C5B159074E5006FFF7E /* topBar.png */; };
+		95F1E14015AF59AC005FAB38 /* twHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C5C159074E5006FFF7E /* twHeader.png */; };
+		95F1E14C15AF5BF3005FAB38 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F1E14815AF5BF3005FAB38 /* Default.png */; };
+		95F1E14D15AF5BF3005FAB38 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F1E14915AF5BF3005FAB38 /* Default@2x.png */; };
+		95F1E14E15AF5BF3005FAB38 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F1E14A15AF5BF3005FAB38 /* Icon.png */; };
+		95F1E14F15AF5BF3005FAB38 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F1E14B15AF5BF3005FAB38 /* Icon@2x.png */; };
 		D90D0DF4158F06500026828E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483F24714D03FBE005E4216 /* UIKit.framework */; };
 		D90D0DF5158F06500026828E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483F24914D03FBE005E4216 /* Foundation.framework */; };
 		D90D0DF6158F06500026828E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483F24B14D03FBE005E4216 /* CoreGraphics.framework */; };
@@ -511,6 +936,36 @@
 		848854F414D1793A0030BD03 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		848854F614D179700030BD03 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8488550914D1ABAA0030BD03 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		9535256B15AE021500857F12 /* MyKnoxzilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyKnoxzilla.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9535256D15AE021500857F12 /* townWizard-partner-template copy3-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizard-partner-template copy3-Info.plist"; path = "/Users/Darren/Documents/TownWizardApps/townWizard-partner-template copy3-Info.plist"; sourceTree = "<absolute>"; };
+		953525CF15AE128B00857F12 /* HubCity360.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HubCity360.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		953525D115AE128C00857F12 /* townWizard-partner-template copy4-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizard-partner-template copy4-Info.plist"; path = "/Users/Darren/Documents/TownWizardApps/townWizard-partner-template copy4-Info.plist"; sourceTree = "<absolute>"; };
+		9535263C15AE1E6800857F12 /* Newark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Newark.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9535263E15AE1E6800857F12 /* townWizard-partner-template copy5-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizard-partner-template copy5-Info.plist"; path = "/Users/Darren/Documents/TownWizardApps/townWizard-partner-template copy5-Info.plist"; sourceTree = "<absolute>"; };
+		9546290715AF615D00A39C65 /* JaxBeachVibe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JaxBeachVibe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9546290915AF615E00A39C65 /* townWizard-partner-template copy7-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizard-partner-template copy7-Info.plist"; path = "/Users/Darren/Documents/TownWizardApps/townWizard-partner-template copy7-Info.plist"; sourceTree = "<absolute>"; };
+		9546290B15AF631000A39C65 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		9546290C15AF631000A39C65 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		9546290D15AF631000A39C65 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		9546290E15AF631000A39C65 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		95F1E0D215AF513B005FAB38 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		95F1E0D315AF513B005FAB38 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		95F1E0D415AF513B005FAB38 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		95F1E0D515AF513B005FAB38 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		95F1E0DB15AF5216005FAB38 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		95F1E0DC15AF5216005FAB38 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		95F1E0DD15AF5216005FAB38 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		95F1E0DE15AF5216005FAB38 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		95F1E0E415AF522C005FAB38 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		95F1E0E515AF522C005FAB38 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		95F1E0E615AF522C005FAB38 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		95F1E0E715AF522C005FAB38 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		95F1E14415AF59AC005FAB38 /* The Hague.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Hague.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		95F1E14615AF59AD005FAB38 /* townWizard-partner-template copy6-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizard-partner-template copy6-Info.plist"; path = "/Users/Darren/Documents/TownWizardApps/townWizard-partner-template copy6-Info.plist"; sourceTree = "<absolute>"; };
+		95F1E14815AF5BF3005FAB38 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		95F1E14915AF5BF3005FAB38 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		95F1E14A15AF5BF3005FAB38 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		95F1E14B15AF5BF3005FAB38 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		D90D0DF2158F06500026828E /* townWizard-partner-template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "townWizard-partner-template.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90D0DF9158F06500026828E /* townWizard-partner-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "townWizard-partner-Info.plist"; sourceTree = "<group>"; };
 		D90D0DFB158F06500026828E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -659,6 +1114,86 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9535253F15AE021500857F12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9535254015AE021500857F12 /* UIKit.framework in Frameworks */,
+				9535254115AE021500857F12 /* libTestFlight.a in Frameworks */,
+				9535254215AE021500857F12 /* Foundation.framework in Frameworks */,
+				9535254315AE021500857F12 /* CFNetwork.framework in Frameworks */,
+				9535254415AE021500857F12 /* SystemConfiguration.framework in Frameworks */,
+				9535254515AE021500857F12 /* MapKit.framework in Frameworks */,
+				9535254615AE021500857F12 /* Security.framework in Frameworks */,
+				9535254715AE021500857F12 /* CoreLocation.framework in Frameworks */,
+				9535254815AE021500857F12 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		953525A315AE128B00857F12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				953525A415AE128B00857F12 /* UIKit.framework in Frameworks */,
+				953525A515AE128B00857F12 /* libTestFlight.a in Frameworks */,
+				953525A615AE128B00857F12 /* Foundation.framework in Frameworks */,
+				953525A715AE128B00857F12 /* CFNetwork.framework in Frameworks */,
+				953525A815AE128B00857F12 /* SystemConfiguration.framework in Frameworks */,
+				953525A915AE128B00857F12 /* MapKit.framework in Frameworks */,
+				953525AA15AE128B00857F12 /* Security.framework in Frameworks */,
+				953525AB15AE128B00857F12 /* CoreLocation.framework in Frameworks */,
+				953525AC15AE128B00857F12 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9535261015AE1E6800857F12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9535261115AE1E6800857F12 /* UIKit.framework in Frameworks */,
+				9535261215AE1E6800857F12 /* libTestFlight.a in Frameworks */,
+				9535261315AE1E6800857F12 /* Foundation.framework in Frameworks */,
+				9535261415AE1E6800857F12 /* CFNetwork.framework in Frameworks */,
+				9535261515AE1E6800857F12 /* SystemConfiguration.framework in Frameworks */,
+				9535261615AE1E6800857F12 /* MapKit.framework in Frameworks */,
+				9535261715AE1E6800857F12 /* Security.framework in Frameworks */,
+				9535261815AE1E6800857F12 /* CoreLocation.framework in Frameworks */,
+				9535261915AE1E6800857F12 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		954628DB15AF615D00A39C65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				954628DC15AF615D00A39C65 /* UIKit.framework in Frameworks */,
+				954628DD15AF615D00A39C65 /* libTestFlight.a in Frameworks */,
+				954628DE15AF615D00A39C65 /* Foundation.framework in Frameworks */,
+				954628DF15AF615D00A39C65 /* CFNetwork.framework in Frameworks */,
+				954628E015AF615D00A39C65 /* SystemConfiguration.framework in Frameworks */,
+				954628E115AF615D00A39C65 /* MapKit.framework in Frameworks */,
+				954628E215AF615D00A39C65 /* Security.framework in Frameworks */,
+				954628E315AF615D00A39C65 /* CoreLocation.framework in Frameworks */,
+				954628E415AF615D00A39C65 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95F1E11815AF59AC005FAB38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95F1E11915AF59AC005FAB38 /* UIKit.framework in Frameworks */,
+				95F1E11A15AF59AC005FAB38 /* libTestFlight.a in Frameworks */,
+				95F1E11B15AF59AC005FAB38 /* Foundation.framework in Frameworks */,
+				95F1E11C15AF59AC005FAB38 /* CFNetwork.framework in Frameworks */,
+				95F1E11D15AF59AC005FAB38 /* SystemConfiguration.framework in Frameworks */,
+				95F1E11E15AF59AC005FAB38 /* MapKit.framework in Frameworks */,
+				95F1E11F15AF59AC005FAB38 /* Security.framework in Frameworks */,
+				95F1E12015AF59AC005FAB38 /* CoreLocation.framework in Frameworks */,
+				95F1E12115AF59AC005FAB38 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D90D0DEF158F06500026828E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -765,6 +1300,11 @@
 				8483F24414D03FBE005E4216 /* Products */,
 				3D8DDA9215A47892001D48D2 /* townWizard-partner-template copy-Info.plist */,
 				3D8DDAF615A47A71001D48D2 /* townWizard-partner-template copy2-Info.plist */,
+				9535256D15AE021500857F12 /* townWizard-partner-template copy3-Info.plist */,
+				953525D115AE128C00857F12 /* townWizard-partner-template copy4-Info.plist */,
+				9535263E15AE1E6800857F12 /* townWizard-partner-template copy5-Info.plist */,
+				95F1E14615AF59AD005FAB38 /* townWizard-partner-template copy6-Info.plist */,
+				9546290915AF615E00A39C65 /* townWizard-partner-template copy7-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -777,6 +1317,11 @@
 				D90D0DF2158F06500026828E /* townWizard-partner-template.app */,
 				3D8DDA9015A47892001D48D2 /* tw-p1.app */,
 				3D8DDAF415A47A71001D48D2 /* tw-p93.app */,
+				9535256B15AE021500857F12 /* MyKnoxzilla.app */,
+				953525CF15AE128B00857F12 /* HubCity360.app */,
+				9535263C15AE1E6800857F12 /* Newark.app */,
+				95F1E14415AF59AC005FAB38 /* The Hague.app */,
+				9546290715AF615D00A39C65 /* JaxBeachVibe.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -911,6 +1456,66 @@
 			name = CustomNavigationBar;
 			sourceTree = "<group>";
 		};
+		9546290A15AF631000A39C65 /* jacksonville */ = {
+			isa = PBXGroup;
+			children = (
+				9546290B15AF631000A39C65 /* Default.png */,
+				9546290C15AF631000A39C65 /* Default@2x.png */,
+				9546290D15AF631000A39C65 /* Icon.png */,
+				9546290E15AF631000A39C65 /* Icon@2x.png */,
+			);
+			name = jacksonville;
+			path = "townWizard-partner/Images/jacksonville";
+			sourceTree = SOURCE_ROOT;
+		};
+		95F1E0D115AF513B005FAB38 /* knoxville */ = {
+			isa = PBXGroup;
+			children = (
+				95F1E0D215AF513B005FAB38 /* Default.png */,
+				95F1E0D315AF513B005FAB38 /* Default@2x.png */,
+				95F1E0D415AF513B005FAB38 /* Icon.png */,
+				95F1E0D515AF513B005FAB38 /* Icon@2x.png */,
+			);
+			name = knoxville;
+			path = "townWizard-partner/Images/knoxville";
+			sourceTree = SOURCE_ROOT;
+		};
+		95F1E0DA15AF5216005FAB38 /* algood */ = {
+			isa = PBXGroup;
+			children = (
+				95F1E0DB15AF5216005FAB38 /* Default.png */,
+				95F1E0DC15AF5216005FAB38 /* Default@2x.png */,
+				95F1E0DD15AF5216005FAB38 /* Icon.png */,
+				95F1E0DE15AF5216005FAB38 /* Icon@2x.png */,
+			);
+			name = algood;
+			path = "townWizard-partner/Images/algood";
+			sourceTree = SOURCE_ROOT;
+		};
+		95F1E0E315AF522C005FAB38 /* newark */ = {
+			isa = PBXGroup;
+			children = (
+				95F1E0E415AF522C005FAB38 /* Default.png */,
+				95F1E0E515AF522C005FAB38 /* Default@2x.png */,
+				95F1E0E615AF522C005FAB38 /* Icon.png */,
+				95F1E0E715AF522C005FAB38 /* Icon@2x.png */,
+			);
+			name = newark;
+			path = "townWizard-partner/Images/newark";
+			sourceTree = SOURCE_ROOT;
+		};
+		95F1E14715AF5BF3005FAB38 /* hague */ = {
+			isa = PBXGroup;
+			children = (
+				95F1E14815AF5BF3005FAB38 /* Default.png */,
+				95F1E14915AF5BF3005FAB38 /* Default@2x.png */,
+				95F1E14A15AF5BF3005FAB38 /* Icon.png */,
+				95F1E14B15AF5BF3005FAB38 /* Icon@2x.png */,
+			);
+			name = hague;
+			path = "townWizard-partner/Images/hague";
+			sourceTree = SOURCE_ROOT;
+		};
 		D90D0DF7158F06500026828E /* townWizard-partner */ = {
 			isa = PBXGroup;
 			children = (
@@ -983,6 +1588,11 @@
 		D94CA23C1594543E0027A223 /* Application Icons */ = {
 			isa = PBXGroup;
 			children = (
+				9546290A15AF631000A39C65 /* jacksonville */,
+				95F1E14715AF5BF3005FAB38 /* hague */,
+				95F1E0E315AF522C005FAB38 /* newark */,
+				95F1E0DA15AF5216005FAB38 /* algood */,
+				95F1E0D115AF513B005FAB38 /* knoxville */,
 				3D8DDAF715A47AB6001D48D2 /* tw-p93 */,
 				3D8DDA9315A47968001D48D2 /* tw-p1 */,
 				D92B0ED61589D3B6006894BE /* ContainerApp */,
@@ -1216,6 +1826,91 @@
 			productReference = 8483F24314D03FBE005E4216 /* TownWizard.app */;
 			productType = "com.apple.product-type.application";
 		};
+		9535251315AE021500857F12 /* knoxville */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9535256815AE021500857F12 /* Build configuration list for PBXNativeTarget "knoxville" */;
+			buildPhases = (
+				9535251415AE021500857F12 /* Sources */,
+				9535253F15AE021500857F12 /* Frameworks */,
+				9535254915AE021500857F12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = knoxville;
+			productName = "townWizard-partner";
+			productReference = 9535256B15AE021500857F12 /* MyKnoxzilla.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9535257715AE128B00857F12 /* algood */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 953525CC15AE128B00857F12 /* Build configuration list for PBXNativeTarget "algood" */;
+			buildPhases = (
+				9535257815AE128B00857F12 /* Sources */,
+				953525A315AE128B00857F12 /* Frameworks */,
+				953525AD15AE128B00857F12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = algood;
+			productName = "townWizard-partner";
+			productReference = 953525CF15AE128B00857F12 /* HubCity360.app */;
+			productType = "com.apple.product-type.application";
+		};
+		953525E415AE1E6800857F12 /* newark */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9535263915AE1E6800857F12 /* Build configuration list for PBXNativeTarget "newark" */;
+			buildPhases = (
+				953525E515AE1E6800857F12 /* Sources */,
+				9535261015AE1E6800857F12 /* Frameworks */,
+				9535261A15AE1E6800857F12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = newark;
+			productName = "townWizard-partner";
+			productReference = 9535263C15AE1E6800857F12 /* Newark.app */;
+			productType = "com.apple.product-type.application";
+		};
+		954628AF15AF615D00A39C65 /* jacksonville */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9546290415AF615D00A39C65 /* Build configuration list for PBXNativeTarget "jacksonville" */;
+			buildPhases = (
+				954628B015AF615D00A39C65 /* Sources */,
+				954628DB15AF615D00A39C65 /* Frameworks */,
+				954628E515AF615D00A39C65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = jacksonville;
+			productName = "townWizard-partner";
+			productReference = 9546290715AF615D00A39C65 /* JaxBeachVibe.app */;
+			productType = "com.apple.product-type.application";
+		};
+		95F1E0EC15AF59AC005FAB38 /* hague */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95F1E14115AF59AC005FAB38 /* Build configuration list for PBXNativeTarget "hague" */;
+			buildPhases = (
+				95F1E0ED15AF59AC005FAB38 /* Sources */,
+				95F1E11815AF59AC005FAB38 /* Frameworks */,
+				95F1E12215AF59AC005FAB38 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = hague;
+			productName = "townWizard-partner";
+			productReference = 95F1E14415AF59AC005FAB38 /* The Hague.app */;
+			productType = "com.apple.product-type.application";
+		};
 		D90D0DF1158F06500026828E /* townWizard-partner-template */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D90D0E03158F06500026828E /* Build configuration list for PBXNativeTarget "townWizard-partner-template" */;
@@ -1295,6 +1990,11 @@
 			targets = (
 				8483F24214D03FBE005E4216 /* townWizard-container */,
 				D90D0DF1158F06500026828E /* townWizard-partner-template */,
+				954628AF15AF615D00A39C65 /* jacksonville */,
+				95F1E0EC15AF59AC005FAB38 /* hague */,
+				9535251315AE021500857F12 /* knoxville */,
+				9535257715AE128B00857F12 /* algood */,
+				953525E415AE1E6800857F12 /* newark */,
 				3D8DDA3815A47892001D48D2 /* tw-p1 */,
 				3D8DDA9C15A47A71001D48D2 /* tw-p93 */,
 				E61A960C14FD26D1006E5F24 /* CedarTesting */,
@@ -1438,6 +2138,211 @@
 				D9FA2C7C1590751B006FFF7E /* Default@2x.png in Resources */,
 				D9FA2C7D1590751B006FFF7E /* icon.png in Resources */,
 				D9FA2C7E1590751B006FFF7E /* icon@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9535254915AE021500857F12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9535254A15AE021500857F12 /* FacebookCheckinViewController.xib in Resources */,
+				9535254B15AE021500857F12 /* FacebookFriendCell.xib in Resources */,
+				9535254C15AE021500857F12 /* PlacesViewCell.xib in Resources */,
+				9535254D15AE021500857F12 /* post_button.png in Resources */,
+				9535254E15AE021500857F12 /* Image-Upload-Bar.png in Resources */,
+				9535254F15AE021500857F12 /* Image-Border.png in Resources */,
+				9535255015AE021500857F12 /* Btn-Camera.png in Resources */,
+				9535255115AE021500857F12 /* Btn-Cancel.png in Resources */,
+				9535255215AE021500857F12 /* Btn-Upload.png in Resources */,
+				9535255315AE021500857F12 /* Write-Caption.png in Resources */,
+				9535255415AE021500857F12 /* Btn-Directions.png in Resources */,
+				9535255515AE021500857F12 /* PhotosPageViewController.xib in Resources */,
+				9535255615AE021500857F12 /* PartnerMenuViewController.xib in Resources */,
+				9535255715AE021500857F12 /* SubMenuViewController.xib in Resources */,
+				9535255815AE021500857F12 /* MapViewController.xib in Resources */,
+				9535255915AE021500857F12 /* AddCaptionViewController.xib in Resources */,
+				9535255A15AE021500857F12 /* InfoPlist.strings in Resources */,
+				9535255B15AE021500857F12 /* back_arrow_retina.png in Resources */,
+				9535255C15AE021500857F12 /* back_arrow.png in Resources */,
+				9535255D15AE021500857F12 /* go_background.png in Resources */,
+				9535255E15AE021500857F12 /* info.png in Resources */,
+				9535255F15AE021500857F12 /* left.png in Resources */,
+				9535256015AE021500857F12 /* post.png in Resources */,
+				9535256115AE021500857F12 /* post@2x.png in Resources */,
+				9535256215AE021500857F12 /* right.png in Resources */,
+				9535256315AE021500857F12 /* search.png in Resources */,
+				9535256415AE021500857F12 /* tag_320x405.png in Resources */,
+				9535256515AE021500857F12 /* tag640x810.png in Resources */,
+				9535256615AE021500857F12 /* topBar.png in Resources */,
+				9535256715AE021500857F12 /* twHeader.png in Resources */,
+				95F1E0D615AF513B005FAB38 /* Default.png in Resources */,
+				95F1E0D715AF513B005FAB38 /* Default@2x.png in Resources */,
+				95F1E0D815AF513B005FAB38 /* Icon.png in Resources */,
+				95F1E0D915AF513B005FAB38 /* Icon@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		953525AD15AE128B00857F12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				953525AE15AE128B00857F12 /* FacebookCheckinViewController.xib in Resources */,
+				953525AF15AE128B00857F12 /* FacebookFriendCell.xib in Resources */,
+				953525B015AE128B00857F12 /* PlacesViewCell.xib in Resources */,
+				953525B115AE128B00857F12 /* post_button.png in Resources */,
+				953525B215AE128B00857F12 /* Image-Upload-Bar.png in Resources */,
+				953525B315AE128B00857F12 /* Image-Border.png in Resources */,
+				953525B415AE128B00857F12 /* Btn-Camera.png in Resources */,
+				953525B515AE128B00857F12 /* Btn-Cancel.png in Resources */,
+				953525B615AE128B00857F12 /* Btn-Upload.png in Resources */,
+				953525B715AE128B00857F12 /* Write-Caption.png in Resources */,
+				953525B815AE128B00857F12 /* Btn-Directions.png in Resources */,
+				953525B915AE128B00857F12 /* PhotosPageViewController.xib in Resources */,
+				953525BA15AE128B00857F12 /* PartnerMenuViewController.xib in Resources */,
+				953525BB15AE128B00857F12 /* SubMenuViewController.xib in Resources */,
+				953525BC15AE128B00857F12 /* MapViewController.xib in Resources */,
+				953525BD15AE128B00857F12 /* AddCaptionViewController.xib in Resources */,
+				953525BE15AE128B00857F12 /* InfoPlist.strings in Resources */,
+				953525BF15AE128B00857F12 /* back_arrow_retina.png in Resources */,
+				953525C015AE128B00857F12 /* back_arrow.png in Resources */,
+				953525C115AE128B00857F12 /* go_background.png in Resources */,
+				953525C215AE128B00857F12 /* info.png in Resources */,
+				953525C315AE128B00857F12 /* left.png in Resources */,
+				953525C415AE128B00857F12 /* post.png in Resources */,
+				953525C515AE128B00857F12 /* post@2x.png in Resources */,
+				953525C615AE128B00857F12 /* right.png in Resources */,
+				953525C715AE128B00857F12 /* search.png in Resources */,
+				953525C815AE128B00857F12 /* tag_320x405.png in Resources */,
+				953525C915AE128B00857F12 /* tag640x810.png in Resources */,
+				953525CA15AE128B00857F12 /* topBar.png in Resources */,
+				953525CB15AE128B00857F12 /* twHeader.png in Resources */,
+				95F1E0DF15AF5216005FAB38 /* Default.png in Resources */,
+				95F1E0E015AF5216005FAB38 /* Default@2x.png in Resources */,
+				95F1E0E115AF5216005FAB38 /* Icon.png in Resources */,
+				95F1E0E215AF5216005FAB38 /* Icon@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9535261A15AE1E6800857F12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9535261B15AE1E6800857F12 /* FacebookCheckinViewController.xib in Resources */,
+				9535261C15AE1E6800857F12 /* FacebookFriendCell.xib in Resources */,
+				9535261D15AE1E6800857F12 /* PlacesViewCell.xib in Resources */,
+				9535261E15AE1E6800857F12 /* post_button.png in Resources */,
+				9535261F15AE1E6800857F12 /* Image-Upload-Bar.png in Resources */,
+				9535262015AE1E6800857F12 /* Image-Border.png in Resources */,
+				9535262115AE1E6800857F12 /* Btn-Camera.png in Resources */,
+				9535262215AE1E6800857F12 /* Btn-Cancel.png in Resources */,
+				9535262315AE1E6800857F12 /* Btn-Upload.png in Resources */,
+				9535262415AE1E6800857F12 /* Write-Caption.png in Resources */,
+				9535262515AE1E6800857F12 /* Btn-Directions.png in Resources */,
+				9535262615AE1E6800857F12 /* PhotosPageViewController.xib in Resources */,
+				9535262715AE1E6800857F12 /* PartnerMenuViewController.xib in Resources */,
+				9535262815AE1E6800857F12 /* SubMenuViewController.xib in Resources */,
+				9535262915AE1E6800857F12 /* MapViewController.xib in Resources */,
+				9535262A15AE1E6800857F12 /* AddCaptionViewController.xib in Resources */,
+				9535262B15AE1E6800857F12 /* InfoPlist.strings in Resources */,
+				9535262C15AE1E6800857F12 /* back_arrow_retina.png in Resources */,
+				9535262D15AE1E6800857F12 /* back_arrow.png in Resources */,
+				9535262E15AE1E6800857F12 /* go_background.png in Resources */,
+				9535262F15AE1E6800857F12 /* info.png in Resources */,
+				9535263015AE1E6800857F12 /* left.png in Resources */,
+				9535263115AE1E6800857F12 /* post.png in Resources */,
+				9535263215AE1E6800857F12 /* post@2x.png in Resources */,
+				9535263315AE1E6800857F12 /* right.png in Resources */,
+				9535263415AE1E6800857F12 /* search.png in Resources */,
+				9535263515AE1E6800857F12 /* tag_320x405.png in Resources */,
+				9535263615AE1E6800857F12 /* tag640x810.png in Resources */,
+				9535263715AE1E6800857F12 /* topBar.png in Resources */,
+				9535263815AE1E6800857F12 /* twHeader.png in Resources */,
+				95F1E0E815AF522C005FAB38 /* Default.png in Resources */,
+				95F1E0E915AF522C005FAB38 /* Default@2x.png in Resources */,
+				95F1E0EA15AF522C005FAB38 /* Icon.png in Resources */,
+				95F1E0EB15AF522C005FAB38 /* Icon@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		954628E515AF615D00A39C65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				954628E615AF615D00A39C65 /* FacebookCheckinViewController.xib in Resources */,
+				954628E715AF615D00A39C65 /* FacebookFriendCell.xib in Resources */,
+				954628E815AF615D00A39C65 /* PlacesViewCell.xib in Resources */,
+				954628E915AF615D00A39C65 /* post_button.png in Resources */,
+				954628EA15AF615D00A39C65 /* Image-Upload-Bar.png in Resources */,
+				954628EB15AF615D00A39C65 /* Image-Border.png in Resources */,
+				954628EC15AF615D00A39C65 /* Btn-Camera.png in Resources */,
+				954628ED15AF615D00A39C65 /* Btn-Cancel.png in Resources */,
+				954628EE15AF615D00A39C65 /* Btn-Upload.png in Resources */,
+				954628EF15AF615D00A39C65 /* Write-Caption.png in Resources */,
+				954628F015AF615D00A39C65 /* Btn-Directions.png in Resources */,
+				954628F115AF615D00A39C65 /* PhotosPageViewController.xib in Resources */,
+				954628F215AF615D00A39C65 /* PartnerMenuViewController.xib in Resources */,
+				954628F315AF615D00A39C65 /* SubMenuViewController.xib in Resources */,
+				954628F415AF615D00A39C65 /* MapViewController.xib in Resources */,
+				954628F515AF615D00A39C65 /* AddCaptionViewController.xib in Resources */,
+				954628F615AF615D00A39C65 /* InfoPlist.strings in Resources */,
+				954628F715AF615D00A39C65 /* back_arrow_retina.png in Resources */,
+				954628F815AF615D00A39C65 /* back_arrow.png in Resources */,
+				954628F915AF615D00A39C65 /* go_background.png in Resources */,
+				954628FA15AF615D00A39C65 /* info.png in Resources */,
+				954628FB15AF615D00A39C65 /* left.png in Resources */,
+				954628FC15AF615D00A39C65 /* post.png in Resources */,
+				954628FD15AF615D00A39C65 /* post@2x.png in Resources */,
+				954628FE15AF615D00A39C65 /* right.png in Resources */,
+				954628FF15AF615D00A39C65 /* search.png in Resources */,
+				9546290015AF615D00A39C65 /* tag_320x405.png in Resources */,
+				9546290115AF615D00A39C65 /* tag640x810.png in Resources */,
+				9546290215AF615D00A39C65 /* topBar.png in Resources */,
+				9546290315AF615D00A39C65 /* twHeader.png in Resources */,
+				9546290F15AF631000A39C65 /* Default.png in Resources */,
+				9546291015AF631000A39C65 /* Default@2x.png in Resources */,
+				9546291115AF631000A39C65 /* Icon.png in Resources */,
+				9546291215AF631000A39C65 /* Icon@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95F1E12215AF59AC005FAB38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95F1E12315AF59AC005FAB38 /* FacebookCheckinViewController.xib in Resources */,
+				95F1E12415AF59AC005FAB38 /* FacebookFriendCell.xib in Resources */,
+				95F1E12515AF59AC005FAB38 /* PlacesViewCell.xib in Resources */,
+				95F1E12615AF59AC005FAB38 /* post_button.png in Resources */,
+				95F1E12715AF59AC005FAB38 /* Image-Upload-Bar.png in Resources */,
+				95F1E12815AF59AC005FAB38 /* Image-Border.png in Resources */,
+				95F1E12915AF59AC005FAB38 /* Btn-Camera.png in Resources */,
+				95F1E12A15AF59AC005FAB38 /* Btn-Cancel.png in Resources */,
+				95F1E12B15AF59AC005FAB38 /* Btn-Upload.png in Resources */,
+				95F1E12C15AF59AC005FAB38 /* Write-Caption.png in Resources */,
+				95F1E12D15AF59AC005FAB38 /* Btn-Directions.png in Resources */,
+				95F1E12E15AF59AC005FAB38 /* PhotosPageViewController.xib in Resources */,
+				95F1E12F15AF59AC005FAB38 /* PartnerMenuViewController.xib in Resources */,
+				95F1E13015AF59AC005FAB38 /* SubMenuViewController.xib in Resources */,
+				95F1E13115AF59AC005FAB38 /* MapViewController.xib in Resources */,
+				95F1E13215AF59AC005FAB38 /* AddCaptionViewController.xib in Resources */,
+				95F1E13315AF59AC005FAB38 /* InfoPlist.strings in Resources */,
+				95F1E13415AF59AC005FAB38 /* back_arrow_retina.png in Resources */,
+				95F1E13515AF59AC005FAB38 /* back_arrow.png in Resources */,
+				95F1E13615AF59AC005FAB38 /* go_background.png in Resources */,
+				95F1E13715AF59AC005FAB38 /* info.png in Resources */,
+				95F1E13815AF59AC005FAB38 /* left.png in Resources */,
+				95F1E13915AF59AC005FAB38 /* post.png in Resources */,
+				95F1E13A15AF59AC005FAB38 /* post@2x.png in Resources */,
+				95F1E13B15AF59AC005FAB38 /* right.png in Resources */,
+				95F1E13C15AF59AC005FAB38 /* search.png in Resources */,
+				95F1E13D15AF59AC005FAB38 /* tag_320x405.png in Resources */,
+				95F1E13E15AF59AC005FAB38 /* tag640x810.png in Resources */,
+				95F1E13F15AF59AC005FAB38 /* topBar.png in Resources */,
+				95F1E14015AF59AC005FAB38 /* twHeader.png in Resources */,
+				95F1E14C15AF5BF3005FAB38 /* Default.png in Resources */,
+				95F1E14D15AF5BF3005FAB38 /* Default@2x.png in Resources */,
+				95F1E14E15AF5BF3005FAB38 /* Icon.png in Resources */,
+				95F1E14F15AF5BF3005FAB38 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1661,6 +2566,251 @@
 				D90D0E08158F237F0026828E /* RWURLRequestBuilder.m in Sources */,
 				D9C19B80158F5D88005F2F31 /* ImageLoader.m in Sources */,
 				D9C19B82158F5D88005F2F31 /* ImageLoadingOperation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9535251415AE021500857F12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9535251515AE021500857F12 /* ViewController.m in Sources */,
+				9535251615AE021500857F12 /* AppDelegate.m in Sources */,
+				9535251715AE021500857F12 /* RWRequestHelper.m in Sources */,
+				9535251815AE021500857F12 /* RWRequest.m in Sources */,
+				9535251915AE021500857F12 /* JSONDataParser.m in Sources */,
+				9535251A15AE021500857F12 /* NSObject+SBJson.m in Sources */,
+				9535251B15AE021500857F12 /* SBJsonParser.m in Sources */,
+				9535251C15AE021500857F12 /* SBJsonStreamParser.m in Sources */,
+				9535251D15AE021500857F12 /* SBJsonStreamParserAccumulator.m in Sources */,
+				9535251E15AE021500857F12 /* SBJsonStreamParserAdapter.m in Sources */,
+				9535251F15AE021500857F12 /* SBJsonStreamParserState.m in Sources */,
+				9535252015AE021500857F12 /* SBJsonStreamWriter.m in Sources */,
+				9535252115AE021500857F12 /* SBJsonStreamWriterAccumulator.m in Sources */,
+				9535252215AE021500857F12 /* SBJsonStreamWriterState.m in Sources */,
+				9535252315AE021500857F12 /* SBJsonTokeniser.m in Sources */,
+				9535252415AE021500857F12 /* SBJsonUTF8Stream.m in Sources */,
+				9535252515AE021500857F12 /* SBJsonWriter.m in Sources */,
+				9535252615AE021500857F12 /* TownWIzardNavigationBar.m in Sources */,
+				9535252715AE021500857F12 /* FacebookHelper.m in Sources */,
+				9535252815AE021500857F12 /* Facebook.m in Sources */,
+				9535252915AE021500857F12 /* FBDialog.m in Sources */,
+				9535252A15AE021500857F12 /* FBLoginDialog.m in Sources */,
+				9535252B15AE021500857F12 /* FBRequest.m in Sources */,
+				9535252C15AE021500857F12 /* Reachability.m in Sources */,
+				9535252D15AE021500857F12 /* RequestHelper.m in Sources */,
+				9535252E15AE021500857F12 /* UIApplication+NetworkActivity.m in Sources */,
+				9535252F15AE021500857F12 /* DataHolder.m in Sources */,
+				9535253015AE021500857F12 /* FacebookCheckinViewController.m in Sources */,
+				9535253115AE021500857F12 /* FacebookFriend.m in Sources */,
+				9535253215AE021500857F12 /* FacebookFriendCell.m in Sources */,
+				9535253315AE021500857F12 /* FacebookPlacesViewCell.m in Sources */,
+				9535253415AE021500857F12 /* FacebookPlacesViewController.m in Sources */,
+				9535253515AE021500857F12 /* Place.m in Sources */,
+				9535253615AE021500857F12 /* AddCaptionViewController.m in Sources */,
+				9535253715AE021500857F12 /* MapAnnotation.m in Sources */,
+				9535253815AE021500857F12 /* MapViewController.m in Sources */,
+				9535253915AE021500857F12 /* SubMenuViewController.m in Sources */,
+				9535253A15AE021500857F12 /* PartnerMenuViewController.m in Sources */,
+				9535253B15AE021500857F12 /* main.m in Sources */,
+				9535253C15AE021500857F12 /* RWURLRequestBuilder.m in Sources */,
+				9535253D15AE021500857F12 /* ImageLoader.m in Sources */,
+				9535253E15AE021500857F12 /* ImageLoadingOperation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9535257815AE128B00857F12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9535257915AE128B00857F12 /* ViewController.m in Sources */,
+				9535257A15AE128B00857F12 /* AppDelegate.m in Sources */,
+				9535257B15AE128B00857F12 /* RWRequestHelper.m in Sources */,
+				9535257C15AE128B00857F12 /* RWRequest.m in Sources */,
+				9535257D15AE128B00857F12 /* JSONDataParser.m in Sources */,
+				9535257E15AE128B00857F12 /* NSObject+SBJson.m in Sources */,
+				9535257F15AE128B00857F12 /* SBJsonParser.m in Sources */,
+				9535258015AE128B00857F12 /* SBJsonStreamParser.m in Sources */,
+				9535258115AE128B00857F12 /* SBJsonStreamParserAccumulator.m in Sources */,
+				9535258215AE128B00857F12 /* SBJsonStreamParserAdapter.m in Sources */,
+				9535258315AE128B00857F12 /* SBJsonStreamParserState.m in Sources */,
+				9535258415AE128B00857F12 /* SBJsonStreamWriter.m in Sources */,
+				9535258515AE128B00857F12 /* SBJsonStreamWriterAccumulator.m in Sources */,
+				9535258615AE128B00857F12 /* SBJsonStreamWriterState.m in Sources */,
+				9535258715AE128B00857F12 /* SBJsonTokeniser.m in Sources */,
+				9535258815AE128B00857F12 /* SBJsonUTF8Stream.m in Sources */,
+				9535258915AE128B00857F12 /* SBJsonWriter.m in Sources */,
+				9535258A15AE128B00857F12 /* TownWIzardNavigationBar.m in Sources */,
+				9535258B15AE128B00857F12 /* FacebookHelper.m in Sources */,
+				9535258C15AE128B00857F12 /* Facebook.m in Sources */,
+				9535258D15AE128B00857F12 /* FBDialog.m in Sources */,
+				9535258E15AE128B00857F12 /* FBLoginDialog.m in Sources */,
+				9535258F15AE128B00857F12 /* FBRequest.m in Sources */,
+				9535259015AE128B00857F12 /* Reachability.m in Sources */,
+				9535259115AE128B00857F12 /* RequestHelper.m in Sources */,
+				9535259215AE128B00857F12 /* UIApplication+NetworkActivity.m in Sources */,
+				9535259315AE128B00857F12 /* DataHolder.m in Sources */,
+				9535259415AE128B00857F12 /* FacebookCheckinViewController.m in Sources */,
+				9535259515AE128B00857F12 /* FacebookFriend.m in Sources */,
+				9535259615AE128B00857F12 /* FacebookFriendCell.m in Sources */,
+				9535259715AE128B00857F12 /* FacebookPlacesViewCell.m in Sources */,
+				9535259815AE128B00857F12 /* FacebookPlacesViewController.m in Sources */,
+				9535259915AE128B00857F12 /* Place.m in Sources */,
+				9535259A15AE128B00857F12 /* AddCaptionViewController.m in Sources */,
+				9535259B15AE128B00857F12 /* MapAnnotation.m in Sources */,
+				9535259C15AE128B00857F12 /* MapViewController.m in Sources */,
+				9535259D15AE128B00857F12 /* SubMenuViewController.m in Sources */,
+				9535259E15AE128B00857F12 /* PartnerMenuViewController.m in Sources */,
+				9535259F15AE128B00857F12 /* main.m in Sources */,
+				953525A015AE128B00857F12 /* RWURLRequestBuilder.m in Sources */,
+				953525A115AE128B00857F12 /* ImageLoader.m in Sources */,
+				953525A215AE128B00857F12 /* ImageLoadingOperation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		953525E515AE1E6800857F12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				953525E615AE1E6800857F12 /* ViewController.m in Sources */,
+				953525E715AE1E6800857F12 /* AppDelegate.m in Sources */,
+				953525E815AE1E6800857F12 /* RWRequestHelper.m in Sources */,
+				953525E915AE1E6800857F12 /* RWRequest.m in Sources */,
+				953525EA15AE1E6800857F12 /* JSONDataParser.m in Sources */,
+				953525EB15AE1E6800857F12 /* NSObject+SBJson.m in Sources */,
+				953525EC15AE1E6800857F12 /* SBJsonParser.m in Sources */,
+				953525ED15AE1E6800857F12 /* SBJsonStreamParser.m in Sources */,
+				953525EE15AE1E6800857F12 /* SBJsonStreamParserAccumulator.m in Sources */,
+				953525EF15AE1E6800857F12 /* SBJsonStreamParserAdapter.m in Sources */,
+				953525F015AE1E6800857F12 /* SBJsonStreamParserState.m in Sources */,
+				953525F115AE1E6800857F12 /* SBJsonStreamWriter.m in Sources */,
+				953525F215AE1E6800857F12 /* SBJsonStreamWriterAccumulator.m in Sources */,
+				953525F315AE1E6800857F12 /* SBJsonStreamWriterState.m in Sources */,
+				953525F415AE1E6800857F12 /* SBJsonTokeniser.m in Sources */,
+				953525F515AE1E6800857F12 /* SBJsonUTF8Stream.m in Sources */,
+				953525F615AE1E6800857F12 /* SBJsonWriter.m in Sources */,
+				953525F715AE1E6800857F12 /* TownWIzardNavigationBar.m in Sources */,
+				953525F815AE1E6800857F12 /* FacebookHelper.m in Sources */,
+				953525F915AE1E6800857F12 /* Facebook.m in Sources */,
+				953525FA15AE1E6800857F12 /* FBDialog.m in Sources */,
+				953525FB15AE1E6800857F12 /* FBLoginDialog.m in Sources */,
+				953525FC15AE1E6800857F12 /* FBRequest.m in Sources */,
+				953525FD15AE1E6800857F12 /* Reachability.m in Sources */,
+				953525FE15AE1E6800857F12 /* RequestHelper.m in Sources */,
+				953525FF15AE1E6800857F12 /* UIApplication+NetworkActivity.m in Sources */,
+				9535260015AE1E6800857F12 /* DataHolder.m in Sources */,
+				9535260115AE1E6800857F12 /* FacebookCheckinViewController.m in Sources */,
+				9535260215AE1E6800857F12 /* FacebookFriend.m in Sources */,
+				9535260315AE1E6800857F12 /* FacebookFriendCell.m in Sources */,
+				9535260415AE1E6800857F12 /* FacebookPlacesViewCell.m in Sources */,
+				9535260515AE1E6800857F12 /* FacebookPlacesViewController.m in Sources */,
+				9535260615AE1E6800857F12 /* Place.m in Sources */,
+				9535260715AE1E6800857F12 /* AddCaptionViewController.m in Sources */,
+				9535260815AE1E6800857F12 /* MapAnnotation.m in Sources */,
+				9535260915AE1E6800857F12 /* MapViewController.m in Sources */,
+				9535260A15AE1E6800857F12 /* SubMenuViewController.m in Sources */,
+				9535260B15AE1E6800857F12 /* PartnerMenuViewController.m in Sources */,
+				9535260C15AE1E6800857F12 /* main.m in Sources */,
+				9535260D15AE1E6800857F12 /* RWURLRequestBuilder.m in Sources */,
+				9535260E15AE1E6800857F12 /* ImageLoader.m in Sources */,
+				9535260F15AE1E6800857F12 /* ImageLoadingOperation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		954628B015AF615D00A39C65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				954628B115AF615D00A39C65 /* ViewController.m in Sources */,
+				954628B215AF615D00A39C65 /* AppDelegate.m in Sources */,
+				954628B315AF615D00A39C65 /* RWRequestHelper.m in Sources */,
+				954628B415AF615D00A39C65 /* RWRequest.m in Sources */,
+				954628B515AF615D00A39C65 /* JSONDataParser.m in Sources */,
+				954628B615AF615D00A39C65 /* NSObject+SBJson.m in Sources */,
+				954628B715AF615D00A39C65 /* SBJsonParser.m in Sources */,
+				954628B815AF615D00A39C65 /* SBJsonStreamParser.m in Sources */,
+				954628B915AF615D00A39C65 /* SBJsonStreamParserAccumulator.m in Sources */,
+				954628BA15AF615D00A39C65 /* SBJsonStreamParserAdapter.m in Sources */,
+				954628BB15AF615D00A39C65 /* SBJsonStreamParserState.m in Sources */,
+				954628BC15AF615D00A39C65 /* SBJsonStreamWriter.m in Sources */,
+				954628BD15AF615D00A39C65 /* SBJsonStreamWriterAccumulator.m in Sources */,
+				954628BE15AF615D00A39C65 /* SBJsonStreamWriterState.m in Sources */,
+				954628BF15AF615D00A39C65 /* SBJsonTokeniser.m in Sources */,
+				954628C015AF615D00A39C65 /* SBJsonUTF8Stream.m in Sources */,
+				954628C115AF615D00A39C65 /* SBJsonWriter.m in Sources */,
+				954628C215AF615D00A39C65 /* TownWIzardNavigationBar.m in Sources */,
+				954628C315AF615D00A39C65 /* FacebookHelper.m in Sources */,
+				954628C415AF615D00A39C65 /* Facebook.m in Sources */,
+				954628C515AF615D00A39C65 /* FBDialog.m in Sources */,
+				954628C615AF615D00A39C65 /* FBLoginDialog.m in Sources */,
+				954628C715AF615D00A39C65 /* FBRequest.m in Sources */,
+				954628C815AF615D00A39C65 /* Reachability.m in Sources */,
+				954628C915AF615D00A39C65 /* RequestHelper.m in Sources */,
+				954628CA15AF615D00A39C65 /* UIApplication+NetworkActivity.m in Sources */,
+				954628CB15AF615D00A39C65 /* DataHolder.m in Sources */,
+				954628CC15AF615D00A39C65 /* FacebookCheckinViewController.m in Sources */,
+				954628CD15AF615D00A39C65 /* FacebookFriend.m in Sources */,
+				954628CE15AF615D00A39C65 /* FacebookFriendCell.m in Sources */,
+				954628CF15AF615D00A39C65 /* FacebookPlacesViewCell.m in Sources */,
+				954628D015AF615D00A39C65 /* FacebookPlacesViewController.m in Sources */,
+				954628D115AF615D00A39C65 /* Place.m in Sources */,
+				954628D215AF615D00A39C65 /* AddCaptionViewController.m in Sources */,
+				954628D315AF615D00A39C65 /* MapAnnotation.m in Sources */,
+				954628D415AF615D00A39C65 /* MapViewController.m in Sources */,
+				954628D515AF615D00A39C65 /* SubMenuViewController.m in Sources */,
+				954628D615AF615D00A39C65 /* PartnerMenuViewController.m in Sources */,
+				954628D715AF615D00A39C65 /* main.m in Sources */,
+				954628D815AF615D00A39C65 /* RWURLRequestBuilder.m in Sources */,
+				954628D915AF615D00A39C65 /* ImageLoader.m in Sources */,
+				954628DA15AF615D00A39C65 /* ImageLoadingOperation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95F1E0ED15AF59AC005FAB38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95F1E0EE15AF59AC005FAB38 /* ViewController.m in Sources */,
+				95F1E0EF15AF59AC005FAB38 /* AppDelegate.m in Sources */,
+				95F1E0F015AF59AC005FAB38 /* RWRequestHelper.m in Sources */,
+				95F1E0F115AF59AC005FAB38 /* RWRequest.m in Sources */,
+				95F1E0F215AF59AC005FAB38 /* JSONDataParser.m in Sources */,
+				95F1E0F315AF59AC005FAB38 /* NSObject+SBJson.m in Sources */,
+				95F1E0F415AF59AC005FAB38 /* SBJsonParser.m in Sources */,
+				95F1E0F515AF59AC005FAB38 /* SBJsonStreamParser.m in Sources */,
+				95F1E0F615AF59AC005FAB38 /* SBJsonStreamParserAccumulator.m in Sources */,
+				95F1E0F715AF59AC005FAB38 /* SBJsonStreamParserAdapter.m in Sources */,
+				95F1E0F815AF59AC005FAB38 /* SBJsonStreamParserState.m in Sources */,
+				95F1E0F915AF59AC005FAB38 /* SBJsonStreamWriter.m in Sources */,
+				95F1E0FA15AF59AC005FAB38 /* SBJsonStreamWriterAccumulator.m in Sources */,
+				95F1E0FB15AF59AC005FAB38 /* SBJsonStreamWriterState.m in Sources */,
+				95F1E0FC15AF59AC005FAB38 /* SBJsonTokeniser.m in Sources */,
+				95F1E0FD15AF59AC005FAB38 /* SBJsonUTF8Stream.m in Sources */,
+				95F1E0FE15AF59AC005FAB38 /* SBJsonWriter.m in Sources */,
+				95F1E0FF15AF59AC005FAB38 /* TownWIzardNavigationBar.m in Sources */,
+				95F1E10015AF59AC005FAB38 /* FacebookHelper.m in Sources */,
+				95F1E10115AF59AC005FAB38 /* Facebook.m in Sources */,
+				95F1E10215AF59AC005FAB38 /* FBDialog.m in Sources */,
+				95F1E10315AF59AC005FAB38 /* FBLoginDialog.m in Sources */,
+				95F1E10415AF59AC005FAB38 /* FBRequest.m in Sources */,
+				95F1E10515AF59AC005FAB38 /* Reachability.m in Sources */,
+				95F1E10615AF59AC005FAB38 /* RequestHelper.m in Sources */,
+				95F1E10715AF59AC005FAB38 /* UIApplication+NetworkActivity.m in Sources */,
+				95F1E10815AF59AC005FAB38 /* DataHolder.m in Sources */,
+				95F1E10915AF59AC005FAB38 /* FacebookCheckinViewController.m in Sources */,
+				95F1E10A15AF59AC005FAB38 /* FacebookFriend.m in Sources */,
+				95F1E10B15AF59AC005FAB38 /* FacebookFriendCell.m in Sources */,
+				95F1E10C15AF59AC005FAB38 /* FacebookPlacesViewCell.m in Sources */,
+				95F1E10D15AF59AC005FAB38 /* FacebookPlacesViewController.m in Sources */,
+				95F1E10E15AF59AC005FAB38 /* Place.m in Sources */,
+				95F1E10F15AF59AC005FAB38 /* AddCaptionViewController.m in Sources */,
+				95F1E11015AF59AC005FAB38 /* MapAnnotation.m in Sources */,
+				95F1E11115AF59AC005FAB38 /* MapViewController.m in Sources */,
+				95F1E11215AF59AC005FAB38 /* SubMenuViewController.m in Sources */,
+				95F1E11315AF59AC005FAB38 /* PartnerMenuViewController.m in Sources */,
+				95F1E11415AF59AC005FAB38 /* main.m in Sources */,
+				95F1E11515AF59AC005FAB38 /* RWURLRequestBuilder.m in Sources */,
+				95F1E11615AF59AC005FAB38 /* ImageLoader.m in Sources */,
+				95F1E11715AF59AC005FAB38 /* ImageLoadingOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2003,6 +3153,276 @@
 			};
 			name = Release;
 		};
+		9535256915AE021500857F12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "townWizard-partner/townWizard-partner-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "PARTNER_ID=91";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "townWizard-partner-template copy3-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK\"",
+				);
+				PRODUCT_NAME = MyKnoxzilla;
+				PROVISIONING_PROFILE = "5D606FDB-E7AB-4CCA-B92B-EE02551C770F";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5D606FDB-E7AB-4CCA-B92B-EE02551C770F";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9535256A15AE021500857F12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "townWizard-partner/townWizard-partner-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "PARTNER_ID=91";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "townWizard-partner-template copy3-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK\"",
+				);
+				PRODUCT_NAME = MyKnoxzilla;
+				PROVISIONING_PROFILE = "5D606FDB-E7AB-4CCA-B92B-EE02551C770F";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5D606FDB-E7AB-4CCA-B92B-EE02551C770F";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		953525CD15AE128B00857F12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "townWizard-partner/townWizard-partner-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "PARTNER_ID=101";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "townWizard-partner-template copy4-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK\"",
+				);
+				PRODUCT_NAME = HubCity360;
+				PROVISIONING_PROFILE = "77127993-A170-49BD-B14A-701EDC3F01C7";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "77127993-A170-49BD-B14A-701EDC3F01C7";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		953525CE15AE128B00857F12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "townWizard-partner/townWizard-partner-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "PARTNER_ID=101";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "townWizard-partner-template copy4-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK\"",
+				);
+				PRODUCT_NAME = HubCity360;
+				PROVISIONING_PROFILE = "77127993-A170-49BD-B14A-701EDC3F01C7";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "77127993-A170-49BD-B14A-701EDC3F01C7";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		9535263A15AE1E6800857F12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "townWizard-partner/townWizard-partner-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "PARTNER_ID=93";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "townWizard-partner-template copy5-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK\"",
+				);
+				PRODUCT_NAME = Newark;
+				PROVISIONING_PROFILE = "8321450A-709A-4C57-BC03-6118A9199338";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8321450A-709A-4C57-BC03-6118A9199338";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9535263B15AE1E6800857F12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "townWizard-partner/townWizard-partner-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "PARTNER_ID=93";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "townWizard-partner-template copy5-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK\"",
+				);
+				PRODUCT_NAME = Newark;
+				PROVISIONING_PROFILE = "8321450A-709A-4C57-BC03-6118A9199338";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8321450A-709A-4C57-BC03-6118A9199338";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		9546290515AF615D00A39C65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "townWizard-partner/townWizard-partner-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "PARTNER_ID=87";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "townWizard-partner-template copy7-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK\"",
+				);
+				PRODUCT_NAME = JaxBeachVibe;
+				PROVISIONING_PROFILE = "88AC587F-51BA-4A58-BE0B-DC145BD1E16E";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "88AC587F-51BA-4A58-BE0B-DC145BD1E16E";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9546290615AF615D00A39C65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "townWizard-partner/townWizard-partner-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "PARTNER_ID=87";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "townWizard-partner-template copy7-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK\"",
+				);
+				PRODUCT_NAME = JaxBeachVibe;
+				PROVISIONING_PROFILE = "88AC587F-51BA-4A58-BE0B-DC145BD1E16E";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "88AC587F-51BA-4A58-BE0B-DC145BD1E16E";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		95F1E14215AF59AC005FAB38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "townWizard-partner/townWizard-partner-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "PARTNER_ID=86";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "townWizard-partner-template copy6-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK\"",
+				);
+				PRODUCT_NAME = "The Hague";
+				PROVISIONING_PROFILE = "FF0CAD9A-6C68-4B16-BE2F-3BA9D9655236";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FF0CAD9A-6C68-4B16-BE2F-3BA9D9655236";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		95F1E14315AF59AC005FAB38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "townWizard-partner/townWizard-partner-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "PARTNER_ID=86";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "townWizard-partner-template copy6-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK\"",
+				);
+				PRODUCT_NAME = "The Hague";
+				PROVISIONING_PROFILE = "FF0CAD9A-6C68-4B16-BE2F-3BA9D9655236";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FF0CAD9A-6C68-4B16-BE2F-3BA9D9655236";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		D90D0E04158F06500026828E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2220,6 +3640,51 @@
 			buildConfigurations = (
 				8483F26214D03FBE005E4216 /* Debug */,
 				8483F26314D03FBE005E4216 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9535256815AE021500857F12 /* Build configuration list for PBXNativeTarget "knoxville" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9535256915AE021500857F12 /* Debug */,
+				9535256A15AE021500857F12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		953525CC15AE128B00857F12 /* Build configuration list for PBXNativeTarget "algood" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				953525CD15AE128B00857F12 /* Debug */,
+				953525CE15AE128B00857F12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9535263915AE1E6800857F12 /* Build configuration list for PBXNativeTarget "newark" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9535263A15AE1E6800857F12 /* Debug */,
+				9535263B15AE1E6800857F12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9546290415AF615D00A39C65 /* Build configuration list for PBXNativeTarget "jacksonville" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9546290515AF615D00A39C65 /* Debug */,
+				9546290615AF615D00A39C65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95F1E14115AF59AC005FAB38 /* Build configuration list for PBXNativeTarget "hague" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95F1E14215AF59AC005FAB38 /* Debug */,
+				95F1E14315AF59AC005FAB38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
