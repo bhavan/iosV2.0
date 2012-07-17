@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MessageUI/MessageUI.h"
 
 @class TownWizardNavigationBar;
 
@@ -16,7 +17,7 @@
 @end
 
 @interface SubMenuViewController : UIViewController <UIWebViewDelegate,UIActionSheetDelegate,
-UIImagePickerControllerDelegate,UINavigationControllerDelegate> {
+UIImagePickerControllerDelegate,UINavigationControllerDelegate,MFMailComposeViewControllerDelegate> {
 
 }
 

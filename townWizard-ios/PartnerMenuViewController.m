@@ -67,6 +67,12 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+//caching disabled
+    self.partnerInfoDictionary = nil;
+    self.partnerSections = nil;
+// -----
+    
 #ifdef CONTAINER_APP
 
     subSections = nil;
@@ -75,6 +81,7 @@
                                             action:@selector(menuButtonPressed) 
                                   forControlEvents:UIControlEventTouchUpInside];
     [self setNameForNavigationBar];
+
     
 #else
     if ([self partnerInfoDictionary] == nil) {

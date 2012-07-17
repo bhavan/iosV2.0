@@ -763,6 +763,17 @@
 		E63F279314E960CA0040F281 /* PlacesViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E63F278A14E960CA0040F281 /* PlacesViewCell.xib */; };
 		E63F279614E9613D0040F281 /* DataHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F279514E9613D0040F281 /* DataHolder.m */; };
 		E663F04414EA4883004AB94C /* post_button.png in Resources */ = {isa = PBXBuildFile; fileRef = E663F04214EA4883004AB94C /* post_button.png */; };
+		E671E2D615B5966A00977738 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E671E2D515B5966A00977738 /* MessageUI.framework */; };
+		E671E2D715B599F100977738 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E671E2D515B5966A00977738 /* MessageUI.framework */; };
+		E671E2D815B599F400977738 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E671E2D515B5966A00977738 /* MessageUI.framework */; };
+		E671E2D915B599F600977738 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E671E2D515B5966A00977738 /* MessageUI.framework */; };
+		E671E2DA15B599F800977738 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E671E2D515B5966A00977738 /* MessageUI.framework */; };
+		E671E2DB15B599FA00977738 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E671E2D515B5966A00977738 /* MessageUI.framework */; };
+		E671E2DC15B599FC00977738 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E671E2D515B5966A00977738 /* MessageUI.framework */; };
+		E671E2DD15B599FE00977738 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E671E2D515B5966A00977738 /* MessageUI.framework */; };
+		E671E2DE15B59A0000977738 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E671E2D515B5966A00977738 /* MessageUI.framework */; };
+		E671E2DF15B59A0500977738 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E671E2D515B5966A00977738 /* MessageUI.framework */; };
+		E671E2E015B59A0700977738 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E671E2D515B5966A00977738 /* MessageUI.framework */; };
 		E677127D14FD2C240066C16A /* Cedar-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E677127A14FD2C240066C16A /* Cedar-iOS.framework */; };
 		E677127E14FD2C240066C16A /* OCHamcrest-iPhone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E677127B14FD2C240066C16A /* OCHamcrest-iPhone.framework */; };
 		E677127F14FD2C240066C16A /* OCMock-iPhone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E677127C14FD2C240066C16A /* OCMock-iPhone.framework */; };
@@ -1041,6 +1052,7 @@
 		E63F279414E9613D0040F281 /* DataHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataHolder.h; path = Facebook/DataHolder.h; sourceTree = "<group>"; };
 		E63F279514E9613D0040F281 /* DataHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataHolder.m; path = Facebook/DataHolder.m; sourceTree = "<group>"; };
 		E663F04214EA4883004AB94C /* post_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = post_button.png; path = Facebook/post_button.png; sourceTree = "<group>"; };
+		E671E2D515B5966A00977738 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		E677127A14FD2C240066C16A /* Cedar-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "Cedar-iOS.framework"; sourceTree = "<group>"; };
 		E677127B14FD2C240066C16A /* OCHamcrest-iPhone.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "OCHamcrest-iPhone.framework"; sourceTree = "<group>"; };
 		E677127C14FD2C240066C16A /* OCMock-iPhone.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "OCMock-iPhone.framework"; sourceTree = "<group>"; };
@@ -1076,6 +1088,7 @@
 				3D8DDA6615A47892001D48D2 /* libTestFlight.a in Frameworks */,
 				3D8DDA6715A47892001D48D2 /* Foundation.framework in Frameworks */,
 				3D8DDA6815A47892001D48D2 /* CFNetwork.framework in Frameworks */,
+				E671E2DD15B599FE00977738 /* MessageUI.framework in Frameworks */,
 				3D8DDA6915A47892001D48D2 /* SystemConfiguration.framework in Frameworks */,
 				3D8DDA6A15A47892001D48D2 /* MapKit.framework in Frameworks */,
 				3D8DDA6B15A47892001D48D2 /* Security.framework in Frameworks */,
@@ -1092,6 +1105,7 @@
 				3D8DDACA15A47A71001D48D2 /* libTestFlight.a in Frameworks */,
 				3D8DDACB15A47A71001D48D2 /* Foundation.framework in Frameworks */,
 				3D8DDACC15A47A71001D48D2 /* CFNetwork.framework in Frameworks */,
+				E671E2DE15B59A0000977738 /* MessageUI.framework in Frameworks */,
 				3D8DDACD15A47A71001D48D2 /* SystemConfiguration.framework in Frameworks */,
 				3D8DDACE15A47A71001D48D2 /* MapKit.framework in Frameworks */,
 				3D8DDACF15A47A71001D48D2 /* Security.framework in Frameworks */,
@@ -1108,6 +1122,7 @@
 				84818E0614D7DE0600BBCD7F /* CoreLocation.framework in Frameworks */,
 				848854F714D179700030BD03 /* SystemConfiguration.framework in Frameworks */,
 				8483F24814D03FBE005E4216 /* UIKit.framework in Frameworks */,
+				E671E2D615B5966A00977738 /* MessageUI.framework in Frameworks */,
 				8483F24A14D03FBE005E4216 /* Foundation.framework in Frameworks */,
 				8483F24C14D03FBE005E4216 /* CoreGraphics.framework in Frameworks */,
 				847F877514D6E862005EE200 /* libTestFlight.a in Frameworks */,
@@ -1123,6 +1138,7 @@
 				9535254215AE021500857F12 /* Foundation.framework in Frameworks */,
 				9535254315AE021500857F12 /* CFNetwork.framework in Frameworks */,
 				9535254415AE021500857F12 /* SystemConfiguration.framework in Frameworks */,
+				E671E2DA15B599F800977738 /* MessageUI.framework in Frameworks */,
 				9535254515AE021500857F12 /* MapKit.framework in Frameworks */,
 				9535254615AE021500857F12 /* Security.framework in Frameworks */,
 				9535254715AE021500857F12 /* CoreLocation.framework in Frameworks */,
@@ -1141,6 +1157,7 @@
 				953525A815AE128B00857F12 /* SystemConfiguration.framework in Frameworks */,
 				953525A915AE128B00857F12 /* MapKit.framework in Frameworks */,
 				953525AA15AE128B00857F12 /* Security.framework in Frameworks */,
+				E671E2DB15B599FA00977738 /* MessageUI.framework in Frameworks */,
 				953525AB15AE128B00857F12 /* CoreLocation.framework in Frameworks */,
 				953525AC15AE128B00857F12 /* CoreGraphics.framework in Frameworks */,
 			);
@@ -1157,6 +1174,7 @@
 				9535261515AE1E6800857F12 /* SystemConfiguration.framework in Frameworks */,
 				9535261615AE1E6800857F12 /* MapKit.framework in Frameworks */,
 				9535261715AE1E6800857F12 /* Security.framework in Frameworks */,
+				E671E2DC15B599FC00977738 /* MessageUI.framework in Frameworks */,
 				9535261815AE1E6800857F12 /* CoreLocation.framework in Frameworks */,
 				9535261915AE1E6800857F12 /* CoreGraphics.framework in Frameworks */,
 			);
@@ -1172,6 +1190,7 @@
 				954628DF15AF615D00A39C65 /* CFNetwork.framework in Frameworks */,
 				954628E015AF615D00A39C65 /* SystemConfiguration.framework in Frameworks */,
 				954628E115AF615D00A39C65 /* MapKit.framework in Frameworks */,
+				E671E2D815B599F400977738 /* MessageUI.framework in Frameworks */,
 				954628E215AF615D00A39C65 /* Security.framework in Frameworks */,
 				954628E315AF615D00A39C65 /* CoreLocation.framework in Frameworks */,
 				954628E415AF615D00A39C65 /* CoreGraphics.framework in Frameworks */,
@@ -1189,6 +1208,7 @@
 				95F1E11D15AF59AC005FAB38 /* SystemConfiguration.framework in Frameworks */,
 				95F1E11E15AF59AC005FAB38 /* MapKit.framework in Frameworks */,
 				95F1E11F15AF59AC005FAB38 /* Security.framework in Frameworks */,
+				E671E2D915B599F600977738 /* MessageUI.framework in Frameworks */,
 				95F1E12015AF59AC005FAB38 /* CoreLocation.framework in Frameworks */,
 				95F1E12115AF59AC005FAB38 /* CoreGraphics.framework in Frameworks */,
 			);
@@ -1204,6 +1224,7 @@
 				D9FA2C2915905FDB006FFF7E /* CFNetwork.framework in Frameworks */,
 				D9FA2C2A15905FDE006FFF7E /* SystemConfiguration.framework in Frameworks */,
 				D9FA2C2B15905FEE006FFF7E /* MapKit.framework in Frameworks */,
+				E671E2D715B599F100977738 /* MessageUI.framework in Frameworks */,
 				D9FA2C2D15906002006FFF7E /* Security.framework in Frameworks */,
 				D9FA2C2C15905FFE006FFF7E /* CoreLocation.framework in Frameworks */,
 				D90D0DF6158F06500026828E /* CoreGraphics.framework in Frameworks */,
@@ -1219,6 +1240,7 @@
 				E61A961014FD26D1006E5F24 /* Foundation.framework in Frameworks */,
 				E61A961114FD26D1006E5F24 /* CoreGraphics.framework in Frameworks */,
 				E677127D14FD2C240066C16A /* Cedar-iOS.framework in Frameworks */,
+				E671E2DF15B59A0500977738 /* MessageUI.framework in Frameworks */,
 				E677127E14FD2C240066C16A /* OCHamcrest-iPhone.framework in Frameworks */,
 				E677127F14FD2C240066C16A /* OCMock-iPhone.framework in Frameworks */,
 				E690222A14FE2544008F52B2 /* CFNetwork.framework in Frameworks */,
@@ -1234,6 +1256,7 @@
 				E690233514FE44AA008F52B2 /* libKIF.a in Frameworks */,
 				E690230114FE447A008F52B2 /* MapKit.framework in Frameworks */,
 				E690230214FE447A008F52B2 /* CoreLocation.framework in Frameworks */,
+				E671E2E015B59A0700977738 /* MessageUI.framework in Frameworks */,
 				E690230314FE447A008F52B2 /* SystemConfiguration.framework in Frameworks */,
 				E690230414FE447A008F52B2 /* UIKit.framework in Frameworks */,
 				E690230514FE447A008F52B2 /* Foundation.framework in Frameworks */,
@@ -1329,6 +1352,7 @@
 		8483F24614D03FBE005E4216 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E671E2D515B5966A00977738 /* MessageUI.framework */,
 				E691FF9214E50A03003DE64B /* MapKit.framework */,
 				84818E0514D7DE0600BBCD7F /* CoreLocation.framework */,
 				848854F614D179700030BD03 /* SystemConfiguration.framework */,
@@ -3210,8 +3234,8 @@
 		953525CD15AE128B00857F12 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
@@ -3228,8 +3252,8 @@
 					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK\"",
 				);
 				PRODUCT_NAME = HubCity360;
-				PROVISIONING_PROFILE = "77127993-A170-49BD-B14A-701EDC3F01C7";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "77127993-A170-49BD-B14A-701EDC3F01C7";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -3237,8 +3261,8 @@
 		953525CE15AE128B00857F12 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
@@ -3255,8 +3279,8 @@
 					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK\"",
 				);
 				PRODUCT_NAME = HubCity360;
-				PROVISIONING_PROFILE = "77127993-A170-49BD-B14A-701EDC3F01C7";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "77127993-A170-49BD-B14A-701EDC3F01C7";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -3318,8 +3342,8 @@
 		9546290515AF615D00A39C65 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
@@ -3336,8 +3360,8 @@
 					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK\"",
 				);
 				PRODUCT_NAME = JaxBeachVibe;
-				PROVISIONING_PROFILE = "88AC587F-51BA-4A58-BE0B-DC145BD1E16E";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "88AC587F-51BA-4A58-BE0B-DC145BD1E16E";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -3345,8 +3369,8 @@
 		9546290615AF615D00A39C65 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
@@ -3363,8 +3387,8 @@
 					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK\"",
 				);
 				PRODUCT_NAME = JaxBeachVibe;
-				PROVISIONING_PROFILE = "88AC587F-51BA-4A58-BE0B-DC145BD1E16E";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "88AC587F-51BA-4A58-BE0B-DC145BD1E16E";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -18,6 +18,7 @@
 #import "Place.h"
 #import "FacebookPlacesViewController.h"
 
+
 @implementation SubMenuViewController
 
 @synthesize webView=_webView;
@@ -355,11 +356,56 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
                 [[AppDelegate sharedDelegate] makeCall:[components objectAtIndex:1]];
                 return NO;
             }
+        else if( [(NSString *)[components objectAtIndex:0] caseInsensitiveCompare:@"mailto"] == NSOrderedSame ) 
+        {
+            
+            // open native email application:
+            // [[UIApplication sharedApplication] openURL:[request URL]];
+            
+            
+            // open inside the app:
+            if ([MFMailComposeViewController canSendMail])
+            {
+                MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
+                
+                mailer.mailComposeDelegate = self;
+                
+                NSString * emailAddress = [[components objectAtIndex:1] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                NSArray *toRecipients = [NSArray arrayWithObjects:emailAddress, nil];
+                [mailer setToRecipients:toRecipients];
+                
+//                NSString *emailBody = @"Sending letter using TownWizard application?";
+//                [mailer setMessageBody:emailBody isHTML:NO];
+                
+                [self presentModalViewController:mailer animated:YES];
+                
+                [mailer release];
+            }
+            else
+            {
+                [[UIApplication sharedApplication] openURL:[request URL]];
+                /*UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Failure"
+                                                                message:@"Your device doesn't support the composer sheet"
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles: nil];
+                [alert show];
+                [alert release];*/
+            }
+        } 
     }
     //OMG govnokod ended
         [[UIApplication sharedApplication] showNetworkActivityIndicator];
         return YES;
 }
+
+#pragma mark - MFComposeViewControllerDelegate
+
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    [controller dismissModalViewControllerAnimated:YES];
+}
+
 
 #pragma mark -
 #pragma mark CleanUp
