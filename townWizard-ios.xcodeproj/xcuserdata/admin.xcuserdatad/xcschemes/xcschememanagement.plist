@@ -4,25 +4,235 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>CedarTesting.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>21</integer>
+		</dict>
+		<key>KIF testing.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>22</integer>
+		</dict>
+		<key>algood.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>17</integer>
+		</dict>
+		<key>belicoso.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+		<key>blueridge.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>11</integer>
+		</dict>
+		<key>brunei.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>columbusohio.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>12</integer>
+		</dict>
+		<key>erie.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>13</integer>
+		</dict>
+		<key>goudanl.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
+		<key>grandprairie.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
+		<key>hague.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>15</integer>
+		</dict>
+		<key>jacksonville.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>14</integer>
+		</dict>
+		<key>knoxville.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>16</integer>
+		</dict>
+		<key>lima.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>longbeachca.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
+		<key>merida.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
+		<key>newark.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>18</integer>
+		</dict>
 		<key>townWizard-ios.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>townWizard-partner-template.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 		<key>townWizardTests.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>tw-p1.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>19</integer>
+		</dict>
+		<key>tw-p93.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>20</integer>
+		</dict>
+		<key>woodlands.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>3D8DDA3815A47892001D48D2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3D8DDA9C15A47A71001D48D2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>847F874514D69038005EE200</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>8483F24214D03FBE005E4216</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9535251315AE021500857F12</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9535257715AE128B00857F12</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>953525E415AE1E6800857F12</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>953A9E5A15B7304300E1C832</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>954628AF15AF615D00A39C65</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>95468F5D15C067CF007E17CE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9569F9D515E42BE40046338E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>957502CD15E576FF004A3D0E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9575032915E57E5E004A3D0E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9578EF9B15E5219900846F71</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9578F00015E5301900846F71</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9589BEA815B8A4550057B7EC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>95A8389F15B6216800BD05EC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>95B0A33C15BDF08800DC9ED6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>95C8711415B7449600D30040</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>95F1E0EC15AF59AC005FAB38</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D90D0DF1158F06500026828E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E61A960C14FD26D1006E5F24</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E69022DA14FE447A008F52B2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

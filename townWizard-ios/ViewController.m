@@ -317,7 +317,7 @@
 
 - (void) searchForPartnersWithQuery:(NSString *)query { 
     // If query is nil, then search will be by current geoposition 
-    
+      query = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     loadingMorePartnersInProgress = NO;
     //__block BOOL isLoadingMore = NO; 
     if ([partnersList count])

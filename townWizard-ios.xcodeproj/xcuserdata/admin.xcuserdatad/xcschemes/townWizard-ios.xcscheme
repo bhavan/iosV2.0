@@ -14,8 +14,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8483F24214D03FBE005E4216"
-               BuildableName = "townWizard-ios.app"
-               BlueprintName = "townWizard-ios"
+               BuildableName = "TownWizard.app"
+               BlueprintName = "townWizard-container"
                ReferencedContainer = "container:townWizard-ios.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,8 +42,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8483F24214D03FBE005E4216"
-            BuildableName = "townWizard-ios.app"
-            BlueprintName = "townWizard-ios"
+            BuildableName = "TownWizard.app"
+            BlueprintName = "townWizard-container"
             ReferencedContainer = "container:townWizard-ios.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -54,14 +54,16 @@
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Debug"
+      ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
+      enableOpenGLFrameCaptureMode = "0"
       allowLocationSimulation = "YES">
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8483F24214D03FBE005E4216"
-            BuildableName = "townWizard-ios.app"
-            BlueprintName = "townWizard-ios"
+            BuildableName = "TownWizard.app"
+            BlueprintName = "townWizard-container"
             ReferencedContainer = "container:townWizard-ios.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -85,8 +87,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8483F24214D03FBE005E4216"
-            BuildableName = "townWizard-ios.app"
-            BlueprintName = "townWizard-ios"
+            BuildableName = "TownWizard.app"
+            BlueprintName = "townWizard-container"
             ReferencedContainer = "container:townWizard-ios.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
