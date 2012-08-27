@@ -83,6 +83,8 @@ static NSString* teamToken = @"5c115b5c0ce101b8b0367b329e68db27_MzE2NjMyMDExLTEx
 
     UIViewController *rootController;
 #ifdef CONTAINER_APP
+    _manager = [[CLLocationManager alloc] init];
+
     rootController = [[[ViewController alloc] init] autorelease];
     [[self manager] setDelegate:(ViewController *)rootController];
 #else
@@ -97,8 +99,7 @@ static NSString* teamToken = @"5c115b5c0ce101b8b0367b329e68db27_MzE2NjMyMDExLTEx
     [self.window makeKeyAndVisible];
     
 #if !RUN_KIF_TESTS
-    _manager = [[CLLocationManager alloc] init];
-    
+       
     [self.manager setDesiredAccuracy:kCLLocationAccuracyThreeKilometers]; //should be enough
     [self.manager startUpdatingLocation];
 #else
