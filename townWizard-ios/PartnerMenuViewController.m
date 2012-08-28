@@ -68,11 +68,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-//caching disabled
-    self.partnerInfoDictionary = nil;
-    self.partnerSections = nil;
-// -----
-    
+
 #ifdef CONTAINER_APP
 
     subSections = nil;
@@ -84,6 +80,11 @@
 
     
 #else
+    //caching disabled
+    self.partnerInfoDictionary = nil;
+    self.partnerSections = nil;
+    // -----
+    
     if ([self partnerInfoDictionary] == nil) {
         [self loadPartnerDetails];
     }
