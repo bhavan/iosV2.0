@@ -288,9 +288,10 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
                               [self.partnerInfoDictionary objectForKey:@"website_url"],
                               [dict objectForKey:@"url"]];
             }
-            subMenu.url = [sectionUrl stringByAppendingFormat:@"?&lat=%f&lon=%f",
+           NSString *newUrl = [sectionUrl stringByAppendingFormat:@"?&lat=%f&lon=%f",
                            [AppDelegate sharedDelegate].doubleLatitude,
                            [AppDelegate sharedDelegate].doubleLongitude];
+            subMenu.url = newUrl;
 
         }
         [self.navigationController pushViewController:subMenu animated:YES];

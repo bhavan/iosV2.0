@@ -82,8 +82,9 @@ static NSString* teamToken = @"5c115b5c0ce101b8b0367b329e68db27_MzE2NjMyMDExLTEx
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
 
     UIViewController *rootController;
+     _manager = [[CLLocationManager alloc] init];
 #ifdef CONTAINER_APP
-    _manager = [[CLLocationManager alloc] init];
+   
 
     rootController = [[[ViewController alloc] init] autorelease];
     [[self manager] setDelegate:(ViewController *)rootController];
