@@ -64,6 +64,11 @@
 			<key>orderHint</key>
 			<integer>16</integer>
 		</dict>
+		<key>lakeland.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>lima.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -79,10 +84,25 @@
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
+		<key>nashville.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>newark.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>18</integer>
+		</dict>
+		<key>oakland.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>oceansprings.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 		<key>townWizard-ios.xcscheme</key>
 		<dict>
@@ -207,7 +227,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>95CE615415EFD96B00A08BC4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>95CE61B915EFF0AD00A08BC4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>95F1E0EC15AF59AC005FAB38</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>95F857D015EE7E4C009C4B7C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>95F8582C15EE80C3009C4B7C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
