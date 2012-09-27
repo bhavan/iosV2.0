@@ -24,20 +24,45 @@
 			<key>orderHint</key>
 			<integer>11</integer>
 		</dict>
+		<key>brooklyn.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
 		<key>brunei.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>4</integer>
+		</dict>
+		<key>buford.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
+		<key>carrabelle.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>11</integer>
 		</dict>
 		<key>columbusohio.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>12</integer>
 		</dict>
+		<key>dtpcola.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
 		<key>erie.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>13</integer>
+		</dict>
+		<key>gooi.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
 		</dict>
 		<key>goudanl.xcscheme</key>
 		<dict>
@@ -152,6 +177,16 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>950B67F11601239F00FC333C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>952864631602730A00E80FA6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9535251315AE021500857F12</key>
 		<dict>
 			<key>primary</key>
@@ -207,6 +242,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>9585E7061608AD7E007E42D4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9589BEA815B8A4550057B7EC</key>
 		<dict>
 			<key>primary</key>
@@ -218,6 +258,16 @@
 			<true/>
 		</dict>
 		<key>95B0A33C15BDF08800DC9ED6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>95C0CCEF15FF7E0400AC5AA4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>95C431E81600E47D00B24E45</key>
 		<dict>
 			<key>primary</key>
 			<true/>
