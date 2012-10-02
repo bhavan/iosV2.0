@@ -17,13 +17,15 @@
 #import "FacebookFriend.h"
 #import "Place.h"
 #import "FacebookPlacesViewController.h"
+#import "Partner.h"
+#import "Section.h"
 
 
 @implementation SubMenuViewController
 
 @synthesize webView=_webView;
-@synthesize partnerInfoDictionary=_partnerInfoDictionary;
-@synthesize sectionDictionary=_sectionDictionary;
+@synthesize partner=_partner;
+@synthesize section=_section;
 @synthesize url=_url;
 @synthesize customNavigationBar=_customNavigationBar;
 @synthesize bottomBar = _bottomBar;
@@ -65,12 +67,12 @@
     self.backButton.enabled = NO;
     self.forwardButton.enabled = NO;
     
-    NSString *sectionName = [self.sectionDictionary objectForKey:@"display_name"];
+  
     self.customNavigationBar.titleLabel.text = [NSString stringWithFormat:@"%@ - %@",
-                                               [self.partnerInfoDictionary objectForKey:@"name"], 
-                                               sectionName];
+                                               self.partner.name,
+                                               self.section.displayName];
     
-    if (!self.partnerInfoDictionary)
+    if (!self.partner)
     {
         self.customNavigationBar.titleLabel.text=@"";
     }
@@ -96,7 +98,7 @@
     //UIViewController *menuViewController = self.customNavigationBar.menuPage;
     //[self.navigationController popToViewController:menuViewController animated:YES];
     if (!self.webView.canGoBack) {
-        if (self.partnerInfoDictionary)
+        if (self.partner)
             [self.navigationController popViewControllerAnimated:YES];
         else // info page
         {
@@ -253,7 +255,7 @@
                                                 initWithNibName:@"AddCaptionViewController" 
                                                          bundle:nil];
     
-    viewController.partnerSiteURL = [self.partnerInfoDictionary objectForKey:@"website_url"];
+    viewController.partnerSiteURL = self.partner.webSiteUrl;
     
 	viewController.m_photo = image;
 	
@@ -411,8 +413,8 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 #pragma mark CleanUp
 
 -(void)cleanUp {
-    self.partnerInfoDictionary = nil;
-    self.sectionDictionary = nil;
+    self.partner = nil;
+    self.section = nil;
     self.webView = nil;
     [_url release];
     [[UIApplication sharedApplication] setActivityindicatorToZero];

@@ -66,6 +66,9 @@ static NSString* teamToken = @"5c115b5c0ce101b8b0367b329e68db27_MzE2NjMyMDExLTEx
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    RKURL *baseURL = [RKURL URLWithBaseURLString:API_URL];
+    RKObjectManager *objectManager = [RKObjectManager objectManagerWithBaseURL:baseURL];
+    objectManager.client.baseURL = baseURL;
     //
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
     if ([dic isKindOfClass:[NSDictionary class]]) {

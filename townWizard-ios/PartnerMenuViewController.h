@@ -7,20 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RWRequestHelper.h"
-#import "ImageLoader.h"
 
 @class TownWizardNavigationBar;
+@class Partner;
 
 @protocol PartnerMenuViewControllerDelegate
 @optional
 -(void)menuButtonPressed:(id)sender;
 @end
 
-@interface PartnerMenuViewController : UIViewController 
-    <UIAlertViewDelegate,
-    RWRequestDelegate,
-    ImageLoaderDelegate>
+@interface PartnerMenuViewController : UIViewController <UIAlertViewDelegate, RKObjectLoaderDelegate>
 {
     NSMutableArray * partnerMenuButtons;
     NSArray *subSections;
@@ -32,7 +28,7 @@
 
 @property (retain, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, retain) NSArray * partnerSections;
-@property (nonatomic, retain) NSDictionary * partnerInfoDictionary;
+@property (nonatomic, retain) Partner * partner;
 @property (nonatomic, retain) TownWizardNavigationBar * customNavigationBar;
 @property (nonatomic, weak) id <PartnerMenuViewControllerDelegate> delegate;
 @property (nonatomic, retain) NSString * currentSectionName;

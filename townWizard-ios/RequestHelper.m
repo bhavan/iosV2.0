@@ -8,82 +8,115 @@
 
 #import "RequestHelper.h"
 #import "AppDelegate.h"
+#import "Partner.h"
+#import "Section.h"
+#import "Photo.h"
+#import "PhotoCategory.h"
+#import <CommonCrypto/CommonDigest.h>
 
 
 #define REQUEST_TIMEOUT 30
-#define API_PATH @"api/partner/"
 
-NSData* PerformURLRequest(NSURLRequest* request) {
-    NSHTTPURLResponse *urlResponse = nil;
-    NSError *error; 
-    NSData *data = [NSURLConnection sendSynchronousRequest:request 
-                                         returningResponse:&urlResponse 
-                                                     error:&error];    
-    //  [error release];
-    return data;
-}
 
 @implementation RequestHelper
 
-+(NSMutableURLRequest*) defaultRequest:(NSString*)apiPath params:(NSMutableDictionary*) paramsDict {
-    NSString* formattedRequestString = [self formattedRequestStringWithParams:paramsDict];
-    NSString* urlString = [NSString stringWithFormat:@"%@%@%@",SERVER_URL,apiPath,formattedRequestString];
-    NSLog(@"call url %@",urlString);
++ (NSString *) md5:(NSString *) input
+{
+    const char *cStr = [input UTF8String];
+    unsigned char digest[16];
+    CC_MD5( cStr, strlen(cStr), digest ); // This is the md5 call
     
-    NSURL* requestUrl = [NSURL URLWithString:urlString];    
-    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:requestUrl 
-                                                                cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                                            timeoutInterval:REQUEST_TIMEOUT];
+    NSMutableString *output = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
     
-    [request setHTTPMethod:@"GET"];
-    // [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];  
-    return [request autorelease];
+    for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++)
+        [output appendFormat:@"%02x", digest[i]];
+    
+    return  output;
+    
 }
 
-+(NSURLRequest *)searchRequestUsingCurrentGeoposition {
-    NSMutableDictionary* paramsDict = [NSMutableDictionary dictionaryWithCapacity:2];
++ (NSString *)xaccessTokenFromPartner:(Partner *)partner
+{
+    NSString *timeStamp = [[NSString alloc] initWithFormat:@"%f", [[NSDate date] timeIntervalSince1970]];
+    NSString *timeToken = [[RequestHelper md5:timeStamp] substringToIndex:8];
     
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-
-    [paramsDict setObject:appDelegate.latitude forKey:@"lat"];
-    [paramsDict setObject:appDelegate.longitude forKey:@"lon"];   
-    
-    return [self defaultRequest:API_PATH params:paramsDict];
+    NSString *lastToken = [RequestHelper md5:
+                                    [NSString stringWithFormat:@"192.168.1.123%@", [RequestHelper md5:timeToken]]];
+    NSString *resultToken = [NSString stringWithFormat:@"%@%@",lastToken, timeToken];
+    return resultToken;
 }
 
-+(NSURLRequest *)searchRequest:(NSString *)searchQuery {
-    NSMutableDictionary* paramsDict = [NSMutableDictionary dictionaryWithCapacity:1];
-   
-    if(searchQuery != nil) {
-        [paramsDict setObject:searchQuery forKey:@"q"];
-    }
-    return [self defaultRequest:API_PATH params:paramsDict];
+
++ (RKObjectManager *)defaultObjectManager
+{
+    RKURL *baseURL = [RKURL URLWithBaseURLString:API_URL];
+    RKObjectManager *objectManager = [RKObjectManager objectManagerWithBaseURL:baseURL];
+    objectManager.client.baseURL = baseURL;
+    return objectManager;
 }
 
-+(NSURLRequest *)sectionsWithPartner:(NSString *)partnerId {
-    
-    NSString *request = [NSString stringWithFormat:@"api/section/partner/%@",partnerId];
-    return [self defaultRequest:request params:nil];
-}
-#pragma mark -
-#pragma mark format params
-
-+(NSString*) formattedRequestStringWithParams:(NSDictionary*) params {
-	NSMutableString* result = [NSMutableString stringWithCapacity:3];
-	
-    NSArray* keys = [params allKeys];
-	NSInteger keyCount = [keys count];
-    if(keyCount >0) {
-        [result appendString:@"?"];
-    }
-	
-	for (NSInteger i = 0; i < keyCount; i++) {
-		NSString* key = [keys objectAtIndex: i];					 
-		[result appendFormat:@"%@=%@", key, [params objectForKey:key]];
-		if (i + 1 < keyCount) {
-			[result appendString:@"&"];		
++ (void)partnersWithQuery:(NSString *)query andDelegate:(id <RKObjectLoaderDelegate>)delegate
+{
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    [objectManager.mappingProvider setObjectMapping:[Partner objectMapping] forKeyPath:@"data"];    
+    NSString *queryParam;
+    if(query) {
+        NSRange offsetRange = [query rangeOfString:@"&offset"];
+        if(offsetRange.location > 0) {
+        queryParam = [NSString stringWithFormat:@"q=%@",query];
         }
+        else if(offsetRange.location == 0 && offsetRange.length > 0) {
+             queryParam = [NSString stringWithFormat:@"%@",query];
+        }
+    }
+    else {
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];       
+        queryParam = [NSString stringWithFormat:@"lat=%@&lon=%@",appDelegate.latitude, appDelegate.longitude];        
     }    
-    return result;	
+    NSString *resourcePath = [NSString stringWithFormat:@"apiv21/partner?%@",queryParam];
+    [objectManager loadObjectsAtResourcePath:resourcePath delegate:delegate];
+    
 }
+
++ (void)sectionsWithPartner:(Partner *)partner andDelegate:(id <RKObjectLoaderDelegate>)delegate
+{
+     RKObjectManager *objectManager = [RKObjectManager sharedManager];
+     RKObjectMapping *sectionMapping = [Section objectMapping];
+    [sectionMapping mapKeyPath:@"sub_sections" toRelationship:@"subSections" withMapping:[Section objectMapping]];
+
+    [objectManager.mappingProvider setObjectMapping:sectionMapping forKeyPath:@"data"];
+    NSString *resourcePath = [NSString stringWithFormat:@"apiv21/section/partner/%@",partner.partnterId];
+    [objectManager loadObjectsAtResourcePath:resourcePath delegate:delegate];
+
+}
+
++ (void)categoriesWithPartner:(Partner *)partner andSection:(Section *)section andDelegate:(id <RKObjectLoaderDelegate>)delegate
+{
+    RKURL *baseURL = [RKURL URLWithBaseURLString:API_URL];
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+   
+     NSString *token = [RequestHelper xaccessTokenFromPartner:partner];
+   
+    objectManager.client.baseURL = baseURL;
+    [objectManager.client.HTTPHeaders setValue:token forKey:@"X-ACCESS-TOKEN"];
+    [objectManager.mappingProvider setObjectMapping:[PhotoCategory objectMapping] forKeyPath:@"data"];          
+
+    [objectManager loadObjectsAtResourcePath:section.url delegate:delegate];
+
+}
+
++ (void)photosWithPartner:(Partner *)partner fromCategory:(PhotoCategory *)category andDelegate:(id <RKObjectLoaderDelegate>)delegate
+{
+   // RKURL *baseURL = [RKURL URLWithBaseURLString:API_URL];
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];    
+    NSString *token = [RequestHelper xaccessTokenFromPartner:partner];
+    
+
+    [objectManager.mappingProvider setObjectMapping:[Photo objectMapping] forKeyPath:@"data"];
+    
+    NSString *resourcePath = [NSString stringWithFormat:@"api/v2.1/getphotogallerycategory.php?id=%@",category.categoryId];
+    [objectManager loadObjectsAtResourcePath:resourcePath delegate:delegate];
+
+}
+
 @end

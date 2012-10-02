@@ -13,7 +13,9 @@
 #import "TownWizardNavigationBar.h"
 #import "UIApplication+NetworkActivity.h"
 #import "AppDelegate.h"
-
+#import "Partner.h"
+#import "Section.h"
+#import "UIImageView+WebCache.h"
 @interface ViewController()
 @property (nonatomic,assign) BOOL doNotUseGeopositionSearchResults;
 @end
@@ -28,7 +30,7 @@
 
 
 -(NSString *)currentSearchQuery {
-    if (!_currentSearchQuery) 
+    if (!_currentSearchQuery)
         _currentSearchQuery = @"";
     return _currentSearchQuery;
 }
@@ -36,16 +38,16 @@
 #pragma mark -
 #pragma mark NSUserDefaults saving
 
--(void)saveDefaultPartner:(NSDictionary*)partnerInfo
+-(void)saveDefaultPartner:(Partner*)partner
 {
-    [[NSUserDefaults standardUserDefaults] setObject:partnerInfo 
+    [[NSUserDefaults standardUserDefaults] setObject:partner
                                               forKey:@"defaultPartner"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 -(void)saveSectionsForDefaultPartner:(NSArray *)sections
 {
-    [[NSUserDefaults standardUserDefaults] setObject:sections 
+    [[NSUserDefaults standardUserDefaults] setObject:sections
                                               forKey:@"partnerSections"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
@@ -66,21 +68,21 @@
 -(void)animateLogoOffScreen
 {
     [UIView animateWithDuration:0.35 animations:^{
-        self.logo.frame = CGRectMake(-LOGO_PORTRAIT_WIDTH, 0, 
+        self.logo.frame = CGRectMake(-LOGO_PORTRAIT_WIDTH, 0,
                                      LOGO_PORTRAIT_WIDTH, LOGO_PORTRAIT_HEIGHT);
     }];
 }
 
 
 -(void)animateNavigationBarOnScreen:(TownWizardNavigationBar *)bar
-{        
-        bar.frame = CGRectMake(self.view.frame.size.width, 0, 
+{
+    bar.frame = CGRectMake(self.view.frame.size.width, 0,
+                           self.view.frame.size.width, NAVIGATION_BAR_HEIGHT);
+    
+    [UIView animateWithDuration:0.35 animations:^{
+        bar.frame = CGRectMake(0, 0,
                                self.view.frame.size.width, NAVIGATION_BAR_HEIGHT);
-        
-        [UIView animateWithDuration:0.35 animations:^{
-            bar.frame = CGRectMake(0, 0, 
-                                        self.view.frame.size.width, NAVIGATION_BAR_HEIGHT);
-        }];
+    }];
 }
 
 -(void)hideBackgroundImageOfTheNavigationBar:(TownWizardNavigationBar *)bar
@@ -110,64 +112,33 @@
 
 -(void)infoButtonPressed:(id)sender
 {
-    SubMenuViewController *subMenu=[[SubMenuViewController alloc] 
-                                        initWithNibName:@"SubMenuViewController" bundle:nil];
+    SubMenuViewController *subMenu=[[SubMenuViewController alloc]
+                                    initWithNibName:@"SubMenuViewController" bundle:nil];
     subMenu.customNavigationBar = customNavigationBar;
     
     subMenu.delegate = self;
     subMenu.url = INFO_URL;
     
     [self.navigationController pushViewController:subMenu animated:YES];
-        
+    
     [self animateLogoOffScreen];
     [self hideBackgroundImageOfTheNavigationBar:subMenu.customNavigationBar];
     [self animateNavigationBarOnScreen:subMenu.customNavigationBar];
     
-    [subMenu release];    
+    [subMenu release];
 }
 
 #pragma mark - View lifecycle
 
--(void)loadBackgroundForMenu:(PartnerMenuViewController *)menu
-{
-    if ([menu.partnerInfoDictionary objectForKey:@"image"]) {
-        dispatch_queue_t downloadQueue = dispatch_queue_create("background downloader", NULL);
-        
-        NSString *imgUrl = [NSString stringWithFormat:@"%@%@",
-                            SERVER_URL,[menu.partnerInfoDictionary objectForKey:@"image"]];
-        
-        dispatch_async(downloadQueue, ^{
-            NSData * imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imgUrl] 
-                                                       options:(NSUInteger)nil 
-                                                         error:nil];  
-            if (imageData) {
-                UIImage * background = [[UIImage alloc] initWithData:imageData];
-                
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    if (menu.view.window) {
-                        [menu.customNavigationBar.backgroundImageView setFrame:CGRectMake(0, -60, 320, 60)];
-                        [menu.customNavigationBar.backgroundImageView setImage:background];
-                        [UIView animateWithDuration:0.5 animations:^{
-                            menu.customNavigationBar.backgroundImageView.frame = CGRectMake(0, 0, 320, 60);
-                        }];
-                    }
-                });
-                [background release];
-            }
-            dispatch_release(downloadQueue);
-        });
-    }
-}
-
 - (void)viewDidLoad {
-    [super viewDidLoad];	
+    [super viewDidLoad];
     self.searchBar.accessibilityLabel = @"Search";
     selectedPartnerSections = nil;
     for (UIView *subview in self.searchBar.subviews) {
-       if ([subview isKindOfClass:NSClassFromString(@"UISearchBarBackground")]) {
+        if ([subview isKindOfClass:NSClassFromString(@"UISearchBarBackground")]) {
             [subview removeFromSuperview];
-        }        
-    }    
+        }
+    }
     UIImage * logo = [UIImage imageNamed:@"twHeader.png"];
     UIImageView * iw = [[UIImageView alloc] initWithImage:logo];
     self.logo = iw;
@@ -177,22 +148,22 @@
     [self.navigationController.navigationBar addSubview:self.logo];
     
     self.tableView.separatorColor = [UIColor colorWithRed:0.792 green:0.769 blue:0.678 alpha:1];
- 
+    
     partnersList = [[NSMutableArray alloc] init];
-    customNavigationBar = [[TownWizardNavigationBar alloc] 
-                           initWithFrame:CGRectMake(self.view.frame.size.width, 0, 
+    customNavigationBar = [[TownWizardNavigationBar alloc]
+                           initWithFrame:CGRectMake(self.view.frame.size.width, 0,
                                                     self.view.frame.size.width, NAVIGATION_BAR_HEIGHT)];
     
-    [customNavigationBar.backButton addTarget:self 
-                                       action:@selector(goHome) 
+    [customNavigationBar.backButton addTarget:self
+                                       action:@selector(goHome)
                              forControlEvents:UIControlEventTouchUpInside];
     [self.navigationController.navigationBar addSubview:customNavigationBar];
     
-    NSDictionary * partnerDict = [[NSUserDefaults standardUserDefaults] 
-                                                                    objectForKey:@"defaultPartner"];
-    NSMutableArray * partnerSect = [[NSUserDefaults standardUserDefaults] 
-                                                                    objectForKey:@"partnerSections"];
-     
+    NSDictionary * partnerDict = [[NSUserDefaults standardUserDefaults]
+                                  objectForKey:@"defaultPartner"];
+    NSMutableArray * partnerSect = [[NSUserDefaults standardUserDefaults]
+                                    objectForKey:@"partnerSections"];
+    
     doNotUseGeopositionSearchResults = NO;
     loadingMorePartnersInProgress = NO;
     
@@ -200,16 +171,16 @@
         selectedPartnerSections = partnerSect;
         PartnerMenuViewController *subMenu = [[PartnerMenuViewController alloc] init];
         subMenu.customNavigationBar = customNavigationBar;
-        subMenu.partnerInfoDictionary = partnerDict;
+        subMenu.partner = partnerDict;
         
-        if ([partnerDict objectForKey:@"facebook_app_id"]) 
+        if ([partnerDict objectForKey:@"facebook_app_id"])
         {
-            [AppDelegate sharedDelegate].facebookHelper.appId = [partnerDict 
+            [AppDelegate sharedDelegate].facebookHelper.appId = [partnerDict
                                                                  objectForKey:@"facebook_app_id"];
         }
         subMenu.partnerSections = selectedPartnerSections;
         subMenu.delegate = self;
-   
+        
         customNavigationBar.menuPage = subMenu;
         [self.navigationController pushViewController:subMenu animated:NO];
         [self loadBackgroundForMenu:subMenu];
@@ -217,18 +188,18 @@
         doNotUseGeopositionSearchResults = YES;
         
         //Animations are not needed, this is start of the application
-
-            self.logo.frame = CGRectMake(-LOGO_PORTRAIT_WIDTH, 0, 
-                                         LOGO_PORTRAIT_WIDTH, LOGO_PORTRAIT_HEIGHT);
-            customNavigationBar.frame = CGRectMake(0, 0, 
-                                                   self.view.frame.size.width, NAVIGATION_BAR_HEIGHT);
-//        [self showMenuForPartner:partnerDict];
+        
+        self.logo.frame = CGRectMake(-LOGO_PORTRAIT_WIDTH, 0,
+                                     LOGO_PORTRAIT_WIDTH, LOGO_PORTRAIT_HEIGHT);
+        customNavigationBar.frame = CGRectMake(0, 0,
+                                               self.view.frame.size.width, NAVIGATION_BAR_HEIGHT);
+        //        [self showMenuForPartner:partnerDict];
     }
 }
 
 - (void) showMenuForPartner:(NSDictionary *) partnerInfo {
     PartnerMenuViewController *controller = [[PartnerMenuViewController alloc] init];
-    [controller setPartnerInfoDictionary:partnerInfo];
+    [controller setPartner:partnerInfo];
     [[self navigationController] pushViewController:controller animated:YES];
     [controller release];
 }
@@ -242,14 +213,14 @@
     self.navigationItem.hidesBackButton = YES;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {   
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 #pragma mark -
 #pragma mark Spinner methods
 
-#define SPINNER_SIZE 25 
+#define SPINNER_SIZE 25
 
 -(void)removeSpinnerFromCellAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -259,14 +230,14 @@
         if ([view isKindOfClass:[UIActivityIndicatorView class]])
             [view removeFromSuperview];
     }
-}		
+}
 
 -(void)addSpinnerToCell:(UITableViewCell *)cell
 {
-    UIActivityIndicatorView * spinner = [[UIActivityIndicatorView alloc] 
+    UIActivityIndicatorView * spinner = [[UIActivityIndicatorView alloc]
                                          initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     CGSize cellSize = cell.frame.size;
-    spinner.frame = CGRectMake(cellSize.width/2-SPINNER_SIZE/2, cellSize.height/2 - SPINNER_SIZE/2, 
+    spinner.frame = CGRectMake(cellSize.width/2-SPINNER_SIZE/2, cellSize.height/2 - SPINNER_SIZE/2,
                                SPINNER_SIZE, SPINNER_SIZE);
     
     cell.textLabel.text = nil;
@@ -276,7 +247,7 @@
 }
 
 //do not use this method in tableView cellAtIndexPath method, cause cellForRowAtIndexPath return nil there
--(void)addSpinnerToCellAtIndexPath:(NSIndexPath *)indexPath 
+-(void)addSpinnerToCellAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell * cell = [self.tableView cellForRowAtIndexPath:indexPath];
     [self addSpinnerToCell:cell];
@@ -285,10 +256,10 @@
 
 -(void)addSpinnerToButton:(UIButton *)button
 {
-    UIActivityIndicatorView * spinner = [[UIActivityIndicatorView alloc] 
+    UIActivityIndicatorView * spinner = [[UIActivityIndicatorView alloc]
                                          initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     CGSize buttonSize = button.frame.size;
-    spinner.frame = CGRectMake(buttonSize.width/2-SPINNER_SIZE/2, buttonSize.height/2 - SPINNER_SIZE/2, 
+    spinner.frame = CGRectMake(buttonSize.width/2-SPINNER_SIZE/2, buttonSize.height/2 - SPINNER_SIZE/2,
                                SPINNER_SIZE, SPINNER_SIZE);
     [button addSubview:spinner];
     [spinner startAnimating];
@@ -303,6 +274,68 @@
             [view removeFromSuperview];
     }
 }
+
+#pragma mark -
+#pragma mark RKObjectLoaderDelegate
+
+- (void)objectLoader:(RKObjectLoader *)loader willMapData:(inout id *)mappableData {
+    NSMutableDictionary* d = [[*mappableData objectForKey: @"meta"] mutableCopy];
+    if([d objectForKey:@"next_offset"]) {    
+    nextOffset = [[d objectForKey:@"next_offset"] integerValue];
+    }
+}
+
+- (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
+    if (objects) {
+        if ([objects count] == 0) {
+            UIAlertView *alert = [[[UIAlertView alloc]
+                                   initWithTitle:@"Whoops!"
+                                   message:@"Sorry, but it looks like we dont have a TownWizard in your area yet!"
+                                   delegate:self
+                                   cancelButtonTitle:@"OK"
+                                   otherButtonTitles:nil] autorelease];
+            [alert show];
+
+        }
+        else if([[objects lastObject] isKindOfClass:[Partner class]]) {
+                        
+            if(objects.count > 0 && loadingMorePartnersInProgress)
+            {
+                [partnersList addObjectsFromArray:objects];
+            loadingMorePartnersInProgress = NO;
+            }
+            else{
+                partnersList = [[NSMutableArray alloc]initWithArray:objects];
+            }
+                [self.tableView reloadData];
+            [self.goButton setEnabled:YES];
+            [self removeSpinnerFromButton:self.goButton];
+            [self.goButton setTitle:@"GO" forState:UIControlStateNormal];
+        }
+        else if([[objects lastObject] isKindOfClass:[Section class]]) {
+            selectedPartnerSections = [[NSMutableArray alloc]initWithArray:objects];
+            
+            [self saveSectionsForDefaultPartner:selectedPartnerSections];            
+            selectedMenu.partnerSections = selectedPartnerSections;
+            [selectedMenu reloadMenu];
+                      
+            
+            //transition animations
+            [self animateLogoOffScreen];
+           // [self hideBackgroundImageOfTheNavigationBar:selectedMenu.customNavigationBar];
+            [self animateNavigationBarOnScreen:selectedMenu.customNavigationBar];
+            
+            
+        }
+    }
+    [[UIApplication sharedApplication] hideNetworkActivityIndicator];
+    
+}
+
+- (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error {
+    NSLog(@"%@",error.description);
+}
+
 #pragma mark -
 #pragma mark PartnerMethods
 
@@ -315,122 +348,50 @@
     return YES;
 }
 
-- (void) searchForPartnersWithQuery:(NSString *)query { 
-    // If query is nil, then search will be by current geoposition 
-      query = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+- (void) searchForPartnersWithQuery:(NSString *)query {
+    query = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    [[UIApplication sharedApplication] showNetworkActivityIndicator];
+    [RequestHelper partnersWithQuery:query andDelegate:self];
     loadingMorePartnersInProgress = NO;
-    //__block BOOL isLoadingMore = NO; 
     if ([partnersList count])
     {
         //isLoadingMore = YES;
         loadingMorePartnersInProgress = YES;
     }
+}
+
+
+- (void)loadSectionMenuForPartnerWithPartner:(Partner *)aPartner {
     
-    dispatch_queue_t downloadQueue = dispatch_queue_create("Download Partners", NULL);
-    dispatch_async(downloadQueue, ^{
-        NSURLRequest*request;
-        if (query) {
-            request = [RequestHelper searchRequest:query];
-        }
-        else {
-            request = [RequestHelper searchRequestUsingCurrentGeoposition];
-        }
-        [[UIApplication sharedApplication] showNetworkActivityIndicator];
-        NSData *data = PerformURLRequest(request);
-        [[UIApplication sharedApplication] hideNetworkActivityIndicator];
-        SBJsonParser *parser = [[SBJsonParser alloc] init];
-        NSDictionary *dict = (NSDictionary *)[parser objectWithData:data];
-        
-        //this can happen when user taps load more and before results came back, he taps on search
-        //If that's the case, we do not need results that came from this download block
-        if ((loadingMorePartnersInProgress && [partnersList count]) || (!loadingMorePartnersInProgress && ![partnersList count]))
-        {
-            [partnersList addObjectsFromArray:[dict objectForKey:@"data"]];
-        
-            NSDictionary * metadata = [[dict objectForKey:@"meta"] retain];
-            nextOffset = [(NSNumber *) [metadata objectForKey:@"next_offset"] intValue];
-            [metadata release];
-            if([partnersList count]<=0){
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    UIAlertView *alert = [[[UIAlertView alloc] 
-                                           initWithTitle:@"Whoops!" 
-                                           message:@"Sorry, but it looks like we dont have a TownWizard in your area yet!" 
-                                           delegate:self 
-                                           cancelButtonTitle:@"OK" 
-                                           otherButtonTitles:nil] autorelease];
-                    [alert show];  
-                });
-            }
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self removeSpinnerFromCellAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];  
-                loadingMorePartnersInProgress = NO;
-                [self.tableView reloadData];
-                [self.goButton setEnabled:YES];
-                [self removeSpinnerFromButton:self.goButton];
-                [self.goButton setTitle:@"GO" forState:UIControlStateNormal];
-            });
-        }
-        [parser release];    
-    });
-    dispatch_release(downloadQueue);
-}
-
--(void)LoadSectionsForSectionMenu:(PartnerMenuViewController *)menu
-{
-    dispatch_queue_t downloadSectionsQueue = dispatch_queue_create("Sections Download Queue", NULL);
-    dispatch_async(downloadSectionsQueue, ^{
-        NSURLRequest * request = [RequestHelper sectionsWithPartner:[menu.partnerInfoDictionary objectForKey:@"id"]];
-        [[UIApplication sharedApplication] showNetworkActivityIndicator];
-        NSData *data = PerformURLRequest(request);
-        [[UIApplication sharedApplication] hideNetworkActivityIndicator];
-        SBJsonParser *parser = [[SBJsonParser alloc] init];
-        selectedPartnerSections = (NSArray *)[[parser objectWithData:data] objectForKey:@"data"];
-        
-        [self saveSectionsForDefaultPartner:selectedPartnerSections];
-        
-        menu.partnerSections = selectedPartnerSections;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [menu reloadMenu];
-        });
-        [menu release];
-        [parser release];
-    });
-    dispatch_release(downloadSectionsQueue);
-}
-
-- (void)loadSectionMenuForPartnerWithInfo:(NSDictionary *)partnerDict {
-    PartnerMenuViewController *subMenu = [[PartnerMenuViewController alloc] 
-                                          initWithNibName:@"PartnerMenuViewController" 
-                                                   bundle:nil];
+    [[UIApplication sharedApplication] showNetworkActivityIndicator];
+    
+    PartnerMenuViewController *subMenu = [[PartnerMenuViewController alloc]
+                                          initWithNibName:@"PartnerMenuViewController"
+                                          bundle:nil];
     subMenu.customNavigationBar = customNavigationBar;
     subMenu.delegate = self; //This is for Menu button pressed there
     customNavigationBar.menuPage = subMenu;
-    subMenu.partnerInfoDictionary = partnerDict;
-
-    [self loadBackgroundForMenu:subMenu]; //asynchronous call
-
-    [self.navigationController pushViewController:subMenu animated:YES];
-
-    //transition animations
-    [self animateLogoOffScreen];
-    [self hideBackgroundImageOfTheNavigationBar:subMenu.customNavigationBar];
-    [self animateNavigationBarOnScreen:subMenu.customNavigationBar];
+    subMenu.partner = aPartner;
+    selectedMenu = subMenu;
+    UIImageView *bgView = customNavigationBar.backgroundImageView;
+   // bgView.backgroundColor = [UIColor yellowColor];
+    
+    [bgView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",SERVER_URL,aPartner.headerImageUrl]]];
+    [self.navigationController pushViewController:selectedMenu animated:YES];
+    
+    [RequestHelper sectionsWithPartner:aPartner andDelegate:self];
     //------
     
-//    [subMenu showSpinnerAtViewCenter:subMenu.view];
-////submenu is released here:
-    [self LoadSectionsForSectionMenu:subMenu]; //asynchronous call
-
+    
 }
 
--(void)locationManager:(CLLocationManager *)aManager 
-   didUpdateToLocation:(CLLocation *)newLocation 
+-(void)locationManager:(CLLocationManager *)aManager
+   didUpdateToLocation:(CLLocation *)newLocation
           fromLocation:(CLLocation *)oldLocation
 {
     [aManager stopUpdatingLocation];
-
-    if (!doNotUseGeopositionSearchResults) 
+    
+    if (!doNotUseGeopositionSearchResults)
     {
         doNotUseGeopositionSearchResults = YES;
         [self searchForPartnersWithQuery:nil];
@@ -457,18 +418,17 @@
 
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        NSDictionary *partnerDict = [partnersList objectAtIndex:indexPath.row];
-     
+        Partner *partner = [partnersList objectAtIndex:indexPath.row];
+        
         [self.searchBar resignFirstResponder];
         
-        if ([[partnerDict objectForKey:@"itunes_app_id"] isEqual:@""]) {
-            [self loadSectionMenuForPartnerWithInfo:partnerDict];
-//            [self showMenuForPartner:partnerDict];
-            [self saveDefaultPartner:partnerDict];
-            if ([partnerDict objectForKey:@"facebook_app_id"]) 
+        if ([partner.iTunesAppId isEqual:@""]) {
+            [self loadSectionMenuForPartnerWithPartner:partner];
+            //            [self showMenuForPartner:partnerDict];
+            [self saveDefaultPartner:partner];
+            if (partner.facebookAppId)
             {
-                [AppDelegate sharedDelegate].facebookHelper.appId = 
-                                                    [partnerDict objectForKey:@"facebook_app_id"];
+                [AppDelegate sharedDelegate].facebookHelper.appId = partner.facebookAppId;
                 [TestFlight passCheckpoint:@"facebook app id is set"];
             }
             else {
@@ -478,9 +438,9 @@
         }
         else
         {
-            NSString * iTunesAppUrl =[[NSString stringWithFormat:@"http://itunes.apple.com/us/app/id"] 
-                                                stringByAppendingString:
-                                                [partnerDict objectForKey:@"itunes_app_id"]]; 
+            NSString * iTunesAppUrl =[[NSString stringWithFormat:@"http://itunes.apple.com/us/app/id"]
+                                      stringByAppendingString:
+                                      partner.iTunesAppId];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:iTunesAppUrl]];
         }
     }
@@ -496,8 +456,8 @@
     [self.searchBar resignFirstResponder];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)aTableView 
-         cellForRowAtIndexPath:(NSIndexPath *)indexPath 
+- (UITableViewCell *)tableView:(UITableView *)aTableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     //static NSString * CellMoreIdentifier = @"Cell more";
@@ -505,11 +465,11 @@
     
     if (indexPath.section) { // Load more cell
         cell = [aTableView dequeueReusableCellWithIdentifier:nil];//CellMoreIdentifier];
-                if(cell == nil) {
-                    cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault 
-                                                    reuseIdentifier:nil]//CellMoreIdentifier] 
-                            autorelease]; 
-                }
+        if(cell == nil) {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                           reuseIdentifier:nil]//CellMoreIdentifier]
+                    autorelease];
+        }
         if (loadingMorePartnersInProgress)
         {
             cell.textLabel.text = @"";
@@ -517,7 +477,7 @@
         }
         else {
             [self removeSpinnerFromCellAtIndexPath:indexPath];
-            cell.textLabel.text = @"Load more";  
+            cell.textLabel.text = @"Load more";
             cell.textLabel.textAlignment = UITextAlignmentCenter;
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
@@ -525,13 +485,14 @@
     else { //Partner cell
         cell = [aTableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if(cell == nil) {
-                cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault 
-                                               reuseIdentifier:CellIdentifier] 
-                        autorelease];
-          }
-        cell.textLabel.text = [[partnersList objectAtIndex:indexPath.row] objectForKey:@"name"];
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                           reuseIdentifier:CellIdentifier]
+                    autorelease];
+        }
+        Partner *partner = [partnersList objectAtIndex:indexPath.row];
+        cell.textLabel.text = partner.name;
     }
-
+    
     cell.textLabel.textColor = [UIColor colorWithRed:0.308 green:0.2745 blue:0.227 alpha:1];
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
     return  cell;
@@ -556,27 +517,30 @@
         [self addSpinnerToButton:self.goButton];
         [self.goButton setTitle:@"" forState:UIControlStateNormal];
         [self removeSpinnerFromCellAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
-        [partnersList removeAllObjects];
-        [self.tableView reloadData];
+        if([partnersList count] > 0)
+        {
+            [partnersList removeAllObjects];
+            [self.tableView reloadData];
+        }
         doNotUseGeopositionSearchResults = YES;
         if ([aSearchBar.text isEqual:@""])
         {
-            [self searchForPartnersWithQuery:nil];  
+            [self searchForPartnersWithQuery:nil];
         }
         else {
-            [self searchForPartnersWithQuery:aSearchBar.text]; 
+            [self searchForPartnersWithQuery:aSearchBar.text];
         }
-
+        
         self.currentSearchQuery = aSearchBar.text;
     }
     else { //No connection
         [TestFlight passCheckpoint:@"No connection available while loading partners"];
-        UIAlertView *alertView = [[UIAlertView alloc] 
+        UIAlertView *alertView = [[UIAlertView alloc]
                                   initWithTitle:NSLocalizedString(@"No connection available!", @"AlertView")
-                                        message:NSLocalizedString(@"Please connect to cellular network or Wi-Fi", @"AlertView")
-                                       delegate:self
-                              cancelButtonTitle:NSLocalizedString(@"Cancel", @"AlertView")
-                              otherButtonTitles:NSLocalizedString(@"Open settings", @"AlertView"), nil];
+                                  message:NSLocalizedString(@"Please connect to cellular network or Wi-Fi", @"AlertView")
+                                  delegate:self
+                                  cancelButtonTitle:NSLocalizedString(@"Cancel", @"AlertView")
+                                  otherButtonTitles:NSLocalizedString(@"Open settings", @"AlertView"), nil];
         [alertView show];
         [alertView release];
     }
@@ -600,7 +564,7 @@
     [self searchBarSearchButtonClicked:self.searchBar];
 }
 
-#pragma mark -
+#pragma mark -releaseOutlets
 #pragma  mark cleaning
 
 -(void)releaseOutlets
@@ -616,7 +580,7 @@
 
 - (void)viewDidUnload {
     [self releaseOutlets];
-    [super viewDidUnload];    
+    [super viewDidUnload];
 }
 
 - (void)dealloc {
@@ -627,6 +591,6 @@
 
 
 #pragma mark -
-#pragma mark 
+#pragma mark
 
 @end

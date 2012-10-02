@@ -10,6 +10,8 @@
 #import "MessageUI/MessageUI.h"
 
 @class TownWizardNavigationBar;
+@class Partner;
+@class Section;
 
 @protocol SubMenuViewControllerDelegate
 @optional
@@ -23,9 +25,9 @@ UIImagePickerControllerDelegate,UINavigationControllerDelegate,MFMailComposeView
 
 
 @property (retain, nonatomic) IBOutlet UIWebView *webView;
-@property (nonatomic, retain) NSDictionary *partnerInfoDictionary;
+@property (nonatomic, retain) Partner *partner;
 @property (nonatomic, retain) NSString *url;
-@property (nonatomic, retain) NSDictionary * sectionDictionary;
+@property (nonatomic, retain) Section * section;
 @property (nonatomic, retain) TownWizardNavigationBar * customNavigationBar;
 @property (retain, nonatomic) IBOutlet UIToolbar *bottomBar;
 

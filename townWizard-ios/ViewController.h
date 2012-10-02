@@ -9,23 +9,24 @@
 #import <CoreLocation/CoreLocation.h>
 #import "PartnerMenuViewController.h"
 #import "SubMenuViewController.h"
-#import "RWRequestHelper.h"
 
 @class TownWizardNavigationBar;
+@class Partner;
 
 @interface ViewController : UIViewController 
 <UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource,CLLocationManagerDelegate,
-PartnerMenuViewControllerDelegate,SubMenuViewControllerDelegate,UIAlertViewDelegate,RWRequestDelegate>
+PartnerMenuViewControllerDelegate,SubMenuViewControllerDelegate,UIAlertViewDelegate, RKObjectLoaderDelegate>
 {
     NSMutableArray *partnersList;
     NSArray *selectedPartnerSections;
-    TownWizardNavigationBar *customNavigationBar;   
-    
+    TownWizardNavigationBar *customNavigationBar;
+    PartnerMenuViewController *selectedMenu;
+    UISearchBar *searchBar;
     NSInteger nextOffset; // add offset to query to load more partners. ex: &offset=...
     BOOL loadingMorePartnersInProgress;
 }
 - (IBAction) goButtonPressed:(id)sender;
-- (void) loadSectionMenuForPartnerWithInfo:(NSDictionary *)partnerDict;
+- (void) loadSectionMenuForPartnerWithPartner:(Partner *)partnerDict;
 
 @property (retain, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
@@ -37,5 +38,6 @@ PartnerMenuViewControllerDelegate,SubMenuViewControllerDelegate,UIAlertViewDeleg
 -(IBAction)dismissKeyboardByTouchingEmptySpaceOnScreen:(id)sender;
 
 -(IBAction)infoButtonPressed:(id)sender;
+
 
 @end

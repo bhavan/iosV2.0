@@ -8,13 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
-NSData* PerformURLRequest(NSURLRequest* request);
+@class Partner;
+@class Section;
+@class PhotoCategory;
 
 @interface RequestHelper : NSObject
 
-+(NSURLRequest *)searchRequest:(NSString *)searchQuery;
-+(NSURLRequest *)searchRequestUsingCurrentGeoposition; //This is search with current geoposition(3km approx)
-+(NSURLRequest *)sectionsWithPartner:(NSString *)partnerId;
-+(NSString*) formattedRequestStringWithParams:(NSDictionary*) params;
-+(NSMutableURLRequest*) defaultRequest:(NSString*)apiPath params:(NSMutableDictionary*) paramsDict;
++ (NSString *) md5:(NSString *) input;
++ (NSString *)xaccessTokenFromPartner:(Partner *)partner;
++ (RKObjectManager *)defaultObjectManager;
++ (void)partnersWithQuery:(NSString *)query andDelegate:(id <RKObjectLoaderDelegate>)delegate;
++ (void)sectionsWithPartner:(Partner *)partner andDelegate:(id <RKObjectLoaderDelegate>)delegate;
++ (void)categoriesWithPartner:(Partner *)partner andSection:(Section *)section andDelegate:(id <RKObjectLoaderDelegate>)delegate;
++ (void)photosWithPartner:(Partner *)partner fromCategory:(PhotoCategory *)category andDelegate:(id <RKObjectLoaderDelegate>)delegate;
+
+
 @end

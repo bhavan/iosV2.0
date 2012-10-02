@@ -27,7 +27,7 @@
 		<key>brooklyn.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>8</integer>
+			<integer>7</integer>
 		</dict>
 		<key>brunei.xcscheme</key>
 		<dict>
@@ -37,12 +37,12 @@
 		<key>buford.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>6</integer>
 		</dict>
 		<key>carrabelle.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>11</integer>
+			<integer>10</integer>
 		</dict>
 		<key>columbusohio.xcscheme</key>
 		<dict>
@@ -52,7 +52,7 @@
 		<key>dtpcola.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>8</integer>
 		</dict>
 		<key>erie.xcscheme</key>
 		<dict>
@@ -62,7 +62,7 @@
 		<key>gooi.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>10</integer>
+			<integer>9</integer>
 		</dict>
 		<key>goudanl.xcscheme</key>
 		<dict>
@@ -92,7 +92,7 @@
 		<key>lakeland.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>3</integer>
 		</dict>
 		<key>lima.xcscheme</key>
 		<dict>
@@ -112,7 +112,7 @@
 		<key>nashville.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>5</integer>
 		</dict>
 		<key>newark.xcscheme</key>
 		<dict>
@@ -122,12 +122,12 @@
 		<key>oakland.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>2</integer>
 		</dict>
 		<key>oceansprings.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>4</integer>
 		</dict>
 		<key>townWizard-ios.xcscheme</key>
 		<dict>
