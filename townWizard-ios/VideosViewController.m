@@ -1,27 +1,24 @@
 //
-//  PhotoCategoriesViewController.m
+//  VideosViewController.m
 //  townWizard-ios
 //
 //  Created by Vilimets Anton on 10/2/12.
 //
 //
 
-#import "PhotoCategoriesViewController.h"
-#import "RequestHelper.h"
-#import "Photo.h"
-#import "PhotoCategory.h"
-#import "PhotoGalleryViewController.h"
+#import "VideosViewController.h"
 #import "TownWIzardNavigationBar.h"
 #import "ImageCell.h"
+#import "Video.h"
 #import "UIImageView+WebCache.h"
 
-@interface PhotoCategoriesViewController ()
+@interface VideosViewController ()
 
 @end
 
-@implementation PhotoCategoriesViewController
+@implementation VideosViewController
 
-@synthesize categories, partner;
+@synthesize  partner, customNavigationBar;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -40,7 +37,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationItem.hidesBackButton = YES;  
+    self.navigationItem.hidesBackButton = YES;
     [self.customNavigationBar.menuButton addTarget:self
                                             action:@selector(menuButtonPressed)
                                   forControlEvents:UIControlEventTouchUpInside];
@@ -50,9 +47,9 @@
 {
     [super viewWillDisappear:animated];
     [self.customNavigationBar.menuButton removeTarget:self
-                                            action:@selector(menuButtonPressed)
-                                  forControlEvents:UIControlEventTouchUpInside];
-
+                                               action:@selector(menuButtonPressed)
+                                     forControlEvents:UIControlEventTouchUpInside];
+    
 }
 
 - (void)menuButtonPressed
@@ -65,7 +62,7 @@
 
 - (void)objectLoader:(RKObjectLoader *)loader willMapData:(inout id *)mappableData
 {
-   
+    
 }
 
 
@@ -79,7 +76,7 @@
 {
     if (objects)
     {
-        categories = [[NSArray alloc] initWithArray:objects];
+        videos = [[NSArray alloc] initWithArray:objects];
         [self.tableView reloadData];
         
     }
@@ -89,8 +86,8 @@
 #pragma mark UITableView Delegate/Datasource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if(categories) {
-        return [categories count];
+    if(videos) {
+        return [videos count];
     }
     return 0;
 }
@@ -101,30 +98,30 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{    
-    static NSString *cellIdentifier = @"categoryCell";
+{
+    static NSString *cellIdentifier = @"videosCell";
     ImageCell *cell;
     cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    PhotoCategory *category = [categories objectAtIndex:indexPath.row];
+    Video *video = [videos objectAtIndex:indexPath.row];
     if(cell == nil)
     {
         cell = [[ImageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
-    cell.nameLabel.text = category.name;
-    [cell.thumbImageView setImageWithURL:[NSURL URLWithString:category.thumb]];
+    cell.nameLabel.text = video.name;
+    [cell.thumbImageView setImageWithURL:[NSURL URLWithString:video.thumb]];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PhotoCategory *category = [categories objectAtIndex:indexPath.row];
+  /*  PhotoCategory *category = [categories objectAtIndex:indexPath.row];
     PhotoGalleryViewController *galleryController = [PhotoGalleryViewController new];
     galleryController.customNavigationBar = self.customNavigationBar;
     [RequestHelper photosWithPartner:partner fromCategory:category andDelegate:galleryController];
     [self.navigationController pushViewController:galleryController animated:YES];
     [galleryController release];
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];*/
 }
 
 - (void)didReceiveMemoryWarning

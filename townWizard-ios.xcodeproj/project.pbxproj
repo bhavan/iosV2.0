@@ -336,6 +336,126 @@
 		848854C514D16F620030BD03 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854C414D16F620030BD03 /* Reachability.m */; };
 		848854F714D179700030BD03 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848854F614D179700030BD03 /* SystemConfiguration.framework */; };
 		8488550A14D1ABAB0030BD03 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8488550914D1ABAA0030BD03 /* ViewController.xib */; };
+		84CAADF7161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
+		84CAADF8161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
+		84CAADF9161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
+		84CAADFA161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
+		84CAADFB161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
+		84CAADFC161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
+		84CAADFD161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
+		84CAADFE161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
+		84CAADFF161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
+		84CAAE00161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
+		84CAAE01161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
+		84CAAE02161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
+		84CAAE03161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
+		84CAAE04161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
+		84CAAE05161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
+		84CAAE06161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
+		84CAAE07161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
+		84CAAE08161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
+		84CAAE09161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
+		84CAAE0A161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
+		84CAAE0B161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
+		84CAAE0C161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
+		84CAAE0D161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
+		84CAAE0E161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
+		84CAAE0F161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
+		84CAAE10161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
+		84CAAE11161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
+		84CAAE12161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
+		84CAAE13161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
+		84CAAE14161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
+		84CAAE39161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
+		84CAAE3A161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
+		84CAAE3B161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
+		84CAAE3C161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
+		84CAAE3D161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
+		84CAAE3E161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
+		84CAAE3F161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
+		84CAAE40161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
+		84CAAE41161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
+		84CAAE42161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
+		84CAAE43161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
+		84CAAE44161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
+		84CAAE45161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
+		84CAAE46161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
+		84CAAE47161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
+		84CAAE48161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
+		84CAAE49161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
+		84CAAE4A161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
+		84CAAE4B161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
+		84CAAE4C161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
+		84CAAE4D161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
+		84CAAE4E161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
+		84CAAE4F161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
+		84CAAE50161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
+		84CAAE51161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
+		84CAAE52161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
+		84CAAE53161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
+		84CAAE54161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
+		84CAAE55161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
+		84CAAE56161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
+		84CAAE57161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		84CAAE58161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		84CAAE59161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		84CAAE5A161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		84CAAE5B161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		84CAAE5C161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		84CAAE5D161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		84CAAE5E161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		84CAAE5F161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		84CAAE60161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		84CAAE61161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		84CAAE62161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		84CAAE63161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		84CAAE64161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		84CAAE65161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		84CAAE66161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		84CAAE67161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		84CAAE68161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		84CAAE69161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		84CAAE6A161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		84CAAE6B161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		84CAAE6C161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		84CAAE6D161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		84CAAE6E161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		84CAAE6F161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		84CAAE70161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		84CAAE71161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		84CAAE72161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		84CAAE73161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		84CAAE74161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		84CAAE77161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
+		84CAAE78161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
+		84CAAE79161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
+		84CAAE7A161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
+		84CAAE7B161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
+		84CAAE7C161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
+		84CAAE7D161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
+		84CAAE7E161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
+		84CAAE7F161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
+		84CAAE80161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
+		84CAAE81161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
+		84CAAE82161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
+		84CAAE83161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
+		84CAAE84161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
+		84CAAE85161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
+		84CAAE86161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
+		84CAAE87161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
+		84CAAE88161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
+		84CAAE89161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
+		84CAAE8A161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
+		84CAAE8B161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
+		84CAAE8C161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
+		84CAAE8D161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
+		84CAAE8E161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
+		84CAAE8F161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
+		84CAAE90161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
+		84CAAE91161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
+		84CAAE92161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
+		84CAAE93161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
+		84CAAE94161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
 		84EDCF0516144BD500838807 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 84EDCF0416144BD500838807 /* libz.dylib */; };
 		84EDCF0616144C1900838807 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 84EDCF0416144BD500838807 /* libz.dylib */; };
 		84EDCF0716144C2F00838807 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 84EDCF0416144BD500838807 /* libz.dylib */; };
@@ -2371,6 +2491,13 @@
 		848854F414D1793A0030BD03 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		848854F614D179700030BD03 /* SystemConfiguration.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8488550914D1ABAA0030BD03 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		84CAADF5161B27CB00E09E36 /* ImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCell.h; sourceTree = "<group>"; };
+		84CAADF6161B27CB00E09E36 /* ImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCell.m; sourceTree = "<group>"; };
+		84CAAE36161B2EB100E09E36 /* VideosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideosViewController.h; sourceTree = "<group>"; };
+		84CAAE37161B2EB100E09E36 /* VideosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideosViewController.m; sourceTree = "<group>"; };
+		84CAAE38161B2EB100E09E36 /* VideosViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideosViewController.xib; sourceTree = "<group>"; };
+		84CAAE75161B2F2C00E09E36 /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video.h; sourceTree = "<group>"; };
+		84CAAE76161B2F2C00E09E36 /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Video.m; sourceTree = "<group>"; };
 		84EDCF0416144BD500838807 /* libz.dylib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		84F82C8F161AF98E00E0A481 /* PhotoGalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoGalleryViewController.h; sourceTree = "<group>"; };
 		84F82C90161AF98E00E0A481 /* PhotoGalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoGalleryViewController.m; sourceTree = "<group>"; };
@@ -3194,6 +3321,8 @@
 				847FD336161ACCB2009FB9CC /* PhotoCategory.m */,
 				847FD356161ACCC8009FB9CC /* Photo.h */,
 				847FD357161ACCC8009FB9CC /* Photo.m */,
+				84CAAE75161B2F2C00E09E36 /* Video.h */,
+				84CAAE76161B2F2C00E09E36 /* Video.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -3342,6 +3471,11 @@
 				84F82C91161AF98E00E0A481 /* PhotoGalleryViewController.xib */,
 				84F82CCE161AFB8700E0A481 /* WebImageGridViewCell.h */,
 				84F82CCF161AFB8700E0A481 /* WebImageGridViewCell.m */,
+				84CAADF5161B27CB00E09E36 /* ImageCell.h */,
+				84CAADF6161B27CB00E09E36 /* ImageCell.m */,
+				84CAAE36161B2EB100E09E36 /* VideosViewController.h */,
+				84CAAE37161B2EB100E09E36 /* VideosViewController.m */,
+				84CAAE38161B2EB100E09E36 /* VideosViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -4555,6 +4689,7 @@
 				3D8DDA9B15A47968001D48D2 /* Icon@2x.png in Resources */,
 				847FD3B9161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CCB161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
+				84CAAE72161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4598,6 +4733,7 @@
 				3D8DDAFF15A47AB6001D48D2 /* icon@2x.png in Resources */,
 				847FD3BA161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CCC161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
+				84CAAE73161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4643,6 +4779,7 @@
 				D9FA2C7E1590751B006FFF7E /* icon@2x.png in Resources */,
 				847FD39E161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CB0161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
+				84CAAE57161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4686,6 +4823,7 @@
 				950B68551601272900FC333C /* Icon@2x.png in Resources */,
 				847FD3A2161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CB4161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
+				84CAAE5B161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4729,6 +4867,7 @@
 				952865DE160275E200E80FA6 /* Icon@2x.png in Resources */,
 				847FD3A1161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CB3161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
+				84CAAE5A161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4772,6 +4911,7 @@
 				95F1E0D915AF513B005FAB38 /* Icon@2x.png in Resources */,
 				847FD3B6161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CC8161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
+				84CAAE6F161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4815,6 +4955,7 @@
 				95F1E0E215AF5216005FAB38 /* Icon@2x.png in Resources */,
 				847FD3B7161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CC9161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
+				84CAAE70161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4858,6 +4999,7 @@
 				95F1E0EB15AF522C005FAB38 /* Icon@2x.png in Resources */,
 				847FD3B8161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CCA161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
+				84CAAE71161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4901,6 +5043,7 @@
 				953A9EBE15B739ED00E1C832 /* Icon@2x.png in Resources */,
 				847FD3B2161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CC4161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
+				84CAAE6B161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4944,6 +5087,7 @@
 				9546291215AF631000A39C65 /* Icon@2x.png in Resources */,
 				847FD3B4161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CC6161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
+				84CAAE6D161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4987,6 +5131,7 @@
 				95468FC115C0685A007E17CE /* Icon@2x.png in Resources */,
 				847FD3AF161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CC1161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
+				84CAAE68161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5030,6 +5175,7 @@
 				9569FA3915E42F9B0046338E /* Icon@2x.png in Resources */,
 				847FD3AD161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CBF161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
+				84CAAE66161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5073,6 +5219,7 @@
 				95F857CF15EE6E1A009C4B7C /* Icon@2x.png in Resources */,
 				847FD3AA161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CBC161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
+				84CAAE63161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5116,6 +5263,7 @@
 				9575038D15E58A82004A3D0E /* Icon@2x.png in Resources */,
 				847FD3A9161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CBB161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
+				84CAAE62161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5159,6 +5307,7 @@
 				9578EFFF15E522E800846F71 /* Icon@2x.png in Resources */,
 				847FD3AC161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CBE161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
+				84CAAE65161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5202,6 +5351,7 @@
 				9578F06415E537E500846F71 /* Icon@2x.png in Resources */,
 				847FD3AB161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CBD161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
+				84CAAE64161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5245,6 +5395,7 @@
 				9585E7721608B28E007E42D4 /* Icon@2x.png in Resources */,
 				847FD3A0161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CB2161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
+				84CAAE59161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5288,6 +5439,7 @@
 				9589BF0C15B8B04C0057B7EC /* Icon@2x.png in Resources */,
 				847FD3AE161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CC0161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
+				84CAAE67161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5331,6 +5483,7 @@
 				95A8390315B621E900BD05EC /* Icon@2x.png in Resources */,
 				847FD3B3161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CC5161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
+				84CAAE6C161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5374,6 +5527,7 @@
 				95B0A3A015BDF24100DC9ED6 /* Icon@2x.png in Resources */,
 				847FD3B0161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CC2161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
+				84CAAE69161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5417,6 +5571,7 @@
 				95C0CD5315FF7ED700AC5AA4 /* Icon@2x.png in Resources */,
 				847FD3A4161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CB6161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
+				84CAAE5D161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5460,6 +5615,7 @@
 				95C4324C1600E95600B24E45 /* Icon@2x.png in Resources */,
 				847FD3A3161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CB5161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
+				84CAAE5C161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5503,6 +5659,7 @@
 				95043AEB15B748AF0012E8CC /* Icon@2x.png in Resources */,
 				847FD3B1161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CC3161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
+				84CAAE6A161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5546,6 +5703,7 @@
 				95CE61B815EFE97300A08BC4 /* Icon@2x.png in Resources */,
 				847FD3A6161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CB8161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
+				84CAAE5F161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5589,6 +5747,7 @@
 				9586A4EF15F10139007E108C /* Icon@2x.png in Resources */,
 				847FD3A5161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CB7161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
+				84CAAE5E161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5632,6 +5791,7 @@
 				95F1E14F15AF5BF3005FAB38 /* Icon@2x.png in Resources */,
 				847FD3B5161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CC7161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
+				84CAAE6E161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5675,6 +5835,7 @@
 				95BB28D815FE5D3B00A2E05D /* Icon@2x.png in Resources */,
 				847FD3A8161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CBA161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
+				84CAAE61161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5718,6 +5879,7 @@
 				95D3983315EFA77B00302330 /* Icon@2x.png in Resources */,
 				847FD3A7161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CB9161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
+				84CAAE60161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5757,6 +5919,7 @@
 				D9FA2C76159074E5006FFF7E /* twHeader.png in Resources */,
 				847FD39F161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CB1161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
+				84CAAE58161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5767,6 +5930,7 @@
 				E61A961714FD26D1006E5F24 /* InfoPlist.strings in Resources */,
 				847FD3BB161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CCD161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
+				84CAAE74161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5865,6 +6029,9 @@
 				847FD39B161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
 				84F82CAD161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
 				84F82CEB161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
+				84CAAE12161B27CC00E09E36 /* ImageCell.m in Sources */,
+				84CAAE54161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE92161B2F2C00E09E36 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5903,6 +6070,9 @@
 				847FD39C161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
 				84F82CAE161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
 				84F82CEC161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
+				84CAAE13161B27CC00E09E36 /* ImageCell.m in Sources */,
+				84CAAE55161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE93161B2F2C00E09E36 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5941,6 +6111,9 @@
 				847FD380161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
 				84F82C92161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
 				84F82CD0161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
+				84CAADF7161B27CC00E09E36 /* ImageCell.m in Sources */,
+				84CAAE39161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE77161B2F2C00E09E36 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5979,6 +6152,9 @@
 				847FD384161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
 				84F82C96161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
 				84F82CD4161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
+				84CAADFB161B27CC00E09E36 /* ImageCell.m in Sources */,
+				84CAAE3D161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE7B161B2F2C00E09E36 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6017,6 +6193,9 @@
 				847FD383161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
 				84F82C95161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
 				84F82CD3161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
+				84CAADFA161B27CC00E09E36 /* ImageCell.m in Sources */,
+				84CAAE3C161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE7A161B2F2C00E09E36 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6055,6 +6234,9 @@
 				847FD398161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
 				84F82CAA161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
 				84F82CE8161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
+				84CAAE0F161B27CC00E09E36 /* ImageCell.m in Sources */,
+				84CAAE51161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE8F161B2F2C00E09E36 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6093,6 +6275,9 @@
 				847FD399161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
 				84F82CAB161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
 				84F82CE9161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
+				84CAAE10161B27CC00E09E36 /* ImageCell.m in Sources */,
+				84CAAE52161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE90161B2F2C00E09E36 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6131,6 +6316,9 @@
 				847FD39A161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
 				84F82CAC161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
 				84F82CEA161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
+				84CAAE11161B27CC00E09E36 /* ImageCell.m in Sources */,
+				84CAAE53161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE91161B2F2C00E09E36 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6169,6 +6357,9 @@
 				847FD394161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
 				84F82CA6161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
 				84F82CE4161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
+				84CAAE0B161B27CC00E09E36 /* ImageCell.m in Sources */,
+				84CAAE4D161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE8B161B2F2C00E09E36 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6207,6 +6398,9 @@
 				847FD396161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
 				84F82CA8161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
 				84F82CE6161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
+				84CAAE0D161B27CC00E09E36 /* ImageCell.m in Sources */,
+				84CAAE4F161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE8D161B2F2C00E09E36 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6245,6 +6439,9 @@
 				847FD391161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
 				84F82CA3161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
 				84F82CE1161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
+				84CAAE08161B27CC00E09E36 /* ImageCell.m in Sources */,
+				84CAAE4A161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE88161B2F2C00E09E36 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6283,6 +6480,9 @@
 				847FD38F161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
 				84F82CA1161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
 				84F82CDF161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
+				84CAAE06161B27CC00E09E36 /* ImageCell.m in Sources */,
+				84CAAE48161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE86161B2F2C00E09E36 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6321,6 +6521,9 @@
 				847FD38C161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
 				84F82C9E161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
 				84F82CDC161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
+				84CAAE03161B27CC00E09E36 /* ImageCell.m in Sources */,
+				84CAAE45161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE83161B2F2C00E09E36 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6359,6 +6562,9 @@
 				847FD38B161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
 				84F82C9D161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
 				84F82CDB161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
+				84CAAE02161B27CC00E09E36 /* ImageCell.m in Sources */,
+				84CAAE44161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE82161B2F2C00E09E36 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6397,6 +6603,9 @@
 				847FD38E161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
 				84F82CA0161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
 				84F82CDE161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
+				84CAAE05161B27CC00E09E36 /* ImageCell.m in Sources */,
+				84CAAE47161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE85161B2F2C00E09E36 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6435,6 +6644,9 @@
 				847FD38D161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
 				84F82C9F161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
 				84F82CDD161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
+				84CAAE04161B27CC00E09E36 /* ImageCell.m in Sources */,
+				84CAAE46161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE84161B2F2C00E09E36 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6473,6 +6685,9 @@
 				847FD382161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
 				84F82C94161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
 				84F82CD2161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
+				84CAADF9161B27CC00E09E36 /* ImageCell.m in Sources */,
+				84CAAE3B161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE79161B2F2C00E09E36 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6511,6 +6726,9 @@
 				847FD390161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
 				84F82CA2161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
 				84F82CE0161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
+				84CAAE07161B27CC00E09E36 /* ImageCell.m in Sources */,
+				84CAAE49161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE87161B2F2C00E09E36 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6549,6 +6767,9 @@
 				847FD395161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
 				84F82CA7161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
 				84F82CE5161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
+				84CAAE0C161B27CC00E09E36 /* ImageCell.m in Sources */,
+				84CAAE4E161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE8C161B2F2C00E09E36 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6587,6 +6808,9 @@
 				847FD392161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
 				84F82CA4161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
 				84F82CE2161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
+				84CAAE09161B27CC00E09E36 /* ImageCell.m in Sources */,
+				84CAAE4B161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE89161B2F2C00E09E36 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6625,6 +6849,9 @@
 				847FD386161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
 				84F82C98161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
 				84F82CD6161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
+				84CAADFD161B27CC00E09E36 /* ImageCell.m in Sources */,
+				84CAAE3F161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE7D161B2F2C00E09E36 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6663,6 +6890,9 @@
 				847FD385161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
 				84F82C97161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
 				84F82CD5161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
+				84CAADFC161B27CC00E09E36 /* ImageCell.m in Sources */,
+				84CAAE3E161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE7C161B2F2C00E09E36 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6701,6 +6931,9 @@
 				847FD393161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
 				84F82CA5161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
 				84F82CE3161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
+				84CAAE0A161B27CC00E09E36 /* ImageCell.m in Sources */,
+				84CAAE4C161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE8A161B2F2C00E09E36 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6739,6 +6972,9 @@
 				847FD388161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
 				84F82C9A161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
 				84F82CD8161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
+				84CAADFF161B27CC00E09E36 /* ImageCell.m in Sources */,
+				84CAAE41161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE7F161B2F2C00E09E36 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6777,6 +7013,9 @@
 				847FD387161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
 				84F82C99161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
 				84F82CD7161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
+				84CAADFE161B27CC00E09E36 /* ImageCell.m in Sources */,
+				84CAAE40161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE7E161B2F2C00E09E36 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6815,6 +7054,9 @@
 				847FD397161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
 				84F82CA9161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
 				84F82CE7161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
+				84CAAE0E161B27CC00E09E36 /* ImageCell.m in Sources */,
+				84CAAE50161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE8E161B2F2C00E09E36 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6853,6 +7095,9 @@
 				847FD38A161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
 				84F82C9C161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
 				84F82CDA161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
+				84CAAE01161B27CC00E09E36 /* ImageCell.m in Sources */,
+				84CAAE43161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE81161B2F2C00E09E36 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6891,6 +7136,9 @@
 				847FD389161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
 				84F82C9B161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
 				84F82CD9161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
+				84CAAE00161B27CC00E09E36 /* ImageCell.m in Sources */,
+				84CAAE42161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE80161B2F2C00E09E36 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6929,6 +7177,9 @@
 				847FD381161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
 				84F82C93161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
 				84F82CD1161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
+				84CAADF8161B27CC00E09E36 /* ImageCell.m in Sources */,
+				84CAAE3A161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE78161B2F2C00E09E36 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6948,6 +7199,9 @@
 				847FD375161ACCC8009FB9CC /* Photo.m in Sources */,
 				847FD39D161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
 				84F82CAF161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
+				84CAAE14161B27CC00E09E36 /* ImageCell.m in Sources */,
+				84CAAE56161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE94161B2F2C00E09E36 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

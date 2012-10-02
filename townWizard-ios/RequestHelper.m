@@ -105,6 +105,22 @@
 
 }
 
++ (void)videosWithPartner:(Partner *)partner andSection:(Section *)section andDelegate:(id <RKObjectLoaderDelegate>)delegate
+{
+    RKURL *baseURL = [RKURL URLWithBaseURLString:API_URL];
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    
+    NSString *token = [RequestHelper xaccessTokenFromPartner:partner];
+    
+    objectManager.client.baseURL = baseURL;
+    [objectManager.client.HTTPHeaders setValue:token forKey:@"X-ACCESS-TOKEN"];
+    [objectManager.mappingProvider setObjectMapping:[PhotoCategory objectMapping] forKeyPath:@"data"];
+    
+    [objectManager loadObjectsAtResourcePath:section.url delegate:delegate];
+    
+}
+
+
 + (void)photosWithPartner:(Partner *)partner fromCategory:(PhotoCategory *)category andDelegate:(id <RKObjectLoaderDelegate>)delegate
 {
    // RKURL *baseURL = [RKURL URLWithBaseURLString:API_URL];

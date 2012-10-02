@@ -17,6 +17,7 @@
 #import "UIImageView+WebCache.h"
 #import "PhotoCategoriesViewController.h"
 #import "RequestHelper.h"
+#import "VideosViewController.h"
 
 
 #define URL_HEADER @"http://"
@@ -271,8 +272,18 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
         }
         [subMenu release];
         }
-        else if ([section.name isEqual:@"Photos"]) {
+        else if ([section.name isEqual:@"Photos"])
+        {
             PhotoCategoriesViewController *controller = [PhotoCategoriesViewController new];
+            controller.partner = self.partner;
+            controller.customNavigationBar = self.customNavigationBar;
+            [RequestHelper categoriesWithPartner:self.partner andSection:section andDelegate:controller];
+            [self.navigationController pushViewController:controller animated:YES];
+            [controller release];
+        }
+        else if ([section.name isEqual:@"Videos"])
+        {
+            VideosViewController *controller = [VideosViewController new];
             controller.partner = self.partner;
             controller.customNavigationBar = self.customNavigationBar;
             [RequestHelper categoriesWithPartner:self.partner andSection:section andDelegate:controller];
