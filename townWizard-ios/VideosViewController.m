@@ -75,7 +75,7 @@
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects
 {
-    if (objects)
+    if (objects && [[objects lastObject] isKindOfClass:[Video class]])
     {
         videos = [[NSArray alloc] initWithArray:objects];
         [self.tableView reloadData];

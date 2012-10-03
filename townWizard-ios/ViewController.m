@@ -38,21 +38,6 @@
 #pragma mark -
 #pragma mark NSUserDefaults saving
 
--(void)saveDefaultPartner:(Partner*)partner
-{
-    [[NSUserDefaults standardUserDefaults] setObject:partner
-                                              forKey:@"defaultPartner"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
--(void)saveSectionsForDefaultPartner:(NSArray *)sections
-{
-    [[NSUserDefaults standardUserDefaults] setObject:sections
-                                              forKey:@"partnerSections"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
-}
-
 #define LOGO_PORTRAIT_WIDTH 320
 #define LOGO_PORTRAIT_HEIGHT 110
 #define NAVIGATION_BAR_HEIGHT 60
@@ -94,11 +79,8 @@
 #pragma mark - go Home
 
 - (void)goHome {
-    [self.navigationController popToRootViewControllerAnimated:YES];
-    
-    [self animateLogoToScreen];
-    
-    [self saveDefaultPartner:nil];
+    [self.navigationController popToRootViewControllerAnimated:YES];    
+    [self animateLogoToScreen];   
 }
 
 -(void)menuButtonPressed:(id)sender
@@ -112,8 +94,7 @@
 
 -(void)infoButtonPressed:(id)sender
 {
-    SubMenuViewController *subMenu=[[SubMenuViewController alloc]
-                                    initWithNibName:@"SubMenuViewController" bundle:nil];
+    SubMenuViewController *subMenu = [SubMenuViewController new];
     subMenu.customNavigationBar = customNavigationBar;
     
     subMenu.delegate = self;
@@ -157,55 +138,15 @@
     [customNavigationBar.backButton addTarget:self
                                        action:@selector(goHome)
                              forControlEvents:UIControlEventTouchUpInside];
-    [self.navigationController.navigationBar addSubview:customNavigationBar];
-    
-    NSDictionary * partnerDict = [[NSUserDefaults standardUserDefaults]
-                                  objectForKey:@"defaultPartner"];
-    NSMutableArray * partnerSect = [[NSUserDefaults standardUserDefaults]
-                                    objectForKey:@"partnerSections"];
-    
+    [self.navigationController.navigationBar addSubview:customNavigationBar];     
     doNotUseGeopositionSearchResults = NO;
-    loadingMorePartnersInProgress = NO;
-    
-    if(partnerDict != nil && partnerSect != nil) {
-        selectedPartnerSections = partnerSect;
-        PartnerMenuViewController *subMenu = [[PartnerMenuViewController alloc] init];
-        subMenu.customNavigationBar = customNavigationBar;
-        subMenu.partner = partnerDict;
-        
-        if ([partnerDict objectForKey:@"facebook_app_id"])
-        {
-            [AppDelegate sharedDelegate].facebookHelper.appId = [partnerDict
-                                                                 objectForKey:@"facebook_app_id"];
-        }
-        subMenu.partnerSections = selectedPartnerSections;
-        subMenu.delegate = self;
-        
-        customNavigationBar.menuPage = subMenu;
-        [self.navigationController pushViewController:subMenu animated:NO];
-        [self loadBackgroundForMenu:subMenu];
-        [subMenu release];
-        doNotUseGeopositionSearchResults = YES;
-        
-        //Animations are not needed, this is start of the application
-        
-        self.logo.frame = CGRectMake(-LOGO_PORTRAIT_WIDTH, 0,
-                                     LOGO_PORTRAIT_WIDTH, LOGO_PORTRAIT_HEIGHT);
-        customNavigationBar.frame = CGRectMake(0, 0,
-                                               self.view.frame.size.width, NAVIGATION_BAR_HEIGHT);
-        //        [self showMenuForPartner:partnerDict];
-    }
-}
-
-- (void) showMenuForPartner:(NSDictionary *) partnerInfo {
-    PartnerMenuViewController *controller = [[PartnerMenuViewController alloc] init];
-    [controller setPartner:partnerInfo];
-    [[self navigationController] pushViewController:controller animated:YES];
-    [controller release];
+    loadingMorePartnersInProgress = NO;    
 }
 
 
-- (void)viewWillDisappear:(BOOL)animated {
+
+- (void)viewWillDisappear:(BOOL)animated
+{
 	[super viewWillDisappear:animated];
     //  [self.navigationController.navigationBar setBarStyle:UIBarStyleBlackOpaque];
     [self.navigationController.navigationBar addSubview:customNavigationBar];
@@ -213,7 +154,8 @@
     self.navigationItem.hidesBackButton = YES;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
@@ -373,16 +315,12 @@
     customNavigationBar.menuPage = subMenu;
     subMenu.partner = aPartner;
     selectedMenu = subMenu;
-    UIImageView *bgView = customNavigationBar.backgroundImageView;
-   // bgView.backgroundColor = [UIColor yellowColor];
-    
-    [bgView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",SERVER_URL,aPartner.headerImageUrl]]];
-    [self.navigationController pushViewController:selectedMenu animated:YES];
-    
-    [RequestHelper sectionsWithPartner:aPartner andDelegate:self];
-    //------
-    
-    
+    UIImageView *bgView = customNavigationBar.backgroundImageView;    
+    NSString *imageUrl = [NSString stringWithFormat:@"%@%@",SERVER_URL,aPartner.headerImageUrl];
+    [bgView setImageWithURL:[NSURL URLWithString:imageUrl]];
+     [self animateNavigationBarOnScreen:selectedMenu.customNavigationBar];
+    [self animateLogoOffScreen];  
+    [self.navigationController pushViewController:selectedMenu animated:YES];    
 }
 
 -(void)locationManager:(CLLocationManager *)aManager
@@ -424,8 +362,7 @@
         
         if ([partner.iTunesAppId isEqual:@""]) {
             [self loadSectionMenuForPartnerWithPartner:partner];
-            //            [self showMenuForPartner:partnerDict];
-            [self saveDefaultPartner:partner];
+           
             if (partner.facebookAppId)
             {
                 [AppDelegate sharedDelegate].facebookHelper.appId = partner.facebookAppId;

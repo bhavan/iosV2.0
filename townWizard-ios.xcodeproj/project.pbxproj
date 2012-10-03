@@ -61,7 +61,6 @@
 		3D8DDA7715A47892001D48D2 /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
 		3D8DDA7815A47892001D48D2 /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
 		3D8DDA7915A47892001D48D2 /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
-		3D8DDA7A15A47892001D48D2 /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
 		3D8DDA7B15A47892001D48D2 /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
 		3D8DDA7C15A47892001D48D2 /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
 		3D8DDA7D15A47892001D48D2 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
@@ -127,7 +126,6 @@
 		3D8DDADB15A47A71001D48D2 /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
 		3D8DDADC15A47A71001D48D2 /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
 		3D8DDADD15A47A71001D48D2 /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
-		3D8DDADE15A47A71001D48D2 /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
 		3D8DDADF15A47A71001D48D2 /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
 		3D8DDAE015A47A71001D48D2 /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
 		3D8DDAE115A47A71001D48D2 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
@@ -310,7 +308,6 @@
 		847FD3BA161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847FD37F161ACDAE009FB9CC /* PhotoCategoriesViewController.xib */; };
 		847FD3BB161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847FD37F161ACDAE009FB9CC /* PhotoCategoriesViewController.xib */; };
 		84818E0614D7DE0600BBCD7F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84818E0514D7DE0600BBCD7F /* CoreLocation.framework */; };
-		84818E1414D81CDA00BBCD7F /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
 		848226C41619AE7D00201600 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 848226C31619AE7D00201600 /* Section.m */; };
 		848226C61619AE8900201600 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 848226C31619AE7D00201600 /* Section.m */; };
 		848226C71619AE8C00201600 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 848226C31619AE7D00201600 /* Section.m */; };
@@ -643,7 +640,6 @@
 		950B68311601239F00FC333C /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
 		950B68321601239F00FC333C /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
 		950B68331601239F00FC333C /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
-		950B68341601239F00FC333C /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
 		950B68351601239F00FC333C /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
 		950B68361601239F00FC333C /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
 		950B68371601239F00FC333C /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
@@ -710,7 +706,6 @@
 		952864A31602730A00E80FA6 /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
 		952864A41602730A00E80FA6 /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
 		952864A51602730A00E80FA6 /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
-		952864A61602730A00E80FA6 /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
 		952864A71602730A00E80FA6 /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
 		952864A81602730A00E80FA6 /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
 		952864A91602730A00E80FA6 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
@@ -776,7 +771,6 @@
 		9535255215AE021500857F12 /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
 		9535255315AE021500857F12 /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
 		9535255415AE021500857F12 /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
-		9535255515AE021500857F12 /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
 		9535255615AE021500857F12 /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
 		9535255715AE021500857F12 /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
 		9535255815AE021500857F12 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
@@ -838,7 +832,6 @@
 		953525B615AE128B00857F12 /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
 		953525B715AE128B00857F12 /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
 		953525B815AE128B00857F12 /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
-		953525B915AE128B00857F12 /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
 		953525BA15AE128B00857F12 /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
 		953525BB15AE128B00857F12 /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
 		953525BC15AE128B00857F12 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
@@ -900,7 +893,6 @@
 		9535262315AE1E6800857F12 /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
 		9535262415AE1E6800857F12 /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
 		9535262515AE1E6800857F12 /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
-		9535262615AE1E6800857F12 /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
 		9535262715AE1E6800857F12 /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
 		9535262815AE1E6800857F12 /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
 		9535262915AE1E6800857F12 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
@@ -963,7 +955,6 @@
 		953A9E9A15B7304300E1C832 /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
 		953A9E9B15B7304300E1C832 /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
 		953A9E9C15B7304300E1C832 /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
-		953A9E9D15B7304300E1C832 /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
 		953A9E9E15B7304300E1C832 /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
 		953A9E9F15B7304300E1C832 /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
 		953A9EA015B7304300E1C832 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
@@ -1029,7 +1020,6 @@
 		954628EE15AF615D00A39C65 /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
 		954628EF15AF615D00A39C65 /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
 		954628F015AF615D00A39C65 /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
-		954628F115AF615D00A39C65 /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
 		954628F215AF615D00A39C65 /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
 		954628F315AF615D00A39C65 /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
 		954628F415AF615D00A39C65 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
@@ -1096,7 +1086,6 @@
 		95468F9D15C067CF007E17CE /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
 		95468F9E15C067CF007E17CE /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
 		95468F9F15C067CF007E17CE /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
-		95468FA015C067CF007E17CE /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
 		95468FA115C067CF007E17CE /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
 		95468FA215C067CF007E17CE /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
 		95468FA315C067CF007E17CE /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
@@ -1163,7 +1152,6 @@
 		9569FA1515E42BE40046338E /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
 		9569FA1615E42BE40046338E /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
 		9569FA1715E42BE40046338E /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
-		9569FA1815E42BE40046338E /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
 		9569FA1915E42BE40046338E /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
 		9569FA1A15E42BE40046338E /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
 		9569FA1B15E42BE40046338E /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
@@ -1230,7 +1218,6 @@
 		9575030D15E576FF004A3D0E /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
 		9575030E15E576FF004A3D0E /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
 		9575030F15E576FF004A3D0E /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
-		9575031015E576FF004A3D0E /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
 		9575031115E576FF004A3D0E /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
 		9575031215E576FF004A3D0E /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
 		9575031315E576FF004A3D0E /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
@@ -1293,7 +1280,6 @@
 		9575036915E57E5E004A3D0E /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
 		9575036A15E57E5E004A3D0E /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
 		9575036B15E57E5E004A3D0E /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
-		9575036C15E57E5E004A3D0E /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
 		9575036D15E57E5E004A3D0E /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
 		9575036E15E57E5E004A3D0E /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
 		9575036F15E57E5E004A3D0E /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
@@ -1360,7 +1346,6 @@
 		9578EFDB15E5219900846F71 /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
 		9578EFDC15E5219900846F71 /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
 		9578EFDD15E5219900846F71 /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
-		9578EFDE15E5219900846F71 /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
 		9578EFDF15E5219900846F71 /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
 		9578EFE015E5219900846F71 /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
 		9578EFE115E5219900846F71 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
@@ -1427,7 +1412,6 @@
 		9578F04015E5301900846F71 /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
 		9578F04115E5301900846F71 /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
 		9578F04215E5301900846F71 /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
-		9578F04315E5301900846F71 /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
 		9578F04415E5301900846F71 /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
 		9578F04515E5301900846F71 /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
 		9578F04615E5301900846F71 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
@@ -1494,7 +1478,6 @@
 		9585E7461608AD7E007E42D4 /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
 		9585E7471608AD7E007E42D4 /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
 		9585E7481608AD7E007E42D4 /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
-		9585E7491608AD7E007E42D4 /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
 		9585E74A1608AD7E007E42D4 /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
 		9585E74B1608AD7E007E42D4 /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
 		9585E74C1608AD7E007E42D4 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
@@ -1565,7 +1548,6 @@
 		9589BEE815B8A4550057B7EC /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
 		9589BEE915B8A4550057B7EC /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
 		9589BEEA15B8A4550057B7EC /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
-		9589BEEB15B8A4550057B7EC /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
 		9589BEEC15B8A4550057B7EC /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
 		9589BEED15B8A4550057B7EC /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
 		9589BEEE15B8A4550057B7EC /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
@@ -1632,7 +1614,6 @@
 		95A838DF15B6216800BD05EC /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
 		95A838E015B6216800BD05EC /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
 		95A838E115B6216800BD05EC /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
-		95A838E215B6216800BD05EC /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
 		95A838E315B6216800BD05EC /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
 		95A838E415B6216800BD05EC /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
 		95A838E515B6216800BD05EC /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
@@ -1699,7 +1680,6 @@
 		95B0A37C15BDF08800DC9ED6 /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
 		95B0A37D15BDF08800DC9ED6 /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
 		95B0A37E15BDF08800DC9ED6 /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
-		95B0A37F15BDF08800DC9ED6 /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
 		95B0A38015BDF08800DC9ED6 /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
 		95B0A38115BDF08800DC9ED6 /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
 		95B0A38215BDF08800DC9ED6 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
@@ -1770,7 +1750,6 @@
 		95C0CD2F15FF7E0400AC5AA4 /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
 		95C0CD3015FF7E0400AC5AA4 /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
 		95C0CD3115FF7E0400AC5AA4 /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
-		95C0CD3215FF7E0400AC5AA4 /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
 		95C0CD3315FF7E0400AC5AA4 /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
 		95C0CD3415FF7E0400AC5AA4 /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
 		95C0CD3515FF7E0400AC5AA4 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
@@ -1837,7 +1816,6 @@
 		95C432281600E47D00B24E45 /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
 		95C432291600E47D00B24E45 /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
 		95C4322A1600E47D00B24E45 /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
-		95C4322B1600E47D00B24E45 /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
 		95C4322C1600E47D00B24E45 /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
 		95C4322D1600E47D00B24E45 /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
 		95C4322E1600E47D00B24E45 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
@@ -1904,7 +1882,6 @@
 		95C8715415B7449600D30040 /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
 		95C8715515B7449600D30040 /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
 		95C8715615B7449600D30040 /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
-		95C8715715B7449600D30040 /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
 		95C8715815B7449600D30040 /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
 		95C8715915B7449600D30040 /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
 		95C8715A15B7449600D30040 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
@@ -1967,7 +1944,6 @@
 		95CE619415EFD96B00A08BC4 /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
 		95CE619515EFD96B00A08BC4 /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
 		95CE619615EFD96B00A08BC4 /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
-		95CE619715EFD96B00A08BC4 /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
 		95CE619815EFD96B00A08BC4 /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
 		95CE619915EFD96B00A08BC4 /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
 		95CE619A15EFD96B00A08BC4 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
@@ -2034,7 +2010,6 @@
 		95CE61F915EFF0AD00A08BC4 /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
 		95CE61FA15EFF0AD00A08BC4 /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
 		95CE61FB15EFF0AD00A08BC4 /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
-		95CE61FC15EFF0AD00A08BC4 /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
 		95CE61FD15EFF0AD00A08BC4 /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
 		95CE61FE15EFF0AD00A08BC4 /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
 		95CE61FF15EFF0AD00A08BC4 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
@@ -2112,7 +2087,6 @@
 		95F1E12B15AF59AC005FAB38 /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
 		95F1E12C15AF59AC005FAB38 /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
 		95F1E12D15AF59AC005FAB38 /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
-		95F1E12E15AF59AC005FAB38 /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
 		95F1E12F15AF59AC005FAB38 /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
 		95F1E13015AF59AC005FAB38 /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
 		95F1E13115AF59AC005FAB38 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
@@ -2183,7 +2157,6 @@
 		95F8581015EE7E4C009C4B7C /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
 		95F8581115EE7E4C009C4B7C /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
 		95F8581215EE7E4C009C4B7C /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
-		95F8581315EE7E4C009C4B7C /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
 		95F8581415EE7E4C009C4B7C /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
 		95F8581515EE7E4C009C4B7C /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
 		95F8581615EE7E4C009C4B7C /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
@@ -2246,7 +2219,6 @@
 		95F8586C15EE80C3009C4B7C /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
 		95F8586D15EE80C3009C4B7C /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
 		95F8586E15EE80C3009C4B7C /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
-		95F8586F15EE80C3009C4B7C /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
 		95F8587015EE80C3009C4B7C /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
 		95F8587115EE80C3009C4B7C /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
 		95F8587215EE80C3009C4B7C /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
@@ -2309,7 +2281,6 @@
 		D9FA2C3F159068E7006FFF7E /* Btn-Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000E14E55890003DE64B /* Btn-Upload.png */; };
 		D9FA2C40159068E7006FFF7E /* Write-Caption.png in Resources */ = {isa = PBXBuildFile; fileRef = E691000F14E55890003DE64B /* Write-Caption.png */; };
 		D9FA2C41159068E7006FFF7E /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
-		D9FA2C44159068E7006FFF7E /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
 		D9FA2C45159068E7006FFF7E /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
 		D9FA2C46159068E7006FFF7E /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
 		D9FA2C47159068E7006FFF7E /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
@@ -2433,7 +2404,6 @@
 		E690230A14FE447A008F52B2 /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
 		E690230B14FE447A008F52B2 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8488550914D1ABAA0030BD03 /* ViewController.xib */; };
 		E690230C14FE447A008F52B2 /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
-		E690230F14FE447A008F52B2 /* PhotosPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */; };
 		E690231214FE447A008F52B2 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
 		E690231314FE447A008F52B2 /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
 		E690231414FE447A008F52B2 /* AddCaptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691000914E550B3003DE64B /* AddCaptionViewController.xib */; };
@@ -2496,7 +2466,6 @@
 		847FD37E161ACDAE009FB9CC /* PhotoCategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCategoriesViewController.m; sourceTree = "<group>"; };
 		847FD37F161ACDAE009FB9CC /* PhotoCategoriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoCategoriesViewController.xib; sourceTree = "<group>"; };
 		84818E0514D7DE0600BBCD7F /* CoreLocation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotosPageViewController.xib; sourceTree = "<group>"; };
 		848226C21619AE7D00201600 /* Section.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Section.h; sourceTree = "<group>"; };
 		848226C31619AE7D00201600 /* Section.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Section.m; sourceTree = "<group>"; };
 		8483F24314D03FBE005E4216 /* TownWizard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TownWizard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2700,7 +2669,7 @@
 		95F8588715EE80C4009C4B7C /* townWizard-partner-template copy22-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizard-partner-template copy22-Info.plist"; path = "/Users/Darren/Documents/TownWizardApps/townWizard-partner-template copy22-Info.plist"; sourceTree = "<absolute>"; };
 		A7C4E1FAD4C6409B8B72D739 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEBE5D778E4E46C7920418F0 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		D90D0DF2158F06500026828E /* townWizard-partner-template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "townWizard-partner-template.app"; path = townWizardPartnerTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D90D0DF2158F06500026828E /* townWizardPartnerTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = townWizardPartnerTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90D0DF9158F06500026828E /* townWizard-partner-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "townWizard-partner-Info.plist"; sourceTree = "<group>"; };
 		D90D0DFB158F06500026828E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D90D0DFD158F06500026828E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -3438,7 +3407,7 @@
 				8483F24314D03FBE005E4216 /* TownWizard.app */,
 				E61A960D14FD26D1006E5F24 /* CedarTesting.app */,
 				E690233214FE447A008F52B2 /* KIF tests.app */,
-				D90D0DF2158F06500026828E /* townWizard-partner-template.app */,
+				D90D0DF2158F06500026828E /* townWizardPartnerTemplate.app */,
 				3D8DDA9015A47892001D48D2 /* tw-p1.app */,
 				3D8DDAF415A47A71001D48D2 /* tw-p93.app */,
 				9535256B15AE021500857F12 /* MyKnoxzilla.app */,
@@ -3531,17 +3500,14 @@
 				847F875E14D6C81F005EE200 /* PartnerMenuViewController.m */,
 				847FD37D161ACDAE009FB9CC /* PhotoCategoriesViewController.h */,
 				847FD37E161ACDAE009FB9CC /* PhotoCategoriesViewController.m */,
-				847FD37F161ACDAE009FB9CC /* PhotoCategoriesViewController.xib */,
 				84F82C8F161AF98E00E0A481 /* PhotoGalleryViewController.h */,
 				84F82C90161AF98E00E0A481 /* PhotoGalleryViewController.m */,
-				84F82C91161AF98E00E0A481 /* PhotoGalleryViewController.xib */,
 				84F82CCE161AFB8700E0A481 /* WebImageGridViewCell.h */,
 				84F82CCF161AFB8700E0A481 /* WebImageGridViewCell.m */,
 				84CAADF5161B27CB00E09E36 /* ImageCell.h */,
 				84CAADF6161B27CB00E09E36 /* ImageCell.m */,
 				84CAAE36161B2EB100E09E36 /* VideosViewController.h */,
 				84CAAE37161B2EB100E09E36 /* VideosViewController.m */,
-				84CAAE38161B2EB100E09E36 /* VideosViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -3549,7 +3515,9 @@
 		848854A814D142120030BD03 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				84818E1214D81CD900BBCD7F /* PhotosPageViewController.xib */,
+				847FD37F161ACDAE009FB9CC /* PhotoCategoriesViewController.xib */,
+				84F82C91161AF98E00E0A481 /* PhotoGalleryViewController.xib */,
+				84CAAE38161B2EB100E09E36 /* VideosViewController.xib */,
 				847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */,
 				848854AB14D142430030BD03 /* SubMenuViewController.xib */,
 				8488550914D1ABAA0030BD03 /* ViewController.xib */,
@@ -4650,7 +4618,7 @@
 			);
 			name = townWizardPartnerTemplate;
 			productName = "townWizard-partner";
-			productReference = D90D0DF2158F06500026828E /* townWizard-partner-template.app */;
+			productReference = D90D0DF2158F06500026828E /* townWizardPartnerTemplate.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E61A960C14FD26D1006E5F24 /* CedarTesting */ = {
@@ -4758,7 +4726,6 @@
 				3D8DDA7715A47892001D48D2 /* Btn-Upload.png in Resources */,
 				3D8DDA7815A47892001D48D2 /* Write-Caption.png in Resources */,
 				3D8DDA7915A47892001D48D2 /* Btn-Directions.png in Resources */,
-				3D8DDA7A15A47892001D48D2 /* PhotosPageViewController.xib in Resources */,
 				3D8DDA7B15A47892001D48D2 /* PartnerMenuViewController.xib in Resources */,
 				3D8DDA7C15A47892001D48D2 /* SubMenuViewController.xib in Resources */,
 				3D8DDA7D15A47892001D48D2 /* MapViewController.xib in Resources */,
@@ -4802,7 +4769,6 @@
 				3D8DDADB15A47A71001D48D2 /* Btn-Upload.png in Resources */,
 				3D8DDADC15A47A71001D48D2 /* Write-Caption.png in Resources */,
 				3D8DDADD15A47A71001D48D2 /* Btn-Directions.png in Resources */,
-				3D8DDADE15A47A71001D48D2 /* PhotosPageViewController.xib in Resources */,
 				3D8DDADF15A47A71001D48D2 /* PartnerMenuViewController.xib in Resources */,
 				3D8DDAE015A47A71001D48D2 /* SubMenuViewController.xib in Resources */,
 				3D8DDAE115A47A71001D48D2 /* MapViewController.xib in Resources */,
@@ -4839,7 +4805,6 @@
 				848854AD14D142430030BD03 /* SubMenuViewController.xib in Resources */,
 				8488550A14D1ABAB0030BD03 /* ViewController.xib in Resources */,
 				847F876114D6C81F005EE200 /* PartnerMenuViewController.xib in Resources */,
-				84818E1414D81CDA00BBCD7F /* PhotosPageViewController.xib in Resources */,
 				E691FF9114E50981003DE64B /* MapViewController.xib in Resources */,
 				E691FF9514E50D94003DE64B /* Btn-Directions.png in Resources */,
 				E691000B14E550B3003DE64B /* AddCaptionViewController.xib in Resources */,
@@ -4892,7 +4857,6 @@
 				950B68311601239F00FC333C /* Btn-Upload.png in Resources */,
 				950B68321601239F00FC333C /* Write-Caption.png in Resources */,
 				950B68331601239F00FC333C /* Btn-Directions.png in Resources */,
-				950B68341601239F00FC333C /* PhotosPageViewController.xib in Resources */,
 				950B68351601239F00FC333C /* PartnerMenuViewController.xib in Resources */,
 				950B68361601239F00FC333C /* SubMenuViewController.xib in Resources */,
 				950B68371601239F00FC333C /* MapViewController.xib in Resources */,
@@ -4936,7 +4900,6 @@
 				952864A31602730A00E80FA6 /* Btn-Upload.png in Resources */,
 				952864A41602730A00E80FA6 /* Write-Caption.png in Resources */,
 				952864A51602730A00E80FA6 /* Btn-Directions.png in Resources */,
-				952864A61602730A00E80FA6 /* PhotosPageViewController.xib in Resources */,
 				952864A71602730A00E80FA6 /* PartnerMenuViewController.xib in Resources */,
 				952864A81602730A00E80FA6 /* SubMenuViewController.xib in Resources */,
 				952864A91602730A00E80FA6 /* MapViewController.xib in Resources */,
@@ -4980,7 +4943,6 @@
 				9535255215AE021500857F12 /* Btn-Upload.png in Resources */,
 				9535255315AE021500857F12 /* Write-Caption.png in Resources */,
 				9535255415AE021500857F12 /* Btn-Directions.png in Resources */,
-				9535255515AE021500857F12 /* PhotosPageViewController.xib in Resources */,
 				9535255615AE021500857F12 /* PartnerMenuViewController.xib in Resources */,
 				9535255715AE021500857F12 /* SubMenuViewController.xib in Resources */,
 				9535255815AE021500857F12 /* MapViewController.xib in Resources */,
@@ -5024,7 +4986,6 @@
 				953525B615AE128B00857F12 /* Btn-Upload.png in Resources */,
 				953525B715AE128B00857F12 /* Write-Caption.png in Resources */,
 				953525B815AE128B00857F12 /* Btn-Directions.png in Resources */,
-				953525B915AE128B00857F12 /* PhotosPageViewController.xib in Resources */,
 				953525BA15AE128B00857F12 /* PartnerMenuViewController.xib in Resources */,
 				953525BB15AE128B00857F12 /* SubMenuViewController.xib in Resources */,
 				953525BC15AE128B00857F12 /* MapViewController.xib in Resources */,
@@ -5068,7 +5029,6 @@
 				9535262315AE1E6800857F12 /* Btn-Upload.png in Resources */,
 				9535262415AE1E6800857F12 /* Write-Caption.png in Resources */,
 				9535262515AE1E6800857F12 /* Btn-Directions.png in Resources */,
-				9535262615AE1E6800857F12 /* PhotosPageViewController.xib in Resources */,
 				9535262715AE1E6800857F12 /* PartnerMenuViewController.xib in Resources */,
 				9535262815AE1E6800857F12 /* SubMenuViewController.xib in Resources */,
 				9535262915AE1E6800857F12 /* MapViewController.xib in Resources */,
@@ -5112,7 +5072,6 @@
 				953A9E9A15B7304300E1C832 /* Btn-Upload.png in Resources */,
 				953A9E9B15B7304300E1C832 /* Write-Caption.png in Resources */,
 				953A9E9C15B7304300E1C832 /* Btn-Directions.png in Resources */,
-				953A9E9D15B7304300E1C832 /* PhotosPageViewController.xib in Resources */,
 				953A9E9E15B7304300E1C832 /* PartnerMenuViewController.xib in Resources */,
 				953A9E9F15B7304300E1C832 /* SubMenuViewController.xib in Resources */,
 				953A9EA015B7304300E1C832 /* MapViewController.xib in Resources */,
@@ -5156,7 +5115,6 @@
 				954628EE15AF615D00A39C65 /* Btn-Upload.png in Resources */,
 				954628EF15AF615D00A39C65 /* Write-Caption.png in Resources */,
 				954628F015AF615D00A39C65 /* Btn-Directions.png in Resources */,
-				954628F115AF615D00A39C65 /* PhotosPageViewController.xib in Resources */,
 				954628F215AF615D00A39C65 /* PartnerMenuViewController.xib in Resources */,
 				954628F315AF615D00A39C65 /* SubMenuViewController.xib in Resources */,
 				954628F415AF615D00A39C65 /* MapViewController.xib in Resources */,
@@ -5200,7 +5158,6 @@
 				95468F9D15C067CF007E17CE /* Btn-Upload.png in Resources */,
 				95468F9E15C067CF007E17CE /* Write-Caption.png in Resources */,
 				95468F9F15C067CF007E17CE /* Btn-Directions.png in Resources */,
-				95468FA015C067CF007E17CE /* PhotosPageViewController.xib in Resources */,
 				95468FA115C067CF007E17CE /* PartnerMenuViewController.xib in Resources */,
 				95468FA215C067CF007E17CE /* SubMenuViewController.xib in Resources */,
 				95468FA315C067CF007E17CE /* MapViewController.xib in Resources */,
@@ -5244,7 +5201,6 @@
 				9569FA1515E42BE40046338E /* Btn-Upload.png in Resources */,
 				9569FA1615E42BE40046338E /* Write-Caption.png in Resources */,
 				9569FA1715E42BE40046338E /* Btn-Directions.png in Resources */,
-				9569FA1815E42BE40046338E /* PhotosPageViewController.xib in Resources */,
 				9569FA1915E42BE40046338E /* PartnerMenuViewController.xib in Resources */,
 				9569FA1A15E42BE40046338E /* SubMenuViewController.xib in Resources */,
 				9569FA1B15E42BE40046338E /* MapViewController.xib in Resources */,
@@ -5288,7 +5244,6 @@
 				9575030D15E576FF004A3D0E /* Btn-Upload.png in Resources */,
 				9575030E15E576FF004A3D0E /* Write-Caption.png in Resources */,
 				9575030F15E576FF004A3D0E /* Btn-Directions.png in Resources */,
-				9575031015E576FF004A3D0E /* PhotosPageViewController.xib in Resources */,
 				9575031115E576FF004A3D0E /* PartnerMenuViewController.xib in Resources */,
 				9575031215E576FF004A3D0E /* SubMenuViewController.xib in Resources */,
 				9575031315E576FF004A3D0E /* MapViewController.xib in Resources */,
@@ -5332,7 +5287,6 @@
 				9575036915E57E5E004A3D0E /* Btn-Upload.png in Resources */,
 				9575036A15E57E5E004A3D0E /* Write-Caption.png in Resources */,
 				9575036B15E57E5E004A3D0E /* Btn-Directions.png in Resources */,
-				9575036C15E57E5E004A3D0E /* PhotosPageViewController.xib in Resources */,
 				9575036D15E57E5E004A3D0E /* PartnerMenuViewController.xib in Resources */,
 				9575036E15E57E5E004A3D0E /* SubMenuViewController.xib in Resources */,
 				9575036F15E57E5E004A3D0E /* MapViewController.xib in Resources */,
@@ -5376,7 +5330,6 @@
 				9578EFDB15E5219900846F71 /* Btn-Upload.png in Resources */,
 				9578EFDC15E5219900846F71 /* Write-Caption.png in Resources */,
 				9578EFDD15E5219900846F71 /* Btn-Directions.png in Resources */,
-				9578EFDE15E5219900846F71 /* PhotosPageViewController.xib in Resources */,
 				9578EFDF15E5219900846F71 /* PartnerMenuViewController.xib in Resources */,
 				9578EFE015E5219900846F71 /* SubMenuViewController.xib in Resources */,
 				9578EFE115E5219900846F71 /* MapViewController.xib in Resources */,
@@ -5420,7 +5373,6 @@
 				9578F04015E5301900846F71 /* Btn-Upload.png in Resources */,
 				9578F04115E5301900846F71 /* Write-Caption.png in Resources */,
 				9578F04215E5301900846F71 /* Btn-Directions.png in Resources */,
-				9578F04315E5301900846F71 /* PhotosPageViewController.xib in Resources */,
 				9578F04415E5301900846F71 /* PartnerMenuViewController.xib in Resources */,
 				9578F04515E5301900846F71 /* SubMenuViewController.xib in Resources */,
 				9578F04615E5301900846F71 /* MapViewController.xib in Resources */,
@@ -5464,7 +5416,6 @@
 				9585E7461608AD7E007E42D4 /* Btn-Upload.png in Resources */,
 				9585E7471608AD7E007E42D4 /* Write-Caption.png in Resources */,
 				9585E7481608AD7E007E42D4 /* Btn-Directions.png in Resources */,
-				9585E7491608AD7E007E42D4 /* PhotosPageViewController.xib in Resources */,
 				9585E74A1608AD7E007E42D4 /* PartnerMenuViewController.xib in Resources */,
 				9585E74B1608AD7E007E42D4 /* SubMenuViewController.xib in Resources */,
 				9585E74C1608AD7E007E42D4 /* MapViewController.xib in Resources */,
@@ -5508,7 +5459,6 @@
 				9589BEE815B8A4550057B7EC /* Btn-Upload.png in Resources */,
 				9589BEE915B8A4550057B7EC /* Write-Caption.png in Resources */,
 				9589BEEA15B8A4550057B7EC /* Btn-Directions.png in Resources */,
-				9589BEEB15B8A4550057B7EC /* PhotosPageViewController.xib in Resources */,
 				9589BEEC15B8A4550057B7EC /* PartnerMenuViewController.xib in Resources */,
 				9589BEED15B8A4550057B7EC /* SubMenuViewController.xib in Resources */,
 				9589BEEE15B8A4550057B7EC /* MapViewController.xib in Resources */,
@@ -5552,7 +5502,6 @@
 				95A838DF15B6216800BD05EC /* Btn-Upload.png in Resources */,
 				95A838E015B6216800BD05EC /* Write-Caption.png in Resources */,
 				95A838E115B6216800BD05EC /* Btn-Directions.png in Resources */,
-				95A838E215B6216800BD05EC /* PhotosPageViewController.xib in Resources */,
 				95A838E315B6216800BD05EC /* PartnerMenuViewController.xib in Resources */,
 				95A838E415B6216800BD05EC /* SubMenuViewController.xib in Resources */,
 				95A838E515B6216800BD05EC /* MapViewController.xib in Resources */,
@@ -5596,7 +5545,6 @@
 				95B0A37C15BDF08800DC9ED6 /* Btn-Upload.png in Resources */,
 				95B0A37D15BDF08800DC9ED6 /* Write-Caption.png in Resources */,
 				95B0A37E15BDF08800DC9ED6 /* Btn-Directions.png in Resources */,
-				95B0A37F15BDF08800DC9ED6 /* PhotosPageViewController.xib in Resources */,
 				95B0A38015BDF08800DC9ED6 /* PartnerMenuViewController.xib in Resources */,
 				95B0A38115BDF08800DC9ED6 /* SubMenuViewController.xib in Resources */,
 				95B0A38215BDF08800DC9ED6 /* MapViewController.xib in Resources */,
@@ -5640,7 +5588,6 @@
 				95C0CD2F15FF7E0400AC5AA4 /* Btn-Upload.png in Resources */,
 				95C0CD3015FF7E0400AC5AA4 /* Write-Caption.png in Resources */,
 				95C0CD3115FF7E0400AC5AA4 /* Btn-Directions.png in Resources */,
-				95C0CD3215FF7E0400AC5AA4 /* PhotosPageViewController.xib in Resources */,
 				95C0CD3315FF7E0400AC5AA4 /* PartnerMenuViewController.xib in Resources */,
 				95C0CD3415FF7E0400AC5AA4 /* SubMenuViewController.xib in Resources */,
 				95C0CD3515FF7E0400AC5AA4 /* MapViewController.xib in Resources */,
@@ -5684,7 +5631,6 @@
 				95C432281600E47D00B24E45 /* Btn-Upload.png in Resources */,
 				95C432291600E47D00B24E45 /* Write-Caption.png in Resources */,
 				95C4322A1600E47D00B24E45 /* Btn-Directions.png in Resources */,
-				95C4322B1600E47D00B24E45 /* PhotosPageViewController.xib in Resources */,
 				95C4322C1600E47D00B24E45 /* PartnerMenuViewController.xib in Resources */,
 				95C4322D1600E47D00B24E45 /* SubMenuViewController.xib in Resources */,
 				95C4322E1600E47D00B24E45 /* MapViewController.xib in Resources */,
@@ -5728,7 +5674,6 @@
 				95C8715415B7449600D30040 /* Btn-Upload.png in Resources */,
 				95C8715515B7449600D30040 /* Write-Caption.png in Resources */,
 				95C8715615B7449600D30040 /* Btn-Directions.png in Resources */,
-				95C8715715B7449600D30040 /* PhotosPageViewController.xib in Resources */,
 				95C8715815B7449600D30040 /* PartnerMenuViewController.xib in Resources */,
 				95C8715915B7449600D30040 /* SubMenuViewController.xib in Resources */,
 				95C8715A15B7449600D30040 /* MapViewController.xib in Resources */,
@@ -5772,7 +5717,6 @@
 				95CE619415EFD96B00A08BC4 /* Btn-Upload.png in Resources */,
 				95CE619515EFD96B00A08BC4 /* Write-Caption.png in Resources */,
 				95CE619615EFD96B00A08BC4 /* Btn-Directions.png in Resources */,
-				95CE619715EFD96B00A08BC4 /* PhotosPageViewController.xib in Resources */,
 				95CE619815EFD96B00A08BC4 /* PartnerMenuViewController.xib in Resources */,
 				95CE619915EFD96B00A08BC4 /* SubMenuViewController.xib in Resources */,
 				95CE619A15EFD96B00A08BC4 /* MapViewController.xib in Resources */,
@@ -5816,7 +5760,6 @@
 				95CE61F915EFF0AD00A08BC4 /* Btn-Upload.png in Resources */,
 				95CE61FA15EFF0AD00A08BC4 /* Write-Caption.png in Resources */,
 				95CE61FB15EFF0AD00A08BC4 /* Btn-Directions.png in Resources */,
-				95CE61FC15EFF0AD00A08BC4 /* PhotosPageViewController.xib in Resources */,
 				95CE61FD15EFF0AD00A08BC4 /* PartnerMenuViewController.xib in Resources */,
 				95CE61FE15EFF0AD00A08BC4 /* SubMenuViewController.xib in Resources */,
 				95CE61FF15EFF0AD00A08BC4 /* MapViewController.xib in Resources */,
@@ -5860,7 +5803,6 @@
 				95F1E12B15AF59AC005FAB38 /* Btn-Upload.png in Resources */,
 				95F1E12C15AF59AC005FAB38 /* Write-Caption.png in Resources */,
 				95F1E12D15AF59AC005FAB38 /* Btn-Directions.png in Resources */,
-				95F1E12E15AF59AC005FAB38 /* PhotosPageViewController.xib in Resources */,
 				95F1E12F15AF59AC005FAB38 /* PartnerMenuViewController.xib in Resources */,
 				95F1E13015AF59AC005FAB38 /* SubMenuViewController.xib in Resources */,
 				95F1E13115AF59AC005FAB38 /* MapViewController.xib in Resources */,
@@ -5904,7 +5846,6 @@
 				95F8581015EE7E4C009C4B7C /* Btn-Upload.png in Resources */,
 				95F8581115EE7E4C009C4B7C /* Write-Caption.png in Resources */,
 				95F8581215EE7E4C009C4B7C /* Btn-Directions.png in Resources */,
-				95F8581315EE7E4C009C4B7C /* PhotosPageViewController.xib in Resources */,
 				95F8581415EE7E4C009C4B7C /* PartnerMenuViewController.xib in Resources */,
 				95F8581515EE7E4C009C4B7C /* SubMenuViewController.xib in Resources */,
 				95F8581615EE7E4C009C4B7C /* MapViewController.xib in Resources */,
@@ -5948,7 +5889,6 @@
 				95F8586C15EE80C3009C4B7C /* Btn-Upload.png in Resources */,
 				95F8586D15EE80C3009C4B7C /* Write-Caption.png in Resources */,
 				95F8586E15EE80C3009C4B7C /* Btn-Directions.png in Resources */,
-				95F8586F15EE80C3009C4B7C /* PhotosPageViewController.xib in Resources */,
 				95F8587015EE80C3009C4B7C /* PartnerMenuViewController.xib in Resources */,
 				95F8587115EE80C3009C4B7C /* SubMenuViewController.xib in Resources */,
 				95F8587215EE80C3009C4B7C /* MapViewController.xib in Resources */,
@@ -5992,7 +5932,6 @@
 				D9FA2C3F159068E7006FFF7E /* Btn-Upload.png in Resources */,
 				D9FA2C40159068E7006FFF7E /* Write-Caption.png in Resources */,
 				D9FA2C41159068E7006FFF7E /* Btn-Directions.png in Resources */,
-				D9FA2C44159068E7006FFF7E /* PhotosPageViewController.xib in Resources */,
 				D9FA2C45159068E7006FFF7E /* PartnerMenuViewController.xib in Resources */,
 				D9FA2C46159068E7006FFF7E /* SubMenuViewController.xib in Resources */,
 				D9FA2C47159068E7006FFF7E /* MapViewController.xib in Resources */,
@@ -6036,7 +5975,6 @@
 				E690230A14FE447A008F52B2 /* SubMenuViewController.xib in Resources */,
 				E690230B14FE447A008F52B2 /* ViewController.xib in Resources */,
 				E690230C14FE447A008F52B2 /* PartnerMenuViewController.xib in Resources */,
-				E690230F14FE447A008F52B2 /* PhotosPageViewController.xib in Resources */,
 				E690231214FE447A008F52B2 /* MapViewController.xib in Resources */,
 				E690231314FE447A008F52B2 /* Btn-Directions.png in Resources */,
 				E690231414FE447A008F52B2 /* AddCaptionViewController.xib in Resources */,

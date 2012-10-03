@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "townWizard-ios/PartnerMenuViewController.m"
-         timestampString = "370859400.523363"
+         timestampString = "370954775.228773"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "75"
-         endingLineNumber = "75"
+         startingLineNumber = "72"
+         endingLineNumber = "72"
          landmarkName = "-viewWillAppear:"
          landmarkType = "5">
       </FileBreakpoint>

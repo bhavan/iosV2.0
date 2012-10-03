@@ -23,12 +23,12 @@
 #define URL_HEADER @"http://"
 
 @implementation PartnerMenuViewController
-@synthesize scrollView=_scrollView;
-@synthesize partnerSections=_partnerSections;
+@synthesize scrollView = _scrollView;
+@synthesize partnerSections = _partnerSections;
 @synthesize partner;
-@synthesize customNavigationBar=_customNavigationBar;
+@synthesize customNavigationBar = _customNavigationBar;
 @synthesize delegate;
-@synthesize currentSectionName=_currentSectionName;
+@synthesize currentSectionName = _currentSectionName;
 
 - (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nil bundle:nil]) {
@@ -50,9 +50,6 @@
     [self setCustomNavigationBar:bar];
     [self.navigationController.navigationBar addSubview:bar];
     [bar release];
-    
-    [self restorePartnerDetails];
-    [self loadPartnerLogo];
 #endif
 }
 
@@ -76,7 +73,6 @@
 #ifdef CONTAINER_APP
 
     subSections = nil;
-    [self reloadMenu];
     [self.customNavigationBar.menuButton addTarget:self 
                                             action:@selector(menuButtonPressed) 
                                   forControlEvents:UIControlEventTouchUpInside];
@@ -84,24 +80,28 @@
 
     
 #else
+    
     //caching disabled
     self.partner = nil;
     self.partnerSections = nil;
     // -----
+     [[[self customNavigationBar] menuButton] setHidden:YES];
+#endif
     
-    if ([self partner] == nil) {
+    if (self.partner == nil) {
         [self loadPartnerDetails];
     }
     else {
-        if ([self partnerSections] == nil) {
-            [self loadPartnerSections];
+        if (self.partnerSections == nil) {
+             [self.customNavigationBar.backgroundImageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",SERVER_URL,self.partner.headerImageUrl]]];
+           [RequestHelper sectionsWithPartner:self.partner andDelegate:self];
         }
         else {
             [self reloadMenu];
         }
     }    
-    [[[self customNavigationBar] menuButton] setHidden:YES];
-#endif
+   
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -285,8 +285,9 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
         {
             VideosViewController *controller = [VideosViewController new];
             controller.partner = self.partner;
+            controller.section = section;
             controller.customNavigationBar = self.customNavigationBar;
-            [RequestHelper categoriesWithPartner:self.partner andSection:section andDelegate:controller];
+            [RequestHelper videosWithPartner:self.partner andSection:section andDelegate:controller];
             [self.navigationController pushViewController:controller animated:YES];
             [controller release];
         }
@@ -308,86 +309,34 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
     
 }
 
-- (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObject:(id)object {
-    if([object isKindOfClass:[Partner class]]) {
+
+
+- (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
+
+    if([[objects lastObject] isKindOfClass:[Partner class]]) {
+        self.partner = [objects lastObject];       
+        [self.customNavigationBar.backgroundImageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",SERVER_URL,partner.headerImageUrl]]];
+
+        [RequestHelper sectionsWithPartner:self.partner andDelegate:self];
+        
+    }
+    else if([[objects lastObject] isKindOfClass:[Section class]]) {
+        self.partnerSections = [[NSMutableArray alloc]initWithArray:objects];         
+             
+        [self reloadMenu];
+       
+        // [self hideBackgroundImageOfTheNavigationBar:selectedMenu.customNavigationBar];
+      //  [self animateNavigationBarOnScreen:selectedMenu.customNavigationBar];
+        
         
     }
 }
-
-- (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
-    
-}
-
-#pragma mark -
-#pragma mark store partner details 
-
-- (void) restorePartnerDetails
-{
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [self setPartnerInfoDictionary:[userDefaults objectForKey:@"partnerDetails"]];
-    if (self.partner.facebookAppId)
-    {
-        [AppDelegate sharedDelegate].facebookHelper.appId = self.partner.facebookAppId;
-    }
-    [self setPartnerSections:[userDefaults objectForKey:@"partnerSections"]];
-}
-
-- (void) savePartnerDetails {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setObject:self.partner forKey:@"partnerDetails"];
-    [userDefaults setObject:[self partnerSections] forKey:@"partnerSections"];
-    [userDefaults synchronize];
-}
-
-#pragma mark -
-#pragma mark load partner info
-
 
 - (void) loadPartnerDetails {
 #ifdef PARTNER_ID
-  
+    [RequestHelper partnerWithId:[NSString stringWithFormat:@"%d",PARTNER_ID] andDelegate:self];
 #endif
 }
-
-- (void) loadPartnerSections {
-
-  /*  NSString *partnerId = [[self partnerInfoDictionary] objectForKey:@"id"];
-    RWRequestHelper *helper = [[RWRequestHelper alloc] init];
-    RWRequest *request = [helper sectionsRequestForPartnerWithId:partnerId];
-    [helper performRequest:request withObserver:self];*/
-}
-
-- (void) loadPartnerLogo {
-/*    NSString *imagePath = [NSString stringWithFormat:@"%@%@",SERVER_URL,[[self partnerInfoDictionary] objectForKey:@"image"]];
-    [[ImageLoader instance] loadImageByUrl:[NSURL URLWithString:imagePath] observer:self];*/
-}
-
-#pragma mark -
-#pragma mark RWRequestDelegate methods
-
-/*- (void) requestDidFinishLoading:(RWRequest *) request {
-    NSLog(@"response = %@",[request response]);
-    if ([[request userInfo] isEqual:@"partnerDetails"]) {
-        [self setPartnerInfoDictionary:[request response]];
-        [self loadPartnerSections];
-        [self loadPartnerLogo];
-        NSLog(@"appid = %@",[[request response] objectForKey:@"facebook_app_id"]);
-        if ([[request response] objectForKey:@"facebook_app_id"]) 
-        {
-            [AppDelegate sharedDelegate].facebookHelper.appId = [[request response]
-                                                                 objectForKey:@"facebook_app_id"];
-        }
-    }
-    else {
-        [self setPartnerSections:[request response]];
-        
-        [self reloadMenu];        
-        [self savePartnerDetails];        
-        [activityIndicator stopAnimating];
-    }
-
-}
-*/
 
 
 #pragma mark -
