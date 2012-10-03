@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0320C87C75AF427283B3CFE6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CF4DEC83B045219ED92550 /* libPods.a */; };
+		0CEA1030863844419597011B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CF4DEC83B045219ED92550 /* libPods.a */; };
+		184EBB2C3577434E95F1CFE1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CF4DEC83B045219ED92550 /* libPods.a */; };
+		1D97D03B0E2F4BF7B99D2C92 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CF4DEC83B045219ED92550 /* libPods.a */; };
+		209E54F1AA3B4EB4B3186DA6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CF4DEC83B045219ED92550 /* libPods.a */; };
+		20F9556C5B6B417AB0AD2CF5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CF4DEC83B045219ED92550 /* libPods.a */; };
+		269409DCA9C64C9DA58E9736 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CF4DEC83B045219ED92550 /* libPods.a */; };
+		2BDE07676F9949C4BC5AA5CA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CF4DEC83B045219ED92550 /* libPods.a */; };
+		33E5BD1F617F4768A1FBFFFB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CF4DEC83B045219ED92550 /* libPods.a */; };
+		378251C5B31E4638B2C23EA9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CF4DEC83B045219ED92550 /* libPods.a */; };
+		3AE6EA949EAE46388969314F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CF4DEC83B045219ED92550 /* libPods.a */; };
 		3D8DDA3A15A47892001D48D2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483F25A14D03FBE005E4216 /* ViewController.m */; };
 		3D8DDA3B15A47892001D48D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483F25714D03FBE005E4216 /* AppDelegate.m */; };
 		3D8DDA4B15A47892001D48D2 /* TownWIzardNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E691001E14E56B7E003DE64B /* TownWIzardNavigationBar.m */; };
@@ -139,6 +150,13 @@
 		3D8DDAFD15A47AB6001D48D2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D8DDAF915A47AB6001D48D2 /* Default@2x.png */; };
 		3D8DDAFE15A47AB6001D48D2 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D8DDAFA15A47AB6001D48D2 /* icon.png */; };
 		3D8DDAFF15A47AB6001D48D2 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D8DDAFB15A47AB6001D48D2 /* icon@2x.png */; };
+		4660E408CCD44A0099E83C2E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CF4DEC83B045219ED92550 /* libPods.a */; };
+		4826312986A14E38BFF46581 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CF4DEC83B045219ED92550 /* libPods.a */; };
+		5C72E81707504086B746CD5E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CF4DEC83B045219ED92550 /* libPods.a */; };
+		725D290804554D1A85D60D34 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CF4DEC83B045219ED92550 /* libPods.a */; };
+		77536E850DED443589DDB6F5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CF4DEC83B045219ED92550 /* libPods.a */; };
+		777CAB4881F343C4AB91FFD3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CF4DEC83B045219ED92550 /* libPods.a */; };
+		7F4B72C0A65142A2A604093A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CF4DEC83B045219ED92550 /* libPods.a */; };
 		8444637716198FCC00394D41 /* Partner.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444637616198FCC00394D41 /* Partner.m */; };
 		8444637816198FCC00394D41 /* Partner.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444637616198FCC00394D41 /* Partner.m */; };
 		8444637916198FCC00394D41 /* Partner.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444637616198FCC00394D41 /* Partner.m */; };
@@ -2247,6 +2265,11 @@
 		95F8587F15EE80C3009C4B7C /* tag640x810.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C5A159074E5006FFF7E /* tag640x810.png */; };
 		95F8588015EE80C3009C4B7C /* topBar.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C5B159074E5006FFF7E /* topBar.png */; };
 		95F8588115EE80C3009C4B7C /* twHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C5C159074E5006FFF7E /* twHeader.png */; };
+		9FD91FDFB2E74F8A817FBECE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CF4DEC83B045219ED92550 /* libPods.a */; };
+		A6749B622F974C0D8FD8D0C7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CF4DEC83B045219ED92550 /* libPods.a */; };
+		B1D7ABDB8D164526ABE3A0B1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CF4DEC83B045219ED92550 /* libPods.a */; };
+		B9117109BFB447DEB72BB8ED /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CF4DEC83B045219ED92550 /* libPods.a */; };
+		CD5D0D90A7FB47FABF6A1A80 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CF4DEC83B045219ED92550 /* libPods.a */; };
 		D90D0DF4158F06500026828E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483F24714D03FBE005E4216 /* UIKit.framework */; };
 		D90D0DF5158F06500026828E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483F24914D03FBE005E4216 /* Foundation.framework */; };
 		D90D0DF6158F06500026828E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483F24B14D03FBE005E4216 /* CoreGraphics.framework */; };
@@ -2326,6 +2349,9 @@
 		D9FA2C7C1590751B006FFF7E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C781590751B006FFF7E /* Default@2x.png */; };
 		D9FA2C7D1590751B006FFF7E /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C791590751B006FFF7E /* icon.png */; };
 		D9FA2C7E1590751B006FFF7E /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C7A1590751B006FFF7E /* icon@2x.png */; };
+		DAC5B0083412445E8608DA81 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D98D81872E8A4AC09BEE9C3D /* libPods.a */; };
+		DD8F0F936B1F412691B5DB8D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CF4DEC83B045219ED92550 /* libPods.a */; };
+		DEEC73DF7F644BC48C6EB7A8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CF4DEC83B045219ED92550 /* libPods.a */; };
 		E61A4DDC14E166BC0039E970 /* UIApplication+NetworkActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = E61A4DDB14E166BC0039E970 /* UIApplication+NetworkActivity.m */; };
 		E61A960F14FD26D1006E5F24 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483F24714D03FBE005E4216 /* UIKit.framework */; };
 		E61A961014FD26D1006E5F24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483F24914D03FBE005E4216 /* Foundation.framework */; };
@@ -2435,10 +2461,14 @@
 		E691FF9114E50981003DE64B /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF8E14E50981003DE64B /* MapViewController.xib */; };
 		E691FF9314E50A03003DE64B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E691FF9214E50A03003DE64B /* MapKit.framework */; };
 		E691FF9514E50D94003DE64B /* Btn-Directions.png in Resources */ = {isa = PBXBuildFile; fileRef = E691FF9414E50D94003DE64B /* Btn-Directions.png */; };
+		ECBF5083D5DF47C5A3055F56 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CF4DEC83B045219ED92550 /* libPods.a */; };
 		F60A87994A254733A9A302B0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C4E1FAD4C6409B8B72D739 /* libPods.a */; };
+		FC218EDC1B49490F812F4C3A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CF4DEC83B045219ED92550 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		38CF4DEC83B045219ED92550 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D8DDA9015A47892001D48D2 /* tw-p1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tw-p1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D8DDA9215A47892001D48D2 /* townWizard-partner-template copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizard-partner-template copy-Info.plist"; path = "/Users/bhavan_shah/Documents/bhWork/TownWizard/Development/Container-2012-07-03/town-container-ios/townWizard-partner-template copy-Info.plist"; sourceTree = "<absolute>"; };
 		3D8DDA9415A47968001D48D2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -2451,6 +2481,7 @@
 		3D8DDAF915A47AB6001D48D2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		3D8DDAFA15A47AB6001D48D2 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		3D8DDAFB15A47AB6001D48D2 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		590EC73DC7CD43A285F2DAC5 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		8444637516198FCC00394D41 /* Partner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Partner.h; sourceTree = "<group>"; };
 		8444637616198FCC00394D41 /* Partner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Partner.m; sourceTree = "<group>"; };
 		847F874714D69038005EE200 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -2487,10 +2518,11 @@
 		848854B314D146490030BD03 /* RequestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestHelper.m; sourceTree = "<group>"; };
 		848854C314D16F620030BD03 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		848854C414D16F620030BD03 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		848854F214D179190030BD03 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		848854F414D1793A0030BD03 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		848854F214D179190030BD03 /* Security.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		848854F414D1793A0030BD03 /* CFNetwork.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		848854F614D179700030BD03 /* SystemConfiguration.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8488550914D1ABAA0030BD03 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		84C47E65161C360A008A694E /* townWizardPartnerTemplate copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy-Info.plist"; path = "/Volumes/work/Projects/TownWizard_iPhoneV1.1/townWizardPartnerTemplate copy-Info.plist"; sourceTree = "<absolute>"; };
 		84CAADF5161B27CB00E09E36 /* ImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCell.h; sourceTree = "<group>"; };
 		84CAADF6161B27CB00E09E36 /* ImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCell.m; sourceTree = "<group>"; };
 		84CAAE36161B2EB100E09E36 /* VideosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideosViewController.h; sourceTree = "<group>"; };
@@ -2668,11 +2700,12 @@
 		95F8588715EE80C4009C4B7C /* townWizard-partner-template copy22-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizard-partner-template copy22-Info.plist"; path = "/Users/Darren/Documents/TownWizardApps/townWizard-partner-template copy22-Info.plist"; sourceTree = "<absolute>"; };
 		A7C4E1FAD4C6409B8B72D739 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEBE5D778E4E46C7920418F0 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		D90D0DF2158F06500026828E /* townWizard-partner-template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "townWizard-partner-template.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D90D0DF2158F06500026828E /* townWizard-partner-template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "townWizard-partner-template.app"; path = townWizardPartnerTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90D0DF9158F06500026828E /* townWizard-partner-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "townWizard-partner-Info.plist"; sourceTree = "<group>"; };
 		D90D0DFB158F06500026828E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D90D0DFD158F06500026828E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D90D0DFF158F06500026828E /* townWizard-partner-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "townWizard-partner-Prefix.pch"; sourceTree = "<group>"; };
+		D98D81872E8A4AC09BEE9C3D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9FA2C50159074E5006FFF7E /* back_arrow_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back_arrow_retina.png; path = Images/Interface/back_arrow_retina.png; sourceTree = "<group>"; };
 		D9FA2C51159074E5006FFF7E /* back_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back_arrow.png; path = Images/Interface/back_arrow.png; sourceTree = "<group>"; };
 		D9FA2C52159074E5006FFF7E /* go_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = go_background.png; path = Images/Interface/go_background.png; sourceTree = "<group>"; };
@@ -2771,6 +2804,7 @@
 				3D8DDA6B15A47892001D48D2 /* Security.framework in Frameworks */,
 				3D8DDA6C15A47892001D48D2 /* CoreLocation.framework in Frameworks */,
 				3D8DDA6D15A47892001D48D2 /* CoreGraphics.framework in Frameworks */,
+				7F4B72C0A65142A2A604093A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2788,6 +2822,7 @@
 				3D8DDACF15A47A71001D48D2 /* Security.framework in Frameworks */,
 				3D8DDAD015A47A71001D48D2 /* CoreLocation.framework in Frameworks */,
 				3D8DDAD115A47A71001D48D2 /* CoreGraphics.framework in Frameworks */,
+				33E5BD1F617F4768A1FBFFFB /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2821,6 +2856,7 @@
 				950B68251601239F00FC333C /* Security.framework in Frameworks */,
 				950B68261601239F00FC333C /* CoreLocation.framework in Frameworks */,
 				950B68271601239F00FC333C /* CoreGraphics.framework in Frameworks */,
+				FC218EDC1B49490F812F4C3A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2838,6 +2874,7 @@
 				952864971602730A00E80FA6 /* Security.framework in Frameworks */,
 				952864981602730A00E80FA6 /* CoreLocation.framework in Frameworks */,
 				952864991602730A00E80FA6 /* CoreGraphics.framework in Frameworks */,
+				3AE6EA949EAE46388969314F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2855,6 +2892,7 @@
 				9535254615AE021500857F12 /* Security.framework in Frameworks */,
 				9535254715AE021500857F12 /* CoreLocation.framework in Frameworks */,
 				9535254815AE021500857F12 /* CoreGraphics.framework in Frameworks */,
+				725D290804554D1A85D60D34 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2872,6 +2910,7 @@
 				E671E2DB15B599FA00977738 /* MessageUI.framework in Frameworks */,
 				953525AB15AE128B00857F12 /* CoreLocation.framework in Frameworks */,
 				953525AC15AE128B00857F12 /* CoreGraphics.framework in Frameworks */,
+				A6749B622F974C0D8FD8D0C7 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2889,6 +2928,7 @@
 				E671E2DC15B599FC00977738 /* MessageUI.framework in Frameworks */,
 				9535261815AE1E6800857F12 /* CoreLocation.framework in Frameworks */,
 				9535261915AE1E6800857F12 /* CoreGraphics.framework in Frameworks */,
+				1D97D03B0E2F4BF7B99D2C92 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2906,6 +2946,7 @@
 				953A9E8E15B7304300E1C832 /* Security.framework in Frameworks */,
 				953A9E8F15B7304300E1C832 /* CoreLocation.framework in Frameworks */,
 				953A9E9015B7304300E1C832 /* CoreGraphics.framework in Frameworks */,
+				5C72E81707504086B746CD5E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2923,6 +2964,7 @@
 				954628E215AF615D00A39C65 /* Security.framework in Frameworks */,
 				954628E315AF615D00A39C65 /* CoreLocation.framework in Frameworks */,
 				954628E415AF615D00A39C65 /* CoreGraphics.framework in Frameworks */,
+				777CAB4881F343C4AB91FFD3 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2940,6 +2982,7 @@
 				95468F9115C067CF007E17CE /* Security.framework in Frameworks */,
 				95468F9215C067CF007E17CE /* CoreLocation.framework in Frameworks */,
 				95468F9315C067CF007E17CE /* CoreGraphics.framework in Frameworks */,
+				269409DCA9C64C9DA58E9736 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2957,6 +3000,7 @@
 				9569FA0915E42BE40046338E /* Security.framework in Frameworks */,
 				9569FA0A15E42BE40046338E /* CoreLocation.framework in Frameworks */,
 				9569FA0B15E42BE40046338E /* CoreGraphics.framework in Frameworks */,
+				4660E408CCD44A0099E83C2E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2974,6 +3018,7 @@
 				9575030115E576FF004A3D0E /* Security.framework in Frameworks */,
 				9575030215E576FF004A3D0E /* CoreLocation.framework in Frameworks */,
 				9575030315E576FF004A3D0E /* CoreGraphics.framework in Frameworks */,
+				DEEC73DF7F644BC48C6EB7A8 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2991,6 +3036,7 @@
 				9575035D15E57E5E004A3D0E /* Security.framework in Frameworks */,
 				9575035E15E57E5E004A3D0E /* CoreLocation.framework in Frameworks */,
 				9575035F15E57E5E004A3D0E /* CoreGraphics.framework in Frameworks */,
+				CD5D0D90A7FB47FABF6A1A80 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3008,6 +3054,7 @@
 				9578EFCF15E5219900846F71 /* Security.framework in Frameworks */,
 				9578EFD015E5219900846F71 /* CoreLocation.framework in Frameworks */,
 				9578EFD115E5219900846F71 /* CoreGraphics.framework in Frameworks */,
+				DD8F0F936B1F412691B5DB8D /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3025,6 +3072,7 @@
 				9578F03415E5301900846F71 /* Security.framework in Frameworks */,
 				9578F03515E5301900846F71 /* CoreLocation.framework in Frameworks */,
 				9578F03615E5301900846F71 /* CoreGraphics.framework in Frameworks */,
+				184EBB2C3577434E95F1CFE1 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3042,6 +3090,7 @@
 				9585E73A1608AD7E007E42D4 /* Security.framework in Frameworks */,
 				9585E73B1608AD7E007E42D4 /* CoreLocation.framework in Frameworks */,
 				9585E73C1608AD7E007E42D4 /* CoreGraphics.framework in Frameworks */,
+				4826312986A14E38BFF46581 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3059,6 +3108,7 @@
 				9589BEDC15B8A4550057B7EC /* Security.framework in Frameworks */,
 				9589BEDD15B8A4550057B7EC /* CoreLocation.framework in Frameworks */,
 				9589BEDE15B8A4550057B7EC /* CoreGraphics.framework in Frameworks */,
+				B9117109BFB447DEB72BB8ED /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3076,6 +3126,7 @@
 				95A838D315B6216800BD05EC /* Security.framework in Frameworks */,
 				95A838D415B6216800BD05EC /* CoreLocation.framework in Frameworks */,
 				95A838D515B6216800BD05EC /* CoreGraphics.framework in Frameworks */,
+				9FD91FDFB2E74F8A817FBECE /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3093,6 +3144,7 @@
 				95B0A37015BDF08800DC9ED6 /* Security.framework in Frameworks */,
 				95B0A37115BDF08800DC9ED6 /* CoreLocation.framework in Frameworks */,
 				95B0A37215BDF08800DC9ED6 /* CoreGraphics.framework in Frameworks */,
+				B1D7ABDB8D164526ABE3A0B1 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3110,6 +3162,7 @@
 				95C0CD2315FF7E0400AC5AA4 /* Security.framework in Frameworks */,
 				95C0CD2415FF7E0400AC5AA4 /* CoreLocation.framework in Frameworks */,
 				95C0CD2515FF7E0400AC5AA4 /* CoreGraphics.framework in Frameworks */,
+				0320C87C75AF427283B3CFE6 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3127,6 +3180,7 @@
 				95C4321C1600E47D00B24E45 /* Security.framework in Frameworks */,
 				95C4321D1600E47D00B24E45 /* CoreLocation.framework in Frameworks */,
 				95C4321E1600E47D00B24E45 /* CoreGraphics.framework in Frameworks */,
+				378251C5B31E4638B2C23EA9 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3144,6 +3198,7 @@
 				95C8714815B7449600D30040 /* Security.framework in Frameworks */,
 				95C8714915B7449600D30040 /* CoreLocation.framework in Frameworks */,
 				95C8714A15B7449600D30040 /* CoreGraphics.framework in Frameworks */,
+				77536E850DED443589DDB6F5 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3161,6 +3216,7 @@
 				95CE618815EFD96B00A08BC4 /* Security.framework in Frameworks */,
 				95CE618915EFD96B00A08BC4 /* CoreLocation.framework in Frameworks */,
 				95CE618A15EFD96B00A08BC4 /* CoreGraphics.framework in Frameworks */,
+				0CEA1030863844419597011B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3178,6 +3234,7 @@
 				95CE61ED15EFF0AD00A08BC4 /* Security.framework in Frameworks */,
 				95CE61EE15EFF0AD00A08BC4 /* CoreLocation.framework in Frameworks */,
 				95CE61EF15EFF0AD00A08BC4 /* CoreGraphics.framework in Frameworks */,
+				20F9556C5B6B417AB0AD2CF5 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3195,6 +3252,7 @@
 				E671E2D915B599F600977738 /* MessageUI.framework in Frameworks */,
 				95F1E12015AF59AC005FAB38 /* CoreLocation.framework in Frameworks */,
 				95F1E12115AF59AC005FAB38 /* CoreGraphics.framework in Frameworks */,
+				2BDE07676F9949C4BC5AA5CA /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3212,6 +3270,7 @@
 				95F8580415EE7E4C009C4B7C /* Security.framework in Frameworks */,
 				95F8580515EE7E4C009C4B7C /* CoreLocation.framework in Frameworks */,
 				95F8580615EE7E4C009C4B7C /* CoreGraphics.framework in Frameworks */,
+				ECBF5083D5DF47C5A3055F56 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3229,6 +3288,7 @@
 				95F8586015EE80C3009C4B7C /* Security.framework in Frameworks */,
 				95F8586115EE80C3009C4B7C /* CoreLocation.framework in Frameworks */,
 				95F8586215EE80C3009C4B7C /* CoreGraphics.framework in Frameworks */,
+				209E54F1AA3B4EB4B3186DA6 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3246,6 +3306,7 @@
 				D9FA2C2D15906002006FFF7E /* Security.framework in Frameworks */,
 				D9FA2C2C15905FFE006FFF7E /* CoreLocation.framework in Frameworks */,
 				D90D0DF6158F06500026828E /* CoreGraphics.framework in Frameworks */,
+				DAC5B0083412445E8608DA81 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3365,6 +3426,9 @@
 				952864BE1602730B00E80FA6 /* townWizard-partner-template copy28-Info.plist */,
 				9585E7611608AD80007E42D4 /* townWizard-partner-template copy29-Info.plist */,
 				AEBE5D778E4E46C7920418F0 /* Pods.xcconfig */,
+				2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */,
+				590EC73DC7CD43A285F2DAC5 /* Pods.xcconfig */,
+				84C47E65161C360A008A694E /* townWizardPartnerTemplate copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -3421,6 +3485,8 @@
 				8483F24B14D03FBE005E4216 /* CoreGraphics.framework */,
 				847F874714D69038005EE200 /* SenTestingKit.framework */,
 				A7C4E1FAD4C6409B8B72D739 /* libPods.a */,
+				38CF4DEC83B045219ED92550 /* libPods.a */,
+				D98D81872E8A4AC09BEE9C3D /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -4071,6 +4137,7 @@
 				3D8DDA3915A47892001D48D2 /* Sources */,
 				3D8DDA6415A47892001D48D2 /* Frameworks */,
 				3D8DDA6E15A47892001D48D2 /* Resources */,
+				62412E7CE030452A86F317A3 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4088,6 +4155,7 @@
 				3D8DDA9D15A47A71001D48D2 /* Sources */,
 				3D8DDAC815A47A71001D48D2 /* Frameworks */,
 				3D8DDAD215A47A71001D48D2 /* Resources */,
+				6E9D659AD80B434182AE6CF8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4123,6 +4191,7 @@
 				950B67F21601239F00FC333C /* Sources */,
 				950B681D1601239F00FC333C /* Frameworks */,
 				950B68281601239F00FC333C /* Resources */,
+				877460FE06CA4FD8A77C7F8C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4140,6 +4209,7 @@
 				952864641602730A00E80FA6 /* Sources */,
 				9528648F1602730A00E80FA6 /* Frameworks */,
 				9528649A1602730A00E80FA6 /* Resources */,
+				39B1F077E55F4F6FAC2CCE54 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4157,6 +4227,7 @@
 				9535251415AE021500857F12 /* Sources */,
 				9535253F15AE021500857F12 /* Frameworks */,
 				9535254915AE021500857F12 /* Resources */,
+				AD665DAB907A43E49AE6941B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4174,6 +4245,7 @@
 				9535257815AE128B00857F12 /* Sources */,
 				953525A315AE128B00857F12 /* Frameworks */,
 				953525AD15AE128B00857F12 /* Resources */,
+				DC6DB6730EA34B09A1849155 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4191,6 +4263,7 @@
 				953525E515AE1E6800857F12 /* Sources */,
 				9535261015AE1E6800857F12 /* Frameworks */,
 				9535261A15AE1E6800857F12 /* Resources */,
+				B6BD2482CA754A57946DFA71 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4208,6 +4281,7 @@
 				953A9E5B15B7304300E1C832 /* Sources */,
 				953A9E8615B7304300E1C832 /* Frameworks */,
 				953A9E9115B7304300E1C832 /* Resources */,
+				2141B3D2BDAB455DA4E05D69 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4225,6 +4299,7 @@
 				954628B015AF615D00A39C65 /* Sources */,
 				954628DB15AF615D00A39C65 /* Frameworks */,
 				954628E515AF615D00A39C65 /* Resources */,
+				0AAA81FAD79C40DA8101BC5E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4242,6 +4317,7 @@
 				95468F5E15C067CF007E17CE /* Sources */,
 				95468F8915C067CF007E17CE /* Frameworks */,
 				95468F9415C067CF007E17CE /* Resources */,
+				7A99DF31C00141CA9B0B0953 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4259,6 +4335,7 @@
 				9569F9D615E42BE40046338E /* Sources */,
 				9569FA0115E42BE40046338E /* Frameworks */,
 				9569FA0C15E42BE40046338E /* Resources */,
+				C8573519046A4D2D9E2A3F4C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4276,6 +4353,7 @@
 				957502CE15E576FF004A3D0E /* Sources */,
 				957502F915E576FF004A3D0E /* Frameworks */,
 				9575030415E576FF004A3D0E /* Resources */,
+				FF280D5C7205482BBF12C447 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4293,6 +4371,7 @@
 				9575032A15E57E5E004A3D0E /* Sources */,
 				9575035515E57E5E004A3D0E /* Frameworks */,
 				9575036015E57E5E004A3D0E /* Resources */,
+				7D2204BC436B4150951B1D5F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4310,6 +4389,7 @@
 				9578EF9C15E5219900846F71 /* Sources */,
 				9578EFC715E5219900846F71 /* Frameworks */,
 				9578EFD215E5219900846F71 /* Resources */,
+				3C2F1F78DF52458FB8B34CC5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4327,6 +4407,7 @@
 				9578F00115E5301900846F71 /* Sources */,
 				9578F02C15E5301900846F71 /* Frameworks */,
 				9578F03715E5301900846F71 /* Resources */,
+				02D433190C4D40E98093C73F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4344,6 +4425,7 @@
 				9585E7071608AD7E007E42D4 /* Sources */,
 				9585E7321608AD7E007E42D4 /* Frameworks */,
 				9585E73D1608AD7E007E42D4 /* Resources */,
+				99CC289F3EEC4B09A02021F4 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4361,6 +4443,7 @@
 				9589BEA915B8A4550057B7EC /* Sources */,
 				9589BED415B8A4550057B7EC /* Frameworks */,
 				9589BEDF15B8A4550057B7EC /* Resources */,
+				7ADF8CAF08A64DCF8B282C80 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4378,6 +4461,7 @@
 				95A838A015B6216800BD05EC /* Sources */,
 				95A838CB15B6216800BD05EC /* Frameworks */,
 				95A838D615B6216800BD05EC /* Resources */,
+				E4BEC5D981764DD5984A6C33 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4395,6 +4479,7 @@
 				95B0A33D15BDF08800DC9ED6 /* Sources */,
 				95B0A36815BDF08800DC9ED6 /* Frameworks */,
 				95B0A37315BDF08800DC9ED6 /* Resources */,
+				AA41685F52C049CFA2FE6899 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4412,6 +4497,7 @@
 				95C0CCF015FF7E0400AC5AA4 /* Sources */,
 				95C0CD1B15FF7E0400AC5AA4 /* Frameworks */,
 				95C0CD2615FF7E0400AC5AA4 /* Resources */,
+				0EEFA2C1ECE948FE9D7CE35C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4429,6 +4515,7 @@
 				95C431E91600E47D00B24E45 /* Sources */,
 				95C432141600E47D00B24E45 /* Frameworks */,
 				95C4321F1600E47D00B24E45 /* Resources */,
+				2A9275BD7E184654865679C9 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4446,6 +4533,7 @@
 				95C8711515B7449600D30040 /* Sources */,
 				95C8714015B7449600D30040 /* Frameworks */,
 				95C8714B15B7449600D30040 /* Resources */,
+				1A631CC371C74EA7BC0C9AAB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4463,6 +4551,7 @@
 				95CE615515EFD96B00A08BC4 /* Sources */,
 				95CE618015EFD96B00A08BC4 /* Frameworks */,
 				95CE618B15EFD96B00A08BC4 /* Resources */,
+				82B53FB83FA54BF0B26535C1 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4480,6 +4569,7 @@
 				95CE61BA15EFF0AD00A08BC4 /* Sources */,
 				95CE61E515EFF0AD00A08BC4 /* Frameworks */,
 				95CE61F015EFF0AD00A08BC4 /* Resources */,
+				AA4D40D4A33C49298353FFB4 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4497,6 +4587,7 @@
 				95F1E0ED15AF59AC005FAB38 /* Sources */,
 				95F1E11815AF59AC005FAB38 /* Frameworks */,
 				95F1E12215AF59AC005FAB38 /* Resources */,
+				E3A0814DDCF24DA1A16B0BBA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4514,6 +4605,7 @@
 				95F857D115EE7E4C009C4B7C /* Sources */,
 				95F857FC15EE7E4C009C4B7C /* Frameworks */,
 				95F8580715EE7E4C009C4B7C /* Resources */,
+				78B265D4575049918E1F1A73 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4531,6 +4623,7 @@
 				95F8582D15EE80C3009C4B7C /* Sources */,
 				95F8585815EE80C3009C4B7C /* Frameworks */,
 				95F8586315EE80C3009C4B7C /* Resources */,
+				18A03CFB26EE48C2BF1B9D15 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4541,20 +4634,21 @@
 			productReference = 95F8588515EE80C3009C4B7C /* OceanSprings.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D90D0DF1158F06500026828E /* townWizard-partner-template */ = {
+		D90D0DF1158F06500026828E /* townWizardPartnerTemplate */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D90D0E03158F06500026828E /* Build configuration list for PBXNativeTarget "townWizard-partner-template" */;
+			buildConfigurationList = D90D0E03158F06500026828E /* Build configuration list for PBXNativeTarget "townWizardPartnerTemplate" */;
 			buildPhases = (
 				D90D0DEE158F06500026828E /* Sources */,
 				D90D0DEF158F06500026828E /* Frameworks */,
 				D90D0DF0158F06500026828E /* Resources */,
 				844785D2161B1F38006D7060 /* Copy Pods Resources */,
+				1CA8FC54DAE44420A627774A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "townWizard-partner-template";
+			name = townWizardPartnerTemplate;
 			productName = "townWizard-partner";
 			productReference = D90D0DF2158F06500026828E /* townWizard-partner-template.app */;
 			productType = "com.apple.product-type.application";
@@ -4614,7 +4708,7 @@
 			projectRoot = "";
 			targets = (
 				8483F24214D03FBE005E4216 /* townWizard-container */,
-				D90D0DF1158F06500026828E /* townWizard-partner-template */,
+				D90D0DF1158F06500026828E /* townWizardPartnerTemplate */,
 				9585E7061608AD7E007E42D4 /* buford */,
 				952864631602730A00E80FA6 /* brooklyn */,
 				950B67F11601239F00FC333C /* dtpcola */,
@@ -5963,7 +6057,245 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		02D433190C4D40E98093C73F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		0AAA81FAD79C40DA8101BC5E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		0EEFA2C1ECE948FE9D7CE35C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		18A03CFB26EE48C2BF1B9D15 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		1A631CC371C74EA7BC0C9AAB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		1CA8FC54DAE44420A627774A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		2141B3D2BDAB455DA4E05D69 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		2A9275BD7E184654865679C9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		39B1F077E55F4F6FAC2CCE54 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
 		3AB1DF6B973D46E49FE3066C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		3C2F1F78DF52458FB8B34CC5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		62412E7CE030452A86F317A3 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		6E9D659AD80B434182AE6CF8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		78B265D4575049918E1F1A73 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		7A99DF31C00141CA9B0B0953 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		7ADF8CAF08A64DCF8B282C80 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		7D2204BC436B4150951B1D5F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		82B53FB83FA54BF0B26535C1 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -5990,6 +6322,160 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"";
+		};
+		877460FE06CA4FD8A77C7F8C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		99CC289F3EEC4B09A02021F4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		AA41685F52C049CFA2FE6899 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		AA4D40D4A33C49298353FFB4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		AD665DAB907A43E49AE6941B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		B6BD2482CA754A57946DFA71 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		C8573519046A4D2D9E2A3F4C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		DC6DB6730EA34B09A1849155 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		E3A0814DDCF24DA1A16B0BBA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		E4BEC5D981764DD5984A6C33 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		FF280D5C7205482BBF12C447 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -7269,6 +7755,7 @@
 /* Begin XCBuildConfiguration section */
 		3D8DDA8E15A47892001D48D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -7295,6 +7782,7 @@
 		};
 		3D8DDA8F15A47892001D48D2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -7319,6 +7807,7 @@
 		};
 		3D8DDAF215A47A71001D48D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -7345,6 +7834,7 @@
 		};
 		3D8DDAF315A47A71001D48D2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -7477,6 +7967,7 @@
 		};
 		950B68481601239F00FC333C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -7504,6 +7995,7 @@
 		};
 		950B68491601239F00FC333C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -7531,6 +8023,7 @@
 		};
 		952864BA1602730A00E80FA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -7558,6 +8051,7 @@
 		};
 		952864BB1602730A00E80FA6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -7585,6 +8079,7 @@
 		};
 		9535256915AE021500857F12 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -7612,6 +8107,7 @@
 		};
 		9535256A15AE021500857F12 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -7639,6 +8135,7 @@
 		};
 		953525CD15AE128B00857F12 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -7666,6 +8163,7 @@
 		};
 		953525CE15AE128B00857F12 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -7693,6 +8191,7 @@
 		};
 		9535263A15AE1E6800857F12 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -7720,6 +8219,7 @@
 		};
 		9535263B15AE1E6800857F12 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -7747,6 +8247,7 @@
 		};
 		953A9EB115B7304300E1C832 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -7774,6 +8275,7 @@
 		};
 		953A9EB215B7304300E1C832 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -7801,6 +8303,7 @@
 		};
 		9546290515AF615D00A39C65 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -7828,6 +8331,7 @@
 		};
 		9546290615AF615D00A39C65 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
@@ -7855,6 +8359,7 @@
 		};
 		95468FB415C067CF007E17CE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -7882,6 +8387,7 @@
 		};
 		95468FB515C067CF007E17CE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -7909,6 +8415,7 @@
 		};
 		9569FA2C15E42BE40046338E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -7936,6 +8443,7 @@
 		};
 		9569FA2D15E42BE40046338E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -7963,6 +8471,7 @@
 		};
 		9575032415E576FF004A3D0E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -7990,6 +8499,7 @@
 		};
 		9575032515E576FF004A3D0E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -8017,6 +8527,7 @@
 		};
 		9575038015E57E5E004A3D0E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -8044,6 +8555,7 @@
 		};
 		9575038115E57E5E004A3D0E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -8071,6 +8583,7 @@
 		};
 		9578EFF215E5219900846F71 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -8098,6 +8611,7 @@
 		};
 		9578EFF315E5219900846F71 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -8125,6 +8639,7 @@
 		};
 		9578F05715E5301900846F71 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -8152,6 +8667,7 @@
 		};
 		9578F05815E5301900846F71 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -8179,6 +8695,7 @@
 		};
 		9585E75D1608AD7E007E42D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -8206,6 +8723,7 @@
 		};
 		9585E75E1608AD7E007E42D4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -8233,6 +8751,7 @@
 		};
 		9589BEFF15B8A4550057B7EC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -8260,6 +8779,7 @@
 		};
 		9589BF0015B8A4550057B7EC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -8287,6 +8807,7 @@
 		};
 		95A838F615B6216800BD05EC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -8314,6 +8835,7 @@
 		};
 		95A838F715B6216800BD05EC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -8341,6 +8863,7 @@
 		};
 		95B0A39315BDF08800DC9ED6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -8368,6 +8891,7 @@
 		};
 		95B0A39415BDF08800DC9ED6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -8395,6 +8919,7 @@
 		};
 		95C0CD4615FF7E0400AC5AA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -8422,6 +8947,7 @@
 		};
 		95C0CD4715FF7E0400AC5AA4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -8449,6 +8975,7 @@
 		};
 		95C4323F1600E47D00B24E45 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -8476,6 +9003,7 @@
 		};
 		95C432401600E47D00B24E45 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -8503,6 +9031,7 @@
 		};
 		95C8716B15B7449600D30040 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -8530,6 +9059,7 @@
 		};
 		95C8716C15B7449600D30040 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -8557,6 +9087,7 @@
 		};
 		95CE61AB15EFD96B00A08BC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -8584,6 +9115,7 @@
 		};
 		95CE61AC15EFD96B00A08BC4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -8611,6 +9143,7 @@
 		};
 		95CE621015EFF0AD00A08BC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -8638,6 +9171,7 @@
 		};
 		95CE621115EFF0AD00A08BC4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -8665,6 +9199,7 @@
 		};
 		95F1E14215AF59AC005FAB38 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -8692,6 +9227,7 @@
 		};
 		95F1E14315AF59AC005FAB38 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -8719,6 +9255,7 @@
 		};
 		95F8582715EE7E4C009C4B7C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -8746,6 +9283,7 @@
 		};
 		95F8582815EE7E4C009C4B7C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -8773,6 +9311,7 @@
 		};
 		95F8588315EE80C3009C4B7C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -8800,6 +9339,7 @@
 		};
 		95F8588415EE80C3009C4B7C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC60806A7E44799E4BB0E8 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
@@ -8827,6 +9367,7 @@
 		};
 		D90D0E04158F06500026828E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 590EC73DC7CD43A285F2DAC5 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -8839,6 +9380,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "PARTNER_ID=1";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				HEADER_SEARCH_PATHS = "${PODS_HEADERS_SEARCH_PATHS}";
 				INFOPLIST_FILE = "townWizard-partner/townWizard-partner-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
@@ -8853,6 +9395,7 @@
 		};
 		D90D0E05158F06500026828E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 590EC73DC7CD43A285F2DAC5 /* Pods.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -8864,6 +9407,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "PARTNER_ID=1";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				HEADER_SEARCH_PATHS = "${PODS_HEADERS_SEARCH_PATHS}";
 				INFOPLIST_FILE = "townWizard-partner/townWizard-partner-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
@@ -9279,7 +9823,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D90D0E03158F06500026828E /* Build configuration list for PBXNativeTarget "townWizard-partner-template" */ = {
+		D90D0E03158F06500026828E /* Build configuration list for PBXNativeTarget "townWizardPartnerTemplate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D90D0E04158F06500026828E /* Debug */,

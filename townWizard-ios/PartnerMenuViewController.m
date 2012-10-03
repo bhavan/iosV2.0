@@ -85,11 +85,11 @@
     
 #else
     //caching disabled
-    self.partnerInfoDictionary = nil;
+    self.partner = nil;
     self.partnerSections = nil;
     // -----
     
-    if ([self partnerInfoDictionary] == nil) {
+    if ([self partner] == nil) {
         [self loadPartnerDetails];
     }
     else {

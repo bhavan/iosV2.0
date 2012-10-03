@@ -11,6 +11,7 @@
 #import "ImageCell.h"
 #import "Video.h"
 #import "UIImageView+WebCache.h"
+#import "SubMenuViewController.h"
 
 @interface VideosViewController ()
 
@@ -18,7 +19,7 @@
 
 @implementation VideosViewController
 
-@synthesize  partner, customNavigationBar;
+@synthesize  partner, customNavigationBar, section;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -115,13 +116,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  /*  PhotoCategory *category = [categories objectAtIndex:indexPath.row];
-    PhotoGalleryViewController *galleryController = [PhotoGalleryViewController new];
-    galleryController.customNavigationBar = self.customNavigationBar;
-    [RequestHelper photosWithPartner:partner fromCategory:category andDelegate:galleryController];
-    [self.navigationController pushViewController:galleryController animated:YES];
-    [galleryController release];
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];*/
+    Video *video = [videos objectAtIndex:indexPath.row];
+    SubMenuViewController *subMenu=[[SubMenuViewController alloc]
+                                    initWithNibName:@"SubMenuViewController" bundle:nil];
+    subMenu.customNavigationBar = self.customNavigationBar;
+    subMenu.url = video.url;
+    subMenu.section = self.section;
+    subMenu.partner = self.partner;
+    
+    [self.navigationController pushViewController:subMenu animated:YES];
+    [subMenu release];
+ 
 }
 
 - (void)didReceiveMemoryWarning
