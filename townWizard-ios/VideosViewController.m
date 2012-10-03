@@ -12,6 +12,8 @@
 #import "Video.h"
 #import "UIImageView+WebCache.h"
 #import "SubMenuViewController.h"
+#import "Partner.h"
+#import "Section.h"
 
 @interface VideosViewController ()
 
@@ -42,6 +44,8 @@
     [self.customNavigationBar.menuButton addTarget:self
                                             action:@selector(menuButtonPressed)
                                   forControlEvents:UIControlEventTouchUpInside];
+    self.customNavigationBar.titleLabel.text = self.partner.name;
+    self.customNavigationBar.subMenuLabel.text = self.section.displayName;
 }
 
 - (void)viewWillDisappear:(BOOL)animated

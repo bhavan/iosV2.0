@@ -23,4 +23,5 @@
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) Partner *partner;
 
+
 @end

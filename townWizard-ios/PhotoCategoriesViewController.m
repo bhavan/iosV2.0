@@ -40,10 +40,12 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationItem.hidesBackButton = YES;  
+    self.navigationItem.hidesBackButton = YES;
+    self.customNavigationBar.subMenuLabel.text = @"Photos";
     [self.customNavigationBar.menuButton addTarget:self
                                             action:@selector(menuButtonPressed)
                                   forControlEvents:UIControlEventTouchUpInside];
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated

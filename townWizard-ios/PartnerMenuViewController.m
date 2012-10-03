@@ -55,14 +55,14 @@
 
 
 -(void)setNameForNavigationBar
-{   
+{
+      self.customNavigationBar.titleLabel.text = self.partner.name;
     if (self.currentSectionName == nil) { 
-        self.customNavigationBar.titleLabel.text = [NSString stringWithFormat:@"%@",
-                                                    self.partner.name];
+        self.customNavigationBar.subMenuLabel.text = @"";
     }
     else {
-        self.customNavigationBar.titleLabel.text = [NSString stringWithFormat:@"%@ - %@",
-                                                    self.partner.name,self.currentSectionName];
+        self.customNavigationBar.subMenuLabel.text = self.currentSectionName;
+                                                   // self.partner.name,self.currentSectionName];
     }
 }
 
@@ -306,29 +306,21 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error
 {
-    
+    NSLog(@"%@",error.description);    
 }
-
-
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
 
     if([[objects lastObject] isKindOfClass:[Partner class]]) {
         self.partner = [objects lastObject];       
         [self.customNavigationBar.backgroundImageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",SERVER_URL,partner.headerImageUrl]]];
-
         [RequestHelper sectionsWithPartner:self.partner andDelegate:self];
         
     }
     else if([[objects lastObject] isKindOfClass:[Section class]]) {
         self.partnerSections = [[NSMutableArray alloc]initWithArray:objects];         
              
-        [self reloadMenu];
-       
-        // [self hideBackgroundImageOfTheNavigationBar:selectedMenu.customNavigationBar];
-      //  [self animateNavigationBarOnScreen:selectedMenu.customNavigationBar];
-        
-        
+        [self reloadMenu];         
     }
 }
 

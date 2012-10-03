@@ -68,9 +68,8 @@
     self.forwardButton.enabled = NO;
     
   
-    self.customNavigationBar.titleLabel.text = [NSString stringWithFormat:@"%@ - %@",
-                                               self.partner.name,
-                                               self.section.displayName];
+    self.customNavigationBar.titleLabel.text = self.partner.name;
+    self.customNavigationBar.subMenuLabel.text = self.section.displayName;
     
     if (!self.partner)
     {
@@ -95,10 +94,7 @@
 }
 
 - (void)menuButtonPressed {
-    //UIViewController *menuViewController = self.customNavigationBar.menuPage;
-    //[self.navigationController popToViewController:menuViewController animated:YES];
-    if (!self.webView.canGoBack) {
-        if (self.partner)
+         if (self.partner)
             [self.navigationController popViewControllerAnimated:YES];
         else // info page
         {
@@ -107,12 +103,7 @@
                 self.customNavigationBar.frame = CGRectMake(self.view.frame.size.width, 0, 
                                                             self.view.frame.size.width, 60);
             }];
-        }
-    }
-    else {
-        [self.webView goBack];
-        [[UIApplication sharedApplication] hideNetworkActivityIndicator];
-    }
+        }   
 }
 
 - (IBAction)goBackPressed:(id)sender {
@@ -137,7 +128,6 @@
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"prefs:root=WIFI"]];
     }
 }
-
 
 -(void)viewWillDisappear:(BOOL)animated
 {

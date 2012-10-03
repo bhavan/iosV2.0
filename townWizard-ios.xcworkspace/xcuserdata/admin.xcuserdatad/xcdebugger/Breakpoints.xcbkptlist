@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "townWizard-ios/ViewController.m"
-         timestampString = "370955482.032049"
+         timestampString = "370958492.995563"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "293"
-         endingLineNumber = "293"
+         startingLineNumber = "278"
+         endingLineNumber = "278"
          landmarkName = "-searchForPartnersWithQuery:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "townWizard-ios/ViewController.m"
-         timestampString = "370956461.930911"
+         timestampString = "370958492.995563"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "429"
-         endingLineNumber = "429"
+         startingLineNumber = "414"
+         endingLineNumber = "414"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "townWizard-ios/ViewController.m"
-         timestampString = "370955482.032049"
+         timestampString = "370958492.995563"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "278"
-         endingLineNumber = "278"
+         startingLineNumber = "263"
+         endingLineNumber = "263"
          landmarkName = "-objectLoader:didFailWithError:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -73,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "townWizard-ios/ViewController.m"
-         timestampString = "370955482.032049"
+         timestampString = "370958492.995563"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "294"
-         endingLineNumber = "294"
+         startingLineNumber = "279"
+         endingLineNumber = "279"
          landmarkName = "-searchForPartnersWithQuery:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -86,11 +86,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "townWizard-ios/ViewController.m"
-         timestampString = "370956461.930911"
+         timestampString = "370958492.995563"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "501"
-         endingLineNumber = "501"
+         startingLineNumber = "486"
+         endingLineNumber = "486"
          landmarkName = "-goButtonPressed:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -202,25 +202,12 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "townWizard-ios/PartnerMenuViewController.m"
-         timestampString = "370956947.428353"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "307"
-         endingLineNumber = "307"
-         landmarkName = "-objectLoader:didFailWithError:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "townWizard-ios/VideosViewController.m"
-         timestampString = "370957197.894766"
+         timestampString = "370959011.984943"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "73"
-         endingLineNumber = "73"
+         startingLineNumber = "77"
+         endingLineNumber = "77"
          landmarkName = "-objectLoader:didFailWithError:"
          landmarkType = "5">
       </FileBreakpoint>

@@ -16,6 +16,7 @@
 @property (nonatomic, retain) UIButton *backButton;
 @property (nonatomic, retain) UIButton *menuButton;
 @property (nonatomic, retain) UILabel *titleLabel;
+@property (nonatomic, retain) UILabel *subMenuLabel;
 
 @property (nonatomic,retain) UIImageView * backgroundImageView;
 @property (nonatomic,retain) UIImageView * defaultBackground;

@@ -254,21 +254,6 @@
             [self removeSpinnerFromButton:self.goButton];
             [self.goButton setTitle:@"GO" forState:UIControlStateNormal];
         }
-        else if([[objects lastObject] isKindOfClass:[Section class]]) {
-            selectedPartnerSections = [[NSMutableArray alloc]initWithArray:objects];
-            
-            [self saveSectionsForDefaultPartner:selectedPartnerSections];            
-            selectedMenu.partnerSections = selectedPartnerSections;
-            [selectedMenu reloadMenu];
-                      
-            
-            //transition animations
-            [self animateLogoOffScreen];
-           // [self hideBackgroundImageOfTheNavigationBar:selectedMenu.customNavigationBar];
-            [self animateNavigationBarOnScreen:selectedMenu.customNavigationBar];
-            
-            
-        }
     }
     [[UIApplication sharedApplication] hideNetworkActivityIndicator];
     
@@ -375,13 +360,13 @@
         }
         else
         {
-            NSString * iTunesAppUrl =[[NSString stringWithFormat:@"http://itunes.apple.com/us/app/id"]
+            NSString * iTunesAppUrl = [[NSString stringWithFormat:@"http://itunes.apple.com/us/app/id"]
                                       stringByAppendingString:
                                       partner.iTunesAppId];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:iTunesAppUrl]];
         }
     }
-    else if (indexPath.section ==1) //Load more button
+    else if (indexPath.section == 1) //Load more button
     {
         [self addSpinnerToCellAtIndexPath:indexPath];
         loadingMorePartnersInProgress = YES;
@@ -515,19 +500,17 @@
     [[UIApplication sharedApplication] setActivityindicatorToZero];
 }
 
-- (void)viewDidUnload {
+- (void)viewDidUnload
+{
     [self releaseOutlets];
     [super viewDidUnload];
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
     [self releaseOutlets];
     [super dealloc];
 }
 
-
-
-#pragma mark -
-#pragma mark
 
 @end

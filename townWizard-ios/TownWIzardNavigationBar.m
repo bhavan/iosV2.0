@@ -45,7 +45,7 @@
         self.menuButton.frame = CGRectMake(10, 9, 40, 40);
         [self addSubview:self.menuButton];
         
-        self.titleLabel = [[[UILabel alloc] initWithFrame:CGRectMake(32, 2, 250, 56)] autorelease];
+        self.titleLabel = [[[UILabel alloc] initWithFrame:CGRectMake(32, 2, 250, 30)] autorelease];
 
         self.titleLabel.textColor = [UIColor whiteColor];
         self.titleLabel.textAlignment = UITextAlignmentCenter;
@@ -53,10 +53,22 @@
         self.titleLabel.layer.shadowOpacity = 0.4;
         self.titleLabel.layer.masksToBounds = NO;
         self.titleLabel.layer.shadowOffset = CGSizeMake(1, 1);
-    
         self.titleLabel.shadowColor = [UIColor blackColor];
         self.titleLabel.backgroundColor = [UIColor clearColor];
-        [self addSubview:self.titleLabel];    
+        [self addSubview:self.titleLabel];
+        
+        self.subMenuLabel = [[[UILabel alloc] initWithFrame:CGRectMake(32, 33, 250, 26)] autorelease];
+        
+        self.subMenuLabel.textColor = [UIColor whiteColor];
+        self.subMenuLabel.textAlignment = UITextAlignmentCenter;
+        self.subMenuLabel.layer.shadowRadius = 0.1;
+        self.subMenuLabel.layer.shadowOpacity = 0.4;
+        self.subMenuLabel.layer.masksToBounds = NO;
+        self.subMenuLabel.layer.shadowOffset = CGSizeMake(1, 1);
+        self.subMenuLabel.shadowColor = [UIColor blackColor];
+        self.subMenuLabel.backgroundColor = [UIColor clearColor];
+        [self addSubview:self.subMenuLabel];
+      
         
         view = [[UIView alloc] initWithFrame:CGRectMake(10, 110, 300, 400)];
         view.backgroundColor = [UIColor lightGrayColor];
