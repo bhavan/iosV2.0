@@ -70,8 +70,6 @@
     
 }
 
-
-
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error
 {
     NSLog(@"%@",error.description);
@@ -82,16 +80,17 @@
     if (objects && [[objects lastObject] isKindOfClass:[Video class]])
     {
         videos = [[NSArray alloc] initWithArray:objects];
-        [self.tableView reloadData];
-        
+        [self.tableView reloadData];        
     }
 }
 
 #pragma mark -
 #pragma mark UITableView Delegate/Datasource
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if(videos) {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if(videos)
+    {
         return [videos count];
     }
     return 0;
@@ -121,7 +120,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Video *video = [videos objectAtIndex:indexPath.row];
-    SubMenuViewController *subMenu=[[SubMenuViewController alloc]
+    SubMenuViewController *subMenu = [[SubMenuViewController alloc]
                                     initWithNibName:@"SubMenuViewController" bundle:nil];
     subMenu.customNavigationBar = self.customNavigationBar;
     subMenu.url = video.url;
@@ -138,7 +137,8 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
     [_tableView release];
     [super dealloc];
 }

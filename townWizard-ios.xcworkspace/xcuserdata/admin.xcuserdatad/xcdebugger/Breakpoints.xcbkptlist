@@ -199,16 +199,29 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "townWizard-ios/VideosViewController.m"
-         timestampString = "370959011.984943"
+         filePath = "townWizard-ios/RequestHelper.m"
+         timestampString = "371557456.356045"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "77"
          endingLineNumber = "77"
-         landmarkName = "-objectLoader:didFailWithError:"
+         landmarkName = "+partnersWithQuery:andDelegate:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "townWizard-ios/RequestHelper.m"
+         timestampString = "371558259.861815"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "78"
+         endingLineNumber = "78"
+         landmarkName = "+partnersWithQuery:andDelegate:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

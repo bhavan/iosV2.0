@@ -10,7 +10,7 @@
 
 @implementation Partner
 
-@synthesize partnterId, name, iTunesAppId, facebookAppId, headerImageUrl;
+@synthesize partnterId, name, iTunesAppId, facebookAppId, headerImageUrl, webSiteUrl;
 
 + (RKObjectMapping *)objectMapping {
     RKObjectMapping * partnersMapping = [RKObjectMapping mappingForClass:[Partner class]];

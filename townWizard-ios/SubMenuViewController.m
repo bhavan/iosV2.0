@@ -250,7 +250,6 @@
 	viewController.m_photo = image;
 	
     [picker presentModalViewController:viewController animated:YES];
-
    
 	[viewController release];
 }
