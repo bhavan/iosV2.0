@@ -2,4 +2,4 @@ syntax: glob
 build
 DerivedData
 .DS*
-xcuserdata
+townWizard-ios.xcodeproj/xcuserdata/*
