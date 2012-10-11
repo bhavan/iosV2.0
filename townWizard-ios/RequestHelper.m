@@ -105,7 +105,7 @@
 {
     RKURL *baseURL = [RKURL URLWithBaseURLString:[NSString stringWithFormat:@"%@/",partner.webSiteUrl]];
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
-   
+    
   //   NSString *token = [RequestHelper xaccessTokenFromPartner:partner];
    
     objectManager.client.baseURL = baseURL;

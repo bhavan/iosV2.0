@@ -14,8 +14,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D90D0DF1158F06500026828E"
-               BuildableName = "townWizard-partner-template.app"
-               BlueprintName = "townWizard-partner-template"
+               BuildableName = "townWizardPartnerTemplate.app"
+               BlueprintName = "townWizardPartnerTemplate"
                ReferencedContainer = "container:townWizard-ios.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,8 +32,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D90D0DF1158F06500026828E"
-            BuildableName = "townWizard-partner-template.app"
-            BlueprintName = "townWizard-partner-template"
+            BuildableName = "townWizardPartnerTemplate.app"
+            BlueprintName = "townWizardPartnerTemplate"
             ReferencedContainer = "container:townWizard-ios.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -51,8 +51,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D90D0DF1158F06500026828E"
-            BuildableName = "townWizard-partner-template.app"
-            BlueprintName = "townWizard-partner-template"
+            BuildableName = "townWizardPartnerTemplate.app"
+            BlueprintName = "townWizardPartnerTemplate"
             ReferencedContainer = "container:townWizard-ios.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -69,8 +69,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D90D0DF1158F06500026828E"
-            BuildableName = "townWizard-partner-template.app"
-            BlueprintName = "townWizard-partner-template"
+            BuildableName = "townWizardPartnerTemplate.app"
+            BlueprintName = "townWizardPartnerTemplate"
             ReferencedContainer = "container:townWizard-ios.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
