@@ -58,23 +58,26 @@
 
 + (void)partnersWithQuery:(NSString *)query andDelegate:(id <RKObjectLoaderDelegate>)delegate
 {
+    RKURL *baseURL = [RKURL URLWithBaseURLString:API_URL];
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    objectManager.client.baseURL = baseURL;
+
     [objectManager.mappingProvider setObjectMapping:[Partner objectMapping] forKeyPath:@"data"];
     NSString *queryParam = @"";
     if(query) {
-      /*  NSRange offsetRange = [query rangeOfString:@"&offset"];
+        NSRange offsetRange = [query rangeOfString:@"&offset"];
         if(offsetRange.location > 0) {
             queryParam = [NSString stringWithFormat:@"q=%@",query];
         }
         else if(offsetRange.location == 0 && offsetRange.length > 0) {
             queryParam = [NSString stringWithFormat:@"%@",query];
-        }*/
+        }
     }
     else {
      /*   AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         queryParam = [NSString stringWithFormat:@"lat=%@&lon=%@",appDelegate.latitude, appDelegate.longitude];*/
     }
-    NSString *resourcePath = [NSString stringWithFormat:@"apiv21/partner?%@",queryParam];
+    NSString *resourcePath = [NSString stringWithFormat:@"/partner?%@",queryParam];
     [objectManager loadObjectsAtResourcePath:resourcePath delegate:delegate];
     
 }
@@ -85,7 +88,7 @@
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     objectManager.client.baseURL = baseURL;
     [objectManager.mappingProvider setObjectMapping:[Partner objectMapping] forKeyPath:@"data"];    
-    NSString *resourcePath = [NSString stringWithFormat:@"apiv21/partner/%@",partnerId];
+    NSString *resourcePath = [NSString stringWithFormat:@"/partner/%@",partnerId];
     [objectManager loadObjectsAtResourcePath:resourcePath delegate:delegate];
     
 }
@@ -97,7 +100,7 @@
     [sectionMapping mapKeyPath:@"sub_sections" toRelationship:@"subSections" withMapping:[Section objectMapping]];
 
     [objectManager.mappingProvider setObjectMapping:sectionMapping forKeyPath:@"data"];
-    NSString *resourcePath = [NSString stringWithFormat:@"apiv21/section/partner/%@",partner.partnterId];
+    NSString *resourcePath = [NSString stringWithFormat:@"/section/partner/%@",partner.partnterId];
     [objectManager loadObjectsAtResourcePath:resourcePath delegate:delegate];
 }
 
