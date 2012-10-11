@@ -2,5 +2,4 @@ syntax: glob
 build
 DerivedData
 .DS*
-project.xcworkspace
 xcuserdata
