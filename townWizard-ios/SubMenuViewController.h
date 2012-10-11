@@ -38,6 +38,7 @@ UIImagePickerControllerDelegate,UINavigationControllerDelegate,MFMailComposeView
 
 @property (nonatomic,retain) NSMutableArray *places;
 
+
 -(BOOL)townWizardServerReachable;
 - (void)menuButtonPressed;
 

@@ -14,6 +14,7 @@
 #import "SubMenuViewController.h"
 #import "Partner.h"
 #import "Section.h"
+#import "VideoViewController.h"
 
 @interface VideosViewController ()
 
@@ -119,13 +120,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
     Video *video = [videos objectAtIndex:indexPath.row];
-    SubMenuViewController *subMenu = [[SubMenuViewController alloc]
-                                    initWithNibName:@"SubMenuViewController" bundle:nil];
-    subMenu.customNavigationBar = self.customNavigationBar;
+    VideoViewController *subMenu = [[VideoViewController alloc]
+                                    initWithNibName:@"VideoViewController" bundle:nil];
+  /*  subMenu.customNavigationBar = self.customNavigationBar;
     subMenu.url = video.url;
     subMenu.section = self.section;
     subMenu.partner = self.partner;
+    subMenu.isVideoPlaying = YES;*/
+    subMenu.customNavigationBar = self.customNavigationBar;
+    subMenu.videoUrl = video.url;
     
     [self.navigationController pushViewController:subMenu animated:YES];
     [subMenu release];

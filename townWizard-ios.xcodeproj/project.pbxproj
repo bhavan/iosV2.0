@@ -351,6 +351,68 @@
 		848854C514D16F620030BD03 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854C414D16F620030BD03 /* Reachability.m */; };
 		848854F714D179700030BD03 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848854F614D179700030BD03 /* SystemConfiguration.framework */; };
 		8488550A14D1ABAB0030BD03 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8488550914D1ABAA0030BD03 /* ViewController.xib */; };
+		848DFB691626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
+		848DFB6A1626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
+		848DFB6B1626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
+		848DFB6C1626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
+		848DFB6D1626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
+		848DFB6E1626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
+		848DFB6F1626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
+		848DFB701626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
+		848DFB711626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
+		848DFB721626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
+		848DFB731626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
+		848DFB741626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
+		848DFB751626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
+		848DFB761626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
+		848DFB771626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
+		848DFB781626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
+		848DFB791626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
+		848DFB7A1626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
+		848DFB7B1626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
+		848DFB7C1626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
+		848DFB7D1626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
+		848DFB7E1626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
+		848DFB7F1626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
+		848DFB801626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
+		848DFB811626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
+		848DFB821626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
+		848DFB831626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
+		848DFB841626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
+		848DFB851626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
+		848DFB861626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
+		848DFB871626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
+		848DFB881626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
+		848DFB891626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
+		848DFB8A1626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
+		848DFB8B1626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
+		848DFB8C1626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
+		848DFB8D1626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
+		848DFB8E1626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
+		848DFB8F1626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
+		848DFB901626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
+		848DFB911626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
+		848DFB921626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
+		848DFB931626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
+		848DFB941626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
+		848DFB951626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
+		848DFB961626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
+		848DFB971626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
+		848DFB981626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
+		848DFB991626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
+		848DFB9A1626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
+		848DFB9B1626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
+		848DFB9C1626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
+		848DFB9D1626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
+		848DFB9E1626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
+		848DFB9F1626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
+		848DFBA01626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
+		848DFBA11626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
+		848DFBA21626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
+		848DFBA31626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
+		848DFBA41626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
+		848DFBA51626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
+		848DFBA61626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
 		84CAADF7161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
 		84CAADF8161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
 		84CAADF9161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
@@ -2491,6 +2553,9 @@
 		848854F414D1793A0030BD03 /* CFNetwork.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		848854F614D179700030BD03 /* SystemConfiguration.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8488550914D1ABAA0030BD03 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		848DFB661626B3F40096A6FF /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
+		848DFB671626B3F50096A6FF /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
+		848DFB681626B3F50096A6FF /* VideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoViewController.xib; sourceTree = "<group>"; };
 		84C47E65161C360A008A694E /* townWizardPartnerTemplate copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy-Info.plist"; path = "/Volumes/work/Projects/TownWizard_iPhoneV1.1/townWizardPartnerTemplate copy-Info.plist"; sourceTree = "<absolute>"; };
 		84CAADF5161B27CB00E09E36 /* ImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCell.h; sourceTree = "<group>"; };
 		84CAADF6161B27CB00E09E36 /* ImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCell.m; sourceTree = "<group>"; };
@@ -3508,6 +3573,8 @@
 				84CAADF6161B27CB00E09E36 /* ImageCell.m */,
 				84CAAE36161B2EB100E09E36 /* VideosViewController.h */,
 				84CAAE37161B2EB100E09E36 /* VideosViewController.m */,
+				848DFB661626B3F40096A6FF /* VideoViewController.h */,
+				848DFB671626B3F50096A6FF /* VideoViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -3515,6 +3582,7 @@
 		848854A814D142120030BD03 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				848DFB681626B3F50096A6FF /* VideoViewController.xib */,
 				847FD37F161ACDAE009FB9CC /* PhotoCategoriesViewController.xib */,
 				84F82C91161AF98E00E0A481 /* PhotoGalleryViewController.xib */,
 				84CAAE38161B2EB100E09E36 /* VideosViewController.xib */,
@@ -4751,6 +4819,7 @@
 				847FD3B9161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CCB161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE72161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				848DFBA31626B3F50096A6FF /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4794,6 +4863,7 @@
 				847FD3BA161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CCC161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE73161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				848DFBA41626B3F50096A6FF /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4839,6 +4909,7 @@
 				847FD39E161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CB0161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE57161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				848DFB881626B3F50096A6FF /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4882,6 +4953,7 @@
 				847FD3A2161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CB4161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE5B161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				848DFB8C1626B3F50096A6FF /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4925,6 +4997,7 @@
 				847FD3A1161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CB3161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE5A161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				848DFB8B1626B3F50096A6FF /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4968,6 +5041,7 @@
 				847FD3B6161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CC8161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE6F161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				848DFBA01626B3F50096A6FF /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5011,6 +5085,7 @@
 				847FD3B7161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CC9161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE70161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				848DFBA11626B3F50096A6FF /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5054,6 +5129,7 @@
 				847FD3B8161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CCA161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE71161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				848DFBA21626B3F50096A6FF /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5097,6 +5173,7 @@
 				847FD3B2161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CC4161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE6B161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				848DFB9C1626B3F50096A6FF /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5140,6 +5217,7 @@
 				847FD3B4161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CC6161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE6D161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				848DFB9E1626B3F50096A6FF /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5183,6 +5261,7 @@
 				847FD3AF161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CC1161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE68161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				848DFB991626B3F50096A6FF /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5226,6 +5305,7 @@
 				847FD3AD161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CBF161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE66161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				848DFB971626B3F50096A6FF /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5269,6 +5349,7 @@
 				847FD3AA161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CBC161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE63161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				848DFB941626B3F50096A6FF /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5312,6 +5393,7 @@
 				847FD3A9161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CBB161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE62161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				848DFB931626B3F50096A6FF /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5355,6 +5437,7 @@
 				847FD3AC161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CBE161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE65161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				848DFB961626B3F50096A6FF /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5398,6 +5481,7 @@
 				847FD3AB161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CBD161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE64161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				848DFB951626B3F50096A6FF /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5441,6 +5525,7 @@
 				847FD3A0161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CB2161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE59161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				848DFB8A1626B3F50096A6FF /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5484,6 +5569,7 @@
 				847FD3AE161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CC0161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE67161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				848DFB981626B3F50096A6FF /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5527,6 +5613,7 @@
 				847FD3B3161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CC5161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE6C161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				848DFB9D1626B3F50096A6FF /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5570,6 +5657,7 @@
 				847FD3B0161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CC2161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE69161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				848DFB9A1626B3F50096A6FF /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5613,6 +5701,7 @@
 				847FD3A4161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CB6161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE5D161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				848DFB8E1626B3F50096A6FF /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5656,6 +5745,7 @@
 				847FD3A3161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CB5161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE5C161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				848DFB8D1626B3F50096A6FF /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5699,6 +5789,7 @@
 				847FD3B1161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CC3161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE6A161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				848DFB9B1626B3F50096A6FF /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5742,6 +5833,7 @@
 				847FD3A6161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CB8161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE5F161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				848DFB901626B3F50096A6FF /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5785,6 +5877,7 @@
 				847FD3A5161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CB7161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE5E161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				848DFB8F1626B3F50096A6FF /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5828,6 +5921,7 @@
 				847FD3B5161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CC7161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE6E161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				848DFB9F1626B3F50096A6FF /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5871,6 +5965,7 @@
 				847FD3A8161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CBA161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE61161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				848DFB921626B3F50096A6FF /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5914,6 +6009,7 @@
 				847FD3A7161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CB9161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE60161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				848DFB911626B3F50096A6FF /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5953,6 +6049,7 @@
 				847FD39F161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CB1161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE58161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				848DFB891626B3F50096A6FF /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5964,6 +6061,7 @@
 				847FD3BB161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CCD161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE74161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				848DFBA51626B3F50096A6FF /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5989,6 +6087,7 @@
 				E690231D14FE447A008F52B2 /* FacebookFriendCell.xib in Resources */,
 				E690231E14FE447A008F52B2 /* PlacesViewCell.xib in Resources */,
 				E690231F14FE447A008F52B2 /* post_button.png in Resources */,
+				848DFBA61626B3F50096A6FF /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6456,6 +6555,7 @@
 				84CAAE12161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE54161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE92161B2F2C00E09E36 /* Video.m in Sources */,
+				848DFB841626B3F50096A6FF /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6497,6 +6597,7 @@
 				84CAAE13161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE55161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE93161B2F2C00E09E36 /* Video.m in Sources */,
+				848DFB851626B3F50096A6FF /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6538,6 +6639,7 @@
 				84CAADF7161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE39161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE77161B2F2C00E09E36 /* Video.m in Sources */,
+				848DFB691626B3F50096A6FF /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6579,6 +6681,7 @@
 				84CAADFB161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE3D161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE7B161B2F2C00E09E36 /* Video.m in Sources */,
+				848DFB6D1626B3F50096A6FF /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6620,6 +6723,7 @@
 				84CAADFA161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE3C161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE7A161B2F2C00E09E36 /* Video.m in Sources */,
+				848DFB6C1626B3F50096A6FF /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6661,6 +6765,7 @@
 				84CAAE0F161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE51161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE8F161B2F2C00E09E36 /* Video.m in Sources */,
+				848DFB811626B3F50096A6FF /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6702,6 +6807,7 @@
 				84CAAE10161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE52161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE90161B2F2C00E09E36 /* Video.m in Sources */,
+				848DFB821626B3F50096A6FF /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6743,6 +6849,7 @@
 				84CAAE11161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE53161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE91161B2F2C00E09E36 /* Video.m in Sources */,
+				848DFB831626B3F50096A6FF /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6784,6 +6891,7 @@
 				84CAAE0B161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE4D161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE8B161B2F2C00E09E36 /* Video.m in Sources */,
+				848DFB7D1626B3F50096A6FF /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6825,6 +6933,7 @@
 				84CAAE0D161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE4F161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE8D161B2F2C00E09E36 /* Video.m in Sources */,
+				848DFB7F1626B3F50096A6FF /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6866,6 +6975,7 @@
 				84CAAE08161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE4A161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE88161B2F2C00E09E36 /* Video.m in Sources */,
+				848DFB7A1626B3F50096A6FF /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6907,6 +7017,7 @@
 				84CAAE06161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE48161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE86161B2F2C00E09E36 /* Video.m in Sources */,
+				848DFB781626B3F50096A6FF /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6948,6 +7059,7 @@
 				84CAAE03161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE45161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE83161B2F2C00E09E36 /* Video.m in Sources */,
+				848DFB751626B3F50096A6FF /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6989,6 +7101,7 @@
 				84CAAE02161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE44161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE82161B2F2C00E09E36 /* Video.m in Sources */,
+				848DFB741626B3F50096A6FF /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7030,6 +7143,7 @@
 				84CAAE05161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE47161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE85161B2F2C00E09E36 /* Video.m in Sources */,
+				848DFB771626B3F50096A6FF /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7071,6 +7185,7 @@
 				84CAAE04161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE46161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE84161B2F2C00E09E36 /* Video.m in Sources */,
+				848DFB761626B3F50096A6FF /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7112,6 +7227,7 @@
 				84CAADF9161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE3B161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE79161B2F2C00E09E36 /* Video.m in Sources */,
+				848DFB6B1626B3F50096A6FF /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7153,6 +7269,7 @@
 				84CAAE07161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE49161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE87161B2F2C00E09E36 /* Video.m in Sources */,
+				848DFB791626B3F50096A6FF /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7194,6 +7311,7 @@
 				84CAAE0C161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE4E161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE8C161B2F2C00E09E36 /* Video.m in Sources */,
+				848DFB7E1626B3F50096A6FF /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7235,6 +7353,7 @@
 				84CAAE09161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE4B161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE89161B2F2C00E09E36 /* Video.m in Sources */,
+				848DFB7B1626B3F50096A6FF /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7276,6 +7395,7 @@
 				84CAADFD161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE3F161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE7D161B2F2C00E09E36 /* Video.m in Sources */,
+				848DFB6F1626B3F50096A6FF /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7317,6 +7437,7 @@
 				84CAADFC161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE3E161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE7C161B2F2C00E09E36 /* Video.m in Sources */,
+				848DFB6E1626B3F50096A6FF /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7358,6 +7479,7 @@
 				84CAAE0A161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE4C161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE8A161B2F2C00E09E36 /* Video.m in Sources */,
+				848DFB7C1626B3F50096A6FF /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7399,6 +7521,7 @@
 				84CAADFF161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE41161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE7F161B2F2C00E09E36 /* Video.m in Sources */,
+				848DFB711626B3F50096A6FF /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7440,6 +7563,7 @@
 				84CAADFE161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE40161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE7E161B2F2C00E09E36 /* Video.m in Sources */,
+				848DFB701626B3F50096A6FF /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7481,6 +7605,7 @@
 				84CAAE0E161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE50161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE8E161B2F2C00E09E36 /* Video.m in Sources */,
+				848DFB801626B3F50096A6FF /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7522,6 +7647,7 @@
 				84CAAE01161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE43161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE81161B2F2C00E09E36 /* Video.m in Sources */,
+				848DFB731626B3F50096A6FF /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7563,6 +7689,7 @@
 				84CAAE00161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE42161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE80161B2F2C00E09E36 /* Video.m in Sources */,
+				848DFB721626B3F50096A6FF /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7604,6 +7731,7 @@
 				84CAADF8161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE3A161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE78161B2F2C00E09E36 /* Video.m in Sources */,
+				848DFB6A1626B3F50096A6FF /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7626,6 +7754,7 @@
 				84CAAE14161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE56161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE94161B2F2C00E09E36 /* Video.m in Sources */,
+				848DFB861626B3F50096A6FF /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7658,6 +7787,7 @@
 				E69022FE14FE447A008F52B2 /* Place.m in Sources */,
 				E69022FF14FE447A008F52B2 /* DataHolder.m in Sources */,
 				84F82CED161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
+				848DFB871626B3F50096A6FF /* VideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7846,8 +7976,8 @@
 					armv6,
 					"$(ARCHS_STANDARD_32_BIT)",
 				);
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/CedarTesting\"",
@@ -7866,8 +7996,8 @@
 					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
 				);
 				PRODUCT_NAME = TownWizard;
-				PROVISIONING_PROFILE = "E63A425A-634C-40B6-9116-7C8D83F8C36F";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E63A425A-634C-40B6-9116-7C8D83F8C36F";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
