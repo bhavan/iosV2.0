@@ -15,7 +15,6 @@
 #import <CommonCrypto/CommonDigest.h>
 #import "Video.h"
 
-
 #define REQUEST_TIMEOUT 30
 
 
@@ -40,13 +39,13 @@
 {
     NSString *timeStamp = [[NSString alloc] initWithFormat:@"%f", [[NSDate date] timeIntervalSince1970]];
     NSString *timeToken = [[RequestHelper md5:timeStamp] substringToIndex:8];
-    
+    NSString *webSite = [partner.webSiteUrl lastPathComponent];
     NSString *lastToken = [RequestHelper md5:
-                                    [NSString stringWithFormat:@"192.168.1.115%@", [RequestHelper md5:timeToken]]];
+                           [NSString stringWithFormat:@"%@%@",webSite, [RequestHelper md5:timeToken]]];
+    
     NSString *resultToken = [NSString stringWithFormat:@"%@%@",lastToken, timeToken];
     return resultToken;
 }
-
 
 + (RKObjectManager *)defaultObjectManager
 {
@@ -56,38 +55,33 @@
     return objectManager;
 }
 
-+ (void)partnersWithQuery:(NSString *)query andDelegate:(id <RKObjectLoaderDelegate>)delegate
++ (void)partnersWithQuery:(NSString *)query offset:(NSInteger)offset andDelegate:(id <RKObjectLoaderDelegate>)delegate
+{
+    NSString *queryParam = @"";
+    if(query && query.length > 0)
+    {
+        queryParam = [NSString stringWithFormat:@"q=%@",query];
+    }
+    else
+    {
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        queryParam = [NSString stringWithFormat:@"lat=%@&lon=%@",appDelegate.latitude, appDelegate.longitude];
+    }
+    RKURL *baseURL = [RKURL URLWithBaseURLString:API_URL];
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    objectManager.client.baseURL = baseURL;
+    [objectManager.mappingProvider setObjectMapping:[Partner objectMapping] forKeyPath:@"data"];
+    NSString *resourcePath = [NSString stringWithFormat:@"/partner?%@&offset=%d",queryParam,offset];
+    [objectManager loadObjectsAtResourcePath:resourcePath delegate:delegate];
+}
+
+
++ (void)partnerWithId:(NSString *)partnerId andDelegate:(id <RKObjectLoaderDelegate>)delegate
 {
     RKURL *baseURL = [RKURL URLWithBaseURLString:API_URL];
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     objectManager.client.baseURL = baseURL;
-
     [objectManager.mappingProvider setObjectMapping:[Partner objectMapping] forKeyPath:@"data"];
-    NSString *queryParam = @"";
-    if(query) {
-        NSRange offsetRange = [query rangeOfString:@"&offset"];
-        if(offsetRange.location > 0) {
-            queryParam = [NSString stringWithFormat:@"q=%@",query];
-        }
-        else if(offsetRange.location == 0 && offsetRange.length > 0) {
-            queryParam = [NSString stringWithFormat:@"%@",query];
-        }
-    }
-    else {
-     /*   AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        queryParam = [NSString stringWithFormat:@"lat=%@&lon=%@",appDelegate.latitude, appDelegate.longitude];*/
-    }
-    NSString *resourcePath = [NSString stringWithFormat:@"/partner?%@",queryParam];
-    [objectManager loadObjectsAtResourcePath:resourcePath delegate:delegate];
-    
-}
-
-+ (void)partnerWithId:(NSString *)partnerId andDelegate:(id <RKObjectLoaderDelegate>)delegate
-{    
-    RKURL *baseURL = [RKURL URLWithBaseURLString:API_URL];
-    RKObjectManager *objectManager = [RKObjectManager sharedManager];
-    objectManager.client.baseURL = baseURL;
-    [objectManager.mappingProvider setObjectMapping:[Partner objectMapping] forKeyPath:@"data"];    
     NSString *resourcePath = [NSString stringWithFormat:@"/partner/%@",partnerId];
     [objectManager loadObjectsAtResourcePath:resourcePath delegate:delegate];
     
@@ -95,57 +89,55 @@
 
 + (void)sectionsWithPartner:(Partner *)partner andDelegate:(id <RKObjectLoaderDelegate>)delegate
 {
-     RKObjectManager *objectManager = [RKObjectManager sharedManager];
-     RKObjectMapping *sectionMapping = [Section objectMapping];
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    RKObjectMapping *sectionMapping = [Section objectMapping];
     [sectionMapping mapKeyPath:@"sub_sections" toRelationship:@"subSections" withMapping:[Section objectMapping]];
-
+    
     [objectManager.mappingProvider setObjectMapping:sectionMapping forKeyPath:@"data"];
     NSString *resourcePath = [NSString stringWithFormat:@"/section/partner/%@",partner.partnterId];
     [objectManager loadObjectsAtResourcePath:resourcePath delegate:delegate];
 }
 
++ (void)modelsListWithMapping:(RKObjectMapping *)objectMapping
+                  fromPartner:(Partner *)partner
+                   andSection:(Section *)section
+                 withDelegate:(id <RKObjectLoaderDelegate>)delegate
+{
+    RKURL *baseURL = [RKURL URLWithBaseURLString:partner.webSiteUrl];
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];    
+    NSString *token = [RequestHelper xaccessTokenFromPartner:partner];
+    
+    objectManager.client.baseURL = baseURL;
+    [objectManager.client.HTTPHeaders setValue:token forKey:TOKEN_KEY];
+    [objectManager.mappingProvider setObjectMapping:objectMapping forKeyPath:@"data"];
+    
+    [objectManager loadObjectsAtResourcePath:[NSString stringWithFormat:@"%@",section.url] delegate:delegate];
+
+}
+
+
 + (void)categoriesWithPartner:(Partner *)partner andSection:(Section *)section andDelegate:(id <RKObjectLoaderDelegate>)delegate
 {
-    RKURL *baseURL = [RKURL URLWithBaseURLString:[NSString stringWithFormat:@"%@/",partner.webSiteUrl]];
-    RKObjectManager *objectManager = [RKObjectManager sharedManager];
-    
-  //   NSString *token = [RequestHelper xaccessTokenFromPartner:partner];
-   
-    objectManager.client.baseURL = baseURL;
-  //  [objectManager.client.HTTPHeaders setValue:token forKey:@"X-ACCESS-TOKEN"];
-    [objectManager.mappingProvider setObjectMapping:[PhotoCategory objectMapping] forKeyPath:@"data"];          
-
-    [objectManager loadObjectsAtResourcePath:[NSString stringWithFormat:@"%@?debug=1",section.url] delegate:delegate];
-
+    [RequestHelper modelsListWithMapping:[PhotoCategory objectMapping] fromPartner:partner andSection:section withDelegate:delegate];
 }
 
 + (void)videosWithPartner:(Partner *)partner andSection:(Section *)section andDelegate:(id <RKObjectLoaderDelegate>)delegate
 {
-    RKURL *baseURL = [RKURL URLWithBaseURLString:partner.webSiteUrl];
-    RKObjectManager *objectManager = [RKObjectManager sharedManager];
-    
- //   NSString *token = [RequestHelper xaccessTokenFromPartner:partner];
-    
-    objectManager.client.baseURL = baseURL;
- //   [objectManager.client.HTTPHeaders setValue:token forKey:@"X-ACCESS-TOKEN"];
-    [objectManager.mappingProvider setObjectMapping:[Video objectMapping] forKeyPath:@"data"];
-    
-    [objectManager loadObjectsAtResourcePath:[NSString stringWithFormat:@"%@?debug=1",section.url] delegate:delegate];   
+    [RequestHelper modelsListWithMapping:[Video objectMapping] fromPartner:partner andSection:section withDelegate:delegate];
 }
 
 
 + (void)photosWithPartner:(Partner *)partner fromCategory:(PhotoCategory *)category andDelegate:(id <RKObjectLoaderDelegate>)delegate
 {
-   // RKURL *baseURL = [RKURL URLWithBaseURLString:API_URL];
-    RKObjectManager *objectManager = [RKObjectManager sharedManager];    
-  //  NSString *token = [RequestHelper xaccessTokenFromPartner:partner];
     
-
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
     [objectManager.mappingProvider setObjectMapping:[Photo objectMapping] forKeyPath:@"data"];
-    
-    NSString *resourcePath = [NSString stringWithFormat:@"%@/api2.1/album?id=%@&debug=1",partner.webSiteUrl,category.categoryId];
+    NSString *resourcePath = [NSString stringWithFormat:
+                              @"%@/api2.1/album?id=%@",
+                              partner.webSiteUrl,
+                              category.categoryId];
     [objectManager loadObjectsAtResourcePath:resourcePath delegate:delegate];
-
+    
 }
 
 @end

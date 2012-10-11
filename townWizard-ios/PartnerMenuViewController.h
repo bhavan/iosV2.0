@@ -35,6 +35,5 @@
 
 - (void) goToSection:(id)sender;
 - (void) reloadMenu;
-- (void) loadImageForButton:(UIButton *)btn;
 
 @end

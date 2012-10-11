@@ -17,11 +17,32 @@
 + (NSString *) md5:(NSString *) input;
 + (NSString *)xaccessTokenFromPartner:(Partner *)partner;
 + (RKObjectManager *)defaultObjectManager;
-+ (void)partnersWithQuery:(NSString *)query andDelegate:(id <RKObjectLoaderDelegate>)delegate;
-+ (void)partnerWithId:(NSString *)partnerId andDelegate:(id <RKObjectLoaderDelegate>)delegate;
-+ (void)sectionsWithPartner:(Partner *)partner andDelegate:(id <RKObjectLoaderDelegate>)delegate;
-+ (void)categoriesWithPartner:(Partner *)partner andSection:(Section *)section andDelegate:(id <RKObjectLoaderDelegate>)delegate;
-+ (void)photosWithPartner:(Partner *)partner fromCategory:(PhotoCategory *)category andDelegate:(id <RKObjectLoaderDelegate>)delegate;
-+ (void)videosWithPartner:(Partner *)partner andSection:(Section *)section andDelegate:(id <RKObjectLoaderDelegate>)delegate;
+
++ (void)partnersWithQuery:(NSString *)query
+                   offset:(NSInteger)offset
+              andDelegate:(id <RKObjectLoaderDelegate>)delegate;
+
++ (void)partnerWithId:(NSString *)partnerId
+          andDelegate:(id <RKObjectLoaderDelegate>)delegate;
+
++ (void)sectionsWithPartner:(Partner *)partner
+                andDelegate:(id <RKObjectLoaderDelegate>)delegate;
+
++ (void)categoriesWithPartner:(Partner *)partner
+                   andSection:(Section *)section
+                  andDelegate:(id <RKObjectLoaderDelegate>)delegate;
+
++ (void)photosWithPartner:(Partner *)partner
+             fromCategory:(PhotoCategory *)category
+              andDelegate:(id <RKObjectLoaderDelegate>)delegate;
+
++ (void)videosWithPartner:(Partner *)partner
+               andSection:(Section *)section
+              andDelegate:(id <RKObjectLoaderDelegate>)delegate;
+
++ (void)modelsListWithMapping:(RKObjectMapping *)objectMapping
+                  fromPartner:(Partner *)partner
+                   andSection:(Section *)section
+                 withDelegate:(id <RKObjectLoaderDelegate>)delegate;
 
 @end

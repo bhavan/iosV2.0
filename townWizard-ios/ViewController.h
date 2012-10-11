@@ -38,6 +38,7 @@ PartnerMenuViewControllerDelegate,SubMenuViewControllerDelegate,UIAlertViewDeleg
 -(IBAction)dismissKeyboardByTouchingEmptySpaceOnScreen:(id)sender;
 
 -(IBAction)infoButtonPressed:(id)sender;
+- (void) searchForPartnersWithQuery:(NSString *)query offset:(NSInteger)offset;
 
 
 @end

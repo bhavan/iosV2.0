@@ -79,8 +79,8 @@
 #pragma mark - go Home
 
 - (void)goHome {
-    [self.navigationController popToRootViewControllerAnimated:YES];    
-    [self animateLogoToScreen];   
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self animateLogoToScreen];
 }
 
 -(void)menuButtonPressed:(id)sender
@@ -138,9 +138,9 @@
     [customNavigationBar.backButton addTarget:self
                                        action:@selector(goHome)
                              forControlEvents:UIControlEventTouchUpInside];
-    [self.navigationController.navigationBar addSubview:customNavigationBar];     
+    [self.navigationController.navigationBar addSubview:customNavigationBar];
     doNotUseGeopositionSearchResults = NO;
-    loadingMorePartnersInProgress = NO;    
+    loadingMorePartnersInProgress = NO;
 }
 
 
@@ -222,8 +222,12 @@
 
 - (void)objectLoader:(RKObjectLoader *)loader willMapData:(inout id *)mappableData {
     NSMutableDictionary* d = [[*mappableData objectForKey: @"meta"] mutableCopy];
-    if([d objectForKey:@"next_offset"]) {    
-    nextOffset = [[d objectForKey:@"next_offset"] integerValue];
+    if([d objectForKey:@"next_offset"]) {
+        nextOffset = [[d objectForKey:@"next_offset"] integerValue];
+    }
+    else
+    {
+        nextOffset = 0;
     }
 }
 
@@ -237,25 +241,27 @@
                                    cancelButtonTitle:@"OK"
                                    otherButtonTitles:nil] autorelease];
             [alert show];
-
+            
         }
         else if([[objects lastObject] isKindOfClass:[Partner class]]) {
-                        
+            
             if(objects.count > 0 && loadingMorePartnersInProgress)
             {
                 [partnersList addObjectsFromArray:objects];
-            loadingMorePartnersInProgress = NO;
+                loadingMorePartnersInProgress = NO;
             }
             else{
                 partnersList = [[NSMutableArray alloc]initWithArray:objects];
             }
-                [self.tableView reloadData];
-            [self.goButton setEnabled:YES];
-            [self removeSpinnerFromButton:self.goButton];
-            [self.goButton setTitle:@"GO" forState:UIControlStateNormal];
+            
         }
+        [self.tableView reloadData];
+        [self.goButton setEnabled:YES];
+        [self removeSpinnerFromButton:self.goButton];
+        [self.goButton setTitle:@"GO" forState:UIControlStateNormal];
+        [[UIApplication sharedApplication] hideNetworkActivityIndicator];
+        
     }
-    [[UIApplication sharedApplication] hideNetworkActivityIndicator];
     
 }
 
@@ -276,13 +282,18 @@
 }
 
 - (void) searchForPartnersWithQuery:(NSString *)query {
+    [self searchForPartnersWithQuery:query offset:0];
+}
+
+- (void) searchForPartnersWithQuery:(NSString *)query offset:(NSInteger)offset
+{
     query = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [[UIApplication sharedApplication] showNetworkActivityIndicator];
-    [RequestHelper partnersWithQuery:query andDelegate:self];
+    
+    [RequestHelper partnersWithQuery:query offset:offset andDelegate:self];
     loadingMorePartnersInProgress = NO;
     if ([partnersList count])
     {
-        //isLoadingMore = YES;
         loadingMorePartnersInProgress = YES;
     }
 }
@@ -300,12 +311,12 @@
     customNavigationBar.menuPage = subMenu;
     subMenu.partner = aPartner;
     selectedMenu = subMenu;
-    UIImageView *bgView = customNavigationBar.backgroundImageView;    
+    UIImageView *bgView = customNavigationBar.backgroundImageView;
     NSString *imageUrl = [NSString stringWithFormat:@"%@%@",SERVER_URL,aPartner.headerImageUrl];
     [bgView setImageWithURL:[NSURL URLWithString:imageUrl]];
-     [self animateNavigationBarOnScreen:selectedMenu.customNavigationBar];
-    [self animateLogoOffScreen];  
-    [self.navigationController pushViewController:selectedMenu animated:YES];    
+    [self animateNavigationBarOnScreen:selectedMenu.customNavigationBar];
+    [self animateLogoOffScreen];
+    [self.navigationController pushViewController:selectedMenu animated:YES];
 }
 
 -(void)locationManager:(CLLocationManager *)aManager
@@ -347,7 +358,7 @@
         
         if ([partner.iTunesAppId isEqual:@""]) {
             [self loadSectionMenuForPartnerWithPartner:partner];
-           
+            
             if (partner.facebookAppId)
             {
                 [AppDelegate sharedDelegate].facebookHelper.appId = partner.facebookAppId;
@@ -361,8 +372,8 @@
         else
         {
             NSString * iTunesAppUrl = [[NSString stringWithFormat:@"http://itunes.apple.com/us/app/id"]
-                                      stringByAppendingString:
-                                      partner.iTunesAppId];
+                                       stringByAppendingString:
+                                       partner.iTunesAppId];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:iTunesAppUrl]];
         }
     }
@@ -370,9 +381,7 @@
     {
         [self addSpinnerToCellAtIndexPath:indexPath];
         loadingMorePartnersInProgress = YES;
-        
-        NSString * query = [NSString stringWithFormat:@"%@&offset=%d",self.currentSearchQuery,nextOffset];
-        [self searchForPartnersWithQuery:query];
+        [self searchForPartnersWithQuery:self.currentSearchQuery offset:nextOffset];
     }
     [aTableView deselectRowAtIndexPath:indexPath animated:YES];
     [self.searchBar resignFirstResponder];
@@ -420,12 +429,12 @@
     return  cell;
 }
 
--(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     [self.searchBar resignFirstResponder];
 }
 
--(IBAction)dismissKeyboardByTouchingEmptySpaceOnScreen:(id)sender
+- (IBAction)dismissKeyboardByTouchingEmptySpaceOnScreen:(id)sender
 {
     [self.searchBar resignFirstResponder];
 }

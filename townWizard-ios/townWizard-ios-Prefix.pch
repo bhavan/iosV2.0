@@ -13,9 +13,11 @@
     #import <RestKit/RestKit.h>
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+
 //#define SERVER_URL @"http://container.mlsdev.com/"//@"http://townwizard.com/api/v1/"
 #define SERVER_URL @"http://www.townwizardcontainerapp.com"
 #define API_URL @"http://container.mlsdev.com/apiv21/"
 
 //#define PARTNER_ID @"1"
+#define TOKEN_KEY @"X-ACCESS-TOKEN"
 #endif
