@@ -20,7 +20,9 @@ RKObjectLoaderDelegate,
 MWPhotoBrowserDelegate>
 {
     NSArray *photos;
+    NSArray *loadedImages;
     AQGridView *gridView;
+    int currentIndex;
 
 }
 

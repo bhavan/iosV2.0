@@ -73,7 +73,8 @@
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects
 {
     if([[objects lastObject] isKindOfClass:[Photo class]]){
-         photos = [[NSArray alloc] initWithArray:objects];     
+         photos = [[NSArray alloc] initWithArray:objects];
+        loadedImages = [[NSMutableArray alloc] initWithCapacity:photos.count];
         [gridView setNeedsLayout];
         [gridView reloadData];
     }
@@ -124,10 +125,13 @@
 
 - (void)gridView:(AQGridView *) gridView didSelectItemAtIndex: (NSUInteger) index
 {
+    currentIndex = index;
     MWPhotoBrowser *browser = [[[MWPhotoBrowser alloc] initWithDelegate:self] autorelease];
     browser.wantsFullScreenLayout = NO;
     browser.displayActionButton = YES;
     [browser setInitialPageIndex:index];
+
+    
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:browser];
     navController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
@@ -140,16 +144,19 @@
 - (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser
 {
     return photos.count;
+ 
 }
 
 - (MWPhoto *)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index
 {
-    if (index < photos.count) {
-        Photo *twThoto = [photos objectAtIndex:index];
+    if(index < photos.count)
+    {
+        Photo *twThoto = [photos objectAtIndex:0];
         MWPhoto *photo = [MWPhoto photoWithURL:[NSURL URLWithString:twThoto.picture]];
         photo.caption = twThoto.name;        
         return photo;
     }
+   
     return nil;
 }
 
