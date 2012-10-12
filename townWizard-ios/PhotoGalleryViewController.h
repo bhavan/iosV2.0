@@ -9,18 +9,22 @@
 #import <UIKit/UIKit.h>
 #import "AQGridView.h"
 #import <MWPhotoBrowser/MWPhotoBrowser.h>
+#import "BaseUploadViewController.h"
 
 @class TownWizardNavigationBar;
+@class Partner;
 
-@interface PhotoGalleryViewController : UIViewController <  AQGridViewDataSource,
+@interface PhotoGalleryViewController : BaseUploadViewController <  AQGridViewDataSource,
 AQGridViewDelegate,
 RKObjectLoaderDelegate,
 MWPhotoBrowserDelegate>
 {
     NSArray *photos;
-    AQGridView *gridView;;
+    AQGridView *gridView;
+
 }
 
 @property (nonatomic, retain) TownWizardNavigationBar * customNavigationBar;
 @property (retain, nonatomic) IBOutlet AQGridView *gridView;
+
 @end

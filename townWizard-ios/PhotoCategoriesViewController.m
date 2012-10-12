@@ -14,6 +14,7 @@
 #import "TownWIzardNavigationBar.h"
 #import "ImageCell.h"
 #import "UIImageView+WebCache.h"
+#import "PhotoUploadView.h"
 
 @interface PhotoCategoriesViewController ()
 
@@ -21,7 +22,7 @@
 
 @implementation PhotoCategoriesViewController
 
-@synthesize categories, partner;
+@synthesize categories;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,6 +46,7 @@
     [self.customNavigationBar.menuButton addTarget:self
                                             action:@selector(menuButtonPressed)
                                   forControlEvents:UIControlEventTouchUpInside];
+
     
 }
 
@@ -56,6 +58,8 @@
                                   forControlEvents:UIControlEventTouchUpInside];
 
 }
+
+
 
 - (void)menuButtonPressed
 {
@@ -123,6 +127,7 @@
     PhotoCategory *category = [categories objectAtIndex:indexPath.row];
     PhotoGalleryViewController *galleryController = [PhotoGalleryViewController new];
     galleryController.customNavigationBar = self.customNavigationBar;
+    galleryController.partner = self.partner;
     [RequestHelper photosWithPartner:partner fromCategory:category andDelegate:galleryController];
     [self.navigationController pushViewController:galleryController animated:YES];
     [galleryController release];

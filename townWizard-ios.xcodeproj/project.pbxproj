@@ -413,6 +413,68 @@
 		848DFBA41626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
 		848DFBA51626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
 		848DFBA61626B3F50096A6FF /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
+		848F71F2162805DA005F02E8 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
+		848F71F3162805DA005F02E8 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
+		848F71F4162805DA005F02E8 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
+		848F71F5162805DA005F02E8 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
+		848F71F6162805DA005F02E8 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
+		848F71F7162805DA005F02E8 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
+		848F71F8162805DA005F02E8 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
+		848F71F9162805DA005F02E8 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
+		848F71FA162805DA005F02E8 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
+		848F71FB162805DA005F02E8 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
+		848F71FC162805DA005F02E8 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
+		848F71FD162805DA005F02E8 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
+		848F71FE162805DA005F02E8 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
+		848F71FF162805DA005F02E8 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
+		848F7200162805DA005F02E8 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
+		848F7201162805DA005F02E8 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
+		848F7202162805DA005F02E8 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
+		848F7203162805DA005F02E8 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
+		848F7204162805DA005F02E8 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
+		848F7205162805DA005F02E8 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
+		848F7206162805DA005F02E8 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
+		848F7207162805DA005F02E8 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
+		848F7208162805DA005F02E8 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
+		848F7209162805DA005F02E8 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
+		848F720A162805DA005F02E8 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
+		848F720B162805DA005F02E8 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
+		848F720C162805DA005F02E8 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
+		848F720D162805DA005F02E8 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
+		848F720E162805DA005F02E8 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
+		848F720F162805DA005F02E8 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
+		848F7210162805DA005F02E8 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
+		848F7214162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
+		848F7215162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
+		848F7216162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
+		848F7217162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
+		848F7218162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
+		848F7219162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
+		848F721A162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
+		848F721B162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
+		848F721C162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
+		848F721D162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
+		848F721E162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
+		848F721F162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
+		848F7220162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
+		848F7221162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
+		848F7222162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
+		848F7223162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
+		848F7224162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
+		848F7225162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
+		848F7226162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
+		848F7227162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
+		848F7228162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
+		848F7229162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
+		848F722A162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
+		848F722B162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
+		848F722C162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
+		848F722D162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
+		848F722E162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
+		848F722F162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
+		848F7230162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
+		848F7231162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
+		848F7232162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
 		84CAADF7161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
 		84CAADF8161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
 		84CAADF9161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
@@ -2556,6 +2618,10 @@
 		848DFB661626B3F40096A6FF /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
 		848DFB671626B3F50096A6FF /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
 		848DFB681626B3F50096A6FF /* VideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoViewController.xib; sourceTree = "<group>"; };
+		848F71F0162805D9005F02E8 /* PhotoUploadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoUploadView.h; sourceTree = "<group>"; };
+		848F71F1162805D9005F02E8 /* PhotoUploadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoUploadView.m; sourceTree = "<group>"; };
+		848F7212162808C0005F02E8 /* BaseUploadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseUploadViewController.h; sourceTree = "<group>"; };
+		848F7213162808C0005F02E8 /* BaseUploadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseUploadViewController.m; sourceTree = "<group>"; };
 		84C47E65161C360A008A694E /* townWizardPartnerTemplate copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy-Info.plist"; path = "/Volumes/work/Projects/TownWizard_iPhoneV1.1/townWizardPartnerTemplate copy-Info.plist"; sourceTree = "<absolute>"; };
 		84CAADF5161B27CB00E09E36 /* ImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCell.h; sourceTree = "<group>"; };
 		84CAADF6161B27CB00E09E36 /* ImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCell.m; sourceTree = "<group>"; };
@@ -3575,6 +3641,10 @@
 				84CAAE37161B2EB100E09E36 /* VideosViewController.m */,
 				848DFB661626B3F40096A6FF /* VideoViewController.h */,
 				848DFB671626B3F50096A6FF /* VideoViewController.m */,
+				848F71F0162805D9005F02E8 /* PhotoUploadView.h */,
+				848F71F1162805D9005F02E8 /* PhotoUploadView.m */,
+				848F7212162808C0005F02E8 /* BaseUploadViewController.h */,
+				848F7213162808C0005F02E8 /* BaseUploadViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -6556,6 +6626,8 @@
 				84CAAE54161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE92161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB841626B3F50096A6FF /* VideoViewController.m in Sources */,
+				848F720D162805DA005F02E8 /* PhotoUploadView.m in Sources */,
+				848F722F162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6598,6 +6670,8 @@
 				84CAAE55161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE93161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB851626B3F50096A6FF /* VideoViewController.m in Sources */,
+				848F720E162805DA005F02E8 /* PhotoUploadView.m in Sources */,
+				848F7230162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6640,6 +6714,8 @@
 				84CAAE39161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE77161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB691626B3F50096A6FF /* VideoViewController.m in Sources */,
+				848F71F2162805DA005F02E8 /* PhotoUploadView.m in Sources */,
+				848F7214162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6682,6 +6758,8 @@
 				84CAAE3D161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE7B161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB6D1626B3F50096A6FF /* VideoViewController.m in Sources */,
+				848F71F6162805DA005F02E8 /* PhotoUploadView.m in Sources */,
+				848F7218162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6724,6 +6802,8 @@
 				84CAAE3C161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE7A161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB6C1626B3F50096A6FF /* VideoViewController.m in Sources */,
+				848F71F5162805DA005F02E8 /* PhotoUploadView.m in Sources */,
+				848F7217162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6766,6 +6846,8 @@
 				84CAAE51161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE8F161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB811626B3F50096A6FF /* VideoViewController.m in Sources */,
+				848F720A162805DA005F02E8 /* PhotoUploadView.m in Sources */,
+				848F722C162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6808,6 +6890,8 @@
 				84CAAE52161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE90161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB821626B3F50096A6FF /* VideoViewController.m in Sources */,
+				848F720B162805DA005F02E8 /* PhotoUploadView.m in Sources */,
+				848F722D162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6850,6 +6934,8 @@
 				84CAAE53161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE91161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB831626B3F50096A6FF /* VideoViewController.m in Sources */,
+				848F720C162805DA005F02E8 /* PhotoUploadView.m in Sources */,
+				848F722E162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6892,6 +6978,8 @@
 				84CAAE4D161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE8B161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB7D1626B3F50096A6FF /* VideoViewController.m in Sources */,
+				848F7206162805DA005F02E8 /* PhotoUploadView.m in Sources */,
+				848F7228162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6934,6 +7022,8 @@
 				84CAAE4F161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE8D161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB7F1626B3F50096A6FF /* VideoViewController.m in Sources */,
+				848F7208162805DA005F02E8 /* PhotoUploadView.m in Sources */,
+				848F722A162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6976,6 +7066,8 @@
 				84CAAE4A161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE88161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB7A1626B3F50096A6FF /* VideoViewController.m in Sources */,
+				848F7203162805DA005F02E8 /* PhotoUploadView.m in Sources */,
+				848F7225162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7018,6 +7110,8 @@
 				84CAAE48161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE86161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB781626B3F50096A6FF /* VideoViewController.m in Sources */,
+				848F7201162805DA005F02E8 /* PhotoUploadView.m in Sources */,
+				848F7223162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7060,6 +7154,8 @@
 				84CAAE45161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE83161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB751626B3F50096A6FF /* VideoViewController.m in Sources */,
+				848F71FE162805DA005F02E8 /* PhotoUploadView.m in Sources */,
+				848F7220162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7102,6 +7198,8 @@
 				84CAAE44161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE82161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB741626B3F50096A6FF /* VideoViewController.m in Sources */,
+				848F71FD162805DA005F02E8 /* PhotoUploadView.m in Sources */,
+				848F721F162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7144,6 +7242,8 @@
 				84CAAE47161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE85161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB771626B3F50096A6FF /* VideoViewController.m in Sources */,
+				848F7200162805DA005F02E8 /* PhotoUploadView.m in Sources */,
+				848F7222162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7186,6 +7286,8 @@
 				84CAAE46161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE84161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB761626B3F50096A6FF /* VideoViewController.m in Sources */,
+				848F71FF162805DA005F02E8 /* PhotoUploadView.m in Sources */,
+				848F7221162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7228,6 +7330,8 @@
 				84CAAE3B161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE79161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB6B1626B3F50096A6FF /* VideoViewController.m in Sources */,
+				848F71F4162805DA005F02E8 /* PhotoUploadView.m in Sources */,
+				848F7216162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7270,6 +7374,8 @@
 				84CAAE49161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE87161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB791626B3F50096A6FF /* VideoViewController.m in Sources */,
+				848F7202162805DA005F02E8 /* PhotoUploadView.m in Sources */,
+				848F7224162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7312,6 +7418,8 @@
 				84CAAE4E161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE8C161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB7E1626B3F50096A6FF /* VideoViewController.m in Sources */,
+				848F7207162805DA005F02E8 /* PhotoUploadView.m in Sources */,
+				848F7229162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7354,6 +7462,8 @@
 				84CAAE4B161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE89161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB7B1626B3F50096A6FF /* VideoViewController.m in Sources */,
+				848F7204162805DA005F02E8 /* PhotoUploadView.m in Sources */,
+				848F7226162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7396,6 +7506,8 @@
 				84CAAE3F161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE7D161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB6F1626B3F50096A6FF /* VideoViewController.m in Sources */,
+				848F71F8162805DA005F02E8 /* PhotoUploadView.m in Sources */,
+				848F721A162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7438,6 +7550,8 @@
 				84CAAE3E161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE7C161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB6E1626B3F50096A6FF /* VideoViewController.m in Sources */,
+				848F71F7162805DA005F02E8 /* PhotoUploadView.m in Sources */,
+				848F7219162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7480,6 +7594,8 @@
 				84CAAE4C161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE8A161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB7C1626B3F50096A6FF /* VideoViewController.m in Sources */,
+				848F7205162805DA005F02E8 /* PhotoUploadView.m in Sources */,
+				848F7227162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7522,6 +7638,8 @@
 				84CAAE41161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE7F161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB711626B3F50096A6FF /* VideoViewController.m in Sources */,
+				848F71FA162805DA005F02E8 /* PhotoUploadView.m in Sources */,
+				848F721C162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7564,6 +7682,8 @@
 				84CAAE40161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE7E161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB701626B3F50096A6FF /* VideoViewController.m in Sources */,
+				848F71F9162805DA005F02E8 /* PhotoUploadView.m in Sources */,
+				848F721B162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7606,6 +7726,8 @@
 				84CAAE50161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE8E161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB801626B3F50096A6FF /* VideoViewController.m in Sources */,
+				848F7209162805DA005F02E8 /* PhotoUploadView.m in Sources */,
+				848F722B162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7648,6 +7770,8 @@
 				84CAAE43161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE81161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB731626B3F50096A6FF /* VideoViewController.m in Sources */,
+				848F71FC162805DA005F02E8 /* PhotoUploadView.m in Sources */,
+				848F721E162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7690,6 +7814,8 @@
 				84CAAE42161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE80161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB721626B3F50096A6FF /* VideoViewController.m in Sources */,
+				848F71FB162805DA005F02E8 /* PhotoUploadView.m in Sources */,
+				848F721D162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7732,6 +7858,8 @@
 				84CAAE3A161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE78161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB6A1626B3F50096A6FF /* VideoViewController.m in Sources */,
+				848F71F3162805DA005F02E8 /* PhotoUploadView.m in Sources */,
+				848F7215162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7755,6 +7883,8 @@
 				84CAAE56161B2EB200E09E36 /* VideosViewController.m in Sources */,
 				84CAAE94161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB861626B3F50096A6FF /* VideoViewController.m in Sources */,
+				848F720F162805DA005F02E8 /* PhotoUploadView.m in Sources */,
+				848F7231162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7788,6 +7918,8 @@
 				E69022FF14FE447A008F52B2 /* DataHolder.m in Sources */,
 				84F82CED161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
 				848DFB871626B3F50096A6FF /* VideoViewController.m in Sources */,
+				848F7210162805DA005F02E8 /* PhotoUploadView.m in Sources */,
+				848F7232162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
