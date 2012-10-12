@@ -44,7 +44,6 @@
 	else {
 		[theDelegate facebookPermissionGranted];
 	}
-
 }
 
 #pragma mark FBSessionDelegate

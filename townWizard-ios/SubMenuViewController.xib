@@ -41,7 +41,7 @@
 					<object class="IBUIWebView" id="312429313">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">274</int>
-						<string key="NSFrameSize">{320, 416}</string>
+						<string key="NSFrame">{{0, 16}, {320, 400}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSNextKeyView" ref="433022171"/>
 						<string key="NSReuseIdentifierKey">_NS:693</string>

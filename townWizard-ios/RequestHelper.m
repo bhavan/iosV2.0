@@ -109,10 +109,8 @@
     
     objectManager.client.baseURL = baseURL;
     [objectManager.client.HTTPHeaders setValue:token forKey:TOKEN_KEY];
-    [objectManager.mappingProvider setObjectMapping:objectMapping forKeyPath:@"data"];
-    
+    [objectManager.mappingProvider setObjectMapping:objectMapping forKeyPath:@"data"];    
     [objectManager loadObjectsAtResourcePath:[NSString stringWithFormat:@"%@",section.url] delegate:delegate];
-
 }
 
 

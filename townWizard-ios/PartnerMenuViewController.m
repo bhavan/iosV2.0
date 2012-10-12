@@ -312,7 +312,17 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
 
     if([[objects lastObject] isKindOfClass:[Partner class]]) {
-        self.partner = [objects lastObject];       
+        self.partner = [objects lastObject];
+        if (partner.facebookAppId)
+        {
+            [AppDelegate sharedDelegate].facebookHelper.appId = partner.facebookAppId;
+            [TestFlight passCheckpoint:@"facebook app id is set"];
+        }
+        else {
+            [AppDelegate sharedDelegate].facebookHelper.appId = @"";
+            [TestFlight passCheckpoint:@"Facebook app id is empty"];
+        }
+
         [self.customNavigationBar.backgroundImageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",SERVER_URL,partner.headerImageUrl]]];
         [RequestHelper sectionsWithPartner:self.partner andDelegate:self];
         
