@@ -475,6 +475,68 @@
 		848F7230162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
 		848F7231162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
 		848F7232162808C0005F02E8 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
+		848F7256162810BF005F02E8 /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
+		848F7257162810BF005F02E8 /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
+		848F7258162810BF005F02E8 /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
+		848F7259162810BF005F02E8 /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
+		848F725A162810BF005F02E8 /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
+		848F725B162810BF005F02E8 /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
+		848F725C162810BF005F02E8 /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
+		848F725D162810BF005F02E8 /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
+		848F725E162810BF005F02E8 /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
+		848F725F162810BF005F02E8 /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
+		848F7260162810BF005F02E8 /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
+		848F7261162810BF005F02E8 /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
+		848F7262162810BF005F02E8 /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
+		848F7263162810BF005F02E8 /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
+		848F7264162810BF005F02E8 /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
+		848F7265162810BF005F02E8 /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
+		848F7266162810BF005F02E8 /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
+		848F7267162810BF005F02E8 /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
+		848F7268162810BF005F02E8 /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
+		848F7269162810BF005F02E8 /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
+		848F726A162810BF005F02E8 /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
+		848F726B162810BF005F02E8 /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
+		848F726C162810BF005F02E8 /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
+		848F726D162810BF005F02E8 /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
+		848F726E162810BF005F02E8 /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
+		848F726F162810BF005F02E8 /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
+		848F7270162810BF005F02E8 /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
+		848F7271162810BF005F02E8 /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
+		848F7272162810BF005F02E8 /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
+		848F7273162810BF005F02E8 /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
+		848F7274162810BF005F02E8 /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
+		848F7275162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
+		848F7276162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
+		848F7277162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
+		848F7278162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
+		848F7279162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
+		848F727A162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
+		848F727B162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
+		848F727C162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
+		848F727D162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
+		848F727E162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
+		848F727F162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
+		848F7280162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
+		848F7281162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
+		848F7282162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
+		848F7283162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
+		848F7284162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
+		848F7285162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
+		848F7286162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
+		848F7287162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
+		848F7288162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
+		848F7289162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
+		848F728A162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
+		848F728B162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
+		848F728C162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
+		848F728D162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
+		848F728E162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
+		848F728F162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
+		848F7290162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
+		848F7291162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
+		848F7292162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
+		848F7293162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
 		84CAADF7161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
 		84CAADF8161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
 		84CAADF9161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
@@ -2622,6 +2684,8 @@
 		848F71F1162805D9005F02E8 /* PhotoUploadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoUploadView.m; sourceTree = "<group>"; };
 		848F7212162808C0005F02E8 /* BaseUploadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseUploadViewController.h; sourceTree = "<group>"; };
 		848F7213162808C0005F02E8 /* BaseUploadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseUploadViewController.m; sourceTree = "<group>"; };
+		848F7254162810BD005F02E8 /* menuStarButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuStarButton.png; sourceTree = "<group>"; };
+		848F7255162810BE005F02E8 /* menuStarButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menuStarButton@2x.png"; sourceTree = "<group>"; };
 		84C47E65161C360A008A694E /* townWizardPartnerTemplate copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy-Info.plist"; path = "/Volumes/work/Projects/TownWizard_iPhoneV1.1/townWizardPartnerTemplate copy-Info.plist"; sourceTree = "<absolute>"; };
 		84CAADF5161B27CB00E09E36 /* ImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCell.h; sourceTree = "<group>"; };
 		84CAADF6161B27CB00E09E36 /* ImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCell.m; sourceTree = "<group>"; };
@@ -3594,6 +3658,7 @@
 		8483F24D14D03FBE005E4216 /* TownWizard-ios */ = {
 			isa = PBXGroup;
 			children = (
+				848F723316280E40005F02E8 /* Other */,
 				8444637416198E6300394D41 /* Models */,
 				8488550414D1A7420030BD03 /* CustomNavigationBar */,
 				848854B514D1464E0030BD03 /* Helpers */,
@@ -3641,10 +3706,6 @@
 				84CAAE37161B2EB100E09E36 /* VideosViewController.m */,
 				848DFB661626B3F40096A6FF /* VideoViewController.h */,
 				848DFB671626B3F50096A6FF /* VideoViewController.m */,
-				848F71F0162805D9005F02E8 /* PhotoUploadView.h */,
-				848F71F1162805D9005F02E8 /* PhotoUploadView.m */,
-				848F7212162808C0005F02E8 /* BaseUploadViewController.h */,
-				848F7213162808C0005F02E8 /* BaseUploadViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -3688,6 +3749,13 @@
 				E691001E14E56B7E003DE64B /* TownWIzardNavigationBar.m */,
 			);
 			name = CustomNavigationBar;
+			sourceTree = "<group>";
+		};
+		848F723316280E40005F02E8 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Other;
 			sourceTree = "<group>";
 		};
 		95043AE315B748AF0012E8CC /* blueridge */ = {
@@ -4050,6 +4118,8 @@
 		D92B0ED71589D3D0006894BE /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				848F7254162810BD005F02E8 /* menuStarButton.png */,
+				848F7255162810BE005F02E8 /* menuStarButton@2x.png */,
 				D9FA2C50159074E5006FFF7E /* back_arrow_retina.png */,
 				D9FA2C51159074E5006FFF7E /* back_arrow.png */,
 				D9FA2C52159074E5006FFF7E /* go_background.png */,
@@ -4207,6 +4277,10 @@
 		E691000614E5504A003DE64B /* UploadPhoto */ = {
 			isa = PBXGroup;
 			children = (
+				848F71F0162805D9005F02E8 /* PhotoUploadView.h */,
+				848F71F1162805D9005F02E8 /* PhotoUploadView.m */,
+				848F7212162808C0005F02E8 /* BaseUploadViewController.h */,
+				848F7213162808C0005F02E8 /* BaseUploadViewController.m */,
 				E691000714E550B3003DE64B /* AddCaptionViewController.h */,
 				E691000814E550B3003DE64B /* AddCaptionViewController.m */,
 			);
@@ -4890,6 +4964,8 @@
 				84F82CCB161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE72161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 				848DFBA31626B3F50096A6FF /* VideoViewController.xib in Resources */,
+				848F7271162810BF005F02E8 /* menuStarButton.png in Resources */,
+				848F7290162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4934,6 +5010,8 @@
 				84F82CCC161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE73161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 				848DFBA41626B3F50096A6FF /* VideoViewController.xib in Resources */,
+				848F7272162810BF005F02E8 /* menuStarButton.png in Resources */,
+				848F7291162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4980,6 +5058,8 @@
 				84F82CB0161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE57161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 				848DFB881626B3F50096A6FF /* VideoViewController.xib in Resources */,
+				848F7256162810BF005F02E8 /* menuStarButton.png in Resources */,
+				848F7275162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5024,6 +5104,8 @@
 				84F82CB4161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE5B161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 				848DFB8C1626B3F50096A6FF /* VideoViewController.xib in Resources */,
+				848F725A162810BF005F02E8 /* menuStarButton.png in Resources */,
+				848F7279162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5068,6 +5150,8 @@
 				84F82CB3161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE5A161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 				848DFB8B1626B3F50096A6FF /* VideoViewController.xib in Resources */,
+				848F7259162810BF005F02E8 /* menuStarButton.png in Resources */,
+				848F7278162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5112,6 +5196,8 @@
 				84F82CC8161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE6F161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 				848DFBA01626B3F50096A6FF /* VideoViewController.xib in Resources */,
+				848F726E162810BF005F02E8 /* menuStarButton.png in Resources */,
+				848F728D162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5156,6 +5242,8 @@
 				84F82CC9161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE70161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 				848DFBA11626B3F50096A6FF /* VideoViewController.xib in Resources */,
+				848F726F162810BF005F02E8 /* menuStarButton.png in Resources */,
+				848F728E162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5200,6 +5288,8 @@
 				84F82CCA161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE71161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 				848DFBA21626B3F50096A6FF /* VideoViewController.xib in Resources */,
+				848F7270162810BF005F02E8 /* menuStarButton.png in Resources */,
+				848F728F162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5244,6 +5334,8 @@
 				84F82CC4161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE6B161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 				848DFB9C1626B3F50096A6FF /* VideoViewController.xib in Resources */,
+				848F726A162810BF005F02E8 /* menuStarButton.png in Resources */,
+				848F7289162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5288,6 +5380,8 @@
 				84F82CC6161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE6D161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 				848DFB9E1626B3F50096A6FF /* VideoViewController.xib in Resources */,
+				848F726C162810BF005F02E8 /* menuStarButton.png in Resources */,
+				848F728B162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5332,6 +5426,8 @@
 				84F82CC1161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE68161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 				848DFB991626B3F50096A6FF /* VideoViewController.xib in Resources */,
+				848F7267162810BF005F02E8 /* menuStarButton.png in Resources */,
+				848F7286162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5376,6 +5472,8 @@
 				84F82CBF161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE66161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 				848DFB971626B3F50096A6FF /* VideoViewController.xib in Resources */,
+				848F7265162810BF005F02E8 /* menuStarButton.png in Resources */,
+				848F7284162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5420,6 +5518,8 @@
 				84F82CBC161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE63161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 				848DFB941626B3F50096A6FF /* VideoViewController.xib in Resources */,
+				848F7262162810BF005F02E8 /* menuStarButton.png in Resources */,
+				848F7281162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5464,6 +5564,8 @@
 				84F82CBB161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE62161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 				848DFB931626B3F50096A6FF /* VideoViewController.xib in Resources */,
+				848F7261162810BF005F02E8 /* menuStarButton.png in Resources */,
+				848F7280162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5508,6 +5610,8 @@
 				84F82CBE161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE65161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 				848DFB961626B3F50096A6FF /* VideoViewController.xib in Resources */,
+				848F7264162810BF005F02E8 /* menuStarButton.png in Resources */,
+				848F7283162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5552,6 +5656,8 @@
 				84F82CBD161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE64161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 				848DFB951626B3F50096A6FF /* VideoViewController.xib in Resources */,
+				848F7263162810BF005F02E8 /* menuStarButton.png in Resources */,
+				848F7282162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5596,6 +5702,8 @@
 				84F82CB2161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE59161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 				848DFB8A1626B3F50096A6FF /* VideoViewController.xib in Resources */,
+				848F7258162810BF005F02E8 /* menuStarButton.png in Resources */,
+				848F7277162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5640,6 +5748,8 @@
 				84F82CC0161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE67161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 				848DFB981626B3F50096A6FF /* VideoViewController.xib in Resources */,
+				848F7266162810BF005F02E8 /* menuStarButton.png in Resources */,
+				848F7285162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5684,6 +5794,8 @@
 				84F82CC5161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE6C161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 				848DFB9D1626B3F50096A6FF /* VideoViewController.xib in Resources */,
+				848F726B162810BF005F02E8 /* menuStarButton.png in Resources */,
+				848F728A162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5728,6 +5840,8 @@
 				84F82CC2161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE69161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 				848DFB9A1626B3F50096A6FF /* VideoViewController.xib in Resources */,
+				848F7268162810BF005F02E8 /* menuStarButton.png in Resources */,
+				848F7287162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5772,6 +5886,8 @@
 				84F82CB6161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE5D161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 				848DFB8E1626B3F50096A6FF /* VideoViewController.xib in Resources */,
+				848F725C162810BF005F02E8 /* menuStarButton.png in Resources */,
+				848F727B162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5816,6 +5932,8 @@
 				84F82CB5161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE5C161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 				848DFB8D1626B3F50096A6FF /* VideoViewController.xib in Resources */,
+				848F725B162810BF005F02E8 /* menuStarButton.png in Resources */,
+				848F727A162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5860,6 +5978,8 @@
 				84F82CC3161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE6A161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 				848DFB9B1626B3F50096A6FF /* VideoViewController.xib in Resources */,
+				848F7269162810BF005F02E8 /* menuStarButton.png in Resources */,
+				848F7288162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5904,6 +6024,8 @@
 				84F82CB8161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE5F161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 				848DFB901626B3F50096A6FF /* VideoViewController.xib in Resources */,
+				848F725E162810BF005F02E8 /* menuStarButton.png in Resources */,
+				848F727D162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5948,6 +6070,8 @@
 				84F82CB7161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE5E161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 				848DFB8F1626B3F50096A6FF /* VideoViewController.xib in Resources */,
+				848F725D162810BF005F02E8 /* menuStarButton.png in Resources */,
+				848F727C162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5992,6 +6116,8 @@
 				84F82CC7161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE6E161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 				848DFB9F1626B3F50096A6FF /* VideoViewController.xib in Resources */,
+				848F726D162810BF005F02E8 /* menuStarButton.png in Resources */,
+				848F728C162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6036,6 +6162,8 @@
 				84F82CBA161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE61161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 				848DFB921626B3F50096A6FF /* VideoViewController.xib in Resources */,
+				848F7260162810BF005F02E8 /* menuStarButton.png in Resources */,
+				848F727F162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6080,6 +6208,8 @@
 				84F82CB9161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE60161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 				848DFB911626B3F50096A6FF /* VideoViewController.xib in Resources */,
+				848F725F162810BF005F02E8 /* menuStarButton.png in Resources */,
+				848F727E162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6120,6 +6250,8 @@
 				84F82CB1161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE58161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 				848DFB891626B3F50096A6FF /* VideoViewController.xib in Resources */,
+				848F7257162810BF005F02E8 /* menuStarButton.png in Resources */,
+				848F7276162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6132,6 +6264,8 @@
 				84F82CCD161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE74161B2EB200E09E36 /* VideosViewController.xib in Resources */,
 				848DFBA51626B3F50096A6FF /* VideoViewController.xib in Resources */,
+				848F7273162810BF005F02E8 /* menuStarButton.png in Resources */,
+				848F7292162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6158,6 +6292,8 @@
 				E690231E14FE447A008F52B2 /* PlacesViewCell.xib in Resources */,
 				E690231F14FE447A008F52B2 /* post_button.png in Resources */,
 				848DFBA61626B3F50096A6FF /* VideoViewController.xib in Resources */,
+				848F7274162810BF005F02E8 /* menuStarButton.png in Resources */,
+				848F7293162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

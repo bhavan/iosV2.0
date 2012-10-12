@@ -39,10 +39,10 @@
         [self addSubview:self.backgroundImageView];
         
         self.menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [self.menuButton setImage:[UIImage imageNamed:@"back_arrow_retina.png"] 
+        [self.menuButton setImage:[UIImage imageNamed:@"menuStarButton"] 
                          forState:UIControlStateNormal];
         self.menuButton.accessibilityLabel = @"Back";
-        self.menuButton.frame = CGRectMake(10, 9, 40, 40);
+        self.menuButton.frame = CGRectMake(10, 10, 33, 30);
         [self addSubview:self.menuButton];
         
         self.titleLabel = [[[UILabel alloc] initWithFrame:CGRectMake(32, 2, 250, 30)] autorelease];
