@@ -22,7 +22,7 @@
 
 @implementation PhotoCategoriesViewController
 
-@synthesize categories;
+@synthesize categories, section;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -128,7 +128,7 @@
     PhotoGalleryViewController *galleryController = [PhotoGalleryViewController new];
     galleryController.customNavigationBar = self.customNavigationBar;
     galleryController.partner = self.partner;
-    [RequestHelper photosWithPartner:partner fromCategory:category andDelegate:galleryController];
+    [RequestHelper photosWithPartner:partner section:section fromCategory:category andDelegate:galleryController];
     [self.navigationController pushViewController:galleryController animated:YES];
     [galleryController release];
     [tableView deselectRowAtIndexPath:indexPath animated:NO];

@@ -12,18 +12,19 @@
 
 @class Partner;
 @class TownWizardNavigationBar;
-
+@class Section;
 
 @interface PhotoCategoriesViewController : BaseUploadViewController <UITableViewDataSource, UITableViewDelegate, RKObjectLoaderDelegate>
 {
     NSArray *categories;
-
+    Section * section;
 
 }
 
 @property (nonatomic, retain) TownWizardNavigationBar * customNavigationBar;
 @property (nonatomic, retain) NSArray *categories;
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, retain) Section * section;
 
 
 

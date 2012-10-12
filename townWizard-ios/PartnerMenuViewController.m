@@ -276,6 +276,7 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
         {
             PhotoCategoriesViewController *controller = [PhotoCategoriesViewController new];
             controller.partner = self.partner;
+            controller.section = section;
             controller.customNavigationBar = self.customNavigationBar;
             [RequestHelper categoriesWithPartner:self.partner andSection:section andDelegate:controller];
             [self.navigationController pushViewController:controller animated:YES];

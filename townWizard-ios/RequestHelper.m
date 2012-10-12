@@ -125,14 +125,15 @@
 }
 
 
-+ (void)photosWithPartner:(Partner *)partner fromCategory:(PhotoCategory *)category andDelegate:(id <RKObjectLoaderDelegate>)delegate
++ (void)photosWithPartner:(Partner *)partner section:(Section *)section fromCategory:(PhotoCategory *)category andDelegate:(id <RKObjectLoaderDelegate>)delegate
 {
     
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     [objectManager.mappingProvider setObjectMapping:[Photo objectMapping] forKeyPath:@"data"];
     NSString *resourcePath = [NSString stringWithFormat:
-                              @"%@/api2.1/album?id=%@",
+                              @"%@/%@?id=%@",
                               partner.webSiteUrl,
+                              section.url,
                               category.categoryId];
     [objectManager loadObjectsAtResourcePath:resourcePath delegate:delegate];
     

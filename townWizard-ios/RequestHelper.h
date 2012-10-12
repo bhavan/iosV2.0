@@ -32,9 +32,7 @@
                    andSection:(Section *)section
                   andDelegate:(id <RKObjectLoaderDelegate>)delegate;
 
-+ (void)photosWithPartner:(Partner *)partner
-             fromCategory:(PhotoCategory *)category
-              andDelegate:(id <RKObjectLoaderDelegate>)delegate;
++ (void)photosWithPartner:(Partner *)partner section:(Section *)section fromCategory:(PhotoCategory *)category andDelegate:(id <RKObjectLoaderDelegate>)delegate;
 
 + (void)videosWithPartner:(Partner *)partner
                andSection:(Section *)section
