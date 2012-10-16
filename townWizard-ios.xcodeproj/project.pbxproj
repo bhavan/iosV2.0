@@ -345,6 +345,7 @@
 		8483F25414D03FBE005E4216 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483F25314D03FBE005E4216 /* main.m */; };
 		8483F25814D03FBE005E4216 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483F25714D03FBE005E4216 /* AppDelegate.m */; };
 		8483F25B14D03FBE005E4216 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483F25A14D03FBE005E4216 /* ViewController.m */; };
+		8485318B162D377200211546 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8485318A162D377200211546 /* Default-568h@2x.png */; };
 		848854AC14D142430030BD03 /* SubMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854AA14D142430030BD03 /* SubMenuViewController.m */; };
 		848854AD14D142430030BD03 /* SubMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848854AB14D142430030BD03 /* SubMenuViewController.xib */; };
 		848854B414D146490030BD03 /* RequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854B314D146490030BD03 /* RequestHelper.m */; };
@@ -2666,6 +2667,7 @@
 		8483F25714D03FBE005E4216 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8483F25914D03FBE005E4216 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		8483F25A14D03FBE005E4216 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8485318A162D377200211546 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		848854A914D142430030BD03 /* SubMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubMenuViewController.h; sourceTree = "<group>"; };
 		848854AA14D142430030BD03 /* SubMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubMenuViewController.m; sourceTree = "<group>"; wrapsLines = 1; };
 		848854AB14D142430030BD03 /* SubMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubMenuViewController.xib; sourceTree = "<group>"; };
@@ -3555,6 +3557,7 @@
 		8483F23814D03FBE005E4216 = {
 			isa = PBXGroup;
 			children = (
+				8485318A162D377200211546 /* Default-568h@2x.png */,
 				95A8389C15B6207300BD05EC /* Default@2x.png */,
 				8483F24D14D03FBE005E4216 /* TownWizard-ios */,
 				E61A961214FD26D1006E5F24 /* CedarTesting */,
@@ -4873,7 +4876,7 @@
 		8483F23A14D03FBE005E4216 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0450;
 			};
 			buildConfigurationList = 8483F23D14D03FBE005E4216 /* Build configuration list for PBXProject "townWizard-ios" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -5060,6 +5063,7 @@
 				848DFB881626B3F50096A6FF /* VideoViewController.xib in Resources */,
 				848F7256162810BF005F02E8 /* menuStarButton.png in Resources */,
 				848F7275162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
+				8485318B162D377200211546 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

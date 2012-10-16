@@ -42,10 +42,10 @@
         [self.menuButton setImage:[UIImage imageNamed:@"menuStarButton"] 
                          forState:UIControlStateNormal];
         self.menuButton.accessibilityLabel = @"Back";
-        self.menuButton.frame = CGRectMake(10, 10, 33, 30);
+        self.menuButton.frame = CGRectMake(10, 13, 33, 30);
         [self addSubview:self.menuButton];
         
-        self.titleLabel = [[[UILabel alloc] initWithFrame:CGRectMake(32, 2, 250, 30)] autorelease];
+        self.titleLabel = [[[UILabel alloc] initWithFrame:CGRectMake(32, 3, 250, 30)] autorelease];
 
         self.titleLabel.textColor = [UIColor whiteColor];
         self.titleLabel.textAlignment = UITextAlignmentCenter;
@@ -57,7 +57,7 @@
         self.titleLabel.backgroundColor = [UIColor clearColor];
         [self addSubview:self.titleLabel];
         
-        self.subMenuLabel = [[[UILabel alloc] initWithFrame:CGRectMake(32, 33, 250, 26)] autorelease];
+        self.subMenuLabel = [[[UILabel alloc] initWithFrame:CGRectMake(32, 28, 250, 26)] autorelease];
         
         self.subMenuLabel.textColor = [UIColor whiteColor];
         self.subMenuLabel.textAlignment = UITextAlignmentCenter;

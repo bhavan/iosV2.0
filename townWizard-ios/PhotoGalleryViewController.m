@@ -125,8 +125,7 @@
 
 - (void)gridView:(AQGridView *) gridView didSelectItemAtIndex: (NSUInteger) index
 {
-    currentIndex = index;
-    MWPhotoBrowser *browser = [[[MWPhotoBrowser alloc] initWithDelegate:self] autorelease];
+        MWPhotoBrowser *browser = [[[MWPhotoBrowser alloc] initWithDelegate:self] autorelease];
     browser.wantsFullScreenLayout = NO;
     browser.displayActionButton = YES;
     [browser setInitialPageIndex:index];
@@ -151,7 +150,7 @@
 {
     if(index < photos.count)
     {
-        Photo *twThoto = [photos objectAtIndex:0];
+        Photo *twThoto = [photos objectAtIndex:index];
         MWPhoto *photo = [MWPhoto photoWithURL:[NSURL URLWithString:twThoto.picture]];
         photo.caption = twThoto.name;        
         return photo;
