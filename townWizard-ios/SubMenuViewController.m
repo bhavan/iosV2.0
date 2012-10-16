@@ -63,7 +63,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];  
     self.webView.delegate = self;
-    self.navigationItem.hidesBackButton = YES;  
+    self.navigationItem.hidesBackButton = YES;
+    self.navigationController.navigationBarHidden = NO;
     self.backButton.enabled = NO;
     self.forwardButton.enabled = NO;
     

@@ -112,7 +112,7 @@
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+    [super viewDidLoad];  
     self.searchBar.accessibilityLabel = @"Search";
     selectedPartnerSections = nil;
     for (UIView *subview in self.searchBar.subviews) {
@@ -120,7 +120,7 @@
             [subview removeFromSuperview];
         }
     }
-    UIImage * logo = [UIImage imageNamed:@"twHeader.png"];
+    UIImage * logo = [UIImage imageNamed:@"twHeader"];
     UIImageView * iw = [[UIImageView alloc] initWithImage:logo];
     self.logo = iw;
     [iw release];
@@ -143,7 +143,11 @@
     loadingMorePartnersInProgress = NO;
 }
 
-
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    //  self.navigationController.navigationBarHidden = YES;
+}
 
 - (void)viewWillDisappear:(BOOL)animated
 {

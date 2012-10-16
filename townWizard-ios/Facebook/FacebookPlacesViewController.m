@@ -10,6 +10,7 @@
 #import "Place.h"
 #import "FacebookCheckinViewController.h"
 #import "AppDelegate.h"
+#import "JSONKit.h"
 
 @implementation FacebookPlacesViewController
 
@@ -74,7 +75,7 @@
     
     self.navigationItem.hidesBackButton = YES;  
     
-    UITableView * tv = [[UITableView alloc] initWithFrame:CGRectMake(0, 16, 320, 444)//self.view.bounds 
+    UITableView * tv = [[UITableView alloc] initWithFrame:self.view.bounds 
                                                     style:UITableViewStylePlain];
     self.tableView = tv;
     [tv release];
@@ -147,7 +148,7 @@
 - (void) parseResponseToPlaces:(NSData*)data{
 	NSString *response = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 	
-	NSDictionary *json = [response performSelector:@selector(JSONValue)];
+	NSDictionary *json = [response objectFromJSONString];
 	
 	NSArray *parts = [json objectForKey:@"data"];
 	NSDictionary * error = [json objectForKey:@"error"];

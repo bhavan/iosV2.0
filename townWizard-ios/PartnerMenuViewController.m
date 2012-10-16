@@ -44,6 +44,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[self navigationItem] setHidesBackButton:YES];
+   
 #ifdef PARTNER_ID
     CGRect barFrame = CGRectMake(0, 0, [[self view] frame].size.width, 60);
     TownWizardNavigationBar *bar = [[TownWizardNavigationBar alloc] initWithFrame:barFrame];
@@ -68,6 +69,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+     [self.navigationController setNavigationBarHidden:NO animated:NO];
     
 
 #ifdef CONTAINER_APP

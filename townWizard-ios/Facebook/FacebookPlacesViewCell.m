@@ -8,6 +8,7 @@
 
 #import "FacebookPlacesViewCell.h"
 #import "Place.h"
+#import "JSONKit.h"
 
 @interface FacebookPlacesViewCell()
 - (void) loadAdditionalInfo;
@@ -155,20 +156,22 @@
 #pragma mark - FBRequestDelegate
 
 - (void)request:(FBRequest *)request didLoad:(id)result {
+    NSString *resultJson = [[NSString alloc] initWithData:request.responseText encoding:NSUTF8StringEncoding];
+    NSDictionary *jsonDict = [resultJson objectFromJSONString];
     switch (loadStage) {
         case FBPC_LOAD_PAGE:
-            place.totalCheckins = [result objectForKey:@"checkins"] ? 
-                [result objectForKey:@"checkins"] : [NSNumber numberWithInt:0];
+            place.totalCheckins = [jsonDict objectForKey:@"checkins"] ? 
+                [jsonDict objectForKey:@"checkins"] : [NSNumber numberWithInt:0];
             [self updateExtendedInfo];
             
             // next stage
             if (!place.image) {
                 [self performSelectorInBackground:@selector(loadImageFrom:) 
-                                       withObject:[result objectForKey:@"picture"]];
+                                       withObject:[jsonDict objectForKey:@"picture"]];
             }
             break;
         case FBPC_LOAD_CHECKINS:
-            place.friendsCheckins = [NSNumber numberWithInt:[[result objectForKey:@"data"] count]];
+            place.friendsCheckins = [NSNumber numberWithInt:[[jsonDict objectForKey:@"data"] count]];
             [self updateExtendedInfo];
             
             loadStage = FBPC_LOAD_DONE;
