@@ -22,8 +22,8 @@
 
 @implementation ViewController
 @synthesize searchBar=_searchBar;
-@synthesize tableView=_tableView;
-@synthesize logo=_logo;
+@synthesize tableView;
+@synthesize logo;
 @synthesize goButton=_goButton;
 @synthesize currentSearchQuery=_currentSearchQuery;
 @synthesize doNotUseGeopositionSearchResults;

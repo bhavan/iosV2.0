@@ -22,6 +22,8 @@ PartnerMenuViewControllerDelegate,SubMenuViewControllerDelegate,UIAlertViewDeleg
     TownWizardNavigationBar *customNavigationBar;
     PartnerMenuViewController *selectedMenu;
     UISearchBar *searchBar;
+    UITableView *tableView;
+    UIImageView * logo;
     NSInteger nextOffset; // add offset to query to load more partners. ex: &offset=...
     BOOL loadingMorePartnersInProgress;
 }

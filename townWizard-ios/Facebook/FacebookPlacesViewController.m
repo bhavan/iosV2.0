@@ -73,10 +73,10 @@
                              //setting to YES causes a small leak, about 1kb each facebook check-in
                              //more places appear = bigger leak
     
-    self.navigationItem.hidesBackButton = YES;  
+    self.navigationItem.hidesBackButton = YES;
+    CGRect bounds = self.view.bounds;
     
-    UITableView * tv = [[UITableView alloc] initWithFrame:self.view.bounds 
-                                                    style:UITableViewStylePlain];
+    UITableView * tv = [[UITableView alloc] initWithFrame:CGRectMake(0, 10, bounds.size.width,  bounds.size.height-10) style:UITableViewStylePlain];
     self.tableView = tv;
     [tv release];
     
