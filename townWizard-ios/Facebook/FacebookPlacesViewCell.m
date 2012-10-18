@@ -158,6 +158,7 @@
 - (void)request:(FBRequest *)request didLoad:(id)result {
     NSString *resultJson = [[NSString alloc] initWithData:request.responseText encoding:NSUTF8StringEncoding];
     NSDictionary *jsonDict = [resultJson objectFromJSONString];
+    [resultJson release];
     switch (loadStage) {
         case FBPC_LOAD_PAGE:
             place.totalCheckins = [jsonDict objectForKey:@"checkins"] ? 

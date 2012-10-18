@@ -39,6 +39,7 @@
 {
     NSString *timeStamp = [[NSString alloc] initWithFormat:@"%f", [[NSDate date] timeIntervalSince1970]];
     NSString *timeToken = [[RequestHelper md5:timeStamp] substringToIndex:8];
+    [timeStamp release];
     NSString *webSite = [partner.webSiteUrl lastPathComponent];
     NSString *lastToken = [RequestHelper md5:
                            [NSString stringWithFormat:@"%@%@",webSite, [RequestHelper md5:timeToken]]];

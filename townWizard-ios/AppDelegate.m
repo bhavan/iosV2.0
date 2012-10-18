@@ -51,7 +51,7 @@ static NSString* teamToken = @"5c115b5c0ce101b8b0367b329e68db27_MzE2NjMyMDExLTEx
 
 -(NSString*) longitude {
     CGFloat lon = [self.manager location].coordinate.longitude;
-    return [NSString stringWithFormat:@"%f", lon];    
+    return [NSString stringWithFormat:@"%f", lon];
 }
 
 -(double)doubleLatitude
@@ -69,41 +69,29 @@ static NSString* teamToken = @"5c115b5c0ce101b8b0367b329e68db27_MzE2NjMyMDExLTEx
     RKURL *baseURL = [RKURL URLWithBaseURLString:API_URL];
     RKObjectManager *objectManager = [RKObjectManager objectManagerWithBaseURL:baseURL];
     objectManager.client.baseURL = baseURL;
-    //
-    NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-    if ([dic isKindOfClass:[NSDictionary class]]) {
-        NSLog(@"1");
-    }
-    if ([dic isMemberOfClass:[NSMutableDictionary class]]) {
-        NSLog(@"2");
-    }
-    if ([NSMutableDictionary isSubclassOfClass:[NSDictionary class]]) {
-        NSLog(@"3");
-    }
-    //
     [TestFlight takeOff:teamToken];
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-
+    
     UIViewController *rootController;
-     _manager = [[CLLocationManager alloc] init];
+    _manager = [[CLLocationManager alloc] init];
 #ifdef CONTAINER_APP
-   
-
+    
+    
     rootController = [[[ViewController alloc] init] autorelease];
     [[self manager] setDelegate:(ViewController *)rootController];
 #else
     rootController = [[[PartnerMenuViewController alloc] init] autorelease];
 #endif
-
+    
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:rootController];
     self.viewController = navController;
     [navController release];
-
+    
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     
 #if !RUN_KIF_TESTS
-       
+    
     [self.manager setDesiredAccuracy:kCLLocationAccuracyThreeKilometers]; //should be enough
     [self.manager startUpdatingLocation];
 #else
@@ -127,13 +115,13 @@ static NSString* teamToken = @"5c115b5c0ce101b8b0367b329e68db27_MzE2NjMyMDExLTEx
 {
 	phoneNumberToCall = [phoneNumber copy];
 	
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:phoneNumber 
-                                                    message:@"" 
-                                                   delegate:self 
-                                          cancelButtonTitle:@"Cancel" 
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:phoneNumber
+                                                    message:@""
+                                                   delegate:self
+                                          cancelButtonTitle:@"Cancel"
                                           otherButtonTitles:@"Call", nil];
 	[alert setTag:1];
-	[alert show];	
+	[alert show];
 	[alert release];
 }
 
@@ -148,7 +136,7 @@ static NSString* teamToken = @"5c115b5c0ce101b8b0367b329e68db27_MzE2NjMyMDExLTEx
 			phoneNumberToCall = [phoneNumberToCall stringByReplacingOccurrencesOfString:@"(" withString:@""];
 			phoneNumberToCall = [phoneNumberToCall stringByReplacingOccurrencesOfString:@")" withString:@""];
 			phoneNumberToCall = [NSString stringWithFormat:@"tel://%@",phoneNumberToCall];
-
+            
 			[[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumberToCall]];
 		}
 	}

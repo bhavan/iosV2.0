@@ -120,8 +120,8 @@
             [subview removeFromSuperview];
         }
     }
-    UIImage * logo = [UIImage imageNamed:@"twHeader"];
-    UIImageView * iw = [[UIImageView alloc] initWithImage:logo];
+    UIImage * aLogo = [UIImage imageNamed:@"twHeader"];
+    UIImageView * iw = [[UIImageView alloc] initWithImage:aLogo];
     self.logo = iw;
     [iw release];
     
@@ -225,14 +225,15 @@
 #pragma mark RKObjectLoaderDelegate
 
 - (void)objectLoader:(RKObjectLoader *)loader willMapData:(inout id *)mappableData {
-    NSMutableDictionary* d = [[*mappableData objectForKey: @"meta"] mutableCopy];
-    if([d objectForKey:@"next_offset"]) {
-        nextOffset = [[d objectForKey:@"next_offset"] integerValue];
+    NSMutableDictionary* data = [[*mappableData objectForKey: @"meta"] mutableCopy];
+    if([data objectForKey:@"next_offset"]) {
+        nextOffset = [[data objectForKey:@"next_offset"] integerValue];
     }
     else
     {
         nextOffset = 0;
     }
+    [data release];
 }
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {

@@ -205,7 +205,8 @@
                                 SERVER_URL,section.imageUrl];
             UIImageView *imgview = [[UIImageView alloc] initWithFrame:CGRectMake(25, 10, 50, 50)];         
             [imgview setImageWithURL:[NSURL URLWithString:imgUrl]];
-            [button addSubview:imgview];            
+            [button addSubview:imgview];
+            [imgview release];
             
             i++;
         }
@@ -331,8 +332,7 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
         
     }
     else if([[objects lastObject] isKindOfClass:[Section class]]) {
-        self.partnerSections = [[NSMutableArray alloc]initWithArray:objects];         
-             
+        self.partnerSections = [[[NSMutableArray alloc]initWithArray:objects] autorelease];             
         [self reloadMenu];         
     }
 }

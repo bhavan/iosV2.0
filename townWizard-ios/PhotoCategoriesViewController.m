@@ -114,7 +114,7 @@
     PhotoCategory *category = [categories objectAtIndex:indexPath.row];
     if(cell == nil)
     {
-        cell = [[ImageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[[ImageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
     }
     cell.nameLabel.text = category.name;
     [cell.thumbImageView setImageWithURL:[NSURL URLWithString:category.thumb]];

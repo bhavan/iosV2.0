@@ -191,6 +191,7 @@
         NSMutableArray *friendsList = [NSMutableArray array];
         NSString *resultJson = [[NSString alloc] initWithData:request.responseText encoding:NSUTF8StringEncoding];
         NSDictionary *jsonDict = [resultJson objectFromJSONString];
+        [resultJson release];
         for (NSDictionary *friendInfo in [jsonDict objectForKey:@"data"]) {
             
             FacebookFriend * fbFriend = [[FacebookFriend alloc] initWithInfo:friendInfo];

@@ -110,7 +110,7 @@
     Video *video = [videos objectAtIndex:indexPath.row];
     if(cell == nil)
     {
-        cell = [[ImageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[[ImageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
     }
     cell.nameLabel.text = video.name;
     [cell.thumbImageView setImageWithURL:[NSURL URLWithString:video.thumb]];
