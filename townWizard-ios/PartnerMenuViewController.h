@@ -10,10 +10,14 @@
 
 @class TownWizardNavigationBar;
 @class Partner;
+@class Section;
 
-@protocol PartnerMenuViewControllerDelegate
+@protocol PartnerMenuDelegate <NSObject>
 @optional
 -(void)menuButtonPressed:(id)sender;
+
+- (void) menuSectionTapped:(Section *) section;
+- (void) changePartnerButtonTapped;
 @end
 
 @interface PartnerMenuViewController : UIViewController <UIAlertViewDelegate, RKObjectLoaderDelegate, UITableViewDelegate, UITableViewDataSource>
@@ -21,11 +25,12 @@
     NSArray *subSections;
     NSMutableDictionary * sectionImagesDictionary;
    
-    id <PartnerMenuViewControllerDelegate> delegate;
     IBOutlet UIActivityIndicatorView *activityIndicator;
     NSArray * partnerSections;
 
 }
+
+@property (nonatomic, assign) id<PartnerMenuDelegate> delegate;
 
 @property (nonatomic, retain) UINavigationController *childNavigationController;
 @property (nonatomic, retain) NSArray * partnerSections;

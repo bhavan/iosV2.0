@@ -220,7 +220,10 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
         [controller release];
     }
     
-    
+    if ([[self delegate] respondsToSelector:@selector(menuSectionTapped:)]) {
+        [[self delegate] menuSectionTapped:section];
+    }
+
 }
 
 
