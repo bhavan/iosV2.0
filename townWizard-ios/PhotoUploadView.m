@@ -21,7 +21,7 @@
 
 - (id)initWithParentController:(UIViewController *)parent
 {
-    self = [super initWithFrame:CGRectMake(0, 20, 320, 31)];
+    self = [super initWithFrame:CGRectMake(0, 0, 320, 31)];
     if(self)
     {
        

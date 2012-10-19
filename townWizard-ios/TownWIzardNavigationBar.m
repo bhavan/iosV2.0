@@ -11,41 +11,27 @@
 
 @implementation TownWizardNavigationBar
 
-@synthesize backButton;
+
 @synthesize menuButton;
 @synthesize titleLabel;
 @synthesize menuPage;
-@synthesize defaultBackground=_defaultBackground;
+@synthesize masterDetail;
 
-@synthesize backgroundImageView=_backgroundImageView;
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        /*self.backgroundColor = [UIColor colorWithRed:(79.0/255.0) 
-                                               green:(79.0/255.0) 
-                                                blue:(81.0/255.0)
-                                               alpha:1];*/
-        UIImageView * defaultBackgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
-        UIImage * defaultBackgroundImage = [UIImage imageNamed:@"topBar.png"];
-        defaultBackgroundImageView.image = defaultBackgroundImage;
-        self.defaultBackground = defaultBackgroundImageView;
-        [self addSubview:self.defaultBackground];
-        [defaultBackgroundImageView release];
-        
-        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0, 320, 60)];
-        self.backgroundImageView = imageView;
-        [imageView release];
-        [self addSubview:self.backgroundImageView];
+        self.tintColor = [UIColor lightGrayColor];
         
         self.menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [self.menuButton setImage:[UIImage imageNamed:@"menuStarButton"] 
                          forState:UIControlStateNormal];
+        [self.menuButton addTarget:self action:@selector(toggleView) forControlEvents:UIControlEventTouchUpInside];
         self.menuButton.accessibilityLabel = @"Back";
-        self.menuButton.frame = CGRectMake(10, 13, 33, 30);
+        self.menuButton.frame = CGRectMake(10, 6, 33, 30);
         [self addSubview:self.menuButton];
         
-        self.titleLabel = [[[UILabel alloc] initWithFrame:CGRectMake(32, 3, 250, 30)] autorelease];
+        self.titleLabel = [[[UILabel alloc] initWithFrame:CGRectMake(32, 3, 250, 20)] autorelease];
 
         self.titleLabel.textColor = [UIColor whiteColor];
         self.titleLabel.textAlignment = UITextAlignmentCenter;
@@ -57,7 +43,7 @@
         self.titleLabel.backgroundColor = [UIColor clearColor];
         [self addSubview:self.titleLabel];
         
-        self.subMenuLabel = [[[UILabel alloc] initWithFrame:CGRectMake(32, 28, 250, 26)] autorelease];
+        self.subMenuLabel = [[[UILabel alloc] initWithFrame:CGRectMake(32, 20, 250, 22)] autorelease];
         
         self.subMenuLabel.textColor = [UIColor whiteColor];
         self.subMenuLabel.textAlignment = UITextAlignmentCenter;
@@ -78,13 +64,17 @@
     return self;
 }
 
-- (void)dealloc {
-    self.backButton = nil;
+- (void)toggleView
+{
+    [self.masterDetail toggleMasterView];
+}
+
+
+- (void)dealloc
+{
     self.menuButton = nil;
     self.titleLabel = nil;
-    self.menuPage = nil;
-    self.defaultBackground = nil;
-    self.backgroundImageView = nil;
+    self.menuPage = nil; 
     [view release];
     [super dealloc];
 }

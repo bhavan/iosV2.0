@@ -19,7 +19,6 @@ PartnerMenuViewControllerDelegate,SubMenuViewControllerDelegate,UIAlertViewDeleg
 {
     NSMutableArray *partnersList;
     NSArray *selectedPartnerSections;
-    TownWizardNavigationBar *customNavigationBar;
     PartnerMenuViewController *selectedMenu;
     UISearchBar *searchBar;
     UITableView *tableView;
@@ -29,7 +28,7 @@ PartnerMenuViewControllerDelegate,SubMenuViewControllerDelegate,UIAlertViewDeleg
 }
 - (IBAction) goButtonPressed:(id)sender;
 - (void) loadSectionMenuForPartnerWithPartner:(Partner *)partnerDict;
-
+@property (nonatomic, retain) NSMutableArray *partnersList;
 @property (retain, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,retain) IBOutlet UIImageView * logo;

@@ -16,6 +16,8 @@
 #import "Partner.h"
 #import "Section.h"
 #import "UIImageView+WebCache.h"
+#import "MasterDetailController.h"
+
 @interface ViewController()
 @property (nonatomic,assign) BOOL doNotUseGeopositionSearchResults;
 @end
@@ -27,6 +29,7 @@
 @synthesize goButton=_goButton;
 @synthesize currentSearchQuery=_currentSearchQuery;
 @synthesize doNotUseGeopositionSearchResults;
+@synthesize partnersList;
 
 
 -(NSString *)currentSearchQuery {
@@ -42,69 +45,22 @@
 #define LOGO_PORTRAIT_HEIGHT 110
 #define NAVIGATION_BAR_HEIGHT 60
 
-#pragma mark - Animations
--(void)animateLogoToScreen
-{
-    [UIView animateWithDuration:0.35 animations:^{
-        self.logo.frame=CGRectMake(0, 0, LOGO_PORTRAIT_WIDTH, LOGO_PORTRAIT_HEIGHT);
-    }];
-}
-
--(void)animateLogoOffScreen
-{
-    [UIView animateWithDuration:0.35 animations:^{
-        self.logo.frame = CGRectMake(-LOGO_PORTRAIT_WIDTH, 0,
-                                     LOGO_PORTRAIT_WIDTH, LOGO_PORTRAIT_HEIGHT);
-    }];
-}
-
-
--(void)animateNavigationBarOnScreen:(TownWizardNavigationBar *)bar
-{
-    bar.frame = CGRectMake(self.view.frame.size.width, 0,
-                           self.view.frame.size.width, NAVIGATION_BAR_HEIGHT);
-    
-    [UIView animateWithDuration:0.35 animations:^{
-        bar.frame = CGRectMake(0, 0,
-                               self.view.frame.size.width, NAVIGATION_BAR_HEIGHT);
-    }];
-}
-
--(void)hideBackgroundImageOfTheNavigationBar:(TownWizardNavigationBar *)bar
-{
-    bar.backgroundImageView.frame = CGRectMake(0, -60, 320, 60);
-}
-
-
-#pragma mark - go Home
-
-- (void)goHome {
-    [self.navigationController popToRootViewControllerAnimated:YES];
-    [self animateLogoToScreen];
-}
-
--(void)menuButtonPressed:(id)sender
-{
-    [self goHome];
-}
-
 #pragma mark - Info
 
 #define INFO_URL @"http://www.townwizard.com/app-info"
 
 -(void)infoButtonPressed:(id)sender
 {
-    SubMenuViewController *subMenu = [SubMenuViewController new];
-    subMenu.customNavigationBar = customNavigationBar;
+    SubMenuViewController *subMenu = [SubMenuViewController new];   
     
     subMenu.delegate = self;
     subMenu.url = INFO_URL;
     
     [self.navigationController pushViewController:subMenu animated:YES];
     
-    [self animateLogoOffScreen];
-    [self hideBackgroundImageOfTheNavigationBar:subMenu.customNavigationBar];
-    [self animateNavigationBarOnScreen:subMenu.customNavigationBar];
+  //  [self animateLogoOffScreen];
+  //  [self hideBackgroundImageOfTheNavigationBar:subMenu.customNavigationBar];
+  //  [self animateNavigationBarOnScreen:subMenu.customNavigationBar];
     
     [subMenu release];
 }
@@ -121,24 +77,14 @@
         }
     }
     UIImage * aLogo = [UIImage imageNamed:@"twHeader"];
-    UIImageView * iw = [[UIImageView alloc] initWithImage:aLogo];
-    self.logo = iw;
-    [iw release];
+    UIImageView * imageView = [[UIImageView alloc] initWithImage:aLogo];
+    self.logo = imageView;
+    [imageView release];
     
     self.logo.frame = CGRectMake(0,0, LOGO_PORTRAIT_WIDTH, LOGO_PORTRAIT_HEIGHT);
-    [self.navigationController.navigationBar addSubview:self.logo];
-    
-    self.tableView.separatorColor = [UIColor colorWithRed:0.792 green:0.769 blue:0.678 alpha:1];
-    
-    partnersList = [[NSMutableArray alloc] init];
-    customNavigationBar = [[TownWizardNavigationBar alloc]
-                           initWithFrame:CGRectMake(self.view.frame.size.width, 0,
-                                                    self.view.frame.size.width, NAVIGATION_BAR_HEIGHT)];
-    
-    [customNavigationBar.backButton addTarget:self
-                                       action:@selector(goHome)
-                             forControlEvents:UIControlEventTouchUpInside];
-    [self.navigationController.navigationBar addSubview:customNavigationBar];
+    [self.view addSubview:self.logo];
+    self.tableView.separatorColor = [UIColor colorWithRed:0.792 green:0.769 blue:0.678 alpha:1];    
+    partnersList = [[NSMutableArray alloc] init];   
     doNotUseGeopositionSearchResults = NO;
     loadingMorePartnersInProgress = NO;
 }
@@ -146,14 +92,14 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    //  self.navigationController.navigationBarHidden = YES;
+      self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:animated];
     //  [self.navigationController.navigationBar setBarStyle:UIBarStyleBlackOpaque];
-    [self.navigationController.navigationBar addSubview:customNavigationBar];
+   // [self.navigationController.navigationBar addSubview:customNavigationBar];
     [[UIApplication sharedApplication] hideNetworkActivityIndicator];
     self.navigationItem.hidesBackButton = YES;
 }
@@ -257,8 +203,7 @@
             }
             else{
                 partnersList = [[NSMutableArray alloc]initWithArray:objects];
-            }
-            
+            }            
         }
         [self.tableView reloadData];
         [self.goButton setEnabled:YES];
@@ -306,22 +251,25 @@
 
 - (void)loadSectionMenuForPartnerWithPartner:(Partner *)aPartner {
     
-    [[UIApplication sharedApplication] showNetworkActivityIndicator];
+   
     
     PartnerMenuViewController *subMenu = [[PartnerMenuViewController alloc]
                                           initWithNibName:@"PartnerMenuViewController"
                                           bundle:nil];
-    subMenu.customNavigationBar = customNavigationBar;
-    subMenu.delegate = self; //This is for Menu button pressed there
-    customNavigationBar.menuPage = subMenu;
-    subMenu.partner = aPartner;
-    selectedMenu = subMenu;
-    UIImageView *bgView = customNavigationBar.backgroundImageView;
-    NSString *imageUrl = [NSString stringWithFormat:@"%@%@",SERVER_URL,aPartner.headerImageUrl];
-    [bgView setImageWithURL:[NSURL URLWithString:imageUrl]];
-    [self animateNavigationBarOnScreen:selectedMenu.customNavigationBar];
-    [self animateLogoOffScreen];
-    [self.navigationController pushViewController:selectedMenu animated:YES];
+ 
+    subMenu.partner = aPartner;    
+    UINavigationController *newNav = [[UINavigationController alloc] initWithNavigationBarClass:[TownWizardNavigationBar class] toolbarClass:[UIToolbar class]];
+    SubMenuViewController *nMenu = [SubMenuViewController new];   
+    nMenu.delegate = self; 
+    [newNav pushViewController:nMenu animated:NO];    
+      MasterDetailController *master = [[[MasterDetailController alloc] initWithMasterViewController:subMenu detailViewController:newNav] autorelease];
+    TownWizardNavigationBar *navigationBar = (TownWizardNavigationBar *)newNav.navigationBar;
+    navigationBar.masterDetail = master;
+    subMenu.childNavigationController = newNav;
+    [newNav release];
+
+    self.navigationController.navigationBarHidden = YES;
+    [self.navigationController pushViewController:master animated:YES];
 }
 
 -(void)locationManager:(CLLocationManager *)aManager

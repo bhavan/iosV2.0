@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "townWizard-ios/ViewController.m"
-         timestampString = "372237888.401134"
+         timestampString = "372336589.768692"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "428"
-         endingLineNumber = "428"
+         startingLineNumber = "377"
+         endingLineNumber = "377"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "townWizard-ios/ViewController.m"
-         timestampString = "372237888.401134"
+         timestampString = "372336589.768692"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "274"
-         endingLineNumber = "274"
+         startingLineNumber = "219"
+         endingLineNumber = "219"
          landmarkName = "-objectLoader:didFailWithError:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "townWizard-ios/ViewController.m"
-         timestampString = "372237888.401134"
+         timestampString = "372336589.768692"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "500"
-         endingLineNumber = "500"
+         startingLineNumber = "449"
+         endingLineNumber = "449"
          landmarkName = "-goButtonPressed:"
          landmarkType = "5">
       </FileBreakpoint>

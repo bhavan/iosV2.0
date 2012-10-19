@@ -43,28 +43,14 @@
     [super viewWillAppear:animated];
     self.navigationItem.hidesBackButton = YES;
     self.customNavigationBar.subMenuLabel.text = @"Photos";
-    [self.customNavigationBar.menuButton addTarget:self
-                                            action:@selector(menuButtonPressed)
-                                  forControlEvents:UIControlEventTouchUpInside];
-
     
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [self.customNavigationBar.menuButton removeTarget:self
-                                            action:@selector(menuButtonPressed)
-                                  forControlEvents:UIControlEventTouchUpInside];
-
 }
 
-
-
-- (void)menuButtonPressed
-{
-    [self.navigationController popViewControllerAnimated:YES];
-}
 
 #pragma mark -
 #pragma mark RKObjectLoaderDelegate

@@ -18,21 +18,22 @@
 #import "PhotoCategoriesViewController.h"
 #import "RequestHelper.h"
 #import "VideosViewController.h"
-
+#import "MasterDetailController.h"
 
 #define URL_HEADER @"http://"
 
 @implementation PartnerMenuViewController
-@synthesize scrollView = _scrollView;
-@synthesize partnerSections = _partnerSections;
+
+@synthesize partnerSections;
 @synthesize partner;
-@synthesize customNavigationBar = _customNavigationBar;
-@synthesize delegate;
+@synthesize customNavigationBar;
+@synthesize childNavigationController;
+
 @synthesize currentSectionName = _currentSectionName;
 
 - (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nil bundle:nil]) {
-        partnerMenuButtons = [[NSMutableArray alloc] init];
+        
         sectionImagesDictionary = [[NSMutableDictionary alloc] init];
     }
     return self;
@@ -43,51 +44,34 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.customNavigationBar = (TownWizardNavigationBar *) self.childNavigationController.navigationBar;
     [[self navigationItem] setHidesBackButton:YES];
-   
-#ifdef PARTNER_ID
-    CGRect barFrame = CGRectMake(0, 0, [[self view] frame].size.width, 60);
-    TownWizardNavigationBar *bar = [[TownWizardNavigationBar alloc] initWithFrame:barFrame];
-    [self setCustomNavigationBar:bar];
-    [self.navigationController.navigationBar addSubview:bar];
-    [bar release];
-#endif
+    
 }
 
 
 -(void)setNameForNavigationBar
 {
-      self.customNavigationBar.titleLabel.text = self.partner.name;
-    if (self.currentSectionName == nil) { 
+    self.customNavigationBar.titleLabel.text = self.partner.name;
+    if (self.currentSectionName == nil) {
         self.customNavigationBar.subMenuLabel.text = @"";
     }
     else {
         self.customNavigationBar.subMenuLabel.text = self.currentSectionName;
-                                                   // self.partner.name,self.currentSectionName];
+        // self.partner.name,self.currentSectionName];
     }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-     [self.navigationController setNavigationBarHidden:NO animated:NO];
-    
+    self.customNavigationBar = (TownWizardNavigationBar *) self.childNavigationController.navigationBar;
 
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+    
 #ifdef CONTAINER_APP
-
-    subSections = nil;
-    [self.customNavigationBar.menuButton addTarget:self 
-                                            action:@selector(menuButtonPressed) 
-                                  forControlEvents:UIControlEventTouchUpInside];
+    
+    
     [self setNameForNavigationBar];
-
-    
-#else
-    
-    //caching disabled
-    self.partner = nil;
-    self.partnerSections = nil;
-    // -----
-     [[[self customNavigationBar] menuButton] setHidden:YES];
 #endif
     
     if (self.partner == nil) {
@@ -95,29 +79,23 @@
     }
     else {
         if (self.partnerSections == nil) {
-             [self.customNavigationBar.backgroundImageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",SERVER_URL,self.partner.headerImageUrl]]];
-           [RequestHelper sectionsWithPartner:self.partner andDelegate:self];
-        }
-        else {
-            [self reloadMenu];
-        }
-    }    
-   
-
+            [RequestHelper sectionsWithPartner:self.partner andDelegate:self];
+        }       
+    }
+    
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    [self.customNavigationBar.menuButton removeTarget:self 
-                                               action:@selector(menuButtonPressed) 
+    [self.customNavigationBar.menuButton removeTarget:self
+                                               action:@selector(menuButtonPressed)
                                      forControlEvents:UIControlEventTouchUpInside];
     [[UIApplication sharedApplication] hideNetworkActivityIndicator];
-    if (self.delegate)
-        self.currentSectionName = nil;
     
 #ifdef PARTNER_ID
     [[[self customNavigationBar] menuButton] setHidden:NO];
 #endif
-
+    
     [super viewWillDisappear:animated];
 }
 
@@ -125,20 +103,8 @@
 #pragma mark -
 #pragma mark Navigation
 
-- (void)menuButtonPressed {
-    if (self.delegate) 
-        //If delegate is set, we are in section menu,so we should pop to partner selection screen
-    {
-        [self.delegate menuButtonPressed:self];
-        [UIView animateWithDuration:0.35 animations:^{
-            self.customNavigationBar.frame = CGRectMake(self.view.frame.size.width, 0, 
-                                                        self.view.frame.size.width, 60);
-        }];
-    }
-    else { 
-        //IF delegate is not set, we are inside subsections menu, so we need to pop to sections menu
-         [self.navigationController popViewControllerAnimated:YES];   
-    }
+- (void)menuButtonPressed
+{
 }
 
 #define BUTTON_SIZE 100
@@ -146,96 +112,50 @@
 #define VERTICAL_SPACING 50
 #define MINIMUM_SCROLL_VIEW_HEIGHT 400
 
-- (void)reloadMenu {
-       [[[self customNavigationBar] titleLabel] setText:self.partner.name];
-
-    [partnerMenuButtons removeAllObjects];
-    int i = 0;               
-    NSArray * partnerSectionsArray = self.partnerSections;
-    if(subSections != nil){
-        PartnerMenuViewController *subMenu = [[PartnerMenuViewController alloc] 
-                                              initWithNibName:@"PartnerMenuViewController" 
-                                                       bundle:nil];
-        subMenu.customNavigationBar = self.customNavigationBar;
-        self.customNavigationBar.menuPage = subMenu;
-        //subMenu.delegate is not set, we dont want to pop to root view controller
-        subMenu.partner = self.partner;
-        subMenu.partnerSections = subSections;
-        subMenu.currentSectionName = self.currentSectionName;
-                                                    
-        [self.navigationController pushViewController:subMenu animated:YES];
-        [subMenu release];
-        //Create child controller with subsections
-    }
-    else {
-        if (self.view.window)//we are on screen
-        {
-               [self setNameForNavigationBar]; 
-        }
-         
-       
-        int isEven;
-        for(Section *section in partnerSectionsArray) {
-            isEven = i%2;
-            UIView * menuItem = [[UIView alloc] 
-                                initWithFrame:CGRectMake(40 + (isEven * HORIZONTAL_SPACING), 
-                                                         VERTICAL_SPACING*(i - isEven),
-                                                         BUTTON_SIZE, 
-                                                         BUTTON_SIZE)];  
-            UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-            button.frame = CGRectMake(0, 0, BUTTON_SIZE, BUTTON_SIZE);
-            UILabel * buttonTitle = [[UILabel alloc] 
-                                     initWithFrame:CGRectMake(0, 60, BUTTON_SIZE, 35)];
-            buttonTitle.text = section.displayName;
-            button.accessibilityLabel = section.displayName;
-            buttonTitle.textAlignment = UITextAlignmentCenter;
-            [button addSubview:buttonTitle];   
-            [buttonTitle release];
-            [button addTarget:self 
-                       action:@selector(goToSection:) 
-             forControlEvents:UIControlEventTouchUpInside];
-            button.tag = i;
-            [menuItem addSubview:button];
-            
-            [self.scrollView addSubview:menuItem];    
-            [menuItem release];
-            
-            [partnerMenuButtons addObject:button];
-            NSString *imgUrl = [NSString stringWithFormat:@"%@%@",
-                                SERVER_URL,section.imageUrl];
-            UIImageView *imgview = [[UIImageView alloc] initWithFrame:CGRectMake(25, 10, 50, 50)];         
-            [imgview setImageWithURL:[NSURL URLWithString:imgUrl]];
-            [button addSubview:imgview];
-            [imgview release];
-            
-            i++;
-        }
-        
-        CGSize screenSize = [[UIScreen mainScreen] bounds].size;
-        
-        int rows = (i/2+i%2);
-        self.scrollView.contentSize = CGSizeMake(screenSize.width, rows*(2*VERTICAL_SPACING));
-        if (self.scrollView.contentSize.height < MINIMUM_SCROLL_VIEW_HEIGHT)
-            self.scrollView.contentSize = CGSizeMake(screenSize.width, MINIMUM_SCROLL_VIEW_HEIGHT);
-    }
+- (IBAction)changePartnerButtonPressed:(id)sender
+{
+    MasterDetailController *masterDetail = (MasterDetailController *)self.parentViewController;
+    [masterDetail.navigationController popViewControllerAnimated:YES];
 }
 
 static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.php";
 
-- (void)goToSection:(id)sender {
-    UIButton *btn = (UIButton *)sender;
-    NSArray * partnerSectionsArray = self.partnerSections;
-    if(subSections != nil) {
-        partnerSectionsArray = subSections;
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.partnerSections count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"sectionCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if(cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
-    Section * section = [partnerSectionsArray objectAtIndex:btn.tag];
-    NSArray *aSubSections = section.subSections;
-    if([aSubSections count] == 0) {
-        if ([section.uiType isEqualToString:@"webview"]) {
-         
-        SubMenuViewController *subMenu=[[SubMenuViewController alloc] 
-                                        initWithNibName:@"SubMenuViewController" bundle:nil];
-        subMenu.customNavigationBar = self.customNavigationBar;
+    Section *section = [self.partnerSections objectAtIndex:indexPath.row];
+    cell.textLabel.text = section.displayName;
+    
+    return cell;
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Section *section = [partnerSections objectAtIndex:indexPath.row];
+    MasterDetailController *masterDetail = (MasterDetailController *)self.parentViewController;
+    if ([section.uiType isEqualToString:@"webview"]) {
+        
+        SubMenuViewController *subMenu = [[SubMenuViewController alloc]
+                                          initWithNibName:@"SubMenuViewController" bundle:nil];
+        
+        subMenu.customNavigationBar = (TownWizardNavigationBar *)self.childNavigationController.navigationBar;
         if(section != nil) {
             subMenu.partner = self.partner;
             subMenu.section = section;
@@ -245,7 +165,7 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
             if([urlHeader isEqualToString:URL_HEADER]) {
                 sectionUrl = urlString;
             }
-            else {  
+            else {
                 sectionUrl = [NSString stringWithFormat:@"%@/%@",
                               self.partner.webSiteUrl,
                               section.url];
@@ -253,10 +173,12 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
             subMenu.url = [sectionUrl stringByAppendingFormat:@"?&lat=%f&lon=%f",
                            [AppDelegate sharedDelegate].doubleLatitude,
                            [AppDelegate sharedDelegate].doubleLongitude];
-
+            
         }
-        [self.navigationController pushViewController:subMenu animated:YES];
-
+        
+        [self.childNavigationController pushViewController:subMenu animated:YES];
+        [masterDetail toggleMasterView];
+        [subMenu release];
         if ([section.name isEqual:@"Photos"])
         {
             dispatch_queue_t checkQueue =  dispatch_queue_create("check reachability", NULL);
@@ -267,41 +189,40 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
                 if ([Reachability reachabilityWithURL:[NSURL URLWithString:uploadUrl]])
                 {
                     dispatch_async(dispatch_get_main_queue(), ^{
-                            [subMenu showUploadTitle];
-                        });
+                        [subMenu showUploadTitle];
+                    });
                 }
             });
             dispatch_release(checkQueue);
         }
-        [subMenu release];
-        }
-        else if ([section.name isEqual:@"Photos"])
-        {
-            PhotoCategoriesViewController *controller = [PhotoCategoriesViewController new];
-            controller.partner = self.partner;
-            controller.section = section;
-            controller.customNavigationBar = self.customNavigationBar;
-            [RequestHelper categoriesWithPartner:self.partner andSection:section andDelegate:controller];
-            [self.navigationController pushViewController:controller animated:YES];
-            [controller release];
-        }
-        else if ([section.name isEqual:@"Videos"])
-        {
-            VideosViewController *controller = [VideosViewController new];
-            controller.partner = self.partner;
-            controller.section = section;
-            controller.customNavigationBar = self.customNavigationBar;
-            [RequestHelper videosWithPartner:self.partner andSection:section andDelegate:controller];
-            [self.navigationController pushViewController:controller animated:YES];
-            [controller release];
-        }
+        
     }
-    else {
-        subSections = aSubSections;
-        self.currentSectionName = [NSString stringWithString:section.name];
-        [self reloadMenu];        
+    else if ([section.name isEqual:@"Photos"])
+    {
+        PhotoCategoriesViewController *controller = [PhotoCategoriesViewController new];
+        controller.partner = self.partner;
+        controller.section = section;
+        controller.customNavigationBar = self.customNavigationBar;
+        [RequestHelper categoriesWithPartner:self.partner andSection:section andDelegate:controller];
+        [self.childNavigationController pushViewController:controller animated:YES];
+        [masterDetail toggleMasterView];
+        [controller release];
     }
+    else if ([section.name isEqual:@"Videos"])
+    {
+        VideosViewController *controller = [VideosViewController new];
+        controller.partner = self.partner;
+        controller.section = section;
+        controller.customNavigationBar = self.customNavigationBar;
+        [RequestHelper videosWithPartner:self.partner andSection:section andDelegate:controller];
+        [self.childNavigationController pushViewController:controller animated:YES];
+        [masterDetail toggleMasterView];
+        [controller release];
+    }
+    
+    
 }
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -310,11 +231,11 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error
 {
-    NSLog(@"%@",error.description);    
+    NSLog(@"%@",error.description);
 }
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
-
+    
     if([[objects lastObject] isKindOfClass:[Partner class]]) {
         self.partner = [objects lastObject];
         if (partner.facebookAppId)
@@ -326,14 +247,15 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
             [AppDelegate sharedDelegate].facebookHelper.appId = @"";
             [TestFlight passCheckpoint:@"Facebook app id is empty"];
         }
-
-        [self.customNavigationBar.backgroundImageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",SERVER_URL,partner.headerImageUrl]]];
+        
         [RequestHelper sectionsWithPartner:self.partner andDelegate:self];
         
     }
     else if([[objects lastObject] isKindOfClass:[Section class]]) {
-        self.partnerSections = [[[NSMutableArray alloc]initWithArray:objects] autorelease];             
-        [self reloadMenu];         
+        self.partnerSections = [[[NSMutableArray alloc]initWithArray:objects] autorelease];
+        //[self reloadMenu];
+        [self.partnersTableView reloadData];
+        
     }
 }
 
@@ -349,9 +271,7 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
 
 -(void)cleanUp
 {
-    self.scrollView = nil;
     self.partnerSections = nil;
-    [partnerMenuButtons release];
     [sectionImagesDictionary release];
     _currentSectionName = nil;
     [[UIApplication sharedApplication] setActivityindicatorToZero];
@@ -361,13 +281,15 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
     [self cleanUp];
     [activityIndicator release];
     activityIndicator = nil;
-
-    [super viewDidUnload]; 
+    
+    [self setPartnersTableView:nil];
+    [super viewDidUnload];
 }
 
 - (void)dealloc {
     [self cleanUp];
     [activityIndicator release];
+    [_partnersTableView release];
     [super dealloc];
 }
 @end

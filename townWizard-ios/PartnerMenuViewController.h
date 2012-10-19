@@ -16,24 +16,24 @@
 -(void)menuButtonPressed:(id)sender;
 @end
 
-@interface PartnerMenuViewController : UIViewController <UIAlertViewDelegate, RKObjectLoaderDelegate>
+@interface PartnerMenuViewController : UIViewController <UIAlertViewDelegate, RKObjectLoaderDelegate, UITableViewDelegate, UITableViewDataSource>
 {
-    NSMutableArray * partnerMenuButtons;
     NSArray *subSections;
     NSMutableDictionary * sectionImagesDictionary;
    
     id <PartnerMenuViewControllerDelegate> delegate;
     IBOutlet UIActivityIndicatorView *activityIndicator;
+    NSArray * partnerSections;
+
 }
 
-@property (retain, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, retain) UINavigationController *childNavigationController;
 @property (nonatomic, retain) NSArray * partnerSections;
 @property (nonatomic, retain) Partner * partner;
 @property (nonatomic, retain) TownWizardNavigationBar * customNavigationBar;
-@property (nonatomic, weak) id <PartnerMenuViewControllerDelegate> delegate;
 @property (nonatomic, retain) NSString * currentSectionName;
+@property (retain, nonatomic) IBOutlet UITableView *partnersTableView;
 
-- (void) goToSection:(id)sender;
-- (void) reloadMenu;
+- (IBAction)changePartnerButtonPressed:(id)sender;
 
 @end

@@ -19,6 +19,7 @@
 #import "FacebookPlacesViewController.h"
 #import "Partner.h"
 #import "Section.h"
+#import "PhotoUploadView.h"
 
 
 @implementation SubMenuViewController
@@ -94,18 +95,6 @@
     
 }
 
-- (void)menuButtonPressed {
-         if (self.partner)
-            [self.navigationController popViewControllerAnimated:YES];
-        else // info page
-        {
-            [self.delegate menuButtonPressed:self];
-            [UIView animateWithDuration:0.35 animations:^{
-                self.customNavigationBar.frame = CGRectMake(self.view.frame.size.width, 0, 
-                                                            self.view.frame.size.width, 60);
-            }];
-        }   
-}
 
 - (IBAction)goBackPressed:(id)sender {
     [self.webView goBack];
@@ -115,11 +104,9 @@
     [self.webView goForward];
 }
 
-- (void) viewWillAppear:(BOOL)animated {
+- (void) viewWillAppear:(BOOL)animated
+{
     [super viewWillAppear:animated];
-    [self.customNavigationBar.menuButton addTarget:self 
-                                            action:@selector(menuButtonPressed) 
-                                  forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
@@ -149,26 +136,13 @@
 -(void)showUploadTitle
 {
     [UIView animateWithDuration:0.35 animations:^{
-        [self.webView setFrame:CGRectMake(self.webView.frame.origin.x, self.webView.frame.origin.y+40, 
-                                          self.webView.frame.size.width, self.webView.frame.size.height-40)];
+        [self.webView setFrame:CGRectMake(self.webView.frame.origin.x, self.webView.frame.origin.y+31,
+                                          self.webView.frame.size.width, self.webView.frame.size.height-31)];
     }];
 
-    UILabel *lblPhotoHeader = [[UILabel alloc] initWithFrame:CGRectMake(8, 20, 250, 31)];
-	lblPhotoHeader.text = @"UPLOAD YOUR PHOTOS";
-	lblPhotoHeader.font = [UIFont systemFontOfSize:15.0];
-	lblPhotoHeader.backgroundColor = [UIColor clearColor];
-	lblPhotoHeader.textColor = [UIColor blackColor];
-	[self.view addSubview:lblPhotoHeader];
-	[lblPhotoHeader release];
-	
-	UIButton *btnCamera = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
-	[btnCamera setImage:[UIImage imageNamed:@"Btn-Camera.png"] forState:UIControlStateNormal];
-	btnCamera.frame = CGRectMake(282, 20, 29, 28);
-	[btnCamera addTarget:self 
-                  action:@selector(cameraButtonPressed:) 
-        forControlEvents:UIControlEventTouchUpInside];
-	[self.view addSubview:btnCamera];
-	[btnCamera release];
+    PhotoUploadView *uploadView = [[PhotoUploadView alloc] initWithParentController:self];
+    [self.view addSubview:uploadView];
+    [uploadView release];
 }
 
 - (void)cameraButtonPressed:(id)sender {

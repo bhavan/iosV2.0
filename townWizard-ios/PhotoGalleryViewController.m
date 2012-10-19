@@ -37,25 +37,10 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationItem.hidesBackButton = YES;
-       [self.customNavigationBar.menuButton addTarget:self
-                                            action:@selector(menuButtonPressed)
-                                  forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.hidesBackButton = YES;      
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    [self.customNavigationBar.menuButton removeTarget:self
-                                               action:@selector(menuButtonPressed)
-                                     forControlEvents:UIControlEventTouchUpInside];
-    
-}
 
-- (void)menuButtonPressed
-{
-    [self.navigationController popViewControllerAnimated:YES];
-}
 
 #pragma mark --
 #pragma mark RKObjectLoader delegate methods
@@ -129,7 +114,6 @@
     browser.wantsFullScreenLayout = NO;
     browser.displayActionButton = YES;
     [browser setInitialPageIndex:index];
-
     
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:browser];
