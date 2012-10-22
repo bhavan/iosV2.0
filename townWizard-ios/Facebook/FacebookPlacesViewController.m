@@ -100,7 +100,7 @@
         
             NSArray *permissions =  [NSArray arrayWithObjects:
                                      @"publish_stream", 
-                                     //@"read_stream", 
+                                     //@"read_stream",
                                      //@"offline_access", 
                                      @"publish_checkins",
                                      @"friends_checkins", nil];
@@ -236,9 +236,10 @@
    didUpdateToLocation:(CLLocation *)newLocation 
           fromLocation:(CLLocation *)oldLocation
 {
-    [aManager stopUpdatingLocation];
-    if (!locationUpdated)
+
+    if (!locationUpdated || places.count == 0)
     {
+            [aManager stopUpdatingLocation];
         locationUpdated = YES;
         self.latitude = newLocation.coordinate.latitude;
         self.longitude = newLocation.coordinate.longitude;

@@ -112,8 +112,12 @@
     loadStage = nextStage;
     switch (loadStage) {
         case FBPC_LOAD_PAGE:
-            [facebook requestWithGraphPath:place.place_id andDelegate:self];  
+        {
+            NSMutableDictionary *params = [NSMutableDictionary dictionary];
+            [params setValue:@"picture,checkins" forKey:@"fields"];
+            [facebook requestWithGraphPath:place.place_id andParams:params andDelegate:self];
             break;
+        }
         case FBPC_LOAD_CHECKINS:
             [self loadCheckins];
             break;
@@ -166,9 +170,12 @@
             [self updateExtendedInfo];
             
             // next stage
-            if (!place.image) {
+            if (!place.image)
+            {
+                NSDictionary *pictureData = [[jsonDict objectForKey:@"picture"]objectForKey:@"data"];
+                NSString *imageUrl = [pictureData objectForKey:@"url"];
                 [self performSelectorInBackground:@selector(loadImageFrom:) 
-                                       withObject:[jsonDict objectForKey:@"picture"]];
+                                       withObject:imageUrl];
             }
             break;
         case FBPC_LOAD_CHECKINS:

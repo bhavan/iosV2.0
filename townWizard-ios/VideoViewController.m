@@ -34,12 +34,13 @@
 
     if(self.videoUrl)
     {
-    NSString* sEmbedHTML =[NSString stringWithFormat:@"<!doctype html>\
+   /* NSString* sEmbedHTML =[NSString stringWithFormat:@"<!doctype html>\
                            <html>\
                            <style>body{padding:0;margin:0; background-color: black;}</style>\
                            <iframe width=\"320\" height=\"367\" src=\"%@\" frameborder=\"0\" allowfullscreen></iframe>\
                            </html>", self.videoUrl];
-    [self.webView loadHTMLString:sEmbedHTML baseURL:nil];
+    [self.webView loadHTMLString:sEmbedHTML baseURL:nil];*/
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.videoUrl]]];
     }
 }
 
