@@ -3389,6 +3389,7 @@
 		D928245816318F6700E19A61 /* PartnerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartnerViewController.m; sourceTree = "<group>"; };
 		D92824791631981E00E19A61 /* SectionControllerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionControllerFactory.h; sourceTree = "<group>"; };
 		D928247A1631981F00E19A61 /* SectionControllerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionControllerFactory.m; sourceTree = "<group>"; };
+		D9595B4516351F4400DF9B74 /* SectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionController.h; sourceTree = "<group>"; };
 		D98D81872E8A4AC09BEE9C3D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9FA2C50159074E5006FFF7E /* back_arrow_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back_arrow_retina.png; path = Images/Interface/back_arrow_retina.png; sourceTree = "<group>"; };
 		D9FA2C51159074E5006FFF7E /* back_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back_arrow.png; path = Images/Interface/back_arrow.png; sourceTree = "<group>"; };
@@ -4205,6 +4206,7 @@
 		848854A714D141E30030BD03 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D9595B4516351F4400DF9B74 /* SectionController.h */,
 				D928245716318F6700E19A61 /* PartnerViewController.h */,
 				D928245816318F6700E19A61 /* PartnerViewController.m */,
 				D92824791631981E00E19A61 /* SectionControllerFactory.h */,

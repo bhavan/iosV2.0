@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MessageUI/MessageUI.h"
+#import "SectionController.h"
 
 @class TownWizardNavigationBar;
 @class Partner;
@@ -18,7 +19,7 @@
 -(void)menuButtonPressed:(id)sender;
 @end
 
-@interface SubMenuViewController : UIViewController <UIWebViewDelegate,UIActionSheetDelegate,
+@interface SubMenuViewController : UIViewController <SectionController, UIWebViewDelegate,UIActionSheetDelegate,
 UIImagePickerControllerDelegate,UINavigationControllerDelegate,MFMailComposeViewControllerDelegate> {
 
 }

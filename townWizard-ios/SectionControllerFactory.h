@@ -10,8 +10,10 @@
 
 @class Section;
 
+@protocol SectionController;
+
 @interface SectionControllerFactory : NSObject
 
-- (UIViewController *) sectionControllerForSection:(Section *) section;
+- (id<SectionController>) sectionControllerForSection:(Section *) section;
 
 @end

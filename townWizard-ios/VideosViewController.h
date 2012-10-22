@@ -7,15 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SectionController.h"
 
 @class Partner;
 @class Section;
 @class TownWizardNavigationBar;
 
-@interface VideosViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, RKObjectLoaderDelegate>
+@interface VideosViewController : UIViewController <SectionController, RKObjectLoaderDelegate>
 {
     NSArray *videos;
-
 }
 @property (nonatomic, retain) TownWizardNavigationBar * customNavigationBar;
 @property (nonatomic, retain) Partner *partner;

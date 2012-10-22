@@ -7,11 +7,24 @@
 //
 
 #import "SectionControllerFactory.h"
+#import "SectionController.h"
+#import "Section.h"
+
+#import "SubMenuViewController.h"
+#import "PhotoCategoriesViewController.h"
+#import "VideosViewController.h"
 
 @implementation SectionControllerFactory
 
-- (UIViewController *) sectionControllerForSection:(Section *) section
+- (id<SectionController>) sectionControllerForSection:(Section *) section
 {
+    Class ControllerClass = [self controllerClassForSection:section];
+    if ([ControllerClass conformsToProtocol:@protocol(SectionController)]) {
+        id<SectionController> controller = [[ControllerClass new] autorelease];
+        [controller setSection:section];
+        return controller;
+    }
+    return nil;
 }
 
 
@@ -85,6 +98,25 @@
 //        [masterDetail toggleMasterView];
 //        [controller release];
 //    }
+}
+
+- (id<SectionController>) sectionControllerOfClass:(Class) ControllserClass
+{
+    return [[ControllserClass new] autorelease];
+}
+
+- (Class) controllerClassForSection:(Section *) section
+{
+    if ([[section uiType] isEqualToString:@"webview"]) {
+        return [SubMenuViewController class];
+    }
+    else if ([[section name] isEqual:@"Photos"]) {
+        return [PhotoCategoriesViewController class];
+    }
+    else if ([section.name isEqual:@"Videos"]) {
+        return [VideosViewController class];
+    }
+    return [NSNull class];
 }
 
 @end

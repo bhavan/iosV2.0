@@ -77,7 +77,7 @@
 
 - (void) menuSectionTapped:(Section *) section
 {
-    UIViewController *controller = [[self sectionControllerFactory] sectionControllerForSection:section];
+    id<SectionController> controller = [[self sectionControllerFactory] sectionControllerForSection:section];
     NSArray *controllers = [NSArray arrayWithObject:controller];
     [[self detailsController] setViewControllers:controllers animated:YES];
 }

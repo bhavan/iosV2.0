@@ -16,7 +16,7 @@
 #import "Section.h"
 #import "VideoViewController.h"
 
-@interface VideosViewController ()
+@interface VideosViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @end
 
