@@ -13,12 +13,10 @@
 @class Section;
 @class TownWizardNavigationBar;
 
-@interface VideosViewController : UIViewController <SectionController, RKObjectLoaderDelegate>
-{
-    NSArray *videos;
+@interface VideosViewController : UIViewController <SectionController> {
 }
-@property (nonatomic, retain) TownWizardNavigationBar * customNavigationBar;
-@property (nonatomic, retain) Partner *partner;
+
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) Section *section;
-@property (retain, nonatomic) IBOutlet UITableView *tableView;
+
 @end

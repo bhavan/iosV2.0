@@ -30,9 +30,9 @@
 
 -(void)viewWillDisappear:(BOOL)animated
 {
-    [self.customNavigationBar.menuButton removeTarget:self 
-                                               action:@selector(menuButtonPressed) 
-                                     forControlEvents:UIControlEventTouchUpInside];
+//    [self.customNavigationBar.menuButton removeTarget:self 
+//                                               action:@selector(menuButtonPressed) 
+//                                     forControlEvents:UIControlEventTouchUpInside];
     [super viewWillDisappear:animated];
 }
 
@@ -40,10 +40,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.hidesBackButton = YES;
-    [self.customNavigationBar.menuButton addTarget:self 
-                                            action:@selector(menuButtonPressed) 
-                                  forControlEvents:UIControlEventTouchUpInside];
-	[self loadGoogleMap];	
+//    [self.customNavigationBar.menuButton addTarget:self 
+//                                            action:@selector(menuButtonPressed) 
+//                                  forControlEvents:UIControlEventTouchUpInside];
+	[self loadGoogleMap];
 }
 
 - (void)menuButtonPressed {

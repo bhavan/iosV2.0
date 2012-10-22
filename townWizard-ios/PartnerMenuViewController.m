@@ -52,14 +52,14 @@
 
 -(void)setNameForNavigationBar
 {
-    self.customNavigationBar.titleLabel.text = self.partner.name;
-    if (self.currentSectionName == nil) {
-        self.customNavigationBar.subMenuLabel.text = @"";
-    }
-    else {
-        self.customNavigationBar.subMenuLabel.text = self.currentSectionName;
-        // self.partner.name,self.currentSectionName];
-    }
+//    self.customNavigationBar.titleLabel.text = self.partner.name;
+//    if (self.currentSectionName == nil) {
+//        self.customNavigationBar.subMenuLabel.text = @"";
+//    }
+//    else {
+//        self.customNavigationBar.subMenuLabel.text = self.currentSectionName;
+//        // self.partner.name,self.currentSectionName];
+//    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -87,9 +87,9 @@
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    [self.customNavigationBar.menuButton removeTarget:self
-                                               action:@selector(menuButtonPressed)
-                                     forControlEvents:UIControlEventTouchUpInside];
+//    [self.customNavigationBar.menuButton removeTarget:self
+//                                               action:@selector(menuButtonPressed)
+//                                     forControlEvents:UIControlEventTouchUpInside];
     [[UIApplication sharedApplication] hideNetworkActivityIndicator];
     
 #ifdef PARTNER_ID
@@ -137,7 +137,8 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if(cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                      reuseIdentifier:cellIdentifier] autorelease];
     }
     Section *section = [self.partnerSections objectAtIndex:indexPath.row];
     cell.textLabel.text = section.displayName;
@@ -149,7 +150,7 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Section *section = [partnerSections objectAtIndex:indexPath.row];
-    MasterDetailController *masterDetail = (MasterDetailController *)self.parentViewController;
+    /*MasterDetailController *masterDetail = (MasterDetailController *)self.parentViewController;
     if ([section.uiType isEqualToString:@"webview"]) {
         
         SubMenuViewController *subMenu = [[SubMenuViewController alloc]
@@ -213,12 +214,12 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
         VideosViewController *controller = [VideosViewController new];
         controller.partner = self.partner;
         controller.section = section;
-        controller.customNavigationBar = self.customNavigationBar;
+//        controller.customNavigationBar = self.customNavigationBar;
         [RequestHelper videosWithPartner:self.partner andSection:section andDelegate:controller];
         [self.childNavigationController pushViewController:controller animated:YES];
         [masterDetail toggleMasterView];
         [controller release];
-    }
+    }*/
     
     if ([[self delegate] respondsToSelector:@selector(menuSectionTapped:)]) {
         [[self delegate] menuSectionTapped:section];

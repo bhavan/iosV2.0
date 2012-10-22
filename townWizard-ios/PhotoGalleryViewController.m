@@ -12,69 +12,54 @@
 #import "UIImageView+WebCache.h"
 #import "TownWIzardNavigationBar.h"
 
-@interface PhotoGalleryViewController ()
-
+@interface PhotoGalleryViewController () <RKObjectLoaderDelegate>
+@property (nonatomic, retain) NSArray *photos;
 @end
 
 @implementation PhotoGalleryViewController
 
-@synthesize gridView;
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
+#pragma mark -
+#pragma mark life cycle
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
-    self.navigationItem.hidesBackButton = YES;      
+    [super viewWillAppear:animated]; 
+    [[RequestHelper sharedInstance] loadPhotosFromCategory:[self category] delegate:self];
+}
+
+- (void)dealloc {
+    [self setGridView:nil];
+    [super dealloc];
+}
+
+- (void)viewDidUnload {
+    [self setGridView:nil];
+    [super viewDidUnload];
 }
 
 
-
-#pragma mark --
-#pragma mark RKObjectLoader delegate methods
-- (void)objectLoader:(RKObjectLoader *)objectLoader willMapData:(inout id *)mappableData
-{   
-    Class class = [objectLoader.targetObject class];    
-    NSLog(@"%@",[class description]);
-}
+#pragma mark -
+#pragma mark RKObjectLoaderDelegate methods
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error
 {
+    //display alert
     NSLog(@"%@",error.description);
 }
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects
 {
-    if([[objects lastObject] isKindOfClass:[Photo class]]){
-         photos = [[NSArray alloc] initWithArray:objects];
-        loadedImages = [[NSMutableArray alloc] initWithCapacity:photos.count];
-        [gridView setNeedsLayout];
-        [gridView reloadData];
-    }
+    [self setPhotos:objects];
+//??    [gridView setNeedsLayout];
+    [gridView reloadData];
 }
 
-#pragma mark --
+#pragma mark -
 #pragma mark AQGridViewDelegate delegate/datasource methods
 
 - (NSUInteger)numberOfItemsInGridView: (AQGridView *) gridView
 {
-    if (photos)
-    {
-        return [photos count];
-    }
-    return 0;
+    return [[self photos] count];
 }
 
 
@@ -87,18 +72,21 @@
 {
     static NSString *cellIdentifier = @"gridCell";
     WebImageGridViewCell *cell = (WebImageGridViewCell *)[aGridView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if(cell == nil)
-    {
-        cell = [[[WebImageGridViewCell alloc]initWithFrame:CGRectMake(0,
-                                                                      0,
-                                                                      100,
-                                                                      100)
-                                           reuseIdentifier:cellIdentifier] autorelease];
-        [cell initializeCell];
+    if(cell == nil) {
+        
+//        cell = [[[WebImageGridViewCell alloc]initWithFrame:CGRectMake(0,
+//                                                                      0,
+//                                                                      100,
+//                                                                      100)
+//                                           reuseIdentifier:cellIdentifier] autorelease];
+        cell = [[WebImageGridViewCell alloc] init];
+        [cell setRestorationIdentifier:cellIdentifier];
+
+//        [cell initializeCell];
         cell.selectionStyle = AQGridViewCellSelectionStyleNone;
         
     }
-    Photo *photo = [photos objectAtIndex:index];
+    Photo *photo = [[self photos] objectAtIndex:index];
     NSURL *url = [NSURL URLWithString:photo.thumb];
   
     [cell.imageView setImageWithURL:url
@@ -126,15 +114,15 @@
 
 - (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser
 {
-    return photos.count;
+    return [[self photos] count];
  
 }
 
 - (MWPhoto *)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index
 {
-    if(index < photos.count)
+    if(index < [self photos].count)
     {
-        Photo *twThoto = [photos objectAtIndex:index];
+        Photo *twThoto = [[self photos] objectAtIndex:index];
         MWPhoto *photo = [MWPhoto photoWithURL:[NSURL URLWithString:twThoto.picture]];
         photo.caption = twThoto.name;        
         return photo;
@@ -143,18 +131,4 @@
     return nil;
 }
 
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
-- (void)dealloc {
-    [gridView release];
-    [super dealloc];
-}
-- (void)viewDidUnload {
-    [self setGridView:nil];
-    [super viewDidUnload];
-}
 @end

@@ -2934,6 +2934,37 @@
 		D92824971631982000E19A61 /* SectionControllerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = D928247A1631981F00E19A61 /* SectionControllerFactory.m */; };
 		D92824981631982000E19A61 /* SectionControllerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = D928247A1631981F00E19A61 /* SectionControllerFactory.m */; };
 		D92824991631982000E19A61 /* SectionControllerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = D928247A1631981F00E19A61 /* SectionControllerFactory.m */; };
+		D9595B8C16353D7100DF9B74 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */; };
+		D9595B8D16353D7100DF9B74 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */; };
+		D9595B8E16353D7100DF9B74 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */; };
+		D9595B8F16353D7100DF9B74 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */; };
+		D9595B9016353D7100DF9B74 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */; };
+		D9595B9116353D7100DF9B74 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */; };
+		D9595B9216353D7100DF9B74 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */; };
+		D9595B9316353D7100DF9B74 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */; };
+		D9595B9416353D7100DF9B74 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */; };
+		D9595B9516353D7100DF9B74 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */; };
+		D9595B9616353D7100DF9B74 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */; };
+		D9595B9716353D7100DF9B74 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */; };
+		D9595B9816353D7100DF9B74 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */; };
+		D9595B9916353D7100DF9B74 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */; };
+		D9595B9A16353D7100DF9B74 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */; };
+		D9595B9B16353D7100DF9B74 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */; };
+		D9595B9C16353D7100DF9B74 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */; };
+		D9595B9D16353D7100DF9B74 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */; };
+		D9595B9E16353D7100DF9B74 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */; };
+		D9595B9F16353D7100DF9B74 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */; };
+		D9595BA016353D7100DF9B74 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */; };
+		D9595BA116353D7100DF9B74 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */; };
+		D9595BA216353D7100DF9B74 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */; };
+		D9595BA316353D7100DF9B74 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */; };
+		D9595BA416353D7100DF9B74 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */; };
+		D9595BA516353D7100DF9B74 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */; };
+		D9595BA616353D7100DF9B74 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */; };
+		D9595BA716353D7100DF9B74 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */; };
+		D9595BA816353D7100DF9B74 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */; };
+		D9595BA916353D7100DF9B74 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */; };
+		D9595BAA16353D7100DF9B74 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */; };
 		D9FA2C1315905E37006FFF7E /* TownWIzardNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E691001E14E56B7E003DE64B /* TownWIzardNavigationBar.m */; };
 		D9FA2C1415905E37006FFF7E /* FacebookHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F275C14E949FE0040F281 /* FacebookHelper.m */; };
 		D9FA2C1515905E37006FFF7E /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = E63F271E14E9448B0040F281 /* Facebook.m */; };
@@ -3390,6 +3421,7 @@
 		D92824791631981E00E19A61 /* SectionControllerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionControllerFactory.h; sourceTree = "<group>"; };
 		D928247A1631981F00E19A61 /* SectionControllerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionControllerFactory.m; sourceTree = "<group>"; };
 		D9595B4516351F4400DF9B74 /* SectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionController.h; sourceTree = "<group>"; };
+		D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		D98D81872E8A4AC09BEE9C3D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9FA2C50159074E5006FFF7E /* back_arrow_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back_arrow_retina.png; path = Images/Interface/back_arrow_retina.png; sourceTree = "<group>"; };
 		D9FA2C51159074E5006FFF7E /* back_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back_arrow.png; path = Images/Interface/back_arrow.png; sourceTree = "<group>"; };
@@ -3489,6 +3521,7 @@
 				3D8DDA6C15A47892001D48D2 /* CoreLocation.framework in Frameworks */,
 				3D8DDA6D15A47892001D48D2 /* CoreGraphics.framework in Frameworks */,
 				7F4B72C0A65142A2A604093A /* libPods.a in Frameworks */,
+				D9595BA716353D7100DF9B74 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3507,6 +3540,7 @@
 				3D8DDAD015A47A71001D48D2 /* CoreLocation.framework in Frameworks */,
 				3D8DDAD115A47A71001D48D2 /* CoreGraphics.framework in Frameworks */,
 				33E5BD1F617F4768A1FBFFFB /* libPods.a in Frameworks */,
+				D9595BA816353D7100DF9B74 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3523,6 +3557,7 @@
 				8483F24A14D03FBE005E4216 /* Foundation.framework in Frameworks */,
 				8483F24C14D03FBE005E4216 /* CoreGraphics.framework in Frameworks */,
 				F60A87994A254733A9A302B0 /* libPods.a in Frameworks */,
+				D9595B8C16353D7100DF9B74 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3541,6 +3576,7 @@
 				950B68261601239F00FC333C /* CoreLocation.framework in Frameworks */,
 				950B68271601239F00FC333C /* CoreGraphics.framework in Frameworks */,
 				FC218EDC1B49490F812F4C3A /* libPods.a in Frameworks */,
+				D9595B9016353D7100DF9B74 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3559,6 +3595,7 @@
 				952864981602730A00E80FA6 /* CoreLocation.framework in Frameworks */,
 				952864991602730A00E80FA6 /* CoreGraphics.framework in Frameworks */,
 				3AE6EA949EAE46388969314F /* libPods.a in Frameworks */,
+				D9595B8F16353D7100DF9B74 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3577,6 +3614,7 @@
 				9535254715AE021500857F12 /* CoreLocation.framework in Frameworks */,
 				9535254815AE021500857F12 /* CoreGraphics.framework in Frameworks */,
 				725D290804554D1A85D60D34 /* libPods.a in Frameworks */,
+				D9595BA416353D7100DF9B74 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3595,6 +3633,7 @@
 				953525AB15AE128B00857F12 /* CoreLocation.framework in Frameworks */,
 				953525AC15AE128B00857F12 /* CoreGraphics.framework in Frameworks */,
 				A6749B622F974C0D8FD8D0C7 /* libPods.a in Frameworks */,
+				D9595BA516353D7100DF9B74 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3613,6 +3652,7 @@
 				9535261815AE1E6800857F12 /* CoreLocation.framework in Frameworks */,
 				9535261915AE1E6800857F12 /* CoreGraphics.framework in Frameworks */,
 				1D97D03B0E2F4BF7B99D2C92 /* libPods.a in Frameworks */,
+				D9595BA616353D7100DF9B74 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3631,6 +3671,7 @@
 				953A9E8F15B7304300E1C832 /* CoreLocation.framework in Frameworks */,
 				953A9E9015B7304300E1C832 /* CoreGraphics.framework in Frameworks */,
 				5C72E81707504086B746CD5E /* libPods.a in Frameworks */,
+				D9595BA016353D7100DF9B74 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3649,6 +3690,7 @@
 				954628E315AF615D00A39C65 /* CoreLocation.framework in Frameworks */,
 				954628E415AF615D00A39C65 /* CoreGraphics.framework in Frameworks */,
 				777CAB4881F343C4AB91FFD3 /* libPods.a in Frameworks */,
+				D9595BA216353D7100DF9B74 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3667,6 +3709,7 @@
 				95468F9215C067CF007E17CE /* CoreLocation.framework in Frameworks */,
 				95468F9315C067CF007E17CE /* CoreGraphics.framework in Frameworks */,
 				269409DCA9C64C9DA58E9736 /* libPods.a in Frameworks */,
+				D9595B9D16353D7100DF9B74 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3685,6 +3728,7 @@
 				9569FA0A15E42BE40046338E /* CoreLocation.framework in Frameworks */,
 				9569FA0B15E42BE40046338E /* CoreGraphics.framework in Frameworks */,
 				4660E408CCD44A0099E83C2E /* libPods.a in Frameworks */,
+				D9595B9B16353D7100DF9B74 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3703,6 +3747,7 @@
 				9575030215E576FF004A3D0E /* CoreLocation.framework in Frameworks */,
 				9575030315E576FF004A3D0E /* CoreGraphics.framework in Frameworks */,
 				DEEC73DF7F644BC48C6EB7A8 /* libPods.a in Frameworks */,
+				D9595B9816353D7100DF9B74 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3721,6 +3766,7 @@
 				9575035E15E57E5E004A3D0E /* CoreLocation.framework in Frameworks */,
 				9575035F15E57E5E004A3D0E /* CoreGraphics.framework in Frameworks */,
 				CD5D0D90A7FB47FABF6A1A80 /* libPods.a in Frameworks */,
+				D9595B9716353D7100DF9B74 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3739,6 +3785,7 @@
 				9578EFD015E5219900846F71 /* CoreLocation.framework in Frameworks */,
 				9578EFD115E5219900846F71 /* CoreGraphics.framework in Frameworks */,
 				DD8F0F936B1F412691B5DB8D /* libPods.a in Frameworks */,
+				D9595B9A16353D7100DF9B74 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3757,6 +3804,7 @@
 				9578F03515E5301900846F71 /* CoreLocation.framework in Frameworks */,
 				9578F03615E5301900846F71 /* CoreGraphics.framework in Frameworks */,
 				184EBB2C3577434E95F1CFE1 /* libPods.a in Frameworks */,
+				D9595B9916353D7100DF9B74 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3775,6 +3823,7 @@
 				9585E73B1608AD7E007E42D4 /* CoreLocation.framework in Frameworks */,
 				9585E73C1608AD7E007E42D4 /* CoreGraphics.framework in Frameworks */,
 				4826312986A14E38BFF46581 /* libPods.a in Frameworks */,
+				D9595B8E16353D7100DF9B74 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3793,6 +3842,7 @@
 				9589BEDD15B8A4550057B7EC /* CoreLocation.framework in Frameworks */,
 				9589BEDE15B8A4550057B7EC /* CoreGraphics.framework in Frameworks */,
 				B9117109BFB447DEB72BB8ED /* libPods.a in Frameworks */,
+				D9595B9C16353D7100DF9B74 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3811,6 +3861,7 @@
 				95A838D415B6216800BD05EC /* CoreLocation.framework in Frameworks */,
 				95A838D515B6216800BD05EC /* CoreGraphics.framework in Frameworks */,
 				9FD91FDFB2E74F8A817FBECE /* libPods.a in Frameworks */,
+				D9595BA116353D7100DF9B74 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3829,6 +3880,7 @@
 				95B0A37115BDF08800DC9ED6 /* CoreLocation.framework in Frameworks */,
 				95B0A37215BDF08800DC9ED6 /* CoreGraphics.framework in Frameworks */,
 				B1D7ABDB8D164526ABE3A0B1 /* libPods.a in Frameworks */,
+				D9595B9E16353D7100DF9B74 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3847,6 +3899,7 @@
 				95C0CD2415FF7E0400AC5AA4 /* CoreLocation.framework in Frameworks */,
 				95C0CD2515FF7E0400AC5AA4 /* CoreGraphics.framework in Frameworks */,
 				0320C87C75AF427283B3CFE6 /* libPods.a in Frameworks */,
+				D9595B9216353D7100DF9B74 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3865,6 +3918,7 @@
 				95C4321D1600E47D00B24E45 /* CoreLocation.framework in Frameworks */,
 				95C4321E1600E47D00B24E45 /* CoreGraphics.framework in Frameworks */,
 				378251C5B31E4638B2C23EA9 /* libPods.a in Frameworks */,
+				D9595B9116353D7100DF9B74 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3883,6 +3937,7 @@
 				95C8714915B7449600D30040 /* CoreLocation.framework in Frameworks */,
 				95C8714A15B7449600D30040 /* CoreGraphics.framework in Frameworks */,
 				77536E850DED443589DDB6F5 /* libPods.a in Frameworks */,
+				D9595B9F16353D7100DF9B74 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3901,6 +3956,7 @@
 				95CE618915EFD96B00A08BC4 /* CoreLocation.framework in Frameworks */,
 				95CE618A15EFD96B00A08BC4 /* CoreGraphics.framework in Frameworks */,
 				0CEA1030863844419597011B /* libPods.a in Frameworks */,
+				D9595B9416353D7100DF9B74 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3919,6 +3975,7 @@
 				95CE61EE15EFF0AD00A08BC4 /* CoreLocation.framework in Frameworks */,
 				95CE61EF15EFF0AD00A08BC4 /* CoreGraphics.framework in Frameworks */,
 				20F9556C5B6B417AB0AD2CF5 /* libPods.a in Frameworks */,
+				D9595B9316353D7100DF9B74 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3937,6 +3994,7 @@
 				95F1E12015AF59AC005FAB38 /* CoreLocation.framework in Frameworks */,
 				95F1E12115AF59AC005FAB38 /* CoreGraphics.framework in Frameworks */,
 				2BDE07676F9949C4BC5AA5CA /* libPods.a in Frameworks */,
+				D9595BA316353D7100DF9B74 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3955,6 +4013,7 @@
 				95F8580515EE7E4C009C4B7C /* CoreLocation.framework in Frameworks */,
 				95F8580615EE7E4C009C4B7C /* CoreGraphics.framework in Frameworks */,
 				ECBF5083D5DF47C5A3055F56 /* libPods.a in Frameworks */,
+				D9595B9616353D7100DF9B74 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3973,6 +4032,7 @@
 				95F8586115EE80C3009C4B7C /* CoreLocation.framework in Frameworks */,
 				95F8586215EE80C3009C4B7C /* CoreGraphics.framework in Frameworks */,
 				209E54F1AA3B4EB4B3186DA6 /* libPods.a in Frameworks */,
+				D9595B9516353D7100DF9B74 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3991,6 +4051,7 @@
 				D9FA2C2C15905FFE006FFF7E /* CoreLocation.framework in Frameworks */,
 				D90D0DF6158F06500026828E /* CoreGraphics.framework in Frameworks */,
 				DAC5B0083412445E8608DA81 /* libPods.a in Frameworks */,
+				D9595B8D16353D7100DF9B74 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4010,6 +4071,7 @@
 				E690222A14FE2544008F52B2 /* CFNetwork.framework in Frameworks */,
 				E690222B14FE254C008F52B2 /* Security.framework in Frameworks */,
 				E690222D14FE2550008F52B2 /* MapKit.framework in Frameworks */,
+				D9595BA916353D7100DF9B74 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4025,6 +4087,7 @@
 				E690230414FE447A008F52B2 /* UIKit.framework in Frameworks */,
 				E690230514FE447A008F52B2 /* Foundation.framework in Frameworks */,
 				E690230614FE447A008F52B2 /* CoreGraphics.framework in Frameworks */,
+				D9595BAA16353D7100DF9B74 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4158,6 +4221,7 @@
 		8483F24614D03FBE005E4216 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */,
 				84EDCF0416144BD500838807 /* libz.dylib */,
 				E671E2D515B5966A00977738 /* MessageUI.framework */,
 				E691FF9214E50A03003DE64B /* MapKit.framework */,

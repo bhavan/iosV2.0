@@ -14,6 +14,11 @@
 
 @interface RequestHelper : NSObject
 
+@property (nonatomic, retain) Partner *currentPartner;
+@property (nonatomic, retain) Section *currentSection;
+
++ (id) sharedInstance;
+
 + (NSString *) md5:(NSString *) input;
 + (NSString *)xaccessTokenFromPartner:(Partner *)partner;
 + (RKObjectManager *)defaultObjectManager;
@@ -42,5 +47,10 @@
                   fromPartner:(Partner *)partner
                    andSection:(Section *)section
                  withDelegate:(id <RKObjectLoaderDelegate>)delegate;
+
+
+- (void) loadVideosWithDelegate:(id<RKObjectLoaderDelegate>) delegate;
+- (void) loadPhotoCategoriesWithDelegate:(id<RKObjectLoaderDelegate>) delegate;
+- (void) loadPhotosFromCategory:(PhotoCategory *) category delegate:(id<RKObjectLoaderDelegate>) delegate;
 
 @end

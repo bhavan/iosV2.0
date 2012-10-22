@@ -16,56 +16,62 @@
 #import "Section.h"
 #import "VideoViewController.h"
 
-@interface VideosViewController () <UITableViewDataSource, UITableViewDelegate>
+#import "RequestHelper.h"
+
+#import <MediaPlayer/MediaPlayer.h>
+
+@interface VideosViewController ()
+    <UITableViewDataSource,
+    UITableViewDelegate,
+    RKObjectLoaderDelegate>
+
+@property (nonatomic, retain) NSArray *videos;
 
 @end
 
 @implementation VideosViewController
 
-@synthesize  partner, customNavigationBar, section;
+#pragma mark -
+#pragma mark life cycle
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (void) viewWillAppear:(BOOL)animated
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    [super viewWillAppear:animated];
+    [self loadVideos];
 }
 
-- (void)viewDidLoad
+- (void)dealloc
 {
-    [super viewDidLoad];
+    [self setTableView:nil];
+    [self setVideos:nil];
+    [super dealloc];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];  
-    self.customNavigationBar.titleLabel.text = self.partner.name;
-    self.customNavigationBar.subMenuLabel.text = self.section.displayName;
+- (void)viewDidUnload {
+    [self setTableView:nil];
+    [super viewDidUnload];
 }
 
+#pragma mark -
+#pragma mark load videos
+
+- (void) loadVideos
+{
+    [[RequestHelper sharedInstance] loadVideosWithDelegate:self];
+}
 
 #pragma mark -
 #pragma mark RKObjectLoaderDelegate
 
-- (void)objectLoader:(RKObjectLoader *)loader willMapData:(inout id *)mappableData
-{
-    
-}
-
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error
 {
-    NSLog(@"%@",error.description);
+    NSLog(@"ololo %@",error.description);
 }
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects
 {
-    if (objects && [[objects lastObject] isKindOfClass:[Video class]])
-    {
-        videos = [[NSArray alloc] initWithArray:objects];
-        [self.tableView reloadData];        
-    }
+    [self setVideos:objects];
+    [[self tableView] reloadData];
 }
 
 #pragma mark -
@@ -73,65 +79,41 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if(videos)
-    {
-        return [videos count];
-    }
-    return 0;
+    return [[self videos] count];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 74.0f;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"videosCell";
-    ImageCell *cell;
-    cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    Video *video = [videos objectAtIndex:indexPath.row];
-    if(cell == nil)
-    {
-        cell = [[[ImageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
+    ImageCell *cell = [aTableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if(cell == nil) {
+        cell = [[[ImageCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                 reuseIdentifier:cellIdentifier] autorelease];
     }
+    
+    Video *video = [[self videos] objectAtIndex:indexPath.row];
+
     cell.nameLabel.text = video.name;
     [cell.thumbImageView setImageWithURL:[NSURL URLWithString:video.thumb]];
     
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    Video *video = [videos objectAtIndex:indexPath.row];
-    VideoViewController *subMenu = [[VideoViewController alloc]
-                                    initWithNibName:@"VideoViewController" bundle:nil];
-  /*  subMenu.customNavigationBar = self.customNavigationBar;
-    subMenu.url = video.url;
-    subMenu.section = self.section;
-    subMenu.partner = self.partner;
-    subMenu.isVideoPlaying = YES;*/
-    subMenu.customNavigationBar = self.customNavigationBar;
-    subMenu.videoUrl = video.url;
-    
+    [aTableView deselectRowAtIndexPath:indexPath animated:NO];
+
+    Video *video = [[self videos] objectAtIndex:indexPath.row];
+    VideoViewController *subMenu = [[VideoViewController new] autorelease];
+    subMenu.videoUrl = video.url;    
     [self.navigationController pushViewController:subMenu animated:YES];
-    [subMenu release];
- 
+    
+//    NSURL *videoURL = [NSURL URLWithString:[video url]];
+//    MPMoviePlayerController *controller = [[MPMoviePlayerController alloc] initWithContentURL:videoURL];
+//    [[controller view] setFrame:[[self view] bounds]];
+//    [[self view] addSubview:[controller view]];
+//    [controller play];
+//    [controller release];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
-- (void)dealloc
-{
-    [_tableView release];
-    [super dealloc];
-}
-- (void)viewDidUnload {
-    [self setTableView:nil];
-    [super viewDidUnload];
-}
 @end
