@@ -10,11 +10,8 @@
 
 
 @interface WebImageGridViewCell : AQGridViewCell {
-    UIImageView *imageView;
 }
 
-@property (nonatomic, retain) UIImageView *imageView;
-
-- (void)initializeCell;
+@property (nonatomic, retain, readonly) UIImageView *imageView;
 
 @end

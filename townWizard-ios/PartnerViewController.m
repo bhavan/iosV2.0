@@ -49,6 +49,11 @@
     return self;
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
 - (void) dealloc
 {
     [self setMenuController:nil];
@@ -71,7 +76,8 @@
         if (controller) {
             NSArray *controllers = [NSArray arrayWithObject:controller];
             [[self detailsController] setViewControllers:controllers animated:NO];
-            [[(id)controller navigationItem] setLeftBarButtonItem:[self menuButton]];
+            [[(id)controller navigationItem] setTitle:[section name]];
+            [[(id)controller navigationItem] setLeftBarButtonItem:[self menuButton]];            
         }
     }
     
@@ -80,7 +86,7 @@
 
 - (void) changePartnerButtonTapped
 {
-
+    [[self navigationController] popToRootViewControllerAnimated:YES];
 }
 
 

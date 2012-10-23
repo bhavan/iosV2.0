@@ -260,6 +260,15 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
         //[self reloadMenu];
         [self.partnersTableView reloadData];
         
+        for (Section *section in [self partnerSections]) {
+            if ([[section name] isEqualToString:@"News"]) {
+                if ([[self delegate] respondsToSelector:@selector(menuSectionTapped:)]) {
+                    [[self delegate] menuSectionTapped:section];
+                }
+                break;
+            }
+        }
+        
     }
 }
 

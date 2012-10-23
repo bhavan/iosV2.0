@@ -20,7 +20,6 @@
     RKObjectLoaderDelegate,
     MWPhotoBrowserDelegate>
 {
-    AQGridView *gridView;
     int currentIndex;
 }
 

@@ -25,6 +25,7 @@
 {
     [super viewWillAppear:animated]; 
     [[RequestHelper sharedInstance] loadPhotosFromCategory:[self category] delegate:self];
+    [[self gridView] reloadData];
 }
 
 - (void)dealloc {
@@ -36,7 +37,6 @@
     [self setGridView:nil];
     [super viewDidUnload];
 }
-
 
 #pragma mark -
 #pragma mark RKObjectLoaderDelegate methods
@@ -50,22 +50,15 @@
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects
 {
     [self setPhotos:objects];
-//??    [gridView setNeedsLayout];
-    [gridView reloadData];
+    [[self gridView] reloadData];
 }
 
 #pragma mark -
-#pragma mark AQGridViewDelegate delegate/datasource methods
+#pragma mark AQGridViewDatasource methods
 
 - (NSUInteger)numberOfItemsInGridView: (AQGridView *) gridView
 {
     return [[self photos] count];
-}
-
-
-- (CGSize) portraitGridCellSizeForGridView: (AQGridView *) gridView
-{
-    return CGSizeMake(100, 100);
 }
 
 - (AQGridViewCell *)gridView: (AQGridView *) aGridView cellForItemAtIndex: (NSUInteger) index
@@ -73,44 +66,30 @@
     static NSString *cellIdentifier = @"gridCell";
     WebImageGridViewCell *cell = (WebImageGridViewCell *)[aGridView dequeueReusableCellWithIdentifier:cellIdentifier];
     if(cell == nil) {
-        
-//        cell = [[[WebImageGridViewCell alloc]initWithFrame:CGRectMake(0,
-//                                                                      0,
-//                                                                      100,
-//                                                                      100)
-//                                           reuseIdentifier:cellIdentifier] autorelease];
-        cell = [[WebImageGridViewCell alloc] init];
-        [cell setRestorationIdentifier:cellIdentifier];
-
-//        [cell initializeCell];
-        cell.selectionStyle = AQGridViewCellSelectionStyleNone;
-        
+        cell = [[[WebImageGridViewCell alloc] initWithFrame:CGRectMake(0, 0, 100, 100)
+                                           reuseIdentifier:cellIdentifier] autorelease];
+        [cell setSelectionStyle:AQGridViewCellSelectionStyleNone];
     }
-    Photo *photo = [[self photos] objectAtIndex:index];
-    NSURL *url = [NSURL URLWithString:photo.thumb];
-  
-    [cell.imageView setImageWithURL:url
-                   placeholderImage:nil
-                            options:SDWebImageCacheMemoryOnly];
+    
+    Photo *photo = [[self photos] objectAtIndex:index];  
+    [[cell imageView] setImageWithURL:[NSURL URLWithString:[photo thumb]]
+                     placeholderImage:nil
+                              options:SDWebImageCacheMemoryOnly];
     return cell;
 }
 
 
+#pragma mark -
+#pragma mark AQGridViewDelegate
+
 - (void)gridView:(AQGridView *) gridView didSelectItemAtIndex: (NSUInteger) index
 {
-        MWPhotoBrowser *browser = [[[MWPhotoBrowser alloc] initWithDelegate:self] autorelease];
-    browser.wantsFullScreenLayout = NO;
-    browser.displayActionButton = YES;
-    [browser setInitialPageIndex:index];
-    
-    
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:browser];
-    navController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    [self presentModalViewController:navController animated:YES];
-    [navController release];
-    //[browser setInitialPageIndex:1];
-    
+    [self displayPhotoBrowserWithInitialPageIndex:index];
 }
+
+
+#pragma mark -
+#pragma mark MWPhotoBrowserDelegate methods
 
 - (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser
 {
@@ -120,15 +99,26 @@
 
 - (MWPhoto *)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index
 {
-    if(index < [self photos].count)
-    {
-        Photo *twThoto = [[self photos] objectAtIndex:index];
-        MWPhoto *photo = [MWPhoto photoWithURL:[NSURL URLWithString:twThoto.picture]];
-        photo.caption = twThoto.name;        
-        return photo;
-    }
-   
-    return nil;
+    Photo *photoObject = [[self photos] objectAtIndex:index];
+    MWPhoto *browserPhoto = [MWPhoto photoWithURL:[NSURL URLWithString:[photoObject picture]]];
+    [browserPhoto setCaption:[photoObject name]];
+    return browserPhoto;
+}
+
+
+#pragma mark -
+#pragma mark helpers
+
+- (void) displayPhotoBrowserWithInitialPageIndex:(NSInteger) index
+{
+    MWPhotoBrowser *browser = [[[MWPhotoBrowser alloc] initWithDelegate:self] autorelease];
+    [browser setWantsFullScreenLayout:YES];
+    [browser setDisplayActionButton:NO];
+    [browser setInitialPageIndex:index];
+
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:browser];
+    [self presentModalViewController:navController animated:YES];
+    [navController release];
 }
 
 @end

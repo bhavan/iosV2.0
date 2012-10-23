@@ -79,7 +79,7 @@
     
     NSString *loadingURLString = [NSString stringWithFormat:@"%@/%@?lat=%f&lon=%f",
                                   [[[RequestHelper sharedInstance] currentPartner] webSiteUrl],
-                                  [[self section] url],
+                                  [[[RequestHelper sharedInstance] currentSection] url],
                                   [AppDelegate sharedDelegate].doubleLatitude,
                                   [AppDelegate sharedDelegate].doubleLongitude];
     

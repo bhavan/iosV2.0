@@ -9,12 +9,11 @@
 #import "TownWizardNavigationBar.h"
 #import <QuartzCore/QuartzCore.h>
 
+@interface TownWizardNavigationBar ()
+@property (nonatomic, retain, readwrite) UILabel *titleLabel;
+@end
+
 @implementation TownWizardNavigationBar
-
-
-//@synthesize menuButton;
-//@synthesize titleLabel;
-//@synthesize menuPage;
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -63,13 +62,5 @@
 //    self.menuPage = nil;
     [super dealloc];
 }
-
-- (void) layoutSubviews
-{
-        
-}
-
-
-
 
 @end
