@@ -8,13 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseUploadViewController.h"
-#import "SectionController.h"
 
 @class Partner;
 @class TownWizardNavigationBar;
 @class Section;
 
-@interface PhotoCategoriesViewController : BaseUploadViewController <SectionController, UITableViewDataSource, UITableViewDelegate, RKObjectLoaderDelegate>
+@interface PhotoCategoriesViewController : BaseUploadViewController <UITableViewDataSource, UITableViewDelegate, RKObjectLoaderDelegate>
 {
 }
 

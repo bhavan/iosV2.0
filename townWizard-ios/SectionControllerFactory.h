@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SectionController.h"
 
 @class Section;
 
@@ -15,6 +14,7 @@
 
 @interface SectionControllerFactory : NSObject
 
-- (id<SectionController>) sectionControllerForSection:(Section *) section;
+- (UIViewController *) sectionControllerForSection:(Section *) section;
+- (UIViewController *) defaultController;
 
 @end

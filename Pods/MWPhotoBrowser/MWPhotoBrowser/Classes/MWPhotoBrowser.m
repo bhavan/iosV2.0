@@ -597,7 +597,6 @@ navigationBarBackgroundImageLandscapePhone = _navigationBarBackgroundImageLandsc
 }
 
 - (void)loadAdjacentPhotosIfNecessary:(id<MWPhoto>)photo {
-    
     MWZoomingScrollView *page = [self pageDisplayingPhoto:photo];
     if (page) {
         // If page is current page then initiate loading of previous and next pages
@@ -632,7 +631,7 @@ navigationBarBackgroundImageLandscapePhone = _navigationBarBackgroundImageLandsc
         if ([photo underlyingImage]) {
             // Successful load
             [page displayImage];
-            //[self loadAdjacentPhotosIfNecessary:photo];
+            [self loadAdjacentPhotosIfNecessary:photo];
         } else {
             // Failed to load
             [page displayImageFailure];
@@ -769,7 +768,7 @@ navigationBarBackgroundImageLandscapePhone = _navigationBarBackgroundImageLandsc
     id <MWPhoto> currentPhoto = [self photoAtIndex:index];
     if ([currentPhoto underlyingImage]) {
         // photo loaded so load ajacent now
-       // [self loadAdjacentPhotosIfNecessary:currentPhoto];
+        [self loadAdjacentPhotosIfNecessary:currentPhoto];
     }
     
 }

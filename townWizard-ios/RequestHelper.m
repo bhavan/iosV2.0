@@ -15,6 +15,8 @@
 #import <CommonCrypto/CommonDigest.h>
 #import "Video.h"
 
+#import "MappingManager.h"
+
 #define REQUEST_TIMEOUT 30
 
 static RequestHelper *requestHelper = nil;
@@ -190,6 +192,15 @@ static RequestHelper *requestHelper = nil;
                               [[self currentSection] url],
                               [category categoryId]];
     [objectManager loadObjectsAtResourcePath:resourcePath delegate:delegate];
+}
+
+- (void) loadEventsWithDelegate:(id<RKObjectLoaderDelegate>) delegate
+{
+    RKObjectManager *objectManager = [self currentObjectManager];
+    [[objectManager mappingProvider] setObjectMapping:[[MappingManager sharedInstance] eventsMapping]
+                                           forKeyPath:@"data"];
+    [objectManager loadObjectsAtResourcePath:[[self currentSection] url]
+                                    delegate:delegate];
 }
 
 @end

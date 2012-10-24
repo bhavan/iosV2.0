@@ -13,54 +13,57 @@
 @property (nonatomic, retain, readwrite) UILabel *titleLabel;
 @end
 
+static const CGFloat kTWBarOriginX = 45;
+static const CGFloat kTWBarTitleFontSize = 18;
+
 @implementation TownWizardNavigationBar
+
+#pragma mark -
+#pragma mark life cycle
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         self.tintColor = [UIColor lightGrayColor];
-//
-//        self.menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//        [self.menuButton setImage:[UIImage imageNamed:@"menuStarButton"] 
-//                         forState:UIControlStateNormal];
-//        [self.menuButton addTarget:self action:@selector(toggleView) forControlEvents:UIControlEventTouchUpInside];
-//        self.menuButton.accessibilityLabel = @"Back";
-//        self.menuButton.frame = CGRectMake(10, 6, 33, 30);
-//        [self addSubview:self.menuButton];
-//        
-//        self.titleLabel = [[[UILabel alloc] initWithFrame:CGRectMake(32, 3, 250, 20)] autorelease];
-//
-//        self.titleLabel.textColor = [UIColor whiteColor];
-//        self.titleLabel.textAlignment = UITextAlignmentCenter;
-//        self.titleLabel.layer.shadowRadius = 0.1;
-//        self.titleLabel.layer.shadowOpacity = 0.4;
-//        self.titleLabel.layer.masksToBounds = NO;
-//        self.titleLabel.layer.shadowOffset = CGSizeMake(1, 1);
-//        self.titleLabel.shadowColor = [UIColor blackColor];
-//        self.titleLabel.backgroundColor = [UIColor clearColor];
-//        [self addSubview:self.titleLabel];
-//        
-//        self.subMenuLabel = [[[UILabel alloc] initWithFrame:CGRectMake(32, 20, 250, 22)] autorelease];
-//        
-//        self.subMenuLabel.textColor = [UIColor whiteColor];
-//        self.subMenuLabel.textAlignment = UITextAlignmentCenter;
-//        self.subMenuLabel.layer.shadowRadius = 0.1;
-//        self.subMenuLabel.layer.shadowOpacity = 0.4;
-//        self.subMenuLabel.layer.masksToBounds = NO;
-//        self.subMenuLabel.layer.shadowOffset = CGSizeMake(1, 1);
-//        self.subMenuLabel.shadowColor = [UIColor blackColor];
-//        self.subMenuLabel.backgroundColor = [UIColor clearColor];
-//        [self addSubview:self.subMenuLabel];
+        
+        self.titleLabel = [[[UILabel alloc] initWithFrame:CGRectZero] autorelease];
+
+        self.titleLabel.textColor = [UIColor darkGrayColor];
+        self.titleLabel.textAlignment = UITextAlignmentLeft;
+        self.titleLabel.backgroundColor = [UIColor clearColor];
+        self.titleLabel.font = [UIFont boldSystemFontOfSize:kTWBarTitleFontSize];
+
+        [self addSubview:self.titleLabel];
     }
     return self;
 }
 
 - (void)dealloc
 {
-//    self.menuButton = nil;
-//    self.titleLabel = nil;
-//    self.menuPage = nil;
+    [self setTitleLabel:nil];
     [super dealloc];
+}
+
+#pragma mark -
+#pragma mark layout
+
+- (void) layoutSubviews
+{
+    [super layoutSubviews];
+    
+    CGRect titleFrame = [[self titleLabel] frame];
+    CGFloat originY = roundf(([self bounds].size.height - [[[self titleLabel] font] pointSize]) / 2);
+    titleFrame.origin = CGPointMake(kTWBarOriginX, originY);
+    [[self titleLabel] setFrame:titleFrame];
+}
+
+#pragma mark -
+#pragma mark public method
+
+- (void) updateTitleText:(NSString *) titleText
+{
+    [[self titleLabel] setText:titleText];
+    [[self titleLabel] sizeToFit];
 }
 
 @end

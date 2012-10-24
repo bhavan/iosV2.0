@@ -16,6 +16,7 @@
 @optional
 -(void)menuButtonPressed:(id)sender;
 
+- (void) sectionsUpdated:(NSArray *) sections;
 - (void) menuSectionTapped:(Section *) section;
 - (void) changePartnerButtonTapped;
 @end

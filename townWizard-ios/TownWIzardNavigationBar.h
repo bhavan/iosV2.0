@@ -12,6 +12,6 @@
 @interface TownWizardNavigationBar : UINavigationBar {
 }
 
-@property (nonatomic, retain, readonly) UILabel *titleLabel;
+- (void) updateTitleText:(NSString *) titleText;
 
 @end

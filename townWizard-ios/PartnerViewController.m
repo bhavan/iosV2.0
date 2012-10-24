@@ -39,9 +39,14 @@
         [[self menuController] setPartner:partner];
         [[self menuController] setDelegate:self];
         
-        [self setDetailsController:detailsController];
-        [[self.detailsController navigationItem] setHidesBackButton:YES];
         [self setSectionControllerFactory:[[SectionControllerFactory new] autorelease]];
+        
+        [self setDetailsController:detailsController];
+        [[[self detailsController] navigationItem] setHidesBackButton:YES];
+        
+        UIViewController *defaultController = [[self sectionControllerFactory] defaultController];
+        [[self detailsController] setViewControllers:[NSArray arrayWithObject:defaultController]
+                                            animated:NO];
         
         [[RequestHelper sharedInstance] setCurrentPartner:partner];
         [[RequestHelper sharedInstance] setCurrentSection:nil];
@@ -66,21 +71,19 @@
 #pragma mark -
 #pragma mark PartnerMenuDelegate methods
 
-- (void) menuSectionTapped:(Section *) section
+- (void) sectionsUpdated:(NSArray *) sections
 {
-    Section *currentSection = [[RequestHelper sharedInstance] currentSection];
-    if (![currentSection isEqual:section]) {
-        [[RequestHelper sharedInstance] setCurrentSection:section];
-        
-        id<SectionController> controller = [[self sectionControllerFactory] sectionControllerForSection:section];
-        if (controller) {
-            NSArray *controllers = [NSArray arrayWithObject:controller];
-            [[self detailsController] setViewControllers:controllers animated:NO];
-            [[(id)controller navigationItem] setTitle:[section name]];
-            [[(id)controller navigationItem] setLeftBarButtonItem:[self menuButton]];            
+    for (Section *section in sections) {
+        if ([[section name] isEqualToString:@"News"]) {
+            [self displayControllerForSection:section];
+            break;
         }
     }
-    
+}
+
+- (void) menuSectionTapped:(Section *) section
+{
+    [self displayControllerForSection:section];    
     [self toggleMasterView];
 }
 
@@ -108,6 +111,24 @@
     [button addTarget:self action:@selector(toggleMasterView) forControlEvents:UIControlEventTouchUpInside];
     [button setFrame:CGRectMake(0, 0, menuButtonImage.size.width, menuButtonImage.size.height)];
     return [[[UIBarButtonItem alloc] initWithCustomView:button] autorelease];
+}
+
+
+#pragma mark -
+#pragma mark helpers
+
+- (void) displayControllerForSection:(Section *) section
+{
+    Section *currentSection = [[RequestHelper sharedInstance] currentSection];
+    if (![currentSection isEqual:section]) {
+        [[RequestHelper sharedInstance] setCurrentSection:section];
+        
+        UIViewController *controller = [[self sectionControllerFactory] sectionControllerForSection:section];
+        [[self detailsController] setViewControllers:[NSArray arrayWithObject:controller] animated:NO];
+
+        [(TownWizardNavigationBar *)[_detailsController navigationBar] updateTitleText:[section name]];
+        [[(id)controller navigationItem] setLeftBarButtonItem:[self menuButton]];
+    }
 }
 
 @end

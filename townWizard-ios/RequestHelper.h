@@ -52,5 +52,6 @@
 - (void) loadVideosWithDelegate:(id<RKObjectLoaderDelegate>) delegate;
 - (void) loadPhotoCategoriesWithDelegate:(id<RKObjectLoaderDelegate>) delegate;
 - (void) loadPhotosFromCategory:(PhotoCategory *) category delegate:(id<RKObjectLoaderDelegate>) delegate;
+- (void) loadEventsWithDelegate:(id<RKObjectLoaderDelegate>) delegate;
 
 @end

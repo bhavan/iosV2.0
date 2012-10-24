@@ -7,23 +7,19 @@
 //
 
 #import "SectionControllerFactory.h"
-#import "SectionController.h"
 #import "Section.h"
 
 #import "SubMenuViewController.h"
 #import "PhotoCategoriesViewController.h"
 #import "VideosViewController.h"
+#import "EventsViewController.h"
 
 @implementation SectionControllerFactory
 
-- (id<SectionController>) sectionControllerForSection:(Section *) section
+- (UIViewController *) sectionControllerForSection:(Section *) section
 {
     Class ControllerClass = [self controllerClassForSection:section];
-    if ([ControllerClass conformsToProtocol:@protocol(SectionController)]) {
-        id<SectionController> controller = [[ControllerClass new] autorelease];
-        return controller;
-    }
-    return nil;
+    return [[ControllerClass new] autorelease];
 }
 
 - (Class) controllerClassForSection:(Section *) section
@@ -34,10 +30,18 @@
     else if ([[section name] isEqual:@"Photos"]) {
         return [PhotoCategoriesViewController class];
     }
-    else if ([section.name isEqual:@"Videos"]) {
+    else if ([[section name] isEqual:@"Videos"]) {
         return [VideosViewController class];
     }
+    else if([[section name] isEqualToString:@"Events"]) {
+        return [EventsViewController class];
+    }
     return [NSNull class];
+}
+
+- (UIViewController *) defaultController
+{
+    return [[SubMenuViewController new] autorelease];
 }
 
 @end
