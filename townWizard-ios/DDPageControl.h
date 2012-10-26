@@ -20,7 +20,7 @@ typedef enum
 DDPageControlType ;
 
 
-@interface DDPageControl : UIView
+@interface DDPageControl : UIControl
 {
 	NSInteger numberOfPages ;
 	NSInteger currentPage ;

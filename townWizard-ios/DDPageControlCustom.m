@@ -67,4 +67,9 @@
 	}
 }
 
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    //do nothing
+}
+
 @end

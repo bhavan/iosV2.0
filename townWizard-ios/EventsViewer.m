@@ -35,6 +35,11 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
         UISwipeGestureRecognizer *rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(showPreviousEvent)];
         [rightSwipe setDirection:UISwipeGestureRecognizerDirectionRight];
         [self addGestureRecognizer:rightSwipe];
+        
+        [eventPlace setText:nil];
+        [eventName setText:nil];
+        [eventTime setText:nil];
+        [eventImage setBackgroundColor:[UIColor clearColor]];
     }
     return self;
 }
