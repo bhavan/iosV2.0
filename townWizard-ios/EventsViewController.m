@@ -7,13 +7,16 @@
 //
 
 #import "EventsViewController.h"
-#import "RequestHelper.h"
-#import "UIView+Extensions.h"
-#import "EventCell.h"
 
-@interface EventsViewController () <RKObjectLoaderDelegate>
+#import "EventCell.h"
+#import "EventsViewer.h"
+#import "EventSectionHeader.h"
+
+@interface EventsViewController () <UITableViewDataSource, UIAlertViewDelegate>
 @property (nonatomic, retain) NSArray *events;
 @end
+
+static const NSInteger kEventsAlertTag = 700;
 
 @implementation EventsViewController
 
@@ -33,6 +36,12 @@
 {
     [super viewWillAppear:animated];
     [self loadAllEvents];
+    [self loadFeaturedEvents];
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
 }
 
 - (void)dealloc {
@@ -52,28 +61,69 @@
 
 - (void) loadFeaturedEvents
 {
-    
+    [[RequestHelper sharedInstance] loadFeaturedEventUsingBlock:^(RKObjectLoader *loader) {
+        [loader setOnDidFailWithError:^(NSError *error){
+            [self featuredEventsLoadingFailed:error];
+        }];
+        [loader setOnDidLoadObjects:^(NSArray *objects){
+            [self featuredEventsLoaded:objects];
+        }];
+    }];
 }
 
 - (void) loadAllEvents
-{
-    [[RequestHelper sharedInstance] loadEventsWithDelegate:self];
+{    
+    [[RequestHelper sharedInstance] loadEventsUsingBlock:^(RKObjectLoader *loader) {
+        [loader setOnDidLoadObjects:^(NSArray *objects){
+            [self eventsLoaded:objects];
+        }];
+        [loader setOnDidFailWithError:^(NSError *error){
+            [self eventsLoadingFailed:error];
+        }];
+    }];
 }
 
 #pragma mark -
-#pragma mark RKObjectLoaderDelegate methods
+#pragma mark events loading callback methods
 
-- (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error
+- (void) eventsLoadingFailed:(NSError *) error
 {
-    NSLog(@"FAIL = %@",error);
+    UIAlertView *alert = [UIAlertView showWithTitle:@"Error"
+                                            message:@"Evens loading error. Do you want to try again"
+                                           delegate:self
+                                  cancelButtonTitle:@"NO"
+                                 confirmButtonTitle:@"YES"];
+    [alert setTag:kEventsAlertTag];
 }
 
-- (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects
+- (void) eventsLoaded:(NSArray *) events
 {
-    NSLog(@"objects = %@",objects);
-    
-    [self setEvents:objects];
+    [self setEvents:events];
     [eventsList reloadData];
+}
+
+#pragma mark -
+#pragma mark UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if ([alertView tag] == kEventsAlertTag) {
+        [self loadAllEvents];
+    }
+}
+
+#pragma mark -
+#pragma mark featured events loading callback methods
+
+- (void ) featuredEventsLoadingFailed:(NSError *) error
+{
+    NSLog(@"erroro = %@",error);
+}
+
+- (void) featuredEventsLoaded:(NSArray *) featuredEvents
+{
+    NSLog(@"featured loaded %@",featuredEvents);
+    [featuredEventsViewer displayEvents:featuredEvents];
 }
 
 #pragma mark -
@@ -90,10 +140,23 @@
     EventCell *cell = (EventCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
         cell = [EventCell loadFromXib];
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
-    
-    
+    [cell updateWithEvent:[[self events] objectAtIndex:indexPath.row]];
     return cell;
 }
+
+#pragma mark -
+#pragma mark UITableViewDelegate
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    CGRect headerFrame = CGRectMake(0, 0, [tableView frame].size.width, [tableView sectionHeaderHeight]);
+    EventSectionHeader *header = [[EventSectionHeader alloc] initWithFrame:headerFrame];
+    [[header title] setText:@"MONDAY 02 FEB"];
+    return header;
+}
+
+
 
 @end

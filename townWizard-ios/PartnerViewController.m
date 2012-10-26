@@ -42,21 +42,16 @@
         [self setSectionControllerFactory:[[SectionControllerFactory new] autorelease]];
         
         [self setDetailsController:detailsController];
-        [[[self detailsController] navigationItem] setHidesBackButton:YES];
+        [[detailsController navigationItem] setHidesBackButton:YES];
         
         UIViewController *defaultController = [[self sectionControllerFactory] defaultController];
-        [[self detailsController] setViewControllers:[NSArray arrayWithObject:defaultController]
-                                            animated:NO];
+        [detailsController setViewControllers:[NSArray arrayWithObject:defaultController]
+                                     animated:NO];        
         
         [[RequestHelper sharedInstance] setCurrentPartner:partner];
         [[RequestHelper sharedInstance] setCurrentSection:nil];
     }
     return self;
-}
-
-- (void) viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
 }
 
 - (void) dealloc
@@ -76,9 +71,13 @@
     for (Section *section in sections) {
         if ([[section name] isEqualToString:@"News"]) {
             [self displayControllerForSection:section];
-            break;
+            return;
         }
     }
+
+    if ([sections count]) {
+        [self displayControllerForSection:[sections objectAtIndex:0]];
+    }    
 }
 
 - (void) menuSectionTapped:(Section *) section
@@ -96,16 +95,9 @@
 #pragma mark -
 #pragma mark bar buttons
 
-- (void) updateLeftBarButtonForController:(UIViewController *) controller
-{
-    if ([[[self detailsController] viewControllers] objectAtIndex:0] == controller) {
-        [[controller navigationItem] setLeftBarButtonItem:[self menuButton]];
-    }
-}
-
 - (UIBarButtonItem *) menuButton
 {
-    UIImage *menuButtonImage = [UIImage imageNamed:@"menuStarButton"];
+    UIImage *menuButtonImage = [UIImage imageNamed:@"menu_button"];
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setImage:menuButtonImage forState:UIControlStateNormal];
     [button addTarget:self action:@selector(toggleMasterView) forControlEvents:UIControlEventTouchUpInside];

@@ -8,10 +8,15 @@
 
 #import "EventsViewer.h"
 #import "Event.h"
+#import "ActivityImageView.h"
+#import "DDPageControlCustom.h"
+#import "NSDate+Formatting.h"
 
 @interface EventsViewer ()
 @property (nonatomic, retain) NSArray *events;
 @end
+
+static const CGFloat kEventsViewerIndicatorSpace = 11;
 
 @implementation EventsViewer
 
@@ -22,8 +27,27 @@
 {
     if (self = [super initWithCoder:aDecoder]) {
         [pageControl setNumberOfPages:0];
+        
+        UISwipeGestureRecognizer *leftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(showNextEvent)];
+        [leftSwipe setDirection:UISwipeGestureRecognizerDirectionLeft];
+        [self addGestureRecognizer:leftSwipe];
+
+        UISwipeGestureRecognizer *rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(showPreviousEvent)];
+        [rightSwipe setDirection:UISwipeGestureRecognizerDirectionRight];
+        [self addGestureRecognizer:rightSwipe];
     }
     return self;
+}
+
+- (void) awakeFromNib
+{
+    [super awakeFromNib];
+    
+    UIImage *background = [UIImage imageNamed:@"event_viewer_background"];
+    UIColor *detailsViewColor = [UIColor colorWithPatternImage:background];
+    [detailsView setBackgroundColor:detailsViewColor];
+    [eventImage setBackgroundColor:[UIColor clearColor]];
+    [pageControl setIndicatorSpace:kEventsViewerIndicatorSpace];
 }
 
 - (void) dealloc
@@ -33,6 +57,7 @@
     [eventPlace release];
     [eventTime release];
     [pageControl release];
+    [detailsView release];
     
     [self setEvents:nil];
 
@@ -55,9 +80,40 @@
 - (void) displayEventAtIndex:(NSInteger) eventIndex
 {
     if (eventIndex < [[self events] count]) {
-        Event *event = [[self events] objectAtIndex:eventIndex];
+        currentEventIndex = eventIndex;
+        [self updateTitlesWithEvent:[[self events] objectAtIndex:eventIndex]];
         [pageControl setCurrentPage:eventIndex];
     }    
+}
+
+- (void) updateTitlesWithEvent:(Event *) event
+{
+    [eventName setText:[event title]];
+    [eventTime setText:nil];
+    [eventPlace setText:[[event location] address]];
+    [eventImage setImageWithURL:[event imageURL]];
+    [eventTime setText:[self eventDateString:event]];
+}
+
+- (void) showNextEvent
+{
+    if (currentEventIndex < [[self events] count] - 1) {
+        [self displayEventAtIndex:currentEventIndex + 1];
+    }
+}
+
+- (void) showPreviousEvent
+{
+    if (currentEventIndex > 0) {
+        [self displayEventAtIndex:currentEventIndex - 1];
+    }
+}
+
+- (NSString *) eventDateString:(Event *) event
+{
+    NSString *startTimeString = [NSDate stringFromDate:[event startTime] dateFormat:@"h:mma"];
+    NSString *endTimeString = [NSDate stringFromDate:[event endTime] dateFormat:@"h:mma"];
+    return [NSString stringWithFormat:@"%@-%@",startTimeString,endTimeString];
 }
 
 @end

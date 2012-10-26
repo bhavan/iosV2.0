@@ -17,7 +17,7 @@
 @property (nonatomic, retain) Location *location;
 @property (nonatomic, assign) BOOL featured;
 @property (nonatomic, retain) NSString *details;
-@property (nonatomic, retain) NSString *imagePath;
+@property (nonatomic, retain) NSURL *imageURL;
 @property (nonatomic, retain) NSDate *startTime;
 @property (nonatomic, retain) NSDate *endTime;
 

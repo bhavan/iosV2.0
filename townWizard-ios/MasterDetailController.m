@@ -129,7 +129,7 @@
     [swipe setNumberOfTouchesRequired:1];
     [swipe setDirection:UISwipeGestureRecognizerDirectionRight];
     
-    [self.detailView addGestureRecognizer:swipe];
+//    [self.detailView addGestureRecognizer:swipe];
     [swipe release];
     
     swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(performSwipe:)];

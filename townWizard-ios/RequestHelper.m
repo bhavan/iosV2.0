@@ -194,13 +194,24 @@ static RequestHelper *requestHelper = nil;
     [objectManager loadObjectsAtResourcePath:resourcePath delegate:delegate];
 }
 
-- (void) loadEventsWithDelegate:(id<RKObjectLoaderDelegate>) delegate
+- (void) loadEventsUsingBlock:(void(^)(RKObjectLoader *)) block
+{
+    [self loadEventsAtResourcePath:[[self currentSection] url] usingBlock:block];
+}
+
+- (void) loadFeaturedEventUsingBlock:(void(^)(RKObjectLoader *)) block
+{
+    NSString *resourcePath = [NSString stringWithFormat:@"%@?featured=1",[[self currentSection] url]];
+    [self loadEventsAtResourcePath:resourcePath usingBlock:block];
+}
+
+- (void) loadEventsAtResourcePath:(NSString *) resorcePath usingBlock:(void(^)(RKObjectLoader *)) block
 {
     RKObjectManager *objectManager = [self currentObjectManager];
     [[objectManager mappingProvider] setObjectMapping:[[MappingManager sharedInstance] eventsMapping]
                                            forKeyPath:@"data"];
-    [objectManager loadObjectsAtResourcePath:[[self currentSection] url]
-                                    delegate:delegate];
+    [objectManager loadObjectsAtResourcePath:resorcePath
+                                  usingBlock:block];
 }
 
 @end

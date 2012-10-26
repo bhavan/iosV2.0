@@ -33,7 +33,7 @@ static MappingManager *mappingManager = nil;
     [mapping mapKeyPath:@"is_featured_event" toAttribute:@"featured"];
     [mapping mapKeyPath:@"category" toAttribute:@"categoryName"];
     [mapping mapKeyPath:@"description" toAttribute:@"details"];
-    [mapping mapKeyPath:@"image_url" toAttribute:@"imagePath"];
+    [mapping mapKeyPath:@"image_url" toAttribute:@"imageURL"];
     [mapping mapKeyPath:@"start_time" toAttribute:@"startTime"];
     [mapping mapKeyPath:@"end_time" toAttribute:@"endTime"];
     [mapping mapRelationship:@"location" withMapping:[self locationMapping]];

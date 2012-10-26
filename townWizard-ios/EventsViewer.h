@@ -8,12 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@class ActivityImageView;
+@class DDPageControlCustom;
+
 @interface EventsViewer : UIView {
-    IBOutlet UIImageView *eventImage;
+    IBOutlet ActivityImageView *eventImage;
     IBOutlet UILabel *eventName;
     IBOutlet UILabel *eventPlace;
     IBOutlet UILabel *eventTime;
-    IBOutlet UIPageControl *pageControl;
+    IBOutlet DDPageControlCustom *pageControl;
+    IBOutlet UIView *detailsView;
+    
+    NSInteger currentEventIndex;
 }
 
 - (void) displayEvents:(NSArray *) events;

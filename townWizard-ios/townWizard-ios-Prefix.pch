@@ -23,4 +23,6 @@
 
     #import "RequestHelper.h"
 
+    #import "UIView+Extensions.h"
+    #import "UIAlertView+Extensions.h"
 #endif
