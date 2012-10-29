@@ -16,5 +16,7 @@
 
 - (RKObjectMapping *) eventsMapping;
 - (RKObjectMapping *) locationMapping;
+- (RKObjectMapping *) partnerMapping;
+- (RKObjectMapping *) sectionMapping;
 
 @end

@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Partner.h"
 
-@class Partner;
 @class Section;
 @class PhotoCategory;
 
@@ -55,5 +55,8 @@
 
 - (void) loadEventsUsingBlock:(void(^)(RKObjectLoader *)) block;
 - (void) loadFeaturedEventUsingBlock:(void(^)(RKObjectLoader *)) block;
+
+- (void) loadPartnerDetails:(NSString *) partnerID usingBlock:(void(^)(RKObjectLoader *)) block;
+- (void) loadSectionsUsingBlock:(void(^)(RKObjectLoader *)) block;
 
 @end

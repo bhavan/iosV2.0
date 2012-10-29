@@ -25,4 +25,5 @@
 
     #import "UIView+Extensions.h"
     #import "UIAlertView+Extensions.h"
+    #import "MappingManager.h"
 #endif

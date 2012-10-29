@@ -14,32 +14,19 @@
 
 @protocol PartnerMenuDelegate <NSObject>
 @optional
--(void)menuButtonPressed:(id)sender;
-
 - (void) sectionsUpdated:(NSArray *) sections;
 - (void) menuSectionTapped:(Section *) section;
 - (void) changePartnerButtonTapped;
 @end
 
-@interface PartnerMenuViewController : UIViewController <UIAlertViewDelegate, RKObjectLoaderDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface PartnerMenuViewController : UIViewController
 {
-    NSArray *subSections;
-    NSMutableDictionary * sectionImagesDictionary;
-   
     IBOutlet UIActivityIndicatorView *activityIndicator;
-    NSArray * partnerSections;
-
+    IBOutlet UITableView *sectionsList;
+    IBOutlet UITextField *searchField;
 }
 
-@property (nonatomic, assign) id<PartnerMenuDelegate> delegate;
-
-@property (nonatomic, retain) UINavigationController *childNavigationController;
-@property (nonatomic, retain) NSArray * partnerSections;
 @property (nonatomic, retain) Partner * partner;
-@property (nonatomic, retain) TownWizardNavigationBar * customNavigationBar;
-@property (nonatomic, retain) NSString * currentSectionName;
-@property (retain, nonatomic) IBOutlet UITableView *partnersTableView;
-
-- (IBAction)changePartnerButtonPressed:(id)sender;
+@property (nonatomic, assign) id<PartnerMenuDelegate> delegate;
 
 @end

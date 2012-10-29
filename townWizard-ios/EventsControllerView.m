@@ -15,6 +15,7 @@
     [super awakeFromNib];
     [self setButtonsBackground];
     [self setBackgroundColorForTableSubviews];
+    [self setBackgroundColor:[UIColor clearColor]];
 }
 
 - (void) dealloc
@@ -61,29 +62,6 @@
     
     [tableHeader setBackgroundColor:backgroundColor];
     [tableFooter setBackgroundColor:backgroundColor];
-}
-
-
-#pragma mark -
-#pragma mark drawing
-
-- (void) drawRect:(CGRect)rect
-{
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    NSArray* colors = @[
-        (id)[[UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:1] CGColor],
-        (id)[[UIColor colorWithRed:1. green:1. blue:1. alpha:1.] CGColor],
-    ];
-        
-    CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (CFArrayRef)colors, NULL);
-    CGContextDrawLinearGradient(context,
-                                gradient,
-                                CGPointZero,
-                                CGPointMake(0, [self bounds].size.width),
-                                0);
-    CGGradientRelease(gradient);
-    CGColorSpaceRelease(colorSpace);
 }
 
 @end

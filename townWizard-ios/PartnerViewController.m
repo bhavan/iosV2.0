@@ -14,6 +14,7 @@
 
 #import "RequestHelper.h"
 #import "Section.h"
+#import "TWBackgroundView.h"
 
 @interface PartnerViewController () <PartnerMenuDelegate>
 @property (nonatomic, retain) PartnerMenuViewController *menuController;
@@ -44,6 +45,8 @@
         [self setDetailsController:detailsController];
         [[detailsController navigationItem] setHidesBackButton:YES];
         
+        
+        
         UIViewController *defaultController = [[self sectionControllerFactory] defaultController];
         [detailsController setViewControllers:[NSArray arrayWithObject:defaultController]
                                      animated:NO];        
@@ -52,6 +55,17 @@
         [[RequestHelper sharedInstance] setCurrentSection:nil];
     }
     return self;
+}
+
+- (void) viewDidLoad
+{
+    [super viewDidLoad];
+    
+    CGRect backgroundViewFrame = [[self view] frame];
+    backgroundViewFrame.origin = CGPointZero;
+   
+    [[[self detailsController] view] insertSubview:[self twBackgroundWithFrame:backgroundViewFrame] atIndex:0];
+    [[[self menuController] view] insertSubview:[self twBackgroundWithFrame:backgroundViewFrame] atIndex:0];
 }
 
 - (void) dealloc
@@ -121,6 +135,13 @@
         [(TownWizardNavigationBar *)[_detailsController navigationBar] updateTitleText:[section name]];
         [[(id)controller navigationItem] setLeftBarButtonItem:[self menuButton]];
     }
+}
+
+- (UIView *) twBackgroundWithFrame:(CGRect) frame
+{
+    TWBackgroundView *backgroundView = [[TWBackgroundView alloc] initWithFrame:frame];
+    [[self view] insertSubview:backgroundView atIndex:0];
+    return [backgroundView autorelease];
 }
 
 @end

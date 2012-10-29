@@ -85,7 +85,8 @@ static RequestHelper *requestHelper = nil;
     RKURL *baseURL = [RKURL URLWithBaseURLString:API_URL];
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     objectManager.client.baseURL = baseURL;
-    [objectManager.mappingProvider setObjectMapping:[Partner objectMapping] forKeyPath:@"data"];
+    [objectManager.mappingProvider setObjectMapping:[[MappingManager sharedInstance] partnerMapping]
+                                         forKeyPath:@"data"];
     NSString *resourcePath = [NSString stringWithFormat:@"/partner?%@&offset=%d",queryParam,offset];
     [objectManager loadObjectsAtResourcePath:resourcePath delegate:delegate];
 }
@@ -96,7 +97,8 @@ static RequestHelper *requestHelper = nil;
     RKURL *baseURL = [RKURL URLWithBaseURLString:API_URL];
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     objectManager.client.baseURL = baseURL;
-    [objectManager.mappingProvider setObjectMapping:[Partner objectMapping] forKeyPath:@"data"];
+    [objectManager.mappingProvider setObjectMapping:[[MappingManager sharedInstance] partnerMapping]
+                                         forKeyPath:@"data"];
     NSString *resourcePath = [NSString stringWithFormat:@"/partner/%@",partnerId];
     [objectManager loadObjectsAtResourcePath:resourcePath delegate:delegate];
     
@@ -212,6 +214,24 @@ static RequestHelper *requestHelper = nil;
                                            forKeyPath:@"data"];
     [objectManager loadObjectsAtResourcePath:resorcePath
                                   usingBlock:block];
+}
+
+- (void) loadPartnerDetails:(NSString *) partnerID usingBlock:(void(^)(RKObjectLoader *)) block
+{
+    RKObjectManager *objectManager = [self currentObjectManager];
+    [[objectManager mappingProvider] setObjectMapping:[[MappingManager sharedInstance] partnerMapping]
+                                           forKeyPath:@"data"];
+    [objectManager loadObjectsAtResourcePath:[NSString stringWithFormat:@"/partner/%@",partnerID]
+                                  usingBlock:block];
+}
+
+- (void) loadSectionsUsingBlock:(void(^)(RKObjectLoader *)) block
+{
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    [[objectManager mappingProvider] setObjectMapping:[[MappingManager sharedInstance] sectionMapping]
+                                           forKeyPath:@"data"];
+    NSString *resourcePath = [NSString stringWithFormat:@"/section/partner/%@",[[self currentPartner] partnterId]];
+    [objectManager loadObjectsAtResourcePath:resourcePath usingBlock:block];
 }
 
 @end

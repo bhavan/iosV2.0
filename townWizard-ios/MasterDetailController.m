@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#define MASTER_WIDTH 265
+#define MASTER_WIDTH 280
 
 #import "MasterDetailController.h"
 #import <QuartzCore/QuartzCore.h>

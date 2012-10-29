@@ -7,224 +7,225 @@
 //
 
 #import "PartnerMenuViewController.h"
-#import "SubMenuViewController.h"
-#import "TownWizardNavigationBar.h"
-#import "UIApplication+NetworkActivity.h"
-#import "Reachability.h"
-#import "AppDelegate.h"
+
 #import "Partner.h"
 #import "Section.h"
-#import "UIImageView+WebCache.h"
-#import "PhotoCategoriesViewController.h"
-#import "RequestHelper.h"
-#import "VideosViewController.h"
-#import "MasterDetailController.h"
 
-#define URL_HEADER @"http://"
+#import "UIImageView+WebCache.h"
+
+#import "EventSectionHeader.h"
+#import "SectionCell.h"
+
+@interface PartnerMenuViewController () <UITableViewDelegate, UITableViewDataSource>
+@property (nonatomic, retain, readwrite) NSArray *sections;
+@end
 
 @implementation PartnerMenuViewController
 
-@synthesize partnerSections;
-@synthesize partner;
-@synthesize customNavigationBar;
-@synthesize childNavigationController;
+#pragma mark -
+#pragma mark life cycle
 
-@synthesize currentSectionName = _currentSectionName;
-
-- (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nil bundle:nil]) {
-        
-        sectionImagesDictionary = [[NSMutableDictionary alloc] init];
-    }
-    return self;
-}
-
-
-#pragma mark - View lifecycle
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.customNavigationBar = (TownWizardNavigationBar *) self.childNavigationController.navigationBar;
-    [[self navigationItem] setHidesBackButton:YES];
-    
-}
-
-
--(void)setNameForNavigationBar
+- (void) viewDidLoad
 {
-//    self.customNavigationBar.titleLabel.text = self.partner.name;
-//    if (self.currentSectionName == nil) {
-//        self.customNavigationBar.subMenuLabel.text = @"";
-//    }
-//    else {
-//        self.customNavigationBar.subMenuLabel.text = self.currentSectionName;
-//        // self.partner.name,self.currentSectionName];
-//    }
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    self.customNavigationBar = (TownWizardNavigationBar *) self.childNavigationController.navigationBar;
-
-    [self.navigationController setNavigationBarHidden:NO animated:NO];
+    [super viewDidLoad];
     
-#ifdef CONTAINER_APP
-    
-    
-    [self setNameForNavigationBar];
-#endif
-    
-    if (self.partner == nil) {
+    if ([self partner] == nil) {
         [self loadPartnerDetails];
     }
     else {
-        if (self.partnerSections == nil) {
-            [RequestHelper sectionsWithPartner:self.partner andDelegate:self];
-        }       
+        [self loadPartnerSections];
     }
-    
-    
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
-//    [self.customNavigationBar.menuButton removeTarget:self
-//                                               action:@selector(menuButtonPressed)
-//                                     forControlEvents:UIControlEventTouchUpInside];
-    [[UIApplication sharedApplication] hideNetworkActivityIndicator];
+- (void)viewDidUnload
+{
+    [sectionsList release]; sectionsList = nil;
+    [activityIndicator release]; activityIndicator = nil;
     
-#ifdef PARTNER_ID
-    [[[self customNavigationBar] menuButton] setHidden:NO];
-#endif
+    [super viewDidUnload];
+}
+
+- (void)dealloc
+{
+    [activityIndicator release];
+    [sectionsList release];
     
-    [super viewWillDisappear:animated];
+    [self setSections:nil];
+
+    [super dealloc];
 }
 
 
 #pragma mark -
-#pragma mark Navigation
-
-- (void)menuButtonPressed
-{
-}
-
-#define BUTTON_SIZE 100
-#define HORIZONTAL_SPACING 140
-#define VERTICAL_SPACING 50
-#define MINIMUM_SCROLL_VIEW_HEIGHT 400
-
-- (IBAction)changePartnerButtonPressed:(id)sender
-{
-    MasterDetailController *masterDetail = (MasterDetailController *)self.parentViewController;
-    [masterDetail.navigationController popViewControllerAnimated:YES];
-}
-
-static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.php";
-
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [self.partnerSections count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *cellIdentifier = @"sectionCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if(cell == nil)
-    {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                      reuseIdentifier:cellIdentifier] autorelease];
-    }
-    Section *section = [self.partnerSections objectAtIndex:indexPath.row];
-    cell.textLabel.text = section.displayName;
-    
-    return cell;
-    
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    Section *section = [partnerSections objectAtIndex:indexPath.row];
-    if ([[self delegate] respondsToSelector:@selector(menuSectionTapped:)]) {
-        [[self delegate] menuSectionTapped:section];
-    }
-}
-
+#pragma mark autorotation
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error
+#pragma mark -
+#pragma mark loading
+
+- (void) loadPartnerDetails
 {
-    NSLog(@"%@",error.description);
-}
-
-- (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
-    
-    if([[objects lastObject] isKindOfClass:[Partner class]]) {
-        self.partner = [objects lastObject];
-        if (partner.facebookAppId)
-        {
-            [AppDelegate sharedDelegate].facebookHelper.appId = partner.facebookAppId;
-            [TestFlight passCheckpoint:@"facebook app id is set"];
-        }
-        else {
-            [AppDelegate sharedDelegate].facebookHelper.appId = @"";
-            [TestFlight passCheckpoint:@"Facebook app id is empty"];
-        }
-        
-        [RequestHelper sectionsWithPartner:self.partner andDelegate:self];
-        
-    }
-    else if([[objects lastObject] isKindOfClass:[Section class]]) {
-        self.partnerSections = [[[NSMutableArray alloc]initWithArray:objects] autorelease];
-        //[self reloadMenu];
-        [self.partnersTableView reloadData];
-        
-        if ([_delegate respondsToSelector:@selector(sectionsUpdated:)]) {
-            [_delegate sectionsUpdated:partnerSections];
-        }
-    }
-}
-
-- (void) loadPartnerDetails {
 #ifdef PARTNER_ID
-    [RequestHelper partnerWithId:[NSString stringWithFormat:@"%d",PARTNER_ID] andDelegate:self];
+    [[RequestHelper sharedInstance] loadPartnerDetails:[NSString stringWithFormat:@"%d",PARTNER_ID]
+                                            usingBlock:^(RKObjectLoader *loader) {
+                                                [loader setOnDidLoadObject:^(id object){
+                                                    [self partnerDetailsLoaded:object];
+                                                }];
+                                            }];
 #endif
 }
 
+- (void) loadPartnerSections
+{
+    [[RequestHelper sharedInstance] loadSectionsUsingBlock:^(RKObjectLoader *loader) {
+        [loader setOnDidLoadObjects:^(NSArray *objects) {
+            [self sectionsLoaded:objects];
+        }];
+    }];
+}
 
 #pragma mark -
-#pragma mark CleanUp
+#pragma mark callbacks
 
--(void)cleanUp
+- (void) partnerDetailsLoaded:(Partner *) partner
 {
-    self.partnerSections = nil;
-    [sectionImagesDictionary release];
-    _currentSectionName = nil;
-    [[UIApplication sharedApplication] setActivityindicatorToZero];
+    [[RequestHelper sharedInstance] setCurrentPartner:partner];
+    [self loadPartnerSections];
 }
 
-- (void)viewDidUnload {
-    [self cleanUp];
-    [activityIndicator release];
-    activityIndicator = nil;
+- (void) sectionsLoaded:(NSArray *) sections
+{
+//    [self setSections:sections];
+    NSMutableArray *loadedSections = [NSMutableArray array];
+    [loadedSections addObjectsFromArray:sections];
+    [loadedSections addObjectsFromArray:[self getPredefinedSections]];
+    [self setSections:loadedSections];
     
-    [self setPartnersTableView:nil];
-    [super viewDidUnload];
+    [sectionsList reloadData];
+    if ([_delegate respondsToSelector:@selector(sectionsUpdated:)]) {
+        [_delegate sectionsUpdated:sections];
+    }
 }
 
-- (void)dealloc {
-    [self cleanUp];
-    [activityIndicator release];
-    [_partnersTableView release];
-    [super dealloc];
+#pragma mark -
+#pragma mark actions
+
+- (IBAction)changePartnerButtonPressed:(id)sender
+{
+    if ([[self delegate] respondsToSelector:@selector(changePartnerButtonTapped)]) {
+        [[self delegate] changePartnerButtonTapped];
+    }
 }
+
+#pragma mark -
+#pragma mark UITableviewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [[self sections] count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"sectionCell";
+    SectionCell *cell = (SectionCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if(cell == nil) {
+        cell = [SectionCell loadFromXib];
+    }
+    
+    Section *section = [[self sections] objectAtIndex:indexPath.row];
+    [cell updateWithSection:section];
+    
+    return cell;    
+}
+
+#pragma mark -
+#pragma mark UITableViewDelegate methods
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Section *section = [[self sections] objectAtIndex:indexPath.row];
+    if ([[self delegate] respondsToSelector:@selector(menuSectionTapped:)]) {
+        [[self delegate] menuSectionTapped:section];
+    }
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    CGRect headerFrame = CGRectMake(0, 0, [tableView frame].size.width, [tableView sectionHeaderHeight]);
+    EventSectionHeader *header = [[EventSectionHeader alloc] initWithFrame:headerFrame];
+    [[header title] setText:@"CATEGORY HEADING"];
+    return header;
+
+}
+
+#pragma mark -
+#pragma mark UITextFieldDelegate methods
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if ([textField isFirstResponder]) {
+        [textField resignFirstResponder];
+    }
+    return YES;
+}
+
+#pragma mark -
+#pragma mark UIScrollViewDelegate methods
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if ([searchField isFirstResponder]) {
+        [searchField resignFirstResponder];
+    }
+}
+
+#pragma mark -
+#pragma mark test
+
+- (NSArray *) predefinedSectionsNames
+{
+  return @[
+            @"News Feed",
+            @"Events",
+            @"Offers",
+            @"Nightlife",
+            @"Entertainment",
+            @"Town Dirrectory",
+            @"Your Profile",
+            @"Your Saved Items",
+            @"Settings & Preferences",
+            @"Best in Town Lists",
+            @"Talk of the Town Blog",
+            @"Ratings & Reviews",
+            @"Check-ins & Hotspots",
+            @"Help & Support",
+            @"About TownWizard",
+            @"Advertise with TownWizard",
+            @"Contact TownWizard"
+        ];
+}
+
+- (NSArray *) getPredefinedSections
+{
+    NSArray *names = [self predefinedSectionsNames];
+    NSMutableArray *sections = [NSMutableArray arrayWithCapacity:[names count]];
+    for (NSString *sectionName in names) {
+        Section *section = [[Section alloc] init];
+        [section setName:sectionName];
+        [section setDisplayName:sectionName];
+        [sections addObject:section];
+        [section release];
+    }
+    return sections;
+}
+
 @end

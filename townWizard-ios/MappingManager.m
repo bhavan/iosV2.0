@@ -10,6 +10,8 @@
 
 #import "Event.h"
 #import "Location.h"
+#import "Partner.h"
+#import "Section.h"
 
 static MappingManager *mappingManager = nil;
 
@@ -55,6 +57,31 @@ static MappingManager *mappingManager = nil;
 
     return mapping;
 }
+
+- (RKObjectMapping *) partnerMapping {
+    RKObjectMapping * mapping = [RKObjectMapping mappingForClass:[Partner class]];
+    [mapping mapKeyPath:@"id" toAttribute:@"partnterId"];
+    [mapping mapKeyPath:@"name" toAttribute:@"name"];
+    [mapping mapKeyPath:@"itunes_app_id" toAttribute:@"iTunesAppId"];
+    [mapping mapKeyPath:@"facebook_app_id" toAttribute:@"facebookAppId"];
+    [mapping mapKeyPath:@"image" toAttribute:@"headerImageUrl"];
+    [mapping mapKeyPath:@"website_url" toAttribute:@"webSiteUrl"];
+    return mapping;
+    
+}
+
+- (RKObjectMapping *) sectionMapping {
+    RKObjectMapping * mapping = [RKObjectMapping mappingForClass:[Section class]];
+    [mapping mapKeyPath:@"id" toAttribute:@"sectionId"];
+    [mapping mapKeyPath:@"display_name" toAttribute:@"displayName"];
+    [mapping mapKeyPath:@"image_url" toAttribute:@"imageUrl"];
+    [mapping mapKeyPath:@"partnerID" toAttribute:@"partner_id"];
+    [mapping mapKeyPath:@"section_name" toAttribute:@"name"];
+    [mapping mapKeyPath:@"url" toAttribute:@"url"];
+    [mapping mapKeyPath:@"ui_type" toAttribute:@"uiType"];    
+    return mapping;
+}
+
 
 
 #pragma mark -
