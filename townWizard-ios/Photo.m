@@ -17,8 +17,7 @@
     [partnersMapping mapKeyPath:@"name" toAttribute:@"name"];
     [partnersMapping mapKeyPath:@"thumb" toAttribute:@"thumb"];
     [partnersMapping mapKeyPath:@"picture" toAttribute:@"picture"];
-    return partnersMapping;
-    
+    return partnersMapping;    
 }
 
 @end

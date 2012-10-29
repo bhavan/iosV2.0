@@ -106,16 +106,16 @@
                                      @"friends_checkins", nil];
             [facebookHelper authorizePermissions:permissions for:self];
         }
-        [self.customNavigationBar.menuButton addTarget:self 
-                                                action:@selector(menuButtonPressed) 
-                                      forControlEvents:UIControlEventTouchUpInside];
+//        [self.customNavigationBar.menuButton addTarget:self 
+//                                                action:@selector(menuButtonPressed) 
+//                                      forControlEvents:UIControlEventTouchUpInside];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
 {
-    [self.customNavigationBar.menuButton removeTarget:self 
-                                               action:@selector(menuButtonPressed) 
-                                     forControlEvents:UIControlEventTouchUpInside];
+//    [self.customNavigationBar.menuButton removeTarget:self 
+//                                               action:@selector(menuButtonPressed) 
+//                                     forControlEvents:UIControlEventTouchUpInside];
     [[AppDelegate sharedDelegate].manager stopUpdatingLocation];
     [super viewWillDisappear:animated];
 }
@@ -384,9 +384,9 @@
     self.places = nil;
     self.tableView = nil;
     [[UIApplication sharedApplication] setActivityindicatorToZero];
-    [self.customNavigationBar.menuButton removeTarget:self 
-                                               action:@selector(menuButtonPressed) 
-                                     forControlEvents:UIControlEventTouchUpInside];
+//    [self.customNavigationBar.menuButton removeTarget:self 
+//                                               action:@selector(menuButtonPressed) 
+//                                     forControlEvents:UIControlEventTouchUpInside];
 }
 
 -(void)viewDidUnload {

@@ -1,4 +1,0 @@
-@interface PodsDummy_Pods_townWizardPartnerTemplate : NSObject
-@end
-@implementation PodsDummy_Pods_townWizardPartnerTemplate
-@end

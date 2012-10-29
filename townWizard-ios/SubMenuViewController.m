@@ -21,6 +21,8 @@
 #import "Section.h"
 #import "PhotoUploadView.h"
 
+#import "RequestHelper.h"
+
 
 @implementation SubMenuViewController
 
@@ -70,16 +72,22 @@
     self.forwardButton.enabled = NO;
     
   
-    self.customNavigationBar.titleLabel.text = self.partner.name;
-    self.customNavigationBar.subMenuLabel.text = self.section.displayName;
+
     
-    if (!self.partner)
-    {
-        self.customNavigationBar.titleLabel.text=@"";
-    }
+    
+    
+    
+    NSString *loadingURLString = [NSString stringWithFormat:@"%@/%@?lat=%f&lon=%f",
+                                  [[[RequestHelper sharedInstance] currentPartner] webSiteUrl],
+                                  [[[RequestHelper sharedInstance] currentSection] url],
+                                  [AppDelegate sharedDelegate].doubleLatitude,
+                                  [AppDelegate sharedDelegate].doubleLongitude];
+    
+    
+    
     
     if([self townWizardServerReachable]) {
-        NSURL *aUrl = [NSURL URLWithString:self.url];
+        NSURL *aUrl = [NSURL URLWithString:loadingURLString];
         [self.webView loadRequest:[NSURLRequest requestWithURL:aUrl]];
     } else { // NO connection
         [TestFlight passCheckpoint:@"No connection available while loading webView"];
@@ -107,6 +115,9 @@
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    
+    
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
@@ -119,9 +130,9 @@
 
 -(void)viewWillDisappear:(BOOL)animated
 {
-    [self.customNavigationBar.menuButton removeTarget:self 
-                                               action:@selector(menuButtonPressed) 
-                                     forControlEvents:UIControlEventTouchUpInside];
+//    [self.customNavigationBar.menuButton removeTarget:self 
+//                                               action:@selector(menuButtonPressed) 
+//                                     forControlEvents:UIControlEventTouchUpInside];
     [[UIApplication sharedApplication] hideNetworkActivityIndicator];
     [super viewWillDisappear:animated];
 }

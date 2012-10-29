@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#define MASTER_WIDTH 265
+#define MASTER_WIDTH 280
 
 #import "MasterDetailController.h"
 #import <QuartzCore/QuartzCore.h>
@@ -129,7 +129,7 @@
     [swipe setNumberOfTouchesRequired:1];
     [swipe setDirection:UISwipeGestureRecognizerDirectionRight];
     
-    [self.detailView addGestureRecognizer:swipe];
+//    [self.detailView addGestureRecognizer:swipe];
     [swipe release];
     
     swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(performSwipe:)];

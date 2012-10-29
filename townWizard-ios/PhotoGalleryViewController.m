@@ -12,149 +12,113 @@
 #import "UIImageView+WebCache.h"
 #import "TownWIzardNavigationBar.h"
 
-@interface PhotoGalleryViewController ()
-
+@interface PhotoGalleryViewController () <RKObjectLoaderDelegate>
+@property (nonatomic, retain) NSArray *photos;
 @end
 
 @implementation PhotoGalleryViewController
 
-@synthesize gridView;
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
+#pragma mark -
+#pragma mark life cycle
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
-    self.navigationItem.hidesBackButton = YES;      
+    [super viewWillAppear:animated]; 
+    [[RequestHelper sharedInstance] loadPhotosFromCategory:[self category] delegate:self];
+    [[self gridView] reloadData];
 }
 
-
-
-#pragma mark --
-#pragma mark RKObjectLoader delegate methods
-- (void)objectLoader:(RKObjectLoader *)objectLoader willMapData:(inout id *)mappableData
-{   
-    Class class = [objectLoader.targetObject class];    
-    NSLog(@"%@",[class description]);
+- (void)dealloc {
+    [self setGridView:nil];
+    [super dealloc];
 }
+
+- (void)viewDidUnload {
+    [self setGridView:nil];
+    [super viewDidUnload];
+}
+
+#pragma mark -
+#pragma mark RKObjectLoaderDelegate methods
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error
 {
+    //display alert
     NSLog(@"%@",error.description);
 }
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects
 {
-    if([[objects lastObject] isKindOfClass:[Photo class]]){
-         photos = [[NSArray alloc] initWithArray:objects];
-        loadedImages = [[NSMutableArray alloc] initWithCapacity:photos.count];
-        [gridView setNeedsLayout];
-        [gridView reloadData];
-    }
+    [self setPhotos:objects];
+    [[self gridView] reloadData];
 }
 
-#pragma mark --
-#pragma mark AQGridViewDelegate delegate/datasource methods
+#pragma mark -
+#pragma mark AQGridViewDatasource methods
 
 - (NSUInteger)numberOfItemsInGridView: (AQGridView *) gridView
 {
-    if (photos)
-    {
-        return [photos count];
-    }
-    return 0;
-}
-
-
-- (CGSize) portraitGridCellSizeForGridView: (AQGridView *) gridView
-{
-    return CGSizeMake(100, 100);
+    return [[self photos] count];
 }
 
 - (AQGridViewCell *)gridView: (AQGridView *) aGridView cellForItemAtIndex: (NSUInteger) index
 {
     static NSString *cellIdentifier = @"gridCell";
     WebImageGridViewCell *cell = (WebImageGridViewCell *)[aGridView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if(cell == nil)
-    {
-        cell = [[[WebImageGridViewCell alloc]initWithFrame:CGRectMake(0,
-                                                                      0,
-                                                                      100,
-                                                                      100)
+    if(cell == nil) {
+        cell = [[[WebImageGridViewCell alloc] initWithFrame:CGRectMake(0, 0, 100, 100)
                                            reuseIdentifier:cellIdentifier] autorelease];
-        [cell initializeCell];
-        cell.selectionStyle = AQGridViewCellSelectionStyleNone;
-        
+        [cell setSelectionStyle:AQGridViewCellSelectionStyleNone];
     }
-    Photo *photo = [photos objectAtIndex:index];
-    NSURL *url = [NSURL URLWithString:photo.thumb];
-  
-    [cell.imageView setImageWithURL:url
-                   placeholderImage:nil
-                            options:SDWebImageCacheMemoryOnly];
+    
+    Photo *photo = [[self photos] objectAtIndex:index];  
+    [[cell imageView] setImageWithURL:[NSURL URLWithString:[photo thumb]]
+                     placeholderImage:nil
+                              options:SDWebImageCacheMemoryOnly];
     return cell;
 }
 
 
+#pragma mark -
+#pragma mark AQGridViewDelegate
+
 - (void)gridView:(AQGridView *) gridView didSelectItemAtIndex: (NSUInteger) index
 {
-        MWPhotoBrowser *browser = [[[MWPhotoBrowser alloc] initWithDelegate:self] autorelease];
-    browser.wantsFullScreenLayout = NO;
-    browser.displayActionButton = YES;
-    [browser setInitialPageIndex:index];
-    
-    
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:browser];
-    navController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    [self presentModalViewController:navController animated:YES];
-    [navController release];
-    //[browser setInitialPageIndex:1];
-    
+    [self displayPhotoBrowserWithInitialPageIndex:index];
 }
+
+
+#pragma mark -
+#pragma mark MWPhotoBrowserDelegate methods
 
 - (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser
 {
-    return photos.count;
+    return [[self photos] count];
  
 }
 
 - (MWPhoto *)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index
 {
-    if(index < photos.count)
-    {
-        Photo *twThoto = [photos objectAtIndex:index];
-        MWPhoto *photo = [MWPhoto photoWithURL:[NSURL URLWithString:twThoto.picture]];
-        photo.caption = twThoto.name;        
-        return photo;
-    }
-   
-    return nil;
+    Photo *photoObject = [[self photos] objectAtIndex:index];
+    MWPhoto *browserPhoto = [MWPhoto photoWithURL:[NSURL URLWithString:[photoObject picture]]];
+    [browserPhoto setCaption:[photoObject name]];
+    return browserPhoto;
 }
 
 
-- (void)didReceiveMemoryWarning
+#pragma mark -
+#pragma mark helpers
+
+- (void) displayPhotoBrowserWithInitialPageIndex:(NSInteger) index
 {
-    [super didReceiveMemoryWarning];
+    MWPhotoBrowser *browser = [[[MWPhotoBrowser alloc] initWithDelegate:self] autorelease];
+    [browser setWantsFullScreenLayout:YES];
+    [browser setDisplayActionButton:NO];
+    [browser setInitialPageIndex:index];
+
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:browser];
+    [self presentModalViewController:navController animated:YES];
+    [navController release];
 }
 
-- (void)dealloc {
-    [gridView release];
-    [super dealloc];
-}
-- (void)viewDidUnload {
-    [self setGridView:nil];
-    [super viewDidUnload];
-}
 @end

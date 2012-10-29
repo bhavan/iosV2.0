@@ -9,27 +9,40 @@
 
 #import "WebImageGridViewCell.h"
 
+@interface WebImageGridViewCell ()
+@property (nonatomic, retain, readwrite) UIImageView *imageView;
+@end
+
 @implementation WebImageGridViewCell
 
 @synthesize imageView;
 
-- (id)initWithFrame:(CGRect)frame
+#pragma mark -
+#pragma mark life cycle
+
+- (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier
 {
-    self = [super initWithFrame:frame];
-    if (self)
-    {
-      
+    if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
+        self.imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+        [[self contentView] addSubview:[self imageView]];
     }
     return self;
 }
 
-- (void)initializeCell
+- (void) dealloc
 {
-    imageView = [[UIImageView alloc] initWithFrame:self.frame];
-    imageView.backgroundColor = [UIColor lightGrayColor];
-    [self.contentView addSubview:imageView];
-    self.backgroundColor = [UIColor redColor];
+    [self setImageView:nil];
+    [super dealloc];
 }
 
+
+#pragma mark -
+#pragma mark layout
+
+- (void) layoutSubviews
+{
+    [super layoutSubviews];
+    [[self imageView] setFrame:[self bounds]];
+}
 
 @end

@@ -18,6 +18,8 @@
 #import "UIImageView+WebCache.h"
 #import "MasterDetailController.h"
 
+#import "PartnerViewController.h"
+
 @interface ViewController()
 @property (nonatomic,assign) BOOL doNotUseGeopositionSearchResults;
 @end
@@ -250,26 +252,9 @@
 
 
 - (void)loadSectionMenuForPartnerWithPartner:(Partner *)aPartner {
-    
-   
-    
-    PartnerMenuViewController *subMenu = [[PartnerMenuViewController alloc]
-                                          initWithNibName:@"PartnerMenuViewController"
-                                          bundle:nil];
- 
-    subMenu.partner = aPartner;    
-    UINavigationController *newNav = [[UINavigationController alloc] initWithNavigationBarClass:[TownWizardNavigationBar class] toolbarClass:[UIToolbar class]];
-    SubMenuViewController *nMenu = [SubMenuViewController new];   
-    nMenu.delegate = self; 
-    [newNav pushViewController:nMenu animated:NO];    
-      MasterDetailController *master = [[[MasterDetailController alloc] initWithMasterViewController:subMenu detailViewController:newNav] autorelease];
-    TownWizardNavigationBar *navigationBar = (TownWizardNavigationBar *)newNav.navigationBar;
-    navigationBar.masterDetail = master;
-    subMenu.childNavigationController = newNav;
-    [newNav release];
-
-    self.navigationController.navigationBarHidden = YES;
-    [self.navigationController pushViewController:master animated:YES];
+    PartnerViewController *controller = [[PartnerViewController alloc] initWithPartner:aPartner];
+    [[self navigationController] pushViewController:controller animated:YES];
+    [controller release];
 }
 
 -(void)locationManager:(CLLocationManager *)aManager

@@ -63,9 +63,9 @@
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [self.customNavigationBar.menuButton addTarget:self 
-                                            action:@selector(menuButtonPressed) 
-                                  forControlEvents:UIControlEventTouchUpInside];
+//    [self.customNavigationBar.menuButton addTarget:self 
+//                                            action:@selector(menuButtonPressed) 
+//                                  forControlEvents:UIControlEventTouchUpInside];
     
     FacebookHelper *facebookHelper = [AppDelegate sharedDelegate].facebookHelper;
     self.friends = nil;
@@ -75,9 +75,9 @@
 
 -(void)viewWillDisappear:(BOOL)animated
 {
-    [self.customNavigationBar.menuButton removeTarget:self 
-                                               action:@selector(menuButtonPressed) 
-                                     forControlEvents:UIControlEventTouchUpInside];
+//    [self.customNavigationBar.menuButton removeTarget:self 
+//                                               action:@selector(menuButtonPressed) 
+//                                     forControlEvents:UIControlEventTouchUpInside];
     [super viewWillDisappear:animated];
 }
 
@@ -296,9 +296,9 @@
 
 -(void)cleanUp {
     
-    [self.customNavigationBar.menuButton removeTarget:self 
-                                               action:@selector(menuButtonPressed) 
-                                     forControlEvents:UIControlEventTouchUpInside];
+//    [self.customNavigationBar.menuButton removeTarget:self 
+//                                               action:@selector(menuButtonPressed) 
+//                                     forControlEvents:UIControlEventTouchUpInside];
     self.messageView = nil;
     self.friendsListView = nil;
 

@@ -17,50 +17,32 @@
 #import "PhotoUploadView.h"
 
 @interface PhotoCategoriesViewController ()
-
+@property (nonatomic, retain, readwrite) NSArray *categories;
 @end
 
 @implementation PhotoCategoriesViewController
 
-@synthesize categories, section;
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
+#pragma mark -
+#pragma mark life cycle
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationItem.hidesBackButton = YES;
-    self.customNavigationBar.subMenuLabel.text = @"Photos";
-    
+    [[RequestHelper sharedInstance] loadPhotoCategoriesWithDelegate:self];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
+- (void)dealloc {
+    [self setTableView:nil];
+    [super dealloc];
 }
 
+- (void)viewDidUnload {
+    [self setTableView:nil];
+    [super viewDidUnload];
+}
 
 #pragma mark -
 #pragma mark RKObjectLoaderDelegate
-
-- (void)objectLoader:(RKObjectLoader *)loader willMapData:(inout id *)mappableData
-{
-   
-}
-
-
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error
 {
@@ -69,68 +51,44 @@
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects
 {
-    if (objects)
-    {
-        categories = [[NSArray alloc] initWithArray:objects];
-        [self.tableView reloadData];
-        
-    }
+    [self setCategories:objects];
+    [[self tableView] reloadData];
 }
 
 #pragma mark -
-#pragma mark UITableView Delegate/Datasource
+#pragma mark UITableViewDatasource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if(categories) {
-        return [categories count];
-    }
-    return 0;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 74.0f;
+    return [[self categories] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {    
     static NSString *cellIdentifier = @"categoryCell";
-    ImageCell *cell;
-    cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    PhotoCategory *category = [categories objectAtIndex:indexPath.row];
-    if(cell == nil)
-    {
-        cell = [[[ImageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
+    ImageCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if(cell == nil) {
+        cell = [[[ImageCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                 reuseIdentifier:cellIdentifier] autorelease];
     }
+    
+    PhotoCategory *category = [[self categories] objectAtIndex:indexPath.row];
     cell.nameLabel.text = category.name;
     [cell.thumbImageView setImageWithURL:[NSURL URLWithString:category.thumb]];
     
     return cell;
 }
 
+#pragma mark -
+#pragma mark UITableViewDelegate
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PhotoCategory *category = [categories objectAtIndex:indexPath.row];
-    PhotoGalleryViewController *galleryController = [PhotoGalleryViewController new];
-    galleryController.customNavigationBar = self.customNavigationBar;
-    galleryController.partner = self.partner;
-    [RequestHelper photosWithPartner:partner section:section fromCategory:category andDelegate:galleryController];
-    [self.navigationController pushViewController:galleryController animated:YES];
-    [galleryController release];
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    PhotoGalleryViewController *controller = [[PhotoGalleryViewController new] autorelease];
+    [controller setCategory:[[self categories] objectAtIndex:indexPath.row]];
+    [[self navigationController] pushViewController:controller animated:YES];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
-- (void)dealloc {
-    [_tableView release];
-    [super dealloc];
-}
-- (void)viewDidUnload {
-    [self setTableView:nil];
-    [super viewDidUnload];
-}
 @end

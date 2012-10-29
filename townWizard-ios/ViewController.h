@@ -15,7 +15,7 @@
 
 @interface ViewController : UIViewController 
 <UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource,CLLocationManagerDelegate,
-PartnerMenuViewControllerDelegate,SubMenuViewControllerDelegate,UIAlertViewDelegate, RKObjectLoaderDelegate>
+PartnerMenuDelegate,SubMenuViewControllerDelegate,UIAlertViewDelegate, RKObjectLoaderDelegate>
 {
     NSMutableArray *partnersList;
     NSArray *selectedPartnerSections;

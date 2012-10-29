@@ -7,12 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Partner.h"
 
-@class Partner;
 @class Section;
 @class PhotoCategory;
 
 @interface RequestHelper : NSObject
+
+@property (nonatomic, retain) Partner *currentPartner;
+@property (nonatomic, retain) Section *currentSection;
+
++ (id) sharedInstance;
 
 + (NSString *) md5:(NSString *) input;
 + (NSString *)xaccessTokenFromPartner:(Partner *)partner;
@@ -42,5 +47,16 @@
                   fromPartner:(Partner *)partner
                    andSection:(Section *)section
                  withDelegate:(id <RKObjectLoaderDelegate>)delegate;
+
+
+- (void) loadVideosWithDelegate:(id<RKObjectLoaderDelegate>) delegate;
+- (void) loadPhotoCategoriesWithDelegate:(id<RKObjectLoaderDelegate>) delegate;
+- (void) loadPhotosFromCategory:(PhotoCategory *) category delegate:(id<RKObjectLoaderDelegate>) delegate;
+
+- (void) loadEventsUsingBlock:(void(^)(RKObjectLoader *)) block;
+- (void) loadFeaturedEventUsingBlock:(void(^)(RKObjectLoader *)) block;
+
+- (void) loadPartnerDetails:(NSString *) partnerID usingBlock:(void(^)(RKObjectLoader *)) block;
+- (void) loadSectionsUsingBlock:(void(^)(RKObjectLoader *)) block;
 
 @end
