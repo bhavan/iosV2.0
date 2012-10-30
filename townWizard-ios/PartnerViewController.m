@@ -37,7 +37,7 @@
         [self setMenuController:menuController];
         [[self menuController] setPartner:partner];
         [[self menuController] setDelegate:self];
-        
+           
         [self setSectionControllerFactory:[[SectionControllerFactory new] autorelease]];
         
         [self setDetailsController:detailsController];

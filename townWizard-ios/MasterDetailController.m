@@ -102,6 +102,7 @@
     
     [self.masterController viewWillAppear:NO];
     [self.masterView addSubview: self.masterController.view];
+    [[[self masterController] view] setFrame:[[self masterView] frame]];
     [self.masterController viewDidAppear:NO];
 
     self.detailView = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)] autorelease];

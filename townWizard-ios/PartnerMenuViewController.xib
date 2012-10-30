@@ -37,7 +37,7 @@
 			</object>
 			<object class="IBUIView" id="191373211">
 				<reference key="NSNextResponder"/>
-				<int key="NSvFlags">274</int>
+				<int key="NSvFlags">278</int>
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="IBUITableView" id="154415297">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -126,6 +126,7 @@
 										<string key="NSFrame">{{44, 134}, {216, 30}}</string>
 										<reference key="NSSuperview" ref="348515036"/>
 										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIClipsSubviews">YES</bool>
