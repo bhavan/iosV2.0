@@ -11,7 +11,7 @@
 #import "ActivityImageView.h"
 #import "SectionImageManager.h"
 
-static const CGFloat kTitleOffset = 10;
+static const CGFloat kTitleOffset = 45;
 
 @interface SectionCell ()
 @property (nonatomic, retain) Section *section;
@@ -45,8 +45,8 @@ static const CGFloat kTitleOffset = 10;
     [super layoutSubviews];
     
     CGRect titleFrame = [[self textLabel] frame];
-    titleFrame.origin.x = CGRectGetMaxX([sectionImage frame]) + kTitleOffset;
-    titleFrame.size.width = CGRectGetMinX([accessibilityIndicator frame]) - titleFrame.origin.x - kTitleOffset;
+    titleFrame.origin.x = kTitleOffset;
+    titleFrame.size.width = CGRectGetMinX([accessibilityIndicator frame]) - kTitleOffset;
     [[self textLabel] setFrame:titleFrame];
 }
 

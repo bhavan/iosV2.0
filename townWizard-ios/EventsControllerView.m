@@ -47,7 +47,7 @@
 
 - (UIImage *) butttonBackgroundImage
 {
-    UIImage *background = [UIImage imageNamed:@"button_Background"];
+    UIImage *background = [UIImage imageNamed:@"button_background"];
     CGFloat middleX = background.size.width / 2;
     UIEdgeInsets edgeInsets = UIEdgeInsetsMake(0, middleX, background.size.height, middleX);
     return [background resizableImageWithCapInsets:edgeInsets];

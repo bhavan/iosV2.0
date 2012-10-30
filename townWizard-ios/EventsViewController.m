@@ -12,6 +12,8 @@
 #import "EventsViewer.h"
 #import "EventSectionHeader.h"
 
+#import "UIView+Extensions.h"
+
 @interface EventsViewController () <UITableViewDataSource, UIAlertViewDelegate>
 @property (nonatomic, retain) NSArray *events;
 @end

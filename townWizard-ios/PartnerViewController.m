@@ -29,8 +29,6 @@
 
 - (id) initWithPartner:(Partner *)partner
 {
-    RKLogConfigureByName("RestKit/Network", RKLogLevelTrace);
-    
     PartnerMenuViewController *menuController = [[PartnerMenuViewController new] autorelease];
     UINavigationController *detailsController = [[[UINavigationController alloc] initWithNavigationBarClass:[TownWizardNavigationBar class]
                                                                                               toolbarClass:nil] autorelease];
@@ -44,12 +42,6 @@
         
         [self setDetailsController:detailsController];
         [[detailsController navigationItem] setHidesBackButton:YES];
-        
-        
-        
-        UIViewController *defaultController = [[self sectionControllerFactory] defaultController];
-        [detailsController setViewControllers:[NSArray arrayWithObject:defaultController]
-                                     animated:NO];        
         
         [[RequestHelper sharedInstance] setCurrentPartner:partner];
         [[RequestHelper sharedInstance] setCurrentSection:nil];
@@ -131,8 +123,8 @@
         
         UIViewController *controller = [[self sectionControllerFactory] sectionControllerForSection:section];
         [[self detailsController] setViewControllers:[NSArray arrayWithObject:controller] animated:NO];
-
         [(TownWizardNavigationBar *)[_detailsController navigationBar] updateTitleText:[section name]];
+        
         [[(id)controller navigationItem] setLeftBarButtonItem:[self menuButton]];
     }
 }

@@ -11,6 +11,7 @@
 @class TownWizardNavigationBar;
 @class Partner;
 @class Section;
+@class ActivityImageView;
 
 @protocol PartnerMenuDelegate <NSObject>
 @optional
@@ -24,6 +25,7 @@
     IBOutlet UIActivityIndicatorView *activityIndicator;
     IBOutlet UITableView *sectionsList;
     IBOutlet UITextField *searchField;
+    IBOutlet ActivityImageView *partnerLogo;
 }
 
 @property (nonatomic, retain) Partner * partner;

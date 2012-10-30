@@ -45,8 +45,8 @@
 
 - (NSString *) eventDateString
 {
-    NSString *startTimeString = [NSDate stringFromDate:[[self event] startTime] dateFormat:@"h:mma"];
-    NSString *endTimeString = [NSDate stringFromDate:[[self event] endTime] dateFormat:@"h:mma"];
+    NSString *startTimeString = [NSDate stringFromDate:[[self event] startTime] dateFormat:@"h:mma" localeIdentifier:@"en_US"];
+    NSString *endTimeString = [NSDate stringFromDate:[[self event] endTime] dateFormat:@"h:mma" localeIdentifier:@"en_US"];
     return [NSString stringWithFormat:@"%@-%@",startTimeString,endTimeString];
 }
 

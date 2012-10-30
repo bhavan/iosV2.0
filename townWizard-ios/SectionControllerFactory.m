@@ -19,7 +19,10 @@
 - (UIViewController *) sectionControllerForSection:(Section *) section
 {
     Class ControllerClass = [self controllerClassForSection:section];
-    return [[ControllerClass new] autorelease];
+    if (ControllerClass != [NSNull class]) {
+        return [[ControllerClass new] autorelease];
+    }
+    return [self defaultController];
 }
 
 - (Class) controllerClassForSection:(Section *) section

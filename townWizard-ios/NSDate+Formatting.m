@@ -41,8 +41,9 @@
              localeIdentifier:(NSString *) localeIdentifier;
 {
     NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:localeIdentifier];
-    NSDateFormatter *formatter = [NSDateFormatter dateFormatter];
+    NSDateFormatter *formatter = [NSDateFormatter dateFormatterWithDateFormat:dateFormat];
     [formatter setLocale:locale];
+    [locale release];
     return [formatter stringFromDate:date]; 
 }
 

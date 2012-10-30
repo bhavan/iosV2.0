@@ -15,6 +15,7 @@
 
 #import "EventSectionHeader.h"
 #import "SectionCell.h"
+#import "ActivityImageView.h"
 
 @interface PartnerMenuViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, retain, readwrite) NSArray *sections;
@@ -35,12 +36,19 @@
     else {
         [self loadPartnerSections];
     }
+    
+    NSString *imageURLString = [[self partner] headerImageUrl];
+    if (imageURLString && ![imageURLString isEqualToString:@""]) {
+        [partnerLogo setImageWithURL:[NSURL URLWithString:imageURLString]];
+    }
 }
 
 - (void)viewDidUnload
 {
     [sectionsList release]; sectionsList = nil;
     [activityIndicator release]; activityIndicator = nil;
+    [searchField release]; searchField = nil;
+    [partnerLogo release]; partnerLogo = nil;
     
     [super viewDidUnload];
 }
@@ -49,6 +57,8 @@
 {
     [activityIndicator release];
     [sectionsList release];
+    [searchField release];
+    [partnerLogo release];
     
     [self setSections:nil];
 
@@ -107,7 +117,7 @@
     
     [sectionsList reloadData];
     if ([_delegate respondsToSelector:@selector(sectionsUpdated:)]) {
-        [_delegate sectionsUpdated:sections];
+        [_delegate sectionsUpdated:[self sections]];
     }
 }
 

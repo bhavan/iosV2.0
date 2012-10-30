@@ -27,26 +27,14 @@ static SectionImageManager *sectionImageManager = nil;
 {
     if (self = [super init]) {
         images = [[NSMutableDictionary alloc] init];
-        
-        NSDictionary *predefinedImages = [self predefinedImages];
-        for (NSString *sectionName in [predefinedImages allKeys]) {
-            NSString *imagePath = [[NSBundle mainBundle] pathForResource:[predefinedImages objectForKey:sectionName]
-                                                                  ofType:@"png"];
-            [images setObject:imagePath forKey:sectionName];
-        }
     }
     return self;
 }
 
 - (UIImage *) imageForSection:(Section *) section
 {
-    NSString *imagePath = [images objectForKey:[section name]];
-    if (imagePath) {
-        NSData *imageData = [NSData dataWithContentsOfFile:imagePath];
-        return [UIImage imageWithData:imageData];
-    }
-    
-    return [images objectForKey:[section name]];
+    NSString *imageName = [[self predefinedImages] objectForKey:[section name]];
+    return [UIImage imageNamed:imageName];
 }
 
 - (NSDictionary *) predefinedImages
