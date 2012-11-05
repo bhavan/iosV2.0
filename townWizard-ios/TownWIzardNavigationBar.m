@@ -28,7 +28,7 @@ static const CGFloat kTWBarTitleFontSize = 18;
         
         self.titleLabel = [[[UILabel alloc] initWithFrame:CGRectZero] autorelease];
 
-        self.titleLabel.textColor = [UIColor darkGrayColor];
+        self.titleLabel.textColor = [UIColor blackColor];
         self.titleLabel.textAlignment = UITextAlignmentLeft;
         self.titleLabel.backgroundColor = [UIColor clearColor];
         self.titleLabel.font = [UIFont boldSystemFontOfSize:kTWBarTitleFontSize];
@@ -45,6 +45,15 @@ static const CGFloat kTWBarTitleFontSize = 18;
 }
 
 #pragma mark -
+#pragma mark drawing
+
+- (void) drawRect:(CGRect)rect
+{
+    UIImage *background = [UIImage imageNamed:@"navigation_bar_bg"];
+    [background drawInRect:[self bounds]];
+}
+
+#pragma mark -
 #pragma mark layout
 
 - (void) layoutSubviews
@@ -53,7 +62,7 @@ static const CGFloat kTWBarTitleFontSize = 18;
     
     CGRect titleFrame = [[self titleLabel] frame];
     CGFloat originY = roundf(([self bounds].size.height - [[[self titleLabel] font] pointSize]) / 2);
-    titleFrame.origin = CGPointMake(kTWBarOriginX, originY);
+    titleFrame.origin = CGPointMake(kTWBarOriginX, originY - 2);
     [[self titleLabel] setFrame:titleFrame];
 }
 

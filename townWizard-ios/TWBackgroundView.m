@@ -15,8 +15,8 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     NSArray* colors = @[
-        (id)[[UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:1] CGColor],
-        (id)[[UIColor colorWithRed:1. green:1. blue:1. alpha:1.] CGColor],
+        (id)[[UIColor colorWithRed:0.875 green:0.875 blue:0.875 alpha:1] CGColor],
+        (id)[[UIColor colorWithRed:0.977 green:0.977 blue:0.977 alpha:1.] CGColor],
     ];
     
     CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (CFArrayRef)colors, NULL);

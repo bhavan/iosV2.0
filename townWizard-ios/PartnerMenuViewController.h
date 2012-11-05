@@ -26,6 +26,8 @@
     IBOutlet UITableView *sectionsList;
     IBOutlet UITextField *searchField;
     IBOutlet ActivityImageView *partnerLogo;
+    
+    NSMutableDictionary *menu;
 }
 
 @property (nonatomic, retain) Partner * partner;

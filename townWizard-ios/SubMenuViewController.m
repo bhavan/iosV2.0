@@ -72,35 +72,48 @@
     self.forwardButton.enabled = NO;
     
   
-
-    
-    
-    
-    
-    NSString *loadingURLString = [NSString stringWithFormat:@"%@/%@?lat=%f&lon=%f",
-                                  [[[RequestHelper sharedInstance] currentPartner] webSiteUrl],
-                                  [[[RequestHelper sharedInstance] currentSection] url],
-                                  [AppDelegate sharedDelegate].doubleLatitude,
-                                  [AppDelegate sharedDelegate].doubleLongitude];
-    
-    
-    
-    
-    if([self townWizardServerReachable]) {
-        NSURL *aUrl = [NSURL URLWithString:loadingURLString];
-        [self.webView loadRequest:[NSURLRequest requestWithURL:aUrl]];
-    } else { // NO connection
-        [TestFlight passCheckpoint:@"No connection available while loading webView"];
-        UIAlertView *alertView = [[UIAlertView alloc] 
-                                  initWithTitle:NSLocalizedString(@"No connection available!", @"AlertView")
-                                  message:NSLocalizedString(@"Please connect to cellular network or Wi-Fi", @"AlertView")
-                                  delegate:self
-                                  cancelButtonTitle:NSLocalizedString(@"Cancel", @"AlertView")
-                                  otherButtonTitles:NSLocalizedString(@"Open settings", @"AlertView"), nil];
-        [alertView show];
-        [alertView release];
+    NSString *urlString;
+    Section *section = [[RequestHelper sharedInstance] currentSection];
+    if ([section url] != nil) {
+        urlString = [NSString stringWithFormat:@"%@%@",
+                     [[[RequestHelper sharedInstance] currentPartner] webSiteUrl],
+                     [section url]];
+    }
+    else {
+        urlString = @"http://www.townwizardoncontainerapp.com";
     }
     
+    [[self webView] loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]]];
+    
+    
+    
+    
+    
+    
+//    NSString *loadingURLString = [NSString stringWithFormat:@"%@/%@?lat=%f&lon=%f",
+//                                  [[[RequestHelper sharedInstance] currentPartner] webSiteUrl],
+//                                  [[[RequestHelper sharedInstance] currentSection] url],
+//                                  [AppDelegate sharedDelegate].doubleLatitude,
+//                                  [AppDelegate sharedDelegate].doubleLongitude];
+    
+    
+    
+    
+//    if([self townWizardServerReachable]) {
+//        NSURL *aUrl = [NSURL URLWithString:loadingURLString];
+//        [self.webView loadRequest:[NSURLRequest requestWithURL:aUrl]];
+//    } else { // NO connection
+//        [TestFlight passCheckpoint:@"No connection available while loading webView"];
+//        UIAlertView *alertView = [[UIAlertView alloc] 
+//                                  initWithTitle:NSLocalizedString(@"No connection available!", @"AlertView")
+//                                  message:NSLocalizedString(@"Please connect to cellular network or Wi-Fi", @"AlertView")
+//                                  delegate:self
+//                                  cancelButtonTitle:NSLocalizedString(@"Cancel", @"AlertView")
+//                                  otherButtonTitles:NSLocalizedString(@"Open settings", @"AlertView"), nil];
+//        [alertView show];
+//        [alertView release];
+//    }
+//    
 }
 
 

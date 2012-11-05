@@ -211,7 +211,7 @@
         [self.goButton setEnabled:YES];
         [self removeSpinnerFromButton:self.goButton];
         [self.goButton setTitle:@"GO" forState:UIControlStateNormal];
-        [[UIApplication sharedApplication] hideNetworkActivityIndicator];
+//        [[UIApplication sharedApplication] hideNetworkActivityIndicator];
         
     }
     

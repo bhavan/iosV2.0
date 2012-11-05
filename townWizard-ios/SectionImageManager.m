@@ -40,6 +40,8 @@ static SectionImageManager *sectionImageManager = nil;
 - (NSDictionary *) predefinedImages
 {
     return @{
+        @"Videos" : @"video",
+        @"Photos" : @"profile",
         @"News Feed" : @"news",
         @"Events" : @"events",
         @"Offers" : @"offer",

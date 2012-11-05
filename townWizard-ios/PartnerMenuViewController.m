@@ -18,13 +18,20 @@
 #import "ActivityImageView.h"
 
 @interface PartnerMenuViewController () <UITableViewDelegate, UITableViewDataSource>
-@property (nonatomic, retain, readwrite) NSArray *sections;
 @end
 
 @implementation PartnerMenuViewController
 
 #pragma mark -
 #pragma mark life cycle
+
+- (id) init
+{
+    if (self = [super init]) {
+        menu = [[NSMutableDictionary alloc] init];
+    }
+    return self;
+}
 
 - (void) viewDidLoad
 {
@@ -59,9 +66,8 @@
     [sectionsList release];
     [searchField release];
     [partnerLogo release];
+    [menu release];
     
-    [self setSections:nil];
-
     [super dealloc];
 }
 
@@ -109,15 +115,12 @@
 
 - (void) sectionsLoaded:(NSArray *) sections
 {
-//    [self setSections:sections];
-    NSMutableArray *loadedSections = [NSMutableArray array];
-    [loadedSections addObjectsFromArray:sections];
-    [loadedSections addObjectsFromArray:[self getPredefinedSections]];
-    [self setSections:loadedSections];
+    [menu setObject:sections forKey:@1];
+    [menu setObject:[self getPredefinedSections] forKey:@2];
     
     [sectionsList reloadData];
     if ([_delegate respondsToSelector:@selector(sectionsUpdated:)]) {
-        [_delegate sectionsUpdated:[self sections]];
+        [_delegate sectionsUpdated:sections];
     }
 }
 
@@ -135,12 +138,13 @@
 #pragma mark UITableviewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return [[menu allKeys] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[self sections] count];
+    id category = [[menu allKeys] objectAtIndex:section];
+    return [[menu objectForKey:category] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -151,7 +155,8 @@
         cell = [SectionCell loadFromXib];
     }
     
-    Section *section = [[self sections] objectAtIndex:indexPath.row];
+    NSString *category = [[menu allKeys] objectAtIndex:indexPath.section];
+    Section *section = [[menu objectForKey:category] objectAtIndex:indexPath.row];
     [cell updateWithSection:section];
     
     return cell;    
@@ -162,7 +167,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Section *section = [[self sections] objectAtIndex:indexPath.row];
+    id category = [[menu allKeys] objectAtIndex:indexPath.section];
+    Section *section = [[menu objectForKey:category] objectAtIndex:indexPath.row];
     if ([[self delegate] respondsToSelector:@selector(menuSectionTapped:)]) {
         [[self delegate] menuSectionTapped:section];
     }
@@ -172,7 +178,8 @@
 {
     CGRect headerFrame = CGRectMake(0, 0, [tableView frame].size.width, [tableView sectionHeaderHeight]);
     EventSectionHeader *header = [[EventSectionHeader alloc] initWithFrame:headerFrame];
-    [[header title] setText:@"CATEGORY HEADING"];
+    NSNumber *categoryIndex = [[menu allKeys] objectAtIndex:section];
+    [[header title] setText:[self categoryName:categoryIndex]];
     return header;
 
 }
@@ -204,24 +211,33 @@
 - (NSArray *) predefinedSectionsNames
 {
   return @[
-            @"News Feed",
-            @"Events",
-            @"Offers",
-            @"Nightlife",
-            @"Entertainment",
-            @"Town Dirrectory",
-            @"Your Profile",
-            @"Your Saved Items",
-            @"Settings & Preferences",
-            @"Best in Town Lists",
-            @"Talk of the Town Blog",
-            @"Ratings & Reviews",
-            @"Check-ins & Hotspots",
+//            @"News Feed",
+//            @"Events",
+//            @"Offers",
+//            @"Nightlife",
+//            @"Entertainment",
+//            @"Town Dirrectory",
+//            @"Your Profile",
+//            @"Your Saved Items",
+//            @"Settings & Preferences",
+//            @"Best in Town Lists",
+//            @"Talk of the Town Blog",
+//            @"Ratings & Reviews",
+//            @"Check-ins & Hotspots",
             @"Help & Support",
             @"About TownWizard",
             @"Advertise with TownWizard",
             @"Contact TownWizard"
         ];
+}
+
+- (NSString *) categoryName:(NSNumber *) categoryIndex
+{
+    switch ([categoryIndex intValue]) {
+        case 1: return @"Sections";
+        case 2: return @"Information";
+        default: return nil;
+    }
 }
 
 - (NSArray *) getPredefinedSections
