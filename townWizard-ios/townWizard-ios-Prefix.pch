@@ -16,7 +16,7 @@
 
 //#define SERVER_URL @"http://container.mlsdev.com/"//@"http://townwizard.com/api/v1/"
 #define SERVER_URL @"http://www.townwizardcontainerapp.com"
-#define API_URL @"http://container.mlsdev.com/apiv21/"
+#define API_URL @"http://www.townwizardcontainerapp.com/apiv21/" //@"http://container.mlsdev.com/apiv21/"
 
 //#define PARTNER_ID @"1"
 #define TOKEN_KEY @"X-ACCESS-TOKEN"

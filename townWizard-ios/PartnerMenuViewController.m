@@ -46,7 +46,7 @@
     
     NSString *imageURLString = [[self partner] headerImageUrl];
     if (imageURLString && ![imageURLString isEqualToString:@""]) {
-        [partnerLogo setImageWithURL:[NSURL URLWithString:imageURLString]];
+        [partnerLogo setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",SERVER_URL,self.partner.headerImageUrl]]];
     }
 }
 

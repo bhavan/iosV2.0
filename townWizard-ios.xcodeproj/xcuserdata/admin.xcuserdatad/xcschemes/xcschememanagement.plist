@@ -74,6 +74,11 @@
 			<key>orderHint</key>
 			<integer>10</integer>
 		</dict>
+		<key>grayton-cedar.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>13</integer>
+		</dict>
 		<key>hague.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -308,6 +313,11 @@
 			<true/>
 		</dict>
 		<key>D90D0DF1158F06500026828E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D9DBA404163820CA006AE83D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

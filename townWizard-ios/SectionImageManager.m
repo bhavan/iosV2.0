@@ -43,6 +43,8 @@ static SectionImageManager *sectionImageManager = nil;
         @"Videos" : @"video",
         @"Photos" : @"profile",
         @"News Feed" : @"news",
+        @"News" : @"news",
+        @"Restaurants" : @"restaurants",
         @"Events" : @"events",
         @"Offers" : @"offer",
         @"Nightlife" : @"nightlife",
