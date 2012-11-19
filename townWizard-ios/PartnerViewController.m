@@ -34,6 +34,7 @@
                                                                                               toolbarClass:nil] autorelease];
     
     if (self = [super initWithMasterViewController:menuController detailViewController:detailsController]) {
+        self.partner = partner;
         [self setMenuController:menuController];
         [[self menuController] setPartner:partner];
         [[self menuController] setDelegate:self];
@@ -73,17 +74,24 @@
 #pragma mark PartnerMenuDelegate methods
 
 - (void) sectionsUpdated:(NSArray *) sections
-{
-    for (Section *section in sections) {
-        if ([[section name] isEqualToString:@"News"]) {
-            [self displayControllerForSection:section];
-            return;
+{   
+    
+    if ([self.partner.name isEqualToString:DEFAULT_PARTNER_NAME]) {         
+         [self toggleMasterView];
+    }
+    else
+    {
+        for (Section *section in sections) {
+            if ([[section name] isEqualToString:@"News"]) {
+                [self displayControllerForSection:section];
+                return;
+            }
+        }
+        if ([sections count]) {
+            [self displayControllerForSection:[sections objectAtIndex:0]];
         }
     }
-
-    if ([sections count]) {
-        [self displayControllerForSection:[sections objectAtIndex:0]];
-    }    
+    
 }
 
 - (void) menuSectionTapped:(Section *) section

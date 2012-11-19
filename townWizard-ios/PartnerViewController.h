@@ -14,6 +14,6 @@
 
 - (id) initWithPartner:(Partner *) partner;
 
-@property (nonatomic, retain, readonly) Partner *partner;
+@property (nonatomic, retain) Partner *partner;
 
 @end
