@@ -11,7 +11,7 @@
 #import "FacebookHelper.h"
 #import "UIApplication+NetworkActivity.h"
 
-@class ViewController;
+@class SearchViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate,UIAlertViewDelegate> {
     NSString *phoneNumberToCall;

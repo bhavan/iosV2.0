@@ -52,11 +52,14 @@
 
 - (void)viewDidUnload
 {
-    [sectionsList release]; sectionsList = nil;
-    [activityIndicator release]; activityIndicator = nil;
-    [searchField release]; searchField = nil;
-    [partnerLogo release]; partnerLogo = nil;
-    
+    [sectionsList release];
+    sectionsList = nil;
+    [activityIndicator release];
+    activityIndicator = nil;
+    [searchField release];
+    searchField = nil;
+    [partnerLogo release];
+    partnerLogo = nil;
     [super viewDidUnload];
 }
 
@@ -66,8 +69,7 @@
     [sectionsList release];
     [searchField release];
     [partnerLogo release];
-    [menu release];
-    
+    [menu release];    
     [super dealloc];
 }
 
@@ -116,8 +118,10 @@
 - (void) sectionsLoaded:(NSArray *) sections
 {
     [menu setObject:sections forKey:@1];
-    [menu setObject:[self getPredefinedSections] forKey:@2];
-    
+    if(![self.partner.name isEqualToString:DEFAULT_PARTNER_NAME])
+    {
+        [menu setObject:[self getPredefinedSections] forKey:@2];
+    }
     [sectionsList reloadData];
     if ([_delegate respondsToSelector:@selector(sectionsUpdated:)]) {
         [_delegate sectionsUpdated:sections];

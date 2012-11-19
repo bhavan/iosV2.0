@@ -33,35 +33,39 @@ static SectionImageManager *sectionImageManager = nil;
 
 - (UIImage *) imageForSection:(Section *) section
 {
-    NSString *imageName = [[self predefinedImages] objectForKey:[section name]];
+    NSString *imageName = [[self predefinedImages] objectForKey:[[section name] lowercaseString]];
+    if(!imageName)
+    {
+       imageName = [[self predefinedImages] objectForKey:[[section displayName] lowercaseString]];
+    }
     return [UIImage imageNamed:imageName];
 }
 
 - (NSDictionary *) predefinedImages
 {
     return @{
-        @"Videos" : @"video",
-        @"Photos" : @"profile",
-        @"News Feed" : @"news",
-        @"News" : @"news",
-        @"Places" : @"towndirrectory",
-        @"Restaurants" : @"restaurants",
-        @"Events" : @"events",
-        @"Offers" : @"offer",
-        @"Nightlife" : @"nightlife",
-        @"Entertainment" : @"entertainment",
-        @"Town Dirrectory" : @"towndirrectory",
-        @"Your Profile" : @"profile",
-        @"Your Saved Items" : @"saved",
-        @"Settings & Preferences" : @"settings",
-        @"Best in Town Lists" : @"bestintown",
-        @"Talk of the Town Blog" : @"talk",
-        @"Ratings & Reviews" : @"ratings",
-        @"Check-ins & Hotspots" : @"checkins",
-        @"Help & Support" : @"help",
-        @"About TownWizard" : @"about",
-        @"Advertise with TownWizard" : @"advertise",
-        @"Contact TownWizard" : @"contacts"
+        @"videos" : @"video",
+        @"photos" : @"profile",
+        @"news feed" : @"news",
+        @"news" : @"news",
+        @"places" : @"towndirrectory",
+        @"restaurants" : @"restaurants",
+        @"events" : @"events",
+        @"offers" : @"offer",
+        @"nightlife" : @"nightlife",
+        @"entertainment" : @"entertainment",
+        @"town dirrectory" : @"towndirrectory",
+        @"your profile" : @"profile",
+        @"your saved items" : @"saved",
+        @"settings & preferences" : @"settings",
+        @"best in town lists" : @"bestintown",
+        @"talk of the town blog" : @"talk",
+        @"ratings & reviews" : @"ratings",
+        @"check-ins & hotspots" : @"checkins",
+        @"help & support" : @"help",
+        @"about townwizard" : @"about",
+        @"advertise with townwizard" : @"advertise",
+        @"contact townwizard" : @"contacts"
     };
 }
 

@@ -13,7 +13,7 @@
 @class TownWizardNavigationBar;
 @class Partner;
 
-@interface ViewController : UIViewController 
+@interface SearchViewController : UIViewController 
 <UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource,CLLocationManagerDelegate,
 PartnerMenuDelegate,SubMenuViewControllerDelegate,UIAlertViewDelegate, RKObjectLoaderDelegate>
 {
@@ -25,15 +25,18 @@ PartnerMenuDelegate,SubMenuViewControllerDelegate,UIAlertViewDelegate, RKObjectL
     UIImageView * logo;
     NSInteger nextOffset; // add offset to query to load more partners. ex: &offset=...
     BOOL loadingMorePartnersInProgress;
+    Partner *defaultPartner;
+    
 }
 - (IBAction) goButtonPressed:(id)sender;
 - (void) loadSectionMenuForPartnerWithPartner:(Partner *)partnerDict;
+
 @property (nonatomic, retain) NSMutableArray *partnersList;
-@property (retain, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (retain, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic,retain) IBOutlet UIImageView * logo;
-@property (nonatomic,retain) IBOutlet UIButton * goButton;
-@property (nonatomic,retain) NSString * currentSearchQuery;
+@property (nonatomic, retain) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (nonatomic, retain) IBOutlet UIImageView * logo;
+@property (nonatomic, retain) IBOutlet UIButton * goButton;
+@property (nonatomic, retain) NSString * currentSearchQuery;
 
 -(BOOL)townWizardServerReachable;
 -(IBAction)dismissKeyboardByTouchingEmptySpaceOnScreen:(id)sender;

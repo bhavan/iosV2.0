@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "SearchViewController.h"
 #import "RequestHelper.h"
 #import "Reachability.h"
 #import "SubMenuViewController.h"
@@ -20,11 +20,11 @@
 
 #import "PartnerViewController.h"
 
-@interface ViewController()
+@interface SearchViewController()
 @property (nonatomic,assign) BOOL doNotUseGeopositionSearchResults;
 @end
 
-@implementation ViewController
+@implementation SearchViewController
 @synthesize searchBar=_searchBar;
 @synthesize tableView;
 @synthesize logo;
@@ -53,7 +53,7 @@
 
 -(void)infoButtonPressed:(id)sender
 {
-    SubMenuViewController *subMenu = [SubMenuViewController new];   
+   /* SubMenuViewController *subMenu = [SubMenuViewController new];
     
     subMenu.delegate = self;
     subMenu.url = INFO_URL;
@@ -64,7 +64,11 @@
   //  [self hideBackgroundImageOfTheNavigationBar:subMenu.customNavigationBar];
   //  [self animateNavigationBarOnScreen:subMenu.customNavigationBar];
     
-    [subMenu release];
+    [subMenu release];*/
+    if(defaultPartner)
+    {
+     [self loadSectionMenuForPartnerWithPartner:defaultPartner];
+    }
 }
 
 #pragma mark - View lifecycle
@@ -89,6 +93,7 @@
     partnersList = [[NSMutableArray alloc] init];   
     doNotUseGeopositionSearchResults = NO;
     loadingMorePartnersInProgress = NO;
+    [self searchForPartnersWithQuery:DEFAULT_PARTNER_NAME];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -197,8 +202,13 @@
             
         }
         else if([[objects lastObject] isKindOfClass:[Partner class]]) {
-            
-            if(objects.count > 0 && loadingMorePartnersInProgress)
+            Partner *partner = [objects lastObject];
+            if(partner && [partner.name isEqualToString:@"TownWizardApps"])
+            {
+                defaultPartner = [partner retain];
+                
+            }
+            else if(objects.count > 0 && loadingMorePartnersInProgress)
             {
                 [partnersList addObjectsFromArray:objects];
                 loadingMorePartnersInProgress = NO;

@@ -75,20 +75,16 @@
     NSString *urlString;
     Section *section = [[RequestHelper sharedInstance] currentSection];
     if ([section url] != nil) {
-        urlString = [NSString stringWithFormat:@"%@%@",
+        urlString = [NSString stringWithFormat:@"%@/%@",
                      [[[RequestHelper sharedInstance] currentPartner] webSiteUrl],
                      [section url]];
     }
-    else {
+    else
+    {
         urlString = @"http://www.townwizardoncontainerapp.com";
     }
     
-    [[self webView] loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]]];
-    
-    
-    
-    
-    
+    [[self webView] loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]]];    
     
 //    NSString *loadingURLString = [NSString stringWithFormat:@"%@/%@?lat=%f&lon=%f",
 //                                  [[[RequestHelper sharedInstance] currentPartner] webSiteUrl],

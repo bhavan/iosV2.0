@@ -53,6 +53,8 @@ static const CGFloat kTitleOffset = 45;
 - (void) updateWithSection:(Section *) section
 {
     [self setSection:section];
+    [section setName:[[section name] stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"]];
+    [section setDisplayName:[[section displayName] stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"]];
     [[self textLabel] setText:[section displayName]];
     
     UIImage *image = [[SectionImageManager sharedInstance] imageForSection:section];

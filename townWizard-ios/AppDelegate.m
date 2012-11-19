@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "SearchViewController.h"
 
 
 #import <RestKit/RestKit.h>
@@ -82,8 +82,8 @@ static NSString* teamToken = @"5c115b5c0ce101b8b0367b329e68db27_MzE2NjMyMDExLTEx
 #ifdef CONTAINER_APP
     
     
-    rootController = [[[ViewController alloc] init] autorelease];
-    [[self manager] setDelegate:(ViewController *)rootController];
+    rootController = [[[SearchViewController alloc] init] autorelease];
+    [[self manager] setDelegate:(SearchViewController *)rootController];
 #else
     rootController = [[[PartnerMenuViewController alloc] init] autorelease];
 #endif
