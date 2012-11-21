@@ -67,7 +67,8 @@
     [subMenu release];*/
     if(defaultPartner)
     {
-     [self loadSectionMenuForPartnerWithPartner:defaultPartner];
+    //    [((MasterDetailController *)self.navigationController.parentViewController) toggleMasterView];
+        [self.masterDetail toggleMasterView];
     }
 }
 
@@ -203,9 +204,10 @@
         }
         else if([[objects lastObject] isKindOfClass:[Partner class]]) {
             Partner *partner = [objects lastObject];
-            if(partner && [partner.name isEqualToString:@"TownWizardApps"])
+            if(partner && [partner.name isEqualToString:DEFAULT_PARTNER_NAME])
             {
                 defaultPartner = [partner retain];
+                [self.defaultMenu updateWithPartner:defaultPartner];
                 
             }
             else if(objects.count > 0 && loadingMorePartnersInProgress)

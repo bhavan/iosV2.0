@@ -16,7 +16,7 @@
 
 //#define SERVER_URL @"http://container.mlsdev.com/"//@"http://townwizard.com/api/v1/"
 #define SERVER_URL @"http://www.townwizardcontainerapp.com"
-#define API_URL @"http://container.mlsdev.com/apiv21/"
+#define API_URL @"http://192.168.1.168/apiv21/"
 
 #define DEFAULT_PARTNER_NAME @"TownWizardApps"
 

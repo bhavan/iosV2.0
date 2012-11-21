@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "SearchViewController.h"
+#import "MasterDetailController.h"
 
 
 #import <RestKit/RestKit.h>
@@ -79,20 +80,20 @@ static NSString* teamToken = @"5c115b5c0ce101b8b0367b329e68db27_MzE2NjMyMDExLTEx
     
     UIViewController *rootController;
     _manager = [[CLLocationManager alloc] init];
-#ifdef CONTAINER_APP
-    
-    
+#ifdef CONTAINER_APP    
     rootController = [[[SearchViewController alloc] init] autorelease];
     [[self manager] setDelegate:(SearchViewController *)rootController];
 #else
     rootController = [[[PartnerMenuViewController alloc] init] autorelease];
 #endif
     
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:rootController];
-    self.viewController = navController;
-    [navController release];
-    
-    self.window.rootViewController = self.viewController;
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:rootController];   
+   // [navController release];
+    PartnerMenuViewController *menuController = [PartnerMenuViewController new];
+    ((SearchViewController *)rootController).defaultMenu = menuController;
+    self.window.rootViewController = [[[MasterDetailController alloc] initWithMasterViewController:menuController detailViewController:navController] autorelease];
+   //self.viewController = self.window.rootViewController;
+    ((SearchViewController *)rootController).masterDetail = (MasterDetailController *)self.window.rootViewController;
     [self.window makeKeyAndVisible];
     
 #if !RUN_KIF_TESTS

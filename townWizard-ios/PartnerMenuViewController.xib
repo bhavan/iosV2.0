@@ -52,6 +52,7 @@
 										<int key="NSvFlags">292</int>
 										<string key="NSFrame">{{145, 87}, {112, 37}}</string>
 										<reference key="NSSuperview" ref="348515036"/>
+										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="907244176"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<object class="NSColor" key="IBUIBackgroundColor" id="533685660">
@@ -92,6 +93,7 @@
 										<int key="NSvFlags">292</int>
 										<string key="NSFrame">{{23, 87}, {112, 37}}</string>
 										<reference key="NSSuperview" ref="348515036"/>
+										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="805868291"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<reference key="IBUIBackgroundColor" ref="533685660"/>
@@ -113,6 +115,7 @@
 										<int key="NSvFlags">-2147483356</int>
 										<string key="NSFrame">{{12, 133}, {257, 32}}</string>
 										<reference key="NSSuperview" ref="348515036"/>
+										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="893886061"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<bool key="IBUIUserInteractionEnabled">NO</bool>
@@ -127,6 +130,7 @@
 										<int key="NSvFlags">-2147483356</int>
 										<string key="NSFrame">{{44, 134}, {216, 30}}</string>
 										<reference key="NSSuperview" ref="348515036"/>
+										<reference key="NSWindow"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIClipsSubviews">YES</bool>
@@ -161,6 +165,7 @@
 										<int key="NSvFlags">292</int>
 										<string key="NSFrameSize">{280, 84}</string>
 										<reference key="NSSuperview" ref="348515036"/>
+										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="329149565"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<object class="NSColor" key="IBUIBackgroundColor">
@@ -176,6 +181,7 @@
 										<int key="NSvFlags">-2147483356</int>
 										<string key="NSFrame">{{214, 49}, {20, 20}}</string>
 										<reference key="NSSuperview" ref="348515036"/>
+										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="46065241"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<bool key="IBUIOpaque">NO</bool>
@@ -187,6 +193,7 @@
 										<int key="NSvFlags">292</int>
 										<string key="NSFrame">{{179, 10}, {91, 31}}</string>
 										<reference key="NSSuperview" ref="348515036"/>
+										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="811755209"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<bool key="IBUIUserInteractionEnabled">NO</bool>
@@ -199,6 +206,7 @@
 								</array>
 								<string key="NSFrameSize">{280, 129}</string>
 								<reference key="NSSuperview" ref="154415297"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="597729215"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="533685660"/>
@@ -207,6 +215,7 @@
 						</array>
 						<string key="NSFrameSize">{280, 460}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="348515036"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="533685660"/>
@@ -224,6 +233,7 @@
 				</array>
 				<string key="NSFrame">{{0, 20}, {280, 460}}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="154415297"/>
 				<reference key="IBUIBackgroundColor" ref="533685660"/>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
@@ -432,6 +442,17 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">PartnerMenuViewController</string>
 					<string key="superclassName">UIViewController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">changePartnerButtonPressed:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">changePartnerButtonPressed:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">changePartnerButtonPressed:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="activityIndicator">UIActivityIndicatorView</string>
 						<string key="partnerLogo">ActivityImageView</string>

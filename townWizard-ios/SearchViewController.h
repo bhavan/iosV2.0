@@ -10,6 +10,7 @@
 #import "PartnerMenuViewController.h"
 #import "SubMenuViewController.h"
 
+@class MasterDetailController;
 @class TownWizardNavigationBar;
 @class Partner;
 
@@ -19,7 +20,7 @@ PartnerMenuDelegate,SubMenuViewControllerDelegate,UIAlertViewDelegate, RKObjectL
 {
     NSMutableArray *partnersList;
     NSArray *selectedPartnerSections;
-    PartnerMenuViewController *selectedMenu;
+   
     UISearchBar *searchBar;
     UITableView *tableView;
     UIImageView * logo;
@@ -37,6 +38,8 @@ PartnerMenuDelegate,SubMenuViewControllerDelegate,UIAlertViewDelegate, RKObjectL
 @property (nonatomic, retain) IBOutlet UIImageView * logo;
 @property (nonatomic, retain) IBOutlet UIButton * goButton;
 @property (nonatomic, retain) NSString * currentSearchQuery;
+@property (nonatomic, retain) MasterDetailController *masterDetail;
+@property (nonatomic, retain)  PartnerMenuViewController *defaultMenu;
 
 -(BOOL)townWizardServerReachable;
 -(IBAction)dismissKeyboardByTouchingEmptySpaceOnScreen:(id)sender;

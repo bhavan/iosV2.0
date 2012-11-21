@@ -12,7 +12,7 @@
 #import "Section.h"
 
 #import "UIImageView+WebCache.h"
-
+#import "TWBackgroundView.h"
 #import "EventSectionHeader.h"
 #import "SectionCell.h"
 #import "ActivityImageView.h"
@@ -33,21 +33,42 @@
     return self;
 }
 
+
+
 - (void) viewDidLoad
 {
     [super viewDidLoad];
-    
+    CGRect bgFrame = self.view.frame;
+    bgFrame.origin = CGPointZero;
+     TWBackgroundView *backgroundView = [[TWBackgroundView alloc] initWithFrame:bgFrame];
+    [self.view insertSubview:backgroundView atIndex:0];
+    [backgroundView release];
     if ([self partner] == nil) {
         [self loadPartnerDetails];
     }
     else {
-        [self loadPartnerSections];
-    }
-    
+        [self updateWithPartner:self.partner];
+    }    
+}
+
+- (void) updateWithPartner:(Partner *)aPartner
+{
+    self.partner = aPartner;
+    [[RequestHelper sharedInstance] setCurrentPartner:aPartner];
+    [self loadPartnerSections];
     NSString *imageURLString = [[self partner] headerImageUrl];
-    if (imageURLString && ![imageURLString isEqualToString:@""]) {
+    if (imageURLString && ![imageURLString isEqualToString:@""])
+    {
         [partnerLogo setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",SERVER_URL,self.partner.headerImageUrl]]];
     }
+    
+    
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
 }
 
 - (void)viewDidUnload
@@ -69,7 +90,7 @@
     [sectionsList release];
     [searchField release];
     [partnerLogo release];
-    [menu release];    
+    [menu release];
     [super dealloc];
 }
 
@@ -163,7 +184,7 @@
     Section *section = [[menu objectForKey:category] objectAtIndex:indexPath.row];
     [cell updateWithSection:section];
     
-    return cell;    
+    return cell;
 }
 
 #pragma mark -
@@ -185,7 +206,7 @@
     NSNumber *categoryIndex = [[menu allKeys] objectAtIndex:section];
     [[header title] setText:[self categoryName:categoryIndex]];
     return header;
-
+    
 }
 
 #pragma mark -
@@ -214,25 +235,25 @@
 
 - (NSArray *) predefinedSectionsNames
 {
-  return @[
-//            @"News Feed",
-//            @"Events",
-//            @"Offers",
-//            @"Nightlife",
-//            @"Entertainment",
-//            @"Town Dirrectory",
-//            @"Your Profile",
-//            @"Your Saved Items",
-//            @"Settings & Preferences",
-//            @"Best in Town Lists",
-//            @"Talk of the Town Blog",
-//            @"Ratings & Reviews",
-//            @"Check-ins & Hotspots",
-            @"Help & Support",
-            @"About TownWizard",
-            @"Advertise with TownWizard",
-            @"Contact TownWizard"
-        ];
+    return @[
+    //            @"News Feed",
+    //            @"Events",
+    //            @"Offers",
+    //            @"Nightlife",
+    //            @"Entertainment",
+    //            @"Town Dirrectory",
+    //            @"Your Profile",
+    //            @"Your Saved Items",
+    //            @"Settings & Preferences",
+    //            @"Best in Town Lists",
+    //            @"Talk of the Town Blog",
+    //            @"Ratings & Reviews",
+    //            @"Check-ins & Hotspots",
+    @"Help & Support",
+    @"About TownWizard",
+    @"Advertise with TownWizard",
+    @"Contact TownWizard"
+    ];
 }
 
 - (NSString *) categoryName:(NSNumber *) categoryIndex

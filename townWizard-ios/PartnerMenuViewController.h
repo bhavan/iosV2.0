@@ -33,4 +33,6 @@
 @property (nonatomic, retain) Partner * partner;
 @property (nonatomic, assign) id<PartnerMenuDelegate> delegate;
 
+- (void) updateWithPartner:(Partner *)aPartner;
+
 @end
