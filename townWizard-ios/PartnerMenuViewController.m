@@ -138,11 +138,13 @@
 
 - (void) sectionsLoaded:(NSArray *) sections
 {
-    [menu setObject:sections forKey:@1];
+     [menu setObject:sections forKey:@1];
     if(![self.partner.name isEqualToString:DEFAULT_PARTNER_NAME])
     {
+       
         [menu setObject:[self getPredefinedSections] forKey:@2];
     }
+   
     [sectionsList reloadData];
     if ([_delegate respondsToSelector:@selector(sectionsUpdated:)]) {
         [_delegate sectionsUpdated:sections];
@@ -258,6 +260,10 @@
 
 - (NSString *) categoryName:(NSNumber *) categoryIndex
 {
+      if([self.partner.name isEqualToString:DEFAULT_PARTNER_NAME])
+      {
+          return @"Information";
+      }
     switch ([categoryIndex intValue]) {
         case 1: return @"Sections";
         case 2: return @"Information";

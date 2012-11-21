@@ -117,6 +117,36 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+
+- (void) menuSectionTapped:(Section *) section
+{
+    SubMenuViewController *subMenu = [SubMenuViewController new];
+    subMenu.section = section;
+    subMenu.partner = defaultPartner;
+    [self.navigationController popToRootViewControllerAnimated:NO];
+    [self.navigationController pushViewController:subMenu animated:YES];
+    subMenu.navigationItem.leftBarButtonItem = [self menuButton];
+    [self.masterDetail toggleMasterView];
+    [subMenu release];
+    
+}
+- (void) changePartnerButtonTapped
+{
+    [self.masterDetail toggleMasterView];
+    [self.navigationController popToRootViewControllerAnimated:NO];
+}
+
+- (UIBarButtonItem *) menuButton // refactoring!
+{
+    UIImage *menuButtonImage = [UIImage imageNamed:@"menu_button"];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setImage:menuButtonImage forState:UIControlStateNormal];
+    [button addTarget:self.masterDetail action:@selector(toggleMasterView) forControlEvents:UIControlEventTouchUpInside];
+    [button setFrame:CGRectMake(0, 0, menuButtonImage.size.width, menuButtonImage.size.height)];
+    return [[[UIBarButtonItem alloc] initWithCustomView:button] autorelease];
+}
+
+
 #pragma mark -
 #pragma mark Spinner methods
 

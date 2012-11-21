@@ -16,7 +16,7 @@
 
 @interface SearchViewController : UIViewController 
 <UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource,CLLocationManagerDelegate,
-PartnerMenuDelegate,SubMenuViewControllerDelegate,UIAlertViewDelegate, RKObjectLoaderDelegate>
+PartnerMenuDelegate,SubMenuViewControllerDelegate,UIAlertViewDelegate, RKObjectLoaderDelegate, PartnerMenuDelegate>
 {
     NSMutableArray *partnersList;
     NSArray *selectedPartnerSections;
@@ -29,6 +29,7 @@ PartnerMenuDelegate,SubMenuViewControllerDelegate,UIAlertViewDelegate, RKObjectL
     Partner *defaultPartner;
     
 }
+- (UIBarButtonItem *) menuButton;
 - (IBAction) goButtonPressed:(id)sender;
 - (void) loadSectionMenuForPartnerWithPartner:(Partner *)partnerDict;
 

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "SearchViewController.h"
 #import "MasterDetailController.h"
+#import "TownWIzardNavigationBar.h"
 
 
 #import <RestKit/RestKit.h>
@@ -86,10 +87,12 @@ static NSString* teamToken = @"5c115b5c0ce101b8b0367b329e68db27_MzE2NjMyMDExLTEx
 #else
     rootController = [[[PartnerMenuViewController alloc] init] autorelease];
 #endif
-    
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:rootController];   
+    UINavigationController *navController = [[UINavigationController alloc] initWithNavigationBarClass:[TownWizardNavigationBar class] toolbarClass:nil];
+    [navController pushViewController:rootController animated:NO];
+   
    // [navController release];
     PartnerMenuViewController *menuController = [PartnerMenuViewController new];
+    menuController.delegate = (SearchViewController *)rootController;
     ((SearchViewController *)rootController).defaultMenu = menuController;
     self.window.rootViewController = [[[MasterDetailController alloc] initWithMasterViewController:menuController detailViewController:navController] autorelease];
    //self.viewController = self.window.rootViewController;

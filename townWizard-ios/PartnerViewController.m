@@ -39,8 +39,7 @@
         [[self menuController] setPartner:partner];
         [[self menuController] setDelegate:self];
            
-        [self setSectionControllerFactory:[[SectionControllerFactory new] autorelease]];
-        
+        [self setSectionControllerFactory:[[SectionControllerFactory new] autorelease]];        
         [self setDetailsController:detailsController];
         [[detailsController navigationItem] setHidesBackButton:YES];
         
@@ -90,8 +89,7 @@
         if ([sections count]) {
             [self displayControllerForSection:[sections objectAtIndex:0]];
         }
-    }
-    
+    }    
 }
 
 - (void) menuSectionTapped:(Section *) section
