@@ -17,6 +17,8 @@
 #import "SectionCell.h"
 #import "ActivityImageView.h"
 
+#define ABOUT_SECTION_NAME @"About TownWizard"
+
 @interface PartnerMenuViewController () <UITableViewDelegate, UITableViewDataSource>
 @end
 
@@ -63,6 +65,24 @@
     }
     
     
+    
+}
+
+- (IBAction)aboutButtonPressed:(id)sender
+{
+    NSArray *infoSections = [menu objectForKey:@1];
+    for(Section *section in infoSections)
+    {
+        if([[section.displayName lowercaseString] isEqualToString:
+            [ABOUT_SECTION_NAME lowercaseString]])
+        {
+            if ([[self delegate] respondsToSelector:@selector(menuSectionTapped:)]) {
+                [[self delegate] menuSectionTapped:section];
+            }
+            break;
+            
+        }
+    }
     
 }
 

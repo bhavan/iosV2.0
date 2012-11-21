@@ -34,5 +34,6 @@
 @property (nonatomic, assign) id<PartnerMenuDelegate> delegate;
 
 - (void) updateWithPartner:(Partner *)aPartner;
+- (IBAction)aboutButtonPressed:(id)sender;
 
 @end
