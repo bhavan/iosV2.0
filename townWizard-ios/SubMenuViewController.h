@@ -18,33 +18,32 @@
 -(void)menuButtonPressed:(id)sender;
 @end
 
-@interface SubMenuViewController : UIViewController <UIWebViewDelegate,UIActionSheetDelegate,
-UIImagePickerControllerDelegate,UINavigationControllerDelegate,MFMailComposeViewControllerDelegate> {
+@interface SubMenuViewController : UIViewController
+<UIWebViewDelegate,
+UIActionSheetDelegate,
+UIImagePickerControllerDelegate,
+UINavigationControllerDelegate,
+MFMailComposeViewControllerDelegate>
 
-}
 
 
-@property (retain, nonatomic) IBOutlet UIWebView *webView;
 @property (nonatomic, retain) Partner *partner;
 @property (nonatomic, retain) NSString *url;
 @property (nonatomic, retain) Section * section;
 @property (nonatomic, retain) TownWizardNavigationBar * customNavigationBar;
-@property (retain, nonatomic) IBOutlet UIToolbar *bottomBar;
-
-@property (retain, nonatomic) IBOutlet UIBarButtonItem *backButton;
-@property (retain, nonatomic) IBOutlet UIBarButtonItem *forwardButton;
-@property (retain, nonatomic) IBOutlet UIActivityIndicatorView *webPageLoadingSpinner;
+@property (nonatomic, retain) IBOutlet UIToolbar *bottomBar;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *backButton;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *forwardButton;
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *webPageLoadingSpinner;
+@property (nonatomic, retain) IBOutlet UIWebView *webView;
 @property (nonatomic, assign)  id <SubMenuViewControllerDelegate> delegate;
 
-@property (nonatomic,retain) NSMutableArray *places;
-
-
--(BOOL)townWizardServerReachable;
-- (void)menuButtonPressed;
-
+- (void)showUploadTitle;
+- (void)showMapWithUrlComponents:(NSArray *)components;
 - (IBAction)goBackPressed:(id)sender;
 - (IBAction)goForwardPressed:(id)sender;
+- (void)fbUrlPressedWithComponents:(NSArray *)components;
+- (void)mailUrlPressedWithComponents:(NSArray *)components;
 
--(void)showUploadTitle;
 
 @end

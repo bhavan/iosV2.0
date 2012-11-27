@@ -18,13 +18,10 @@
 <UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource,CLLocationManagerDelegate,
 PartnerMenuDelegate,SubMenuViewControllerDelegate,UIAlertViewDelegate, RKObjectLoaderDelegate, PartnerMenuDelegate>
 {
-    NSMutableArray *partnersList;
+
     NSArray *selectedPartnerSections;
    
-    UISearchBar *searchBar;
-    UITableView *tableView;
-    UIImageView * logo;
-    NSInteger nextOffset; // add offset to query to load more partners. ex: &offset=...
+        NSInteger nextOffset; 
     BOOL loadingMorePartnersInProgress;
     Partner *defaultPartner;
     

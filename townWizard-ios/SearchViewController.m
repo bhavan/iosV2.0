@@ -25,13 +25,8 @@
 @end
 
 @implementation SearchViewController
-@synthesize searchBar=_searchBar;
-@synthesize tableView;
-@synthesize logo;
-@synthesize goButton=_goButton;
-@synthesize currentSearchQuery=_currentSearchQuery;
+
 @synthesize doNotUseGeopositionSearchResults;
-@synthesize partnersList;
 
 
 -(NSString *)currentSearchQuery {
@@ -91,7 +86,7 @@
     self.logo.frame = CGRectMake(0,0, LOGO_PORTRAIT_WIDTH, LOGO_PORTRAIT_HEIGHT);
     [self.view addSubview:self.logo];
     self.tableView.separatorColor = [UIColor colorWithRed:0.792 green:0.769 blue:0.678 alpha:1];    
-    partnersList = [[NSMutableArray alloc] init];   
+    self.partnersList = [[NSMutableArray alloc] init];
     doNotUseGeopositionSearchResults = NO;
     loadingMorePartnersInProgress = NO;
     [self searchForPartnersWithQuery:DEFAULT_PARTNER_NAME];
@@ -243,11 +238,11 @@
             }
             else if(objects.count > 0 && loadingMorePartnersInProgress)
             {
-                [partnersList addObjectsFromArray:objects];
+                [_partnersList addObjectsFromArray:objects];
                 loadingMorePartnersInProgress = NO;
             }
             else{
-                partnersList = [[NSMutableArray alloc]initWithArray:objects];
+                _partnersList = [[NSMutableArray alloc]initWithArray:objects];
             }            
         }
         [self.tableView reloadData];
@@ -287,7 +282,7 @@
     
     [RequestHelper partnersWithQuery:query offset:offset andDelegate:self];
     loadingMorePartnersInProgress = NO;
-    if ([partnersList count])
+    if ([_partnersList count])
     {
         loadingMorePartnersInProgress = YES;
     }
@@ -323,17 +318,17 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (![partnersList count]) return 0;
+    if (![_partnersList count]) return 0;
     
     if (section ==0) //Partners section
-        return [partnersList count];
+        return [_partnersList count];
     
     else return 1; // Load more section
 }
 
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        Partner *partner = [partnersList objectAtIndex:indexPath.row];
+        Partner *partner = [_partnersList objectAtIndex:indexPath.row];
         
         [self.searchBar resignFirstResponder];
         
@@ -401,7 +396,7 @@
                                            reuseIdentifier:CellIdentifier]
                     autorelease];
         }
-        Partner *partner = [partnersList objectAtIndex:indexPath.row];
+        Partner *partner = [_partnersList objectAtIndex:indexPath.row];
         cell.textLabel.text = partner.name;
     }
     
@@ -429,9 +424,9 @@
         [self addSpinnerToButton:self.goButton];
         [self.goButton setTitle:@"" forState:UIControlStateNormal];
         [self removeSpinnerFromCellAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
-        if([partnersList count] > 0)
+        if([_partnersList count] > 0)
         {
-            [partnersList removeAllObjects];
+            [_partnersList removeAllObjects];
             [self.tableView reloadData];
         }
         doNotUseGeopositionSearchResults = YES;
@@ -484,7 +479,7 @@
     [self setTableView:nil];
     [self setSearchBar:nil];
     [self setLogo:nil];
-    [partnersList release];
+    [_partnersList release];
     self.currentSearchQuery = nil;
     
     [[UIApplication sharedApplication] setActivityindicatorToZero];
