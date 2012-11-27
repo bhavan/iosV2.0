@@ -28,12 +28,14 @@
     [[self gridView] reloadData];
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
     [self setGridView:nil];
     [super dealloc];
 }
 
-- (void)viewDidUnload {
+- (void)viewDidUnload
+{
     [self setGridView:nil];
     [super viewDidUnload];
 }

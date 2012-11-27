@@ -32,12 +32,12 @@
 
 - (id) init
 {
-    if (self = [super init]) {
+    if (self = [super init])
+    {
         menu = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
-
 
 
 - (void) viewDidLoad
@@ -48,7 +48,8 @@
     TWBackgroundView *backgroundView = [[TWBackgroundView alloc] initWithFrame:bgFrame];
     [self.view insertSubview:backgroundView atIndex:0];
     [backgroundView release];
-    if ([self partner] == nil) {
+    if ([self partner] == nil)
+    {
         [self loadPartnerDetails];
     }
     else {
@@ -65,28 +66,24 @@
     if (imageURLString && ![imageURLString isEqualToString:@""])
     {
         [partnerLogo setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",SERVER_URL,self.partner.headerImageUrl]]];
-    }
-    
-    
-    
+    }    
 }
 
 - (IBAction)aboutButtonPressed:(id)sender
 {
-    NSArray *infoSections = [menu objectForKey:@1];
+    NSArray *infoSections = [menu objectForKey:@2];
     for(Section *section in infoSections)
     {
         if([[section.name lowercaseString] isEqualToString:
             [ABOUT_SECTION_NAME lowercaseString]])
         {
-            if ([[self delegate] respondsToSelector:@selector(menuSectionTapped:)]) {
+            if ([[self delegate] respondsToSelector:@selector(menuSectionTapped:)])
+            {
                 [[self delegate] menuSectionTapped:section];
             }
-            break;
-            
+            break;            
         }
-    }
-    
+    }    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -181,13 +178,7 @@
     if(information && information.count > 0)
     {
         [menu setObject:information forKey:@2];
-    }
-    /*if(![self.partner.name isEqualToString:DEFAULT_PARTNER_NAME])
-    {
-        
-        [menu setObject:[self getPredefinedSections] forKey:@2];
-    }*/
-    
+    }    
     [sectionsList reloadData];
     if ([_delegate respondsToSelector:@selector(sectionsUpdated:)]) {
         [_delegate sectionsUpdated:sections];
@@ -225,7 +216,8 @@
 #pragma mark -
 #pragma mark UITableviewDataSource
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return [[menu allKeys] count];
 }
 
@@ -239,7 +231,8 @@
 {
     static NSString *cellIdentifier = @"sectionCell";
     SectionCell *cell = (SectionCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if(cell == nil) {
+    if(cell == nil)
+    {
         cell = [SectionCell loadFromXib];
     }
     
@@ -257,7 +250,8 @@
 {
     id category = [[menu allKeys] objectAtIndex:indexPath.section];
     Section *section = [[menu objectForKey:category] objectAtIndex:indexPath.row];
-    if ([[self delegate] respondsToSelector:@selector(menuSectionTapped:)]) {
+    if ([[self delegate] respondsToSelector:@selector(menuSectionTapped:)])
+    {
         [[self delegate] menuSectionTapped:section];
     }
 }
@@ -277,7 +271,8 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    if ([textField isFirstResponder]) {
+    if ([textField isFirstResponder])
+    {
         [textField resignFirstResponder];
     }
     return YES;
@@ -322,7 +317,8 @@
 
 - (NSString *) categoryName:(NSNumber *) categoryIndex
 {
-    switch ([categoryIndex intValue]) {
+    switch ([categoryIndex intValue])
+    {
         case 1: return @"Sections";
         case 2: return @"Information";
         default: return nil;
@@ -333,7 +329,8 @@
 {
     NSArray *names = [self predefinedSectionsNames];
     NSMutableArray *sections = [NSMutableArray arrayWithCapacity:[names count]];
-    for (NSString *sectionName in names) {
+    for (NSString *sectionName in names)
+    {
         Section *section = [[Section alloc] init];
         [section setName:sectionName];
         [section setDisplayName:sectionName];

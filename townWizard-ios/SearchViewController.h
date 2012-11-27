@@ -15,16 +15,20 @@
 @class Partner;
 
 @interface SearchViewController : UIViewController 
-<UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource,CLLocationManagerDelegate,
-PartnerMenuDelegate,SubMenuViewControllerDelegate,UIAlertViewDelegate, RKObjectLoaderDelegate, PartnerMenuDelegate>
+<UISearchBarDelegate,
+UITableViewDelegate,
+UITableViewDataSource,
+CLLocationManagerDelegate,
+PartnerMenuDelegate,
+SubMenuViewControllerDelegate,
+UIAlertViewDelegate,
+RKObjectLoaderDelegate,
+PartnerMenuDelegate>
 {
-
-    NSArray *selectedPartnerSections;
-   
-        NSInteger nextOffset; 
+    NSArray *selectedPartnerSections;   
+    NSInteger nextOffset; 
     BOOL loadingMorePartnersInProgress;
-    Partner *defaultPartner;
-    
+    Partner *defaultPartner;    
 }
 - (UIBarButtonItem *) menuButton;
 - (IBAction) goButtonPressed:(id)sender;
@@ -37,12 +41,11 @@ PartnerMenuDelegate,SubMenuViewControllerDelegate,UIAlertViewDelegate, RKObjectL
 @property (nonatomic, retain) IBOutlet UIButton * goButton;
 @property (nonatomic, retain) NSString * currentSearchQuery;
 @property (nonatomic, retain) MasterDetailController *masterDetail;
-@property (nonatomic, retain)  PartnerMenuViewController *defaultMenu;
+@property (nonatomic, retain) PartnerMenuViewController *defaultMenu;
 
--(BOOL)townWizardServerReachable;
--(IBAction)dismissKeyboardByTouchingEmptySpaceOnScreen:(id)sender;
-
--(IBAction)infoButtonPressed:(id)sender;
+- (BOOL)townWizardServerReachable;
+- (IBAction)dismissKeyboardByTouchingEmptySpaceOnScreen:(id)sender;
+- (IBAction)infoButtonPressed:(id)sender;
 - (void) searchForPartnersWithQuery:(NSString *)query offset:(NSInteger)offset;
 
 
