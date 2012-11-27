@@ -126,9 +126,7 @@
     Section *currentSection = [[RequestHelper sharedInstance] currentSection];
     if (![currentSection isEqual:section]) {
         [[RequestHelper sharedInstance] setCurrentSection:section];
-        [section setName:[[section name] stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"]];
-        [section setDisplayName:[[section displayName] stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"]];
-        UIViewController *controller = [[self sectionControllerFactory] sectionControllerForSection:section];
+         UIViewController *controller = [[self sectionControllerFactory] sectionControllerForSection:section];
         [[self detailsController] setViewControllers:[NSArray arrayWithObject:controller] animated:NO];
         [(TownWizardNavigationBar *)[_detailsController navigationBar] updateTitleText:[section name]];        
         [[(id)controller navigationItem] setLeftBarButtonItem:[self menuButton]];

@@ -58,7 +58,7 @@ static const CGFloat kTitleOffset = 45;
     [[self textLabel] setText:[section displayName]];
     
     UIImage *image = [[SectionImageManager sharedInstance] imageForSection:section];
-    if (image == nil) {
+    if (image == nil && [section imageUrl]) {
         NSString *urlString = [[[RequestHelper sharedInstance] currentPartner] webSiteUrl];
         urlString = [urlString stringByAppendingString:[section imageUrl]];
         [sectionImage setImageWithURL:[NSURL URLWithString:urlString]];

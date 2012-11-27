@@ -17,7 +17,10 @@
 #import "SectionCell.h"
 #import "ActivityImageView.h"
 
-#define ABOUT_SECTION_NAME @"About TownWizard"
+#define ABOUT_SECTION_NAME @"about"
+#define HELP_SETCION_NAME @"help"
+#define ADVERTISE_SECTION_NAME @"advertise"
+#define CONTACTUS_SECTION_NAME @"aontact us"
 
 @interface PartnerMenuViewController () <UITableViewDelegate, UITableViewDataSource>
 @end
@@ -42,7 +45,7 @@
     [super viewDidLoad];
     CGRect bgFrame = self.view.frame;
     bgFrame.origin = CGPointZero;
-     TWBackgroundView *backgroundView = [[TWBackgroundView alloc] initWithFrame:bgFrame];
+    TWBackgroundView *backgroundView = [[TWBackgroundView alloc] initWithFrame:bgFrame];
     [self.view insertSubview:backgroundView atIndex:0];
     [backgroundView release];
     if ([self partner] == nil) {
@@ -50,7 +53,7 @@
     }
     else {
         [self updateWithPartner:self.partner];
-    }    
+    }
 }
 
 - (void) updateWithPartner:(Partner *)aPartner
@@ -73,7 +76,7 @@
     NSArray *infoSections = [menu objectForKey:@1];
     for(Section *section in infoSections)
     {
-        if([[section.displayName lowercaseString] isEqualToString:
+        if([[section.name lowercaseString] isEqualToString:
             [ABOUT_SECTION_NAME lowercaseString]])
         {
             if ([[self delegate] respondsToSelector:@selector(menuSectionTapped:)]) {
@@ -158,25 +161,63 @@
 
 - (void) sectionsLoaded:(NSArray *) sections
 {
-     [menu setObject:sections forKey:@1];
-    if(![self.partner.name isEqualToString:DEFAULT_PARTNER_NAME])
+    NSMutableArray *allSections = [NSMutableArray array];
+    NSMutableArray *information = [NSMutableArray array];
+    for(Section *aSection in sections)
     {
-       
-        [menu setObject:[self getPredefinedSections] forKey:@2];
+        if([self isInfoSection:aSection])
+        {
+            [information addObject:aSection];
+        }
+        else
+        {
+            [allSections addObject:aSection];
+        }
     }
-   
+    if(allSections && allSections.count > 0)
+    {
+        [menu setObject:allSections forKey:@1];
+    }
+    if(information && information.count > 0)
+    {
+        [menu setObject:information forKey:@2];
+    }
+    /*if(![self.partner.name isEqualToString:DEFAULT_PARTNER_NAME])
+    {
+        
+        [menu setObject:[self getPredefinedSections] forKey:@2];
+    }*/
+    
     [sectionsList reloadData];
     if ([_delegate respondsToSelector:@selector(sectionsUpdated:)]) {
         [_delegate sectionsUpdated:sections];
     }
 }
 
+- (BOOL)isInfoSection:(Section *)section
+{
+    NSString *lowerName = [section.name lowercaseString];
+    if([lowerName isEqualToString:ABOUT_SECTION_NAME] ||
+       [lowerName isEqualToString:HELP_SETCION_NAME] ||
+       [lowerName isEqualToString:ADVERTISE_SECTION_NAME] ||
+       [lowerName isEqualToString:CONTACTUS_SECTION_NAME])
+    {
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
+}
+
 #pragma mark -
 #pragma mark actions
 
+
 - (IBAction)changePartnerButtonPressed:(id)sender
 {
-    if ([[self delegate] respondsToSelector:@selector(changePartnerButtonTapped)]) {
+    if ([[self delegate] respondsToSelector:@selector(changePartnerButtonTapped)])
+    {
         [[self delegate] changePartnerButtonTapped];
     }
 }
@@ -247,7 +288,8 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    if ([searchField isFirstResponder]) {
+    if ([searchField isFirstResponder])
+    {
         [searchField resignFirstResponder];
     }
 }
@@ -280,10 +322,6 @@
 
 - (NSString *) categoryName:(NSNumber *) categoryIndex
 {
-      if([self.partner.name isEqualToString:DEFAULT_PARTNER_NAME])
-      {
-          return @"Information";
-      }
     switch ([categoryIndex intValue]) {
         case 1: return @"Sections";
         case 2: return @"Information";

@@ -35,5 +35,6 @@
 
 - (void) updateWithPartner:(Partner *)aPartner;
 - (IBAction)aboutButtonPressed:(id)sender;
+- (BOOL)isInfoSection:(Section *)section;
 
 @end

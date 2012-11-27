@@ -62,10 +62,10 @@ static SectionImageManager *sectionImageManager = nil;
         @"talk of the town blog" : @"talk",
         @"ratings & reviews" : @"ratings",
         @"check-ins & hotspots" : @"checkins",
-        @"help & support" : @"help",
-        @"about townwizard" : @"about",
-        @"advertise with townwizard" : @"advertise",
-        @"contact townwizard" : @"contacts"
+        @"help" : @"help",
+        @"about" : @"about",
+        @"advertise" : @"advertise",
+        @"contact us" : @"contacts"
     };
 }
 

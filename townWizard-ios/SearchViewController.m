@@ -120,12 +120,13 @@
 
 - (void) menuSectionTapped:(Section *) section
 {
-    SubMenuViewController *subMenu = [SubMenuViewController new];
-    subMenu.section = section;
+    [[RequestHelper sharedInstance] setCurrentSection:section];
+    SubMenuViewController *subMenu = [SubMenuViewController new];    
     subMenu.partner = defaultPartner;
     [self.navigationController popToRootViewControllerAnimated:NO];
     [self.navigationController pushViewController:subMenu animated:YES];
     subMenu.navigationItem.leftBarButtonItem = [self menuButton];
+      [(TownWizardNavigationBar *)[self.navigationController navigationBar] updateTitleText:[section name]];
     [self.masterDetail toggleMasterView];
     [subMenu release];
     
