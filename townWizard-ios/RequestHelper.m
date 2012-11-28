@@ -212,7 +212,7 @@ static RequestHelper *requestHelper = nil;
     RKObjectManager *objectManager = [self currentObjectManager];
     [[objectManager mappingProvider] setObjectMapping:[[MappingManager sharedInstance] eventsMapping]
                                            forKeyPath:@"data"];
-    [objectManager loadObjectsAtResourcePath:resorcePath
+    [objectManager loadObjectsAtResourcePath:[NSString stringWithFormat:@"%@", resorcePath]
                                   usingBlock:block];
 }
 

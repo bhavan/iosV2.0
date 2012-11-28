@@ -15,7 +15,7 @@
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSString *categoryName;
 @property (nonatomic, retain) Location *location;
-@property (nonatomic, assign) BOOL featured;
+@property (nonatomic, assign) NSNumber *featured;
 @property (nonatomic, retain) NSString *details;
 @property (nonatomic, retain) NSURL *imageURL;
 @property (nonatomic, retain) NSDate *startTime;
