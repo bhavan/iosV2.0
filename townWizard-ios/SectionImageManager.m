@@ -62,9 +62,9 @@ static SectionImageManager *sectionImageManager = nil;
         @"talk of the town blog" : @"talk",
         @"ratings & reviews" : @"ratings",
         @"check-ins & hotspots" : @"checkins",
-        @"help" : @"help",
-        @"about" : @"about",
-        @"advertise" : @"advertise",
+        @"help & support" : @"help",
+        @"about us" : @"about",
+        @"advertise with us" : @"advertise",
         @"contact us" : @"contacts"
     };
 }

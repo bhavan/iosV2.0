@@ -86,7 +86,7 @@
 
 - (void)gridView:(AQGridView *) gridView didSelectItemAtIndex: (NSUInteger) index
 {
-    [self displayPhotoBrowserWithInitialPageIndex:index];
+    [self displayPhotoBrowserWithInitialPageIndex:index];    
 }
 
 
@@ -96,7 +96,6 @@
 - (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser
 {
     return [[self photos] count];
- 
 }
 
 - (MWPhoto *)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index
@@ -106,7 +105,6 @@
     [browserPhoto setCaption:[photoObject name]];
     return browserPhoto;
 }
-
 
 #pragma mark -
 #pragma mark helpers

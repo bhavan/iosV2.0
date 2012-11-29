@@ -39,8 +39,7 @@ static MappingManager *mappingManager = nil;
     [mapping mapKeyPath:@"start_time" toAttribute:@"startTime"];
     [mapping mapKeyPath:@"end_time" toAttribute:@"endTime"];
     [mapping mapRelationship:@"location" withMapping:[self locationMapping]];
-    [mapping setDateFormatters:[NSArray arrayWithObject:[self dateFormatter]]];
-    
+    [mapping setDateFormatters:[NSArray arrayWithObject:[self dateFormatter]]];    
     return mapping;
 }
 

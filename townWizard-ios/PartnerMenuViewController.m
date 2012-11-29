@@ -17,10 +17,10 @@
 #import "SectionCell.h"
 #import "ActivityImageView.h"
 
-#define ABOUT_SECTION_NAME @"about"
-#define HELP_SETCION_NAME @"help"
-#define ADVERTISE_SECTION_NAME @"advertise"
-#define CONTACTUS_SECTION_NAME @"aontact us"
+#define ABOUT_SECTION_NAME @"about us"
+#define HELP_SETCION_NAME @"help & support"
+#define ADVERTISE_SECTION_NAME @"advertise with us"
+#define CONTACTUS_SECTION_NAME @"contact us"
 
 @interface PartnerMenuViewController () <UITableViewDelegate, UITableViewDataSource>
 @end
@@ -187,7 +187,9 @@
 
 - (BOOL)isInfoSection:(Section *)section
 {
+    section.name = [section.name stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
     NSString *lowerName = [section.name lowercaseString];
+    lowerName = [lowerName stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
     if([lowerName isEqualToString:ABOUT_SECTION_NAME] ||
        [lowerName isEqualToString:HELP_SETCION_NAME] ||
        [lowerName isEqualToString:ADVERTISE_SECTION_NAME] ||
