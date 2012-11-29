@@ -16,4 +16,6 @@
     IBOutlet UITableView *eventsList;
 }
 
+- (void) loadTodayEvents;
+
 @end

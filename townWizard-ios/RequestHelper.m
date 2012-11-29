@@ -201,6 +201,17 @@ static RequestHelper *requestHelper = nil;
     [self loadEventsAtResourcePath:[[self currentSection] url] usingBlock:block];
 }
 
+- (void) loadEventsWithDate:(NSDate *)date UsingBlock:(void(^)(RKObjectLoader *)) block
+{
+      NSDateFormatter *dateFormat = [NSDateFormatter new];
+    [dateFormat setDateFormat:@"YYYY-MM-dd"];
+    NSString *strDate = [dateFormat stringFromDate:date];
+    NSString *resourcePath = [NSString stringWithFormat:@"%@?from=%@&to=%@",[[self currentSection] url],strDate, strDate];
+    [dateFormat release];
+
+    [self loadEventsAtResourcePath:resourcePath usingBlock:block];
+}
+
 - (void) loadFeaturedEventUsingBlock:(void(^)(RKObjectLoader *)) block
 {
     NSString *resourcePath = [NSString stringWithFormat:@"%@?featured=1",[[self currentSection] url]];

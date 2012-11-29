@@ -55,7 +55,7 @@
 
 - (void) loadEventsUsingBlock:(void(^)(RKObjectLoader *)) block;
 - (void) loadFeaturedEventUsingBlock:(void(^)(RKObjectLoader *)) block;
-
+- (void) loadEventsWithDate:(NSDate *)date UsingBlock:(void(^)(RKObjectLoader *)) block;
 - (void) loadPartnerDetails:(NSString *) partnerID usingBlock:(void(^)(RKObjectLoader *)) block;
 - (void) loadSectionsUsingBlock:(void(^)(RKObjectLoader *)) block;
 

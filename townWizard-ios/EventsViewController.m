@@ -37,7 +37,7 @@ static const NSInteger kEventsAlertTag = 700;
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self loadAllEvents];
+    [self loadTodayEvents];
     [self loadFeaturedEvents];
 }
 
@@ -85,6 +85,19 @@ static const NSInteger kEventsAlertTag = 700;
     }];
 }
 
+- (void) loadTodayEvents
+{
+    [[RequestHelper sharedInstance] loadEventsWithDate:[NSDate date] UsingBlock:^(RKObjectLoader *loader) {
+        [loader setOnDidLoadObjects:^(NSArray *objects){
+            [self eventsLoaded:objects];
+        }];
+        [loader setOnDidFailWithError:^(NSError *error){
+            [self eventsLoadingFailed:error];
+        }];
+    }];
+    
+}
+
 #pragma mark -
 #pragma mark events loading callback methods
 
@@ -110,7 +123,7 @@ static const NSInteger kEventsAlertTag = 700;
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if ([alertView tag] == kEventsAlertTag) {
-        [self loadAllEvents];
+        [self loadTodayEvents];
     }
 }
 
@@ -155,7 +168,11 @@ static const NSInteger kEventsAlertTag = 700;
 {
     CGRect headerFrame = CGRectMake(0, 0, [tableView frame].size.width, [tableView sectionHeaderHeight]);
     EventSectionHeader *header = [[EventSectionHeader alloc] initWithFrame:headerFrame];
-    [[header title] setText:@"MONDAY 02 FEB"];
+    NSDateFormatter *dateFormat = [NSDateFormatter new];
+    [dateFormat setDateFormat:@"EEEE dd LLL"];
+    NSString *strDate = [[dateFormat stringFromDate:[NSDate date]] uppercaseString];
+    [dateFormat release];
+    [[header title] setText:strDate];
     return header;
 }
 
