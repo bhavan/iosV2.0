@@ -52,7 +52,7 @@
 - (void) loadVideosWithDelegate:(id<RKObjectLoaderDelegate>) delegate;
 - (void) loadPhotoCategoriesWithDelegate:(id<RKObjectLoaderDelegate>) delegate;
 - (void) loadPhotosFromCategory:(PhotoCategory *) category delegate:(id<RKObjectLoaderDelegate>) delegate;
-
+- (void)loadEventsCategoriesUsingBlock:(void(^)(RKObjectLoader *)) block;
 - (void) loadEventsUsingBlock:(void(^)(RKObjectLoader *)) block;
 - (void) loadFeaturedEventUsingBlock:(void(^)(RKObjectLoader *)) block;
 - (void) loadEventsWithDate:(NSDate *)date UsingBlock:(void(^)(RKObjectLoader *)) block;

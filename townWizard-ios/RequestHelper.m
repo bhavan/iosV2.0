@@ -14,7 +14,7 @@
 #import "PhotoCategory.h"
 #import <CommonCrypto/CommonDigest.h>
 #import "Video.h"
-
+#import "Event.h"
 #import "MappingManager.h"
 
 #define REQUEST_TIMEOUT 30
@@ -210,6 +210,15 @@ static RequestHelper *requestHelper = nil;
     [dateFormat release];
 
     [self loadEventsAtResourcePath:resourcePath usingBlock:block];
+}
+
+- (void)loadEventsCategoriesUsingBlock:(void(^)(RKObjectLoader *)) block
+{
+    RKObjectManager *objectManager = [self currentObjectManager];
+    [[objectManager mappingProvider] setObjectMapping:[[MappingManager sharedInstance] eventCategoriesMapping] forKeyPath:@""];
+    NSString *resourcePath = [NSString stringWithFormat:@"%@/event_category.php",[[self currentSection] url]];
+    [objectManager loadObjectsAtResourcePath:resourcePath usingBlock:block];
+
 }
 
 - (void) loadFeaturedEventUsingBlock:(void(^)(RKObjectLoader *)) block

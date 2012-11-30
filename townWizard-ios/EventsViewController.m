@@ -7,15 +7,20 @@
 //
 
 #import "EventsViewController.h"
-
+#import "EventsControllerView.h"
 #import "EventCell.h"
 #import "EventsViewer.h"
 #import "EventSectionHeader.h"
+#import "EventCategory.h"
+#import "InputBar.h"
 
 #import "UIView+Extensions.h"
 
+#define ALL_EVENTS_TEXT @"All Events"
+
 @interface EventsViewController () <UITableViewDataSource, UIAlertViewDelegate>
 @property (nonatomic, retain) NSArray *events;
+@property (nonatomic, retain) NSArray *allEvents;
 @end
 
 static const NSInteger kEventsAlertTag = 700;
@@ -38,6 +43,7 @@ static const NSInteger kEventsAlertTag = 700;
 {
     [super viewWillAppear:animated];
     [self loadTodayEvents];
+    [self loadEventsCategories];
     [self loadFeaturedEvents];
 }
 
@@ -49,13 +55,26 @@ static const NSInteger kEventsAlertTag = 700;
 - (void)dealloc {
     [featuredEventsViewer release];
     [eventsList release];
+    [_eventsTypeButton release];
     [super dealloc];
 }
 
 - (void)viewDidUnload {
-    [featuredEventsViewer release]; featuredEventsViewer = nil;
-    [eventsList release]; eventsList = nil;
+    [featuredEventsViewer release];
+    featuredEventsViewer = nil;
+    [eventsList release];
+    eventsList = nil;
+    [self setEventsTypeButton:nil];
     [super viewDidUnload];
+}
+
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    currentCategory = -1;
+    [self.eventsTypeButton setTitle:ALL_EVENTS_TEXT forState:UIControlStateNormal];
 }
 
 #pragma mark -
@@ -74,13 +93,25 @@ static const NSInteger kEventsAlertTag = 700;
 }
 
 - (void) loadAllEvents
-{    
+{
     [[RequestHelper sharedInstance] loadEventsUsingBlock:^(RKObjectLoader *loader) {
         [loader setOnDidLoadObjects:^(NSArray *objects){
             [self eventsLoaded:objects];
         }];
         [loader setOnDidFailWithError:^(NSError *error){
             [self eventsLoadingFailed:error];
+        }];
+    }];
+}
+
+- (void) loadEventsCategories
+{
+    [[RequestHelper sharedInstance] loadEventsCategoriesUsingBlock:^(RKObjectLoader *loader) {
+        [loader setOnDidLoadObjects:^(NSArray *objects){
+            [self categoriesLoaded:objects];
+        }];
+        [loader setOnDidFailWithError:^(NSError *error){
+            // [self eventsLoadingFailed:error];
         }];
     }];
 }
@@ -98,6 +129,93 @@ static const NSInteger kEventsAlertTag = 700;
     
 }
 
+- (IBAction)categoriesButtonPressed:(id)sender {
+    // if(_categotiesList.count > 0)
+    // {
+    InputBar *actionSheet = [[InputBar alloc] initWithTitle:@"\n\n\n\n\n\n\n\n\n\n\n\n" delegate:self cancelButtonTitle:@"OK" destructiveButtonTitle:nil otherButtonTitles: nil];
+    [actionSheet initWithDelegate:self andPickerValue:currentCategory+1];
+    [actionSheet showInView:[self.view window]];
+    //  }
+}
+
+- (void)filterEventsByCategory
+{
+    if(currentCategory == -1)
+    {
+        self.events = self.allEvents;
+    }
+    else
+    {
+         EventCategory *category = [self.categotiesList objectAtIndex:currentCategory];
+        NSPredicate *pred = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"(categoryName == '%@')", category.title]];
+        
+        self.events = [self.allEvents filteredArrayUsingPredicate:pred];
+    }
+     [eventsList reloadData];
+    
+}
+
+- (IBAction)dateSelectButtonPressed:(id)sender
+{
+    
+}
+
+#pragma mark -
+#pragma mark UIPickerView Delegate/Datasource methods
+
+- (void)actionSheet:(UIActionSheet *)aActionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *title = ALL_EVENTS_TEXT;
+    if(currentCategory >= 0)
+    {
+    EventCategory *category = [self.categotiesList objectAtIndex:currentCategory];
+        title = category.title;
+    }
+    [self.eventsTypeButton setTitle:title forState:UIControlStateNormal];
+    [self filterEventsByCategory];
+}
+
+
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    if(self.categotiesList)
+    {
+        return self.categotiesList.count+1;
+    }
+    return 0;
+}
+
+- (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    if(row == 0)
+    {
+        return ALL_EVENTS_TEXT;
+    }
+    else
+    {
+        EventCategory *category = [self.categotiesList objectAtIndex:row-1];
+        return category.title;
+    }
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    if(row == 0)
+    {
+        currentCategory = -1;
+    }
+    else
+    {
+        currentCategory = row-1;
+    }
+}
+
 #pragma mark -
 #pragma mark events loading callback methods
 
@@ -113,8 +231,13 @@ static const NSInteger kEventsAlertTag = 700;
 
 - (void) eventsLoaded:(NSArray *) events
 {
-    [self setEvents:events];
-    [eventsList reloadData];
+    [self setAllEvents:events];
+    [self filterEventsByCategory];
+}
+
+- (void) categoriesLoaded:(NSArray *)categories
+{
+    [self setCategotiesList:categories];
 }
 
 #pragma mark -

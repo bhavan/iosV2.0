@@ -10,12 +10,22 @@
 
 @class EventsViewer;
 
-@interface EventsViewController : UIViewController {
+
+@interface EventsViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UIActionSheetDelegate> {
     
     IBOutlet EventsViewer *featuredEventsViewer;
     IBOutlet UITableView *eventsList;
+    
+    
+    NSInteger currentCategory;
 }
 
+@property (nonatomic, retain) NSArray *categotiesList;
+@property (retain, nonatomic) IBOutlet UIButton *eventsTypeButton;
+
 - (void) loadTodayEvents;
+- (void)filterEventsByCategory;
+- (IBAction)categoriesButtonPressed:(id)sender;
+- (IBAction)dateSelectButtonPressed:(id)sender;
 
 @end

@@ -12,6 +12,7 @@
 #import "Location.h"
 #import "Partner.h"
 #import "Section.h"
+#import "EventCategory.h"
 
 static MappingManager *mappingManager = nil;
 
@@ -40,6 +41,14 @@ static MappingManager *mappingManager = nil;
     [mapping mapKeyPath:@"end_time" toAttribute:@"endTime"];
     [mapping mapRelationship:@"location" withMapping:[self locationMapping]];
     [mapping setDateFormatters:[NSArray arrayWithObject:[self dateFormatter]]];    
+    return mapping;
+}
+
+- (RKObjectMapping *) eventCategoriesMapping
+{
+    RKObjectMapping * mapping = [RKObjectMapping mappingForClass:[EventCategory class]];
+    [mapping mapKeyPath:@"id" toAttribute:@"categoryId"];
+    [mapping mapKeyPath:@"title" toAttribute:@"title"];
     return mapping;
 }
 
