@@ -70,6 +70,10 @@
     {
         urlString = @"http://www.townwizardoncontainerapp.com";
     }
+    urlString = [urlString stringByAppendingFormat:@"?&lat=%f&lon=%f",
+                   [AppDelegate sharedDelegate].doubleLatitude,
+                   [AppDelegate sharedDelegate].doubleLongitude];
+
     [[self webView] loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]]];
 }
 
