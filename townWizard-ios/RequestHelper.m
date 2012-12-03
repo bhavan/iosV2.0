@@ -201,12 +201,13 @@ static RequestHelper *requestHelper = nil;
     [self loadEventsAtResourcePath:[[self currentSection] url] usingBlock:block];
 }
 
-- (void) loadEventsWithDate:(NSDate *)date UsingBlock:(void(^)(RKObjectLoader *)) block
+- (void) loadEventsWithDatePeriod:(NSDate *)startDate end:(NSDate *)endDate UsingBlock:(void(^)(RKObjectLoader *)) block
 {
       NSDateFormatter *dateFormat = [NSDateFormatter new];
     [dateFormat setDateFormat:@"YYYY-MM-dd"];
-    NSString *strDate = [dateFormat stringFromDate:date];
-    NSString *resourcePath = [NSString stringWithFormat:@"%@?from=%@&to=%@",[[self currentSection] url],strDate, strDate];
+    NSString *start = [dateFormat stringFromDate:startDate];
+      NSString *end = [dateFormat stringFromDate:endDate];
+    NSString *resourcePath = [NSString stringWithFormat:@"%@?from=%@&to=%@",[[self currentSection] url],start, end];
     [dateFormat release];
 
     [self loadEventsAtResourcePath:resourcePath usingBlock:block];

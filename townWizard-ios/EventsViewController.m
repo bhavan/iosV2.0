@@ -13,14 +13,16 @@
 #import "EventSectionHeader.h"
 #import "EventCategory.h"
 #import "InputBar.h"
+#import "PMCalendar.h"
 
 #import "UIView+Extensions.h"
 
 #define ALL_EVENTS_TEXT @"All Events"
 
-@interface EventsViewController () <UITableViewDataSource, UIAlertViewDelegate>
+@interface EventsViewController () <UITableViewDataSource, UIAlertViewDelegate, PMCalendarControllerDelegate>
 @property (nonatomic, retain) NSArray *events;
 @property (nonatomic, retain) NSArray *allEvents;
+@property (nonatomic, strong) PMCalendarController *calendar;
 @end
 
 static const NSInteger kEventsAlertTag = 700;
@@ -44,7 +46,8 @@ static const NSInteger kEventsAlertTag = 700;
     [super viewWillAppear:animated];
     [self loadTodayEvents];
     [self loadEventsCategories];
-    [self loadFeaturedEvents];
+#warning Set features count to 5
+    //[self loadFeaturedEvents];
 }
 
 - (void) viewWillDisappear:(BOOL)animated
@@ -56,6 +59,7 @@ static const NSInteger kEventsAlertTag = 700;
     [featuredEventsViewer release];
     [eventsList release];
     [_eventsTypeButton release];
+    [_calendarButton release];
     [super dealloc];
 }
 
@@ -65,6 +69,7 @@ static const NSInteger kEventsAlertTag = 700;
     [eventsList release];
     eventsList = nil;
     [self setEventsTypeButton:nil];
+    [self setCalendarButton:nil];
     [super viewDidUnload];
 }
 
@@ -72,9 +77,12 @@ static const NSInteger kEventsAlertTag = 700;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+        self.calendar = [[PMCalendarController alloc] initWithThemeName:@"apple calendar"];
+    self.calendar.delegate = self;
+    self.calendar.mondayFirstDayOfWeek = NO;
     currentCategory = -1;
     [self.eventsTypeButton setTitle:ALL_EVENTS_TEXT forState:UIControlStateNormal];
+    [self.calendarButton setTitle:@"TODAY" forState:UIControlStateNormal];
 }
 
 #pragma mark -
@@ -118,7 +126,13 @@ static const NSInteger kEventsAlertTag = 700;
 
 - (void) loadTodayEvents
 {
-    [[RequestHelper sharedInstance] loadEventsWithDate:[NSDate date] UsingBlock:^(RKObjectLoader *loader) {
+    [self loadEventsWithDatePeriod:[NSDate date] endDate:[NSDate date]];
+}
+
+- (void)loadEventsWithDatePeriod:(NSDate *)startDate endDate:(NSDate *)endDate
+{
+    [[RequestHelper sharedInstance] loadEventsWithDatePeriod:startDate end:endDate
+                                                  UsingBlock:^(RKObjectLoader *loader) {
         [loader setOnDidLoadObjects:^(NSArray *objects){
             [self eventsLoaded:objects];
         }];
@@ -126,7 +140,7 @@ static const NSInteger kEventsAlertTag = 700;
             [self eventsLoadingFailed:error];
         }];
     }];
-    
+
 }
 
 - (IBAction)categoriesButtonPressed:(id)sender {
@@ -157,7 +171,27 @@ static const NSInteger kEventsAlertTag = 700;
 
 - (IBAction)dateSelectButtonPressed:(id)sender
 {
-    
+    [self.calendar presentCalendarFromRect:CGRectZero
+                           inView:self.view
+         permittedArrowDirections:PMCalendarArrowDirectionAny
+                         animated:YES];
+}
+
+#pragma mark PMCalendarControllerDelegate methods
+
+- (void)calendarController:(PMCalendarController *)calendarController didChangePeriod:(PMPeriod *)newPeriod
+{
+    NSString *newDatePeriod = [NSString stringWithFormat:@"%@ - %@"
+                              , [newPeriod.startDate dateStringWithFormat:@"LLL dd"]
+                              , [newPeriod.endDate dateStringWithFormat:@"LLL dd"]];
+    [self.calendarButton setTitle:newDatePeriod forState:UIControlStateNormal];
+}
+
+- (BOOL)calendarControllerShouldDismissCalendar:(PMCalendarController *)calendarController
+{
+    [self loadEventsWithDatePeriod:self.calendar.period.startDate
+                           endDate:self.calendar.period.endDate];
+    return YES;
 }
 
 #pragma mark -
