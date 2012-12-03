@@ -13,6 +13,7 @@
     IBOutlet UILabel *eventTitle;
     IBOutlet UILabel *eventLocation;
     IBOutlet UILabel *eventTime;
+    IBOutlet UILabel *eventCategory;
 }
 
 - (void) updateWithEvent:(Event *) event;

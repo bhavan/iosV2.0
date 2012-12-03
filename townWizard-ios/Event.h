@@ -18,7 +18,7 @@
 @property (nonatomic, assign) NSNumber *featured;
 @property (nonatomic, retain) NSString *details;
 @property (nonatomic, retain) NSURL *imageURL;
-@property (nonatomic, retain) NSDate *startTime;
-@property (nonatomic, retain) NSDate *endTime;
+@property (nonatomic, retain) NSString *startTime;
+@property (nonatomic, retain) NSString *endTime;
 
 @end

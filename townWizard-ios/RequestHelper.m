@@ -224,7 +224,7 @@ static RequestHelper *requestHelper = nil;
 
 - (void) loadFeaturedEventUsingBlock:(void(^)(RKObjectLoader *)) block
 {
-    NSString *resourcePath = [NSString stringWithFormat:@"%@?featured=1",[[self currentSection] url]];
+    NSString *resourcePath = [NSString stringWithFormat:@"%@?featured=1&limit=5",[[self currentSection] url]];
     [self loadEventsAtResourcePath:resourcePath usingBlock:block];
 }
 

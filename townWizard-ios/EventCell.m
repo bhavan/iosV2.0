@@ -24,6 +24,7 @@
     [eventLocation release];
     [eventTime release];
 
+    [eventCategory release];
     [super dealloc];
 }
 
@@ -36,7 +37,8 @@
         [self setEvent:event];
         [eventTitle setText:[event title]];
         [eventLocation setText:[[event location] address]];
-        [eventTime setText:[self eventDateString]];
+        [eventTime setText:[[self eventDateString] uppercaseString]];
+        [eventCategory setText:[self.event.categoryName uppercaseString]];
         
 //        Maybe it's not necessary
 //        [self layoutSubviews];
@@ -45,8 +47,11 @@
 
 - (NSString *) eventDateString
 {
-    NSString *startTimeString = [NSDate stringFromDate:[[self event] startTime] dateFormat:@"h:mma" localeIdentifier:@"en_US"];
-    NSString *endTimeString = [NSDate stringFromDate:[[self event] endTime] dateFormat:@"h:mma" localeIdentifier:@"en_US"];
+    NSDate *start = [NSDate dateFromString:self.event.startTime dateFormat:@"YYYY-MM-dd HH:mm:ss"];
+    NSDate *end = [NSDate dateFromString:self.event.endTime dateFormat:@"YYYY-MM-dd HH:mm:ss"];
+     
+    NSString *startTimeString = [NSDate stringFromDate:start dateFormat:@"h:mma" localeIdentifier:@"en_US"];
+    NSString *endTimeString = [NSDate stringFromDate:end dateFormat:@"h:mma" localeIdentifier:@"en_US"];
     return [NSString stringWithFormat:@"%@-%@",startTimeString,endTimeString];
 }
 

@@ -96,7 +96,39 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
     [eventName setText:[event title]];
     [eventTime setText:nil];
     [eventPlace setText:[[event location] address]];
+    NSString *urlStr = event.imageURL.absoluteString;
+    if(event.imageURL && urlStr.length > 3)
+    {
     [eventImage setImageWithURL:[event imageURL]];
+        [UIView beginAnimations:@"registerScroll" context:NULL];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+        [UIView setAnimationDuration:0.4];
+        self.rootView.transform = CGAffineTransformMakeTranslation(0, 0);
+        CGRect theFrame = self.rootView.frame;
+        if(theFrame.size.height > 480)
+        {
+        theFrame.size.height -= 110.f;
+        self.rootView.frame = theFrame;
+        }
+        
+        [UIView commitAnimations];
+
+    }
+    else
+    {
+        [eventImage.activityIndicator stopAnimating];
+        [UIView beginAnimations:@"registerScroll" context:NULL];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+        [UIView setAnimationDuration:0.4];
+        self.rootView.transform = CGAffineTransformMakeTranslation(0, -110);
+        CGRect theFrame = self.rootView.frame;
+        if(theFrame.size.height <= 480)
+        {
+        theFrame.size.height += 110.f;
+        self.rootView.frame = theFrame;
+        }
+        [UIView commitAnimations];
+    }
     [eventTime setText:[self eventDateString:event]];
 }
 
@@ -116,8 +148,11 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
 
 - (NSString *) eventDateString:(Event *) event
 {
-    NSString *startTimeString = [NSDate stringFromDate:[event startTime] dateFormat:@"h:mma" localeIdentifier:@"en_US"];
-    NSString *endTimeString = [NSDate stringFromDate:[event endTime] dateFormat:@"h:mma" localeIdentifier:@"en_US"];
+    NSDate *start = [NSDate dateFromString:event.startTime dateFormat:@"YYYY-MM-dd HH:mm:ss"];
+    NSDate *end = [NSDate dateFromString:event.endTime dateFormat:@"YYYY-MM-dd HH:mm:ss"];
+    
+    NSString *startTimeString = [NSDate stringFromDate:start dateFormat:@"h:mma" localeIdentifier:@"en_US"];
+    NSString *endTimeString = [NSDate stringFromDate:end dateFormat:@"h:mma" localeIdentifier:@"en_US"];
     return [NSString stringWithFormat:@"%@-%@",startTimeString,endTimeString];
 }
 

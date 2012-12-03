@@ -44,10 +44,11 @@ static const NSInteger kEventsAlertTag = 700;
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+   // [self loadAllEvents];
     [self loadTodayEvents];
     [self loadEventsCategories];
 #warning Set features count to 5
-    //[self loadFeaturedEvents];
+    [self loadFeaturedEvents];
 }
 
 - (void) viewWillDisappear:(BOOL)animated
@@ -295,6 +296,7 @@ static const NSInteger kEventsAlertTag = 700;
 - (void) featuredEventsLoaded:(NSArray *) featuredEvents
 {
     NSLog(@"featured loaded %@",featuredEvents);
+    [featuredEventsViewer setRootView:self.view];
     [featuredEventsViewer displayEvents:featuredEvents];
 }
 

@@ -22,6 +22,8 @@
     NSInteger currentEventIndex;
 }
 
+@property (nonatomic,retain) UIView *rootView;
+
 - (void) displayEvents:(NSArray *) events;
 
 @end
