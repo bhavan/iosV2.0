@@ -39,7 +39,7 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.hidesBackButton = YES;
+ //   self.navigationItem.hidesBackButton = YES;
 //    [self.customNavigationBar.menuButton addTarget:self 
 //                                            action:@selector(menuButtonPressed) 
 //                                  forControlEvents:UIControlEventTouchUpInside];
