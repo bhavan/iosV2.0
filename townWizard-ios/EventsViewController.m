@@ -172,7 +172,7 @@ static const NSInteger kEventsAlertTag = 700;
 
 - (IBAction)dateSelectButtonPressed:(id)sender
 {
-    [self.calendar presentCalendarFromRect:CGRectZero
+    [self.calendar presentCalendarFromRect:CGRectMake(0, 115, 320, 0)
                            inView:self.view
          permittedArrowDirections:PMCalendarArrowDirectionAny
                          animated:YES];
