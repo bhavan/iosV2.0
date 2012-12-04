@@ -54,27 +54,30 @@
     self.webView.delegate = self;
     self.navigationItem.hidesBackButton = YES;
     self.navigationController.navigationBarHidden = NO;
-    self.backButton.enabled = NO;
+    self.backButton.enabled = YES;
     self.forwardButton.enabled = NO;
     
     
     NSString *urlString;
     Section *section = [[RequestHelper sharedInstance] currentSection];
-    if ([section url] != nil)
+    if(section)
     {
-        urlString = [NSString stringWithFormat:@"%@/%@",
-                     [[[RequestHelper sharedInstance] currentPartner] webSiteUrl],
-                     [section url]];
+        if ([section url] != nil)
+        {
+            urlString = [NSString stringWithFormat:@"%@/%@",
+                         [[[RequestHelper sharedInstance] currentPartner] webSiteUrl],
+                         [section url]];
+        }
+        else
+        {
+            urlString = @"http://www.townwizardoncontainerapp.com";
+        }
+        urlString = [urlString stringByAppendingFormat:@"?&lat=%f&lon=%f",
+                     [AppDelegate sharedDelegate].doubleLatitude,
+                     [AppDelegate sharedDelegate].doubleLongitude];
+        isFirstLoading = YES;
+        [[self webView] loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]]];
     }
-    else
-    {
-        urlString = @"http://www.townwizardoncontainerapp.com";
-    }
-    urlString = [urlString stringByAppendingFormat:@"?&lat=%f&lon=%f",
-                   [AppDelegate sharedDelegate].doubleLatitude,
-                   [AppDelegate sharedDelegate].doubleLongitude];
-
-    [[self webView] loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]]];
 }
 
 
@@ -91,6 +94,13 @@
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    if(self.url)
+    {
+        self.navigationItem.hidesBackButton = NO;
+        isFirstLoading = YES;
+          [[self webView] loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.url]]];
+    }
+    
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
@@ -232,6 +242,8 @@
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView
 {
+    NSLog(@"Finish loading URL: %@",[webView.request URL]);
+    isFirstLoading = NO;
     self.backButton.enabled = self.webView.canGoBack;
     self.forwardButton.enabled = self.webView.canGoForward;
     [self.webPageLoadingSpinner stopAnimating];
@@ -290,10 +302,20 @@ navigationType:(UIWebViewNavigationType)navigationType
         else if([rootUrlType isEqualToString:MAIL_URL])
         {
             [self mailUrlPressedWithComponents:components];
+            return NO;
         }
     }
-    //OMG govnokod ended
     [[UIApplication sharedApplication] showNetworkActivityIndicator];
+    if(!isFirstLoading && navigationType == UIWebViewNavigationTypeLinkClicked)
+    {
+        [[RequestHelper sharedInstance] setCurrentSection:nil];
+        SubMenuViewController *submenu = [SubMenuViewController new];
+        submenu.url = request.URL.absoluteString;
+
+        [self.navigationController pushViewController:submenu animated:YES];
+                [submenu release];
+        return NO;
+    }   
     return YES;
 }
 
@@ -330,13 +352,13 @@ navigationType:(UIWebViewNavigationType)navigationType
         //                NSString *emailBody = @"Sending letter using TownWizard application?";
         //                [mailer setMessageBody:emailBody isHTML:NO];
         
-        [self presentModalViewController:mailer animated:YES];        
+        [self presentModalViewController:mailer animated:YES];
         [mailer release];
     }
     else
     {
         // [[UIApplication sharedApplication] openURL:[request URL]];
-    }   
+    }
     
 }
 

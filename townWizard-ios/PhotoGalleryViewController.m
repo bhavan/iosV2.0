@@ -33,7 +33,11 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated]; 
+    [super viewWillAppear:animated];
+/*      TownWizardNavigationBar *navBar = (TownWizardNavigationBar *)self.navigationController.navigationBar;
+    NSString *newTitle = [NSString stringWithFormat:@"   %@", [navBar.titleLabel.text stringByReplacingOccurrencesOfString:@"   " withString:@""]];
+  
+    [navBar updateTitleText:newTitle];*/
     [[RequestHelper sharedInstance] loadPhotosFromCategory:[self category] delegate:self];
     [[self gridView] reloadData];
 }

@@ -9,11 +9,10 @@
 #import "TownWizardNavigationBar.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface TownWizardNavigationBar ()
-@property (nonatomic, retain, readwrite) UILabel *titleLabel;
-@end
 
-static const CGFloat kTWBarOriginX = 45;
+
+
+static const CGFloat kTWBarOriginX = 55;
 static const CGFloat kTWBarTitleFontSize = 18;
 
 @implementation TownWizardNavigationBar

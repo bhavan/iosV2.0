@@ -13,5 +13,5 @@
 }
 
 - (void) updateTitleText:(NSString *) titleText;
-
+@property (nonatomic, retain) UILabel *titleLabel;
 @end

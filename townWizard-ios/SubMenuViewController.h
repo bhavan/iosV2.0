@@ -25,6 +25,10 @@ UIImagePickerControllerDelegate,
 UINavigationControllerDelegate,
 MFMailComposeViewControllerDelegate>
 
+{
+    BOOL isFirstLoading;
+}
+
 
 
 @property (nonatomic, retain) Partner *partner;
