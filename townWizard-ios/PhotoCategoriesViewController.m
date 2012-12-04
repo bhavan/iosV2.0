@@ -15,6 +15,7 @@
 #import "ImageCell.h"
 #import "UIImageView+WebCache.h"
 #import "PhotoUploadView.h"
+#import "TWBackgroundView.h"
 
 @interface PhotoCategoriesViewController ()
 @property (nonatomic, retain, readwrite) NSArray *categories;
@@ -25,9 +26,19 @@
 #pragma mark -
 #pragma mark life cycle
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    TWBackgroundView *backgroundView = [[TWBackgroundView alloc] initWithFrame:_tableView.frame];
+    [self.view insertSubview:backgroundView atIndex:0];
+    [backgroundView release];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+   
     [[RequestHelper sharedInstance] loadPhotoCategoriesWithDelegate:self];
 }
 

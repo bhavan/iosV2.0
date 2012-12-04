@@ -17,7 +17,7 @@
 
 #import "UIView+Extensions.h"
 
-#define ALL_EVENTS_TEXT @"All Events"
+#define ALL_EVENTS_TEXT @"ALL EVENTS"
 
 @interface EventsViewController () <UITableViewDataSource, UIAlertViewDelegate, PMCalendarControllerDelegate>
 @property (nonatomic, retain) NSArray *events;
@@ -204,7 +204,7 @@ static const NSInteger kEventsAlertTag = 700;
     if(currentCategory >= 0)
     {
     EventCategory *category = [self.categotiesList objectAtIndex:currentCategory];
-        title = category.title;
+        title = [category.title uppercaseString];
     }
     [self.eventsTypeButton setTitle:title forState:UIControlStateNormal];
     [self filterEventsByCategory];
@@ -235,7 +235,7 @@ static const NSInteger kEventsAlertTag = 700;
     else
     {
         EventCategory *category = [self.categotiesList objectAtIndex:row-1];
-        return category.title;
+        return [category.title uppercaseString];
     }
 }
 
