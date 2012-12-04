@@ -180,6 +180,12 @@
 		8406AB8B1630319C00B807EB /* MasterDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8406AB6F1630319B00B807EB /* MasterDetailController.m */; };
 		8406AB8C1630319C00B807EB /* MasterDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8406AB6F1630319B00B807EB /* MasterDetailController.m */; };
 		8406AB8E1630319C00B807EB /* MasterDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8406AB6F1630319B00B807EB /* MasterDetailController.m */; };
+		840E4588166E374C007CCF51 /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840E4586166E374B007CCF51 /* EventDetailsViewController.m */; };
+		840E4589166E374C007CCF51 /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840E4586166E374B007CCF51 /* EventDetailsViewController.m */; };
+		840E458A166E374C007CCF51 /* EventDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840E4587166E374C007CCF51 /* EventDetailsViewController.xib */; };
+		840E458B166E374C007CCF51 /* EventDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840E4587166E374C007CCF51 /* EventDetailsViewController.xib */; };
+		840E458E166E48C4007CCF51 /* EventDetailTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 840E458D166E48C3007CCF51 /* EventDetailTopView.m */; };
+		840E458F166E48C4007CCF51 /* EventDetailTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 840E458D166E48C3007CCF51 /* EventDetailTopView.m */; };
 		84237CB11668A0DE00B3DB18 /* InputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84237CB01668A0DE00B3DB18 /* InputBar.m */; };
 		84237CB21668A0DE00B3DB18 /* InputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84237CB01668A0DE00B3DB18 /* InputBar.m */; };
 		84237CB61668A3D400B3DB18 /* EventCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 84237CB51668A3D400B3DB18 /* EventCategory.m */; };
@@ -3420,6 +3426,11 @@
 		59FBA4CF79134DFAAB1477F7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8406AB6E1630319B00B807EB /* MasterDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterDetailController.h; sourceTree = "<group>"; };
 		8406AB6F1630319B00B807EB /* MasterDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterDetailController.m; sourceTree = "<group>"; };
+		840E4585166E3749007CCF51 /* EventDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailsViewController.h; sourceTree = "<group>"; };
+		840E4586166E374B007CCF51 /* EventDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailsViewController.m; sourceTree = "<group>"; };
+		840E4587166E374C007CCF51 /* EventDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDetailsViewController.xib; sourceTree = "<group>"; };
+		840E458C166E48C3007CCF51 /* EventDetailTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailTopView.h; sourceTree = "<group>"; };
+		840E458D166E48C3007CCF51 /* EventDetailTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailTopView.m; sourceTree = "<group>"; };
 		84237CAF1668A0DE00B3DB18 /* InputBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputBar.h; sourceTree = "<group>"; };
 		84237CB01668A0DE00B3DB18 /* InputBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputBar.m; sourceTree = "<group>"; };
 		84237CB41668A3D400B3DB18 /* EventCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCategory.h; sourceTree = "<group>"; };
@@ -4473,6 +4484,29 @@
 			path = "townWizard-partner/Images/tw-p93";
 			sourceTree = SOURCE_ROOT;
 		};
+		840E4581166E3509007CCF51 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				E691000614E5504A003DE64B /* UploadPhoto */,
+				847FD37D161ACDAE009FB9CC /* PhotoCategoriesViewController.h */,
+				847FD37E161ACDAE009FB9CC /* PhotoCategoriesViewController.m */,
+				84F82C8F161AF98E00E0A481 /* PhotoGalleryViewController.h */,
+				84F82C90161AF98E00E0A481 /* PhotoGalleryViewController.m */,
+			);
+			name = Photo;
+			sourceTree = "<group>";
+		};
+		840E4583166E3526007CCF51 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				84CAAE36161B2EB100E09E36 /* VideosViewController.h */,
+				84CAAE37161B2EB100E09E36 /* VideosViewController.m */,
+				848DFB661626B3F40096A6FF /* VideoViewController.h */,
+				848DFB671626B3F50096A6FF /* VideoViewController.m */,
+			);
+			name = Video;
+			sourceTree = "<group>";
+		};
 		8444637416198E6300394D41 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -4604,28 +4638,17 @@
 		848854A714D141E30030BD03 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				840E4583166E3526007CCF51 /* Video */,
+				840E4581166E3509007CCF51 /* Photo */,
 				D99E7272163E6BCB004EB303 /* ParnerMenuViewController */,
 				D99E7270163E6B7E004EB303 /* PartnerViewController */,
-				D99E726D163E6B50004EB303 /* EventsViewController */,
+				D99E726D163E6B50004EB303 /* Events */,
 				E63F277B14E960B30040F281 /* Facebook */,
-				E691000614E5504A003DE64B /* UploadPhoto */,
 				E691FF8814E5095F003DE64B /* Map */,
 				848854A914D142430030BD03 /* SubMenuViewController.h */,
 				848854AA14D142430030BD03 /* SubMenuViewController.m */,
 				8483F25914D03FBE005E4216 /* SearchViewController.h */,
 				8483F25A14D03FBE005E4216 /* SearchViewController.m */,
-				847FD37D161ACDAE009FB9CC /* PhotoCategoriesViewController.h */,
-				847FD37E161ACDAE009FB9CC /* PhotoCategoriesViewController.m */,
-				84F82C8F161AF98E00E0A481 /* PhotoGalleryViewController.h */,
-				84F82C90161AF98E00E0A481 /* PhotoGalleryViewController.m */,
-				84F82CCE161AFB8700E0A481 /* WebImageGridViewCell.h */,
-				84F82CCF161AFB8700E0A481 /* WebImageGridViewCell.m */,
-				84CAADF5161B27CB00E09E36 /* ImageCell.h */,
-				84CAADF6161B27CB00E09E36 /* ImageCell.m */,
-				84CAAE36161B2EB100E09E36 /* VideosViewController.h */,
-				84CAAE37161B2EB100E09E36 /* VideosViewController.m */,
-				848DFB661626B3F40096A6FF /* VideoViewController.h */,
-				848DFB671626B3F50096A6FF /* VideoViewController.m */,
 				8406AB6E1630319B00B807EB /* MasterDetailController.h */,
 				8406AB6F1630319B00B807EB /* MasterDetailController.m */,
 			);
@@ -5216,6 +5239,8 @@
 				D9B37937163A817D00828478 /* EventSectionHeader.m */,
 				D99E7273163E6EF2004EB303 /* TWBackgroundView.h */,
 				D99E7274163E6EF2004EB303 /* TWBackgroundView.m */,
+				840E458C166E48C3007CCF51 /* EventDetailTopView.h */,
+				840E458D166E48C3007CCF51 /* EventDetailTopView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -5300,15 +5325,18 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
-		D99E726D163E6B50004EB303 /* EventsViewController */ = {
+		D99E726D163E6B50004EB303 /* Events */ = {
 			isa = PBXGroup;
 			children = (
 				D93249261637CD8B00409AA9 /* EventsViewController.h */,
 				D93249271637CD8B00409AA9 /* EventsViewController.m */,
 				D93249281637CD8B00409AA9 /* EventsViewController.xib */,
 				D99E726F163E6B6B004EB303 /* Subviews */,
+				840E4585166E3749007CCF51 /* EventDetailsViewController.h */,
+				840E4586166E374B007CCF51 /* EventDetailsViewController.m */,
+				840E4587166E374C007CCF51 /* EventDetailsViewController.xib */,
 			);
-			name = EventsViewController;
+			name = Events;
 			sourceTree = "<group>";
 		};
 		D99E726F163E6B6B004EB303 /* Subviews */ = {
@@ -5351,6 +5379,10 @@
 		D99E72C9163EB442004EB303 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				84F82CCE161AFB8700E0A481 /* WebImageGridViewCell.h */,
+				84F82CCF161AFB8700E0A481 /* WebImageGridViewCell.m */,
+				84CAADF5161B27CB00E09E36 /* ImageCell.h */,
+				84CAADF6161B27CB00E09E36 /* ImageCell.m */,
 				D9515C9B163832C00058BE8C /* EventCell.h */,
 				D9515C9C163832C00058BE8C /* EventCell.m */,
 				D9515C9F163832D30058BE8C /* EventCell.xib */,
@@ -6401,6 +6433,7 @@
 				84CA0246166CCBDB003E1F81 /* background.png in Resources */,
 				84CA0248166CCBDB003E1F81 /* background@2x.png in Resources */,
 				84CA024A166CCBDB003E1F81 /* default.plist in Resources */,
+				840E458A166E374C007CCF51 /* EventDetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7961,6 +7994,7 @@
 				84CA0247166CCBDB003E1F81 /* background.png in Resources */,
 				84CA0249166CCBDB003E1F81 /* background@2x.png in Resources */,
 				84CA024B166CCBDB003E1F81 /* default.plist in Resources */,
+				840E458B166E374C007CCF51 /* EventDetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -9043,6 +9077,8 @@
 				84CA023E166CCBDB003E1F81 /* PMSelectionView.m in Sources */,
 				84CA0240166CCBDB003E1F81 /* PMThemeEngine.m in Sources */,
 				84CA0242166CCBDB003E1F81 /* PMThemeShadow.m in Sources */,
+				840E4588166E374C007CCF51 /* EventDetailsViewController.m in Sources */,
+				840E458E166E48C4007CCF51 /* EventDetailTopView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -10406,6 +10442,8 @@
 				84CA023F166CCBDB003E1F81 /* PMSelectionView.m in Sources */,
 				84CA0241166CCBDB003E1F81 /* PMThemeEngine.m in Sources */,
 				84CA0243166CCBDB003E1F81 /* PMThemeShadow.m in Sources */,
+				840E4589166E374C007CCF51 /* EventDetailsViewController.m in Sources */,
+				840E458F166E48C4007CCF51 /* EventDetailTopView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

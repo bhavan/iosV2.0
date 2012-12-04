@@ -60,10 +60,13 @@ NSString *kPMCalendarRedrawNotification = @"kPMCalendarRedrawNotification";
     self.calendarView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
     //Make insets from two sides of a calendar to have place for arrow
+    CGRect rect = CGRectMake(0, 0
+                                                    , calendarRect.size.width + arrowSize.height
+                                                    , calendarRect.size.height + arrowSize.height);
     CGRect calendarRectWithArrowInsets = CGRectMake(0, 0
                                                     , calendarRect.size.width + arrowSize.height
                                                     , calendarRect.size.height + arrowSize.height);
-    self.mainView = [[[UIView alloc] initWithFrame:calendarRectWithArrowInsets] autorelease];
+    self.mainView = [[[UIView alloc] initWithFrame:rect] autorelease];
     
     self.backgroundView = [[[PMCalendarBackgroundView alloc] initWithFrame:CGRectInset(calendarRectWithArrowInsets, outerPadding.width, outerPadding.height)] autorelease];
     UIEdgeInsetsInsetRect(calendarRect, kPMThemeShadowPadding);
@@ -75,6 +78,12 @@ NSString *kPMCalendarRedrawNotification = @"kPMCalendarRedrawNotification";
     self.digitsView.period = [PMPeriod oneDayPeriodWithDate:[NSDate date]];    
 
     [self.calendarView addSubview:self.digitsView];
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [btn setTitle:@"Enter" forState:UIControlStateNormal];
+     btn.frame = CGRectMake(110, calendarRect.size.width + arrowSize.height, 100, 40);   
+    [btn setBackgroundColor:[UIColor clearColor]];
+   
+    [self.mainView addSubview:btn];
     [self.mainView addSubview:self.calendarView];
     
     self.allowsPeriodSelection = YES;

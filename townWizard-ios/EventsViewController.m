@@ -14,12 +14,13 @@
 #import "EventCategory.h"
 #import "InputBar.h"
 #import "PMCalendar.h"
+#import "EventDetailsViewController.h"
 
 #import "UIView+Extensions.h"
 
 #define ALL_EVENTS_TEXT @"ALL EVENTS"
 
-@interface EventsViewController () <UITableViewDataSource, UIAlertViewDelegate, PMCalendarControllerDelegate>
+@interface EventsViewController () <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, PMCalendarControllerDelegate>
 @property (nonatomic, retain) NSArray *events;
 @property (nonatomic, retain) NSArray *allEvents;
 @property (nonatomic, strong) PMCalendarController *calendar;
@@ -208,6 +209,7 @@ static const NSInteger kEventsAlertTag = 700;
     }
     [self.eventsTypeButton setTitle:title forState:UIControlStateNormal];
     [self filterEventsByCategory];
+    
 }
 
 
@@ -322,6 +324,14 @@ static const NSInteger kEventsAlertTag = 700;
 
 #pragma mark -
 #pragma mark UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    EventDetailsViewController *eventDetails = [EventDetailsViewController new];
+    [eventDetails loadWithEvent:[[self events] objectAtIndex:indexPath.row]];
+    [self.navigationController pushViewController:eventDetails animated:YES];
+    [eventDetails release];
+}
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
