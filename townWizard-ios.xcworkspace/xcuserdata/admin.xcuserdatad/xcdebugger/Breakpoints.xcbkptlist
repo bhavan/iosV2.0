@@ -111,19 +111,6 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "townWizard-ios/EventsViewer.m"
-         timestampString = "376393402.587225"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "135"
-         endingLineNumber = "135"
-         landmarkName = "-updateTitlesWithEvent:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "townWizard-ios/EventDetailTopView.m"
          timestampString = "376401910.994714"
          startingColumnNumber = "9223372036854775807"
