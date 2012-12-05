@@ -12,6 +12,7 @@
 @class TownWizardNavigationBar;
 @class Partner;
 @class Section;
+@class PartnerViewController;
 
 @protocol SubMenuViewControllerDelegate
 @optional
@@ -26,7 +27,9 @@ UINavigationControllerDelegate,
 MFMailComposeViewControllerDelegate>
 
 {
-    BOOL isFirstLoading;
+
+    UIBarButtonItem *back;
+    PartnerViewController *partnerController;
 }
 
 
@@ -35,9 +38,7 @@ MFMailComposeViewControllerDelegate>
 @property (nonatomic, retain) NSString *url;
 @property (nonatomic, retain) Section * section;
 @property (nonatomic, retain) TownWizardNavigationBar * customNavigationBar;
-@property (nonatomic, retain) IBOutlet UIToolbar *bottomBar;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem *backButton;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem *forwardButton;
+
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView *webPageLoadingSpinner;
 @property (nonatomic, retain) IBOutlet UIWebView *webView;
 @property (nonatomic, assign)  id <SubMenuViewControllerDelegate> delegate;
@@ -48,6 +49,5 @@ MFMailComposeViewControllerDelegate>
 - (IBAction)goForwardPressed:(id)sender;
 - (void)fbUrlPressedWithComponents:(NSArray *)components;
 - (void)mailUrlPressedWithComponents:(NSArray *)components;
-
 
 @end

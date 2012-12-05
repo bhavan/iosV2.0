@@ -18,5 +18,10 @@
 @property (retain, nonatomic) IBOutlet EventDetailTopView *topDetailView;
 
 - (void)loadWithEvent:(Event *)event;
+- (IBAction)callButtonPressed:(id)sender;
+- (IBAction)webButtonPressed:(id)sender;
+- (IBAction)mapButtonPressed:(id)sender;
+- (IBAction)saveButtonPressed:(id)sender;
+- (IBAction)checkInButtonPressed:(id)sender;
 
 @end

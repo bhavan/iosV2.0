@@ -23,6 +23,7 @@
 @interface EventsViewController () <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, PMCalendarControllerDelegate>
 @property (nonatomic, retain) NSArray *events;
 @property (nonatomic, retain) NSArray *allEvents;
+@property (nonatomic, retain) NSArray *allFeaturedEvents;
 @property (nonatomic, strong) PMCalendarController *calendar;
 @end
 
@@ -46,10 +47,7 @@ static const NSInteger kEventsAlertTag = 700;
 {
     [super viewWillAppear:animated];
    // [self loadAllEvents];
-    [self loadTodayEvents];
-    [self loadEventsCategories];
-#warning Set features count to 5
-    [self loadFeaturedEvents];
+   
 }
 
 - (void) viewWillDisappear:(BOOL)animated
@@ -85,6 +83,10 @@ static const NSInteger kEventsAlertTag = 700;
     currentCategory = -1;
     [self.eventsTypeButton setTitle:ALL_EVENTS_TEXT forState:UIControlStateNormal];
     [self.calendarButton setTitle:@"TODAY" forState:UIControlStateNormal];
+    [self loadTodayEvents];
+    [self loadEventsCategories];
+    
+    [self loadFeaturedEvents];
 }
 
 #pragma mark -
@@ -173,7 +175,12 @@ static const NSInteger kEventsAlertTag = 700;
 
 - (IBAction)dateSelectButtonPressed:(id)sender
 {
-    [self.calendar presentCalendarFromRect:CGRectMake(0, 115, 320, 0)
+    CGFloat yOffset = 0;
+   /* if(featuredEventsViewer.isImagePresented)
+    {
+        yOffset = 115;
+    }*/
+    [self.calendar presentCalendarFromRect:CGRectMake(0, yOffset, 320, 0)
                            inView:self.view
          permittedArrowDirections:PMCalendarArrowDirectionAny
                          animated:YES];
@@ -298,8 +305,9 @@ static const NSInteger kEventsAlertTag = 700;
 - (void) featuredEventsLoaded:(NSArray *) featuredEvents
 {
     NSLog(@"featured loaded %@",featuredEvents);
-    [featuredEventsViewer setRootView:self.view];
-    [featuredEventsViewer displayEvents:featuredEvents];
+    _allFeaturedEvents = featuredEvents;
+    [featuredEventsViewer setRootView:eventsList];
+    [featuredEventsViewer displayEvents:_allFeaturedEvents];
 }
 
 #pragma mark -

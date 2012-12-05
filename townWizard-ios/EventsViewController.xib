@@ -359,7 +359,6 @@
 										<int key="NSvFlags">292</int>
 										<string key="NSFrame">{{166, 241}, {144, 41}}</string>
 										<reference key="NSSuperview" ref="813994901"/>
-										<reference key="NSNextKeyView" ref="958338506"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<reference key="IBUIBackgroundColor" ref="274916133"/>
 										<bool key="IBUIOpaque">NO</bool>
@@ -459,7 +458,7 @@
 						<int key="IBUISeparatorStyle">1</int>
 						<int key="IBUISectionIndexMinimumDisplayRowCount">0</int>
 						<bool key="IBUIShowsSelectionImmediatelyOnTouchBegin">YES</bool>
-						<float key="IBUIRowHeight">100</float>
+						<float key="IBUIRowHeight">75</float>
 						<float key="IBUISectionHeaderHeight">27</float>
 						<float key="IBUISectionFooterHeight">22</float>
 						<reference key="IBUITableHeaderView" ref="813994901"/>
@@ -702,11 +701,11 @@
 						<reference key="object" ref="813994901"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="1069598314"/>
-							<reference ref="400592371"/>
 							<reference ref="564799171"/>
 							<reference ref="130025856"/>
 							<reference ref="943549100"/>
 							<reference ref="526647508"/>
+							<reference ref="400592371"/>
 						</array>
 						<reference key="parent" ref="77224904"/>
 					</object>

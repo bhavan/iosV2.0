@@ -13,6 +13,7 @@
 }
 
 - (id) initWithPartner:(Partner *) partner;
+- (UIBarButtonItem *) menuButton;
 
 @property (nonatomic, retain) Partner *partner;
 

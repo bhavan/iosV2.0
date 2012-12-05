@@ -12,7 +12,7 @@
 
 
 
-static const CGFloat kTWBarOriginX = 55;
+static const CGFloat kTWBarOriginX = 59;
 static const CGFloat kTWBarTitleFontSize = 18;
 
 @implementation TownWizardNavigationBar

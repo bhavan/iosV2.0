@@ -40,7 +40,7 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.hidesBackButton = YES; 
+    //self.navigationItem.hidesBackButton = YES;
     
     //[self.friendsListView.layer setCornerRadius:10];
     [friendsListView setBackgroundColor:[UIColor clearColor]];

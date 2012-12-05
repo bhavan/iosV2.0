@@ -10,8 +10,8 @@
 
 @interface Location : NSObject
 
-@property (nonatomic, assign) NSNumber *latitude;
-@property (nonatomic, assign) NSNumber *longitude;
+@property (nonatomic, retain) NSNumber *latitude;
+@property (nonatomic, retain) NSNumber *longitude;
 @property (nonatomic, retain) NSString *zip;
 @property (nonatomic, retain) NSString *address;
 @property (nonatomic, retain) NSString *name;

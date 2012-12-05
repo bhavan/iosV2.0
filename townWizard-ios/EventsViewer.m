@@ -100,34 +100,40 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
     if(event.imageURL && urlStr.length > 3)
     {
     [eventImage setImageWithURL:[event imageURL]];
-        [UIView beginAnimations:@"registerScroll" context:NULL];
+        [UIView beginAnimations:@"registerScrollDown" context:NULL];
         [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
         [UIView setAnimationDuration:0.4];
         self.rootView.transform = CGAffineTransformMakeTranslation(0, 0);
         CGRect theFrame = self.rootView.frame;
         if(theFrame.size.height > 480)
         {
+           
         theFrame.size.height -= 110.f;
         self.rootView.frame = theFrame;
         }
         
         [UIView commitAnimations];
-
+         _isImagePresented = YES;
     }
     else
     {
+        
         [eventImage.activityIndicator stopAnimating];
-        [UIView beginAnimations:@"registerScroll" context:NULL];
+        [UIView beginAnimations:@"registerScrollUp" context:NULL];
         [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
         [UIView setAnimationDuration:0.4];
         self.rootView.transform = CGAffineTransformMakeTranslation(0, -110);
         CGRect theFrame = self.rootView.frame;
         if(theFrame.size.height <= 480)
         {
-        theFrame.size.height += 110.f;
-        self.rootView.frame = theFrame;
+            
+            theFrame.size.height += 110.f;
+            self.rootView.frame = theFrame;
         }
         [UIView commitAnimations];
+        _isImagePresented = NO;
+      //  UITableView *rootTableView = (UITableView *)_rootView;
+       // [rootTableView setContentOffset:CGPointMake(0, 110)];
     }
     [eventTime setText:[self eventDateString:event]];
 }

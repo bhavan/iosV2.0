@@ -21,7 +21,7 @@
     
     NSInteger currentEventIndex;
 }
-
+@property (nonatomic, assign) BOOL isImagePresented;
 @property (nonatomic,retain) UIView *rootView;
 
 - (void) displayEvents:(NSArray *) events;

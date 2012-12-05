@@ -20,7 +20,7 @@
 #import "Partner.h"
 #import "Section.h"
 #import "PhotoUploadView.h"
-
+#import "PartnerViewController.h"
 #import "RequestHelper.h"
 
 #define ROOT_URL @"app30a"
@@ -52,12 +52,9 @@
 {
     [super viewDidLoad];
     self.webView.delegate = self;
-    self.navigationItem.hidesBackButton = YES;
-    self.navigationController.navigationBarHidden = NO;
-    self.backButton.enabled = YES;
-    self.forwardButton.enabled = NO;
-    
-    
+   // self.navigationItem.hidesBackButton = YES;
+    self.navigationController.navigationBarHidden = NO;    
+
     NSString *urlString;
     Section *section = [[RequestHelper sharedInstance] currentSection];
     if(section)
@@ -75,40 +72,24 @@
         urlString = [urlString stringByAppendingFormat:@"?&lat=%f&lon=%f",
                      [AppDelegate sharedDelegate].doubleLatitude,
                      [AppDelegate sharedDelegate].doubleLongitude];
-        isFirstLoading = YES;
+        
         [[self webView] loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]]];
     }
+    
+    back = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(goBackPressed:)];
+    //self.navigationItem.leftBarButtonItem = back;
+    // [back release];
+    
+    partnerController = (id)self.navigationController.parentViewController;
 }
 
 
-- (IBAction)goBackPressed:(id)sender
-{
-    [self.webView goBack];
-}
 
-- (IBAction)goForwardPressed:(id)sender
-{
-    [self.webView goForward];
-}
 
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if(self.url)
-    {
-        self.navigationItem.hidesBackButton = NO;
-        isFirstLoading = YES;
-          [[self webView] loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.url]]];
-    }
     
-}
-
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex == 1)
-    {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"prefs:root=WIFI"]];
-    }
 }
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -124,110 +105,25 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma mark -
-#pragma mark Photo Upload
-
--(void)showUploadTitle
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-    [UIView animateWithDuration:0.35 animations:^{
-        [self.webView setFrame:CGRectMake(self.webView.frame.origin.x, self.webView.frame.origin.y+31,
-                                          self.webView.frame.size.width, self.webView.frame.size.height-31)];
-    }];
-    
-    PhotoUploadView *uploadView = [[PhotoUploadView alloc] initWithParentController:self];
-    [self.view addSubview:uploadView];
-    [uploadView release];
-}
-
-- (void)cameraButtonPressed:(id)sender {
-	AppDelegate *appdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-	
-	if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-		UIActionSheet *menu = [[UIActionSheet alloc]
-							   initWithTitle: @""
-							   delegate:self
-							   cancelButtonTitle:@"Cancel"
-							   destructiveButtonTitle:nil
-							   otherButtonTitles:@"Take Photo",@"Choose from Library", nil];
-		[menu setTag:1];
-		[menu showInView:appdelegate.window];
-		[menu release];
-	}
-	else {
-		UIActionSheet *menu = [[UIActionSheet alloc]
-							   initWithTitle: @""
-							   delegate:self
-							   cancelButtonTitle:@"Cancel"
-							   destructiveButtonTitle:nil
-							   otherButtonTitles:@"Choose from Library", nil];
-		[menu setTag:2];
-		[menu showInView:appdelegate.window];
-		[menu release];
-	}
-}
-
--(void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
-{
-	if(buttonIndex == 2) //Cancel button
-		return;
-	
-	UIImagePickerController* ImageController = [[UIImagePickerController alloc] init];
-	//ImageController.allowsImageEditing = YES;
-	ImageController.delegate = self;
-	
-	if(actionSheet.tag == 1)
+    if (buttonIndex == 1)
     {
-		if(buttonIndex == 1)
-        {
-			if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
-            {
-				ImageController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-				[self presentModalViewController:ImageController animated:YES];
-			}
-		}
-		else if(buttonIndex == 0)
-        {
-			if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
-            {
-				ImageController.sourceType = UIImagePickerControllerSourceTypeCamera;
-				[self presentModalViewController:ImageController animated:YES];
-			}
-		}
-	}
-	else if(actionSheet.tag == 2)
-    {
-		if(buttonIndex == 0)
-        {
-			if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
-            {
-				ImageController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-				[self presentModalViewController:ImageController animated:YES];
-			}
-		}
-	}
-	
-	[ImageController release];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"prefs:root=WIFI"]];
+    }
 }
 
-#pragma mark -
-#pragma mark <UIImagePickerControllerDelegate> Methods
-
-- (void)imagePickerController:(UIImagePickerController *)picker
-        didFinishPickingImage:(UIImage *)image
-                  editingInfo:(NSDictionary *)editingInfo
+- (IBAction)goBackPressed:(id)sender
 {
-	
-	//[(PhotoGalleryViewController *)parent dismissModalViewControllerAnimated:YES];
-	
-	AddCaptionViewController *viewController = [[AddCaptionViewController alloc]
-                                                initWithNibName:@"AddCaptionViewController"
-                                                bundle:nil];
-    
-    viewController.partnerSiteURL = self.partner.webSiteUrl;
-	viewController.m_photo = image;
-    [picker presentModalViewController:viewController animated:YES];
-	[viewController release];
+    [self.webView goBack];
 }
+
+- (IBAction)goForwardPressed:(id)sender
+{
+    [self.webView goForward];
+}
+
+
 
 
 #pragma mark -
@@ -242,10 +138,15 @@
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView
 {
+    if(_webView.canGoBack)
+    {
+        self.navigationItem.leftBarButtonItem = back;
+    }
+    else if(!_url)
+    {
+        self.navigationItem.leftBarButtonItem =  [partnerController menuButton];
+    }
     NSLog(@"Finish loading URL: %@",[webView.request URL]);
-    isFirstLoading = NO;
-    self.backButton.enabled = self.webView.canGoBack;
-    self.forwardButton.enabled = self.webView.canGoForward;
     [self.webPageLoadingSpinner stopAnimating];
     if (self.view.window) //if webView is not on screen, we are not interested in setting this
         [[UIApplication sharedApplication] setActivityindicatorToZero];
@@ -255,6 +156,16 @@
 shouldStartLoadWithRequest:(NSURLRequest *)request
 navigationType:(UIWebViewNavigationType)navigationType
 {
+    
+    if(_webView.canGoBack)
+    {
+        self.navigationItem.leftBarButtonItem = back;
+    }
+    else if(!_url)
+    {
+        self.navigationItem.leftBarButtonItem =  [partnerController menuButton];
+    }
+    
     NSLog(@"Loading URL: %@",[request URL]);
     // OMG govnokod started
     NSString *requestString = [[request URL] absoluteString];
@@ -281,7 +192,8 @@ navigationType:(UIWebViewNavigationType)navigationType
                  viewController.placeInfo = info;
                  [[GenericAppAppDelegate sharedDelegate] subNavigateTo:viewController];
                  [viewController release];*/
-                [TestFlight passCheckpoint:@"Show details link clicked"];
+                return NO;
+                
             }
             else if([urlType isEqualToString:MAP_URL])
             {
@@ -306,18 +218,10 @@ navigationType:(UIWebViewNavigationType)navigationType
         }
     }
     [[UIApplication sharedApplication] showNetworkActivityIndicator];
-    if(!isFirstLoading && navigationType == UIWebViewNavigationTypeLinkClicked)
-    {
-        [[RequestHelper sharedInstance] setCurrentSection:nil];
-        SubMenuViewController *submenu = [SubMenuViewController new];
-        submenu.url = request.URL.absoluteString;
-
-        [self.navigationController pushViewController:submenu animated:YES];
-                [submenu release];
-        return NO;
-    }   
+    
     return YES;
 }
+
 
 - (void)showMapWithUrlComponents:(NSArray *)components
 {
@@ -393,9 +297,6 @@ navigationType:(UIWebViewNavigationType)navigationType
     self.webView = nil;
     [_url release];
     [[UIApplication sharedApplication] setActivityindicatorToZero];
-    [self setBottomBar:nil];
-    [self setBackButton:nil];
-    [self setForwardButton:nil];
     [self setWebPageLoadingSpinner:nil];
 }
 

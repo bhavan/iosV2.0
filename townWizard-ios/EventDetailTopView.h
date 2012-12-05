@@ -9,7 +9,16 @@
 #import <UIKit/UIKit.h>
 
 @interface EventDetailTopView : UIView
+@property (retain, nonatomic) IBOutlet UIImageView *bgView;
 @property (retain, nonatomic) IBOutlet UILabel *eventTitleLabel;
 @property (retain, nonatomic) IBOutlet UILabel *eventAdress;
+@property (retain, nonatomic) IBOutlet UIButton *callButton;
+@property (retain, nonatomic) IBOutlet UIButton *webButton;
+@property (retain, nonatomic) IBOutlet UIButton *mapButton;
+
+- (UIImage *) buttonBackgroundImage;
+
+
+
 
 @end
