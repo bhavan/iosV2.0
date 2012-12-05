@@ -95,7 +95,7 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
 {
     [eventName setText:[event title]];
     [eventTime setText:nil];
-    [eventPlace setText:[[event location] address]];
+    [eventPlace setText:[[event location] name]];
     NSString *urlStr = event.imageURL.absoluteString;
     if(event.imageURL && urlStr.length > 3)
     {

@@ -36,7 +36,7 @@
     if (![[self event] isEqual:event]) {
         [self setEvent:event];
         [eventTitle setText:[event title]];
-        [eventLocation setText:[[event location] address]];
+        [eventLocation setText:[[event location] name]];
         [eventTime setText:[[self eventDateString] uppercaseString]];
         [eventCategory setText:[self.event.categoryName uppercaseString]];
         
