@@ -48,21 +48,8 @@
 
 -(void)infoButtonPressed:(id)sender
 {
-   /* SubMenuViewController *subMenu = [SubMenuViewController new];
-    
-    subMenu.delegate = self;
-    subMenu.url = INFO_URL;
-    
-    [self.navigationController pushViewController:subMenu animated:YES];
-    
-  //  [self animateLogoOffScreen];
-  //  [self hideBackgroundImageOfTheNavigationBar:subMenu.customNavigationBar];
-  //  [self animateNavigationBarOnScreen:subMenu.customNavigationBar];
-    
-    [subMenu release];*/
     if(defaultPartner)
     {
-    //    [((MasterDetailController *)self.navigationController.parentViewController) toggleMasterView];
         [self.masterDetail toggleMasterView];
     }
 }

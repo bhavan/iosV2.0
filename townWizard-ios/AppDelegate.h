@@ -14,7 +14,7 @@
 @class SearchViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate,UIAlertViewDelegate> {
-    NSString *phoneNumberToCall;
+
 }
 
 @property (strong, nonatomic) UIWindow *window;
@@ -33,6 +33,5 @@
 + (AppDelegate *) sharedDelegate;
 + (NSString *) partnerId;
 
-- (void)makeCall:(NSString *)phoneNumber;
 
 @end

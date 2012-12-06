@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class Event;
+
 @interface EventDetailTopView : UIView
 @property (retain, nonatomic) IBOutlet UIImageView *bgView;
 @property (retain, nonatomic) IBOutlet UILabel *eventTitleLabel;
@@ -17,7 +19,7 @@
 @property (retain, nonatomic) IBOutlet UIButton *mapButton;
 
 - (UIImage *) buttonBackgroundImage;
-
+- (void)updateWithEvent:(Event *)event;
 
 
 

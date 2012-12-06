@@ -1247,6 +1247,8 @@
 		84F82CEB161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F82CCF161AFB8700E0A481 /* WebImageGridViewCell.m */; };
 		84F82CEC161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F82CCF161AFB8700E0A481 /* WebImageGridViewCell.m */; };
 		84F82CED161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F82CCF161AFB8700E0A481 /* WebImageGridViewCell.m */; };
+		84FCA64C1670CC24004C6079 /* AppActionsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FCA64B1670CC24004C6079 /* AppActionsHelper.m */; };
+		84FCA64D1670CC24004C6079 /* AppActionsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FCA64B1670CC24004C6079 /* AppActionsHelper.m */; };
 		861D7A3B5FE242FCA3CA3BEC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59FBA4CF79134DFAAB1477F7 /* libPods.a */; };
 		87900F60B26040DEA7CB6F0B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59FBA4CF79134DFAAB1477F7 /* libPods.a */; };
 		95043AE815B748AF0012E8CC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 95043AE415B748AF0012E8CC /* Default.png */; };
@@ -3546,6 +3548,8 @@
 		84F82C91161AF98E00E0A481 /* PhotoGalleryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoGalleryViewController.xib; sourceTree = "<group>"; };
 		84F82CCE161AFB8700E0A481 /* WebImageGridViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebImageGridViewCell.h; sourceTree = "<group>"; };
 		84F82CCF161AFB8700E0A481 /* WebImageGridViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebImageGridViewCell.m; sourceTree = "<group>"; };
+		84FCA64A1670CC24004C6079 /* AppActionsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppActionsHelper.h; sourceTree = "<group>"; };
+		84FCA64B1670CC24004C6079 /* AppActionsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppActionsHelper.m; sourceTree = "<group>"; };
 		95043AE415B748AF0012E8CC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		95043AE515B748AF0012E8CC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		95043AE615B748AF0012E8CC /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -4621,9 +4625,9 @@
 				84CA0215166CCBDA003E1F81 /* PMCalendar */,
 				D9515CA61638351E0058BE8C /* Extensions */,
 				D93249681637DDF800409AA9 /* Views */,
+				8488550414D1A7420030BD03 /* CustomNavigationBar */,
 				848F723316280E40005F02E8 /* Other */,
 				8444637416198E6300394D41 /* Models */,
-				8488550414D1A7420030BD03 /* CustomNavigationBar */,
 				848854B514D1464E0030BD03 /* Helpers */,
 				848854A714D141E30030BD03 /* View Controllers */,
 				D92B0ED81589DE28006894BE /* Application */,
@@ -4668,6 +4672,8 @@
 		848854A814D142120030BD03 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D93249281637CD8B00409AA9 /* EventsViewController.xib */,
+				840E4587166E374C007CCF51 /* EventDetailsViewController.xib */,
 				848DFB681626B3F50096A6FF /* VideoViewController.xib */,
 				847FD37F161ACDAE009FB9CC /* PhotoCategoriesViewController.xib */,
 				84F82C91161AF98E00E0A481 /* PhotoGalleryViewController.xib */,
@@ -4687,6 +4693,8 @@
 				D93249CC1637E28400409AA9 /* Network */,
 				E63F275B14E949FE0040F281 /* FacebookHelper.h */,
 				E63F275C14E949FE0040F281 /* FacebookHelper.m */,
+				84FCA64A1670CC24004C6079 /* AppActionsHelper.h */,
+				84FCA64B1670CC24004C6079 /* AppActionsHelper.m */,
 				E63F271C14E9448A0040F281 /* FacebookConnect */,
 				848854C314D16F620030BD03 /* Reachability.h */,
 				848854C414D16F620030BD03 /* Reachability.m */,
@@ -5342,11 +5350,9 @@
 			children = (
 				D93249261637CD8B00409AA9 /* EventsViewController.h */,
 				D93249271637CD8B00409AA9 /* EventsViewController.m */,
-				D93249281637CD8B00409AA9 /* EventsViewController.xib */,
 				D99E726F163E6B6B004EB303 /* Subviews */,
 				840E4585166E3749007CCF51 /* EventDetailsViewController.h */,
 				840E4586166E374B007CCF51 /* EventDetailsViewController.m */,
-				840E4587166E374C007CCF51 /* EventDetailsViewController.xib */,
 			);
 			name = Events;
 			sourceTree = "<group>";
@@ -9095,6 +9101,7 @@
 				84CA0242166CCBDB003E1F81 /* PMThemeShadow.m in Sources */,
 				840E4588166E374C007CCF51 /* EventDetailsViewController.m in Sources */,
 				840E458E166E48C4007CCF51 /* EventDetailTopView.m in Sources */,
+				84FCA64C1670CC24004C6079 /* AppActionsHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -10460,6 +10467,7 @@
 				84CA0243166CCBDB003E1F81 /* PMThemeShadow.m in Sources */,
 				840E4589166E374C007CCF51 /* EventDetailsViewController.m in Sources */,
 				840E458F166E48C4007CCF51 /* EventDetailTopView.m in Sources */,
+				84FCA64D1670CC24004C6079 /* AppActionsHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

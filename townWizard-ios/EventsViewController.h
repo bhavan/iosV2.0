@@ -16,7 +16,7 @@
     IBOutlet EventsViewer *featuredEventsViewer;
     IBOutlet UITableView *eventsList;
     
-    NSMutableDictionary *sections;
+
     
     NSInteger currentCategory;
 }
@@ -25,9 +25,6 @@
 @property (nonatomic, retain) NSArray *categotiesList;
 @property (retain, nonatomic) IBOutlet UIButton *eventsTypeButton;
 
-- (void) loadTodayEvents;
-- (void)loadEventsWithDatePeriod:(NSDate *)startDate endDate:(NSDate *)endDate;
-- (void)filterEventsByCategory;
 - (IBAction)categoriesButtonPressed:(id)sender;
 - (IBAction)dateSelectButtonPressed:(id)sender;
 

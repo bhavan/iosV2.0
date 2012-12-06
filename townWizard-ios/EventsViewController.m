@@ -25,11 +25,14 @@
 @property (nonatomic, retain) NSArray *events;
 @property (nonatomic, retain) NSArray *allEvents;
 @property (nonatomic, retain) NSArray *allFeaturedEvents;
+@property (nonatomic, retain) NSMutableDictionary *sections;
 @property (nonatomic, strong) PMCalendarController *calendar;
-@property (nonatomic,retain) NSDateFormatter *sectionDateFormatter;
-@property (nonatomic,retain) NSArray *sortedDays;
+@property (nonatomic, retain) NSDateFormatter *sectionDateFormatter;
+@property (nonatomic, retain) NSArray *sortedDays;
 
-- (NSDate *)dateAtBeginningOfDayForDate:(NSDate *)inputDate;
+- (void) loadTodayEvents;
+- (void)loadEventsWithDatePeriod:(NSDate *)startDate endDate:(NSDate *)endDate;
+- (void)filterEventsByCategoryAndDate;
 
 @end
 
@@ -52,8 +55,7 @@ static const NSInteger kEventsAlertTag = 700;
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-   // [self loadAllEvents];
-   
+    
 }
 
 - (void) viewWillDisappear:(BOOL)animated
@@ -75,15 +77,15 @@ static const NSInteger kEventsAlertTag = 700;
     [eventsList release];
     eventsList = nil;
     [self setEventsTypeButton:nil];
-    [self setCalendarButton:nil];  
-        [super viewDidUnload];
+    [self setCalendarButton:nil];
+    [super viewDidUnload];
 }
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-        self.calendar = [[PMCalendarController alloc] initWithThemeName:@"apple calendar"];
+    self.calendar = [[PMCalendarController alloc] initWithThemeName:@"apple calendar"];
     self.calendar.delegate = self;
     self.calendar.mondayFirstDayOfWeek = NO;
     currentCategory = -1;
@@ -92,8 +94,7 @@ static const NSInteger kEventsAlertTag = 700;
     self.sectionDateFormatter = [[NSDateFormatter alloc] init];
     [self.sectionDateFormatter setDateFormat:@"EEEE LLL dd"];
     [self loadTodayEvents];
-    [self loadEventsCategories];
-    
+    [self loadEventsCategories];    
     [self loadFeaturedEvents];
 }
 
@@ -112,17 +113,6 @@ static const NSInteger kEventsAlertTag = 700;
     }];
 }
 
-- (void) loadAllEvents
-{
-    [[RequestHelper sharedInstance] loadEventsUsingBlock:^(RKObjectLoader *loader) {
-        [loader setOnDidLoadObjects:^(NSArray *objects){
-            [self eventsLoaded:objects];
-        }];
-        [loader setOnDidFailWithError:^(NSError *error){
-            [self eventsLoadingFailed:error];
-        }];
-    }];
-}
 
 - (void) loadEventsCategories
 {
@@ -145,14 +135,14 @@ static const NSInteger kEventsAlertTag = 700;
 {
     [[RequestHelper sharedInstance] loadEventsWithDatePeriod:startDate end:endDate
                                                   UsingBlock:^(RKObjectLoader *loader) {
-        [loader setOnDidLoadObjects:^(NSArray *objects){
-            [self eventsLoaded:objects];
-        }];
-        [loader setOnDidFailWithError:^(NSError *error){
-            [self eventsLoadingFailed:error];
-        }];
-    }];
-
+                                                      [loader setOnDidLoadObjects:^(NSArray *objects){
+                                                          [self eventsLoaded:objects];
+                                                      }];
+                                                      [loader setOnDidFailWithError:^(NSError *error){
+                                                          [self eventsLoadingFailed:error];
+                                                      }];
+                                                  }];
+    
 }
 
 - (IBAction)categoriesButtonPressed:(id)sender {
@@ -164,7 +154,7 @@ static const NSInteger kEventsAlertTag = 700;
     //  }
 }
 
-- (void)filterEventsByCategory
+- (void)filterEventsByCategoryAndDate
 {
     if(currentCategory == -1)
     {
@@ -172,71 +162,57 @@ static const NSInteger kEventsAlertTag = 700;
     }
     else
     {
-         EventCategory *category = [self.categotiesList objectAtIndex:currentCategory];
+        EventCategory *category = [self.categotiesList objectAtIndex:currentCategory];
         NSPredicate *pred = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"(categoryName == '%@')", category.title]];
         
         self.events = [self.allEvents filteredArrayUsingPredicate:pred];
     }
     
-    sections = [NSMutableDictionary dictionary];
+    self.sections = [NSMutableDictionary dictionary];
     for (Event *event in self.events)
     {
-        // Reduce event start date to date components (year, month, day)
         NSDate *startDate = [NSDate dateFromString:event.startTime dateFormat:@"YYYY-MM-dd HH:mm:ss"];
-        NSDate *dateRepresentingThisDay = [self dateAtBeginningOfDayForDate:startDate];
-        
-        // If we don't yet have an array to hold the events for this day, create one
-        NSMutableArray *eventsOnThisDay = [sections objectForKey:dateRepresentingThisDay];
-        if (eventsOnThisDay == nil) {
+        NSDate *dateRepresentingThisDay = [NSDate dateAtBeginningOfDayForDate:startDate];
+        NSMutableArray *eventsOnThisDay = [self.sections objectForKey:dateRepresentingThisDay];
+        if (eventsOnThisDay == nil)
+        {
             eventsOnThisDay = [NSMutableArray array];
-            
-            // Use the reduced date as dictionary key to later retrieve the event list this day
-            [sections setObject:eventsOnThisDay forKey:dateRepresentingThisDay];
+            [self.sections setObject:eventsOnThisDay forKey:dateRepresentingThisDay];
         }
-        
-        // Add the event to the list for this day
         [eventsOnThisDay addObject:event];
-    }
-    
-    // Create a sorted list of days
-    NSArray *unsortedDays = [sections allKeys];
-    self.sortedDays = [unsortedDays sortedArrayUsingSelector:@selector(compare:)];   
-  
-    
-     [eventsList reloadData];
+    }    
+
+    NSArray *unsortedDays = [self.sections allKeys];
+    self.sortedDays = [unsortedDays sortedArrayUsingSelector:@selector(compare:)];    
+    [eventsList reloadData];
     
 }
 
 - (IBAction)dateSelectButtonPressed:(id)sender
 {
-    CGFloat yOffset = 0;
-   /* if(featuredEventsViewer.isImagePresented)
-    {
-        yOffset = 115;
-    }*/
-    [self.calendar presentCalendarFromRect:CGRectMake(0, yOffset, 320, 0)
-                           inView:self.view
-         permittedArrowDirections:PMCalendarArrowDirectionAny
-                         animated:YES];
+    [self.calendar presentCalendarFromRect:CGRectMake(0, 0, 320, 0)
+                                    inView:self.view
+                  permittedArrowDirections:PMCalendarArrowDirectionAny
+                                  animated:YES];
 }
 
 #pragma mark PMCalendarControllerDelegate methods
 
 - (void)calendarController:(PMCalendarController *)calendarController didChangePeriod:(PMPeriod *)newPeriod
 {
-   
+    
 }
 
 - (BOOL)calendarControllerShouldDismissCalendar:(PMCalendarController *)calendarController
 {
     if(!calendarController.isCalendarCanceled)
     {
-    NSString *newDatePeriod = [NSString stringWithFormat:@"%@ - %@"
-                               , [calendarController.period.startDate dateStringWithFormat:@"LLL dd"]
-                               , [calendarController.period.endDate dateStringWithFormat:@"LLL dd"]];
-    [self.calendarButton setTitle:newDatePeriod forState:UIControlStateNormal];
-    [self loadEventsWithDatePeriod:self.calendar.period.startDate
-                           endDate:self.calendar.period.endDate];
+        NSString *newDatePeriod = [NSString stringWithFormat:@"%@ - %@"
+                                   , [calendarController.period.startDate dateStringWithFormat:@"LLL dd"]
+                                   , [calendarController.period.endDate dateStringWithFormat:@"LLL dd"]];
+        [self.calendarButton setTitle:newDatePeriod forState:UIControlStateNormal];
+        [self loadEventsWithDatePeriod:self.calendar.period.startDate
+                               endDate:self.calendar.period.endDate];
     }
     return YES;
 }
@@ -249,11 +225,11 @@ static const NSInteger kEventsAlertTag = 700;
     NSString *title = ALL_EVENTS_TEXT;
     if(currentCategory >= 0)
     {
-    EventCategory *category = [self.categotiesList objectAtIndex:currentCategory];
+        EventCategory *category = [self.categotiesList objectAtIndex:currentCategory];
         title = [category.title uppercaseString];
     }
     [self.eventsTypeButton setTitle:title forState:UIControlStateNormal];
-    [self filterEventsByCategory];
+    [self filterEventsByCategoryAndDate];
     
 }
 
@@ -312,33 +288,11 @@ static const NSInteger kEventsAlertTag = 700;
 }
 
 - (void) eventsLoaded:(NSArray *) events
-{
-      
-   
-    
+{   
     [self setAllEvents:events];
-    [self filterEventsByCategory];
+    [self filterEventsByCategoryAndDate];
 }
 
-- (NSDate *)dateAtBeginningOfDayForDate:(NSDate *)inputDate
-{
-    // Use the user's current calendar and time zone
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSTimeZone *timeZone = [NSTimeZone systemTimeZone];
-    [calendar setTimeZone:timeZone];
-    
-    // Selectively convert the date components (year, month, day) of the input date
-    NSDateComponents *dateComps = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:inputDate];
-    
-    // Set the time components manually
-    [dateComps setHour:0];
-    [dateComps setMinute:0];
-    [dateComps setSecond:0];
-    
-    // Convert back
-    NSDate *beginningOfDay = [calendar dateFromComponents:dateComps];
-    return beginningOfDay;
-}
 
 - (void) categoriesLoaded:(NSArray *)categories
 {
@@ -369,7 +323,7 @@ static const NSInteger kEventsAlertTag = 700;
     _allFeaturedEvents = featuredEvents;
     [featuredEventsViewer setRootView:eventsList];
     [featuredEventsViewer displayEvents:_allFeaturedEvents];
-  //  [featuredEventsViewer displayEvents:@[]];
+    //  [featuredEventsViewer displayEvents:@[]];
 }
 
 #pragma mark -
@@ -377,13 +331,13 @@ static const NSInteger kEventsAlertTag = 700;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [sections count];
+    return [self.sections count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     NSDate *dateRepresentingThisDay = [self.sortedDays objectAtIndex:section];
-    NSArray *eventsOnThisDay = [sections objectForKey:dateRepresentingThisDay];
+    NSArray *eventsOnThisDay = [self.sections objectForKey:dateRepresentingThisDay];
     return [eventsOnThisDay count];
 }
 
@@ -403,7 +357,10 @@ static const NSInteger kEventsAlertTag = 700;
         cell = [EventCell loadFromXib];
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
-    [cell updateWithEvent:[[self events] objectAtIndex:indexPath.row]];
+    NSDate *dateRepresentingThisDay = [self.sortedDays objectAtIndex:indexPath.section];
+    NSArray *eventsOnThisDay = [self.sections objectForKey:dateRepresentingThisDay];
+    Event *event = [eventsOnThisDay objectAtIndex:indexPath.row];
+    [cell updateWithEvent:event];
     return cell;
 }
 
@@ -413,7 +370,10 @@ static const NSInteger kEventsAlertTag = 700;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     EventDetailsViewController *eventDetails = [EventDetailsViewController new];
-    [eventDetails loadWithEvent:[[self events] objectAtIndex:indexPath.row]];
+    NSDate *dateRepresentingThisDay = [self.sortedDays objectAtIndex:indexPath.section];
+    NSArray *eventsOnThisDay = [self.sections objectForKey:dateRepresentingThisDay];
+    Event *event = [eventsOnThisDay objectAtIndex:indexPath.row];
+    [eventDetails loadWithEvent:event];
     [self.navigationController pushViewController:eventDetails animated:YES];
     [eventDetails release];
 }

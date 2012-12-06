@@ -9,6 +9,7 @@
 #import "EventDetailTopView.h"
 #import "AppDelegate.h"
 #import <QuartzCore/QuartzCore.h>
+#import "Event.h"
 
 @implementation EventDetailTopView
 
@@ -30,6 +31,13 @@
       UIColor *backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"events_pattern_bg"]];
     [_bgView setBackgroundColor:backgroundColor];
     
+}
+
+- (void)updateWithEvent:(Event *)event
+{
+    _eventTitleLabel.text = event.title;
+    _eventAdress.text = event.location.address;
+    [_callButton setTitle:event.location.phone forState:UIControlStateNormal];
 }
 
 - (UIImage *)buttonBackgroundImage

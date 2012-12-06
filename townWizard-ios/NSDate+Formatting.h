@@ -18,5 +18,6 @@
 + (NSString *) stringFromDate:(NSDate *) date
                    dateFormat:(NSString *) dateFormat
              localeIdentifier:(NSString *) localeIdentifier;
++ (NSDate *)dateAtBeginningOfDayForDate:(NSDate *)inputDate;
 
 @end

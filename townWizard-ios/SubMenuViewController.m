@@ -12,14 +12,9 @@
 #import "UIApplication+NetworkActivity.h"
 #import "AppDelegate.h"
 #import "MapViewController.h"
-#import "AddCaptionViewController.h"
-#import "Facebook.h"
-#import "FacebookFriend.h"
-#import "Place.h"
 #import "FacebookPlacesViewController.h"
 #import "Partner.h"
 #import "Section.h"
-#import "PhotoUploadView.h"
 #import "PartnerViewController.h"
 #import "RequestHelper.h"
 
@@ -35,24 +30,12 @@
 @implementation SubMenuViewController
 
 
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self)
-    {
-        
-    }
-    return self;
-}
-
-
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.webView.delegate = self;
-   // self.navigationItem.hidesBackButton = YES;
     self.navigationController.navigationBarHidden = NO;    
 
     NSString *urlString;
@@ -77,26 +60,17 @@
     }
     
     back = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(goBackPressed:)];
-    //self.navigationItem.leftBarButtonItem = back;
-    // [back release];
-    
     partnerController = (id)self.navigationController.parentViewController;
 }
 
 
-
-
 - (void) viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
-    
+    [super viewWillAppear:animated];    
 }
 
 -(void)viewWillDisappear:(BOOL)animated
-{
-    //    [self.customNavigationBar.menuButton removeTarget:self
-    //                                               action:@selector(menuButtonPressed)
-    //                                     forControlEvents:UIControlEventTouchUpInside];
+{ 
     [[UIApplication sharedApplication] hideNetworkActivityIndicator];
     [super viewWillDisappear:animated];
 }
@@ -118,25 +92,17 @@
     [self.webView goBack];
 }
 
-- (IBAction)goForwardPressed:(id)sender
-{
-    [self.webView goForward];
-}
-
-
-
 
 #pragma mark -
 #pragma mark webView
 
--(void)webViewDidStartLoad:(UIWebView *)webView
+- (void)webViewDidStartLoad:(UIWebView *)webView
 {
-    [self.webPageLoadingSpinner startAnimating];
     webView.scalesPageToFit = YES;
     [[UIApplication sharedApplication] showNetworkActivityIndicator];
 }
 
--(void)webViewDidFinishLoad:(UIWebView *)webView
+- (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     if(_webView.canGoBack)
     {
@@ -147,16 +113,15 @@
         self.navigationItem.leftBarButtonItem =  [partnerController menuButton];
     }
     NSLog(@"Finish loading URL: %@",[webView.request URL]);
-    [self.webPageLoadingSpinner stopAnimating];
+
     if (self.view.window) //if webView is not on screen, we are not interested in setting this
         [[UIApplication sharedApplication] setActivityindicatorToZero];
 }
 
--(BOOL)webView:(UIWebView *)webView
+- (BOOL)webView:(UIWebView *)webView
 shouldStartLoadWithRequest:(NSURLRequest *)request
 navigationType:(UIWebViewNavigationType)navigationType
-{
-    
+{    
     if(_webView.canGoBack)
     {
         self.navigationItem.leftBarButtonItem = back;
@@ -167,11 +132,11 @@ navigationType:(UIWebViewNavigationType)navigationType
     }
     
     NSLog(@"Loading URL: %@",[request URL]);
-    // OMG govnokod started
     NSString *requestString = [[request URL] absoluteString];
 	NSArray *components = [requestString componentsSeparatedByString:@":"];
     
-    if ([components count] >= 2) {
+    if ([components count] >= 2)
+    {
         NSString *rootUrlType = [[components objectAtIndex:0] lowercaseString];
         if([rootUrlType isEqualToString:ROOT_URL])
         {
@@ -179,7 +144,7 @@ navigationType:(UIWebViewNavigationType)navigationType
             
             if( [urlType isEqualToString:CALL_URL])
             {
-                [[AppDelegate sharedDelegate] makeCall:[components objectAtIndex:2]];
+                [[AppActionsHelper sharedInstance] makeCall:[components objectAtIndex:2]];
             }
             else if( [urlType isEqualToString:DETAILS_URL])
             {
@@ -192,7 +157,7 @@ navigationType:(UIWebViewNavigationType)navigationType
                  viewController.placeInfo = info;
                  [[GenericAppAppDelegate sharedDelegate] subNavigateTo:viewController];
                  [viewController release];*/
-                return NO;
+                return YES;
                 
             }
             else if([urlType isEqualToString:MAP_URL])
@@ -208,7 +173,7 @@ navigationType:(UIWebViewNavigationType)navigationType
         }
         else if([rootUrlType isEqualToString:TEL_URL])
         {
-            [[AppDelegate sharedDelegate] makeCall:[components objectAtIndex:1]];
+            [[AppActionsHelper sharedInstance] makeCall:[components objectAtIndex:1]];
             return NO;
         }
         else if([rootUrlType isEqualToString:MAIL_URL])
@@ -225,21 +190,13 @@ navigationType:(UIWebViewNavigationType)navigationType
 
 - (void)showMapWithUrlComponents:(NSArray *)components
 {
-    MapViewController *viewController = [[MapViewController alloc] init];
-    if ([components count] >= 5) {
-        NSString *title = [components objectAtIndex:4];
-        viewController.m_sTitle =
-        [[title stringByReplacingOccurrencesOfString:@"+" withString:@" "]
-         stringByReplacingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
-    }
-    viewController.m_dblLatitude = [[components objectAtIndex:2] doubleValue];
-    viewController.m_dblLongitude = [[components objectAtIndex:3] doubleValue];
-    viewController.bShowDirection = YES;
-    viewController.customNavigationBar = self.customNavigationBar;
-    
-    [self.navigationController pushViewController:viewController animated:YES];
-    
-    [viewController release];
+    NSString *title = [components objectAtIndex:4];
+    title = [[title stringByReplacingOccurrencesOfString:@"+" withString:@" "]
+             stringByReplacingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+
+    [[AppActionsHelper sharedInstance] openMapWithTitle:title
+                                         longitude:[[components objectAtIndex:2] doubleValue]
+                                          latitude:[[components objectAtIndex:3] doubleValue] fromNavController:self.navigationController];    
 }
 
 
@@ -297,7 +254,6 @@ navigationType:(UIWebViewNavigationType)navigationType
     self.webView = nil;
     [_url release];
     [[UIApplication sharedApplication] setActivityindicatorToZero];
-    [self setWebPageLoadingSpinner:nil];
 }
 
 - (void)viewDidUnload

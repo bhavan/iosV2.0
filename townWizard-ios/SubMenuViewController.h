@@ -27,26 +27,21 @@ UINavigationControllerDelegate,
 MFMailComposeViewControllerDelegate>
 
 {
-
     UIBarButtonItem *back;
     PartnerViewController *partnerController;
 }
-
 
 
 @property (nonatomic, retain) Partner *partner;
 @property (nonatomic, retain) NSString *url;
 @property (nonatomic, retain) Section * section;
 @property (nonatomic, retain) TownWizardNavigationBar * customNavigationBar;
-
-@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *webPageLoadingSpinner;
 @property (nonatomic, retain) IBOutlet UIWebView *webView;
 @property (nonatomic, assign)  id <SubMenuViewControllerDelegate> delegate;
 
 - (void)showMapWithUrlComponents:(NSArray *)components;
-- (IBAction)goBackPressed:(id)sender;
-- (IBAction)goForwardPressed:(id)sender;
 - (void)fbUrlPressedWithComponents:(NSArray *)components;
 - (void)mailUrlPressedWithComponents:(NSArray *)components;
+- (IBAction)goBackPressed:(id)sender;
 
 @end
