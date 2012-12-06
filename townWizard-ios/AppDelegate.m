@@ -11,6 +11,8 @@
 #import "MasterDetailController.h"
 #import "TownWIzardNavigationBar.h"
 #import "MapViewController.h"
+#import "SHKConfiguration.h"
+#import "TWShareKitConfigurator.h"
 
 #import <RestKit/RestKit.h>
 
@@ -71,6 +73,8 @@ static NSString* teamToken = @"5c115b5c0ce101b8b0367b329e68db27_MzE2NjMyMDExLTEx
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    DefaultSHKConfigurator *configurator = [[[TWShareKitConfigurator alloc] init] autorelease];
+    [SHKConfiguration sharedInstanceWithConfigurator:configurator];
     RKLogConfigureByName("RestKit/Network", RKLogLevelTrace);
     
     RKURL *baseURL = [RKURL URLWithBaseURLString:API_URL];

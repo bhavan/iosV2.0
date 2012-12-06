@@ -986,6 +986,8 @@
 		848F7290162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
 		848F7291162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
 		848F7293162810BF005F02E8 /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
+		84C6EF7C1670F6770007F031 /* TWShareKitConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C6EF7B1670F6770007F031 /* TWShareKitConfigurator.m */; };
+		84C6EF7D1670F6770007F031 /* TWShareKitConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C6EF7B1670F6770007F031 /* TWShareKitConfigurator.m */; };
 		84CA0232166CCBDB003E1F81 /* NSDate+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CA0219166CCBDA003E1F81 /* NSDate+Helpers.m */; };
 		84CA0233166CCBDB003E1F81 /* NSDate+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CA0219166CCBDA003E1F81 /* NSDate+Helpers.m */; };
 		84CA0234166CCBDB003E1F81 /* PMCalendarBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CA021B166CCBDA003E1F81 /* PMCalendarBackgroundView.m */; };
@@ -3508,6 +3510,8 @@
 		848F7213162808C0005F02E8 /* BaseUploadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseUploadViewController.m; sourceTree = "<group>"; };
 		848F7254162810BD005F02E8 /* menuStarButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuStarButton.png; sourceTree = "<group>"; };
 		848F7255162810BE005F02E8 /* menuStarButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menuStarButton@2x.png"; sourceTree = "<group>"; };
+		84C6EF7A1670F6770007F031 /* TWShareKitConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWShareKitConfigurator.h; sourceTree = "<group>"; };
+		84C6EF7B1670F6770007F031 /* TWShareKitConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWShareKitConfigurator.m; sourceTree = "<group>"; };
 		84CA0216166CCBDA003E1F81 /* PMCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMCalendar.h; sourceTree = "<group>"; };
 		84CA0218166CCBDA003E1F81 /* NSDate+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helpers.h"; sourceTree = "<group>"; };
 		84CA0219166CCBDA003E1F81 /* NSDate+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helpers.m"; sourceTree = "<group>"; };
@@ -4700,6 +4704,8 @@
 				848854C414D16F620030BD03 /* Reachability.m */,
 				E61A4DDA14E166BC0039E970 /* UIApplication+NetworkActivity.h */,
 				E61A4DDB14E166BC0039E970 /* UIApplication+NetworkActivity.m */,
+				84C6EF7A1670F6770007F031 /* TWShareKitConfigurator.h */,
+				84C6EF7B1670F6770007F031 /* TWShareKitConfigurator.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -9102,6 +9108,7 @@
 				840E4588166E374C007CCF51 /* EventDetailsViewController.m in Sources */,
 				840E458E166E48C4007CCF51 /* EventDetailTopView.m in Sources */,
 				84FCA64C1670CC24004C6079 /* AppActionsHelper.m in Sources */,
+				84C6EF7C1670F6770007F031 /* TWShareKitConfigurator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -10468,6 +10475,7 @@
 				840E4589166E374C007CCF51 /* EventDetailsViewController.m in Sources */,
 				840E458F166E48C4007CCF51 /* EventDetailTopView.m in Sources */,
 				84FCA64D1670CC24004C6079 /* AppActionsHelper.m in Sources */,
+				84C6EF7D1670F6770007F031 /* TWShareKitConfigurator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
