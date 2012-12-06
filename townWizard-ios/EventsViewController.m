@@ -15,6 +15,7 @@
 #import "InputBar.h"
 #import "PMCalendar.h"
 #import "EventDetailsViewController.h"
+#import "NSDate+Formatting.h"
 
 #import "UIView+Extensions.h"
 
@@ -25,6 +26,11 @@
 @property (nonatomic, retain) NSArray *allEvents;
 @property (nonatomic, retain) NSArray *allFeaturedEvents;
 @property (nonatomic, strong) PMCalendarController *calendar;
+@property (nonatomic,retain) NSDateFormatter *sectionDateFormatter;
+@property (nonatomic,retain) NSArray *sortedDays;
+
+- (NSDate *)dateAtBeginningOfDayForDate:(NSDate *)inputDate;
+
 @end
 
 static const NSInteger kEventsAlertTag = 700;
@@ -69,8 +75,8 @@ static const NSInteger kEventsAlertTag = 700;
     [eventsList release];
     eventsList = nil;
     [self setEventsTypeButton:nil];
-    [self setCalendarButton:nil];
-    [super viewDidUnload];
+    [self setCalendarButton:nil];  
+        [super viewDidUnload];
 }
 
 
@@ -83,6 +89,8 @@ static const NSInteger kEventsAlertTag = 700;
     currentCategory = -1;
     [self.eventsTypeButton setTitle:ALL_EVENTS_TEXT forState:UIControlStateNormal];
     [self.calendarButton setTitle:@"TODAY" forState:UIControlStateNormal];
+    self.sectionDateFormatter = [[NSDateFormatter alloc] init];
+    [self.sectionDateFormatter setDateFormat:@"EEEE LLL dd"];
     [self loadTodayEvents];
     [self loadEventsCategories];
     
@@ -169,6 +177,32 @@ static const NSInteger kEventsAlertTag = 700;
         
         self.events = [self.allEvents filteredArrayUsingPredicate:pred];
     }
+    
+    sections = [NSMutableDictionary dictionary];
+    for (Event *event in self.events)
+    {
+        // Reduce event start date to date components (year, month, day)
+        NSDate *startDate = [NSDate dateFromString:event.startTime dateFormat:@"YYYY-MM-dd HH:mm:ss"];
+        NSDate *dateRepresentingThisDay = [self dateAtBeginningOfDayForDate:startDate];
+        
+        // If we don't yet have an array to hold the events for this day, create one
+        NSMutableArray *eventsOnThisDay = [sections objectForKey:dateRepresentingThisDay];
+        if (eventsOnThisDay == nil) {
+            eventsOnThisDay = [NSMutableArray array];
+            
+            // Use the reduced date as dictionary key to later retrieve the event list this day
+            [sections setObject:eventsOnThisDay forKey:dateRepresentingThisDay];
+        }
+        
+        // Add the event to the list for this day
+        [eventsOnThisDay addObject:event];
+    }
+    
+    // Create a sorted list of days
+    NSArray *unsortedDays = [sections allKeys];
+    self.sortedDays = [unsortedDays sortedArrayUsingSelector:@selector(compare:)];   
+  
+    
      [eventsList reloadData];
     
 }
@@ -279,8 +313,31 @@ static const NSInteger kEventsAlertTag = 700;
 
 - (void) eventsLoaded:(NSArray *) events
 {
+      
+   
+    
     [self setAllEvents:events];
     [self filterEventsByCategory];
+}
+
+- (NSDate *)dateAtBeginningOfDayForDate:(NSDate *)inputDate
+{
+    // Use the user's current calendar and time zone
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSTimeZone *timeZone = [NSTimeZone systemTimeZone];
+    [calendar setTimeZone:timeZone];
+    
+    // Selectively convert the date components (year, month, day) of the input date
+    NSDateComponents *dateComps = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:inputDate];
+    
+    // Set the time components manually
+    [dateComps setHour:0];
+    [dateComps setMinute:0];
+    [dateComps setSecond:0];
+    
+    // Convert back
+    NSDate *beginningOfDay = [calendar dateFromComponents:dateComps];
+    return beginningOfDay;
 }
 
 - (void) categoriesLoaded:(NSArray *)categories
@@ -318,10 +375,25 @@ static const NSInteger kEventsAlertTag = 700;
 #pragma mark -
 #pragma mark UITableViewDataSource
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [sections count];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[self events] count];
+    NSDate *dateRepresentingThisDay = [self.sortedDays objectAtIndex:section];
+    NSArray *eventsOnThisDay = [sections objectForKey:dateRepresentingThisDay];
+    return [eventsOnThisDay count];
 }
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    NSDate *dateRepresentingThisDay = [self.sortedDays objectAtIndex:section];
+    return [self.sectionDateFormatter stringFromDate:dateRepresentingThisDay];
+}
+
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -348,13 +420,11 @@ static const NSInteger kEventsAlertTag = 700;
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+    NSDate *dateRepresentingThisDay = [self.sortedDays objectAtIndex:section];
+    NSString *title = [self.sectionDateFormatter stringFromDate:dateRepresentingThisDay];
     CGRect headerFrame = CGRectMake(0, 0, [tableView frame].size.width, [tableView sectionHeaderHeight]);
     EventSectionHeader *header = [[EventSectionHeader alloc] initWithFrame:headerFrame];
-    NSDateFormatter *dateFormat = [NSDateFormatter new];
-    [dateFormat setDateFormat:@"EEEE dd LLL"];
-    NSString *strDate = [[dateFormat stringFromDate:[NSDate date]] uppercaseString];
-    [dateFormat release];
-    [[header title] setText:strDate];
+    [[header title] setText:[title uppercaseString]];
     return header;
 }
 

@@ -16,7 +16,7 @@
     IBOutlet EventsViewer *featuredEventsViewer;
     IBOutlet UITableView *eventsList;
     
-    
+    NSMutableDictionary *sections;
     
     NSInteger currentCategory;
 }

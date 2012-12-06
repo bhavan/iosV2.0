@@ -61,7 +61,7 @@
 }
 
 - (IBAction)webButtonPressed:(id)sender {
-    if(_event.location.website && _event.location.website.length >0)
+    if(_event.location.website && _event.location.website.length > 0)
     {
         [[RequestHelper sharedInstance] setCurrentSection:nil];
         SubMenuViewController *subMenu = [SubMenuViewController new];
@@ -71,6 +71,7 @@
     }
     else
     {
+        
         UIAlertView *alert = [[UIAlertView alloc]
                               initWithTitle:@"No website"
                               message:nil
@@ -82,7 +83,8 @@
     }
 }
 
-- (IBAction)mapButtonPressed:(id)sender {
+- (IBAction)mapButtonPressed:(id)sender
+{
     MapViewController *viewController = [[MapViewController alloc] init];
     if(_event.location.latitude && _event.location.longitude)
     {
@@ -114,7 +116,8 @@
     [myEvent setCalendar:[eventDB defaultCalendarForNewEvents]];
     NSError *err;
     [eventDB saveEvent:myEvent span:EKSpanThisEvent error:&err];
-    if (err == noErr) {
+    if (err == noErr)
+    {
         UIAlertView *alert = [[UIAlertView alloc]
                               initWithTitle:@"Event Created"
                               message:nil

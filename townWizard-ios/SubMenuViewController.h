@@ -43,7 +43,6 @@ MFMailComposeViewControllerDelegate>
 @property (nonatomic, retain) IBOutlet UIWebView *webView;
 @property (nonatomic, assign)  id <SubMenuViewControllerDelegate> delegate;
 
-- (void)showUploadTitle;
 - (void)showMapWithUrlComponents:(NSArray *)components;
 - (IBAction)goBackPressed:(id)sender;
 - (IBAction)goForwardPressed:(id)sender;
