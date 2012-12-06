@@ -100,6 +100,8 @@
  */
 @property (nonatomic, assign) BOOL allowsPeriodSelection;
 
+@property (nonatomic, assign) BOOL isCalendarCanceled;
+
 /**
  * If set to YES, the calendar allows to long press on a month change arrow
  * in order to fast iterate through months.

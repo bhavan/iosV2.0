@@ -190,16 +190,20 @@ static const NSInteger kEventsAlertTag = 700;
 
 - (void)calendarController:(PMCalendarController *)calendarController didChangePeriod:(PMPeriod *)newPeriod
 {
-    NSString *newDatePeriod = [NSString stringWithFormat:@"%@ - %@"
-                              , [newPeriod.startDate dateStringWithFormat:@"LLL dd"]
-                              , [newPeriod.endDate dateStringWithFormat:@"LLL dd"]];
-    [self.calendarButton setTitle:newDatePeriod forState:UIControlStateNormal];
+   
 }
 
 - (BOOL)calendarControllerShouldDismissCalendar:(PMCalendarController *)calendarController
 {
+    if(!calendarController.isCalendarCanceled)
+    {
+    NSString *newDatePeriod = [NSString stringWithFormat:@"%@ - %@"
+                               , [calendarController.period.startDate dateStringWithFormat:@"LLL dd"]
+                               , [calendarController.period.endDate dateStringWithFormat:@"LLL dd"]];
+    [self.calendarButton setTitle:newDatePeriod forState:UIControlStateNormal];
     [self loadEventsWithDatePeriod:self.calendar.period.startDate
                            endDate:self.calendar.period.endDate];
+    }
     return YES;
 }
 
@@ -308,6 +312,7 @@ static const NSInteger kEventsAlertTag = 700;
     _allFeaturedEvents = featuredEvents;
     [featuredEventsViewer setRootView:eventsList];
     [featuredEventsViewer displayEvents:_allFeaturedEvents];
+  //  [featuredEventsViewer displayEvents:@[]];
 }
 
 #pragma mark -

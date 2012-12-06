@@ -64,7 +64,7 @@
     [eventTitle sizeToFit];
     
     CGRect locationFrame = [eventLocation frame];
-    locationFrame.origin.y = CGRectGetMaxY([eventTitle frame]);
+    locationFrame.origin.y = CGRectGetMaxY([eventTitle frame])-5;
     [eventLocation setFrame:locationFrame];
 }
 

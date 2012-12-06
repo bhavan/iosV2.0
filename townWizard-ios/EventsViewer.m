@@ -31,7 +31,7 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
         UISwipeGestureRecognizer *leftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(showNextEvent)];
         [leftSwipe setDirection:UISwipeGestureRecognizerDirectionLeft];
         [self addGestureRecognizer:leftSwipe];
-
+        
         UISwipeGestureRecognizer *rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(showPreviousEvent)];
         [rightSwipe setDirection:UISwipeGestureRecognizerDirectionRight];
         [self addGestureRecognizer:rightSwipe];
@@ -47,7 +47,6 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
 - (void) awakeFromNib
 {
     [super awakeFromNib];
-    
     UIImage *background = [UIImage imageNamed:@"event_viewer_background"];
     UIColor *detailsViewColor = [UIColor colorWithPatternImage:background];
     [detailsView setBackgroundColor:detailsViewColor];
@@ -65,7 +64,7 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
     [detailsView release];
     
     [self setEvents:nil];
-
+    
     [super dealloc];
 }
 
@@ -74,9 +73,43 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
 
 - (void) displayEvents:(NSArray *) events
 {
-    [self setEvents:events];
-    [pageControl setNumberOfPages:[events count]];
-    [self displayEventAtIndex:0];
+    if(events.count > 0)
+    {
+        self.hidden = NO;
+        [UIView beginAnimations:@"registerScrollDown" context:NULL];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+        [UIView setAnimationDuration:0.4];
+        self.rootView.transform = CGAffineTransformMakeTranslation(0, 0);
+        CGRect theFrame = self.rootView.frame;
+        if(theFrame.size.height >= 480)
+        {
+            
+            theFrame.size.height -= 210.f;
+            self.rootView.frame = theFrame;
+        }
+        [UIView commitAnimations];
+        
+        [self setEvents:events];
+        [pageControl setNumberOfPages:[events count]];
+        [self displayEventAtIndex:0];
+    }
+    else
+    {
+        self.hidden = YES;
+        [UIView beginAnimations:@"registerScrollDown" context:NULL];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+        [UIView setAnimationDuration:0.4];
+        self.rootView.transform = CGAffineTransformMakeTranslation(0, -210);
+        CGRect theFrame = self.rootView.frame;
+        if(theFrame.size.height <= 480)
+        {
+            
+            theFrame.size.height += 210.f;
+            self.rootView.frame = theFrame;
+        }
+        
+        [UIView commitAnimations];
+    }
 }
 
 #pragma mark -
@@ -84,11 +117,12 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
 
 - (void) displayEventAtIndex:(NSInteger) eventIndex
 {
-    if (eventIndex < [[self events] count]) {
+    if (eventIndex < [[self events] count])
+    {
         currentEventIndex = eventIndex;
         [self updateTitlesWithEvent:[[self events] objectAtIndex:eventIndex]];
         [pageControl setCurrentPage:eventIndex];
-    }    
+    }
 }
 
 - (void) updateTitlesWithEvent:(Event *) event
@@ -99,7 +133,7 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
     NSString *urlStr = event.imageURL.absoluteString;
     if(event.imageURL && urlStr.length > 3)
     {
-    [eventImage setImageWithURL:[event imageURL]];
+        [eventImage setImageWithURL:[event imageURL]];
         [UIView beginAnimations:@"registerScrollDown" context:NULL];
         [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
         [UIView setAnimationDuration:0.4];
@@ -107,13 +141,12 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
         CGRect theFrame = self.rootView.frame;
         if(theFrame.size.height > 480)
         {
-           
-        theFrame.size.height -= 110.f;
-        self.rootView.frame = theFrame;
+            theFrame.size.height -= 115.f;
+            self.rootView.frame = theFrame;
         }
         
         [UIView commitAnimations];
-         _isImagePresented = YES;
+        _isImagePresented = YES;
     }
     else
     {
@@ -122,18 +155,18 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
         [UIView beginAnimations:@"registerScrollUp" context:NULL];
         [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
         [UIView setAnimationDuration:0.4];
-        self.rootView.transform = CGAffineTransformMakeTranslation(0, -110);
+        self.rootView.transform = CGAffineTransformMakeTranslation(0, -115);
         CGRect theFrame = self.rootView.frame;
         if(theFrame.size.height <= 480)
         {
             
-            theFrame.size.height += 110.f;
+            theFrame.size.height += 115.f;
             self.rootView.frame = theFrame;
         }
         [UIView commitAnimations];
         _isImagePresented = NO;
-      //  UITableView *rootTableView = (UITableView *)_rootView;
-       // [rootTableView setContentOffset:CGPointMake(0, 110)];
+        //  UITableView *rootTableView = (UITableView *)_rootView;
+        // [rootTableView setContentOffset:CGPointMake(0, 110)];
     }
     [eventTime setText:[self eventDateString:event]];
 }
