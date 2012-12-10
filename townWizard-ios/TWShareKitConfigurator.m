@@ -7,11 +7,12 @@
 //
 
 #import "TWShareKitConfigurator.h"
+#import "AppDelegate.h"
 
 @implementation TWShareKitConfigurator
 
 - (NSString*)facebookAppId {
-	return @"";
+	return [AppDelegate sharedDelegate].facebookHelper.appId ;
 }
 
 - (NSString*)facebookLocalAppId

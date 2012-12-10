@@ -17,6 +17,7 @@
 #import "NSDate+Formatting.h"
 #import "RequestHelper.h"
 #import "TWBackgroundView.h"
+#import "SHK.h"
 
 @interface EventDetailsViewController ()
 
@@ -158,6 +159,15 @@
         [self.navigationController pushViewController:fpvc animated:YES];
         [fpvc release];
     }
+}
+
+- (IBAction)shareButtonPressed:(id)sender
+{
+ 
+    SHKItem *item = [SHKItem text:@"teeest"];
+	SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
+	//[SHK setRootViewController:rootViewController];
+	[actionSheet showInView:self.view];
 }
 
 

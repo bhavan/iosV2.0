@@ -23,5 +23,6 @@
 - (IBAction)mapButtonPressed:(id)sender;
 - (IBAction)saveButtonPressed:(id)sender;
 - (IBAction)checkInButtonPressed:(id)sender;
+- (IBAction)shareButtonPressed:(id)sender;
 
 @end

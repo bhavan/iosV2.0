@@ -2,8 +2,6 @@
 PODS:
 - AQGridView (1.3)
 - Cedar (0.0.1)
-- Facebook-iOS-SDK (1.2):
-  - SBJson (= 2.2.3)
 - FileMD5Hash (0.0.1)
 - ISO8601DateFormatter (0.6)
 - JSONKit (1.5pre)
@@ -16,7 +14,6 @@ PODS:
   - SDWebImage
 - NSData+Base64 (1.0.0)
 - OCMock (2.0.1)
-- Reachability (3.1.0)
 - RestKit (0.10.3):
   - RestKit/JSON (= 0.10.3)
 - RestKit/JSON (0.10.3):
@@ -37,72 +34,13 @@ PODS:
   - JSONKit (>= 1.5pre)
   - RestKit/Network
 - RestKit/UI (0.10.3)
-- SBJson (2.2.3)
 - SDWebImage (2.7):
   - SDWebImage/Main (= 2.7)
 - SDWebImage/Main (2.7)
 - SOCKit (1.1)
-- SSKeychain (0.1.4)
-- ShareKit (2.0):
-  - Reachability
-  - SSKeychain
-  - ShareKit/Evernote (= 2.0)
-  - ShareKit/Facebook (= 2.0)
-  - ShareKit/Flickr (= 2.0)
-  - ShareKit/Foursquare (= 2.0)
-  - ShareKit/GoogleReader (= 2.0)
-  - ShareKit/Instapaper (= 2.0)
-  - ShareKit/LinkedIn (= 2.0)
-  - ShareKit/Pinboard (= 2.0)
-  - ShareKit/ReadItLater (= 2.0)
-  - ShareKit/Tumblr (= 2.0)
-  - ShareKit/Twitter (= 2.0)
-  - ShareKit/Vkontakte (= 2.0)
-- ShareKit/Evernote (2.0):
-  - Reachability
-  - SSKeychain
-- ShareKit/Facebook (2.0):
-  - Facebook-iOS-SDK (= 1.2)
-  - Reachability
-  - SSKeychain
-- ShareKit/Flickr (2.0):
-  - Reachability
-  - SSKeychain
-  - objectiveflickr
-- ShareKit/Foursquare (2.0):
-  - Reachability
-  - SBJson
-  - SSKeychain
-- ShareKit/GoogleReader (2.0):
-  - Reachability
-  - SSKeychain
-- ShareKit/Instapaper (2.0):
-  - Reachability
-  - SSKeychain
-- ShareKit/LinkedIn (2.0):
-  - Reachability
-  - SSKeychain
-- ShareKit/Pinboard (2.0):
-  - Reachability
-  - SSKeychain
-- ShareKit/ReadItLater (2.0):
-  - Reachability
-  - SSKeychain
-- ShareKit/Tumblr (2.0):
-  - Reachability
-  - SSKeychain
-- ShareKit/Twitter (2.0):
-  - JSONKit
-  - Reachability
-  - SSKeychain
-- ShareKit/Vkontakte (2.0):
-  - JSONKit
-  - Reachability
-  - SSKeychain
 - TestFlightSDK (1.1)
 - cocoa-oauth (0.0.1):
   - NSData+Base64 (~> 1.0)
-- objectiveflickr (2.0.2)
 
 DEPENDENCIES:
 - AQGridView (= 1.3)
@@ -111,12 +49,10 @@ DEPENDENCIES:
 - OCMock
 - RestKit
 - SDWebImage (= 2.7)
-- ShareKit (= 2.0)
 - TestFlightSDK (= 1.1)
 
 SPEC CHECKSUMS:
   AQGridView: ee436c64bc4a972ca7f3ce99971c0204af9e65ea
-  Facebook-iOS-SDK: 10fb464fef5b9d9d7fa274da4b7ba1b93b0768ae
   FileMD5Hash: c3b015e6fb293eea0a0c276747f61f20408c2644
   ISO8601DateFormatter: dc05a2481edf49668d85d3ff8c466c32eb544780
   JSONKit: a01a22c75f27eae76b4badd55a91c20fe6e86477
@@ -125,34 +61,17 @@ SPEC CHECKSUMS:
   MBProgressHUD: b23ee11c42253d6d804e8e0bfabdc334e8b2571f
   MWPhotoBrowser: 64f976fb6158ecc55642cd352f965a335f122cd4
   NSData+Base64: 8b910cb8a64f45daec6fb15936c36a9a911c57ca
-  Reachability: 1c8584c5f26fa776695efef95caaa50402c94cfb
   RestKit: 1fb57eb941d7d2587648491507a0bcaeb70b67f2
   RestKit/JSON: 1fb57eb941d7d2587648491507a0bcaeb70b67f2
   RestKit/Network: 1fb57eb941d7d2587648491507a0bcaeb70b67f2
   RestKit/ObjectMapping/CoreData: 1fb57eb941d7d2587648491507a0bcaeb70b67f2
   RestKit/ObjectMapping/JSON: 1fb57eb941d7d2587648491507a0bcaeb70b67f2
   RestKit/UI: 1fb57eb941d7d2587648491507a0bcaeb70b67f2
-  SBJson: cc373c9eed9314a45715e4fb77a1415c45fa056e
   SDWebImage: 6be78ee398d329bdd22c85a0e11ee41bd1f52066
   SDWebImage/Main: 6be78ee398d329bdd22c85a0e11ee41bd1f52066
   SOCKit: 179515c1a621dd5652a60e9be02ea4adcd25bc9b
-  SSKeychain: bae692a4354f48691ca3463a121dc8060f781a7d
-  ShareKit: 91c73dfdacece57259bdf4010d66c1f3dbd9760e
-  ShareKit/Evernote: 91c73dfdacece57259bdf4010d66c1f3dbd9760e
-  ShareKit/Facebook: 91c73dfdacece57259bdf4010d66c1f3dbd9760e
-  ShareKit/Flickr: 91c73dfdacece57259bdf4010d66c1f3dbd9760e
-  ShareKit/Foursquare: 91c73dfdacece57259bdf4010d66c1f3dbd9760e
-  ShareKit/GoogleReader: 91c73dfdacece57259bdf4010d66c1f3dbd9760e
-  ShareKit/Instapaper: 91c73dfdacece57259bdf4010d66c1f3dbd9760e
-  ShareKit/LinkedIn: 91c73dfdacece57259bdf4010d66c1f3dbd9760e
-  ShareKit/Pinboard: 91c73dfdacece57259bdf4010d66c1f3dbd9760e
-  ShareKit/ReadItLater: 91c73dfdacece57259bdf4010d66c1f3dbd9760e
-  ShareKit/Tumblr: 91c73dfdacece57259bdf4010d66c1f3dbd9760e
-  ShareKit/Twitter: 91c73dfdacece57259bdf4010d66c1f3dbd9760e
-  ShareKit/Vkontakte: 91c73dfdacece57259bdf4010d66c1f3dbd9760e
   TestFlightSDK: 2a2cdb82967c7f05655683c61854c92d36e9104d
   cocoa-oauth: 8f4c8b77c77ac660de37f8125557c4ec09b0118a
-  objectiveflickr: 17f5f1fd4b9b9d6761a9545493c79221f65604c3
   Cedar: 4bf5be704d3b0a50d6bd0353b6b04d8475153940
   OCMock: 77a9c4c57af6bf258a537d34cf09abf422affede
 
