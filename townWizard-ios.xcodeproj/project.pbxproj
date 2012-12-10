@@ -247,6 +247,8 @@
 		84189CB51675DA7200A07AB3 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 84189CB41675DA7200A07AB3 /* SSKeychain.m */; };
 		84189CB71675DAA600A07AB3 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84189CB61675DAA500A07AB3 /* Twitter.framework */; };
 		84189CB81675DAAF00A07AB3 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84189CB61675DAA500A07AB3 /* Twitter.framework */; };
+		84189E6A167601E000A07AB3 /* SHKMail.m in Sources */ = {isa = PBXBuildFile; fileRef = 84189E69167601E000A07AB3 /* SHKMail.m */; };
+		84189E6B167601E000A07AB3 /* SHKMail.m in Sources */ = {isa = PBXBuildFile; fileRef = 84189E69167601E000A07AB3 /* SHKMail.m */; };
 		84237CB11668A0DE00B3DB18 /* InputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84237CB01668A0DE00B3DB18 /* InputBar.m */; };
 		84237CB21668A0DE00B3DB18 /* InputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84237CB01668A0DE00B3DB18 /* InputBar.m */; };
 		84237CB61668A3D400B3DB18 /* EventCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 84237CB51668A3D400B3DB18 /* EventCategory.m */; };
@@ -3610,6 +3612,8 @@
 		84189CB31675DA7100A07AB3 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
 		84189CB41675DA7200A07AB3 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
 		84189CB61675DAA500A07AB3 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		84189E68167601E000A07AB3 /* SHKMail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKMail.h; sourceTree = "<group>"; };
+		84189E69167601E000A07AB3 /* SHKMail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKMail.m; sourceTree = "<group>"; };
 		84237CAF1668A0DE00B3DB18 /* InputBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputBar.h; sourceTree = "<group>"; };
 		84237CB01668A0DE00B3DB18 /* InputBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputBar.m; sourceTree = "<group>"; };
 		84237CB41668A3D400B3DB18 /* EventCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCategory.h; sourceTree = "<group>"; };
@@ -4861,6 +4865,7 @@
 		84189C521675D9EC00A07AB3 /* Actions */ = {
 			isa = PBXGroup;
 			children = (
+				84189E67167601DE00A07AB3 /* Email */,
 				84189C531675D9EC00A07AB3 /* Logout of All Services */,
 			);
 			path = Actions;
@@ -4942,6 +4947,15 @@
 				84189C7A1675D9ED00A07AB3 /* SHKViewControllerWrapper.m */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		84189E67167601DE00A07AB3 /* Email */ = {
+			isa = PBXGroup;
+			children = (
+				84189E68167601E000A07AB3 /* SHKMail.h */,
+				84189E69167601E000A07AB3 /* SHKMail.m */,
+			);
+			path = Email;
 			sourceTree = "<group>";
 		};
 		8444637416198E6300394D41 /* Models */ = {
@@ -9587,6 +9601,7 @@
 				84189CB01675D9ED00A07AB3 /* SHKShareMenu.m in Sources */,
 				84189CB11675D9ED00A07AB3 /* SHKViewControllerWrapper.m in Sources */,
 				84189CB51675DA7200A07AB3 /* SSKeychain.m in Sources */,
+				84189E6A167601E000A07AB3 /* SHKMail.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -10954,6 +10969,7 @@
 				840E458F166E48C4007CCF51 /* EventDetailTopView.m in Sources */,
 				84FCA64D1670CC24004C6079 /* AppActionsHelper.m in Sources */,
 				84C6EF7D1670F6770007F031 /* TWShareKitConfigurator.m in Sources */,
+				84189E6B167601E000A07AB3 /* SHKMail.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
