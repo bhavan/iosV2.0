@@ -161,7 +161,7 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
     }
     else
     {
-        
+        [eventImage setImage:nil];
         [eventImage.activityIndicator stopAnimating];
         [UIView beginAnimations:@"registerScrollUp" context:NULL];
         [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
