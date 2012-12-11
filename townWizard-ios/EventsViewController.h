@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EventsViewer.h"
 
 @class EventsViewer;
 
 
-@interface EventsViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UIActionSheetDelegate> {
+@interface EventsViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UIActionSheetDelegate,
+    EventViewerDelegate> {
     
     IBOutlet EventsViewer *featuredEventsViewer;
     IBOutlet UITableView *eventsList;
@@ -27,5 +29,5 @@
 
 - (IBAction)categoriesButtonPressed:(id)sender;
 - (IBAction)dateSelectButtonPressed:(id)sender;
-
+- (NSString *)stringFromPeriod:(NSDate *)start end:(NSDate *)end;
 @end

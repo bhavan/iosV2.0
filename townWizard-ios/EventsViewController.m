@@ -90,19 +90,32 @@ static const NSInteger kEventsAlertTag = 700;
     self.calendar.mondayFirstDayOfWeek = NO;
     currentCategory = -1;
     [self.eventsTypeButton setTitle:ALL_EVENTS_TEXT forState:UIControlStateNormal];
-    [self.calendarButton setTitle:@"TODAY" forState:UIControlStateNormal];
+    NSString *newDatePeriod = [self stringFromPeriod:[NSDate date]
+                                                 end:[NSDate date]];
+    [self.calendarButton setTitle:newDatePeriod forState:UIControlStateNormal];
     self.sectionDateFormatter = [[NSDateFormatter alloc] init];
     [self.sectionDateFormatter setDateFormat:@"EEEE LLL dd"];
     [self loadTodayEvents];
-    [self loadEventsCategories];    
+    [self loadEventsCategories];
     [self loadFeaturedEvents];
 }
+
+- (void)eventTouched:(Event *)event
+{
+    EventDetailsViewController *eventDetails = [EventDetailsViewController new];
+    [eventDetails loadWithEvent:event];
+    [self.navigationController pushViewController:eventDetails animated:YES];
+    [eventDetails release];
+    
+}
+
 
 #pragma mark -
 #pragma mark events loading
 
 - (void) loadFeaturedEvents
 {
+    featuredEventsViewer.delegate = self;
     [[RequestHelper sharedInstance] loadFeaturedEventUsingBlock:^(RKObjectLoader *loader) {
         [loader setOnDidFailWithError:^(NSError *error){
             [self featuredEventsLoadingFailed:error];
@@ -180,10 +193,10 @@ static const NSInteger kEventsAlertTag = 700;
             [self.sections setObject:eventsOnThisDay forKey:dateRepresentingThisDay];
         }
         [eventsOnThisDay addObject:event];
-    }    
-
+    }
+    
     NSArray *unsortedDays = [self.sections allKeys];
-    self.sortedDays = [unsortedDays sortedArrayUsingSelector:@selector(compare:)];    
+    self.sortedDays = [unsortedDays sortedArrayUsingSelector:@selector(compare:)];
     [eventsList reloadData];
     
 }
@@ -207,14 +220,28 @@ static const NSInteger kEventsAlertTag = 700;
 {
     if(!calendarController.isCalendarCanceled)
     {
-        NSString *newDatePeriod = [NSString stringWithFormat:@"%@ - %@"
-                                   , [calendarController.period.startDate dateStringWithFormat:@"LLL dd"]
-                                   , [calendarController.period.endDate dateStringWithFormat:@"LLL dd"]];
+        NSString *newDatePeriod = [self stringFromPeriod:calendarController.period.startDate
+                                                     end:calendarController.period.endDate];
         [self.calendarButton setTitle:newDatePeriod forState:UIControlStateNormal];
         [self loadEventsWithDatePeriod:self.calendar.period.startDate
                                endDate:self.calendar.period.endDate];
     }
     return YES;
+}
+
+- (NSString *)stringFromPeriod:(NSDate *)start end:(NSDate *)end
+{
+    if([[start dateStringWithFormat:@"LLL dd"] isEqualToString:[[NSDate date] dateStringWithFormat:@"LLL dd"]] && [[end dateStringWithFormat:@"LLL dd"] isEqualToString:[[NSDate date] dateStringWithFormat:@"LLL dd"]])
+    {
+        return @"TODAY";
+    }
+    else
+    {
+        NSString *newDatePeriod = [NSString stringWithFormat:@"%@ - %@"
+                                   , [start dateStringWithFormat:@"LLL dd"]
+                                   , [end dateStringWithFormat:@"LLL dd"]];
+        return newDatePeriod;
+    }
 }
 
 #pragma mark -
@@ -288,7 +315,7 @@ static const NSInteger kEventsAlertTag = 700;
 }
 
 - (void) eventsLoaded:(NSArray *) events
-{   
+{
     [self setAllEvents:events];
     [self filterEventsByCategoryAndDate];
 }
@@ -374,6 +401,7 @@ static const NSInteger kEventsAlertTag = 700;
     NSArray *eventsOnThisDay = [self.sections objectForKey:dateRepresentingThisDay];
     Event *event = [eventsOnThisDay objectAtIndex:indexPath.row];
     [eventDetails loadWithEvent:event];
+    
     [self.navigationController pushViewController:eventDetails animated:YES];
     [eventDetails release];
 }

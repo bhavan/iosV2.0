@@ -135,7 +135,8 @@
 								   @"place",  @"type",
 								   [facebookHelper.facebook accessToken], @"access_token",
 								   center, @"center",
-								   @"2000", @"distance", 
+								   @"2000", @"distance",
+                                   @"name,category,location,picture", @"fields",
 								   nil];
 	
     currentRequest = FB_PLACES_REQUEST_PLACES;
@@ -187,15 +188,23 @@
                         [NSString stringWithFormat:@", %@", [addressDict valueForKey:@"street"]] : 
                         [addressDict valueForKey:@"street"])];
 		}
+        NSString *imageUrl = [[[part objectForKey:@"picture"] objectForKey:@"data"] objectForKey:@"url"];
+        [SDWebImageDownloader downloaderWithURL:[NSURL URLWithString:imageUrl] delegate:p];
 		p.latitude = [[addressDict valueForKey:@"latitude"] doubleValue];
 		p.longitude = [[addressDict valueForKey:@"longitude"] doubleValue];
 		p.address = address;
 		p.place_id = [part valueForKey:@"id"];
+        
 		[address release];
 		[places addObject:p];
 		[p release];
 	}
 	[response release];
+}
+
+- (void)imageDownloader:(SDWebImageDownloader *)downloader didFinishWithImage:(UIImage *)image
+{
+    
 }
 
 

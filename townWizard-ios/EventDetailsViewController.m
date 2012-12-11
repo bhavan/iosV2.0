@@ -37,6 +37,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+
+    
     TWBackgroundView *backgroundView = [[TWBackgroundView alloc] initWithFrame:self.view.frame];
     [self.view insertSubview:backgroundView atIndex:0];
     [backgroundView release];

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MasterDetailController.h"
 
-@interface TownWizardNavigationBar : UINavigationBar {
+@interface TownWizardNavigationBar : UINavigationBar<UINavigationBarDelegate> {
 }
 
 - (void) updateTitleText:(NSString *) titleText;

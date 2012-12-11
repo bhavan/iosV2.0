@@ -1309,6 +1309,10 @@
 		84F82CED161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F82CCF161AFB8700E0A481 /* WebImageGridViewCell.m */; };
 		84FCA64C1670CC24004C6079 /* AppActionsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FCA64B1670CC24004C6079 /* AppActionsHelper.m */; };
 		84FCA64D1670CC24004C6079 /* AppActionsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FCA64B1670CC24004C6079 /* AppActionsHelper.m */; };
+		84FE2FE9167739290097EA4A /* backButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 84FE2FE7167739290097EA4A /* backButton.png */; };
+		84FE2FEA167739290097EA4A /* backButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 84FE2FE7167739290097EA4A /* backButton.png */; };
+		84FE2FEB167739290097EA4A /* backButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84FE2FE8167739290097EA4A /* backButton@2x.png */; };
+		84FE2FEC167739290097EA4A /* backButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84FE2FE8167739290097EA4A /* backButton@2x.png */; };
 		861D7A3B5FE242FCA3CA3BEC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59FBA4CF79134DFAAB1477F7 /* libPods.a */; };
 		87900F60B26040DEA7CB6F0B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59FBA4CF79134DFAAB1477F7 /* libPods.a */; };
 		95043AE815B748AF0012E8CC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 95043AE415B748AF0012E8CC /* Default.png */; };
@@ -3725,6 +3729,8 @@
 		84F82CCF161AFB8700E0A481 /* WebImageGridViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebImageGridViewCell.m; sourceTree = "<group>"; };
 		84FCA64A1670CC24004C6079 /* AppActionsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppActionsHelper.h; sourceTree = "<group>"; };
 		84FCA64B1670CC24004C6079 /* AppActionsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppActionsHelper.m; sourceTree = "<group>"; };
+		84FE2FE7167739290097EA4A /* backButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backButton.png; sourceTree = "<group>"; };
+		84FE2FE8167739290097EA4A /* backButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backButton@2x.png"; sourceTree = "<group>"; };
 		95043AE415B748AF0012E8CC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		95043AE515B748AF0012E8CC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		95043AE615B748AF0012E8CC /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -5577,6 +5583,8 @@
 		D92B0ED71589D3D0006894BE /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				84FE2FE7167739290097EA4A /* backButton.png */,
+				84FE2FE8167739290097EA4A /* backButton@2x.png */,
 				8411CA08166F541000455DC6 /* button_toolbar_bg.png */,
 				8411CA09166F541000455DC6 /* button_toolbar_bg@2x.png */,
 				D934E9151647E3870011E289 /* navigation_bar_bg.png */,
@@ -6900,6 +6908,8 @@
 				8411CA0C166F541000455DC6 /* button_toolbar_bg@2x.png in Resources */,
 				84189C991675D9ED00A07AB3 /* SHKSharers.plist in Resources */,
 				84189CA01675D9ED00A07AB3 /* ShareKit.bundle in Resources */,
+				84FE2FE9167739290097EA4A /* backButton.png in Resources */,
+				84FE2FEB167739290097EA4A /* backButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -8463,6 +8473,8 @@
 				840E458B166E374C007CCF51 /* EventDetailsViewController.xib in Resources */,
 				8411CA0B166F541000455DC6 /* button_toolbar_bg.png in Resources */,
 				8411CA0D166F541000455DC6 /* button_toolbar_bg@2x.png in Resources */,
+				84FE2FEA167739290097EA4A /* backButton.png in Resources */,
+				84FE2FEC167739290097EA4A /* backButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

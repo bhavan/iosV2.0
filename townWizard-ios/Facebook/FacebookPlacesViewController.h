@@ -14,6 +14,7 @@
 #import "DataHolder.h"
 #import "townWIzardNavigationBar.h"
 #import <CoreLocation/CoreLocation.h>
+#import "SDWebImageDownloader.h"
 
 typedef enum {
     FB_PLACES_REQUEST_PLACES,

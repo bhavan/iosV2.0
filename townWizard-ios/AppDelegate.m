@@ -73,6 +73,20 @@ static NSString* teamToken = @"5c115b5c0ce101b8b0367b329e68db27_MzE2NjMyMDExLTEx
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    UIImage *buttonImage = [[UIImage imageNamed:@"backButton"]  resizableImageWithCapInsets:UIEdgeInsetsMake(0, 16, 0, 10)];
+    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:buttonImage
+                                                      forState:UIControlStateNormal
+                                                    barMetrics:UIBarMetricsDefault];
+    NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                    [UIColor blackColor], UITextAttributeTextColor,
+                                    [UIColor clearColor], UITextAttributeTextShadowColor,
+                                    [NSValue valueWithUIOffset:UIOffsetMake(0, 0)], UITextAttributeTextShadowOffset,
+                                    [UIFont boldSystemFontOfSize:13.0f], UITextAttributeFont,
+                                    nil];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
+   
+    
+    
     DefaultSHKConfigurator *configurator = [[[TWShareKitConfigurator alloc] init] autorelease];
     [SHKConfiguration sharedInstanceWithConfigurator:configurator];
     RKLogConfigureByName("RestKit/Network", RKLogLevelTrace);

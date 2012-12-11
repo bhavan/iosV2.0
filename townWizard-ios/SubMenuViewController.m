@@ -58,8 +58,18 @@
         
         [[self webView] loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]]];
     }
+    UIImage *buttonImage = [[UIImage imageNamed:@"backButton"]  resizableImageWithCapInsets:UIEdgeInsetsMake(0, 10, 0, 15)];
+
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 57, 30)];
+    btn.titleLabel.font = [UIFont boldSystemFontOfSize:14.0f];
+    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [btn setTitle:@"  Back" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(goBackPressed:) forControlEvents:UIControlEventTouchUpInside];
+    [btn setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    back = [[UIBarButtonItem alloc]initWithCustomView:btn];
+
+    [btn release];
     
-    back = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(goBackPressed:)];
     partnerController = (id)self.navigationController.parentViewController;
 }
 

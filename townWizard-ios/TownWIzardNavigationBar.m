@@ -12,7 +12,7 @@
 
 
 
-static const CGFloat kTWBarOriginX = 59;
+static const CGFloat kTWBarOriginX = 70;
 static const CGFloat kTWBarTitleFontSize = 18;
 
 @implementation TownWizardNavigationBar
@@ -63,6 +63,13 @@ static const CGFloat kTWBarTitleFontSize = 18;
     CGFloat originY = roundf(([self bounds].size.height - [[[self titleLabel] font] pointSize]) / 2);
     titleFrame.origin = CGPointMake(kTWBarOriginX, originY - 2);
     [[self titleLabel] setFrame:titleFrame];
+}
+
+- (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPushItem:(UINavigationItem *)item
+{
+
+
+    return YES;
 }
 
 #pragma mark -

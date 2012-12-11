@@ -36,6 +36,8 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
         [rightSwipe setDirection:UISwipeGestureRecognizerDirectionRight];
         [self addGestureRecognizer:rightSwipe];
         
+        
+        
         [eventPlace setText:nil];
         [eventName setText:nil];
         [eventTime setText:nil];
@@ -52,6 +54,15 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
     [detailsView setBackgroundColor:detailsViewColor];
     [eventImage setBackgroundColor:[UIColor clearColor]];
     [pageControl setIndicatorSpace:kEventsViewerIndicatorSpace];
+    
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if(_delegate)
+    {
+        [_delegate eventTouched:[_events objectAtIndex:currentEventIndex]];
+    }
 }
 
 - (void) dealloc
@@ -141,7 +152,7 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
         CGRect theFrame = self.rootView.frame;
         if(theFrame.size.height > 480)
         {
-            theFrame.size.height -= 115.f;
+            theFrame.size.height -= 121.f;
             self.rootView.frame = theFrame;
         }
         
@@ -155,12 +166,12 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
         [UIView beginAnimations:@"registerScrollUp" context:NULL];
         [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
         [UIView setAnimationDuration:0.4];
-        self.rootView.transform = CGAffineTransformMakeTranslation(0, -115);
+        self.rootView.transform = CGAffineTransformMakeTranslation(0, -121);
         CGRect theFrame = self.rootView.frame;
         if(theFrame.size.height <= 480)
         {
             
-            theFrame.size.height += 115.f;
+            theFrame.size.height += 121.f;
             self.rootView.frame = theFrame;
         }
         [UIView commitAnimations];

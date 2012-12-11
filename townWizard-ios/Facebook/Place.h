@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SDWebImageDownloader.h"
 
-
-@interface Place : NSObject {
+@interface Place : NSObject<SDWebImageDownloaderDelegate> {
 	NSString *name;
 	NSString *category;
 	NSString *address;

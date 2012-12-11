@@ -22,14 +22,14 @@
 
 - (id)initWithParentController:(UIViewController *)parent
 {
-    self = [super initWithFrame:CGRectMake(0, 0, 320, 27)];
+    self = [super initWithFrame:CGRectMake(0, 0, 320, 34)];
     if(self)
     {
-        EventSectionHeader *header = [[EventSectionHeader alloc] initWithFrame:self.frame];
+        EventSectionHeader *header = [[EventSectionHeader alloc] initWithFrame:CGRectMake(0, 8, 320, 27)];
         [self addSubview:header];
         [header release];
         parentController = parent;
-        UILabel *lblPhotoHeader = [[UILabel alloc] initWithFrame:CGRectMake(8, 0, 250, 22)];
+        UILabel *lblPhotoHeader = [[UILabel alloc] initWithFrame:CGRectMake(8, 0, 250, 32)];
         lblPhotoHeader.text = @"UPLOAD YOUR PHOTOS";
         lblPhotoHeader.font = [UIFont systemFontOfSize:13.0];
         lblPhotoHeader.backgroundColor = [UIColor clearColor];
@@ -39,7 +39,7 @@
         
         UIButton *btnCamera = [UIButton buttonWithType:UIButtonTypeCustom];
         [btnCamera setImage:[UIImage imageNamed:@"Btn-Camera.png"] forState:UIControlStateNormal];
-        btnCamera.frame = CGRectMake(282, 0, 25, 25);
+        btnCamera.frame = CGRectMake(282, 2, 25, 25);
         [btnCamera addTarget:parentController
                       action:@selector(cameraButtonPressed:)
             forControlEvents:UIControlEventTouchUpInside];

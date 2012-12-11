@@ -10,6 +10,12 @@
 
 @class ActivityImageView;
 @class DDPageControlCustom;
+@class Event;
+
+@protocol EventViewerDelegate <NSObject>
+- (void)eventTouched:(Event *) event;
+@end
+
 
 @interface EventsViewer : UIView {
     IBOutlet ActivityImageView *eventImage;
@@ -23,6 +29,7 @@
 }
 @property (nonatomic, assign) BOOL isImagePresented;
 @property (nonatomic,retain) UIView *rootView;
+@property (nonatomic, retain) id<EventViewerDelegate> delegate;
 
 - (void) displayEvents:(NSArray *) events;
 
