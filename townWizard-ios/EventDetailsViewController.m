@@ -117,8 +117,8 @@
     myEvent.location = _event.location.address;
     myEvent.URL = [NSURL URLWithString:_event.location.website];
     myEvent.title = _event.title;
-    NSDate *start = [NSDate dateFromString:_event.startTime dateFormat:@"YYYY-MM-dd HH:mm:ss"];
-    NSDate *end = [NSDate dateFromString:_event.endTime dateFormat:@"YYYY-MM-dd HH:mm:ss"];
+    NSDate *start = [NSDate dateFromString:_event.startTime dateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *end = [NSDate dateFromString:_event.endTime dateFormat:@"yyyy-MM-dd HH:mm:ss"];
     myEvent.startDate = start;
     myEvent.endDate = end;
     myEvent.allDay = NO;

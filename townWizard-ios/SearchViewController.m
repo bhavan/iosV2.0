@@ -221,6 +221,12 @@
             {
                 defaultPartner = [partner retain];
                 [self.defaultMenu updateWithPartner:defaultPartner];
+#warning Crash here
+            /*    if (!doNotUseGeopositionSearchResults)
+                {
+                    doNotUseGeopositionSearchResults = YES;
+                    [self searchForPartnersWithQuery:nil];
+                }*/
                 
             }
             else if(objects.count > 0 && loadingMorePartnersInProgress)
@@ -288,11 +294,7 @@
 {
     [aManager stopUpdatingLocation];
     
-    if (!doNotUseGeopositionSearchResults)
-    {
-        doNotUseGeopositionSearchResults = YES;
-        [self searchForPartnersWithQuery:nil];
-    }
+   
 }
 
 #pragma mark - TableView delegate mathods

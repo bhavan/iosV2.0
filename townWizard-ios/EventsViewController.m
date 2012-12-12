@@ -184,7 +184,7 @@ static const NSInteger kEventsAlertTag = 700;
     self.sections = [NSMutableDictionary dictionary];
     for (Event *event in self.events)
     {
-        NSDate *startDate = [NSDate dateFromString:event.startTime dateFormat:@"YYYY-MM-dd HH:mm:ss"];
+        NSDate *startDate = [NSDate dateFromString:event.startTime dateFormat:@"yyyy-MM-dd HH:mm:ss"];
         NSDate *dateRepresentingThisDay = [NSDate dateAtBeginningOfDayForDate:startDate];
         NSMutableArray *eventsOnThisDay = [self.sections objectForKey:dateRepresentingThisDay];
         if (eventsOnThisDay == nil)

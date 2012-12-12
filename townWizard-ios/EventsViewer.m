@@ -102,6 +102,7 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
         
         [self setEvents:events];
         [pageControl setNumberOfPages:[events count]];
+        [NSTimer scheduledTimerWithTimeInterval:10.0f target:self selector:@selector(tickEvent) userInfo:nil repeats:YES];
         [self displayEventAtIndex:0];
     }
     else
@@ -113,14 +114,26 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
         self.rootView.transform = CGAffineTransformMakeTranslation(0, -210);
         CGRect theFrame = self.rootView.frame;
         if(theFrame.size.height <= 480)
-        {
-            
+        {            
             theFrame.size.height += 210.f;
             self.rootView.frame = theFrame;
-        }
-        
+        }        
         [UIView commitAnimations];
     }
+}
+
+- (void)tickEvent
+{
+    if(currentEventIndex >= _events.count-1)
+    {
+        currentEventIndex = 0;
+    }
+    else
+    {
+        currentEventIndex++;
+    }
+    
+    [self displayEventAtIndex:currentEventIndex];
 }
 
 #pragma mark -
@@ -198,8 +211,8 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
 
 - (NSString *) eventDateString:(Event *) event
 {
-    NSDate *start = [NSDate dateFromString:event.startTime dateFormat:@"YYYY-MM-dd HH:mm:ss"];
-    NSDate *end = [NSDate dateFromString:event.endTime dateFormat:@"YYYY-MM-dd HH:mm:ss"];
+    NSDate *start = [NSDate dateFromString:event.startTime dateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *end = [NSDate dateFromString:event.endTime dateFormat:@"yyyy-MM-dd HH:mm:ss"];
     
     NSString *startTimeString = [NSDate stringFromDate:start dateFormat:@"h:mma" localeIdentifier:@"en_US"];
     NSString *endTimeString = [NSDate stringFromDate:end dateFormat:@"h:mma" localeIdentifier:@"en_US"];

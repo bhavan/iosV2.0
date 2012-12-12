@@ -47,8 +47,8 @@
 
 - (NSString *) eventDateString
 {
-    NSDate *start = [NSDate dateFromString:self.event.startTime dateFormat:@"YYYY-MM-dd HH:mm:ss"];
-    NSDate *end = [NSDate dateFromString:self.event.endTime dateFormat:@"YYYY-MM-dd HH:mm:ss"];
+    NSDate *start = [NSDate dateFromString:self.event.startTime dateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *end = [NSDate dateFromString:self.event.endTime dateFormat:@"yyyy-MM-dd HH:mm:ss"];
      
     NSString *startTimeString = [NSDate stringFromDate:start dateFormat:@"h:mma" localeIdentifier:@"en_US"];
     NSString *endTimeString = [NSDate stringFromDate:end dateFormat:@"h:mma" localeIdentifier:@"en_US"];
