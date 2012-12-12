@@ -232,8 +232,6 @@
 		84189CA31675D9ED00A07AB3 /* SHKFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 84189C591675D9EC00A07AB3 /* SHKFacebook.m */; };
 		84189CA41675D9ED00A07AB3 /* SHKiOS5Twitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 84189C5C1675D9EC00A07AB3 /* SHKiOS5Twitter.m */; };
 		84189CA51675D9ED00A07AB3 /* SHKTwitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 84189C5E1675D9EC00A07AB3 /* SHKTwitter.m */; };
-		84189CA61675D9ED00A07AB3 /* SHKVkontakte.m in Sources */ = {isa = PBXBuildFile; fileRef = 84189C611675D9EC00A07AB3 /* SHKVkontakte.m */; };
-		84189CA71675D9ED00A07AB3 /* SHKVkontakteOAuthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84189C631675D9EC00A07AB3 /* SHKVkontakteOAuthView.m */; };
 		84189CA81675D9ED00A07AB3 /* SHKActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 84189C671675D9EC00A07AB3 /* SHKActionSheet.m */; };
 		84189CA91675D9ED00A07AB3 /* SHKActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 84189C691675D9EC00A07AB3 /* SHKActivityIndicator.m */; };
 		84189CAA1675D9ED00A07AB3 /* SHKFormController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84189C6B1675D9EC00A07AB3 /* SHKFormController.m */; };
@@ -3587,10 +3585,6 @@
 		84189C5C1675D9EC00A07AB3 /* SHKiOS5Twitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKiOS5Twitter.m; sourceTree = "<group>"; };
 		84189C5D1675D9EC00A07AB3 /* SHKTwitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKTwitter.h; sourceTree = "<group>"; };
 		84189C5E1675D9EC00A07AB3 /* SHKTwitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKTwitter.m; sourceTree = "<group>"; };
-		84189C601675D9EC00A07AB3 /* SHKVkontakte.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKVkontakte.h; sourceTree = "<group>"; };
-		84189C611675D9EC00A07AB3 /* SHKVkontakte.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKVkontakte.m; sourceTree = "<group>"; };
-		84189C621675D9EC00A07AB3 /* SHKVkontakteOAuthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKVkontakteOAuthView.h; sourceTree = "<group>"; };
-		84189C631675D9EC00A07AB3 /* SHKVkontakteOAuthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKVkontakteOAuthView.m; sourceTree = "<group>"; };
 		84189C641675D9EC00A07AB3 /* SHKConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKConfig.h; sourceTree = "<group>"; };
 		84189C661675D9EC00A07AB3 /* SHKActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKActionSheet.h; sourceTree = "<group>"; };
 		84189C671675D9EC00A07AB3 /* SHKActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKActionSheet.m; sourceTree = "<group>"; };
@@ -4891,7 +4885,6 @@
 			children = (
 				84189C571675D9EC00A07AB3 /* Facebook */,
 				84189C5A1675D9EC00A07AB3 /* Twitter */,
-				84189C5F1675D9EC00A07AB3 /* Vkontakte */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -4914,17 +4907,6 @@
 				84189C5E1675D9EC00A07AB3 /* SHKTwitter.m */,
 			);
 			path = Twitter;
-			sourceTree = "<group>";
-		};
-		84189C5F1675D9EC00A07AB3 /* Vkontakte */ = {
-			isa = PBXGroup;
-			children = (
-				84189C601675D9EC00A07AB3 /* SHKVkontakte.h */,
-				84189C611675D9EC00A07AB3 /* SHKVkontakte.m */,
-				84189C621675D9EC00A07AB3 /* SHKVkontakteOAuthView.h */,
-				84189C631675D9EC00A07AB3 /* SHKVkontakteOAuthView.m */,
-			);
-			path = Vkontakte;
 			sourceTree = "<group>";
 		};
 		84189C651675D9EC00A07AB3 /* UI */ = {
@@ -9600,8 +9582,6 @@
 				84189CA31675D9ED00A07AB3 /* SHKFacebook.m in Sources */,
 				84189CA41675D9ED00A07AB3 /* SHKiOS5Twitter.m in Sources */,
 				84189CA51675D9ED00A07AB3 /* SHKTwitter.m in Sources */,
-				84189CA61675D9ED00A07AB3 /* SHKVkontakte.m in Sources */,
-				84189CA71675D9ED00A07AB3 /* SHKVkontakteOAuthView.m in Sources */,
 				84189CA81675D9ED00A07AB3 /* SHKActionSheet.m in Sources */,
 				84189CA91675D9ED00A07AB3 /* SHKActivityIndicator.m in Sources */,
 				84189CAA1675D9ED00A07AB3 /* SHKFormController.m in Sources */,

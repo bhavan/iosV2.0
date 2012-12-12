@@ -167,7 +167,7 @@
 - (IBAction)shareButtonPressed:(id)sender
 {
  
-    SHKItem *item = [SHKItem text:@"teeest"];
+    SHKItem *item = [SHKItem text:[NSString stringWithFormat:@"%@\n\n%@", _event.title, _event.startTime]];
 	SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
 	//[SHK setRootViewController:rootViewController];
 	[actionSheet showInView:self.view];

@@ -36,8 +36,8 @@
 {
     [super viewDidLoad];
     self.webView.delegate = self;
-    self.navigationController.navigationBarHidden = NO;    
-
+    self.navigationController.navigationBarHidden = NO;
+    
     NSString *urlString;
     Section *section = [[RequestHelper sharedInstance] currentSection];
     if(section)
@@ -59,7 +59,7 @@
         [[self webView] loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]]];
     }
     UIImage *buttonImage = [[UIImage imageNamed:@"backButton"]  resizableImageWithCapInsets:UIEdgeInsetsMake(0, 10, 0, 15)];
-
+    
     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 57, 30)];
     btn.titleLabel.font = [UIFont boldSystemFontOfSize:14.0f];
     [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -67,7 +67,7 @@
     [btn addTarget:self action:@selector(goBackPressed:) forControlEvents:UIControlEventTouchUpInside];
     [btn setBackgroundImage:buttonImage forState:UIControlStateNormal];
     back = [[UIBarButtonItem alloc]initWithCustomView:btn];
-
+    
     [btn release];
     
     partnerController = (id)self.navigationController.parentViewController;
@@ -76,11 +76,11 @@
 
 - (void) viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];    
+    [super viewWillAppear:animated];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
-{ 
+{
     [[UIApplication sharedApplication] hideNetworkActivityIndicator];
     [super viewWillDisappear:animated];
 }
@@ -123,15 +123,15 @@
         self.navigationItem.leftBarButtonItem =  [partnerController menuButton];
     }
     NSLog(@"Finish loading URL: %@",[webView.request URL]);
-
+    
     if (self.view.window) //if webView is not on screen, we are not interested in setting this
         [[UIApplication sharedApplication] setActivityindicatorToZero];
 }
 
 - (BOOL)webView:(UIWebView *)webView
 shouldStartLoadWithRequest:(NSURLRequest *)request
-navigationType:(UIWebViewNavigationType)navigationType
-{    
+ navigationType:(UIWebViewNavigationType)navigationType
+{
     if(_webView.canGoBack)
     {
         self.navigationItem.leftBarButtonItem = back;
@@ -200,13 +200,17 @@ navigationType:(UIWebViewNavigationType)navigationType
 
 - (void)showMapWithUrlComponents:(NSArray *)components
 {
-    NSString *title = [components objectAtIndex:4];
-    title = [[title stringByReplacingOccurrencesOfString:@"+" withString:@" "]
-             stringByReplacingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
-
+    NSString *title = @"";
+    if(components.count > 4)
+    {
+        title = [components objectAtIndex:4];
+        title = [[title stringByReplacingOccurrencesOfString:@"+" withString:@" "]
+                 stringByReplacingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+    }
+    
     [[AppActionsHelper sharedInstance] openMapWithTitle:title
-                                         longitude:[[components objectAtIndex:2] doubleValue]
-                                          latitude:[[components objectAtIndex:3] doubleValue] fromNavController:self.navigationController];    
+                                              longitude:[[components objectAtIndex:2] doubleValue]
+                                               latitude:[[components objectAtIndex:3] doubleValue] fromNavController:self.navigationController];
 }
 
 

@@ -11,6 +11,7 @@
 #import "AddCaptionViewController.h"
 #import "AppDelegate.h"
 #import "Partner.h"
+#import "RequestHelper.h"
 
 @interface BaseUploadViewController ()
 
@@ -34,6 +35,7 @@
     [super viewDidLoad];
     uploadView = [[PhotoUploadView alloc] initWithParentController:self];
     [self.view addSubview:uploadView];
+    self.partner = [[RequestHelper sharedInstance] currentPartner];
 
 }
 
