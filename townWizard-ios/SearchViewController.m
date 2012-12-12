@@ -219,15 +219,13 @@
             Partner *partner = [objects lastObject];
             if(partner && [partner.name isEqualToString:DEFAULT_PARTNER_NAME])
             {
-                defaultPartner = [partner retain];
-                [self.defaultMenu updateWithPartner:defaultPartner];
-#warning Crash here
-            /*    if (!doNotUseGeopositionSearchResults)
+                if (!doNotUseGeopositionSearchResults)
                 {
                     doNotUseGeopositionSearchResults = YES;
                     [self searchForPartnersWithQuery:nil];
-                }*/
-                
+                }
+                defaultPartner = [partner retain];
+                [self.defaultMenu updateWithPartner:defaultPartner];
             }
             else if(objects.count > 0 && loadingMorePartnersInProgress)
             {
