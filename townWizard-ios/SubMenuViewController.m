@@ -26,6 +26,11 @@
 #define TEL_URL @"tel"
 #define CALL_URL @"makecall"
 
+@interface SubMenuViewController (PrivateMethods)
+- (NSString *)urlFromSection:(Section*)section;
+- (BOOL)isSectionUrlAbsolute:(NSString *)urlString;
+
+@end
 
 @implementation SubMenuViewController
 
@@ -36,26 +41,11 @@
 {
     [super viewDidLoad];
     self.webView.delegate = self;
-    self.navigationController.navigationBarHidden = NO;
-    
-    NSString *urlString;
+    self.navigationController.navigationBarHidden = NO;    
     Section *section = [[RequestHelper sharedInstance] currentSection];
     if(section)
     {
-        if ([section url] != nil)
-        {
-            urlString = [NSString stringWithFormat:@"%@/%@",
-                         [[[RequestHelper sharedInstance] currentPartner] webSiteUrl],
-                         [section url]];
-        }
-        else
-        {
-            urlString = @"http://www.townwizardoncontainerapp.com";
-        }
-        urlString = [urlString stringByAppendingFormat:@"?&lat=%f&lon=%f",
-                     [AppDelegate sharedDelegate].doubleLatitude,
-                     [AppDelegate sharedDelegate].doubleLongitude];
-        
+        NSString *urlString = [self urlFromSection:section];
         [[self webView] loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]]];
     }
     UIImage *buttonImage = [[UIImage imageNamed:@"backButton"]  resizableImageWithCapInsets:UIEdgeInsetsMake(0, 10, 0, 15)];
@@ -71,6 +61,46 @@
     [btn release];
     
     partnerController = (id)self.navigationController.parentViewController;
+}
+
+- (NSString *)urlFromSection:(Section*)section
+{
+    NSString *urlString;
+    if ([section url] != nil)
+    {
+        if([self isSectionUrlAbsolute:section.url])
+        {
+            urlString = section.url;
+        }
+        else
+        {
+            urlString = [NSString stringWithFormat:@"%@/%@",
+                         [[[RequestHelper sharedInstance] currentPartner] webSiteUrl],
+                         [section url]];
+        }
+    }
+    else
+    {
+        urlString = @"http://www.townwizardoncontainerapp.com";
+    }
+    urlString = [urlString stringByAppendingFormat:@"?&lat=%f&lon=%f",
+                 [AppDelegate sharedDelegate].doubleLatitude,
+                 [AppDelegate sharedDelegate].doubleLongitude];
+    
+    return urlString;    
+}
+
+- (BOOL)isSectionUrlAbsolute:(NSString *)urlString
+{
+    NSRange range = [urlString rangeOfString:@"http://"];
+    if(range.length > 0)
+    {
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
 }
 
 
