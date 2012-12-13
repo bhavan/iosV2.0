@@ -35,8 +35,8 @@
 
 - (void)updateWithEvent:(Event *)event
 {
-    _eventTitleLabel.text = event.title;
-    _eventAdress.text = event.location.address;
+    NSString *content = [NSString stringWithFormat:@"<html><body><h2>%@</h2><b>%@</b><br><br>%@</body></html>",event.title, event.location.address, event.details];
+    [_detailWebView loadHTMLString:content baseURL:nil];
     [_callButton setTitle:event.location.phone forState:UIControlStateNormal];
 }
 
@@ -51,14 +51,14 @@
 
 
 - (void)dealloc {
-    [_eventTitleLabel release];
-    [_eventAdress release];
+
     [_callButton release];
     [_webButton release];
     [_mapButton release];
     [_bgView release];
 
 
+    [_detailWebView release];
     [super dealloc];
 }
 @end

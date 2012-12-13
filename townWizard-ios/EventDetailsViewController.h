@@ -11,7 +11,7 @@
 
 @class Event;
 
-@interface EventDetailsViewController : UIViewController 
+@interface EventDetailsViewController : UIViewController <UIWebViewDelegate>
 
 @property (nonatomic,retain) Event *event;
 @property (retain, nonatomic) IBOutlet UIScrollView *scrollView;

@@ -34,12 +34,16 @@
     return self;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    _topDetailView.detailWebView.delegate = self;
+    _topDetailView.detailWebView.scrollView.scrollEnabled = NO;
+}
+
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    
-
-    
+    [super viewDidLoad];    
     TWBackgroundView *backgroundView = [[TWBackgroundView alloc] initWithFrame:self.view.frame];
     [self.view insertSubview:backgroundView atIndex:0];
     [backgroundView release];
@@ -114,6 +118,7 @@
                                    }];
     }
     EKEvent *myEvent  = [EKEvent eventWithEventStore:eventDB];
+    myEvent.notes = _event.details;
     myEvent.location = _event.location.address;
     myEvent.URL = [NSURL URLWithString:_event.location.website];
     myEvent.title = _event.title;
@@ -146,7 +151,6 @@
                               otherButtonTitles:nil];
         [alert show];
         [alert release];
-
         
     }
     [eventDB release];
@@ -165,14 +169,22 @@
 }
 
 - (IBAction)shareButtonPressed:(id)sender
-{
- 
-    SHKItem *item = [SHKItem text:[NSString stringWithFormat:@"%@\n\n%@", _event.title, _event.startTime]];
+{ 
+    SHKItem *item = [SHKItem text:[NSString stringWithFormat:@"%@\n\n%@\n%@", _event.title, _event.startTime, _event.details]];
 	SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
 	//[SHK setRootViewController:rootViewController];
 	[actionSheet showInView:self.view];
 }
 
+
+#pragma mark -
+#pragma mark UIWebViewDelegate Methods
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    _topDetailView.frame = CGRectMake(0, 0, 320, webView.scrollView.contentSize.height+150);
+    self.scrollView.contentSize = _topDetailView.frame.size;
+    
+}
 
 - (void)dealloc
 {
