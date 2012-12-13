@@ -17,7 +17,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-
+        
     }
     return self;
 }
@@ -28,7 +28,7 @@
     [_callButton setBackgroundImage:[self buttonBackgroundImage] forState:UIControlStateNormal];
     [_webButton setBackgroundImage:[self buttonBackgroundImage] forState:UIControlStateNormal];
     [_mapButton setBackgroundImage:[self buttonBackgroundImage] forState:UIControlStateNormal];
-      UIColor *backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"events_pattern_bg"]];
+    UIColor *backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"events_pattern_bg"]];
     [_bgView setBackgroundColor:backgroundColor];
     
 }
@@ -37,7 +37,15 @@
 {
     NSString *content = [NSString stringWithFormat:@"<html><body><h2>%@</h2><b>%@</b><br><br>%@</body></html>",event.title, event.location.address, event.details];
     [_detailWebView loadHTMLString:content baseURL:nil];
-    [_callButton setTitle:event.location.phone forState:UIControlStateNormal];
+    if(event.location.phone.length > 0)
+    {
+        _callButton.hidden = NO;
+        [_callButton setTitle:event.location.phone forState:UIControlStateNormal];
+    }
+    else
+    {
+        _callButton.hidden = YES;
+    }
 }
 
 - (UIImage *)buttonBackgroundImage
@@ -51,13 +59,13 @@
 
 
 - (void)dealloc {
-
+    
     [_callButton release];
     [_webButton release];
     [_mapButton release];
     [_bgView release];
-
-
+    
+    
     [_detailWebView release];
     [super dealloc];
 }

@@ -84,7 +84,6 @@ static NSString* teamToken = @"5c115b5c0ce101b8b0367b329e68db27_MzE2NjMyMDExLTEx
                                     [UIFont boldSystemFontOfSize:13.0f], UITextAttributeFont,
                                     nil];
     [[UIBarButtonItem appearance] setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
-   
     
     
     DefaultSHKConfigurator *configurator = [[[TWShareKitConfigurator alloc] init] autorelease];

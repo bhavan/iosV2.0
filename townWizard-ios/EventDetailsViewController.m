@@ -21,6 +21,8 @@
 
 @interface EventDetailsViewController ()
 
+-(NSString *) stringByStrippingHTML:(NSString *)string;
+
 @end
 
 @implementation EventDetailsViewController
@@ -118,7 +120,7 @@
                                    }];
     }
     EKEvent *myEvent  = [EKEvent eventWithEventStore:eventDB];
-    myEvent.notes = _event.details;
+    myEvent.notes = [self stringByStrippingHTML:_event.details];
     myEvent.location = _event.location.address;
     myEvent.URL = [NSURL URLWithString:_event.location.website];
     myEvent.title = _event.title;
@@ -170,10 +172,19 @@
 
 - (IBAction)shareButtonPressed:(id)sender
 { 
-    SHKItem *item = [SHKItem text:[NSString stringWithFormat:@"%@\n\n%@\n%@", _event.title, _event.startTime, _event.details]];
+    SHKItem *item = [SHKItem text:[NSString stringWithFormat:@"%@\n\n%@\n%@", _event.title, _event.startTime,  [self stringByStrippingHTML:_event.details]]];
 	SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
 	//[SHK setRootViewController:rootViewController];
 	[actionSheet showInView:self.view];
+}
+
+-(NSString *) stringByStrippingHTML:(NSString *)string
+{
+    NSRange r;
+    NSString *result = [[string copy] autorelease];
+    while ((r = [result rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+        result = [result stringByReplacingCharactersInRange:r withString:@""];
+    return result;
 }
 
 

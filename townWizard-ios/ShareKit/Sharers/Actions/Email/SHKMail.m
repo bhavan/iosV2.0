@@ -184,7 +184,16 @@
 	
 	[mailController setSubject:item.title];
 	[mailController setMessageBody:body isHTML:isHTML];
-			
+    NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                    [UIColor whiteColor], UITextAttributeTextColor,
+                                    [UIColor clearColor], UITextAttributeTextShadowColor,
+                                    [NSValue valueWithUIOffset:UIOffsetMake(0, 0)], UITextAttributeTextShadowOffset,
+                                    [UIFont boldSystemFontOfSize:13.0f], UITextAttributeFont,
+                                    nil];
+
+     [mailController.navigationItem.leftBarButtonItem setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
+    [mailController.navigationItem.rightBarButtonItem setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
 	[[SHK currentHelper] showViewController:mailController];
 	
 	return YES;
@@ -209,6 +218,14 @@
 			[self sendDidFailWithError:nil];
 			break;
 	}
+    
+    NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                    [UIColor blackColor], UITextAttributeTextColor,
+                                    [UIColor clearColor], UITextAttributeTextShadowColor,
+                                    [NSValue valueWithUIOffset:UIOffsetMake(0, 0)], UITextAttributeTextShadowOffset,
+                                    [UIFont boldSystemFontOfSize:13.0f], UITextAttributeFont,
+                                    nil];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
 	[self autorelease];
 }
 

@@ -102,11 +102,21 @@
 	self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
 																														target:self
 																														action:@selector(cancel)] autorelease];
+    NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                    [UIColor whiteColor], UITextAttributeTextColor,
+                                    [UIColor clearColor], UITextAttributeTextShadowColor,
+                                    [NSValue valueWithUIOffset:UIOffsetMake(0, 0)], UITextAttributeTextShadowOffset,
+                                    [UIFont boldSystemFontOfSize:13.0f], UITextAttributeFont,
+                                    nil];
+
+   
 	
 	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:SHKLocalizedString(@"Send to %@", [[self.delegate class] sharerTitle]) 
 																										style:UIBarButtonItemStyleDone
 																									  target:self
 																									  action:@selector(save)] autorelease];
+     [self.navigationItem.leftBarButtonItem setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
+     [self.navigationItem.rightBarButtonItem setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 

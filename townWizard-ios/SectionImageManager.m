@@ -46,6 +46,7 @@ static SectionImageManager *sectionImageManager = nil;
     return @{
         @"videos" : @"video",
         @"photos" : @"profile",
+        @"weather" : @"weather",
         @"news feed" : @"news",
         @"news" : @"news",
         @"places" : @"towndirrectory",
