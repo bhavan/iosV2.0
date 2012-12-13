@@ -23,9 +23,7 @@
 + (NSString *)xaccessTokenFromPartner:(Partner *)partner;
 + (RKObjectManager *)defaultObjectManager;
 
-+ (void)partnersWithQuery:(NSString *)query
-                   offset:(NSInteger)offset
-              andDelegate:(id <RKObjectLoaderDelegate>)delegate;
++ (void)partnersWithQuery:(NSString *)query offset:(NSInteger)offset UsingBlock:(void(^)(RKObjectLoader *)) block;
 
 + (void)partnerWithId:(NSString *)partnerId
           andDelegate:(id <RKObjectLoaderDelegate>)delegate;

@@ -68,6 +68,16 @@
 																				  style:UIBarButtonItemStyleDone
 																				 target:self
 																				 action:@selector(validateForm)] autorelease];
+        NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                        [UIColor whiteColor], UITextAttributeTextColor,
+                                        [UIColor clearColor], UITextAttributeTextShadowColor,
+                                        [NSValue valueWithUIOffset:UIOffsetMake(0, 0)], UITextAttributeTextShadowOffset,
+                                        [UIFont boldSystemFontOfSize:13.0f], UITextAttributeFont,
+                                        nil];
+        
+        [self.navigationItem.leftBarButtonItem setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
+        [self.navigationItem.rightBarButtonItem setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
+
 		
 		self.values = [NSMutableDictionary dictionaryWithCapacity:0];
         

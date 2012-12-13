@@ -70,7 +70,7 @@ static RequestHelper *requestHelper = nil;
     return objectManager;
 }
 
-+ (void)partnersWithQuery:(NSString *)query offset:(NSInteger)offset andDelegate:(id <RKObjectLoaderDelegate>)delegate
++ (void)partnersWithQuery:(NSString *)query offset:(NSInteger)offset UsingBlock:(void(^)(RKObjectLoader *)) block
 {
     NSString *queryParam = @"";
     if(query && query.length > 0)
@@ -88,7 +88,7 @@ static RequestHelper *requestHelper = nil;
     [objectManager.mappingProvider setObjectMapping:[[MappingManager sharedInstance] partnerMapping]
                                          forKeyPath:@"data"];
     NSString *resourcePath = [NSString stringWithFormat:@"/partner?%@&offset=%d",queryParam,offset];
-    [objectManager loadObjectsAtResourcePath:resourcePath delegate:delegate];
+    [objectManager loadObjectsAtResourcePath:resourcePath usingBlock:block];
 }
 
 

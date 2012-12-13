@@ -3609,8 +3609,8 @@
 		84189C781675D9ED00A07AB3 /* SHKShareMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKShareMenu.m; sourceTree = "<group>"; };
 		84189C791675D9ED00A07AB3 /* SHKViewControllerWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKViewControllerWrapper.h; sourceTree = "<group>"; };
 		84189C7A1675D9ED00A07AB3 /* SHKViewControllerWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKViewControllerWrapper.m; sourceTree = "<group>"; };
-		84189CB31675DA7100A07AB3 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
-		84189CB41675DA7200A07AB3 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
+		84189CB31675DA7100A07AB3 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSKeychain.h; path = ../SSKeychain.h; sourceTree = "<group>"; };
+		84189CB41675DA7200A07AB3 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSKeychain.m; path = ../SSKeychain.m; sourceTree = "<group>"; };
 		84189CB61675DAA500A07AB3 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		84189E68167601E000A07AB3 /* SHKMail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKMail.h; sourceTree = "<group>"; };
 		84189E69167601E000A07AB3 /* SHKMail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKMail.m; sourceTree = "<group>"; };
@@ -4704,6 +4704,8 @@
 		84189BF81675D9EB00A07AB3 /* ShareKit */ = {
 			isa = PBXGroup;
 			children = (
+				84189CB31675DA7100A07AB3 /* SSKeychain.h */,
+				84189CB41675DA7200A07AB3 /* SSKeychain.m */,
 				84189BF91675D9EB00A07AB3 /* Configuration */,
 				84189C001675D9EB00A07AB3 /* Core */,
 				84189C401675D9EC00A07AB3 /* Customize UI */,
@@ -5053,8 +5055,6 @@
 		8483F24D14D03FBE005E4216 /* TownWizard-ios */ = {
 			isa = PBXGroup;
 			children = (
-				84189CB31675DA7100A07AB3 /* SSKeychain.h */,
-				84189CB41675DA7200A07AB3 /* SSKeychain.m */,
 				84189BF81675D9EB00A07AB3 /* ShareKit */,
 				84CA0215166CCBDA003E1F81 /* PMCalendar */,
 				D9515CA61638351E0058BE8C /* Extensions */,

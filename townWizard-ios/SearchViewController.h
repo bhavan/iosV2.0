@@ -47,6 +47,7 @@ PartnerMenuDelegate>
 - (IBAction)dismissKeyboardByTouchingEmptySpaceOnScreen:(id)sender;
 - (IBAction)infoButtonPressed:(id)sender;
 - (void) searchForPartnersWithQuery:(NSString *)query offset:(NSInteger)offset;
+- (void)loadNearbyPartners;
 
 
 @end

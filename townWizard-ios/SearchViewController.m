@@ -76,7 +76,7 @@
     self.partnersList = [[NSMutableArray alloc] init];
     doNotUseGeopositionSearchResults = NO;
     loadingMorePartnersInProgress = NO;
-    [self searchForPartnersWithQuery:DEFAULT_PARTNER_NAME];
+ 
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -191,7 +191,7 @@
 #pragma mark -
 #pragma mark RKObjectLoaderDelegate
 
-- (void)objectLoader:(RKObjectLoader *)loader willMapData:(inout id *)mappableData {
+/*- (void)objectLoader:(RKObjectLoader *)loader willMapData:(inout id *)mappableData {
     NSMutableDictionary* data = [[*mappableData objectForKey: @"meta"] mutableCopy];
     if([data objectForKey:@"next_offset"]) {
         nextOffset = [[data objectForKey:@"next_offset"] integerValue];
@@ -224,6 +224,7 @@
                     doNotUseGeopositionSearchResults = YES;
                     [self searchForPartnersWithQuery:nil];
                 }
+                
                 defaultPartner = [partner retain];
                 [self.defaultMenu updateWithPartner:defaultPartner];
             }
@@ -248,7 +249,7 @@
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error {
     NSLog(@"%@",error.description);
-}
+}*/
 
 #pragma mark -
 #pragma mark PartnerMethods
@@ -271,12 +272,65 @@
     query = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [[UIApplication sharedApplication] showNetworkActivityIndicator];
     
-    [RequestHelper partnersWithQuery:query offset:offset andDelegate:self];
+    [RequestHelper partnersWithQuery:query offset:offset UsingBlock:^(RKObjectLoader *loader) {
+        [loader setOnDidLoadObjects:^(NSArray *objects) {
+            [self partnersLoaded:objects];
+        }];
+    }];
     loadingMorePartnersInProgress = NO;
     if ([_partnersList count])
     {
         loadingMorePartnersInProgress = YES;
     }
+}
+
+- (void)partnersLoaded:(NSArray *)partners
+{
+    if ([partners count] == 0) {
+        UIAlertView *alert = [[[UIAlertView alloc]
+                               initWithTitle:@"Whoops!"
+                               message:@"Sorry, but it looks like we dont have a TownWizard in your area yet!"
+                               delegate:self
+                               cancelButtonTitle:@"OK"
+                               otherButtonTitles:nil] autorelease];
+        [alert show];
+        
+    }
+    else if([[partners lastObject] isKindOfClass:[Partner class]]) {
+        Partner *partner = [partners lastObject];
+        if(partner && [partner.name isEqualToString:DEFAULT_PARTNER_NAME])
+        {            
+            defaultPartner = [partner retain];
+            [self.defaultMenu updateWithPartner:defaultPartner];
+           // [self loadNearbyPartners];
+        }
+        else if(partners.count > 0 && loadingMorePartnersInProgress)
+        {
+            [_partnersList addObjectsFromArray:partners];
+            loadingMorePartnersInProgress = NO;
+        }
+        else{
+            _partnersList = [[NSMutableArray alloc]initWithArray:partners];
+            if (defaultPartner == nil) {
+                [self searchForPartnersWithQuery:DEFAULT_PARTNER_NAME];
+            }
+        }
+    }
+    [self.tableView reloadData];
+    [self.goButton setEnabled:YES];
+    [self removeSpinnerFromButton:self.goButton];
+    [self.goButton setTitle:@"GO" forState:UIControlStateNormal];
+
+}
+
+- (void)loadNearbyPartners
+{
+    if (!doNotUseGeopositionSearchResults)
+    {
+        doNotUseGeopositionSearchResults = YES;
+        [self searchForPartnersWithQuery:nil];
+    }
+
 }
 
 
@@ -291,7 +345,7 @@
           fromLocation:(CLLocation *)oldLocation
 {
     [aManager stopUpdatingLocation];
-    
+    [self loadNearbyPartners];
    
 }
 

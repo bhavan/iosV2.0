@@ -65,6 +65,15 @@
 		self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
                                                                                                 target:self
                                                                                                 action:@selector(edit)] autorelease];
+        NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                        [UIColor whiteColor], UITextAttributeTextColor,
+                                        [UIColor clearColor], UITextAttributeTextShadowColor,
+                                        [NSValue valueWithUIOffset:UIOffsetMake(0, 0)], UITextAttributeTextShadowOffset,
+                                        [UIFont boldSystemFontOfSize:13.0f], UITextAttributeFont,
+                                        nil];
+        
+        [self.navigationItem.leftBarButtonItem setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
+        [self.navigationItem.rightBarButtonItem setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
 	}
     
 	return self;
