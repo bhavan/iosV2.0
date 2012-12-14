@@ -17,6 +17,9 @@
 @property (nonatomic, retain) Partner *currentPartner;
 @property (nonatomic, retain) Section *currentSection;
 
+
+- (RKObjectManager *) currentObjectManager;
+
 + (id) sharedInstance;
 
 + (NSString *) md5:(NSString *) input;

@@ -234,7 +234,7 @@ static RequestHelper *requestHelper = nil;
 
 - (void) loadEventsAtResourcePath:(NSString *) resorcePath usingBlock:(void(^)(RKObjectLoader *)) block
 {
-    RKObjectManager *objectManager = [self currentObjectManager];
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
     [[objectManager mappingProvider] setObjectMapping:[[MappingManager sharedInstance] eventsMapping]
                                            forKeyPath:@"data"];
     [objectManager loadObjectsAtResourcePath:[NSString stringWithFormat:@"%@", resorcePath]

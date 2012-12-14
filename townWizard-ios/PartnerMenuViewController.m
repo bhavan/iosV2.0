@@ -240,8 +240,7 @@
     
     NSString *category = [[menu allKeys] objectAtIndex:indexPath.section];
     Section *section = [[menu objectForKey:category] objectAtIndex:indexPath.row];
-    [cell updateWithSection:section];
-    
+    [cell updateWithSection:section];    
     return cell;
 }
 
@@ -264,8 +263,7 @@
     EventSectionHeader *header = [[EventSectionHeader alloc] initWithFrame:headerFrame];
     NSNumber *categoryIndex = [[menu allKeys] objectAtIndex:section];
     [[header title] setText:[self categoryName:categoryIndex]];
-    return header;
-    
+    return header;    
 }
 
 #pragma mark -
