@@ -20,6 +20,11 @@
 #import "SHK.h"
 
 @interface EventDetailsViewController ()
+{
+    BOOL isdescriptionLoaded;
+}
+
+@property (nonatomic, retain)NSString *bannerImageUrl;
 
 -(NSString *) stringByStrippingHTML:(NSString *)string;
 
@@ -39,13 +44,22 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                    [UIColor blackColor], UITextAttributeTextColor,
+                                    [UIColor clearColor], UITextAttributeTextShadowColor,
+                                    [NSValue valueWithUIOffset:UIOffsetMake(0, 0)], UITextAttributeTextShadowOffset,
+                                    [UIFont boldSystemFontOfSize:13.0f], UITextAttributeFont,
+                                    nil];
+    [self.navigationItem.leftBarButtonItem setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
+    [self.navigationItem.backBarButtonItem setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
     _topDetailView.detailWebView.delegate = self;
     _topDetailView.detailWebView.scrollView.scrollEnabled = NO;
 }
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];    
+    [super viewDidLoad];
+    
     TWBackgroundView *backgroundView = [[TWBackgroundView alloc] initWithFrame:self.view.frame];
     [self.view insertSubview:backgroundView atIndex:0];
     [backgroundView release];
@@ -56,10 +70,26 @@
     }
 }
 
+
+
 - (void)loadWithEvent:(Event *)event
 {
     _event = event;
-    [_topDetailView updateWithEvent:event];   
+    [_topDetailView updateWithEvent:event];
+}
+
+- (void)updateBannerImage:(UIImage *)bannerImage urlString:(NSString *)urlString
+{
+    [_bannerImageView setImage:bannerImage];
+    _bannerImageUrl = urlString;
+    
+}
+
+- (IBAction)bannerButtonPressed:(id)sender
+{
+    [[AppActionsHelper sharedInstance] openUrl:_bannerImageUrl
+                             fromNavController:self.navigationController];
+
 }
 
 - (IBAction)callButtonPressed:(id)sender
@@ -171,8 +201,13 @@
 }
 
 - (IBAction)shareButtonPressed:(id)sender
-{ 
-    SHKItem *item = [SHKItem text:[NSString stringWithFormat:@"%@\n\n%@\n%@", _event.title, _event.startTime,  [self stringByStrippingHTML:_event.details]]];
+{
+    NSDate *startDate = [NSDate dateFromString:_event.startTime dateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *endDate = [NSDate dateFromString:_event.endTime dateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString *eventDatePeriod = [NSString stringWithFormat:@"%@ to %@",
+                                 [NSDate stringFromDate:startDate dateFormat:@"EEEE, LLLL d yyyy - h:mm a"],
+                                 [NSDate stringFromDate:endDate dateFormat:@"h:mm a"]];
+    SHKItem *item = [SHKItem text:[NSString stringWithFormat:@"%@\n\n%@\n%@", _event.title, eventDatePeriod,  [self stringByStrippingHTML:_event.details]]];
 	SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
 	//[SHK setRootViewController:rootViewController];
 	[actionSheet showInView:self.view];
@@ -194,13 +229,27 @@
 {
     _topDetailView.frame = CGRectMake(0, 0, 320, webView.scrollView.contentSize.height+150);
     self.scrollView.contentSize = _topDetailView.frame.size;
+    isdescriptionLoaded = YES;
     
+}
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    if (isdescriptionLoaded)
+    {
+        [[AppActionsHelper sharedInstance] openUrl:[request.URL absoluteString]
+                                 fromNavController:self.navigationController];
+     
+     return NO;
+    }
+    return YES;
 }
 
 - (void)dealloc
 {
     [_scrollView release];
     [_topDetailView release];
+    [_bannerImageView release];
     [super dealloc];
 }
 
@@ -208,6 +257,7 @@
 {
     [self setScrollView:nil];
     [self setTopDetailView:nil];
+    [self setBannerImageView:nil];
     [super viewDidUnload];
 }
 

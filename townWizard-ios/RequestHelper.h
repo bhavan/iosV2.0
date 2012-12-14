@@ -23,7 +23,7 @@
 + (NSString *)xaccessTokenFromPartner:(Partner *)partner;
 + (RKObjectManager *)defaultObjectManager;
 
-+ (void)partnersWithQuery:(NSString *)query offset:(NSInteger)offset UsingBlock:(void(^)(RKObjectLoader *)) block;
++ (void)partnersWithQuery:(NSString *)query offset:(NSInteger)offset andDelegate:(id <RKObjectLoaderDelegate>)delegate;
 
 + (void)partnerWithId:(NSString *)partnerId
           andDelegate:(id <RKObjectLoaderDelegate>)delegate;
@@ -53,7 +53,7 @@
 - (void)loadEventsCategoriesUsingBlock:(void(^)(RKObjectLoader *)) block;
 - (void) loadEventsUsingBlock:(void(^)(RKObjectLoader *)) block;
 - (void) loadFeaturedEventUsingBlock:(void(^)(RKObjectLoader *)) block;
-- (void) loadEventsWithDatePeriod:(NSDate *)startDate end:(NSDate *)endDate  UsingBlock:(void(^)(RKObjectLoader *)) block;
+- (void) loadEventsWithDatePeriod:(NSDate *)startDate end:(NSDate *)endDate delegate:(id<RKObjectLoaderDelegate>) delegate;
 - (void) loadPartnerDetails:(NSString *) partnerID usingBlock:(void(^)(RKObjectLoader *)) block;
 - (void) loadSectionsUsingBlock:(void(^)(RKObjectLoader *)) block;
 

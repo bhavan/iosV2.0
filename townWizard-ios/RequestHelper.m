@@ -70,7 +70,7 @@ static RequestHelper *requestHelper = nil;
     return objectManager;
 }
 
-+ (void)partnersWithQuery:(NSString *)query offset:(NSInteger)offset UsingBlock:(void(^)(RKObjectLoader *)) block
++ (void)partnersWithQuery:(NSString *)query offset:(NSInteger)offset andDelegate:(id <RKObjectLoaderDelegate>)delegate
 {
     NSString *queryParam = @"";
     if(query && query.length > 0)
@@ -88,7 +88,7 @@ static RequestHelper *requestHelper = nil;
     [objectManager.mappingProvider setObjectMapping:[[MappingManager sharedInstance] partnerMapping]
                                          forKeyPath:@"data"];
     NSString *resourcePath = [NSString stringWithFormat:@"/partner?%@&offset=%d",queryParam,offset];
-    [objectManager loadObjectsAtResourcePath:resourcePath usingBlock:block];
+    [objectManager loadObjectsAtResourcePath:resourcePath delegate:delegate];
 }
 
 
@@ -201,7 +201,7 @@ static RequestHelper *requestHelper = nil;
     [self loadEventsAtResourcePath:[[self currentSection] url] usingBlock:block];
 }
 
-- (void) loadEventsWithDatePeriod:(NSDate *)startDate end:(NSDate *)endDate UsingBlock:(void(^)(RKObjectLoader *)) block
+- (void) loadEventsWithDatePeriod:(NSDate *)startDate end:(NSDate *)endDate delegate:(id<RKObjectLoaderDelegate>) delegate
 {
       NSDateFormatter *dateFormat = [NSDateFormatter new];
     [dateFormat setDateFormat:@"YYYY-MM-dd"];
@@ -210,7 +210,11 @@ static RequestHelper *requestHelper = nil;
     NSString *resourcePath = [NSString stringWithFormat:@"%@?from=%@&to=%@",[[self currentSection] url],start, end];
     [dateFormat release];
 
-    [self loadEventsAtResourcePath:resourcePath usingBlock:block];
+    RKObjectManager *objectManager = [self currentObjectManager];
+    [[objectManager mappingProvider] setObjectMapping:[[MappingManager sharedInstance] eventsMapping]
+                                           forKeyPath:@"data"];
+    [objectManager loadObjectsAtResourcePath:[NSString stringWithFormat:@"%@", resourcePath]
+                                  delegate:delegate];
 }
 
 - (void)loadEventsCategoriesUsingBlock:(void(^)(RKObjectLoader *)) block

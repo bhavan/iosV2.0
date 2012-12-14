@@ -37,7 +37,7 @@ PartnerMenuDelegate>
 @property (nonatomic, retain) NSMutableArray *partnersList;
 @property (nonatomic, retain) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
-@property (nonatomic, retain) IBOutlet UIImageView * logo;
+
 @property (nonatomic, retain) IBOutlet UIButton * goButton;
 @property (nonatomic, retain) NSString * currentSearchQuery;
 @property (nonatomic, retain) MasterDetailController *masterDetail;
@@ -48,6 +48,6 @@ PartnerMenuDelegate>
 - (IBAction)infoButtonPressed:(id)sender;
 - (void) searchForPartnersWithQuery:(NSString *)query offset:(NSInteger)offset;
 - (void)loadNearbyPartners;
-
+- (void)partnersLoaded:(NSArray *)partners;
 
 @end

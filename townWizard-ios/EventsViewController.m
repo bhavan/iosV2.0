@@ -16,12 +16,13 @@
 #import "PMCalendar.h"
 #import "EventDetailsViewController.h"
 #import "NSDate+Formatting.h"
-
+#import "UIImageView+WebCache.h"
 #import "UIView+Extensions.h"
 
 #define ALL_EVENTS_TEXT @"ALL EVENTS"
 
 @interface EventsViewController () <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, PMCalendarControllerDelegate>
+@property (nonatomic,retain)  NSString *bannerUrlString;
 @property (nonatomic, retain) NSArray *events;
 @property (nonatomic, retain) NSArray *allEvents;
 @property (nonatomic, retain) NSArray *allFeaturedEvents;
@@ -68,6 +69,7 @@ static const NSInteger kEventsAlertTag = 700;
     [eventsList release];
     [_eventsTypeButton release];
     [_calendarButton release];
+    [_bannerImageView release];
     [super dealloc];
 }
 
@@ -78,6 +80,7 @@ static const NSInteger kEventsAlertTag = 700;
     eventsList = nil;
     [self setEventsTypeButton:nil];
     [self setCalendarButton:nil];
+    [self setBannerImageView:nil];
     [super viewDidUnload];
 }
 
@@ -146,15 +149,42 @@ static const NSInteger kEventsAlertTag = 700;
 
 - (void)loadEventsWithDatePeriod:(NSDate *)startDate endDate:(NSDate *)endDate
 {
-    [[RequestHelper sharedInstance] loadEventsWithDatePeriod:startDate end:endDate
-                                                  UsingBlock:^(RKObjectLoader *loader) {
-                                                      [loader setOnDidLoadObjects:^(NSArray *objects){
-                                                          [self eventsLoaded:objects];
-                                                      }];
-                                                      [loader setOnDidFailWithError:^(NSError *error){
-                                                          [self eventsLoadingFailed:error];
-                                                      }];
-                                                  }];
+    [[RequestHelper sharedInstance] loadEventsWithDatePeriod:startDate end:endDate  delegate:self];
+}
+
+- (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects
+{
+    if (objects) {
+        [self eventsLoaded:objects];
+    }
+}
+
+- (void)objectLoader:(RKObjectLoader *)loader willMapData:(inout id *)mappableData
+{
+    NSMutableDictionary* data = [[*mappableData objectForKey: @"ad"] mutableCopy];
+   
+    if(data && _bannerUrlString == nil)
+    {
+        _bannerUrlString = [[NSString alloc] initWithString:[data objectForKey:@"url"]];
+        NSString *adImageUrl = [data objectForKey:@"banner"];
+        [_bannerImageView setImageWithURL:[NSURL URLWithString:adImageUrl]];        
+    }
+    
+    [data release];
+   
+}
+
+- (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error
+{
+    
+}
+
+
+- (IBAction)bannerButtonPressed:(id)sender
+{    
+    [[AppActionsHelper sharedInstance] openUrl:_bannerUrlString
+                             fromNavController:self.navigationController];
+    
     
 }
 
@@ -375,7 +405,6 @@ static const NSInteger kEventsAlertTag = 700;
 }
 
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *identifier = @"EventCell";
@@ -400,9 +429,9 @@ static const NSInteger kEventsAlertTag = 700;
     NSDate *dateRepresentingThisDay = [self.sortedDays objectAtIndex:indexPath.section];
     NSArray *eventsOnThisDay = [self.sections objectForKey:dateRepresentingThisDay];
     Event *event = [eventsOnThisDay objectAtIndex:indexPath.row];
-    [eventDetails loadWithEvent:event];
-    
+    [eventDetails loadWithEvent:event];    
     [self.navigationController pushViewController:eventDetails animated:YES];
+    [eventDetails updateBannerImage:_bannerImageView.image urlString:_bannerUrlString];
     [eventDetails release];
 }
 

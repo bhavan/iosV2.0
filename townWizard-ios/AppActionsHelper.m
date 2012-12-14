@@ -27,11 +27,14 @@ static AppActionsHelper *actionsHelper = nil;
 
 - (void)openUrl:(NSString *)urlString fromNavController:(UINavigationController *)navController
 {
-    [[RequestHelper sharedInstance] setCurrentSection:nil];
-    SubMenuViewController *subMenu = [SubMenuViewController new];
-    subMenu.url = urlString;
-    [navController pushViewController:subMenu animated:YES];
-    [subMenu release];
+    if(urlString)
+    {
+        [[RequestHelper sharedInstance] setCurrentSection:nil];
+        SubMenuViewController *subMenu = [SubMenuViewController new];
+        subMenu.url = urlString;
+        [navController pushViewController:subMenu animated:YES];
+        [subMenu release];
+    }
     
 }
 
@@ -44,6 +47,7 @@ static AppActionsHelper *actionsHelper = nil;
     viewController.m_sTitle = title;
     viewController.bShowDirection = YES;
     [navController pushViewController:viewController animated:YES];
+    [viewController loadGoogleMap];
     
     [viewController release];
     

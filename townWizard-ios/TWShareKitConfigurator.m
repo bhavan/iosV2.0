@@ -11,6 +11,14 @@
 
 @implementation TWShareKitConfigurator
 
+- (NSString*)appName {
+	return @"TownWizard";
+}
+
+- (NSString*)appURL {
+	return @"https://itunes.apple.com/us/app/townwizard/id507216232?mt=8";
+}
+
 - (NSString*)facebookAppId {
 	return [AppDelegate sharedDelegate].facebookHelper.appId ;
 }

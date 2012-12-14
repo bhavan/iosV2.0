@@ -356,13 +356,15 @@ static NSString *const kSHKFacebookUserInfo =@"kSHKFacebookUserInfo";
 }
 
 - (void)request:(FBRequest *)request didLoad:(id)result
-{   
-    if ([result isKindOfClass:[NSDictionary class]] && [result objectForKey:@"username"]){
+{
+
+  /*  if (result && [result isKindOfClass:[NSDictionary class]] && [result objectForKey:@"username"])
+    {
         
         [result convertNSNullsToEmptyStrings];
         [[NSUserDefaults standardUserDefaults] setObject:result forKey:kSHKFacebookUserInfo];
     }     
-
+*/
     [self sendDidFinish];
     [self release]; //see [self send]
 }

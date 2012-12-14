@@ -17,6 +17,7 @@
 #import "Section.h"
 #import "UIImageView+WebCache.h"
 #import "MasterDetailController.h"
+#import "PartnerCell.h"
 
 #import "PartnerViewController.h"
 
@@ -59,20 +60,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];  
     self.searchBar.accessibilityLabel = @"Search";
+   
     selectedPartnerSections = nil;
     for (UIView *subview in self.searchBar.subviews) {
         if ([subview isKindOfClass:NSClassFromString(@"UISearchBarBackground")]) {
             [subview removeFromSuperview];
         }
+        else if([subview isKindOfClass:[UITextField class]])
+        {
+            UITextField *tf = (UITextField *)subview;
+            [tf setBackgroundColor:[UIColor clearColor]];
+            [tf setBackground: [UIImage imageNamed:@"searchBar"] ];
+             [tf setBorderStyle:UITextBorderStyleNone];
+            [tf setTextColor:[UIColor colorWithRed:203.0f/255.0f green:0 blue:0 alpha:1.0f]];
+            [tf setFont:[UIFont boldSystemFontOfSize:16.0f]];
+        }
     }
-    UIImage * aLogo = [UIImage imageNamed:@"twHeader"];
-    UIImageView * imageView = [[UIImageView alloc] initWithImage:aLogo];
-    self.logo = imageView;
-    [imageView release];
-    
-    self.logo.frame = CGRectMake(0,0, LOGO_PORTRAIT_WIDTH, LOGO_PORTRAIT_HEIGHT);
-    [self.view addSubview:self.logo];
-    self.tableView.separatorColor = [UIColor colorWithRed:0.792 green:0.769 blue:0.678 alpha:1];    
+    [self.tableView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"searchBg"]]];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    self.tableView.separatorColor = [UIColor colorWithRed:186.0f/255.0f green:186.0f/255.0f blue:186.0f/255.0f alpha:0.7f];
     self.partnersList = [[NSMutableArray alloc] init];
     doNotUseGeopositionSearchResults = NO;
     loadingMorePartnersInProgress = NO;
@@ -191,7 +197,7 @@
 #pragma mark -
 #pragma mark RKObjectLoaderDelegate
 
-/*- (void)objectLoader:(RKObjectLoader *)loader willMapData:(inout id *)mappableData {
+- (void)objectLoader:(RKObjectLoader *)loader willMapData:(inout id *)mappableData {
     NSMutableDictionary* data = [[*mappableData objectForKey: @"meta"] mutableCopy];
     if([data objectForKey:@"next_offset"]) {
         nextOffset = [[data objectForKey:@"next_offset"] integerValue];
@@ -205,51 +211,15 @@
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
     if (objects) {
-        if ([objects count] == 0) {
-            UIAlertView *alert = [[[UIAlertView alloc]
-                                   initWithTitle:@"Whoops!"
-                                   message:@"Sorry, but it looks like we dont have a TownWizard in your area yet!"
-                                   delegate:self
-                                   cancelButtonTitle:@"OK"
-                                   otherButtonTitles:nil] autorelease];
-            [alert show];
-            
-        }
-        else if([[objects lastObject] isKindOfClass:[Partner class]]) {
-            Partner *partner = [objects lastObject];
-            if(partner && [partner.name isEqualToString:DEFAULT_PARTNER_NAME])
-            {
-                if (!doNotUseGeopositionSearchResults)
-                {
-                    doNotUseGeopositionSearchResults = YES;
-                    [self searchForPartnersWithQuery:nil];
-                }
-                
-                defaultPartner = [partner retain];
-                [self.defaultMenu updateWithPartner:defaultPartner];
-            }
-            else if(objects.count > 0 && loadingMorePartnersInProgress)
-            {
-                [_partnersList addObjectsFromArray:objects];
-                loadingMorePartnersInProgress = NO;
-            }
-            else{
-                _partnersList = [[NSMutableArray alloc]initWithArray:objects];
-            }            
-        }
-        [self.tableView reloadData];
-        [self.goButton setEnabled:YES];
-        [self removeSpinnerFromButton:self.goButton];
-        [self.goButton setTitle:@"GO" forState:UIControlStateNormal];
-//        [[UIApplication sharedApplication] hideNetworkActivityIndicator];
-        
+        [self partnersLoaded:objects];
     }
     
 }
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error {
     NSLog(@"%@",error.description);
-}*/
+}
+
 
 #pragma mark -
 #pragma mark PartnerMethods
@@ -272,12 +242,7 @@
     query = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [[UIApplication sharedApplication] showNetworkActivityIndicator];
     
-    [RequestHelper partnersWithQuery:query offset:offset UsingBlock:^(RKObjectLoader *loader) {
-        [loader setOnDidLoadObjects:^(NSArray *objects) {
-            [self partnersLoaded:objects];
-        }];
-    }];
-    loadingMorePartnersInProgress = NO;
+    [RequestHelper partnersWithQuery:query offset:offset andDelegate:self];     loadingMorePartnersInProgress = NO;
     if ([_partnersList count])
     {
         loadingMorePartnersInProgress = YES;
@@ -318,8 +283,7 @@
     }
     [self.tableView reloadData];
     [self.goButton setEnabled:YES];
-    [self removeSpinnerFromButton:self.goButton];
-    [self.goButton setTitle:@"GO" forState:UIControlStateNormal];
+    [self removeSpinnerFromButton:self.goButton];   
 
 }
 
@@ -433,17 +397,15 @@
     else { //Partner cell
         cell = [aTableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if(cell == nil) {
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+            cell = [[[PartnerCell alloc] initWithStyle:UITableViewCellStyleDefault
                                            reuseIdentifier:CellIdentifier]
                     autorelease];
         }
         Partner *partner = [_partnersList objectAtIndex:indexPath.row];
         cell.textLabel.text = partner.name;
-    }
-    
-    cell.textLabel.textColor = [UIColor colorWithRed:0.308 green:0.2745 blue:0.227 alpha:1];
-    cell.selectionStyle = UITableViewCellSelectionStyleGray;
-    return  cell;
+        cell.textLabel.textColor = [UIColor darkGrayColor];
+    }    
+       return  cell;
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
@@ -518,8 +480,7 @@
 -(void)releaseOutlets
 {
     [self setTableView:nil];
-    [self setSearchBar:nil];
-    [self setLogo:nil];
+    [self setSearchBar:nil];   
     [_partnersList release];
     self.currentSearchQuery = nil;
     

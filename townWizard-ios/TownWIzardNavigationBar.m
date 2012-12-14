@@ -24,7 +24,7 @@ static const CGFloat kTWBarTitleFontSize = 18;
     self = [super initWithFrame:frame];
     if (self) {
         self.tintColor = [UIColor lightGrayColor];
-        
+        self.delegate = self;
         self.titleLabel = [[[UILabel alloc] initWithFrame:CGRectZero] autorelease];
 
         self.titleLabel.textColor = [UIColor blackColor];
@@ -67,8 +67,6 @@ static const CGFloat kTWBarTitleFontSize = 18;
 
 - (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPushItem:(UINavigationItem *)item
 {
-
-
     return YES;
 }
 
