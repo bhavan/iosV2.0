@@ -36,12 +36,12 @@
 
 - (NSString*)twitterConsumerKey
 {
-	return @"";
+	return @"WGC4Raba8V0ETEmvnDNS5Q";
 }
 
 - (NSString*)twitterSecret
 {
-	return @"";
+	return @"jQjPxXqYqFCI2e50y0PWDDwCV7WE00qoD5TkTVYcXk";
 }
 // You need to set this if using OAuth, see note above (xAuth users can skip it)
 - (NSString*)twitterCallbackUrl
@@ -56,7 +56,7 @@
 // Enter your app's twitter account if you'd like to ask the user to follow it when logging in. (Only for xAuth)
 - (NSString*)twitterUsername
 {
-	return @"";
+	return @"TownWizard";
 }
 
 
