@@ -62,13 +62,6 @@ static RequestHelper *requestHelper = nil;
     return resultToken;
 }
 
-+ (RKObjectManager *)defaultObjectManager
-{
-    RKURL *baseURL = [RKURL URLWithBaseURLString:API_URL];
-    RKObjectManager *objectManager = [RKObjectManager objectManagerWithBaseURL:baseURL];
-    objectManager.client.baseURL = baseURL;
-    return objectManager;
-}
 
 + (void)partnersWithQuery:(NSString *)query offset:(NSInteger)offset andDelegate:(id <RKObjectLoaderDelegate>)delegate
 {
@@ -102,17 +95,6 @@ static RequestHelper *requestHelper = nil;
     NSString *resourcePath = [NSString stringWithFormat:@"/partner/%@",partnerId];
     [objectManager loadObjectsAtResourcePath:resourcePath delegate:delegate];
     
-}
-
-+ (void)sectionsWithPartner:(Partner *)partner andDelegate:(id <RKObjectLoaderDelegate>)delegate
-{
-    RKObjectManager *objectManager = [RKObjectManager sharedManager];
-    RKObjectMapping *sectionMapping = [Section objectMapping];
-    [sectionMapping mapKeyPath:@"sub_sections" toRelationship:@"subSections" withMapping:[Section objectMapping]];
-    
-    [objectManager.mappingProvider setObjectMapping:sectionMapping forKeyPath:@"data"];
-    NSString *resourcePath = [NSString stringWithFormat:@"/section/partner/%@",partner.partnterId];
-    [objectManager loadObjectsAtResourcePath:resourcePath delegate:delegate];
 }
 
 + (void)modelsListWithMapping:(RKObjectMapping *)objectMapping
@@ -187,7 +169,7 @@ static RequestHelper *requestHelper = nil;
 
 - (void) loadPhotosFromCategory:(PhotoCategory *) category delegate:(id<RKObjectLoaderDelegate>) delegate
 {
-    RKObjectManager *objectManager = [self currentObjectManager];
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
     [objectManager.mappingProvider setObjectMapping:[Photo objectMapping] forKeyPath:@"data"];
     NSString *resourcePath = [NSString stringWithFormat:@"%@/%@?id=%@",
                               [[self currentPartner] webSiteUrl],
@@ -234,7 +216,7 @@ static RequestHelper *requestHelper = nil;
 
 - (void) loadEventsAtResourcePath:(NSString *) resorcePath usingBlock:(void(^)(RKObjectLoader *)) block
 {
-    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    RKObjectManager *objectManager = [self currentObjectManager];
     [[objectManager mappingProvider] setObjectMapping:[[MappingManager sharedInstance] eventsMapping]
                                            forKeyPath:@"data"];
     [objectManager loadObjectsAtResourcePath:[NSString stringWithFormat:@"%@", resorcePath]

@@ -31,9 +31,6 @@
 + (void)partnerWithId:(NSString *)partnerId
           andDelegate:(id <RKObjectLoaderDelegate>)delegate;
 
-+ (void)sectionsWithPartner:(Partner *)partner
-                andDelegate:(id <RKObjectLoaderDelegate>)delegate;
-
 + (void)categoriesWithPartner:(Partner *)partner
                    andSection:(Section *)section
                   andDelegate:(id <RKObjectLoaderDelegate>)delegate;
