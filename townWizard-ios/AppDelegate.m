@@ -13,6 +13,7 @@
 #import "MapViewController.h"
 #import "SHKConfiguration.h"
 #import "TWShareKitConfigurator.h"
+#import "PartnerViewController.h"
 #import "GAI.h"
 #import <RestKit/RestKit.h>
 
@@ -99,9 +100,6 @@ static NSString* teamToken = @"5c115b5c0ce101b8b0367b329e68db27_MzE2NjMyMDExLTEx
 #ifdef CONTAINER_APP
     rootController = [[[SearchViewController alloc] init] autorelease];
     [[self manager] setDelegate:(SearchViewController *)rootController];
-#else
-    rootController = [[[PartnerMenuViewController alloc] init] autorelease];
-#endif
     UINavigationController *navController = [[UINavigationController alloc] initWithNavigationBarClass:[TownWizardNavigationBar class] toolbarClass:nil];
     [navController pushViewController:rootController animated:NO];
     
@@ -112,10 +110,14 @@ static NSString* teamToken = @"5c115b5c0ce101b8b0367b329e68db27_MzE2NjMyMDExLTEx
     self.window.rootViewController = [[[MasterDetailController alloc] initWithMasterViewController:menuController detailViewController:navController] autorelease];
     //self.viewController = self.window.rootViewController;
     ((SearchViewController *)rootController).masterDetail = (MasterDetailController *)self.window.rootViewController;
-    [self.window makeKeyAndVisible];
-    
-#if !RUN_KIF_TESTS
-    
+   
+
+#else
+    rootController = [[[PartnerViewController alloc] initWithPartner:nil] autorelease];
+    self.window.rootViewController = rootController;
+#endif
+       
+#if !RUN_KIF_TESTS    
     [self.manager setDesiredAccuracy:kCLLocationAccuracyThreeKilometers]; //should be enough
     [self.manager startUpdatingLocation];
 #else
@@ -124,7 +126,7 @@ static NSString* teamToken = @"5c115b5c0ce101b8b0367b329e68db27_MzE2NjMyMDExLTEx
         exit([[EXTestController sharedInstance] failureCount]);
     }];
 #endif
-    
+     [self.window makeKeyAndVisible];
     return YES;
 }
 

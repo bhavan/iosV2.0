@@ -225,7 +225,12 @@ static RequestHelper *requestHelper = nil;
 
 - (void) loadPartnerDetails:(NSString *) partnerID usingBlock:(void(^)(RKObjectLoader *)) block
 {
-    RKObjectManager *objectManager = [self currentObjectManager];
+    RKURL *baseURL = [RKURL URLWithBaseURLString:API_URL];
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    objectManager.client.baseURL = baseURL;
+    [objectManager.mappingProvider setObjectMapping:[[MappingManager sharedInstance] partnerMapping]
+                                         forKeyPath:@"data"];
+
     [[objectManager mappingProvider] setObjectMapping:[[MappingManager sharedInstance] partnerMapping]
                                            forKeyPath:@"data"];
     [objectManager loadObjectsAtResourcePath:[NSString stringWithFormat:@"/partner/%@",partnerID]

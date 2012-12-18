@@ -24,45 +24,20 @@
 			<key>orderHint</key>
 			<integer>11</integer>
 		</dict>
-		<key>brooklyn.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>7</integer>
-		</dict>
 		<key>brunei.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>4</integer>
-		</dict>
-		<key>buford.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>6</integer>
-		</dict>
-		<key>carrabelle.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>10</integer>
 		</dict>
 		<key>columbusohio.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>12</integer>
 		</dict>
-		<key>dtpcola.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>8</integer>
-		</dict>
 		<key>erie.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>13</integer>
-		</dict>
-		<key>gooi.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>9</integer>
 		</dict>
 		<key>goudanl.xcscheme</key>
 		<dict>
@@ -94,11 +69,6 @@
 			<key>orderHint</key>
 			<integer>16</integer>
 		</dict>
-		<key>lakeland.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
-		</dict>
 		<key>lima.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -114,25 +84,10 @@
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
-		<key>nashville.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>5</integer>
-		</dict>
 		<key>newark.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>18</integer>
-		</dict>
-		<key>oakland.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
-		</dict>
-		<key>oceansprings.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
 		</dict>
 		<key>townWizard-ios.xcscheme</key>
 		<dict>
@@ -168,6 +123,16 @@
 			<true/>
 		</dict>
 		<key>3D8DDA9C15A47A71001D48D2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>845F8C1F1680B4FE0087E3F2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>845F8D4D1680B7A60087E3F2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
