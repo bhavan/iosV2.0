@@ -90,7 +90,7 @@
     {
         urlString = @"http://www.townwizardoncontainerapp.com";
     }
-    urlString = [urlString stringByAppendingFormat:@"?&lat=%f&lon=%f",
+    urlString = [urlString stringByAppendingFormat:@"?lat=%f&lon=%f",
                  [AppDelegate sharedDelegate].doubleLatitude,
                  [AppDelegate sharedDelegate].doubleLongitude];
     
@@ -253,8 +253,8 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     }
     
     [[AppActionsHelper sharedInstance] openMapWithTitle:title
-                                              longitude:[[components objectAtIndex:2] doubleValue]
-                                               latitude:[[components objectAtIndex:3] doubleValue] fromNavController:self.navigationController];
+                                              longitude:[[components objectAtIndex:3] doubleValue]
+                                               latitude:[[components objectAtIndex:2] doubleValue] fromNavController:self.navigationController];
 }
 
 

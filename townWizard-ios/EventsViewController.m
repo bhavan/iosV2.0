@@ -106,6 +106,7 @@ static const NSInteger kEventsAlertTag = 700;
     EventDetailsViewController *eventDetails = [EventDetailsViewController new];
     [eventDetails loadWithEvent:event];
     [self.navigationController pushViewController:eventDetails animated:YES];
+    [eventDetails updateBannerImage:_bannerImageView.image urlString:_bannerUrlString];
     [eventDetails release];
     
 }
@@ -160,16 +161,16 @@ static const NSInteger kEventsAlertTag = 700;
 - (void)objectLoader:(RKObjectLoader *)loader willMapData:(inout id *)mappableData
 {
     NSMutableDictionary* data = [[*mappableData objectForKey: @"ad"] mutableCopy];
-   
+    
     if(data && _bannerUrlString == nil)
     {
         _bannerUrlString = [[NSString alloc] initWithString:[data objectForKey:@"url"]];
         NSString *adImageUrl = [data objectForKey:@"banner"];
-        [_bannerImageView setImageWithURL:[NSURL URLWithString:adImageUrl]];        
+        [_bannerImageView setImageWithURL:[NSURL URLWithString:adImageUrl]];
     }
     
     [data release];
-   
+    
 }
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error
@@ -179,7 +180,7 @@ static const NSInteger kEventsAlertTag = 700;
 
 
 - (IBAction)bannerButtonPressed:(id)sender
-{    
+{
     [[AppActionsHelper sharedInstance] openUrl:_bannerUrlString
                              fromNavController:self.navigationController];
     
@@ -344,6 +345,15 @@ static const NSInteger kEventsAlertTag = 700;
 
 - (void) eventsLoaded:(NSArray *) events
 {
+    if(!events || events.count == 0)
+    {    
+        UIAlertView *alert = [UIAlertView showWithTitle:@"No Events Scheduled"
+                                                message:nil
+                                               delegate:self
+                                      cancelButtonTitle:nil
+                                     confirmButtonTitle:@"OK"];
+        [alert setTag:1];
+    }
     [self setAllEvents:events];
     [self filterEventsByCategoryAndDate];
 }
@@ -423,14 +433,10 @@ static const NSInteger kEventsAlertTag = 700;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    EventDetailsViewController *eventDetails = [EventDetailsViewController new];
     NSDate *dateRepresentingThisDay = [self.sortedDays objectAtIndex:indexPath.section];
     NSArray *eventsOnThisDay = [self.sections objectForKey:dateRepresentingThisDay];
     Event *event = [eventsOnThisDay objectAtIndex:indexPath.row];
-    [eventDetails loadWithEvent:event];    
-    [self.navigationController pushViewController:eventDetails animated:YES];
-    [eventDetails updateBannerImage:_bannerImageView.image urlString:_bannerUrlString];
-    [eventDetails release];
+    [self eventTouched:event];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
