@@ -320,7 +320,7 @@
     switch ([categoryIndex intValue])
     {
         case 1: return @"Sections";
-        case 2: return @"Information";
+        case 2: return @"";
         default: return nil;
     }
 }
