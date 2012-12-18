@@ -30,6 +30,7 @@
     NSMutableDictionary *menu;
 }
 
+@property (retain, nonatomic) IBOutlet UIView *headerView;
 @property (nonatomic, retain) Partner * partner;
 @property (nonatomic, assign) id<PartnerMenuDelegate> delegate;
 

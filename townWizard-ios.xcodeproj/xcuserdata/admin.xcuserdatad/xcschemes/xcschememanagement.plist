@@ -99,6 +99,11 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>townWizardPartnerTemplate copy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>townWizardTests.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -133,6 +138,11 @@
 			<true/>
 		</dict>
 		<key>845F8D4D1680B7A60087E3F2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>845F8E7B1680BFFD0087E3F2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

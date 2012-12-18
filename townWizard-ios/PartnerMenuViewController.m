@@ -48,6 +48,9 @@
     TWBackgroundView *backgroundView = [[TWBackgroundView alloc] initWithFrame:bgFrame];
     [self.view insertSubview:backgroundView atIndex:0];
     [backgroundView release];
+#ifdef PARTNER_ID
+    _headerView.frame = CGRectMake(0, 0, 320, 84);
+#endif
     if ([self partner] == nil)
     {
         [self loadPartnerDetails];
@@ -101,6 +104,7 @@
     searchField = nil;
     [partnerLogo release];
     partnerLogo = nil;
+    [self setHeaderView:nil];
     [super viewDidUnload];
 }
 
@@ -111,6 +115,7 @@
     [searchField release];
     [partnerLogo release];
     [menu release];
+    [_headerView release];
     [super dealloc];
 }
 

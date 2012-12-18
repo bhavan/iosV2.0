@@ -83,7 +83,7 @@ static NSString* teamToken = @"5c115b5c0ce101b8b0367b329e68db27_MzE2NjMyMDExLTEx
                                     [UIFont boldSystemFontOfSize:13.0f], UITextAttributeFont,
                                     nil];
     [[UIBarButtonItem appearanceWhenContainedIn:[TownWizardNavigationBar class], nil] setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
-    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-31932515-1"];
+    [[GAI sharedInstance] trackerWithTrackingId:@"UA-31932515-1"];
     
     DefaultSHKConfigurator *configurator = [[[TWShareKitConfigurator alloc] init] autorelease];
     [SHKConfiguration sharedInstanceWithConfigurator:configurator];

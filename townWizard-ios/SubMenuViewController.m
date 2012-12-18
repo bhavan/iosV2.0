@@ -39,9 +39,7 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-      
-    
+    [super viewDidLoad];    
 
     self.webView.delegate = self;
     self.navigationController.navigationBarHidden = NO;
@@ -146,7 +144,6 @@
     }
 }
 
-
 #pragma mark -
 #pragma mark webView
 
@@ -164,7 +161,10 @@
     }
     else if(!_url)
     {
-        self.navigationItem.leftBarButtonItem =  [partnerController menuButton];
+        if(partnerController && [partnerController respondsToSelector:@selector(menuButton)])
+        {
+            self.navigationItem.leftBarButtonItem =  [partnerController menuButton];
+        }
     }
     NSLog(@"Finish loading URL: %@",[webView.request URL]);
     
@@ -182,7 +182,10 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     }
     else if(!_url)
     {
+        if(partnerController && [partnerController respondsToSelector:@selector(menuButton)])
+        {
         self.navigationItem.leftBarButtonItem =  [partnerController menuButton];
+        }
     }
     
     NSLog(@"Loading URL: %@",[request URL]);

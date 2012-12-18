@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "townWizard-ios/SubMenuViewController.m"
-         timestampString = "377171878.415873"
+         timestampString = "377539931.386682"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "179"
-         endingLineNumber = "179"
+         startingLineNumber = "180"
+         endingLineNumber = "180"
          landmarkName = "-webView:shouldStartLoadWithRequest:navigationType:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -242,11 +242,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "townWizard-ios/SubMenuViewController.m"
-         timestampString = "377171878.415873"
+         timestampString = "377539931.386682"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "214"
-         endingLineNumber = "214"
+         startingLineNumber = "218"
+         endingLineNumber = "218"
          landmarkName = "-webView:shouldStartLoadWithRequest:navigationType:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -255,11 +255,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "townWizard-ios/SubMenuViewController.m"
-         timestampString = "377171878.415873"
+         timestampString = "377539931.386682"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "220"
-         endingLineNumber = "220"
+         startingLineNumber = "224"
+         endingLineNumber = "224"
          landmarkName = "-webView:shouldStartLoadWithRequest:navigationType:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -312,6 +312,19 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "54"
          endingLineNumber = "54"
+         landmarkName = "-viewDidLoad"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "townWizard-ios/SubMenuViewController.m"
+         timestampString = "377539570.114148"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "47"
+         endingLineNumber = "47"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>

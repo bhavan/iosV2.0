@@ -34,9 +34,9 @@
 @synthesize friendsCheckins;
 @synthesize image;
 
-- (void)imageDownloader:(SDWebImageDownloader *)downloader didFinishWithImage:(UIImage *)image
+- (void)imageDownloader:(SDWebImageDownloader *)downloader didFinishWithImage:(UIImage *)loadedImage
 {
-    self.image = image;
+    self.image = loadedImage;
 }
 
 @end
