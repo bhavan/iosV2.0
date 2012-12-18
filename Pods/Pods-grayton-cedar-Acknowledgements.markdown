@@ -243,6 +243,11 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    limitations under the License.
 
 
+## GoogleAnalytics-iOS-SDK
+
+Copyright 2009 - 2012 Google, Inc. All rights reserved.
+
+
 ## ISO8601DateFormatter
 
 Copyright © 2006–2011 Peter Hosey

@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "EventsViewer.h"
-
+#import "GAITrackedViewController.h"
 @class EventsViewer;
 
 
-@interface EventsViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UIActionSheetDelegate,
+@interface EventsViewController : GAITrackedViewController <UIPickerViewDelegate, UIPickerViewDataSource, UIActionSheetDelegate,
     EventViewerDelegate, RKObjectLoaderDelegate>
 {
     

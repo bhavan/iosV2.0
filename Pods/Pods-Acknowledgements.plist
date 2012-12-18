@@ -240,6 +240,15 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 		</dict>
 		<dict>
 			<key>FooterText</key>
+			<string>Copyright 2009 - 2012 Google, Inc. All rights reserved.
+</string>
+			<key>Title</key>
+			<string>GoogleAnalytics-iOS-SDK</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
 			<string>Copyright © 2006–2011 Peter Hosey
  All rights reserved.
 

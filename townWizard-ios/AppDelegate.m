@@ -13,7 +13,7 @@
 #import "MapViewController.h"
 #import "SHKConfiguration.h"
 #import "TWShareKitConfigurator.h"
-
+#import "GAI.h"
 #import <RestKit/RestKit.h>
 
 #ifdef RUN_KIF_TESTS
@@ -82,7 +82,7 @@ static NSString* teamToken = @"5c115b5c0ce101b8b0367b329e68db27_MzE2NjMyMDExLTEx
                                     [UIFont boldSystemFontOfSize:13.0f], UITextAttributeFont,
                                     nil];
     [[UIBarButtonItem appearanceWhenContainedIn:[TownWizardNavigationBar class], nil] setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
-    
+    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-31932515-1"];
     
     DefaultSHKConfigurator *configurator = [[[TWShareKitConfigurator alloc] init] autorelease];
     [SHKConfiguration sharedInstanceWithConfigurator:configurator];

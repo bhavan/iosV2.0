@@ -63,7 +63,7 @@
     TWBackgroundView *backgroundView = [[TWBackgroundView alloc] initWithFrame:self.view.frame];
     [self.view insertSubview:backgroundView atIndex:0];
     [backgroundView release];
-    [self.scrollView addSubview:_topDetailView];
+    //[self.scrollView addSubview:_topDetailView];
     if(_event)
     {
         [self loadWithEvent:_event];
@@ -227,8 +227,11 @@
 #pragma mark UIWebViewDelegate Methods
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    _topDetailView.frame = CGRectMake(0, 0, 320, webView.scrollView.contentSize.height+150);
-    self.scrollView.contentSize = _topDetailView.frame.size;
+    webView.frame = CGRectMake(0, 0, 320, webView.scrollView.contentSize.height);    
+    self.scrollView.contentSize = CGSizeMake(320, webView.frame.size.height+54);
+    CGRect bottomRect = _contentBottomView.frame;
+    bottomRect.origin.y = webView.scrollView.contentSize.height;
+    _contentBottomView.frame = bottomRect;
     isdescriptionLoaded = YES;
     
 }
@@ -250,6 +253,7 @@
     [_scrollView release];
     [_topDetailView release];
     [_bannerImageView release];
+    [_contentBottomView release];
     [super dealloc];
 }
 
@@ -258,6 +262,7 @@
     [self setScrollView:nil];
     [self setTopDetailView:nil];
     [self setBannerImageView:nil];
+    [self setContentBottomView:nil];
     [super viewDidUnload];
 }
 

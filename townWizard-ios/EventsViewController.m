@@ -59,10 +59,7 @@ static const NSInteger kEventsAlertTag = 700;
     
 }
 
-- (void) viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-}
+
 
 - (void)dealloc {
     [featuredEventsViewer release];
@@ -88,6 +85,7 @@ static const NSInteger kEventsAlertTag = 700;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.trackedViewName = @"Events screen";
     self.calendar = [[PMCalendarController alloc] initWithThemeName:@"apple calendar"];
     self.calendar.delegate = self;
     self.calendar.mondayFirstDayOfWeek = NO;

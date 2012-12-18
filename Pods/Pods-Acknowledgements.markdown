@@ -219,6 +219,11 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
    limitations under the License.
 
 
+## GoogleAnalytics-iOS-SDK
+
+Copyright 2009 - 2012 Google, Inc. All rights reserved.
+
+
 ## ISO8601DateFormatter
 
 Copyright © 2006–2011 Peter Hosey

@@ -17,6 +17,7 @@
 @property (retain, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (retain, nonatomic) IBOutlet EventDetailTopView *topDetailView;
 @property (retain, nonatomic) IBOutlet UIImageView *bannerImageView;
+@property (retain, nonatomic) IBOutlet UIView *contentBottomView;
 
 - (IBAction)bannerButtonPressed:(id)sender;
 - (void)loadWithEvent:(Event *)event;
