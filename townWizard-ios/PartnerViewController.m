@@ -128,7 +128,7 @@
         [[RequestHelper sharedInstance] setCurrentSection:section];
          UIViewController *controller = [[self sectionControllerFactory] sectionControllerForSection:section];
         [[self detailsController] setViewControllers:[NSArray arrayWithObject:controller] animated:NO];
-        [(TownWizardNavigationBar *)[_detailsController navigationBar] updateTitleText:[section name]];        
+        [(TownWizardNavigationBar *)[_detailsController navigationBar] updateTitleText:[section displayName]];
         [[(id)controller navigationItem] setLeftBarButtonItem:[self menuButton]];
     }
 }

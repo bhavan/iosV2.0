@@ -30,6 +30,14 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 		</dict>
 		<dict>
 			<key>FooterText</key>
+			<string>Copyright 2012. Arash Payan. This library is distributed under the terms of the MIT/X11.</string>
+			<key>Title</key>
+			<string>Appirater</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
 			<string>Copyright (c) 2010 Pivotal Labs
 
 Permission is hereby granted, free of charge, to any person obtaining

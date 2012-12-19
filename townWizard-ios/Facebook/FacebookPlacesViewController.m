@@ -45,10 +45,10 @@
 
 - (id) init {
     if ([CLLocationManager locationServicesEnabled])
-    return [self initWithLatitude:[AppDelegate sharedDelegate].doubleLatitude 
-                     andLongitude:[AppDelegate sharedDelegate].doubleLongitude];
+        return [self initWithLatitude:[AppDelegate sharedDelegate].doubleLatitude
+                         andLongitude:[AppDelegate sharedDelegate].doubleLongitude];
     else // Location services disabled
-        return [self initWithLatitude:0 
+        return [self initWithLatitude:0
                          andLongitude:0];
 }
 
@@ -70,8 +70,8 @@
     [super viewDidLoad];
     
     showsExtendedInfo = YES; //setting this to NO removes additional info from Places cells
-                             //setting to YES causes a small leak, about 1kb each facebook check-in
-                             //more places appear = bigger leak
+    //setting to YES causes a small leak, about 1kb each facebook check-in
+    //more places appear = bigger leak
     
     //self.navigationItem.hidesBackButton = YES;
     CGRect bounds = self.view.bounds;
@@ -95,27 +95,27 @@
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-        if (!places) {
-            self.places = [NSMutableArray array];
+    if (!places) {
+        self.places = [NSMutableArray array];
         
-            NSArray *permissions =  [NSArray arrayWithObjects:
-                                     @"publish_stream", 
-                                     //@"read_stream", 
-                                     //@"offline_access", 
-                                     @"publish_checkins",
-                                     @"friends_checkins", nil];
-            [facebookHelper authorizePermissions:permissions for:self];
-        }
-//        [self.customNavigationBar.menuButton addTarget:self 
-//                                                action:@selector(menuButtonPressed) 
-//                                      forControlEvents:UIControlEventTouchUpInside];
+        NSArray *permissions =  [NSArray arrayWithObjects:
+                                 @"publish_stream",
+                                 //@"read_stream",
+                                 //@"offline_access",
+                                 @"publish_checkins",
+                                 @"friends_checkins", nil];
+        [facebookHelper authorizePermissions:permissions for:self];
+    }
+    //        [self.customNavigationBar.menuButton addTarget:self
+    //                                                action:@selector(menuButtonPressed)
+    //                                      forControlEvents:UIControlEventTouchUpInside];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
 {
-//    [self.customNavigationBar.menuButton removeTarget:self 
-//                                               action:@selector(menuButtonPressed) 
-//                                     forControlEvents:UIControlEventTouchUpInside];
+    //    [self.customNavigationBar.menuButton removeTarget:self
+    //                                               action:@selector(menuButtonPressed)
+    //                                     forControlEvents:UIControlEventTouchUpInside];
     [[AppDelegate sharedDelegate].manager stopUpdatingLocation];
     [super viewWillDisappear:animated];
 }
@@ -136,12 +136,13 @@
 								   [facebookHelper.facebook accessToken], @"access_token",
 								   center, @"center",
 								   @"2000", @"distance",
-                                   @"name,category,location,picture", @"fields",
+                                   @"20", @"limit",
+                                   @"name,category,location,picture,checkins", @"fields",
 								   nil];
 	
     currentRequest = FB_PLACES_REQUEST_PLACES;
-	[facebookHelper.facebook requestWithGraphPath:@"search" 
-										andParams:params 
+	[facebookHelper.facebook requestWithGraphPath:@"search"
+										andParams:params
 									  andDelegate:self];
 }
 
@@ -155,63 +156,73 @@
 	NSDictionary * error = [json objectForKey:@"error"];
     
     if (error)
-    {// we will force authorizing permission, and use delegate callback 
+    {// we will force authorizing permission, and use delegate callback
         
         [TestFlight passCheckpoint:@"Some error, possibly permission revoked"];
         NSArray *permissions =  [NSArray arrayWithObjects:
-                                 @"publish_stream", 
-                                 //@"read_stream", 
-                                 //@"offline_access", 
+                                 @"publish_stream",
+                                 //@"read_stream",
+                                 //@"offline_access",
                                  @"publish_checkins",
                                  @"friends_checkins", nil];
         [AppDelegate sharedDelegate].facebookHelper.delegate = self;
         
-		[[AppDelegate sharedDelegate].facebookHelper.facebook 
-                                authorize:[AppDelegate sharedDelegate].facebookHelper.appId
-                              permissions:permissions 
-                                 delegate:[AppDelegate sharedDelegate].facebookHelper];
+		[[AppDelegate sharedDelegate].facebookHelper.facebook
+         authorize:[AppDelegate sharedDelegate].facebookHelper.appId
+         permissions:permissions
+         delegate:[AppDelegate sharedDelegate].facebookHelper];
         [response release];
         return;
     }
-	for(NSDictionary *part in parts){
-		Place *p = [[Place alloc] init];
-		p.name = [part valueForKey:@"name"];
-		p.category = [part valueForKey:@"category"];
-		
-		NSDictionary *addressDict = [part valueForKey:@"location"];
-		NSMutableString *address = [[NSMutableString alloc] init];
-		if([addressDict valueForKey:@"city"]){
-			[address appendFormat:@"%@", [addressDict valueForKey:@"city"]];
-		}
-		if([addressDict valueForKey:@"street"]){
-			[address appendFormat:@"%@", ([address length] > 0 ? 
-                        [NSString stringWithFormat:@", %@", [addressDict valueForKey:@"street"]] : 
-                        [addressDict valueForKey:@"street"])];
-		}
-        NSString *imageUrl = [[[part objectForKey:@"picture"] objectForKey:@"data"] objectForKey:@"url"];
-        [SDWebImageDownloader downloaderWithURL:[NSURL URLWithString:imageUrl] delegate:p];
-		p.latitude = [[addressDict valueForKey:@"latitude"] doubleValue];
-		p.longitude = [[addressDict valueForKey:@"longitude"] doubleValue];
-		p.address = address;
-		p.place_id = [part valueForKey:@"id"];
-        
-		[address release];
-		[places addObject:p];
-		[p release];
-	}
+    if(parts.count==0)
+    {
+        UIAlertView *alert = [UIAlertView showWithTitle:@"Places in this location"
+                                                message:nil
+                                               delegate:nil
+                                      cancelButtonTitle:nil
+                                     confirmButtonTitle:@"OK"];
+        [alert setTag:1];
+    }
+    else
+    {
+        for(NSDictionary *part in parts){
+            Place *p = [[Place alloc] init];
+            p.name = [part valueForKey:@"name"];
+            p.category = [part valueForKey:@"category"];
+            
+            NSDictionary *addressDict = [part valueForKey:@"location"];
+            NSMutableString *address = [[NSMutableString alloc] init];
+            if([addressDict valueForKey:@"city"]){
+                [address appendFormat:@"%@", [addressDict valueForKey:@"city"]];
+            }
+            if([addressDict valueForKey:@"street"]){
+                [address appendFormat:@"%@", ([address length] > 0 ?
+                                              [NSString stringWithFormat:@", %@", [addressDict valueForKey:@"street"]] :
+                                              [addressDict valueForKey:@"street"])];
+            }
+            NSString *imageUrl = [[[part objectForKey:@"picture"] objectForKey:@"data"] objectForKey:@"url"];
+            p.imageUrl = imageUrl;
+            
+            p.latitude = [[addressDict valueForKey:@"latitude"] doubleValue];
+            p.longitude = [[addressDict valueForKey:@"longitude"] doubleValue];
+            p.address = address;
+            p.place_id = [part valueForKey:@"id"];
+            p.totalCheckins = [part valueForKey:@"checkins"];
+            
+            [address release];
+            [places addObject:p];
+            [p release];
+        }
+    }
 	[response release];
 }
 
-- (void)imageDownloader:(SDWebImageDownloader *)downloader didFinishWithImage:(UIImage *)image
-{
-    
-}
 
 
 
 // Check in place
 - (void) checkIn:(Place *)place {
-    FacebookCheckinViewController *checkinController = 
+    FacebookCheckinViewController *checkinController =
     [[FacebookCheckinViewController alloc] initWithSelectedPlace:selectedPlace];
     checkinController.customNavigationBar = self.customNavigationBar;
     [self.navigationController pushViewController:checkinController animated:YES];
@@ -225,10 +236,11 @@
     locationUpdated = NO;
     [AppDelegate sharedDelegate].manager.delegate = self;
     if ([CLLocationManager locationServicesEnabled])
-        [[AppDelegate sharedDelegate].manager startUpdatingLocation];
+        //[[AppDelegate sharedDelegate].manager startUpdatingLocation];
+        [self loadPlaces];
     else {
         [TestFlight passCheckpoint:@"Location services disabled"];
-        UIAlertView *alertView = [[UIAlertView alloc] 
+        UIAlertView *alertView = [[UIAlertView alloc]
                                   initWithTitle:NSLocalizedString(@"Location services disabled!", @"AlertView")
                                   message:NSLocalizedString(@"You can enable them in settings", @"AlertView")
                                   delegate:self
@@ -238,21 +250,21 @@
         [alertView show];
         [alertView release];
     }
-
+    
 }
 
--(void)locationManager:(CLLocationManager *)aManager 
-   didUpdateToLocation:(CLLocation *)newLocation 
+-(void)locationManager:(CLLocationManager *)aManager
+   didUpdateToLocation:(CLLocation *)newLocation
           fromLocation:(CLLocation *)oldLocation
 {
     [aManager stopUpdatingLocation];
-    if (!locationUpdated)
-    {
-        locationUpdated = YES;
-        self.latitude = newLocation.coordinate.latitude;
-        self.longitude = newLocation.coordinate.longitude;
-        [self loadPlaces];
-    }
+    /*  if (!locationUpdated)
+     {
+     locationUpdated = YES;
+     self.latitude = newLocation.coordinate.latitude;
+     self.longitude = newLocation.coordinate.longitude;
+     [self loadPlaces];
+     }*/
 }
 
 -(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
@@ -270,7 +282,7 @@
     if (error.code == kCLErrorDenied)
     {
         [TestFlight passCheckpoint:@"Location services for this device are disabled"];
-        UIAlertView *alertView = [[UIAlertView alloc] 
+        UIAlertView *alertView = [[UIAlertView alloc]
                                   initWithTitle:NSLocalizedString(@"Location services for this app are disabled!", @"AlertView")
                                   message:NSLocalizedString(@"You can enable them in settings", @"AlertView")
                                   delegate:self
@@ -325,15 +337,15 @@
     static NSString *CellIdentifier = @"PlacesCell";
     static NSString *CellNib = @"PlacesViewCell";
 	
-    FacebookPlacesViewCell *cell = 
+    FacebookPlacesViewCell *cell =
     (FacebookPlacesViewCell *)[aTableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
+     Place *place = [places objectAtIndex:indexPath.row];
     if (cell == nil) {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:CellNib owner:self options:nil];
         cell = (FacebookPlacesViewCell *)[nib objectAtIndex:0];
-    }
-    
-    Place *place = [places objectAtIndex:indexPath.row];
+        [SDWebImageDownloader downloaderWithURL:[NSURL URLWithString:place.imageUrl] delegate:cell];
+    }    
+   
     [cell loadPlace:place withFacebook:facebookHelper.facebook extended:showsExtendedInfo];
     return cell;
 }
@@ -352,7 +364,7 @@
             NSIndexPath *selectedRow = [self.tableView indexPathForSelectedRow];
             [self.tableView deselectRowAtIndexPath:selectedRow animated:YES];
         }
-    } 
+    }
     else if (alertView.tag ==1) //Location services disabled
     {
         if (buttonIndex == 1)
@@ -372,11 +384,11 @@
     selectedPlace = [places objectAtIndex:indexPath.row];
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"CHECK IN" 
+    UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"CHECK IN"
                                                          message:[NSString stringWithFormat:
-                                                                  @"Do you want to check in to '%@'?", selectedPlace.name] 
-                                                        delegate:self 
-                                               cancelButtonTitle:@"No" 
+                                                                  @"Do you want to check in to '%@'?", selectedPlace.name]
+                                                        delegate:self
+                                               cancelButtonTitle:@"No"
                                                otherButtonTitles:@"Yes", nil];
     alertView.tag = 0;
     [alertView show];
@@ -393,9 +405,9 @@
     self.places = nil;
     self.tableView = nil;
     [[UIApplication sharedApplication] setActivityindicatorToZero];
-//    [self.customNavigationBar.menuButton removeTarget:self 
-//                                               action:@selector(menuButtonPressed) 
-//                                     forControlEvents:UIControlEventTouchUpInside];
+    //    [self.customNavigationBar.menuButton removeTarget:self
+    //                                               action:@selector(menuButtonPressed)
+    //                                     forControlEvents:UIControlEventTouchUpInside];
 }
 
 -(void)viewDidUnload {

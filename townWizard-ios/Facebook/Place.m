@@ -19,6 +19,7 @@
     self.totalCheckins = nil;
     self.friendsCheckins = nil;
     self.image = nil;
+    self.imageUrl = nil;
     [super dealloc];
 }
 
@@ -34,9 +35,5 @@
 @synthesize friendsCheckins;
 @synthesize image;
 
-- (void)imageDownloader:(SDWebImageDownloader *)downloader didFinishWithImage:(UIImage *)loadedImage
-{
-    self.image = loadedImage;
-}
 
 @end

@@ -16,6 +16,7 @@
 #import "PartnerViewController.h"
 #import "GAI.h"
 #import <RestKit/RestKit.h>
+#import "Appirater.h"
 
 #ifdef RUN_KIF_TESTS
 #import "EXTestController.h"
@@ -98,6 +99,7 @@ static NSString* teamToken = @"5c115b5c0ce101b8b0367b329e68db27_MzE2NjMyMDExLTEx
     UIViewController *rootController;
     _manager = [[CLLocationManager alloc] init];
 #ifdef CONTAINER_APP
+    [Appirater setAppId:@"com.townwizard.usa"];
     rootController = [[[SearchViewController alloc] init] autorelease];
     [[self manager] setDelegate:(SearchViewController *)rootController];
     UINavigationController *navController = [[UINavigationController alloc] initWithNavigationBarClass:[TownWizardNavigationBar class] toolbarClass:nil];
@@ -127,7 +129,22 @@ static NSString* teamToken = @"5c115b5c0ce101b8b0367b329e68db27_MzE2NjMyMDExLTEx
     }];
 #endif
      [self.window makeKeyAndVisible];
+    
+    
+    [Appirater setDaysUntilPrompt:0];
+    [Appirater setUsesUntilPrompt:4];
+    [Appirater setTimeBeforeReminding:1];
+    
+    [Appirater setDebug:NO];
+    [Appirater appLaunched:YES];
     return YES;
+}
+
+
+
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+    [Appirater appEnteredForeground:YES];
 }
 
 #pragma mark -

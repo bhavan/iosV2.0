@@ -287,8 +287,8 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 - (void)fbUrlPressedWithComponents:(NSArray *)components
 {
     if (![[AppDelegate sharedDelegate].facebookHelper.appId isEqual:@""])
-    {
-        FacebookPlacesViewController * fpvc = [[FacebookPlacesViewController alloc] init];
+    {             
+        FacebookPlacesViewController * fpvc = [[FacebookPlacesViewController alloc] initWithLatitude:[[components objectAtIndex:2] doubleValue] andLongitude:[[components objectAtIndex:3] doubleValue]];
         //initWithLatitude:48.00885 andLongitude:37.8023];
         
         fpvc.customNavigationBar = self.customNavigationBar;

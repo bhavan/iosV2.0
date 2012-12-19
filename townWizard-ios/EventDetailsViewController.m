@@ -192,8 +192,11 @@
 {
     if (![[AppDelegate sharedDelegate].facebookHelper.appId isEqual:@""])
     {
-        FacebookPlacesViewController * fpvc = [[FacebookPlacesViewController alloc] init];
-        //initWithLatitude:48.00885 andLongitude:37.8023];        
+        double lat = [[AppDelegate sharedDelegate].latitude doubleValue];
+        double lon = [[AppDelegate sharedDelegate].longitude doubleValue];
+        
+        FacebookPlacesViewController * fpvc = [[FacebookPlacesViewController alloc] initWithLatitude:[_event.location.latitude doubleValue] andLongitude:[_event.location.longitude doubleValue]];
+      
        
         [self.navigationController pushViewController:fpvc animated:YES];
         [fpvc release];

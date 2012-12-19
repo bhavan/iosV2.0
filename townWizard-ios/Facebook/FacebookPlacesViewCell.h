@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Facebook.h"
-
+#import "SDWebImageDownloader.h"
 @class Place;
 
 typedef enum {
@@ -19,7 +19,7 @@ typedef enum {
     FBPC_LOAD_DONE,
 } FBPlacesCellLoadStage;
 
-@interface FacebookPlacesViewCell : UITableViewCell <FBRequestDelegate> {
+@interface FacebookPlacesViewCell : UITableViewCell <FBRequestDelegate, SDWebImageDownloaderDelegate> {
 	UILabel *nameLabel;
 	UILabel *categoryLabel;
 	UILabel *addressLabel;

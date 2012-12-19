@@ -23,6 +23,7 @@
 }
 
 // Basic info from search query
+@property (nonatomic,copy) NSString *imageUrl;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *category;
 @property (nonatomic, copy) NSString *address;

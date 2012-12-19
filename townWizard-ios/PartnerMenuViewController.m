@@ -10,7 +10,7 @@
 
 #import "Partner.h"
 #import "Section.h"
-
+#import "Appirater.h"
 #import "UIImageView+WebCache.h"
 #import "TWBackgroundView.h"
 #import "EventSectionHeader.h"
@@ -149,6 +149,10 @@
         [loader setOnDidLoadObjects:^(NSArray *objects) {
             [self sectionsLoaded:objects];
         }];
+        [loader setOnDidFailWithError:^(NSError *error) {
+            NSLog(@"%@",error.localizedDescription);
+            [self changePartnerButtonPressed:nil];
+        }];
     }];
 }
 
@@ -157,7 +161,8 @@
 
 - (void) partnerDetailsLoaded:(Partner *) partner
 {
-    [[RequestHelper sharedInstance] setCurrentPartner:partner];
+     [Appirater setAppId:partner.iTunesAppId];
+     [[RequestHelper sharedInstance] setCurrentPartner:partner];
     [self loadPartnerSections];
 }
 

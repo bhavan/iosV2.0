@@ -12,7 +12,7 @@
 
 
 
-static const CGFloat kTWBarOriginX = 70;
+static const CGFloat kTWBarOriginX = 160;
 static const CGFloat kTWBarTitleFontSize = 18;
 
 @implementation TownWizardNavigationBar
@@ -28,7 +28,7 @@ static const CGFloat kTWBarTitleFontSize = 18;
         self.titleLabel = [[[UILabel alloc] initWithFrame:CGRectZero] autorelease];
 
         self.titleLabel.textColor = [UIColor blackColor];
-        self.titleLabel.textAlignment = UITextAlignmentLeft;
+        self.titleLabel.textAlignment = UITextAlignmentCenter;
         self.titleLabel.backgroundColor = [UIColor clearColor];
         self.titleLabel.font = [UIFont boldSystemFontOfSize:kTWBarTitleFontSize];
 
@@ -61,7 +61,9 @@ static const CGFloat kTWBarTitleFontSize = 18;
     
     CGRect titleFrame = [[self titleLabel] frame];
     CGFloat originY = roundf(([self bounds].size.height - [[[self titleLabel] font] pointSize]) / 2);
-    titleFrame.origin = CGPointMake(kTWBarOriginX, originY - 2);
+
+    titleFrame.origin = CGPointMake(100, originY - 2);
+    titleFrame.size.width = 120;
     [[self titleLabel] setFrame:titleFrame];
 }
 
