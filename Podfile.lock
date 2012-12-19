@@ -40,7 +40,7 @@ PODS:
   - SDWebImage/Main (= 2.7)
 - SDWebImage/Main (2.7)
 - SOCKit (1.1)
-- TestFlightSDK (1.1)
+- TestFlightSDK (1.2)
 - cocoa-oauth (0.0.1):
   - NSData+Base64 (~> 1.0)
 
@@ -53,7 +53,7 @@ DEPENDENCIES:
 - OCMock
 - RestKit
 - SDWebImage (= 2.7)
-- TestFlightSDK (= 1.1)
+- TestFlightSDK (= 1.2)
 
 SPEC CHECKSUMS:
   AQGridView: ee436c64bc4a972ca7f3ce99971c0204af9e65ea
@@ -76,7 +76,7 @@ SPEC CHECKSUMS:
   SDWebImage: c3306b8c68f3569f5c676d585ad77393255887dd
   SDWebImage/Main: c3306b8c68f3569f5c676d585ad77393255887dd
   SOCKit: 179515c1a621dd5652a60e9be02ea4adcd25bc9b
-  TestFlightSDK: 2a2cdb82967c7f05655683c61854c92d36e9104d
+  TestFlightSDK: 29e194fb148e4861f92e4c1195b9697e1f3ad19a
   cocoa-oauth: 8f4c8b77c77ac660de37f8125557c4ec09b0118a
   Cedar: 4bf5be704d3b0a50d6bd0353b6b04d8475153940
   OCMock: 77a9c4c57af6bf258a537d34cf09abf422affede

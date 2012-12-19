@@ -340,7 +340,8 @@
     FacebookPlacesViewCell *cell =
     (FacebookPlacesViewCell *)[aTableView dequeueReusableCellWithIdentifier:CellIdentifier];
      Place *place = [places objectAtIndex:indexPath.row];
-    if (cell == nil) {
+    if (cell == nil)
+    {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:CellNib owner:self options:nil];
         cell = (FacebookPlacesViewCell *)[nib objectAtIndex:0];
         [SDWebImageDownloader downloaderWithURL:[NSURL URLWithString:place.imageUrl] delegate:cell];
@@ -357,7 +358,8 @@
     
     if (alertView.tag == 0) // Check in in selected place
     {
-        if(buttonIndex == 1){
+        if(buttonIndex == 1)
+        {
             [self checkIn:selectedPlace];
         }
         else {
@@ -380,7 +382,8 @@
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
     selectedPlace = [places objectAtIndex:indexPath.row];
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     

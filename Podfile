@@ -5,7 +5,7 @@ link_with %w{townWizard-container townWizardPartnerTemplate buford brooklyn dtpc
 pod 'Appirater', '0.0.4'
 pod 'GoogleAnalytics-iOS-SDK'
 pod 'RestKit'
-pod 'TestFlightSDK', '1.1'
+pod 'TestFlightSDK', '1.2'
 pod 'AQGridView', '1.3'
 pod 'SDWebImage', '2.7'
 pod 'MWPhotoBrowser', '0.0.1'

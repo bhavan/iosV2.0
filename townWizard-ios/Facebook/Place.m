@@ -11,7 +11,8 @@
 
 @implementation Place
 
-- (void) dealloc {
+- (void) dealloc
+{
     self.name = nil;
     self.category = nil;
     self.address = nil;
