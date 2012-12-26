@@ -30,10 +30,12 @@
 - (id) initWithPartner:(Partner *)partner
 {
     PartnerMenuViewController *menuController = [[PartnerMenuViewController new] autorelease];
-    UINavigationController *detailsController = [[[UINavigationController alloc] initWithNavigationBarClass:[TownWizardNavigationBar class]
-                                                                                              toolbarClass:nil] autorelease];
+    UINavigationController *detailsController = [[[UINavigationController alloc]
+                                                  initWithNavigationBarClass:[TownWizardNavigationBar class]
+                                                  toolbarClass:nil] autorelease];
     
-    if (self = [super initWithMasterViewController:menuController detailViewController:detailsController]) {
+    if (self = [super initWithMasterViewController:menuController detailViewController:detailsController])
+    {
         self.partner = partner;
         [self setMenuController:menuController];
         [[self menuController] setPartner:partner];
@@ -51,13 +53,14 @@
 
 - (void) viewDidLoad
 {
-    [super viewDidLoad];
-    
+    [super viewDidLoad];    
     CGRect backgroundViewFrame = [[self view] frame];
     backgroundViewFrame.origin = CGPointZero;
    
-    [[[self detailsController] view] insertSubview:[self twBackgroundWithFrame:backgroundViewFrame] atIndex:0];
-    [[[self menuController] view] insertSubview:[self twBackgroundWithFrame:backgroundViewFrame] atIndex:0];
+    [[[self detailsController] view]
+     insertSubview:[self twBackgroundWithFrame:backgroundViewFrame] atIndex:0];
+    [[[self menuController] view]
+     insertSubview:[self twBackgroundWithFrame:backgroundViewFrame] atIndex:0];
 }
 
 - (void) dealloc
@@ -124,7 +127,8 @@
 - (void) displayControllerForSection:(Section *) section
 {
     Section *currentSection = [[RequestHelper sharedInstance] currentSection];
-    if (![currentSection isEqual:section]) {
+    if (![currentSection isEqual:section])
+    {
         [[RequestHelper sharedInstance] setCurrentSection:section];
          UIViewController *controller = [[self sectionControllerFactory] sectionControllerForSection:section];
         [[self detailsController] setViewControllers:[NSArray arrayWithObject:controller] animated:NO];

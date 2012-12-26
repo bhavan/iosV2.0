@@ -86,7 +86,7 @@ static const NSInteger kEventsAlertTag = 700;
 {
     [super viewDidLoad];
     self.trackedViewName = @"Events screen";
-    self.calendar = [[PMCalendarController alloc] initWithThemeName:@"apple calendar"];
+    self.calendar = [[[PMCalendarController alloc] initWithThemeName:@"apple calendar"] autorelease];
     self.calendar.delegate = self;
     self.calendar.mondayFirstDayOfWeek = NO;
     currentCategory = -1;
@@ -94,7 +94,7 @@ static const NSInteger kEventsAlertTag = 700;
     NSString *newDatePeriod = [self stringFromPeriod:[NSDate date]
                                                  end:[NSDate date]];
     [self.calendarButton setTitle:newDatePeriod forState:UIControlStateNormal];
-    self.sectionDateFormatter = [[NSDateFormatter alloc] init];
+    self.sectionDateFormatter = [[[NSDateFormatter alloc] init] autorelease];
     [self.sectionDateFormatter setDateFormat:@"EEEE LLL dd"];
     [self loadTodayEvents];
     [self loadEventsCategories];
@@ -446,7 +446,7 @@ static const NSInteger kEventsAlertTag = 700;
     CGRect headerFrame = CGRectMake(0, 0, [tableView frame].size.width, [tableView sectionHeaderHeight]);
     EventSectionHeader *header = [[EventSectionHeader alloc] initWithFrame:headerFrame];
     [[header title] setText:[title uppercaseString]];
-    return header;
+    return [header autorelease];
 }
 
 

@@ -27,9 +27,9 @@
 	dateComponents.day = days;
 	dateComponents.month = months;
 	dateComponents.year = years;
-	NSDate *result = [[[NSCalendar currentCalendar] dateByAddingComponents:dateComponents
+	NSDate *result = [[NSCalendar currentCalendar] dateByAddingComponents:dateComponents
                                                                    toDate:self
-                                                                  options:0] retain];
+                                                                  options:0];
     return result;
 }
 

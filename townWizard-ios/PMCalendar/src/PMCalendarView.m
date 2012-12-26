@@ -57,6 +57,7 @@
 
 - (void)dealloc
 {
+    [super dealloc];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -574,6 +575,7 @@
 
 - (void)dealloc
 {
+    [super dealloc];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -685,10 +687,9 @@
                                             inRect:dayHeader2Frame
                                     forElementType:type
                                            subType:PMThemeMainSubtype
-                                         inContext:context];
-    }
+                                         inContext:context];    }
 
-	int finalRow    = 0;
+
 	int day         = 1;
 
 	for (int i = 0; i < 6; i++) 
@@ -778,10 +779,8 @@
                                                     inRect:dayHeader2Frame
                                             forElementType:type
                                                    subType:PMThemeMainSubtype
-                                                 inContext:context];
-                
-                finalRow = i;
-                
+                                                 inContext:context];                
+             
 				++day;
 			}
 		}

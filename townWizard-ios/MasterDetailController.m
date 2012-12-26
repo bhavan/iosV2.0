@@ -15,8 +15,8 @@
 @property BOOL masterVisible;
 @property (nonatomic, retain) UIView *masterView;
 @property (nonatomic, retain) UIView *detailView;
-@property (nonatomic, assign) UIViewController *masterController;
-@property (nonatomic, assign) UIViewController *detailController;
+@property (nonatomic, retain) UIViewController *masterController;
+@property (nonatomic, retain) UIViewController *detailController;
 - (void) showMaster: (BOOL) shouldShow;
 @end
 

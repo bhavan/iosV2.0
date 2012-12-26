@@ -191,10 +191,7 @@
 - (IBAction)checkInButtonPressed:(id)sender
 {
     if (![[AppDelegate sharedDelegate].facebookHelper.appId isEqual:@""])
-    {
-        double lat = [[AppDelegate sharedDelegate].latitude doubleValue];
-        double lon = [[AppDelegate sharedDelegate].longitude doubleValue];
-        
+    {               
         FacebookPlacesViewController * fpvc = [[FacebookPlacesViewController alloc] initWithLatitude:[_event.location.latitude doubleValue] andLongitude:[_event.location.longitude doubleValue]];
       
        

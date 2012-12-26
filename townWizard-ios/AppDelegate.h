@@ -14,21 +14,15 @@
 
 @class SearchViewController;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate,UIAlertViewDelegate> {
+@interface AppDelegate : UIResponder <UIApplicationDelegate,UIAlertViewDelegate>
 
-}
-
-@property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) UINavigationController *viewController;
-
+@property (nonatomic, strong) UIWindow *window;
+@property (nonatomic, strong) UINavigationController *viewController;
 @property (nonatomic,readonly) NSString* latitude;
 @property (nonatomic,readonly) NSString* longitude;
-
 @property (nonatomic,readonly) double doubleLatitude;
 @property (nonatomic,readonly) double doubleLongitude;
-
 @property (nonatomic,readonly) FacebookHelper * facebookHelper;
-
 @property (nonatomic,readonly) CLLocationManager * manager;
 
 + (AppDelegate *) sharedDelegate;

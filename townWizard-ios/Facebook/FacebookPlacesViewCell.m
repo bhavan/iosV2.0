@@ -11,8 +11,7 @@
 #import "JSONKit.h"
 
 @interface FacebookPlacesViewCell()
-- (void) loadAdditionalInfo;
-- (void) loadImageFrom:(NSString *)urlString;
+
 - (void) loadCheckins;
 @end
 

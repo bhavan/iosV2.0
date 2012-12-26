@@ -68,9 +68,7 @@
     [_callButton release];
     [_webButton release];
     [_mapButton release];
-    [_bgView release];
-    
-    
+    [_bgView release];    
     [_detailWebView release];
     [super dealloc];
 }

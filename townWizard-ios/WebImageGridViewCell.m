@@ -23,7 +23,7 @@
 - (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier
 {
     if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
-        self.imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+        self.imageView = [[[UIImageView alloc] initWithFrame:CGRectZero] autorelease];
         [[self contentView] addSubview:[self imageView]];
     }
     return self;

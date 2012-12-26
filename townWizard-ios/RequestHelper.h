@@ -24,7 +24,6 @@
 
 + (NSString *) md5:(NSString *) input;
 + (NSString *)xaccessTokenFromPartner:(Partner *)partner;
-+ (RKObjectManager *)defaultObjectManager;
 
 + (void)partnersWithQuery:(NSString *)query offset:(NSInteger)offset andDelegate:(id <RKObjectLoaderDelegate>)delegate;
 

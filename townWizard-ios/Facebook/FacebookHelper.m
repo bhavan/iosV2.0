@@ -25,11 +25,11 @@
 		//appId = [[[GenericAppAppDelegate sharedDelegate].appConfig configForKey:@"facebook_app_id"] retain];
         
         //appId for testing:
-       // self.appId=@"107352225952816";
-
+        // self.appId=@"107352225952816";
+        
 		self.facebook = [[[Facebook alloc] init] autorelease];
 		self.facebook.accessToken = [[NSUserDefaults standardUserDefaults] stringForKey:@"AccessToken"];
-
+        
 		self.facebook.expirationDate = (NSDate *) [[NSUserDefaults standardUserDefaults] objectForKey:@"ExpirationDate"];
 	}
 	
@@ -38,9 +38,9 @@
 
 - (void) authorizePermissions:(NSArray*)permissions for:(id <FacebookHelperDelegate>)theDelegate {
 	if ([facebook isSessionValid] == NO) {
-		delegate = theDelegate;    
+		delegate = theDelegate;
 		[self.facebook authorize:self.appId permissions:permissions delegate:self];
-	} 
+	}
 	else {
 		[theDelegate facebookPermissionGranted];
 	}

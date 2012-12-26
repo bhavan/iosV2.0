@@ -19,13 +19,24 @@
 static const CGFloat kEventsViewerIndicatorSpace = 11;
 
 @implementation EventsViewer
+{
+    IBOutlet ActivityImageView *eventImage;
+    IBOutlet UILabel *eventName;
+    IBOutlet UILabel *eventPlace;
+    IBOutlet UILabel *eventTime;
+    IBOutlet DDPageControlCustom *pageControl;
+    IBOutlet UIView *detailsView;    
+    NSInteger currentEventIndex;
+}
+
 
 #pragma mark -
 #pragma mark life cycle
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
-    if (self = [super initWithCoder:aDecoder]) {
+    if (self = [super initWithCoder:aDecoder])
+    {
         [pageControl setNumberOfPages:0];
         
         UISwipeGestureRecognizer *leftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(showNextEvent)];
@@ -35,9 +46,9 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
         UISwipeGestureRecognizer *rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(showPreviousEvent)];
         [rightSwipe setDirection:UISwipeGestureRecognizerDirectionRight];
         [self addGestureRecognizer:rightSwipe];
-        
-        
-        
+        [leftSwipe release];
+        [rightSwipe release];
+                
         [eventPlace setText:nil];
         [eventName setText:nil];
         [eventTime setText:nil];
@@ -85,41 +96,13 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
 - (void) displayEvents:(NSArray *) events
 {
     if(events.count > 0)
-    {
-        self.hidden = NO;
-        [UIView beginAnimations:@"registerScrollDown" context:NULL];
-        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-        [UIView setAnimationDuration:0.4];
-        self.rootView.transform = CGAffineTransformMakeTranslation(0, 0);
-        CGRect theFrame = self.rootView.frame;
-        if(theFrame.size.height >= 480)
-        {
-            
-            theFrame.size.height -= 210.f;
-            self.rootView.frame = theFrame;
-        }
-        [UIView commitAnimations];
+    {     
         
         [self setEvents:events];
         [pageControl setNumberOfPages:[events count]];
         [NSTimer scheduledTimerWithTimeInterval:10.0f target:self selector:@selector(tickEvent) userInfo:nil repeats:YES];
-        [self displayEventAtIndex:0];
-    }
-    else
-    {
-        self.hidden = YES;
-        [UIView beginAnimations:@"registerScrollDown" context:NULL];
-        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-        [UIView setAnimationDuration:0.4];
-        self.rootView.transform = CGAffineTransformMakeTranslation(0, -210);
-        CGRect theFrame = self.rootView.frame;
-        if(theFrame.size.height <= 480)
-        {            
-            theFrame.size.height += 210.f;
-            self.rootView.frame = theFrame;
-        }        
-        [UIView commitAnimations];
-    }
+        [self displayEventAtIndex:0];    
+   }
 }
 
 - (void)tickEvent

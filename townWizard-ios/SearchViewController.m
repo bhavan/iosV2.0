@@ -23,6 +23,8 @@
 
 @interface SearchViewController()
 @property (nonatomic,assign) BOOL doNotUseGeopositionSearchResults;
+
+- (void)customizeSearchBar:(UISearchBar *)customSearchBar;
 @end
 
 @implementation SearchViewController
@@ -57,29 +59,16 @@
 
 #pragma mark - View lifecycle
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];  
     self.searchBar.accessibilityLabel = @"Search";
-   
+    [self customizeSearchBar:self.searchBar];
     selectedPartnerSections = nil;
-    for (UIView *subview in self.searchBar.subviews) {
-        if ([subview isKindOfClass:NSClassFromString(@"UISearchBarBackground")]) {
-            [subview removeFromSuperview];
-        }
-        else if([subview isKindOfClass:[UITextField class]])
-        {
-            UITextField *tf = (UITextField *)subview;
-            [tf setBackgroundColor:[UIColor clearColor]];
-            [tf setBackground: [UIImage imageNamed:@"searchBar"] ];
-             [tf setBorderStyle:UITextBorderStyleNone];
-            [tf setTextColor:[UIColor colorWithRed:203.0f/255.0f green:0 blue:0 alpha:1.0f]];
-            [tf setFont:[UIFont boldSystemFontOfSize:16.0f]];
-        }
-    }
-    [self.tableView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"searchBg"]]];
+       [self.tableView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"searchBg"]]];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     self.tableView.separatorColor = [UIColor colorWithRed:186.0f/255.0f green:186.0f/255.0f blue:186.0f/255.0f alpha:0.7f];
-    self.partnersList = [[NSMutableArray alloc] init];
+    self.partnersList = [NSMutableArray array];
     doNotUseGeopositionSearchResults = NO;
     loadingMorePartnersInProgress = NO;
  
@@ -94,17 +83,32 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:animated];
-    //  [self.navigationController.navigationBar setBarStyle:UIBarStyleBlackOpaque];
-   // [self.navigationController.navigationBar addSubview:customNavigationBar];
     [[UIApplication sharedApplication] hideNetworkActivityIndicator];
     self.navigationItem.hidesBackButton = YES;
+}
+
+- (void)customizeSearchBar:(UISearchBar *)customSearchBar
+{
+    for (UIView *subview in customSearchBar.subviews) {
+        if ([subview isKindOfClass:NSClassFromString(@"UISearchBarBackground")]) {
+            [subview removeFromSuperview];
+        }
+        else if([subview isKindOfClass:[UITextField class]])
+        {
+            UITextField *tf = (UITextField *)subview;
+            [tf setBackgroundColor:[UIColor clearColor]];
+            [tf setBackground: [UIImage imageNamed:@"searchBar"] ];
+            [tf setBorderStyle:UITextBorderStyleNone];
+            [tf setTextColor:[UIColor colorWithRed:203.0f/255.0f green:0 blue:0 alpha:1.0f]];
+            [tf setFont:[UIFont boldSystemFontOfSize:16.0f]];
+        }
+    }   
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
-
 
 - (void) menuSectionTapped:(Section *) section
 {
@@ -114,7 +118,7 @@
     [self.navigationController popToRootViewControllerAnimated:NO];
     [self.navigationController pushViewController:subMenu animated:YES];
     subMenu.navigationItem.leftBarButtonItem = [self menuButton];
-      [(TownWizardNavigationBar *)[self.navigationController navigationBar] updateTitleText:[section name]];
+    [(TownWizardNavigationBar *)[self.navigationController navigationBar] updateTitleText:[section name]];
     [self.masterDetail toggleMasterView];
     [subMenu release];
     
@@ -135,13 +139,12 @@
     return [[[UIBarButtonItem alloc] initWithCustomView:button] autorelease];
 }
 
-
 #pragma mark -
 #pragma mark Spinner methods
 
 #define SPINNER_SIZE 25
 
--(void)removeSpinnerFromCellAtIndexPath:(NSIndexPath *)indexPath
+- (void)removeSpinnerFromCellAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell * cellWithSpinner = [self.tableView cellForRowAtIndexPath:indexPath];
     for (UIView * view in cellWithSpinner.contentView.subviews)
@@ -151,7 +154,7 @@
     }
 }
 
--(void)addSpinnerToCell:(UITableViewCell *)cell
+- (void)addSpinnerToCell:(UITableViewCell *)cell
 {
     UIActivityIndicatorView * spinner = [[UIActivityIndicatorView alloc]
                                          initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
@@ -166,14 +169,14 @@
 }
 
 //do not use this method in tableView cellAtIndexPath method, cause cellForRowAtIndexPath return nil there
--(void)addSpinnerToCellAtIndexPath:(NSIndexPath *)indexPath
+- (void)addSpinnerToCellAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell * cell = [self.tableView cellForRowAtIndexPath:indexPath];
     [self addSpinnerToCell:cell];
 }
 
 
--(void)addSpinnerToButton:(UIButton *)button
+- (void)addSpinnerToButton:(UIButton *)button
 {
     UIActivityIndicatorView * spinner = [[UIActivityIndicatorView alloc]
                                          initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
@@ -185,21 +188,25 @@
     [spinner release];
 }
 
--(void)removeSpinnerFromButton:(UIButton *)button
+- (void)removeSpinnerFromButton:(UIButton *)button
 {
     for (UIView * view in button.subviews)
     {
-        if ([view isKindOfClass:[UIActivityIndicatorView class]])
+        if([view isKindOfClass:[UIActivityIndicatorView class]])
+        {
             [view removeFromSuperview];
+        }
     }
 }
 
 #pragma mark -
 #pragma mark RKObjectLoaderDelegate
 
-- (void)objectLoader:(RKObjectLoader *)loader willMapData:(inout id *)mappableData {
+- (void)objectLoader:(RKObjectLoader *)loader willMapData:(inout id *)mappableData
+{
     NSMutableDictionary* data = [[*mappableData objectForKey: @"meta"] mutableCopy];
-    if([data objectForKey:@"next_offset"]) {
+    if([data objectForKey:@"next_offset"])
+    {
         nextOffset = [[data objectForKey:@"next_offset"] integerValue];
     }
     else
@@ -209,40 +216,43 @@
     [data release];
 }
 
-- (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
+- (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects
+{
     if (objects) {
         [self partnersLoaded:objects];
-    }
-    
+    }    
 }
 
-- (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error {
+- (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error
+{
     NSLog(@"%@",error.description);
 }
-
 
 #pragma mark -
 #pragma mark PartnerMethods
 
--(BOOL)townWizardServerReachable {
+- (BOOL)townWizardServerReachable
+{
     Reachability *r = [Reachability reachabilityWithHostName:@"townwizard.com"];
     NetworkStatus internetStatus = [r currentReachabilityStatus];
-    if(internetStatus == NotReachable) {
+    if(internetStatus == NotReachable)
+    {
         return NO;
     }
     return YES;
 }
 
-- (void) searchForPartnersWithQuery:(NSString *)query {
+- (void) searchForPartnersWithQuery:(NSString *)query
+{
     [self searchForPartnersWithQuery:query offset:0];
 }
 
 - (void) searchForPartnersWithQuery:(NSString *)query offset:(NSInteger)offset
 {
     query = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    [[UIApplication sharedApplication] showNetworkActivityIndicator];
-    
-    [RequestHelper partnersWithQuery:query offset:offset andDelegate:self];     loadingMorePartnersInProgress = NO;
+    [[UIApplication sharedApplication] showNetworkActivityIndicator];    
+    [RequestHelper partnersWithQuery:query offset:offset andDelegate:self];
+    loadingMorePartnersInProgress = NO;
     if ([_partnersList count])
     {
         loadingMorePartnersInProgress = YES;
@@ -261,7 +271,8 @@
         [alert show];
         
     }
-    else if([[partners lastObject] isKindOfClass:[Partner class]]) {
+    else if([[partners lastObject] isKindOfClass:[Partner class]])
+    {
         Partner *partner = [partners lastObject];
         if(partner && [partner.name isEqualToString:DEFAULT_PARTNER_NAME])
         {            
@@ -276,7 +287,8 @@
         }
         else{
             _partnersList = [[NSMutableArray alloc]initWithArray:partners];
-            if (defaultPartner == nil) {
+            if (defaultPartner == nil)
+            {
                 [self searchForPartnersWithQuery:DEFAULT_PARTNER_NAME];
             }
         }
@@ -284,7 +296,6 @@
     [self.tableView reloadData];
     [self.goButton setEnabled:YES];
     [self removeSpinnerFromButton:self.goButton];   
-
 }
 
 - (void)loadNearbyPartners
@@ -294,11 +305,11 @@
         doNotUseGeopositionSearchResults = YES;
         [self searchForPartnersWithQuery:nil];
     }
-
 }
 
 
-- (void)loadSectionMenuForPartnerWithPartner:(Partner *)aPartner {
+- (void)loadSectionMenuForPartnerWithPartner:(Partner *)aPartner
+{
     PartnerViewController *controller = [[PartnerViewController alloc] initWithPartner:aPartner];
     [[self navigationController] pushViewController:controller animated:YES];
     [controller release];
@@ -331,13 +342,16 @@
     else return 1; // Load more section
 }
 
-- (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0) {
+- (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0)
+    {
         Partner *partner = [_partnersList objectAtIndex:indexPath.row];
         
         [self.searchBar resignFirstResponder];
         
-        if ([partner.iTunesAppId isEqual:@""]) {
+        if ([partner.iTunesAppId isEqual:@""])
+        {
             [self loadSectionMenuForPartnerWithPartner:partner];
             
             if (partner.facebookAppId)
@@ -419,10 +433,11 @@
 }
 #pragma mark - UIsearchBar delegate mathods
 
-- (void)searchBarSearchButtonClicked:(UISearchBar *)aSearchBar {
-    
+- (void)searchBarSearchButtonClicked:(UISearchBar *)aSearchBar
+{    
     [aSearchBar resignFirstResponder];
-    if([self townWizardServerReachable]) {
+    if([self townWizardServerReachable])
+    {
         [self.goButton setEnabled:NO];
         [self addSpinnerToButton:self.goButton];
         [self.goButton setTitle:@"" forState:UIControlStateNormal];
@@ -470,14 +485,15 @@
     doNotUseGeopositionSearchResults = YES;
 }
 
-- (IBAction)goButtonPressed:(id)sender {
+- (IBAction)goButtonPressed:(id)sender
+{
     [self searchBarSearchButtonClicked:self.searchBar];
 }
 
 #pragma mark -releaseOutlets
 #pragma  mark cleaning
 
--(void)releaseOutlets
+- (void)releaseOutlets
 {
     [self setTableView:nil];
     [self setSearchBar:nil];   

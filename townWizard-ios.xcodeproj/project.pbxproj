@@ -2003,8 +2003,6 @@
 		8483F23814D03FBE005E4216 = {
 			isa = PBXGroup;
 			children = (
-				84189CB61675DAA500A07AB3 /* Twitter.framework */,
-				8411CA16166F739900455DC6 /* EventKit.framework */,
 				8485318A162D377200211546 /* Default-568h@2x.png */,
 				8483F24D14D03FBE005E4216 /* TownWizard-ios */,
 				D90D0DF7158F06500026828E /* townWizard-partner */,
@@ -2035,6 +2033,8 @@
 		8483F24614D03FBE005E4216 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84189CB61675DAA500A07AB3 /* Twitter.framework */,
+				8411CA16166F739900455DC6 /* EventKit.framework */,
 				84F63B11166CAABC0068CFB6 /* CoreText.framework */,
 				D9595B8B16353D7100DF9B74 /* MediaPlayer.framework */,
 				84EDCF0416144BD500838807 /* libz.dylib */,
@@ -2057,8 +2057,7 @@
 		8483F24D14D03FBE005E4216 /* TownWizard-ios */ = {
 			isa = PBXGroup;
 			children = (
-				84189BF81675D9EB00A07AB3 /* ShareKit */,
-				84CA0215166CCBDA003E1F81 /* PMCalendar */,
+				84F68D9E168AE7CC00A78C12 /* Libs */,
 				D9515CA61638351E0058BE8C /* Extensions */,
 				D93249681637DDF800409AA9 /* Views */,
 				8488550414D1A7420030BD03 /* CustomNavigationBar */,
@@ -2131,11 +2130,8 @@
 				E63F275C14E949FE0040F281 /* FacebookHelper.m */,
 				84FCA64A1670CC24004C6079 /* AppActionsHelper.h */,
 				84FCA64B1670CC24004C6079 /* AppActionsHelper.m */,
-				E63F271C14E9448A0040F281 /* FacebookConnect */,
 				848854C314D16F620030BD03 /* Reachability.h */,
 				848854C414D16F620030BD03 /* Reachability.m */,
-				E61A4DDA14E166BC0039E970 /* UIApplication+NetworkActivity.h */,
-				E61A4DDB14E166BC0039E970 /* UIApplication+NetworkActivity.m */,
 				84C6EF7A1670F6770007F031 /* TWShareKitConfigurator.h */,
 				84C6EF7B1670F6770007F031 /* TWShareKitConfigurator.m */,
 			);
@@ -2209,6 +2205,16 @@
 				84CA0231166CCBDA003E1F81 /* default.plist */,
 			);
 			path = Theme;
+			sourceTree = "<group>";
+		};
+		84F68D9E168AE7CC00A78C12 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				E63F271C14E9448A0040F281 /* FacebookConnect */,
+				84189BF81675D9EB00A07AB3 /* ShareKit */,
+				84CA0215166CCBDA003E1F81 /* PMCalendar */,
+			);
+			name = Libs;
 			sourceTree = "<group>";
 		};
 		84F6C774167B5A930069068C /* newSearchImages */ = {
@@ -2795,6 +2801,8 @@
 		D9515CA61638351E0058BE8C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E61A4DDA14E166BC0039E970 /* UIApplication+NetworkActivity.h */,
+				E61A4DDB14E166BC0039E970 /* UIApplication+NetworkActivity.m */,
 				D9B3793E163A9DEB00828478 /* NSDate+Formatting.h */,
 				D9B3793F163A9DEB00828478 /* NSDate+Formatting.m */,
 				D9B37941163A9E3D00828478 /* NSDateFormatter+Extensions.h */,
@@ -4419,10 +4427,7 @@
 				);
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/CedarTesting\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "townWizard-ios/townWizard-ios-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -4432,10 +4437,7 @@
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "townWizard-ios/townWizard-ios-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = TownWizard;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -4453,20 +4455,14 @@
 				);
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/CedarTesting\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "townWizard-ios/townWizard-ios-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = CONTAINER_APP;
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "townWizard-ios/townWizard-ios-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = TownWizard;
 				PROVISIONING_PROFILE = "E63A425A-634C-40B6-9116-7C8D83F8C36F";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E63A425A-634C-40B6-9116-7C8D83F8C36F";

@@ -60,10 +60,10 @@
     }
 }
 
-- (void) updateWithPartner:(Partner *)aPartner
+- (void) updateWithPartner:(Partner *)updatedPartner
 {
-    self.partner = aPartner;
-    [[RequestHelper sharedInstance] setCurrentPartner:aPartner];
+    self.partner = updatedPartner;
+    [[RequestHelper sharedInstance] setCurrentPartner:updatedPartner];
     [self loadPartnerSections];
     NSString *imageURLString = [[self partner] headerImageUrl];
     if (imageURLString && ![imageURLString isEqualToString:@""])
@@ -273,7 +273,7 @@
     EventSectionHeader *header = [[EventSectionHeader alloc] initWithFrame:headerFrame];
     NSNumber *categoryIndex = [[menu allKeys] objectAtIndex:section];
     [[header title] setText:[self categoryName:categoryIndex]];
-    return header;    
+    return [header autorelease];
 }
 
 #pragma mark -
