@@ -16,7 +16,8 @@
 #import "EventSectionHeader.h"
 #import "SectionCell.h"
 #import "ActivityImageView.h"
-
+#import "FacebookHelper.h"
+#import "AppDelegate.h"
 #define ABOUT_SECTION_NAME @"about us"
 #define HELP_SETCION_NAME @"help & support"
 #define ADVERTISE_SECTION_NAME @"advertise with us"
@@ -68,7 +69,10 @@
     NSString *imageURLString = [[self partner] headerImageUrl];
     if (imageURLString && ![imageURLString isEqualToString:@""])
     {
-        [partnerLogo setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",SERVER_URL,self.partner.headerImageUrl]]];
+        [partnerLogo setImageWithURL:[NSURL URLWithString:
+                                      [NSString stringWithFormat:@"%@%@",
+                                       SERVER_URL,
+                                       self.partner.headerImageUrl]]];
     }    
 }
 
@@ -161,7 +165,10 @@
 
 - (void) partnerDetailsLoaded:(Partner *) partner
 {
+     [self updateWithPartner:partner];
      [Appirater setAppId:partner.iTunesAppId];
+    [AppDelegate sharedDelegate].facebookHelper.appId = partner.facebookAppId;
+
      [[RequestHelper sharedInstance] setCurrentPartner:partner];
     [self loadPartnerSections];
 }

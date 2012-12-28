@@ -71,6 +71,7 @@
     self.partnersList = [NSMutableArray array];
     doNotUseGeopositionSearchResults = NO;
     loadingMorePartnersInProgress = NO;
+    [self searchForPartnersWithQuery:nil];
  
 }
 
