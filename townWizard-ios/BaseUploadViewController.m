@@ -115,11 +115,6 @@
 }
 
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
 - (void)dealloc
 {
     [uploadView release];

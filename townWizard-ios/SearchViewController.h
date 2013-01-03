@@ -22,8 +22,7 @@ CLLocationManagerDelegate,
 PartnerMenuDelegate,
 SubMenuViewControllerDelegate,
 UIAlertViewDelegate,
-RKObjectLoaderDelegate,
-PartnerMenuDelegate>
+RKObjectLoaderDelegate>
 {
     NSArray *selectedPartnerSections;   
     NSInteger nextOffset; 
