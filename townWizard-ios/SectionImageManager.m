@@ -26,24 +26,7 @@ static SectionImageManager *sectionImageManager = nil;
 - (id) init
 {
     if (self = [super init]) {
-        images = [[NSMutableDictionary alloc] init];
-    }
-    return self;
-}
-
-- (UIImage *) imageForSection:(Section *) section
-{
-    NSString *imageName = [[self predefinedImages] objectForKey:[[section name] lowercaseString]];
-    if(!imageName)
-    {
-       imageName = [[self predefinedImages] objectForKey:[[section displayName] lowercaseString]];
-    }
-    return [UIImage imageNamed:imageName];
-}
-
-- (NSDictionary *) predefinedImages
-{
-    return @{
+        images = [@{
         @"videos" : @"video",
         @"photos" : @"profile",
         @"weather" : @"weather",
@@ -67,7 +50,29 @@ static SectionImageManager *sectionImageManager = nil;
         @"about us" : @"about",
         @"advertise with us" : @"advertise",
         @"contact us" : @"contacts"
-    };
+        } retain];
+;
+    }
+    return self;
 }
+
+- (UIImage *) imageForSection:(Section *) section
+{
+    NSString *imageName = [images objectForKey:[[section name] lowercaseString]];
+    if(!imageName)
+    {
+       imageName = [images objectForKey:[[section displayName] lowercaseString]];
+    }
+    return [UIImage imageNamed:imageName];
+}
+
+
+- (void)dealloc
+{
+    [images release];
+    [super dealloc];
+}
+
+
 
 @end

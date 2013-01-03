@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "MasterDetailController.h"
 
-@interface TownWizardNavigationBar : UINavigationBar<UINavigationBarDelegate> {
+@interface TownWizardNavigationBar : UINavigationBar<UINavigationBarDelegate>
+{
+    UIImage *background;
 }
 
+- (CGRect)calculateTitleFrame;
 - (void) updateTitleText:(NSString *) titleText;
 @property (nonatomic, retain) UILabel *titleLabel;
 @end

@@ -20,6 +20,6 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSNumber *numPhotos;
 
-+ (RKObjectMapping *)objectMapping;
+
 
 @end

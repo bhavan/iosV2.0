@@ -39,31 +39,29 @@
 
 }
 
-- (void)cameraButtonPressed:(id)sender {
-	AppDelegate *appdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-	
-	if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-		UIActionSheet *menu = [[UIActionSheet alloc]
-							   initWithTitle: @""
-							   delegate:self
-							   cancelButtonTitle:@"Cancel"
-							   destructiveButtonTitle:nil
-							   otherButtonTitles:@"Take Photo",@"Choose from Library", nil];
-		[menu setTag:1];
-		[menu showInView:appdelegate.window];
-		[menu release];
+- (void)cameraButtonPressed:(id)sender
+{
+	AppDelegate *appdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];  
+    NSArray *otherButtonTitles;
+    NSInteger menuTag = 1;
+	if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+		otherButtonTitles = @[@"Choose from Library",@"Take Photo"];	
 	}
-	else {
-		UIActionSheet *menu = [[UIActionSheet alloc]
-							   initWithTitle: @""
-							   delegate:self
-							   cancelButtonTitle:@"Cancel"
-							   destructiveButtonTitle:nil
-							   otherButtonTitles:@"Choose from Library", nil];
-		[menu setTag:2];
-		[menu showInView:appdelegate.window];
-		[menu release];
+	else
+    {
+        otherButtonTitles = @[@"Choose from Library"];
+        menuTag = 2;
 	}
+    UIActionSheet *menu = [[UIActionSheet alloc]
+                           initWithTitle: @""
+                           delegate:self
+                           cancelButtonTitle:@"Cancel"
+                           destructiveButtonTitle:nil
+                           otherButtonTitles:@"Choose from Library", nil];
+    [menu setTag:menuTag];
+    [menu showInView:appdelegate.window];
+    [menu release];
 }
 
 -(void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
@@ -71,34 +69,29 @@
 	if(buttonIndex == 2) //Cancel button
 		return;
 	
-	UIImagePickerController* ImageController = [[UIImagePickerController alloc] init];
-	//ImageController.allowsImageEditing = YES;
-	ImageController.delegate = self;
+	UIImagePickerController* imageController = [[UIImagePickerController alloc] init];
+	imageController.delegate = self;	
 	
-	if(actionSheet.tag == 1) {
-		if(buttonIndex == 1) {
-			if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
-				ImageController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-				[self presentModalViewController:ImageController animated:YES];
+        if(buttonIndex == 0)
+        {
+			if([UIImagePickerController
+                isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+            {
+				imageController.sourceType = UIImagePickerControllerSourceTypeCamera;
+				[self presentModalViewController:imageController animated:YES];
 			}
 		}
-		else if(buttonIndex == 0) {
-			if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-				ImageController.sourceType = UIImagePickerControllerSourceTypeCamera;
-				[self presentModalViewController:ImageController animated:YES];
+		else if(buttonIndex == 1)
+        {
+			if([UIImagePickerController
+                isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
+            {
+				imageController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+				[self presentModalViewController:imageController animated:YES];
 			}
-		}
-	}
-	else if(actionSheet.tag == 2) {
-		if(buttonIndex == 0) {
-			if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
-				ImageController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-				[self presentModalViewController:ImageController animated:YES];
-			}
-		}
-	}
+		}	
 	
-	[ImageController release];
+	[imageController release];
 }
 
 #pragma mark -
@@ -130,6 +123,7 @@
 - (void)dealloc
 {
     [uploadView release];
+    [partner release];
     [super dealloc];
 }
 

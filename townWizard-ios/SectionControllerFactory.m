@@ -11,7 +11,7 @@
 
 #import "SubMenuViewController.h"
 #import "PhotoCategoriesViewController.h"
-#import "VideosViewController.h"
+#import "VideosListViewController.h"
 #import "EventsViewController.h"
 
 @implementation SectionControllerFactory
@@ -34,7 +34,7 @@
         return [PhotoCategoriesViewController class];
     }
     else if ([[section name] isEqual:@"Videos"]) {
-        return [VideosViewController class];
+        return [VideosListViewController class];
     }
     else if([[section name] isEqualToString:@"Events"]) {
         return [EventsViewController class];

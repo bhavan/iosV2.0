@@ -15,8 +15,6 @@
     UIWebView *webView;
 }
 
-@property (nonatomic, retain) TownWizardNavigationBar * customNavigationBar;
-
 @property (retain, nonatomic) IBOutlet UIWebView *webView;
 @property (nonatomic, retain) NSString *videoUrl;
 

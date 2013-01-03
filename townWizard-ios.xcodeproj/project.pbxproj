@@ -55,7 +55,7 @@
 		841295CD168DA0E600C47B7F /* PhotoGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F82C90161AF98E00E0A481 /* PhotoGalleryViewController.m */; };
 		841295CE168DA0E600C47B7F /* WebImageGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F82CCF161AFB8700E0A481 /* WebImageGridViewCell.m */; };
 		841295CF168DA0E600C47B7F /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
-		841295D0168DA0E600C47B7F /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
+		841295D0168DA0E600C47B7F /* VideosListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosListViewController.m */; };
 		841295D1168DA0E600C47B7F /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
 		841295D2168DA0E600C47B7F /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
 		841295D3168DA0E600C47B7F /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
@@ -192,7 +192,7 @@
 		84129658168DA0E600C47B7F /* topBar.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C5B159074E5006FFF7E /* topBar.png */; };
 		84129659168DA0E600C47B7F /* PhotoCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847FD37F161ACDAE009FB9CC /* PhotoCategoriesViewController.xib */; };
 		8412965A168DA0E600C47B7F /* PhotoGalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F82C91161AF98E00E0A481 /* PhotoGalleryViewController.xib */; };
-		8412965B168DA0E600C47B7F /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		8412965B168DA0E600C47B7F /* VideosListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosListViewController.xib */; };
 		8412965C168DA0E600C47B7F /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
 		8412965D168DA0E600C47B7F /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
 		8412965E168DA0E600C47B7F /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
@@ -675,10 +675,10 @@
 		84CA024B166CCBDB003E1F81 /* default.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84CA0231166CCBDA003E1F81 /* default.plist */; };
 		84CAADF7161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
 		84CAADF8161B27CC00E09E36 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
-		84CAAE39161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
-		84CAAE3A161B2EB200E09E36 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosViewController.m */; };
-		84CAAE57161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
-		84CAAE58161B2EB200E09E36 /* VideosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosViewController.xib */; };
+		84CAAE39161B2EB200E09E36 /* VideosListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosListViewController.m */; };
+		84CAAE3A161B2EB200E09E36 /* VideosListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosListViewController.m */; };
+		84CAAE57161B2EB200E09E36 /* VideosListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosListViewController.xib */; };
+		84CAAE58161B2EB200E09E36 /* VideosListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosListViewController.xib */; };
 		84CAAE77161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
 		84CAAE78161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
 		84EDCF0516144BD500838807 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 84EDCF0416144BD500838807 /* libz.dylib */; };
@@ -1244,9 +1244,9 @@
 		84CA0231166CCBDA003E1F81 /* default.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = default.plist; sourceTree = "<group>"; };
 		84CAADF5161B27CB00E09E36 /* ImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCell.h; sourceTree = "<group>"; };
 		84CAADF6161B27CB00E09E36 /* ImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCell.m; sourceTree = "<group>"; };
-		84CAAE36161B2EB100E09E36 /* VideosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideosViewController.h; sourceTree = "<group>"; };
-		84CAAE37161B2EB100E09E36 /* VideosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideosViewController.m; sourceTree = "<group>"; };
-		84CAAE38161B2EB100E09E36 /* VideosViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideosViewController.xib; sourceTree = "<group>"; };
+		84CAAE36161B2EB100E09E36 /* VideosListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideosListViewController.h; sourceTree = "<group>"; };
+		84CAAE37161B2EB100E09E36 /* VideosListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideosListViewController.m; sourceTree = "<group>"; };
+		84CAAE38161B2EB100E09E36 /* VideosListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideosListViewController.xib; sourceTree = "<group>"; };
 		84CAAE75161B2F2C00E09E36 /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video.h; sourceTree = "<group>"; };
 		84CAAE76161B2F2C00E09E36 /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Video.m; sourceTree = "<group>"; };
 		84EDCF0416144BD500838807 /* libz.dylib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -1715,8 +1715,8 @@
 		840E4583166E3526007CCF51 /* Video */ = {
 			isa = PBXGroup;
 			children = (
-				84CAAE36161B2EB100E09E36 /* VideosViewController.h */,
-				84CAAE37161B2EB100E09E36 /* VideosViewController.m */,
+				84CAAE36161B2EB100E09E36 /* VideosListViewController.h */,
+				84CAAE37161B2EB100E09E36 /* VideosListViewController.m */,
 				848DFB661626B3F40096A6FF /* VideoViewController.h */,
 				848DFB671626B3F50096A6FF /* VideoViewController.m */,
 			);
@@ -1974,6 +1974,15 @@
 			path = Email;
 			sourceTree = "<group>";
 		};
+		841C6C0C1695C7C40066B0F9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D9515C9F163832D30058BE8C /* EventCell.xib */,
+				D99E72D6163ECCA9004EB303 /* SectionCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		8444637416198E6300394D41 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -2051,14 +2060,12 @@
 		8483F24D14D03FBE005E4216 /* TownWizard-ios */ = {
 			isa = PBXGroup;
 			children = (
-				84F68D9E168AE7CC00A78C12 /* Libs */,
-				D9515CA61638351E0058BE8C /* Extensions */,
+				84F68D9E168AE7CC00A78C12 /* Externals */,
+				D9515CA61638351E0058BE8C /* Categories */,
 				D93249681637DDF800409AA9 /* Views */,
-				8488550414D1A7420030BD03 /* CustomNavigationBar */,
-				848F723316280E40005F02E8 /* Other */,
 				8444637416198E6300394D41 /* Models */,
 				848854B514D1464E0030BD03 /* Helpers */,
-				848854A714D141E30030BD03 /* View Controllers */,
+				848854A714D141E30030BD03 /* Controllers */,
 				D92B0ED81589DE28006894BE /* Application */,
 				D92B0ED51589D38E006894BE /* Resources */,
 				8483F24E14D03FBE005E4216 /* Supporting Files */,
@@ -2078,7 +2085,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		848854A714D141E30030BD03 /* View Controllers */ = {
+		848854A714D141E30030BD03 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				840E4583166E3526007CCF51 /* Video */,
@@ -2095,24 +2102,25 @@
 				8406AB6E1630319B00B807EB /* MasterDetailController.h */,
 				8406AB6F1630319B00B807EB /* MasterDetailController.m */,
 			);
-			name = "View Controllers";
+			name = Controllers;
 			sourceTree = "<group>";
 		};
-		848854A814D142120030BD03 /* Views */ = {
+		848854A814D142120030BD03 /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
+				841C6C0C1695C7C40066B0F9 /* Cells */,
 				D93249281637CD8B00409AA9 /* EventsViewController.xib */,
 				840E4587166E374C007CCF51 /* EventDetailsViewController.xib */,
 				848DFB681626B3F50096A6FF /* VideoViewController.xib */,
 				847FD37F161ACDAE009FB9CC /* PhotoCategoriesViewController.xib */,
 				84F82C91161AF98E00E0A481 /* PhotoGalleryViewController.xib */,
-				84CAAE38161B2EB100E09E36 /* VideosViewController.xib */,
+				84CAAE38161B2EB100E09E36 /* VideosListViewController.xib */,
 				848854AB14D142430030BD03 /* SubMenuViewController.xib */,
 				8488550914D1ABAA0030BD03 /* SearchViewController.xib */,
 				E691FF8E14E50981003DE64B /* MapViewController.xib */,
 				E691000914E550B3003DE64B /* AddCaptionViewController.xib */,
 			);
-			name = Views;
+			name = XIBs;
 			sourceTree = "<group>";
 		};
 		848854B514D1464E0030BD03 /* Helpers */ = {
@@ -2120,6 +2128,8 @@
 			children = (
 				D99E7271163E6B94004EB303 /* Factories */,
 				D93249CC1637E28400409AA9 /* Network */,
+				D99E72D8163ED82E004EB303 /* SectionImageManager.h */,
+				D99E72D9163ED82E004EB303 /* SectionImageManager.m */,
 				E63F275B14E949FE0040F281 /* FacebookHelper.h */,
 				E63F275C14E949FE0040F281 /* FacebookHelper.m */,
 				84FCA64A1670CC24004C6079 /* AppActionsHelper.h */,
@@ -2139,17 +2149,6 @@
 				E691001E14E56B7E003DE64B /* TownWIzardNavigationBar.m */,
 			);
 			name = CustomNavigationBar;
-			sourceTree = "<group>";
-		};
-		848F723316280E40005F02E8 /* Other */ = {
-			isa = PBXGroup;
-			children = (
-				D98A35F016394DA200E4E75F /* ActivityImageView.h */,
-				D98A35F116394DA200E4E75F /* ActivityImageView.m */,
-				D99E72D8163ED82E004EB303 /* SectionImageManager.h */,
-				D99E72D9163ED82E004EB303 /* SectionImageManager.m */,
-			);
-			name = Other;
 			sourceTree = "<group>";
 		};
 		84CA0215166CCBDA003E1F81 /* PMCalendar */ = {
@@ -2201,14 +2200,14 @@
 			path = Theme;
 			sourceTree = "<group>";
 		};
-		84F68D9E168AE7CC00A78C12 /* Libs */ = {
+		84F68D9E168AE7CC00A78C12 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
 				E63F271C14E9448A0040F281 /* FacebookConnect */,
 				84189BF81675D9EB00A07AB3 /* ShareKit */,
 				84CA0215166CCBDA003E1F81 /* PMCalendar */,
 			);
-			name = Libs;
+			name = Externals;
 			sourceTree = "<group>";
 		};
 		84F6C774167B5A930069068C /* newSearchImages */ = {
@@ -2575,7 +2574,7 @@
 			isa = PBXGroup;
 			children = (
 				E691001414E55898003DE64B /* Images */,
-				848854A814D142120030BD03 /* Views */,
+				848854A814D142120030BD03 /* XIBs */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -2713,6 +2712,7 @@
 		D93249681637DDF800409AA9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8488550414D1A7420030BD03 /* CustomNavigationBar */,
 				D99E72CA163EB45B004EB303 /* UI Elements */,
 				D99E72C9163EB442004EB303 /* Cells */,
 				D93249691637DE2700409AA9 /* EventsViewer.h */,
@@ -2723,6 +2723,8 @@
 				D99E7274163E6EF2004EB303 /* TWBackgroundView.m */,
 				840E458C166E48C3007CCF51 /* EventDetailTopView.h */,
 				840E458D166E48C3007CCF51 /* EventDetailTopView.m */,
+				D98A35F016394DA200E4E75F /* ActivityImageView.h */,
+				D98A35F116394DA200E4E75F /* ActivityImageView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -2792,7 +2794,7 @@
 			name = "Application Icons";
 			sourceTree = "<group>";
 		};
-		D9515CA61638351E0058BE8C /* Extensions */ = {
+		D9515CA61638351E0058BE8C /* Categories */ = {
 			isa = PBXGroup;
 			children = (
 				E61A4DDA14E166BC0039E970 /* UIApplication+NetworkActivity.h */,
@@ -2806,7 +2808,7 @@
 				D98A35EC163929C800E4E75F /* UIAlertView+Extensions.h */,
 				D98A35ED163929C800E4E75F /* UIAlertView+Extensions.m */,
 			);
-			name = Extensions;
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		D99E726D163E6B50004EB303 /* Events */ = {
@@ -2867,10 +2869,8 @@
 				84CAADF6161B27CB00E09E36 /* ImageCell.m */,
 				D9515C9B163832C00058BE8C /* EventCell.h */,
 				D9515C9C163832C00058BE8C /* EventCell.m */,
-				D9515C9F163832D30058BE8C /* EventCell.xib */,
 				D99E72CB163EB4A5004EB303 /* SectionCell.h */,
 				D99E72CC163EB4A5004EB303 /* SectionCell.m */,
-				D99E72D6163ECCA9004EB303 /* SectionCell.xib */,
 				84237CAF1668A0DE00B3DB18 /* InputBar.h */,
 				84237CB01668A0DE00B3DB18 /* InputBar.m */,
 				84ACB3E1167B6D84002D0278 /* PartnerCell.h */,
@@ -3173,7 +3173,7 @@
 				84129658168DA0E600C47B7F /* topBar.png in Resources */,
 				84129659168DA0E600C47B7F /* PhotoCategoriesViewController.xib in Resources */,
 				8412965A168DA0E600C47B7F /* PhotoGalleryViewController.xib in Resources */,
-				8412965B168DA0E600C47B7F /* VideosViewController.xib in Resources */,
+				8412965B168DA0E600C47B7F /* VideosListViewController.xib in Resources */,
 				8412965C168DA0E600C47B7F /* VideoViewController.xib in Resources */,
 				8412965D168DA0E600C47B7F /* menuStarButton.png in Resources */,
 				8412965E168DA0E600C47B7F /* menuStarButton@2x.png in Resources */,
@@ -3334,7 +3334,7 @@
 				D9FA2C7E1590751B006FFF7E /* icon@2x.png in Resources */,
 				847FD39E161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CB0161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
-				84CAAE57161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				84CAAE57161B2EB200E09E36 /* VideosListViewController.xib in Resources */,
 				848DFB881626B3F50096A6FF /* VideoViewController.xib in Resources */,
 				848F7256162810BF005F02E8 /* menuStarButton.png in Resources */,
 				848F7275162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
@@ -3489,7 +3489,7 @@
 				D9FA2C74159074E5006FFF7E /* topBar.png in Resources */,
 				847FD39F161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CB1161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
-				84CAAE58161B2EB200E09E36 /* VideosViewController.xib in Resources */,
+				84CAAE58161B2EB200E09E36 /* VideosListViewController.xib in Resources */,
 				848DFB891626B3F50096A6FF /* VideoViewController.xib in Resources */,
 				848F7257162810BF005F02E8 /* menuStarButton.png in Resources */,
 				848F7276162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
@@ -3867,7 +3867,7 @@
 				841295CD168DA0E600C47B7F /* PhotoGalleryViewController.m in Sources */,
 				841295CE168DA0E600C47B7F /* WebImageGridViewCell.m in Sources */,
 				841295CF168DA0E600C47B7F /* ImageCell.m in Sources */,
-				841295D0168DA0E600C47B7F /* VideosViewController.m in Sources */,
+				841295D0168DA0E600C47B7F /* VideosListViewController.m in Sources */,
 				841295D1168DA0E600C47B7F /* Video.m in Sources */,
 				841295D2168DA0E600C47B7F /* VideoViewController.m in Sources */,
 				841295D3168DA0E600C47B7F /* PhotoUploadView.m in Sources */,
@@ -4000,7 +4000,7 @@
 				84F82C92161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
 				84F82CD0161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
 				84CAADF7161B27CC00E09E36 /* ImageCell.m in Sources */,
-				84CAAE39161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE39161B2EB200E09E36 /* VideosListViewController.m in Sources */,
 				84CAAE77161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB691626B3F50096A6FF /* VideoViewController.m in Sources */,
 				848F71F2162805DA005F02E8 /* PhotoUploadView.m in Sources */,
@@ -4133,7 +4133,7 @@
 				84F82C93161AF98E00E0A481 /* PhotoGalleryViewController.m in Sources */,
 				84F82CD1161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
 				84CAADF8161B27CC00E09E36 /* ImageCell.m in Sources */,
-				84CAAE3A161B2EB200E09E36 /* VideosViewController.m in Sources */,
+				84CAAE3A161B2EB200E09E36 /* VideosListViewController.m in Sources */,
 				84CAAE78161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB6A1626B3F50096A6FF /* VideoViewController.m in Sources */,
 				848F71F3162805DA005F02E8 /* PhotoUploadView.m in Sources */,

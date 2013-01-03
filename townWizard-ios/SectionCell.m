@@ -11,7 +11,7 @@
 #import "ActivityImageView.h"
 #import "SectionImageManager.h"
 
-static const CGFloat kTitleOffset = 45;
+#define kTitleOffset 45
 
 @interface SectionCell ()
 @property (nonatomic, retain) Section *section;
@@ -24,7 +24,8 @@ static const CGFloat kTitleOffset = 45;
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
-    if (self = [super initWithCoder:aDecoder]) {
+    if (self = [super initWithCoder:aDecoder])
+    {
         [[self textLabel] setHighlightedTextColor:[UIColor blackColor]];
         [[self textLabel] setFont:[UIFont boldSystemFontOfSize:16]];
     }
@@ -58,10 +59,12 @@ static const CGFloat kTitleOffset = 45;
     [[self textLabel] setText:[section displayName]];
     
     UIImage *image = [[SectionImageManager sharedInstance] imageForSection:section];
-    if (image == nil) {
+    if (image == nil)
+    {
         image = [UIImage imageNamed:@"iconStar"];
     }
-    else if (image == nil && [section imageUrl]) {
+    else if (image == nil && [section imageUrl])
+    {
         NSString *urlString = [[[RequestHelper sharedInstance] currentPartner] webSiteUrl];
         urlString = [urlString stringByAppendingString:[section imageUrl]];
         [sectionImage setImageWithURL:[NSURL URLWithString:urlString]];

@@ -14,7 +14,7 @@
 {
     if (self = [super initWithCoder:aDecoder]) {
         [self setBackgroundColor:[UIColor clearColor]];
-        [self setBackgroundImage:[self butttonBackgroundImage] forState:UIControlStateNormal];
+        [self setBackgroundImage:[self buttonBackgroundImage] forState:UIControlStateNormal];
     }
     return self;
 }
@@ -22,7 +22,7 @@
 #pragma mark -
 #pragma mark drawing
 
-- (UIImage *) butttonBackgroundImage
+- (UIImage *) buttonBackgroundImage
 {
     UIImage *background = [UIImage imageNamed:@"button_background"];
     CGFloat middleX = background.size.width / 2;

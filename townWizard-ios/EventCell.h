@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "Event.h"
 
-@interface EventCell : UITableViewCell {
+@interface EventCell : UITableViewCell
+{
     IBOutlet UILabel *eventTitle;
     IBOutlet UILabel *eventLocation;
     IBOutlet UILabel *eventTime;
@@ -17,7 +18,6 @@
 }
 
 - (void) updateWithEvent:(Event *) event;
-
 @property (nonatomic, retain, readonly) Event *event;
 
 @end

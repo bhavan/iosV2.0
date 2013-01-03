@@ -13,6 +13,9 @@
 #import "Partner.h"
 #import "Section.h"
 #import "EventCategory.h"
+#import "PhotoCategory.h"
+#import "Photo.h"
+#import "Video.h"
 
 static MappingManager *mappingManager = nil;
 
@@ -26,6 +29,38 @@ static MappingManager *mappingManager = nil;
         }
     }
     return mappingManager;
+}
+
+
+- (RKObjectMapping *)videoMapping {
+    RKObjectMapping * partnersMapping = [RKObjectMapping mappingForClass:[Video class]];
+    
+    [partnersMapping mapKeyPath:@"name" toAttribute:@"name"];
+    [partnersMapping mapKeyPath:@"thumb" toAttribute:@"thumb"];
+    [partnersMapping mapKeyPath:@"url" toAttribute:@"url"];
+    return partnersMapping;
+    
+}
+
+- (RKObjectMapping *)photoMapping {
+    RKObjectMapping * partnersMapping = [RKObjectMapping mappingForClass:[Photo class]];
+    
+    [partnersMapping mapKeyPath:@"name" toAttribute:@"name"];
+    [partnersMapping mapKeyPath:@"thumb" toAttribute:@"thumb"];
+    [partnersMapping mapKeyPath:@"picture" toAttribute:@"picture"];
+    return partnersMapping;
+}
+
+- (RKObjectMapping *)photoCategoryMapping {
+    RKObjectMapping * partnersMapping = [RKObjectMapping mappingForClass:[PhotoCategory class]];
+    
+    
+    [partnersMapping mapKeyPath:@"id" toAttribute:@"categoryId"];
+    [partnersMapping mapKeyPath:@"name" toAttribute:@"name"];
+    [partnersMapping mapKeyPath:@"thumb" toAttribute:@"thumb"];
+    [partnersMapping mapKeyPath:@"num_photos" toAttribute:@"numPhotos"];
+    return partnersMapping;
+    
 }
 
 - (RKObjectMapping *) eventsMapping

@@ -12,7 +12,7 @@
 @class Section;
 @class TownWizardNavigationBar;
 
-@interface VideosViewController : UIViewController  {
+@interface VideosListViewController : UIViewController  {
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;

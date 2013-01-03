@@ -19,15 +19,7 @@
 static const CGFloat kEventsViewerIndicatorSpace = 11;
 
 @implementation EventsViewer
-{
-    IBOutlet ActivityImageView *eventImage;
-    IBOutlet UILabel *eventName;
-    IBOutlet UILabel *eventPlace;
-    IBOutlet UILabel *eventTime;
-    IBOutlet DDPageControlCustom *pageControl;
-    IBOutlet UIView *detailsView;    
-    NSInteger currentEventIndex;
-}
+
 
 
 #pragma mark -
@@ -78,6 +70,8 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
 
 - (void) dealloc
 {
+    [currentTimer invalidate];
+    currentTimer = nil;
     [eventImage release];
     [eventName release];
     [eventPlace release];
@@ -100,7 +94,7 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
         
         [self setEvents:events];
         [pageControl setNumberOfPages:[events count]];
-        [NSTimer scheduledTimerWithTimeInterval:10.0f target:self selector:@selector(tickEvent) userInfo:nil repeats:YES];
+        currentTimer = [NSTimer scheduledTimerWithTimeInterval:10.0f target:self selector:@selector(tickEvent) userInfo:nil repeats:YES];
         [self displayEventAtIndex:0];    
    }
 }

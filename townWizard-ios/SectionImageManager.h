@@ -10,8 +10,9 @@
 
 @class Section;
 
-@interface SectionImageManager : NSObject {
-    NSMutableDictionary *images;
+@interface SectionImageManager : NSObject
+{
+    NSDictionary *images;
 }
 
 + (id) sharedInstance;

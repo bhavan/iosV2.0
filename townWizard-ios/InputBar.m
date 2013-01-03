@@ -13,14 +13,16 @@
 
 @synthesize pickerView;
 
-- (void) initWithDelegate:(id<UIPickerViewDelegate, UIPickerViewDataSource>)owner andPickerValue:(NSInteger)nValue {
+- (void) initWithDelegate:(id<UIPickerViewDelegate, UIPickerViewDataSource>)owner andPickerValue:(NSInteger)nValue
+{
 	pickerView = [[[UIPickerView alloc] init] autorelease];
 	pickerView.delegate = owner;
 	pickerView.dataSource = owner;
 	pickerView.showsSelectionIndicator = YES;
 	[self addSubview:pickerView];
 	[pickerView selectRow:nValue inComponent:0 animated:NO];
-	if ([pickerView numberOfComponents] == 2) {
+	if ([pickerView numberOfComponents] == 2)
+    {
 		[pickerView selectRow:nValue inComponent:1 animated:NO];
 	}
 }

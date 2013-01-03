@@ -16,14 +16,13 @@
 @implementation VideoViewController
 @synthesize webView;
 @synthesize videoUrl;
-@synthesize customNavigationBar;
-
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    if (self)
+    {        
+
     }
     return self;
 }
@@ -31,7 +30,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     if(self.videoUrl)
     {
         //Do not delete. New way to play videos
@@ -45,30 +43,21 @@
     }
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-   
-}
-
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
     return YES;
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
     [webView release];
+    [videoUrl release];
     [super dealloc];
 }
-- (void)viewDidUnload {
+
+- (void)viewDidUnload
+{
     [self setWebView:nil];
     [super viewDidUnload];
 }

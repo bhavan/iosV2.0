@@ -19,6 +19,4 @@
 @property (nonatomic, retain) NSString *thumb;
 @property (nonatomic, retain) NSString *url;
 
-+ (RKObjectMapping *)objectMapping;
-
 @end

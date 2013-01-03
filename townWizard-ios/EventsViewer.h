@@ -18,9 +18,19 @@
 
 
 @interface EventsViewer : UIView
+{
+    IBOutlet ActivityImageView *eventImage;
+    IBOutlet UILabel *eventName;
+    IBOutlet UILabel *eventPlace;
+    IBOutlet UILabel *eventTime;
+    IBOutlet DDPageControlCustom *pageControl;
+    IBOutlet UIView *detailsView;
+    NSInteger currentEventIndex;
+    NSTimer *currentTimer;
+}
 
 @property (nonatomic, assign) BOOL isImagePresented;
-@property (nonatomic,retain) UIView *rootView;
+@property (nonatomic, retain) UIView *rootView;
 @property (nonatomic, retain) id<EventViewerDelegate> delegate;
 
 - (void) displayEvents:(NSArray *) events;

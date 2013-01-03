@@ -114,12 +114,12 @@ static RequestHelper *requestHelper = nil;
 
 + (void)categoriesWithPartner:(Partner *)partner andSection:(Section *)section andDelegate:(id <RKObjectLoaderDelegate>)delegate
 {
-    [RequestHelper modelsListWithMapping:[PhotoCategory objectMapping] fromPartner:partner andSection:section withDelegate:delegate];
+    [RequestHelper modelsListWithMapping:[[MappingManager sharedInstance] photoCategoryMapping]  fromPartner:partner andSection:section withDelegate:delegate];
 }
 
 + (void)videosWithPartner:(Partner *)partner andSection:(Section *)section andDelegate:(id <RKObjectLoaderDelegate>)delegate
 {
-    [RequestHelper modelsListWithMapping:[Video objectMapping] fromPartner:partner andSection:section withDelegate:delegate];
+    [RequestHelper modelsListWithMapping:[[MappingManager sharedInstance] videoMapping]  fromPartner:partner andSection:section withDelegate:delegate];
 }
 
 
@@ -127,7 +127,7 @@ static RequestHelper *requestHelper = nil;
 {
     
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
-    [objectManager.mappingProvider setObjectMapping:[Photo objectMapping] forKeyPath:@"data"];
+    [objectManager.mappingProvider setObjectMapping:[[MappingManager sharedInstance] photoMapping]  forKeyPath:@"data"];
     NSString *resourcePath = [NSString stringWithFormat:
                               @"%@/%@?id=%@",
                               partner.webSiteUrl,
@@ -156,21 +156,21 @@ static RequestHelper *requestHelper = nil;
 - (void) loadVideosWithDelegate:(id<RKObjectLoaderDelegate>) delegate
 {
     RKObjectManager *objectManager = [self currentObjectManager];
-    [objectManager.mappingProvider setObjectMapping:[Video objectMapping] forKeyPath:@"data"];
+    [objectManager.mappingProvider setObjectMapping:[[MappingManager sharedInstance] videoMapping]  forKeyPath:@"data"];
     [objectManager loadObjectsAtResourcePath:[[self currentSection] url] delegate:delegate];
 }
 
 - (void) loadPhotoCategoriesWithDelegate:(id<RKObjectLoaderDelegate>) delegate
 {
     RKObjectManager *objectManager = [self currentObjectManager];
-    [objectManager.mappingProvider setObjectMapping:[PhotoCategory objectMapping] forKeyPath:@"data"];
+    [objectManager.mappingProvider setObjectMapping:[[MappingManager sharedInstance] photoCategoryMapping] forKeyPath:@"data"];
     [objectManager loadObjectsAtResourcePath:[[self currentSection] url] delegate:delegate];
 }
 
 - (void) loadPhotosFromCategory:(PhotoCategory *) category delegate:(id<RKObjectLoaderDelegate>) delegate
 {
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
-    [objectManager.mappingProvider setObjectMapping:[Photo objectMapping] forKeyPath:@"data"];
+    [objectManager.mappingProvider setObjectMapping:[[MappingManager sharedInstance] photoMapping] forKeyPath:@"data"];
     NSString *resourcePath = [NSString stringWithFormat:@"%@/%@?id=%@",
                               [[self currentPartner] webSiteUrl],
                               [[self currentSection] url],

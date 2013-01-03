@@ -14,9 +14,8 @@
 @interface BaseUploadViewController : UIViewController <UIActionSheetDelegate,
 UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 {
-        PhotoUploadView *uploadView;
+    PhotoUploadView *uploadView;
     Partner *partner;
-    
 }
 
 @property (nonatomic, retain) Partner *partner;

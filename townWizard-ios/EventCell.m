@@ -37,15 +37,13 @@
 
 - (void) updateWithEvent:(Event *) event
 {
-    if (![[self event] isEqual:event]) {
+    if (![[self event] isEqual:event])
+    {
         [self setEvent:event];
         [eventTitle setText:[event title]];
         [eventLocation setText:[[event location] name]];
         [eventTime setText:[[self eventDateString] uppercaseString]];
         [eventCategory setText:[self.event.categoryName uppercaseString]];
-        
-//        Maybe it's not necessary
-//        [self layoutSubviews];
     }
 }
 
@@ -64,17 +62,5 @@
     return [NSString stringWithFormat:@"%@-%@",startTimeString,endTimeString];
 }
 
-#pragma mark -
-#pragma mark layout
-
-- (void) layoutSubviews
-{
-    [super layoutSubviews];
-   // [eventTitle sizeToFit];
-    
-   // CGRect locationFrame = [eventLocation frame];
-   // locationFrame.origin.y = CGRectGetMaxY([eventTitle frame])-5;
-   // [eventLocation setFrame:locationFrame];
-}
 
 @end

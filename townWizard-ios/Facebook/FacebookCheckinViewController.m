@@ -191,7 +191,8 @@
         NSString *resultJson = [[NSString alloc] initWithData:request.responseText encoding:NSUTF8StringEncoding];
         NSDictionary *jsonDict = [resultJson objectFromJSONString];
         [resultJson release];
-        for (NSDictionary *friendInfo in [jsonDict objectForKey:@"data"]) {
+        for (NSDictionary *friendInfo in [jsonDict objectForKey:@"data"])
+        {
             
             FacebookFriend * fbFriend = [[FacebookFriend alloc] initWithInfo:friendInfo];
             [friendsList addObject:fbFriend];
@@ -205,8 +206,9 @@
         
         [self.friendsListView reloadData];
     }
-    else if ([request.url hasSuffix:@"me/checkins"]) {
-        NSString *resultJson = [[NSString alloc] initWithData:request.responseText encoding:NSUTF8StringEncoding];
+    else if ([request.url hasSuffix:@"me/checkins"])
+    {
+        
         [[[[UIAlertView alloc] initWithTitle:@"CHECK IN"
                                      message:@"You've successfully checked in"
                                     delegate:nil
@@ -218,14 +220,16 @@
         
         NSArray * viewControllersInNavigationStack = self.navigationController.viewControllers;
         
-        id subMenuVC = [viewControllersInNavigationStack objectAtIndex:[viewControllersInNavigationStack count]-3];
+        id subMenuVC = [viewControllersInNavigationStack
+                        objectAtIndex:[viewControllersInNavigationStack count]-3];
         [self.navigationController popToViewController:subMenuVC animated:YES];
     }
     
     [[UIApplication sharedApplication] hideNetworkActivityIndicator];
 }
 
-- (void) request:(FBRequest *)request didFailWithError:(NSError *)error {
+- (void) request:(FBRequest *)request didFailWithError:(NSError *)error
+{
     NSDictionary *errorInfo = [[error userInfo] objectForKey:@"error"];
     [[[[UIAlertView alloc] initWithTitle:@"Error"
                                  message:[errorInfo objectForKey:@"message"]

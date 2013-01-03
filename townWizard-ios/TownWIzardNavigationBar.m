@@ -20,7 +20,8 @@ static const CGFloat kTWBarTitleFontSize = 18;
 #pragma mark -
 #pragma mark life cycle
 
-- (id)initWithFrame:(CGRect)frame {
+- (id)initWithFrame:(CGRect)frame
+{
     self = [super initWithFrame:frame];
     if (self) {
         self.tintColor = [UIColor lightGrayColor];
@@ -31,7 +32,7 @@ static const CGFloat kTWBarTitleFontSize = 18;
         self.titleLabel.textAlignment = UITextAlignmentCenter;
         self.titleLabel.backgroundColor = [UIColor clearColor];
         self.titleLabel.font = [UIFont boldSystemFontOfSize:kTWBarTitleFontSize];
-
+        background = [UIImage imageNamed:@"navigation_bar_bg"];
         [self addSubview:self.titleLabel];
     }
     return self;
@@ -48,7 +49,6 @@ static const CGFloat kTWBarTitleFontSize = 18;
 
 - (void) drawRect:(CGRect)rect
 {
-    UIImage *background = [UIImage imageNamed:@"navigation_bar_bg"];
     [background drawInRect:[self bounds]];
 }
 
@@ -57,14 +57,18 @@ static const CGFloat kTWBarTitleFontSize = 18;
 
 - (void) layoutSubviews
 {
-    [super layoutSubviews];
-    
+    [super layoutSubviews];    
+    [[self titleLabel] setFrame:[self calculateTitleFrame]];
+}
+
+- (CGRect)calculateTitleFrame
+{
     CGRect titleFrame = [[self titleLabel] frame];
     CGFloat originY = roundf(([self bounds].size.height - [[[self titleLabel] font] pointSize]) / 2);
-
+    
     titleFrame.origin = CGPointMake(100, originY - 2);
     titleFrame.size.width = 120;
-    [[self titleLabel] setFrame:titleFrame];
+    return titleFrame;
 }
 
 - (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPushItem:(UINavigationItem *)item

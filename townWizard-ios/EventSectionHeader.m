@@ -13,6 +13,8 @@ static const CGFloat kEventSectionHeaderTitleOffsetTop = 5;
 
 @interface EventSectionHeader ()
 @property (nonatomic, retain, readwrite) UILabel *title;
+
+- (CGRect)calculateTitleframe;
 @end
 
 @implementation EventSectionHeader
@@ -22,7 +24,8 @@ static const CGFloat kEventSectionHeaderTitleOffsetTop = 5;
 
 - (id)initWithFrame:(CGRect)frame
 {
-    if (self = [super initWithFrame:frame]) {
+    if (self = [super initWithFrame:frame])
+    {
         UIImage *patternImage = [UIImage imageNamed:@"event_header_bg"];
         UIColor *backgroundColor = [UIColor colorWithPatternImage:patternImage];
         [self setBackgroundColor:backgroundColor];
@@ -46,13 +49,18 @@ static const CGFloat kEventSectionHeaderTitleOffsetTop = 5;
 
 - (void) layoutSubviews
 {
-    [super layoutSubviews];
-    
+    [super layoutSubviews];    
+    [[self title] setFrame:[self calculateTitleframe]];
+}
+
+- (CGRect)calculateTitleframe
+{
     CGRect titleFrame = CGRectMake(kEventSectionHeaderTitleOffsetLeft,
                                    kEventSectionHeaderTitleOffsetTop,
                                    [self bounds].size.width - 2 * kEventSectionHeaderTitleOffsetLeft,
                                    [[[self title] font] pointSize]);
-    [[self title] setFrame:titleFrame];
+    return titleFrame;
+
 }
 
 @end

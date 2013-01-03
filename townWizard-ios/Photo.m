@@ -11,13 +11,4 @@
 @implementation Photo
 @synthesize name, thumb, picture;
 
-+ (RKObjectMapping *)objectMapping {
-    RKObjectMapping * partnersMapping = [RKObjectMapping mappingForClass:[Photo class]];
-    
-    [partnersMapping mapKeyPath:@"name" toAttribute:@"name"];
-    [partnersMapping mapKeyPath:@"thumb" toAttribute:@"thumb"];
-    [partnersMapping mapKeyPath:@"picture" toAttribute:@"picture"];
-    return partnersMapping;    
-}
-
 @end

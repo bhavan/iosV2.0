@@ -83,7 +83,7 @@ static NSString *const kSHKFacebookUserInfo =@"kSHKFacebookUserInfo";
 	if (![fileManager fileExistsAtPath:imagePath]) 
 		[fileManager createDirectoryAtPath:imagePath withIntermediateDirectories:YES attributes:nil error:nil];
 	
-  NSString *uid = [NSString stringWithFormat:@"img-%i-%i", [[NSDate date] timeIntervalSince1970], arc4random()];    
+  NSString *uid = [NSString stringWithFormat:@"img-%f-%i", [[NSDate date] timeIntervalSince1970], arc4random()];
   // store image in cache
   NSData *imageData = UIImagePNGRepresentation(image);
   imagePath = [imagePath stringByAppendingPathComponent:uid];
@@ -105,8 +105,9 @@ static NSString *const kSHKFacebookUserInfo =@"kSHKFacebookUserInfo";
 
 + (BOOL)handleOpenURL:(NSURL*)url 
 {
-  Facebook *fb = [SHKFacebook facebook];
-  return [fb handleOpenURL:url];
+ // Facebook *fb = [SHKFacebook facebook];
+    //[fb handleOpenURL:url];
+  return YES;
 }
 
 #pragma mark -

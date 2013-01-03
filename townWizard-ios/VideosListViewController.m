@@ -6,7 +6,7 @@
 //
 //
 
-#import "VideosViewController.h"
+#import "VideosListViewController.h"
 #import "TownWIzardNavigationBar.h"
 #import "ImageCell.h"
 #import "Video.h"
@@ -21,7 +21,7 @@
 
 #import <MediaPlayer/MediaPlayer.h>
 
-@interface VideosViewController ()
+@interface VideosListViewController ()
     <UITableViewDataSource,
     UITableViewDelegate,
     RKObjectLoaderDelegate>
@@ -30,7 +30,7 @@
 
 @end
 
-@implementation VideosViewController
+@implementation VideosListViewController
 
 #pragma mark -
 #pragma mark life cycle
@@ -52,6 +52,7 @@
 
 - (void)dealloc
 {
+    [self setSection:nil];
     [self setTableView:nil];
     [self setVideos:nil];
     [super dealloc];
