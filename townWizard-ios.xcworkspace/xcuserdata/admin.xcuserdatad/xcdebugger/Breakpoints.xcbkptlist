@@ -410,13 +410,13 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "townWizard-ios/SearchViewController.m"
-         timestampString = "378380197.719143"
+         filePath = "townWizard-ios/Facebook/FacebookCheckinViewController.m"
+         timestampString = "378892440.811411"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "352"
-         endingLineNumber = "352"
-         landmarkName = "-tableView:didSelectRowAtIndexPath:"
+         startingLineNumber = "121"
+         endingLineNumber = "121"
+         landmarkName = "-performCheckin"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

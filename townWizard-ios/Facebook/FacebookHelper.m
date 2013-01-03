@@ -25,7 +25,7 @@
 		//appId = [[[GenericAppAppDelegate sharedDelegate].appConfig configForKey:@"facebook_app_id"] retain];
         
         //appId for testing:
-        // self.appId=@"107352225952816";
+         self.appId = @"107352225952816";
         
 		self.facebook = [[[Facebook alloc] init] autorelease];
 		self.facebook.accessToken = [[NSUserDefaults standardUserDefaults] stringForKey:@"AccessToken"];

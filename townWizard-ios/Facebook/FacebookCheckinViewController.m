@@ -157,7 +157,6 @@
         [params setValue:tagsString forKey:@"tags"];
         [tagsString release];
     }
-
     [facebookHelper.facebook requestWithGraphPath:@"me/checkins" 
                                         andParams:params 
                                     andHttpMethod:@"POST"
@@ -207,6 +206,7 @@
         [self.friendsListView reloadData];
     }
     else if ([request.url hasSuffix:@"me/checkins"]) {
+        NSString *resultJson = [[NSString alloc] initWithData:request.responseText encoding:NSUTF8StringEncoding];
         [[[[UIAlertView alloc] initWithTitle:@"CHECK IN"
                                      message:@"You've successfully checked in"
                                     delegate:nil

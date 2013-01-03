@@ -84,7 +84,7 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
     [eventTime release];
     [pageControl release];
     [detailsView release];
-    
+    [self setRootView:nil];
     [self setEvents:nil];
     
     [super dealloc];

@@ -47,6 +47,7 @@ static NSString *twGAcode = @"@UA-31932515-1";
    
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];    
     _manager = [[CLLocationManager alloc] init];
+    [_manager startUpdatingLocation];
 #ifdef CONTAINER_APP
     [self startContainerApp];
 #else

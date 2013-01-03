@@ -217,7 +217,7 @@ static const NSTimeInterval kTimeoutInterval = 180.0;
   }
   
   return result;*/
-
+    return nil;
 }
 
 /*
