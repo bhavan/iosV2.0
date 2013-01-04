@@ -22,6 +22,14 @@
 #define ALL_EVENTS_TEXT @"ALL EVENTS"
 
 @interface EventsViewController () <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, PMCalendarControllerDelegate>
+{
+    NSDate *currentStart;
+    NSDate *currentEnd;
+}
+
+
+@property (nonatomic,retain)  NSDate *currentStart;
+@property (nonatomic,retain)  NSDate *currentEnd;
 @property (nonatomic,retain)  NSString *bannerUrlString;
 @property (nonatomic, retain) NSArray *events;
 @property (nonatomic, retain) NSArray *allEvents;
@@ -41,6 +49,9 @@
 static const NSInteger kEventsAlertTag = 700;
 
 @implementation EventsViewController
+
+@synthesize currentEnd;
+@synthesize currentStart;
 
 #pragma mark -
 #pragma mark life cycle
@@ -81,6 +92,8 @@ static const NSInteger kEventsAlertTag = 700;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.currentStart = nil;
+    self.currentEnd = nil;
     self.trackedViewName = @"Events screen";
     self.calendar = [[[PMCalendarController alloc] initWithThemeName:@"apple calendar"] autorelease];
     self.calendar.delegate = self;
@@ -140,11 +153,13 @@ static const NSInteger kEventsAlertTag = 700;
 
 - (void) loadTodayEvents
 {
+    self.currentStart = [NSDate date];
+    self.currentEnd = [NSDate date];
     [self loadEventsWithDatePeriod:[NSDate date] endDate:[NSDate date]];
 }
 
 - (void)loadEventsWithDatePeriod:(NSDate *)startDate endDate:(NSDate *)endDate
-{
+{    
     [[RequestHelper sharedInstance] loadEventsWithDatePeriod:startDate end:endDate  delegate:self];
 }
 
@@ -195,26 +210,52 @@ static const NSInteger kEventsAlertTag = 700;
     for (Event *event in self.events)
     {
         NSDate *startDate = [NSDate dateFromString:event.startTime dateFormat:@"yyyy-MM-dd HH:mm:ss"];
-        NSDate *endDate = [NSDate dateFromString:event.endTime dateFormat:@"yyyy-MM-dd HH:mm:ss"];        
+        NSDate *endDate = [NSDate dateFromString:event.endTime dateFormat:@"yyyy-MM-dd HH:mm:ss"];
         NSDate *dateRepresentingThisDay = [NSDate dateAtBeginningOfDayForDate:startDate];
         NSDate *dateRepresentingEndDay = [NSDate dateAtBeginningOfDayForDate:endDate];
         
         while ([dateRepresentingThisDay compare:dateRepresentingEndDay] != NSOrderedDescending)
-        {            
+        {
             NSMutableArray *eventsOnThisDay = [self.sections objectForKey:dateRepresentingThisDay];
-            if (eventsOnThisDay == nil)
+            if(self.currentStart == nil && self.currentEnd == nil)
+            {
+                self.currentStart = [NSDate date];
+                self.currentEnd = [NSDate date];
+            }
+            BOOL isDateInPeriod = [self isDate:dateRepresentingThisDay
+                             inPeriodWithStart:self.currentStart
+                                           end:self.currentEnd];
+            if (eventsOnThisDay == nil && isDateInPeriod)
             {
                 eventsOnThisDay = [NSMutableArray array];
                 [self.sections setObject:eventsOnThisDay forKey:dateRepresentingThisDay];
+            }            
+            if(eventsOnThisDay)
+            {
+                [eventsOnThisDay addObject:event];               
             }
-            [eventsOnThisDay addObject:event];
-            dateRepresentingThisDay = [dateRepresentingThisDay dateByAddingDays:1];
+             dateRepresentingThisDay = [dateRepresentingThisDay dateByAddingDays:1];
         }
-    }    
-       
+    }
+    
     NSArray *unsortedDays = [self.sections allKeys];
     self.sortedDays = [unsortedDays sortedArrayUsingSelector:@selector(compare:)];
     [eventsList reloadData];
+    
+}
+
+- (BOOL)isDate:(NSDate *)date inPeriodWithStart:(NSDate *)start end:(NSDate *)end
+{
+    NSDate *dayStart = [NSDate dateAtBeginningOfDayForDate:start];
+    NSDate *dayEnd = end;
+    NSDate *earlier = [dayStart earlierDate:date];
+    NSDate *later = [dayEnd laterDate:date];
+    
+    if(earlier == dayStart && later == dayEnd)
+    {
+        return YES;
+    }
+    return NO;
     
 }
 
@@ -256,6 +297,8 @@ static const NSInteger kEventsAlertTag = 700;
         NSString *newDatePeriod = [NSDate stringFromPeriod:calendarController.period.startDate
                                                        end:calendarController.period.endDate];
         [self.calendarButton setTitle:newDatePeriod forState:UIControlStateNormal];
+        self.currentStart = calendarController.period.startDate;
+        self.currentEnd = calendarController.period.endDate;
         [self loadEventsWithDatePeriod:self.calendar.period.startDate
                                endDate:self.calendar.period.endDate];
     }

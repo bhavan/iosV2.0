@@ -20,6 +20,7 @@
                    dateFormat:(NSString *) dateFormat
              localeIdentifier:(NSString *) localeIdentifier;
 + (NSDate *)dateAtBeginningOfDayForDate:(NSDate *)inputDate;
++ (NSDate *)dateAtEndingOfDayForDate:(NSDate *)inputDate;
 
 
 
