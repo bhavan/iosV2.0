@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EventsControllerView : UIView
+@interface EventsView : UIView
 {
     IBOutlet UIButton *calendarButton;
     IBOutlet UIButton *eventsTypeButton;

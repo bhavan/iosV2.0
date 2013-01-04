@@ -7,7 +7,7 @@
 //
 
 #import "EventsViewController.h"
-#import "EventsControllerView.h"
+#import "EventsView.h"
 #import "EventCell.h"
 #import "EventsViewer.h"
 #import "EventSectionHeader.h"
@@ -34,6 +34,7 @@
 - (void) loadTodayEvents;
 - (void)loadEventsWithDatePeriod:(NSDate *)startDate endDate:(NSDate *)endDate;
 - (void)filterEventsByCategoryAndDate;
+- (NSArray *)currentCategotyEvents;
 
 @end
 
@@ -53,15 +54,9 @@ static const NSInteger kEventsAlertTag = 700;
     return self;
 }
 
-- (void) viewWillAppear:(BOOL)animated
+
+- (void)dealloc
 {
-    [super viewWillAppear:animated];
-    
-}
-
-
-
-- (void)dealloc {
     [featuredEventsViewer release];
     [eventsList release];
     [_eventsTypeButton release];
@@ -70,7 +65,8 @@ static const NSInteger kEventsAlertTag = 700;
     [super dealloc];
 }
 
-- (void)viewDidUnload {
+- (void)viewDidUnload
+{
     [featuredEventsViewer release];
     featuredEventsViewer = nil;
     [eventsList release];
@@ -91,7 +87,7 @@ static const NSInteger kEventsAlertTag = 700;
     self.calendar.mondayFirstDayOfWeek = NO;
     currentCategory = -1;
     [self.eventsTypeButton setTitle:ALL_EVENTS_TEXT forState:UIControlStateNormal];
-    NSString *newDatePeriod = [self stringFromPeriod:[NSDate date]
+    NSString *newDatePeriod = [NSDate stringFromPeriod:[NSDate date]
                                                  end:[NSDate date]];
     [self.calendarButton setTitle:newDatePeriod forState:UIControlStateNormal];
     self.sectionDateFormatter = [[[NSDateFormatter alloc] init] autorelease];
@@ -107,8 +103,7 @@ static const NSInteger kEventsAlertTag = 700;
     [eventDetails loadWithEvent:event];
     [self.navigationController pushViewController:eventDetails animated:YES];
     [eventDetails updateBannerImage:_bannerImageView.image urlString:_bannerUrlString];
-    [eventDetails release];
-    
+    [eventDetails release];    
 }
 
 
@@ -118,11 +113,14 @@ static const NSInteger kEventsAlertTag = 700;
 - (void) loadFeaturedEvents
 {
     featuredEventsViewer.delegate = self;
-    [[RequestHelper sharedInstance] loadFeaturedEventUsingBlock:^(RKObjectLoader *loader) {
-        [loader setOnDidFailWithError:^(NSError *error){
+    [[RequestHelper sharedInstance] loadFeaturedEventUsingBlock:^(RKObjectLoader *loader)
+    {
+        [loader setOnDidFailWithError:^(NSError *error)
+        {
             [self featuredEventsLoadingFailed:error];
         }];
-        [loader setOnDidLoadObjects:^(NSArray *objects){
+        [loader setOnDidLoadObjects:^(NSArray *objects)
+        {
             [self featuredEventsLoaded:objects];
         }];
     }];
@@ -131,13 +129,12 @@ static const NSInteger kEventsAlertTag = 700;
 
 - (void) loadEventsCategories
 {
-    [[RequestHelper sharedInstance] loadEventsCategoriesUsingBlock:^(RKObjectLoader *loader) {
-        [loader setOnDidLoadObjects:^(NSArray *objects){
+    [[RequestHelper sharedInstance] loadEventsCategoriesUsingBlock:^(RKObjectLoader *loader)
+    {
+        [loader setOnDidLoadObjects:^(NSArray *objects)
+        {
             [self categoriesLoaded:objects];
-        }];
-        [loader setOnDidFailWithError:^(NSError *error){
-            // [self eventsLoadingFailed:error];
-        }];
+        }];        
     }];
 }
 
@@ -153,24 +150,19 @@ static const NSInteger kEventsAlertTag = 700;
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects
 {
-    if (objects) {
         [self eventsLoaded:objects];
-    }
 }
 
 - (void)objectLoader:(RKObjectLoader *)loader willMapData:(inout id *)mappableData
 {
-    NSMutableDictionary* data = [[*mappableData objectForKey: @"ad"] mutableCopy];
-    
+    NSMutableDictionary* data = [[*mappableData objectForKey: @"ad"] mutableCopy];    
     if(data && _bannerUrlString == nil)
     {
         _bannerUrlString = [[NSString alloc] initWithString:[data objectForKey:@"url"]];
         NSString *adImageUrl = [data objectForKey:@"banner"];
         [_bannerImageView setImageWithURL:[NSURL URLWithString:adImageUrl]];
-    }
-    
-    [data release];
-    
+    }    
+    [data release];    
 }
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error
@@ -178,39 +170,28 @@ static const NSInteger kEventsAlertTag = 700;
     
 }
 
-
 - (IBAction)bannerButtonPressed:(id)sender
 {
     [[AppActionsHelper sharedInstance] openUrl:_bannerUrlString
-                             fromNavController:self.navigationController];
-    
-    
+                             fromNavController:self.navigationController];    
 }
 
-- (IBAction)categoriesButtonPressed:(id)sender {
-    // if(_categotiesList.count > 0)
-    // {
-    InputBar *actionSheet = [[InputBar alloc] initWithTitle:@"\n\n\n\n\n\n\n\n\n\n\n\n" delegate:self cancelButtonTitle:@"OK" destructiveButtonTitle:nil otherButtonTitles: nil];
+- (IBAction)categoriesButtonPressed:(id)sender
+{
+    InputBar *actionSheet = [[InputBar alloc] initWithTitle:@"\n\n\n\n\n\n\n\n\n\n\n\n"
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                     destructiveButtonTitle:nil
+                                          otherButtonTitles:nil];
     [actionSheet initWithDelegate:self andPickerValue:currentCategory+1];
     [actionSheet showInView:[self.view window]];
-    //  }
 }
 
 - (void)filterEventsByCategoryAndDate
 {
-    if(currentCategory == -1)
-    {
-        self.events = self.allEvents;
-    }
-    else
-    {
-        EventCategory *category = [self.categotiesList objectAtIndex:currentCategory];
-        NSPredicate *pred = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"(categoryName == '%@')", category.title]];
-        
-        self.events = [self.allEvents filteredArrayUsingPredicate:pred];
-    }
-    
+    self.events = [self currentCategotyEvents];
     self.sections = [NSMutableDictionary dictionary];
+    NSMutableArray *sectionsDates = [NSMutableArray array];
     for (Event *event in self.events)
     {
         NSDate *startDate = [NSDate dateFromString:event.startTime dateFormat:@"yyyy-MM-dd HH:mm:ss"]; 
@@ -225,13 +206,29 @@ static const NSInteger kEventsAlertTag = 700;
             eventsOnThisDay = [NSMutableArray array];
             [self.sections setObject:eventsOnThisDay forKey:dateRepresentingThisDay];
         }
-        [eventsOnThisDay addObject:event];
+        //[eventsOnThisDay addObject:event];
     }
     
     NSArray *unsortedDays = [self.sections allKeys];
     self.sortedDays = [unsortedDays sortedArrayUsingSelector:@selector(compare:)];
     [eventsList reloadData];
     
+}
+
+- (NSArray *)currentCategotyEvents
+{
+    NSArray *result;
+    if(currentCategory == -1)
+    {
+        result = self.allEvents;
+    }
+    else
+    {
+        EventCategory *category = [self.categotiesList objectAtIndex:currentCategory];
+        NSPredicate *pred = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"(categoryName == '%@')", category.title]];
+        result = [self.allEvents filteredArrayUsingPredicate:pred];
+    }
+    return result;
 }
 
 - (IBAction)dateSelectButtonPressed:(id)sender
@@ -253,28 +250,13 @@ static const NSInteger kEventsAlertTag = 700;
 {
     if(!calendarController.isCalendarCanceled)
     {
-        NSString *newDatePeriod = [self stringFromPeriod:calendarController.period.startDate
+        NSString *newDatePeriod = [NSDate stringFromPeriod:calendarController.period.startDate
                                                      end:calendarController.period.endDate];
         [self.calendarButton setTitle:newDatePeriod forState:UIControlStateNormal];
         [self loadEventsWithDatePeriod:self.calendar.period.startDate
                                endDate:self.calendar.period.endDate];
     }
     return YES;
-}
-
-- (NSString *)stringFromPeriod:(NSDate *)start end:(NSDate *)end
-{
-    if([[start dateStringWithFormat:@"LLL dd"] isEqualToString:[[NSDate date] dateStringWithFormat:@"LLL dd"]] && [[end dateStringWithFormat:@"LLL dd"] isEqualToString:[[NSDate date] dateStringWithFormat:@"LLL dd"]])
-    {
-        return @"TODAY";
-    }
-    else
-    {
-        NSString *newDatePeriod = [NSString stringWithFormat:@"%@ - %@"
-                                   , [start dateStringWithFormat:@"LLL dd"]
-                                   , [end dateStringWithFormat:@"LLL dd"]];
-        return newDatePeriod;
-    }
 }
 
 #pragma mark -
@@ -290,10 +272,7 @@ static const NSInteger kEventsAlertTag = 700;
     }
     [self.eventsTypeButton setTitle:title forState:UIControlStateNormal];
     [self filterEventsByCategoryAndDate];
-    
 }
-
-
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
@@ -373,7 +352,8 @@ static const NSInteger kEventsAlertTag = 700;
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if ([alertView tag] == kEventsAlertTag) {
+    if ([alertView tag] == kEventsAlertTag)
+    {
         [self loadTodayEvents];
     }
 }
@@ -421,7 +401,8 @@ static const NSInteger kEventsAlertTag = 700;
 {
     static NSString *identifier = @"EventCell";
     EventCell *cell = (EventCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
-    if (cell == nil) {
+    if (cell == nil)
+    {
         cell = [EventCell loadFromXib];
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
@@ -452,7 +433,6 @@ static const NSInteger kEventsAlertTag = 700;
     [[header title] setText:[title uppercaseString]];
     return [header autorelease];
 }
-
 
 
 @end

@@ -130,7 +130,8 @@
     [browser setDisplayActionButton:NO];
     [browser setInitialPageIndex:index];
 
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:browser];
+    UINavigationController *navController = [[UINavigationController alloc]
+                                             initWithRootViewController:browser];
     [self presentModalViewController:navController animated:YES];
     [navController release];
 }

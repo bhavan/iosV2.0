@@ -58,8 +58,7 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    
+    [super viewDidLoad];    
     TWBackgroundView *backgroundView = [[TWBackgroundView alloc] initWithFrame:self.view.frame];
     [self.view insertSubview:backgroundView atIndex:0];
     [backgroundView release];
@@ -70,8 +69,6 @@
     }
 }
 
-
-
 - (void)loadWithEvent:(Event *)event
 {
     _event = event;
@@ -81,15 +78,13 @@
 - (void)updateBannerImage:(UIImage *)bannerImage urlString:(NSString *)urlString
 {
     [_bannerImageView setImage:bannerImage];
-    _bannerImageUrl = urlString;
-    
+    _bannerImageUrl = urlString;    
 }
 
 - (IBAction)bannerButtonPressed:(id)sender
 {
     [[AppActionsHelper sharedInstance] openUrl:_bannerImageUrl
                              fromNavController:self.navigationController];
-
 }
 
 - (IBAction)callButtonPressed:(id)sender
@@ -105,8 +100,7 @@
                             fromNavController:self.navigationController];
     }
     else
-    {
-        
+    {        
         UIAlertView *alert = [[UIAlertView alloc]
                               initWithTitle:@"No website"
                               message:nil
@@ -192,7 +186,8 @@
 {
     if (![[AppDelegate sharedDelegate].facebookHelper.appId isEqual:@""])
     {               
-        FacebookPlacesViewController * fpvc = [[FacebookPlacesViewController alloc] initWithLatitude:[_event.location.latitude doubleValue] andLongitude:[_event.location.longitude doubleValue]];
+        FacebookPlacesViewController *fpvc = [[FacebookPlacesViewController alloc]
+                                               initWithLatitude:[_event.location.latitude doubleValue] andLongitude:[_event.location.longitude doubleValue]];
       
        
         [self.navigationController pushViewController:fpvc animated:YES];
@@ -222,7 +217,6 @@
     return result;
 }
 
-
 #pragma mark -
 #pragma mark UIWebViewDelegate Methods
 - (void)webViewDidFinishLoad:(UIWebView *)webView
@@ -232,8 +226,7 @@
     CGRect bottomRect = _contentBottomView.frame;
     bottomRect.origin.y = webView.scrollView.contentSize.height;
     _contentBottomView.frame = bottomRect;
-    isdescriptionLoaded = YES;
-    
+    isdescriptionLoaded = YES;    
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType

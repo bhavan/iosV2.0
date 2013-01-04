@@ -10,6 +10,7 @@
 
 @interface NSDate (Formatting)
 
++ (NSString *)stringFromPeriod:(NSDate *)start end:(NSDate *)end;
 + (NSDate *) dateFromString:(NSString *) dateString dateFormat:(NSString *) dateFormat;
 + (NSDate *) dateFromUTCString:(NSString *) dateString dateFormat:(NSString *) dateFormat;
 
@@ -19,5 +20,7 @@
                    dateFormat:(NSString *) dateFormat
              localeIdentifier:(NSString *) localeIdentifier;
 + (NSDate *)dateAtBeginningOfDayForDate:(NSDate *)inputDate;
+
+
 
 @end

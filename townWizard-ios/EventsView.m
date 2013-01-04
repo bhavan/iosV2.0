@@ -6,9 +6,9 @@
 //
 //
 
-#import "EventsControllerView.h"
+#import "EventsView.h"
 
-@implementation EventsControllerView
+@implementation EventsView
 
 - (void) awakeFromNib
 {

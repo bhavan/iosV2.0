@@ -14,23 +14,18 @@
 
 @interface EventsViewController : GAITrackedViewController <UIPickerViewDelegate, UIPickerViewDataSource, UIActionSheetDelegate,
     EventViewerDelegate, RKObjectLoaderDelegate>
-{
-    
+{    
     IBOutlet EventsViewer *featuredEventsViewer;
     IBOutlet UITableView *eventsList;
-    
-        
-
     NSInteger currentCategory;
 }
 @property (retain, nonatomic) IBOutlet UIImageView *bannerImageView;
-
 @property (retain, nonatomic) IBOutlet UIButton *calendarButton;
 @property (nonatomic, retain) NSArray *categotiesList;
 @property (retain, nonatomic) IBOutlet UIButton *eventsTypeButton;
-- (IBAction)bannerButtonPressed:(id)sender;
 
+- (IBAction)bannerButtonPressed:(id)sender;
 - (IBAction)categoriesButtonPressed:(id)sender;
 - (IBAction)dateSelectButtonPressed:(id)sender;
-- (NSString *)stringFromPeriod:(NSDate *)start end:(NSDate *)end;
+
 @end

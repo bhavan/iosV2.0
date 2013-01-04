@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "townWizard-ios/EventsViewController.m"
-         timestampString = "378898662.091712"
+         timestampString = "378983263.942096"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "232"
-         endingLineNumber = "232"
+         startingLineNumber = "208"
+         endingLineNumber = "208"
          landmarkName = "-filterEventsByCategoryAndDate"
          landmarkType = "5">
       </FileBreakpoint>
@@ -99,11 +99,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "townWizard-ios/EventDetailsViewController.m"
-         timestampString = "377190136.214856"
+         timestampString = "378983263.942096"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "159"
-         endingLineNumber = "159"
+         startingLineNumber = "153"
+         endingLineNumber = "153"
          landmarkName = "-saveButtonPressed:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -112,11 +112,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "townWizard-ios/NSDate+Formatting.m"
-         timestampString = "377013872.633512"
+         timestampString = "378982130.444836"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "15"
-         endingLineNumber = "15"
+         startingLineNumber = "31"
+         endingLineNumber = "31"
          landmarkName = "+dateFromString:dateFormat:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -125,11 +125,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "townWizard-ios/EventDetailsViewController.m"
-         timestampString = "377190136.214856"
+         timestampString = "378983263.942096"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "157"
-         endingLineNumber = "157"
+         startingLineNumber = "151"
+         endingLineNumber = "151"
          landmarkName = "-saveButtonPressed:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -242,11 +242,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "townWizard-ios/EventDetailsViewController.m"
-         timestampString = "377190182.228008"
+         timestampString = "378983263.942096"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "84"
-         endingLineNumber = "84"
+         startingLineNumber = "81"
+         endingLineNumber = "81"
          landmarkName = "-updateBannerImage:urlString:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -255,11 +255,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "townWizard-ios/EventDetailsViewController.m"
-         timestampString = "377190331.529326"
+         timestampString = "378983263.942096"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "85"
-         endingLineNumber = "85"
+         startingLineNumber = "81"
+         endingLineNumber = "81"
          landmarkName = "-updateBannerImage:urlString:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -411,11 +411,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "townWizard-ios/EventsViewController.m"
-         timestampString = "378898662.091712"
+         timestampString = "378983263.942096"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "219"
-         endingLineNumber = "219"
+         startingLineNumber = "195"
+         endingLineNumber = "195"
          landmarkName = "-filterEventsByCategoryAndDate"
          landmarkType = "5">
       </FileBreakpoint>

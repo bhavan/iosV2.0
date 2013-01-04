@@ -58,7 +58,8 @@
     [super dealloc];
 }
 
-- (void)viewDidUnload {
+- (void)viewDidUnload
+{
     [self setTableView:nil];
     [super viewDidUnload];
 }
@@ -93,7 +94,8 @@
     return [[self videos] count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)aTableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"videosCell";
     ImageCell *cell = [aTableView dequeueReusableCellWithIdentifier:cellIdentifier];
@@ -110,7 +112,8 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)aTableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [aTableView deselectRowAtIndexPath:indexPath animated:NO];
 

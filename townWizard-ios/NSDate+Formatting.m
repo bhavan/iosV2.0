@@ -7,9 +7,25 @@
 //
 
 #import "NSDate+Formatting.h"
+#import "NSDate+Helpers.h"
 #import "NSDateFormatter+Extensions.h"
 
 @implementation NSDate (Formatting)
+
++ (NSString *)stringFromPeriod:(NSDate *)start end:(NSDate *)end
+{
+    if([[start dateStringWithFormat:@"LLL dd"] isEqualToString:[[NSDate date] dateStringWithFormat:@"LLL dd"]] && [[end dateStringWithFormat:@"LLL dd"] isEqualToString:[[NSDate date] dateStringWithFormat:@"LLL dd"]])
+    {
+        return @"TODAY";
+    }
+    else
+    {
+        NSString *newDatePeriod = [NSString stringWithFormat:@"%@ - %@"
+                                   , [start dateStringWithFormat:@"LLL dd"]
+                                   , [end dateStringWithFormat:@"LLL dd"]];
+        return newDatePeriod;
+    }
+};
 
 + (NSDate *) dateFromString:(NSString *) dateString dateFormat:(NSString *) dateFormat {
     NSDateFormatter *formatter = [NSDateFormatter dateFormatterWithDateFormat:dateFormat];
