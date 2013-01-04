@@ -7,7 +7,7 @@
 //
 
 #import "SearchViewController.h"
-#import "RequestHelper.h"
+#import "AppActionsHelper.h"
 #import "Reachability.h"
 #import "SubMenuViewController.h"
 #import "TownWizardNavigationBar.h"
@@ -18,67 +18,40 @@
 #import "UIImageView+WebCache.h"
 #import "MasterDetailController.h"
 #import "PartnerCell.h"
-
 #import "PartnerViewController.h"
+#import "UISearchBar+Customize.h"
+#import "UITableViewCell+Spinner.h"
+#import "UIButton+Extensions.h"
 
 @interface SearchViewController()
-@property (nonatomic,assign) BOOL doNotUseGeopositionSearchResults;
-
-- (void)customizeSearchBar:(UISearchBar *)customSearchBar;
+- (void) searchForPartnersWithQuery:(NSString *)query offset:(NSInteger)offset;
+- (void) loadNearbyPartners;
+- (void) partnersLoaded:(NSArray *)partners;
 @end
 
 @implementation SearchViewController
-
-@synthesize doNotUseGeopositionSearchResults;
-
-
--(NSString *)currentSearchQuery {
-    if (!_currentSearchQuery)
-        _currentSearchQuery = @"";
-    return _currentSearchQuery;
-}
-
-#pragma mark -
-#pragma mark NSUserDefaults saving
-
-#define LOGO_PORTRAIT_WIDTH 320
-#define LOGO_PORTRAIT_HEIGHT 110
-#define NAVIGATION_BAR_HEIGHT 60
-
-#pragma mark - Info
-
-#define INFO_URL @"http://www.townwizard.com/app-info"
-
--(void)infoButtonPressed:(id)sender
-{
-    if(defaultPartner)
-    {
-        [self.masterDetail toggleMasterView];
-    }
-}
 
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];  
+    [super viewDidLoad];
     self.searchBar.accessibilityLabel = @"Search";
-    [self customizeSearchBar:self.searchBar];
+    [self.searchBar customizeSearchBar];
     selectedPartnerSections = nil;
-       [self.tableView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"searchBg"]]];
+    [self.tableView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"searchBg"]]];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     self.tableView.separatorColor = [UIColor colorWithRed:186.0f/255.0f green:186.0f/255.0f blue:186.0f/255.0f alpha:0.7f];
     self.partnersList = [NSMutableArray array];
-    doNotUseGeopositionSearchResults = NO;
     loadingMorePartnersInProgress = NO;
     [self searchForPartnersWithQuery:nil];
- 
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-      self.navigationController.navigationBarHidden = YES;
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -86,24 +59,6 @@
 	[super viewWillDisappear:animated];
     [[UIApplication sharedApplication] hideNetworkActivityIndicator];
     self.navigationItem.hidesBackButton = YES;
-}
-
-- (void)customizeSearchBar:(UISearchBar *)customSearchBar
-{
-    for (UIView *subview in customSearchBar.subviews) {
-        if ([subview isKindOfClass:NSClassFromString(@"UISearchBarBackground")]) {
-            [subview removeFromSuperview];
-        }
-        else if([subview isKindOfClass:[UITextField class]])
-        {
-            UITextField *tf = (UITextField *)subview;
-            [tf setBackgroundColor:[UIColor clearColor]];
-            [tf setBackground: [UIImage imageNamed:@"searchBar"] ];
-            [tf setBorderStyle:UITextBorderStyleNone];
-            [tf setTextColor:[UIColor colorWithRed:203.0f/255.0f green:0 blue:0 alpha:1.0f]];
-            [tf setFont:[UIFont boldSystemFontOfSize:16.0f]];
-        }
-    }   
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -114,90 +69,43 @@
 - (void) menuSectionTapped:(Section *) section
 {
     [[RequestHelper sharedInstance] setCurrentSection:section];
-    SubMenuViewController *subMenu = [SubMenuViewController new];    
+    SubMenuViewController *subMenu = [SubMenuViewController new];
     subMenu.partner = defaultPartner;
     [self.navigationController popToRootViewControllerAnimated:NO];
     [self.navigationController pushViewController:subMenu animated:YES];
-    subMenu.navigationItem.leftBarButtonItem = [self menuButton];
+    UIBarButtonItem *menuButton = [[AppActionsHelper sharedInstance]
+                                   menuButtonWithTarget:self.masterDetail
+                                   action:@selector(toggleMasterView)];
+    subMenu.navigationItem.leftBarButtonItem = menuButton;
     [(TownWizardNavigationBar *)[self.navigationController navigationBar] updateTitleText:[section name]];
     [self.masterDetail toggleMasterView];
-    [subMenu release];
-    
+    [subMenu release];    
 }
+
+-(void)infoButtonPressed:(id)sender
+{
+    if(defaultPartner)
+    {
+        [self.masterDetail toggleMasterView];
+    }
+}
+
 - (void) changePartnerButtonTapped
 {
     [self.masterDetail toggleMasterView];
     [self.navigationController popToRootViewControllerAnimated:NO];
 }
 
-- (UIBarButtonItem *) menuButton // refactoring!
-{
-    UIImage *menuButtonImage = [UIImage imageNamed:@"menu_button"];
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setImage:menuButtonImage forState:UIControlStateNormal];
-    [button addTarget:self.masterDetail action:@selector(toggleMasterView) forControlEvents:UIControlEventTouchUpInside];
-    [button setFrame:CGRectMake(0, 0, menuButtonImage.size.width, menuButtonImage.size.height)];
-    return [[[UIBarButtonItem alloc] initWithCustomView:button] autorelease];
-}
-
-#pragma mark -
-#pragma mark Spinner methods
-
-#define SPINNER_SIZE 25
-
 - (void)removeSpinnerFromCellAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell * cellWithSpinner = [self.tableView cellForRowAtIndexPath:indexPath];
-    for (UIView * view in cellWithSpinner.contentView.subviews)
-    {
-        if ([view isKindOfClass:[UIActivityIndicatorView class]])
-            [view removeFromSuperview];
-    }
+    [cellWithSpinner removeSpinnerFromCell];
 }
-
-- (void)addSpinnerToCell:(UITableViewCell *)cell
-{
-    UIActivityIndicatorView * spinner = [[UIActivityIndicatorView alloc]
-                                         initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    CGSize cellSize = cell.frame.size;
-    spinner.frame = CGRectMake(cellSize.width/2-SPINNER_SIZE/2, cellSize.height/2 - SPINNER_SIZE/2,
-                               SPINNER_SIZE, SPINNER_SIZE);
-    
-    cell.textLabel.text = nil;
-    [cell.contentView  addSubview:spinner];
-    [spinner startAnimating];
-    [spinner release];
-}
-
 //do not use this method in tableView cellAtIndexPath method, cause cellForRowAtIndexPath return nil there
 - (void)addSpinnerToCellAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell * cell = [self.tableView cellForRowAtIndexPath:indexPath];
-    [self addSpinnerToCell:cell];
-}
-
-
-- (void)addSpinnerToButton:(UIButton *)button
-{
-    UIActivityIndicatorView * spinner = [[UIActivityIndicatorView alloc]
-                                         initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    CGSize buttonSize = button.frame.size;
-    spinner.frame = CGRectMake(buttonSize.width/2-SPINNER_SIZE/2, buttonSize.height/2 - SPINNER_SIZE/2,
-                               SPINNER_SIZE, SPINNER_SIZE);
-    [button addSubview:spinner];
-    [spinner startAnimating];
-    [spinner release];
-}
-
-- (void)removeSpinnerFromButton:(UIButton *)button
-{
-    for (UIView * view in button.subviews)
-    {
-        if([view isKindOfClass:[UIActivityIndicatorView class]])
-        {
-            [view removeFromSuperview];
-        }
-    }
+    [cell addSpinnerToCell];
 }
 
 #pragma mark -
@@ -219,28 +127,15 @@
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects
 {
-    if (objects) {
+    if (objects)
+    {
         [self partnersLoaded:objects];
-    }    
+    }
 }
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error
 {
     NSLog(@"%@",error.description);
-}
-
-#pragma mark -
-#pragma mark PartnerMethods
-
-- (BOOL)townWizardServerReachable
-{
-    Reachability *r = [Reachability reachabilityWithHostName:@"townwizard.com"];
-    NetworkStatus internetStatus = [r currentReachabilityStatus];
-    if(internetStatus == NotReachable)
-    {
-        return NO;
-    }
-    return YES;
 }
 
 - (void) searchForPartnersWithQuery:(NSString *)query
@@ -251,7 +146,7 @@
 - (void) searchForPartnersWithQuery:(NSString *)query offset:(NSInteger)offset
 {
     query = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    [[UIApplication sharedApplication] showNetworkActivityIndicator];    
+    [[UIApplication sharedApplication] showNetworkActivityIndicator];
     [RequestHelper partnersWithQuery:query offset:offset andDelegate:self];
     loadingMorePartnersInProgress = NO;
     if ([_partnersList count])
@@ -262,31 +157,31 @@
 
 - (void)partnersLoaded:(NSArray *)partners
 {
-    if ([partners count] == 0) {
-        UIAlertView *alert = [[[UIAlertView alloc]
-                               initWithTitle:@"Whoops!"
-                               message:@"Sorry, but it looks like we dont have a TownWizard in your area yet!"
-                               delegate:self
-                               cancelButtonTitle:@"OK"
-                               otherButtonTitles:nil] autorelease];
-        [alert show];
+    if ([partners count] == 0)
+    {
+        [UIAlertView showWithTitle:@"Whoops!"
+                           message:@"Sorry, but it looks like we dont have a TownWizard in your area yet!"
+                          delegate:self
+                 cancelButtonTitle:@"OK"
+                confirmButtonTitle:nil];       
         
     }
     else if([[partners lastObject] isKindOfClass:[Partner class]])
     {
         Partner *partner = [partners lastObject];
         if(partner && [partner.name isEqualToString:DEFAULT_PARTNER_NAME])
-        {            
+        {
             defaultPartner = [partner retain];
             [self.defaultMenu updateWithPartner:defaultPartner];
-           // [self loadNearbyPartners];
+            // [self loadNearbyPartners];
         }
         else if(partners.count > 0 && loadingMorePartnersInProgress)
         {
             [_partnersList addObjectsFromArray:partners];
             loadingMorePartnersInProgress = NO;
         }
-        else{
+        else
+        {
             _partnersList = [[NSMutableArray alloc]initWithArray:partners];
             if (defaultPartner == nil)
             {
@@ -296,18 +191,13 @@
     }
     [self.tableView reloadData];
     [self.goButton setEnabled:YES];
-    [self removeSpinnerFromButton:self.goButton];   
+    [self.goButton removeSpinner];
 }
 
 - (void)loadNearbyPartners
 {
-    if (!doNotUseGeopositionSearchResults)
-    {
-        doNotUseGeopositionSearchResults = YES;
-        [self searchForPartnersWithQuery:nil];
-    }
+    [self searchForPartnersWithQuery:nil];    
 }
-
 
 - (void)loadSectionMenuForPartnerWithPartner:(Partner *)aPartner
 {
@@ -322,7 +212,7 @@
 {
     [aManager stopUpdatingLocation];
     [self loadNearbyPartners];
-   
+    
 }
 
 #pragma mark - TableView delegate mathods
@@ -348,7 +238,6 @@
     if (indexPath.section == 0)
     {
         Partner *partner = [_partnersList objectAtIndex:indexPath.row];
-        
         [self.searchBar resignFirstResponder];
         
         if ([partner.iTunesAppId isEqual:@""])
@@ -377,7 +266,7 @@
     {
         [self addSpinnerToCellAtIndexPath:indexPath];
         loadingMorePartnersInProgress = YES;
-        [self searchForPartnersWithQuery:self.currentSearchQuery offset:nextOffset];
+        [self searchForPartnersWithQuery:currentSearchQuery offset:nextOffset];
     }
     [aTableView deselectRowAtIndexPath:indexPath animated:YES];
     [self.searchBar resignFirstResponder];
@@ -387,40 +276,42 @@
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    //static NSString * CellMoreIdentifier = @"Cell more";
-    UITableViewCell * cell;
-    
-    if (indexPath.section) { // Load more cell
-        cell = [aTableView dequeueReusableCellWithIdentifier:nil];//CellMoreIdentifier];
-        if(cell == nil) {
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                           reuseIdentifier:nil]//CellMoreIdentifier]
-                    autorelease];
+    UITableViewCell * cell;    
+    if (indexPath.section == 0)
+    {
+        cell = [aTableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if(cell == nil)
+        {
+            cell = [[[PartnerCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                       reuseIdentifier:CellIdentifier] autorelease];
         }
+        Partner *partner = [_partnersList objectAtIndex:indexPath.row];
+        cell.textLabel.text = partner.name;
+        cell.textLabel.textColor = [UIColor darkGrayColor];
+    }
+    else if (indexPath.section == 1)
+    {
+        cell = [aTableView dequeueReusableCellWithIdentifier:nil];
+        if(cell == nil)
+        {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                           reuseIdentifier:nil] autorelease];
+        }
+        
         if (loadingMorePartnersInProgress)
         {
             cell.textLabel.text = @"";
-            [self addSpinnerToCell:cell];
+            [cell addSpinnerToCell];
         }
-        else {
+        else
+        {
             [self removeSpinnerFromCellAtIndexPath:indexPath];
             cell.textLabel.text = @"Load more";
             cell.textLabel.textAlignment = UITextAlignmentCenter;
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
-    }
-    else { //Partner cell
-        cell = [aTableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        if(cell == nil) {
-            cell = [[[PartnerCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                           reuseIdentifier:CellIdentifier]
-                    autorelease];
-        }
-        Partner *partner = [_partnersList objectAtIndex:indexPath.row];
-        cell.textLabel.text = partner.name;
-        cell.textLabel.textColor = [UIColor darkGrayColor];
     }    
-       return  cell;
+    return  cell;
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
@@ -434,13 +325,18 @@
 }
 #pragma mark - UIsearchBar delegate mathods
 
+- (IBAction)goButtonPressed:(id)sender
+{
+    [self searchBarSearchButtonClicked:self.searchBar];
+}
+
 - (void)searchBarSearchButtonClicked:(UISearchBar *)aSearchBar
-{    
+{
     [aSearchBar resignFirstResponder];
-    if([self townWizardServerReachable])
+    if([[AppActionsHelper sharedInstance] townWizardServerReachable])
     {
         [self.goButton setEnabled:NO];
-        [self addSpinnerToButton:self.goButton];
+        [self.goButton addSpinner];
         [self.goButton setTitle:@"" forState:UIControlStateNormal];
         [self removeSpinnerFromCellAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
         if([_partnersList count] > 0)
@@ -448,19 +344,16 @@
             [_partnersList removeAllObjects];
             [self.tableView reloadData];
         }
-        doNotUseGeopositionSearchResults = YES;
-        if ([aSearchBar.text isEqual:@""])
+        NSString *query = aSearchBar.text;
+        if ([query isEqual:@""])
         {
-            [self searchForPartnersWithQuery:nil];
-        }
-        else {
-            [self searchForPartnersWithQuery:aSearchBar.text];
-        }
-        
-        self.currentSearchQuery = aSearchBar.text;
+            query = nil;
+        }      
+        [self searchForPartnersWithQuery:query];
+        currentSearchQuery = aSearchBar.text;
     }
-    else { //No connection
-        [TestFlight passCheckpoint:@"No connection available while loading partners"];
+    else
+    {
         UIAlertView *alertView = [[UIAlertView alloc]
                                   initWithTitle:NSLocalizedString(@"No connection available!", @"AlertView")
                                   message:NSLocalizedString(@"Please connect to cellular network or Wi-Fi", @"AlertView")
@@ -480,41 +373,22 @@
     }
 }
 
-
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
-{
-    doNotUseGeopositionSearchResults = YES;
-}
-
-- (IBAction)goButtonPressed:(id)sender
-{
-    [self searchBarSearchButtonClicked:self.searchBar];
-}
-
-#pragma mark -releaseOutlets
-#pragma  mark cleaning
-
-- (void)releaseOutlets
-{
-    [self setTableView:nil];
-    [self setSearchBar:nil];   
-    [_partnersList release];
-    self.currentSearchQuery = nil;
-    
-    [[UIApplication sharedApplication] setActivityindicatorToZero];
-}
-
 - (void)viewDidUnload
 {
-    [self releaseOutlets];
+    [self setTableView:nil];
+    [self setSearchBar:nil];
+    [_partnersList release];
+    [[UIApplication sharedApplication] setActivityindicatorToZero];
     [super viewDidUnload];
 }
 
 - (void)dealloc
 {
-    [self releaseOutlets];
+    [self setTableView:nil];
+    [self setSearchBar:nil];
+    [_partnersList release];
+    [[UIApplication sharedApplication] setActivityindicatorToZero];
     [super dealloc];
 }
-
 
 @end

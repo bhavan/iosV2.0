@@ -683,6 +683,21 @@
 		84E51F901696BD8900229A58 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E51F8F1696BD8900229A58 /* Default.png */; };
 		84E51F921696BD9000229A58 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E51F911696BD9000229A58 /* Default@2x.png */; };
 		84E51F941696BD9600229A58 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E51F931696BD9600229A58 /* Default-568h@2x.png */; };
+		84E51FED16970EC100229A58 /* UISearchBar+Customize.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E51FEC16970EC100229A58 /* UISearchBar+Customize.m */; };
+		84E51FEE16970EC100229A58 /* UISearchBar+Customize.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E51FEC16970EC100229A58 /* UISearchBar+Customize.m */; };
+		84E51FEF16970EC100229A58 /* UISearchBar+Customize.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E51FEC16970EC100229A58 /* UISearchBar+Customize.m */; };
+		84E51FF016970EC100229A58 /* UISearchBar+Customize.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E51FEC16970EC100229A58 /* UISearchBar+Customize.m */; };
+		84E51FF116970EC100229A58 /* UISearchBar+Customize.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E51FEC16970EC100229A58 /* UISearchBar+Customize.m */; };
+		84E51FF416970FFA00229A58 /* UITableViewCell+Spinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E51FF316970FFA00229A58 /* UITableViewCell+Spinner.m */; };
+		84E51FF516970FFA00229A58 /* UITableViewCell+Spinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E51FF316970FFA00229A58 /* UITableViewCell+Spinner.m */; };
+		84E51FF616970FFA00229A58 /* UITableViewCell+Spinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E51FF316970FFA00229A58 /* UITableViewCell+Spinner.m */; };
+		84E51FF716970FFA00229A58 /* UITableViewCell+Spinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E51FF316970FFA00229A58 /* UITableViewCell+Spinner.m */; };
+		84E51FF816970FFA00229A58 /* UITableViewCell+Spinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E51FF316970FFA00229A58 /* UITableViewCell+Spinner.m */; };
+		84E51FFB1697185B00229A58 /* UIButton+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E51FFA1697185A00229A58 /* UIButton+Extensions.m */; };
+		84E51FFC1697185B00229A58 /* UIButton+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E51FFA1697185A00229A58 /* UIButton+Extensions.m */; };
+		84E51FFD1697185B00229A58 /* UIButton+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E51FFA1697185A00229A58 /* UIButton+Extensions.m */; };
+		84E51FFE1697185B00229A58 /* UIButton+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E51FFA1697185A00229A58 /* UIButton+Extensions.m */; };
+		84E51FFF1697185B00229A58 /* UIButton+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E51FFA1697185A00229A58 /* UIButton+Extensions.m */; };
 		84EDCF0516144BD500838807 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 84EDCF0416144BD500838807 /* libz.dylib */; };
 		84EDCF0616144C1900838807 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 84EDCF0416144BD500838807 /* libz.dylib */; };
 		84EDCF0716144C2F00838807 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 84EDCF0416144BD500838807 /* libz.dylib */; };
@@ -1251,6 +1266,12 @@
 		84E51F8F1696BD8900229A58 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		84E51F911696BD9000229A58 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		84E51F931696BD9600229A58 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		84E51FEB16970EC100229A58 /* UISearchBar+Customize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+Customize.h"; sourceTree = "<group>"; };
+		84E51FEC16970EC100229A58 /* UISearchBar+Customize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+Customize.m"; sourceTree = "<group>"; };
+		84E51FF216970FFA00229A58 /* UITableViewCell+Spinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Spinner.h"; sourceTree = "<group>"; };
+		84E51FF316970FFA00229A58 /* UITableViewCell+Spinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Spinner.m"; sourceTree = "<group>"; };
+		84E51FF91697185900229A58 /* UIButton+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extensions.h"; sourceTree = "<group>"; };
+		84E51FFA1697185A00229A58 /* UIButton+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extensions.m"; sourceTree = "<group>"; };
 		84EDCF0416144BD500838807 /* libz.dylib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		84F63B11166CAABC0068CFB6 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		84F6C776167B5AE60069068C /* infoButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = infoButton.png; sourceTree = "<group>"; };
@@ -2087,17 +2108,16 @@
 		848854A714D141E30030BD03 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				840E4583166E3526007CCF51 /* Video */,
-				840E4581166E3509007CCF51 /* Photo */,
 				D99E7272163E6BCB004EB303 /* ParnerMenuViewController */,
 				D99E7270163E6B7E004EB303 /* PartnerViewController */,
+				84E51FE3169705B500229A58 /* SearchViewController */,
+				840E4583166E3526007CCF51 /* Video */,
+				840E4581166E3509007CCF51 /* Photo */,
 				D99E726D163E6B50004EB303 /* Events */,
 				E63F277B14E960B30040F281 /* Facebook */,
 				E691FF8814E5095F003DE64B /* Map */,
 				848854A914D142430030BD03 /* SubMenuViewController.h */,
 				848854AA14D142430030BD03 /* SubMenuViewController.m */,
-				8483F25914D03FBE005E4216 /* SearchViewController.h */,
-				8483F25A14D03FBE005E4216 /* SearchViewController.m */,
 				8406AB6E1630319B00B807EB /* MasterDetailController.h */,
 				8406AB6F1630319B00B807EB /* MasterDetailController.m */,
 			);
@@ -2197,6 +2217,15 @@
 				84CA0231166CCBDA003E1F81 /* default.plist */,
 			);
 			path = Theme;
+			sourceTree = "<group>";
+		};
+		84E51FE3169705B500229A58 /* SearchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8483F25914D03FBE005E4216 /* SearchViewController.h */,
+				8483F25A14D03FBE005E4216 /* SearchViewController.m */,
+			);
+			name = SearchViewController;
 			sourceTree = "<group>";
 		};
 		84F68D9E168AE7CC00A78C12 /* Externals */ = {
@@ -2807,6 +2836,12 @@
 				D9515CA8163835340058BE8C /* UIView+Extensions.m */,
 				D98A35EC163929C800E4E75F /* UIAlertView+Extensions.h */,
 				D98A35ED163929C800E4E75F /* UIAlertView+Extensions.m */,
+				84E51FEB16970EC100229A58 /* UISearchBar+Customize.h */,
+				84E51FEC16970EC100229A58 /* UISearchBar+Customize.m */,
+				84E51FF216970FFA00229A58 /* UITableViewCell+Spinner.h */,
+				84E51FF316970FFA00229A58 /* UITableViewCell+Spinner.m */,
+				84E51FF91697185900229A58 /* UIButton+Extensions.h */,
+				84E51FFA1697185A00229A58 /* UIButton+Extensions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -3961,6 +3996,9 @@
 				8412962B168DA0E600C47B7F /* SHKOAuthView.m in Sources */,
 				8412962C168DA0E600C47B7F /* SHKShareMenu.m in Sources */,
 				8412962D168DA0E600C47B7F /* SHKViewControllerWrapper.m in Sources */,
+				84E51FF116970EC100229A58 /* UISearchBar+Customize.m in Sources */,
+				84E51FF816970FFA00229A58 /* UITableViewCell+Spinner.m in Sources */,
+				84E51FFF1697185B00229A58 /* UIButton+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4094,6 +4132,9 @@
 				84189CB51675DA7200A07AB3 /* SSKeychain.m in Sources */,
 				84189E6A167601E000A07AB3 /* SHKMail.m in Sources */,
 				84ACB3E3167B6D84002D0278 /* PartnerCell.m in Sources */,
+				84E51FED16970EC100229A58 /* UISearchBar+Customize.m in Sources */,
+				84E51FF416970FFA00229A58 /* UITableViewCell+Spinner.m in Sources */,
+				84E51FFB1697185B00229A58 /* UIButton+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4227,6 +4268,9 @@
 				845F8C011680A6CE0087E3F2 /* SHKOAuthView.m in Sources */,
 				845F8C021680A6CE0087E3F2 /* SHKShareMenu.m in Sources */,
 				845F8C031680A6CE0087E3F2 /* SHKViewControllerWrapper.m in Sources */,
+				84E51FEE16970EC100229A58 /* UISearchBar+Customize.m in Sources */,
+				84E51FF516970FFA00229A58 /* UITableViewCell+Spinner.m in Sources */,
+				84E51FFC1697185B00229A58 /* UIButton+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4237,6 +4281,9 @@
 				D9DBA411163820CA006AE83D /* main.m in Sources */,
 				D9DBA4751638256C006AE83D /* MappingManagerSpec.mm in Sources */,
 				84ACB401167B6D84002D0278 /* PartnerCell.m in Sources */,
+				84E51FF016970EC100229A58 /* UISearchBar+Customize.m in Sources */,
+				84E51FF716970FFA00229A58 /* UITableViewCell+Spinner.m in Sources */,
+				84E51FFE1697185B00229A58 /* UIButton+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4281,6 +4328,9 @@
 				D93249CB1637E28100409AA9 /* MappingManager.m in Sources */,
 				D93249ED1638019300409AA9 /* Location.m in Sources */,
 				84ACB400167B6D84002D0278 /* PartnerCell.m in Sources */,
+				84E51FEF16970EC100229A58 /* UISearchBar+Customize.m in Sources */,
+				84E51FF616970FFA00229A58 /* UITableViewCell+Spinner.m in Sources */,
+				84E51FFD1697185B00229A58 /* UIButton+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

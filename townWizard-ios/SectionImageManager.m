@@ -16,7 +16,8 @@ static SectionImageManager *sectionImageManager = nil;
 + (id) sharedInstance
 {
     @synchronized (self) {
-        if (sectionImageManager == nil) {
+        if (sectionImageManager == nil)
+        {
             sectionImageManager = [[self alloc] init];
         }
     }

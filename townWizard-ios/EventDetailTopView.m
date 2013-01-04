@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import <QuartzCore/QuartzCore.h>
 #import "Event.h"
+#import "UIButton+Extensions.h"
 
 @implementation EventDetailTopView
 
@@ -17,9 +18,9 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    [_callButton setBackgroundImage:[self buttonBackgroundImage] forState:UIControlStateNormal];
-    [_webButton setBackgroundImage:[self buttonBackgroundImage] forState:UIControlStateNormal];
-    [_mapButton setBackgroundImage:[self buttonBackgroundImage] forState:UIControlStateNormal];
+    [_callButton setButtonBackgroundImage];
+    [_webButton setButtonBackgroundImage];
+    [_mapButton setButtonBackgroundImage];
     UIColor *backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"events_pattern_bg"]];
     [_bgView setBackgroundColor:backgroundColor];
     
@@ -45,18 +46,8 @@
     }
 }
 
-- (UIImage *)buttonBackgroundImage
-{
-    UIImage *background = [UIImage imageNamed:@"button_background"];
-    CGFloat middleX = background.size.width / 2;
-    UIEdgeInsets edgeInsets = UIEdgeInsetsMake(0, middleX, background.size.height, middleX);
-    return [background resizableImageWithCapInsets:edgeInsets];
-}
-
-
-
-- (void)dealloc {
-    
+- (void)dealloc
+{    
     [_callButton release];
     [_webButton release];
     [_mapButton release];

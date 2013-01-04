@@ -17,6 +17,7 @@
 #import "Section.h"
 #import "PartnerViewController.h"
 #import "RequestHelper.h"
+#import "UIButton+Extensions.h"
 
 #define ROOT_URL @"app30a"
 #define MAP_URL @"showmap"
@@ -159,13 +160,11 @@
     {
         self.navigationItem.leftBarButtonItem = back;
     }
-    else if(!_url)
+    else if(!_url && partnerController)
     {
-        if(partnerController && [partnerController respondsToSelector:@selector(menuButton)])
-        {
-            self.navigationItem.leftBarButtonItem =  [partnerController menuButton];
-        }
+        self.navigationItem.leftBarButtonItem = [[AppActionsHelper sharedInstance] menuButtonWithTarget:partnerController action:@selector(toggleMasterView)];
     }
+    
     NSLog(@"Finish loading URL: %@",[webView.request URL]);
     
     if (self.view.window) //if webView is not on screen, we are not interested in setting this
@@ -182,9 +181,9 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     }
     else if(!_url)
     {
-        if(partnerController && [partnerController respondsToSelector:@selector(menuButton)])
+        if(partnerController)
         {
-        self.navigationItem.leftBarButtonItem =  [partnerController menuButton];
+        self.navigationItem.leftBarButtonItem = [[AppActionsHelper sharedInstance] menuButtonWithTarget:partnerController action:@selector(toggleMasterView)];
         }
     }
     
@@ -270,10 +269,6 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
         NSString * emailAddress = [[components objectAtIndex:1] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSArray *toRecipients = [NSArray arrayWithObjects:emailAddress, nil];
         [mailer setToRecipients:toRecipients];
-        
-        //                NSString *emailBody = @"Sending letter using TownWizard application?";
-        //                [mailer setMessageBody:emailBody isHTML:NO];
-        
         [self presentModalViewController:mailer animated:YES];
         [mailer release];
     }

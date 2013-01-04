@@ -10,6 +10,7 @@
 #import "RequestHelper.h"
 #import "SubMenuViewController.h"
 #import "MapViewController.h"
+#import "Reachability.h"
 
 @implementation AppActionsHelper
 static AppActionsHelper *actionsHelper = nil;
@@ -22,6 +23,29 @@ static AppActionsHelper *actionsHelper = nil;
         }
     }
     return actionsHelper;
+}
+#pragma mark -
+#pragma mark PartnerMethods
+
+- (UIBarButtonItem *) menuButtonWithTarget:(id)target action:(SEL)action
+{
+    UIImage *menuButtonImage = [UIImage imageNamed:@"menu_button"];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setImage:menuButtonImage forState:UIControlStateNormal];
+    [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    [button setFrame:CGRectMake(0, 0, menuButtonImage.size.width, menuButtonImage.size.height)];
+    return [[[UIBarButtonItem alloc] initWithCustomView:button] autorelease];
+}
+
+- (BOOL)townWizardServerReachable
+{
+    Reachability *r = [Reachability reachabilityWithHostName:@"townwizard.com"];
+    NetworkStatus internetStatus = [r currentReachabilityStatus];
+    if(internetStatus == NotReachable)
+    {
+        return NO;
+    }
+    return YES;
 }
 
 
@@ -85,6 +109,8 @@ static AppActionsHelper *actionsHelper = nil;
     else
         [phoneNumberToCall release];
 }
+
+
 
 
 @end

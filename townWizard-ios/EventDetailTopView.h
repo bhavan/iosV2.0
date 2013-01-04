@@ -18,7 +18,6 @@
 @property (retain, nonatomic) IBOutlet UIButton *webButton;
 @property (retain, nonatomic) IBOutlet UIButton *mapButton;
 
-- (UIImage *) buttonBackgroundImage;
 - (void)updateWithEvent:(Event *)event;
 
 

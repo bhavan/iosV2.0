@@ -13,6 +13,8 @@
         NSString *phoneNumberToCall;
 }
 + (id) sharedInstance;
+- (BOOL)townWizardServerReachable;
+- (UIBarButtonItem *) menuButtonWithTarget:(id)target action:(SEL)action;
 - (void)makeCall:(NSString *)phoneNumber;
 - (void)openUrl:(NSString *)urlString fromNavController:(UINavigationController *)navController;
 - (void)openMapWithTitle:(NSString *)title longitude:(double)longitude latitude:(double)latitude fromNavController:(UINavigationController *)navController;

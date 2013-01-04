@@ -25,28 +25,23 @@ UIAlertViewDelegate,
 RKObjectLoaderDelegate>
 {
     NSArray *selectedPartnerSections;   
-    NSInteger nextOffset; 
+    NSInteger nextOffset;
+    NSString *currentSearchQuery;
     BOOL loadingMorePartnersInProgress;
-    Partner *defaultPartner;    
+    Partner *defaultPartner;
 }
-- (UIBarButtonItem *) menuButton;
-- (IBAction) goButtonPressed:(id)sender;
-- (void) loadSectionMenuForPartnerWithPartner:(Partner *)partnerDict;
 
 @property (nonatomic, retain) NSMutableArray *partnersList;
 @property (nonatomic, retain) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
-
 @property (nonatomic, retain) IBOutlet UIButton * goButton;
-@property (nonatomic, retain) NSString * currentSearchQuery;
 @property (nonatomic, retain) MasterDetailController *masterDetail;
 @property (nonatomic, retain) PartnerMenuViewController *defaultMenu;
 
-- (BOOL)townWizardServerReachable;
 - (IBAction)dismissKeyboardByTouchingEmptySpaceOnScreen:(id)sender;
 - (IBAction)infoButtonPressed:(id)sender;
-- (void) searchForPartnersWithQuery:(NSString *)query offset:(NSInteger)offset;
-- (void)loadNearbyPartners;
-- (void)partnersLoaded:(NSArray *)partners;
+- (IBAction) goButtonPressed:(id)sender;
+- (void) loadSectionMenuForPartnerWithPartner:(Partner *)partnerDict;
+
 
 @end

@@ -78,18 +78,22 @@
 - (void) sectionsUpdated:(NSArray *) sections
 {   
     
-    if ([self.partner.name isEqualToString:DEFAULT_PARTNER_NAME]) {         
+    if ([self.partner.name isEqualToString:DEFAULT_PARTNER_NAME])
+    {
          [self toggleMasterView];
     }
     else
     {
-        for (Section *section in sections) {
-            if ([[section name] isEqualToString:@"News"]) {
+        for (Section *section in sections)
+        {
+            if ([[section name] isEqualToString:@"News"])
+            {
                 [self displayControllerForSection:section];
                 return;
             }
         }
-        if ([sections count]) {
+        if ([sections count])
+        {
             [self displayControllerForSection:[sections objectAtIndex:0]];
         }
     }    
@@ -106,21 +110,6 @@
     [[self navigationController] popToRootViewControllerAnimated:YES];
 }
 
-
-#pragma mark -
-#pragma mark bar buttons
-
-- (UIBarButtonItem *) menuButton
-{
-    UIImage *menuButtonImage = [UIImage imageNamed:@"menu_button"];
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setImage:menuButtonImage forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(toggleMasterView) forControlEvents:UIControlEventTouchUpInside];
-    [button setFrame:CGRectMake(0, 0, menuButtonImage.size.width, menuButtonImage.size.height)];
-    return [[[UIBarButtonItem alloc] initWithCustomView:button] autorelease];
-}
-
-
 #pragma mark -
 #pragma mark helpers
 
@@ -132,8 +121,10 @@
         [[RequestHelper sharedInstance] setCurrentSection:section];
          UIViewController *controller = [[self sectionControllerFactory] sectionControllerForSection:section];
         [[self detailsController] setViewControllers:[NSArray arrayWithObject:controller] animated:NO];
-        [(TownWizardNavigationBar *)[_detailsController navigationBar] updateTitleText:[section displayName]];
-        [[(id)controller navigationItem] setLeftBarButtonItem:[self menuButton]];
+        [(TownWizardNavigationBar *)[_detailsController navigationBar]
+         updateTitleText:[section displayName]];
+        UIBarButtonItem *menuButton = [[AppActionsHelper sharedInstance] menuButtonWithTarget:self action:@selector(toggleMasterView)];
+        [[(id)controller navigationItem] setLeftBarButtonItem:menuButton];
     }
 }
 

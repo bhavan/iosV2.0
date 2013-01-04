@@ -145,11 +145,14 @@
 
 - (void) loadPartnerSections
 {
-    [[RequestHelper sharedInstance] loadSectionsUsingBlock:^(RKObjectLoader *loader) {
-        [loader setOnDidLoadObjects:^(NSArray *objects) {
+    [[RequestHelper sharedInstance] loadSectionsUsingBlock:^(RKObjectLoader *loader)
+    {
+        [loader setOnDidLoadObjects:^(NSArray *objects)
+        {
             [self sectionsLoaded:objects];
         }];
-        [loader setOnDidFailWithError:^(NSError *error) {
+        [loader setOnDidFailWithError:^(NSError *error)
+        {
             NSLog(@"%@",error.localizedDescription);
             [self changePartnerButtonPressed:nil];
         }];
@@ -193,7 +196,8 @@
         [menu setObject:information forKey:@2];
     }    
     [sectionsList reloadData];
-    if ([_delegate respondsToSelector:@selector(sectionsUpdated:)]) {
+    if ([_delegate respondsToSelector:@selector(sectionsUpdated:)])
+    {
         [_delegate sectionsUpdated:sections];
     }
 }

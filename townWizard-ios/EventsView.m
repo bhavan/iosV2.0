@@ -7,6 +7,7 @@
 //
 
 #import "EventsView.h"
+#import "UIButton+Extensions.h"
 
 @implementation EventsView
 
@@ -32,25 +33,10 @@
 #pragma mark prepare buttons
 
 - (void) setButtonsBackground
-{
-    UIImage *backgroundImage = [self butttonBackgroundImage];
-    [self setBackgroundImage:backgroundImage forButton:calendarButton];
-    [self setBackgroundImage:backgroundImage forButton:eventsTypeButton];
-    [self setBackgroundImage:backgroundImage forButton:addEventButton];
-}
-
-- (void) setBackgroundImage:(UIImage *) image forButton:(UIButton *) button
-{
-    [button setBackgroundImage:image forState:UIControlStateNormal];
-    [button setBackgroundColor:[UIColor clearColor]];
-}
-
-- (UIImage *) butttonBackgroundImage
-{
-    UIImage *background = [UIImage imageNamed:@"button_background"];
-    CGFloat middleX = background.size.width / 2;
-    UIEdgeInsets edgeInsets = UIEdgeInsetsMake(0, middleX, background.size.height, middleX);
-    return [background resizableImageWithCapInsets:edgeInsets];
+{    
+    [calendarButton setButtonBackgroundImage];
+    [eventsTypeButton setButtonBackgroundImage];
+    [addEventButton setButtonBackgroundImage];
 }
 
 #pragma mark -
