@@ -119,7 +119,6 @@ static const NSInteger kEventsAlertTag = 700;
     [eventDetails release];
 }
 
-
 #pragma mark -
 #pragma mark events loading
 
