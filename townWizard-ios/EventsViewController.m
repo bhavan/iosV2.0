@@ -88,7 +88,7 @@ static const NSInteger kEventsAlertTag = 700;
     currentCategory = -1;
     [self.eventsTypeButton setTitle:ALL_EVENTS_TEXT forState:UIControlStateNormal];
     NSString *newDatePeriod = [NSDate stringFromPeriod:[NSDate date]
-                                                 end:[NSDate date]];
+                                                   end:[NSDate date]];
     [self.calendarButton setTitle:newDatePeriod forState:UIControlStateNormal];
     self.sectionDateFormatter = [[[NSDateFormatter alloc] init] autorelease];
     [self.sectionDateFormatter setDateFormat:@"EEEE LLL dd"];
@@ -103,7 +103,7 @@ static const NSInteger kEventsAlertTag = 700;
     [eventDetails loadWithEvent:event];
     [self.navigationController pushViewController:eventDetails animated:YES];
     [eventDetails updateBannerImage:_bannerImageView.image urlString:_bannerUrlString];
-    [eventDetails release];    
+    [eventDetails release];
 }
 
 
@@ -114,28 +114,28 @@ static const NSInteger kEventsAlertTag = 700;
 {
     featuredEventsViewer.delegate = self;
     [[RequestHelper sharedInstance] loadFeaturedEventUsingBlock:^(RKObjectLoader *loader)
-    {
-        [loader setOnDidFailWithError:^(NSError *error)
-        {
-            [self featuredEventsLoadingFailed:error];
-        }];
-        [loader setOnDidLoadObjects:^(NSArray *objects)
-        {
-            [self featuredEventsLoaded:objects];
-        }];
-    }];
+     {
+         [loader setOnDidFailWithError:^(NSError *error)
+          {
+              [self featuredEventsLoadingFailed:error];
+          }];
+         [loader setOnDidLoadObjects:^(NSArray *objects)
+          {
+              [self featuredEventsLoaded:objects];
+          }];
+     }];
 }
 
 
 - (void) loadEventsCategories
 {
     [[RequestHelper sharedInstance] loadEventsCategoriesUsingBlock:^(RKObjectLoader *loader)
-    {
-        [loader setOnDidLoadObjects:^(NSArray *objects)
-        {
-            [self categoriesLoaded:objects];
-        }];        
-    }];
+     {
+         [loader setOnDidLoadObjects:^(NSArray *objects)
+          {
+              [self categoriesLoaded:objects];
+          }];
+     }];
 }
 
 - (void) loadTodayEvents
@@ -150,19 +150,19 @@ static const NSInteger kEventsAlertTag = 700;
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects
 {
-        [self eventsLoaded:objects];
+    [self eventsLoaded:objects];
 }
 
 - (void)objectLoader:(RKObjectLoader *)loader willMapData:(inout id *)mappableData
 {
-    NSMutableDictionary* data = [[*mappableData objectForKey: @"ad"] mutableCopy];    
+    NSMutableDictionary* data = [[*mappableData objectForKey: @"ad"] mutableCopy];
     if(data && _bannerUrlString == nil)
     {
         _bannerUrlString = [[NSString alloc] initWithString:[data objectForKey:@"url"]];
         NSString *adImageUrl = [data objectForKey:@"banner"];
         [_bannerImageView setImageWithURL:[NSURL URLWithString:adImageUrl]];
-    }    
-    [data release];    
+    }
+    [data release];
 }
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error
@@ -173,7 +173,7 @@ static const NSInteger kEventsAlertTag = 700;
 - (IBAction)bannerButtonPressed:(id)sender
 {
     [[AppActionsHelper sharedInstance] openUrl:_bannerUrlString
-                             fromNavController:self.navigationController];    
+                             fromNavController:self.navigationController];
 }
 
 - (IBAction)categoriesButtonPressed:(id)sender
@@ -191,24 +191,27 @@ static const NSInteger kEventsAlertTag = 700;
 {
     self.events = [self currentCategotyEvents];
     self.sections = [NSMutableDictionary dictionary];
-    NSMutableArray *sectionsDates = [NSMutableArray array];
+    
     for (Event *event in self.events)
     {
-        NSDate *startDate = [NSDate dateFromString:event.startTime dateFormat:@"yyyy-MM-dd HH:mm:ss"]; 
-        if([startDate compare:[NSDate date]] == NSOrderedAscending)
-        {
-            startDate = [NSDate date];
-        }
+        NSDate *startDate = [NSDate dateFromString:event.startTime dateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        NSDate *endDate = [NSDate dateFromString:event.endTime dateFormat:@"yyyy-MM-dd HH:mm:ss"];        
         NSDate *dateRepresentingThisDay = [NSDate dateAtBeginningOfDayForDate:startDate];
-        NSMutableArray *eventsOnThisDay = [self.sections objectForKey:dateRepresentingThisDay];
-        if (eventsOnThisDay == nil)
-        {
-            eventsOnThisDay = [NSMutableArray array];
-            [self.sections setObject:eventsOnThisDay forKey:dateRepresentingThisDay];
+        NSDate *dateRepresentingEndDay = [NSDate dateAtBeginningOfDayForDate:endDate];
+        
+        while ([dateRepresentingThisDay compare:dateRepresentingEndDay] != NSOrderedDescending)
+        {            
+            NSMutableArray *eventsOnThisDay = [self.sections objectForKey:dateRepresentingThisDay];
+            if (eventsOnThisDay == nil)
+            {
+                eventsOnThisDay = [NSMutableArray array];
+                [self.sections setObject:eventsOnThisDay forKey:dateRepresentingThisDay];
+            }
+            [eventsOnThisDay addObject:event];
+            dateRepresentingThisDay = [dateRepresentingThisDay dateByAddingDays:1];
         }
-        //[eventsOnThisDay addObject:event];
-    }
-    
+    }    
+       
     NSArray *unsortedDays = [self.sections allKeys];
     self.sortedDays = [unsortedDays sortedArrayUsingSelector:@selector(compare:)];
     [eventsList reloadData];
@@ -251,7 +254,7 @@ static const NSInteger kEventsAlertTag = 700;
     if(!calendarController.isCalendarCanceled)
     {
         NSString *newDatePeriod = [NSDate stringFromPeriod:calendarController.period.startDate
-                                                     end:calendarController.period.endDate];
+                                                       end:calendarController.period.endDate];
         [self.calendarButton setTitle:newDatePeriod forState:UIControlStateNormal];
         [self loadEventsWithDatePeriod:self.calendar.period.startDate
                                endDate:self.calendar.period.endDate];
@@ -329,7 +332,7 @@ static const NSInteger kEventsAlertTag = 700;
 - (void) eventsLoaded:(NSArray *) events
 {
     if(!events || events.count == 0)
-    {    
+    {
         UIAlertView *alert = [UIAlertView showWithTitle:@"No Events Scheduled"
                                                 message:nil
                                                delegate:self

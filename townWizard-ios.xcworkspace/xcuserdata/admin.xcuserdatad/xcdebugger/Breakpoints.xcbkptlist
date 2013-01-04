@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "townWizard-ios/EventsViewController.m"
-         timestampString = "378983263.942096"
+         timestampString = "378993911.621828"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "208"
-         endingLineNumber = "208"
+         startingLineNumber = "234"
+         endingLineNumber = "234"
          landmarkName = "-filterEventsByCategoryAndDate"
          landmarkType = "5">
       </FileBreakpoint>
@@ -411,11 +411,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "townWizard-ios/EventsViewController.m"
-         timestampString = "378983263.942096"
+         timestampString = "378995052.724791"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "195"
-         endingLineNumber = "195"
+         startingLineNumber = "197"
+         endingLineNumber = "197"
          landmarkName = "-filterEventsByCategoryAndDate"
          landmarkType = "5">
       </FileBreakpoint>
