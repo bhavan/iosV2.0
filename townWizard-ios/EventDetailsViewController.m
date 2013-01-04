@@ -58,7 +58,7 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];    
+    [super viewDidLoad];
     TWBackgroundView *backgroundView = [[TWBackgroundView alloc] initWithFrame:self.view.frame];
     [self.view insertSubview:backgroundView atIndex:0];
     [backgroundView release];
@@ -78,7 +78,7 @@
 - (void)updateBannerImage:(UIImage *)bannerImage urlString:(NSString *)urlString
 {
     [_bannerImageView setImage:bannerImage];
-    _bannerImageUrl = urlString;    
+    _bannerImageUrl = urlString;
 }
 
 - (IBAction)bannerButtonPressed:(id)sender
@@ -97,10 +97,10 @@
     if(_event.location.website && _event.location.website.length > 0)
     {
         [[AppActionsHelper sharedInstance] openUrl:_event.location.website
-                            fromNavController:self.navigationController];
+                                 fromNavController:self.navigationController];
     }
     else
-    {        
+    {
         UIAlertView *alert = [[UIAlertView alloc]
                               initWithTitle:@"No website"
                               message:nil
@@ -117,10 +117,10 @@
     if(_event.location.latitude && _event.location.longitude)
     {
         [[AppActionsHelper sharedInstance] openMapWithTitle:_event.location.address
-                                             longitude:[_event.location.longitude doubleValue]
-                                              latitude:[_event.location.latitude doubleValue]
-                                     fromNavController:self.navigationController];    
-    }    
+                                                  longitude:[_event.location.longitude doubleValue]
+                                                   latitude:[_event.location.latitude doubleValue]
+                                          fromNavController:self.navigationController];
+    }
 }
 
 - (IBAction)saveButtonPressed:(id)sender
@@ -131,17 +131,17 @@
         // >= iOS 6
         
         [eventDB requestAccessToEntityType:EKEntityTypeEvent
-                                   completion:^(BOOL granted, NSError *error) {
-                                       
-                                       // may return on background thread
-                                       dispatch_async(dispatch_get_main_queue(), ^{
-                                           if (granted) {
-                                               // continue
-                                           } else {
-                                               // display error
-                                           }
-                                       });
-                                   }];
+                                completion:^(BOOL granted, NSError *error) {
+                                    
+                                    // may return on background thread
+                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                        if (granted) {
+                                            // continue
+                                        } else {
+                                            // display error
+                                        }
+                                    });
+                                }];
     }
     EKEvent *myEvent  = [EKEvent eventWithEventStore:eventDB];
     myEvent.notes = [self stringByStrippingHTML:_event.details];
@@ -185,11 +185,11 @@
 - (IBAction)checkInButtonPressed:(id)sender
 {
     if (![[AppDelegate sharedDelegate].facebookHelper.appId isEqual:@""])
-    {               
+    {
         FacebookPlacesViewController *fpvc = [[FacebookPlacesViewController alloc]
-                                               initWithLatitude:[_event.location.latitude doubleValue] andLongitude:[_event.location.longitude doubleValue]];
-      
-       
+                                              initWithLatitude:[_event.location.latitude doubleValue] andLongitude:[_event.location.longitude doubleValue]];
+        
+        
         [self.navigationController pushViewController:fpvc animated:YES];
         [fpvc release];
     }
@@ -221,12 +221,12 @@
 #pragma mark UIWebViewDelegate Methods
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    webView.frame = CGRectMake(0, 0, 320, webView.scrollView.contentSize.height);    
+    webView.frame = CGRectMake(0, 0, 320, webView.scrollView.contentSize.height);
     self.scrollView.contentSize = CGSizeMake(320, webView.frame.size.height+54);
     CGRect bottomRect = _contentBottomView.frame;
     bottomRect.origin.y = webView.scrollView.contentSize.height;
     _contentBottomView.frame = bottomRect;
-    isdescriptionLoaded = YES;    
+    isdescriptionLoaded = YES;
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
@@ -234,9 +234,8 @@
     if (isdescriptionLoaded)
     {
         [[AppActionsHelper sharedInstance] openUrl:[request.URL absoluteString]
-                                 fromNavController:self.navigationController];
-     
-     return NO;
+                                 fromNavController:self.navigationController];        
+        return NO;
     }
     return YES;
 }

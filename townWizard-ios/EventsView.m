@@ -58,7 +58,7 @@
 
 - (void) setBackgroundColorForTableSubviews
 {
-    UIColor *backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"events_pattern_bg"]];    
+    UIColor *backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"events_pattern_bg"]];
     [tableHeader setBackgroundColor:backgroundColor];
     [tableFooter setBackgroundColor:backgroundColor];
 }
