@@ -9,10 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface PhotoUploadView : UIView
-{
-    UIViewController *parentController;
-}
 
 
-- (id)initWithParentController:(UIViewController *)parent;
+- (void)addUploadTarget:(id)target action:(SEL)action;
 @end

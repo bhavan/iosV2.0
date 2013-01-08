@@ -24,7 +24,7 @@
 -(void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:NO];
 	if(bShowDirection == NO) {
-		m_DirectionBtn.hidden = YES;
+		directionButton.hidden = YES;
 	}
 }
 
@@ -58,16 +58,16 @@
 }
 
 - (void)loadGoogleMap {
-	m_currentRegion.center.latitude = m_dblLatitude;
-	m_currentRegion.center.longitude = m_dblLongitude;
+	currentRegion.center.latitude = latitude;
+	currentRegion.center.longitude = longitude;
 	
-	m_currentRegion.span.latitudeDelta = 0.009;
-	m_currentRegion.span.longitudeDelta = 0.009;
+	currentRegion.span.latitudeDelta = 0.009;
+	currentRegion.span.longitudeDelta = 0.009;
 	
-	[m_mapView setRegion:m_currentRegion animated:YES];
+	[mapView setRegion:currentRegion animated:YES];
 	
 	// Load all the markers for this location
-	[m_activityIndicator startAnimating];
+	[activityIndicator startAnimating];
 	[NSThread detachNewThreadSelector:@selector(loadMarkers) toTarget:self withObject:nil];
 }
 
@@ -89,22 +89,22 @@
 	[user_marker release];	
 
 	CLLocationCoordinate2D location;
-	location.latitude = m_dblLatitude;
-	location.longitude = m_dblLongitude;
+	location.latitude = latitude;
+	location.longitude = longitude;
 	
 	// Add markers
 	MapAnnotation* place_marker = [[MapAnnotation alloc] initWithCoordinate:location 
-                                                                      title:m_sTitle 
+                                                                      title:self.topTitle
                                                              annotationType:MapAnnotationTypePin];
 	//[place_marker setSelected:YES animated:NO];
 	[annots addObject:place_marker];
     self.placeMarker = place_marker;
 	[place_marker release];
 	
-	[(id)m_mapView performSelectorOnMainThread:@selector(addAnnotations:) 
+	[(id)mapView performSelectorOnMainThread:@selector(addAnnotations:) 
                                     withObject:annots 
                                  waitUntilDone:YES];
-	[m_activityIndicator stopAnimating];
+	[activityIndicator stopAnimating];
 		
 	[annots release];
 	[pool release];
@@ -114,10 +114,10 @@
 #pragma mark -
 #pragma mark MKMapViewDelegate Methods
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+- (MKAnnotationView *)mapView:(MKMapView *)aMapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
 	NSString *sIdentifier = @"MapPin";
-	MKPinAnnotationView* annotationView = (MKPinAnnotationView *)[m_mapView dequeueReusableAnnotationViewWithIdentifier:sIdentifier];
+	MKPinAnnotationView* annotationView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:sIdentifier];
 	
 	if(annotationView == nil)
 	{
@@ -142,9 +142,9 @@
 	return annotationView;
 }
 
-- (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views
+- (void)mapView:(MKMapView *)aMapView didAddAnnotationViews:(NSArray *)views
 {
-	[mapView selectAnnotation:self.placeMarker animated:YES];
+	[aMapView selectAnnotation:self.placeMarker animated:YES];
 }
 
 #pragma mark 
@@ -156,7 +156,7 @@
 	{
 		AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 		NSString *sUrl = [NSString stringWithFormat:@"http://maps.google.com/maps?daddr=%.4f,%.4f&saddr=%.4f,%.4f", 
-                          self.m_dblLatitude, self.m_dblLongitude, 
+                          self.latitude, self.longitude,
                           appDelegate.doubleLatitude, appDelegate.doubleLongitude];
 
 		[[UIApplication sharedApplication ] openURL:[NSURL URLWithString: sUrl]];
@@ -168,15 +168,14 @@
 #pragma mark Memory management
 
 - (void)dealloc {
-	[m_mapView release];
-	[m_activityIndicator release];
-	[m_sTitle release];
+	[mapView release];
+	[activityIndicator release];
     [super dealloc];
 }
 
 #pragma mark -
-@synthesize m_sTitle;
-@synthesize m_dblLatitude;
-@synthesize m_dblLongitude;
+
+@synthesize latitude;
+@synthesize longitude;
 @synthesize bShowDirection;
 @end

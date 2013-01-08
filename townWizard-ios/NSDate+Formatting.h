@@ -21,7 +21,7 @@
              localeIdentifier:(NSString *) localeIdentifier;
 + (NSDate *)dateAtBeginningOfDayForDate:(NSDate *)inputDate;
 + (NSDate *)dateAtEndingOfDayForDate:(NSDate *)inputDate;
-
++ (BOOL)isDate:(NSDate *)date inPeriodWithStart:(NSDate *)start end:(NSDate *)end;
 
 
 @end

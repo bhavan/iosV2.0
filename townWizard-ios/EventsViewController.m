@@ -221,7 +221,7 @@ static const NSInteger kEventsAlertTag = 700;
                 self.currentStart = [NSDate date];
                 self.currentEnd = [NSDate date];
             }
-            BOOL isDateInPeriod = [self isDate:dateRepresentingThisDay
+            BOOL isDateInPeriod = [NSDate isDate:dateRepresentingThisDay
                              inPeriodWithStart:self.currentStart
                                            end:self.currentEnd];
             if (eventsOnThisDay == nil && isDateInPeriod)
@@ -240,23 +240,8 @@ static const NSInteger kEventsAlertTag = 700;
     NSArray *unsortedDays = [self.sections allKeys];
     self.sortedDays = [unsortedDays sortedArrayUsingSelector:@selector(compare:)];
     [eventsList reloadData];
-    
 }
 
-- (BOOL)isDate:(NSDate *)date inPeriodWithStart:(NSDate *)start end:(NSDate *)end
-{
-    NSDate *dayStart = [NSDate dateAtBeginningOfDayForDate:start];
-    NSDate *dayEnd = end;
-    NSDate *earlier = [dayStart earlierDate:date];
-    NSDate *later = [dayEnd laterDate:date];
-    
-    if(earlier == dayStart && later == dayEnd)
-    {
-        return YES;
-    }
-    return NO;
-    
-}
 
 - (NSArray *)currentCategotyEvents
 {

@@ -33,8 +33,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    uploadView = [[PhotoUploadView alloc] initWithParentController:self];
+    uploadView = [[PhotoUploadView alloc] init];
     [self.view addSubview:uploadView];
+    [uploadView addUploadTarget:self action:@selector(cameraButtonPressed:)];
     self.partner = [[RequestHelper sharedInstance] currentPartner];
 
 }

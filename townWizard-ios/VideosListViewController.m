@@ -61,6 +61,7 @@
 - (void)viewDidUnload
 {
     [self setTableView:nil];
+    [self setSection:nil];
     [super viewDidUnload];
 }
 

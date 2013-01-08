@@ -14,21 +14,19 @@
 
 @interface MapViewController : UIViewController <UIAlertViewDelegate> {
 	
-	IBOutlet MKMapView *m_mapView;
-	IBOutlet UIActivityIndicatorView *m_activityIndicator;
-	MKCoordinateRegion m_currentRegion;
-	
-	NSString *m_sTitle;
-	double m_dblLatitude;
-	double m_dblLongitude;
-	IBOutlet UIButton *m_DirectionBtn;
+	IBOutlet MKMapView *mapView;
+	IBOutlet UIActivityIndicatorView *activityIndicator;
+	MKCoordinateRegion currentRegion;
+	double latitude;
+	double longitude;
+	IBOutlet UIButton *directionButton;
 	BOOL bShowDirection;
     MapAnnotation *placeMarker;
 }
 
-@property (nonatomic, retain) NSString *m_sTitle;
-@property (nonatomic, assign) double m_dblLatitude;
-@property (nonatomic, assign) double m_dblLongitude;
+@property (nonatomic,retain) NSString *topTitle;
+@property (nonatomic, assign) double latitude;
+@property (nonatomic, assign) double longitude;
 @property (nonatomic, assign) BOOL bShowDirection;
 @property (nonatomic, retain) MapAnnotation *placeMarker;
 

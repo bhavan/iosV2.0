@@ -12,21 +12,17 @@
 #import "Location.h"
 #import "AppDelegate.h"
 #import "SubMenuViewController.h"
-#import "MapViewController.h"
-#import <EventKit/EventKit.h>
 #import "NSDate+Formatting.h"
 #import "RequestHelper.h"
 #import "TWBackgroundView.h"
 #import "SHK.h"
+#import "NSString+HTMLStripping.h"
 
 @interface EventDetailsViewController ()
 {
     BOOL isdescriptionLoaded;
 }
-
 @property (nonatomic, retain)NSString *bannerImageUrl;
-
--(NSString *) stringByStrippingHTML:(NSString *)string;
 
 @end
 
@@ -50,8 +46,10 @@
                                     [NSValue valueWithUIOffset:UIOffsetMake(0, 0)], UITextAttributeTextShadowOffset,
                                     [UIFont boldSystemFontOfSize:13.0f], UITextAttributeFont,
                                     nil];
-    [self.navigationItem.leftBarButtonItem setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
-    [self.navigationItem.backBarButtonItem setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
+    [self.navigationItem.leftBarButtonItem setTitleTextAttributes:textAttributes
+                                                         forState:UIControlStateNormal];
+    [self.navigationItem.backBarButtonItem setTitleTextAttributes:textAttributes
+                                                         forState:UIControlStateNormal];
     _topDetailView.detailWebView.delegate = self;
     _topDetailView.detailWebView.scrollView.scrollEnabled = NO;
 }
@@ -125,61 +123,7 @@
 
 - (IBAction)saveButtonPressed:(id)sender
 {
-    
-    EKEventStore *eventDB = [[EKEventStore alloc] init];
-    if([eventDB respondsToSelector:@selector(requestAccessToEntityType:completion:)]) {
-        // >= iOS 6
-        
-        [eventDB requestAccessToEntityType:EKEntityTypeEvent
-                                completion:^(BOOL granted, NSError *error) {
-                                    
-                                    // may return on background thread
-                                    dispatch_async(dispatch_get_main_queue(), ^{
-                                        if (granted) {
-                                            // continue
-                                        } else {
-                                            // display error
-                                        }
-                                    });
-                                }];
-    }
-    EKEvent *myEvent  = [EKEvent eventWithEventStore:eventDB];
-    myEvent.notes = [self stringByStrippingHTML:_event.details];
-    myEvent.location = _event.location.address;
-    myEvent.URL = [NSURL URLWithString:_event.location.website];
-    myEvent.title = _event.title;
-    NSDate *start = [NSDate dateFromString:_event.startTime dateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    NSDate *end = [NSDate dateFromString:_event.endTime dateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    myEvent.startDate = start;
-    myEvent.endDate = end;
-    myEvent.allDay = NO;
-    [myEvent setCalendar:[eventDB defaultCalendarForNewEvents]];
-    NSError *err;
-    [eventDB saveEvent:myEvent span:EKSpanThisEvent error:&err];
-    if (err == noErr)
-    {
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle:@"Event Created"
-                              message:nil
-                              delegate:nil
-                              cancelButtonTitle:@"Ok"
-                              otherButtonTitles:nil];
-        [alert show];
-        [alert release];
-    }
-    else
-    {
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle:[NSString stringWithFormat:@"Error: %@",err.localizedDescription]
-                              message:nil
-                              delegate:nil
-                              cancelButtonTitle:@"Ok"
-                              otherButtonTitles:nil];
-        [alert show];
-        [alert release];
-        
-    }
-    [eventDB release];
+    [[AppActionsHelper sharedInstance] saveEvent:_event];
 }
 
 - (IBAction)checkInButtonPressed:(id)sender
@@ -187,9 +131,10 @@
     if (![[AppDelegate sharedDelegate].facebookHelper.appId isEqual:@""])
     {
         FacebookPlacesViewController *fpvc = [[FacebookPlacesViewController alloc]
-                                              initWithLatitude:[_event.location.latitude doubleValue] andLongitude:[_event.location.longitude doubleValue]];
-        
-        
+                                              initWithLatitude:
+                                              [_event.location.latitude doubleValue]
+                                              andLongitude:
+                                              [_event.location.longitude doubleValue]];
         [self.navigationController pushViewController:fpvc animated:YES];
         [fpvc release];
     }
@@ -202,19 +147,10 @@
     NSString *eventDatePeriod = [NSString stringWithFormat:@"%@ to %@",
                                  [NSDate stringFromDate:startDate dateFormat:@"EEEE, LLLL d yyyy - h:mm a"],
                                  [NSDate stringFromDate:endDate dateFormat:@"h:mm a"]];
-    SHKItem *item = [SHKItem text:[NSString stringWithFormat:@"%@\n\n%@\n%@", _event.title, eventDatePeriod,  [self stringByStrippingHTML:_event.details]]];
+    SHKItem *item = [SHKItem text:[NSString stringWithFormat:@"%@\n\n%@\n%@", _event.title, eventDatePeriod,  [_event.details stringByStrippingHTML]]];
 	SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
 	//[SHK setRootViewController:rootViewController];
 	[actionSheet showInView:self.view];
-}
-
--(NSString *) stringByStrippingHTML:(NSString *)string
-{
-    NSRange r;
-    NSString *result = [[string copy] autorelease];
-    while ((r = [result rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
-        result = [result stringByReplacingCharactersInRange:r withString:@""];
-    return result;
 }
 
 #pragma mark -

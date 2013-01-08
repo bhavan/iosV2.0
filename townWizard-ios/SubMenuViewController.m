@@ -11,7 +11,6 @@
 #import "Reachability.h"
 #import "UIApplication+NetworkActivity.h"
 #import "AppDelegate.h"
-#import "MapViewController.h"
 #import "FacebookPlacesViewController.h"
 #import "Partner.h"
 #import "Section.h"
@@ -30,6 +29,7 @@
 @interface SubMenuViewController (PrivateMethods)
 - (NSString *)urlFromSection:(Section*)section;
 - (BOOL)isSectionUrlAbsolute:(NSString *)urlString;
+- (BOOL)parseUrlComponents:(NSArray *)components;
 
 @end
 
@@ -40,8 +40,8 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];    
-
+    [super viewDidLoad];
+    
     self.webView.delegate = self;
     self.navigationController.navigationBarHidden = NO;
     Section *section = [[RequestHelper sharedInstance] currentSection];
@@ -179,12 +179,9 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     {
         self.navigationItem.leftBarButtonItem = back;
     }
-    else if(!_url)
+    else if(!_url && partnerController)
     {
-        if(partnerController)
-        {
         self.navigationItem.leftBarButtonItem = [[AppActionsHelper sharedInstance] menuButtonWithTarget:partnerController action:@selector(toggleMasterView)];
-        }
     }
     
     NSLog(@"Loading URL: %@",[request URL]);
@@ -193,53 +190,56 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     
     if ([components count] >= 2)
     {
-        NSString *rootUrlType = [[components objectAtIndex:0] lowercaseString];
-        if([rootUrlType isEqualToString:ROOT_URL])
-        {
-            NSString *urlType = [[components objectAtIndex:1] lowercaseString];
-            
-            if( [urlType isEqualToString:CALL_URL])
-            {
-                [[AppActionsHelper sharedInstance] makeCall:[components objectAtIndex:2]];
-            }
-            else if( [urlType isEqualToString:DETAILS_URL])
-            {
-                // more info link
-                /* PlaceInfo* info = [[[PlaceInfo alloc] init] autorelease];
-                 info.iRestaurantId = [[components objectAtIndex:2] integerValue];
-                 info.dblDistance = [[components objectAtIndex:3] doubleValue];
-                 
-                 PlaceDetailsViewController *viewController = [[PlaceDetailsViewController alloc] initWithInfo:info];
-                 viewController.placeInfo = info;
-                 [[GenericAppAppDelegate sharedDelegate] subNavigateTo:viewController];
-                 [viewController release];*/
-                return YES;
-                
-            }
-            else if([urlType isEqualToString:MAP_URL])
-            {
-                [self showMapWithUrlComponents:components];
-            }
-            else if([urlType isEqualToString:FBCHECKIN_URL])
-            {
-                [self fbUrlPressedWithComponents:components];
-                
-            }
-            return NO;
-        }
-        else if([rootUrlType isEqualToString:TEL_URL])
-        {
-            [[AppActionsHelper sharedInstance] makeCall:[components objectAtIndex:1]];
-            return NO;
-        }
-        else if([rootUrlType isEqualToString:MAIL_URL])
-        {
-            [self mailUrlPressedWithComponents:components];
-            return NO;
-        }
+        return [self parseUrlComponents:components];
     }
     [[UIApplication sharedApplication] showNetworkActivityIndicator];
     
+    return YES;
+}
+
+- (BOOL)parseUrlComponents:(NSArray *)components
+{
+    NSString *rootUrlType = [[components objectAtIndex:0] lowercaseString];
+    NSString *urlType = rootUrlType;
+    if([rootUrlType isEqualToString:ROOT_URL])
+    {
+        urlType = [[components objectAtIndex:1] lowercaseString];
+    }
+    return [self actionForUrlType:urlType withComponents:components];
+    
+}
+
+- (BOOL)actionForUrlType:(NSString *)urlType withComponents:(NSArray *)components
+{
+    if( [urlType isEqualToString:CALL_URL])
+    {
+        [[AppActionsHelper sharedInstance] makeCall:[components objectAtIndex:2]];
+        return NO;
+    }
+    else if( [urlType isEqualToString:DETAILS_URL])
+    {
+        return YES;
+    }
+    else if([urlType isEqualToString:MAP_URL])
+    {
+        [self showMapWithUrlComponents:components];
+        return NO;
+    }
+    else if([urlType isEqualToString:FBCHECKIN_URL])
+    {
+        [self fbUrlPressedWithComponents:components];
+        return NO;
+    }
+    else if([urlType isEqualToString:TEL_URL])
+    {
+        [[AppActionsHelper sharedInstance] makeCall:[components objectAtIndex:1]];
+        return NO;
+    }
+    else if([urlType isEqualToString:MAIL_URL])
+    {
+        [self mailUrlPressedWithComponents:components];
+        return NO;
+    }
     return YES;
 }
 
@@ -282,7 +282,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 - (void)fbUrlPressedWithComponents:(NSArray *)components
 {
     if (![[AppDelegate sharedDelegate].facebookHelper.appId isEqual:@""])
-    {             
+    {
         FacebookPlacesViewController * fpvc = [[FacebookPlacesViewController alloc] initWithLatitude:[[components objectAtIndex:2] doubleValue] andLongitude:[[components objectAtIndex:3] doubleValue]];
         //initWithLatitude:48.00885 andLongitude:37.8023];
         

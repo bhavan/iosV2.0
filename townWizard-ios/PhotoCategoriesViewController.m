@@ -14,7 +14,6 @@
 #import "TownWIzardNavigationBar.h"
 #import "ImageCell.h"
 #import "UIImageView+WebCache.h"
-#import "PhotoUploadView.h"
 #import "TWBackgroundView.h"
 
 @interface PhotoCategoriesViewController ()
@@ -43,7 +42,8 @@
 }
 
 - (void)dealloc {
-    [self setTableView:nil];
+    [self setTableView:nil];   
+    [self setCategories:nil];
     [super dealloc];
 }
 

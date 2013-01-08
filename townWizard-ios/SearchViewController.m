@@ -15,7 +15,6 @@
 #import "AppDelegate.h"
 #import "Partner.h"
 #import "Section.h"
-#import "UIImageView+WebCache.h"
 #import "MasterDetailController.h"
 #import "PartnerCell.h"
 #import "PartnerViewController.h"

@@ -11,6 +11,10 @@
 #import "SubMenuViewController.h"
 #import "MapViewController.h"
 #import "Reachability.h"
+#import "Event.h"
+#import <EventKit/EventKit.h>
+#import "NSDate+Formatting.h"
+#import "NSString+HTMLStripping.h"
 
 @implementation AppActionsHelper
 static AppActionsHelper *actionsHelper = nil;
@@ -62,17 +66,59 @@ static AppActionsHelper *actionsHelper = nil;
     
 }
 
+- (void)saveEvent:(Event *)event
+{
+    EKEventStore *eventDB = [[EKEventStore alloc] init];
+    if([eventDB respondsToSelector:@selector(requestAccessToEntityType:completion:)])
+    { // >= iOS 6
+        [eventDB requestAccessToEntityType:EKEntityTypeEvent
+                                completion:^(BOOL granted, NSError *error) {
+                                    // may return on background thread
+                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                        if (granted) {
+                                            // continue
+                                        } else {
+                                            // display error
+                                        }
+                                    });
+                                }];
+    }
+    EKEvent *myEvent  = [EKEvent eventWithEventStore:eventDB];
+    myEvent.notes = [event.details stringByStrippingHTML];
+    myEvent.location = event.location.address;
+    myEvent.URL = [NSURL URLWithString:event.location.website];
+    myEvent.title = event.title;
+    NSDate *start = [NSDate dateFromString:event.startTime dateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *end = [NSDate dateFromString:event.endTime dateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    myEvent.startDate = start;
+    myEvent.endDate = end;
+    myEvent.allDay = NO;
+    [myEvent setCalendar:[eventDB defaultCalendarForNewEvents]];
+    NSError *err;
+    [eventDB saveEvent:myEvent span:EKSpanThisEvent error:&err];
+    NSString *alertTitle;
+    if (err == noErr)
+    {
+        alertTitle = @"Event Created";
+    }
+    else
+    {
+        alertTitle = [NSString stringWithFormat:@"Error: %@",err.localizedDescription];
+    }
+    [UIAlertView showWithTitle:alertTitle message:nil confirmButtonTitle:@"Ok"];
+    [eventDB release];
+
+}
+
 - (void)openMapWithTitle:(NSString *)title longitude:(double)longitude latitude:(double)latitude fromNavController:(UINavigationController *)navController
 {
-    MapViewController *viewController = [[MapViewController alloc] init];
-    
-    viewController.m_dblLatitude = latitude;
-    viewController.m_dblLongitude = longitude;
-    viewController.m_sTitle = title;
+    MapViewController *viewController = [[MapViewController alloc] init];    
+    viewController.latitude = latitude;
+    viewController.longitude = longitude;
+    viewController.topTitle = title;
     viewController.bShowDirection = YES;
     [navController pushViewController:viewController animated:YES];
-    [viewController loadGoogleMap];
-    
+    [viewController loadGoogleMap];    
     [viewController release];
     
 }

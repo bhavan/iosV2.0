@@ -12,6 +12,21 @@
 
 @implementation NSDate (Formatting)
 
++ (BOOL)isDate:(NSDate *)date inPeriodWithStart:(NSDate *)start end:(NSDate *)end
+{
+    NSDate *dayStart = [NSDate dateAtBeginningOfDayForDate:start];
+    NSDate *dayEnd = end;
+    NSDate *earlier = [dayStart earlierDate:date];
+    NSDate *later = [dayEnd laterDate:date];
+    
+    if(earlier == dayStart && later == dayEnd)
+    {
+        return YES;
+    }
+    return NO;
+    
+}
+
 + (NSString *)stringFromPeriod:(NSDate *)start end:(NSDate *)end
 {
     if([[start dateStringWithFormat:@"LLL dd"] isEqualToString:[[NSDate date] dateStringWithFormat:@"LLL dd"]] && [[end dateStringWithFormat:@"LLL dd"] isEqualToString:[[NSDate date] dateStringWithFormat:@"LLL dd"]])

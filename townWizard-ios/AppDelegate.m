@@ -10,7 +10,6 @@
 #import "SearchViewController.h"
 #import "MasterDetailController.h"
 #import "TownWIzardNavigationBar.h"
-#import "MapViewController.h"
 #import "SHKConfiguration.h"
 #import "TWShareKitConfigurator.h"
 #import "PartnerViewController.h"
