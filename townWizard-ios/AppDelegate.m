@@ -66,8 +66,7 @@ static NSString *twGAcode = @"@UA-31932515-1";
 
 - (void)startContainerApp
 {
-     UIViewController *rootController;
-    [Appirater setAppId:@"com.townwizard.usa"];
+     UIViewController *rootController;    
     rootController = [[[SearchViewController alloc] init] autorelease];
     [[self manager] setDelegate:(SearchViewController *)rootController];
     UINavigationController *navController = [[UINavigationController alloc] initWithNavigationBarClass:[TownWizardNavigationBar class] toolbarClass:nil];
@@ -81,6 +80,9 @@ static NSString *twGAcode = @"@UA-31932515-1";
     
     //self.viewController = self.window.rootViewController;
     ((SearchViewController *)rootController).masterDetail = (MasterDetailController *)self.window.rootViewController;
+    
+    //    NSString* appID = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"];
+    [Appirater setAppId:@"507216232"];
 }
 
 - (void)configureNavBar

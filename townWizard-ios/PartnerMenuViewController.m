@@ -165,7 +165,7 @@
 - (void) partnerDetailsLoaded:(Partner *) partner
 {
      [self updateWithPartner:partner];
-     [Appirater setAppId:partner.iTunesAppId];
+    [Appirater setAppId:partner.iTunesAppId];
     [AppDelegate sharedDelegate].facebookHelper.appId = partner.facebookAppId;
 
      [[RequestHelper sharedInstance] setCurrentPartner:partner];
