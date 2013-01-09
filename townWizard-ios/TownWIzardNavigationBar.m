@@ -66,8 +66,8 @@ static const CGFloat kTWBarTitleFontSize = 18;
     CGRect titleFrame = [[self titleLabel] frame];
     CGFloat originY = roundf(([self bounds].size.height - [[[self titleLabel] font] pointSize]) / 2);
     
-    titleFrame.origin = CGPointMake(100, originY - 2);
-    titleFrame.size.width = 120;
+    titleFrame.origin = CGPointMake(40, originY - 2);
+    titleFrame.size.width = 240;
     return titleFrame;
 }
 

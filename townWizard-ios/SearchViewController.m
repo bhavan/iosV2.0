@@ -76,7 +76,7 @@
                                    menuButtonWithTarget:self.masterDetail
                                    action:@selector(toggleMasterView)];
     subMenu.navigationItem.leftBarButtonItem = menuButton;
-    [(TownWizardNavigationBar *)[self.navigationController navigationBar] updateTitleText:[section name]];
+    [(TownWizardNavigationBar *)[self.navigationController navigationBar] updateTitleText:section.displayName];
     [self.masterDetail toggleMasterView];
     [subMenu release];    
 }
