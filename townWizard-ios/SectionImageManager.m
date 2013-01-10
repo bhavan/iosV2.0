@@ -26,7 +26,8 @@ static SectionImageManager *sectionImageManager = nil;
 
 - (id) init
 {
-    if (self = [super init]) {
+    if (self = [super init])
+    {
         images = [@{
         @"videos" : @"video",
         @"photos" : @"profile",

@@ -9,8 +9,7 @@
 #import "AQGridViewCell.h"
 
 
-@interface WebImageGridViewCell : AQGridViewCell {
-}
+@interface WebImageGridViewCell : AQGridViewCell
 
 @property (nonatomic, retain, readonly) UIImageView *imageView;
 

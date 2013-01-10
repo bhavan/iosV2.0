@@ -22,8 +22,7 @@
     [_webButton setButtonBackgroundImage];
     [_mapButton setButtonBackgroundImage];
     UIColor *backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"events_pattern_bg"]];
-    [_bgView setBackgroundColor:backgroundColor];
-    
+    [_bgView setBackgroundColor:backgroundColor];    
 }
 
 - (void)updateWithEvent:(Event *)event

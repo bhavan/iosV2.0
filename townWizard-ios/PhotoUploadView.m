@@ -66,7 +66,7 @@
 
 - (void)dealloc
 {
-     [self setUploadButton:nil];
+    [self setUploadButton:nil];
     [super dealloc];
 }
 

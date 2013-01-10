@@ -13,8 +13,7 @@
 
 	IBOutlet UIImageView *m_imageView;
 	IBOutlet UIButton *m_btnCaption;
-	IBOutlet UINavigationBar *m_navigationBar;
-	
+	IBOutlet UINavigationBar *m_navigationBar;	
 	IBOutlet UIView *m_captionView;
 	IBOutlet UITextView *m_textView;
 	IBOutlet UITextField *m_txtName;

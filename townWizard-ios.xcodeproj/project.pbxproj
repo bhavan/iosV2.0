@@ -2761,6 +2761,8 @@
 				840E458D166E48C3007CCF51 /* EventDetailTopView.m */,
 				D98A35F016394DA200E4E75F /* ActivityImageView.h */,
 				D98A35F116394DA200E4E75F /* ActivityImageView.m */,
+				848F71F0162805D9005F02E8 /* PhotoUploadView.h */,
+				848F71F1162805D9005F02E8 /* PhotoUploadView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -3028,8 +3030,6 @@
 		E691000614E5504A003DE64B /* UploadPhoto */ = {
 			isa = PBXGroup;
 			children = (
-				848F71F0162805D9005F02E8 /* PhotoUploadView.h */,
-				848F71F1162805D9005F02E8 /* PhotoUploadView.m */,
 				848F7212162808C0005F02E8 /* BaseUploadViewController.h */,
 				848F7213162808C0005F02E8 /* BaseUploadViewController.m */,
 				E691000714E550B3003DE64B /* AddCaptionViewController.h */,

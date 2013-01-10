@@ -21,5 +21,5 @@
 - (RKObjectMapping *) eventCategoriesMapping;
 - (RKObjectMapping *) photoCategoryMapping;
 - (RKObjectMapping *) photoMapping;
-- (RKObjectMapping *)videoMapping;
+- (RKObjectMapping *) videoMapping;
 @end

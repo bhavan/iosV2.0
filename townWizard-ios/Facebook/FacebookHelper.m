@@ -21,7 +21,8 @@
 }
 
 - (id) init {
-	if (self = [super init]) {
+	if (self = [super init])
+    {
 		//appId = [[[GenericAppAppDelegate sharedDelegate].appConfig configForKey:@"facebook_app_id"] retain];
         
         //appId for testing:
@@ -36,8 +37,10 @@
 	return self;
 }
 
-- (void) authorizePermissions:(NSArray*)permissions for:(id <FacebookHelperDelegate>)theDelegate {
-	if ([facebook isSessionValid] == NO) {
+- (void) authorizePermissions:(NSArray*)permissions for:(id <FacebookHelperDelegate>)theDelegate
+{
+	if ([facebook isSessionValid] == NO)
+    {
 		delegate = theDelegate;
 		[self.facebook authorize:self.appId permissions:permissions delegate:self];
 	}
@@ -72,7 +75,8 @@
 #pragma mark -
 #pragma mark Memory management
 
-- (void) dealloc {
+- (void) dealloc
+{
 	self.facebook = nil;
 	[_appId release];
 	[super dealloc];

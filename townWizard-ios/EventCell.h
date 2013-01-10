@@ -10,14 +10,14 @@
 #import "Event.h"
 
 @interface EventCell : UITableViewCell
-{
-    IBOutlet UILabel *eventTitle;
-    IBOutlet UILabel *eventLocation;
-    IBOutlet UILabel *eventTime;
-    IBOutlet UILabel *eventCategory;
-}
+
+@property (nonatomic, retain) IBOutlet UILabel *eventTitle;
+@property (nonatomic, retain) IBOutlet UILabel *eventLocation;
+@property (nonatomic, retain) IBOutlet UILabel *eventTime;
+@property (nonatomic, retain) IBOutlet UILabel *eventCategory;
+@property (nonatomic, retain, readonly) Event *event;
 
 - (void) updateWithEvent:(Event *) event;
-@property (nonatomic, retain, readonly) Event *event;
+
 
 @end

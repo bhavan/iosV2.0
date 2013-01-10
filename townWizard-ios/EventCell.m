@@ -19,6 +19,12 @@
 
 @implementation EventCell
 
+@synthesize eventTitle;
+@synthesize eventLocation;
+@synthesize eventTime;
+@synthesize eventCategory;
+
+
 #pragma mark -
 #pragma mark life cycle
 
@@ -27,7 +33,6 @@
     [eventTitle release];
     [eventLocation release];
     [eventTime release];
-
     [eventCategory release];
     [super dealloc];
 }

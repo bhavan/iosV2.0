@@ -20,8 +20,6 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
 
 @implementation EventsViewer
 
-
-
 #pragma mark -
 #pragma mark life cycle
 
@@ -31,11 +29,15 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
     {
         [pageControl setNumberOfPages:0];
         
-        UISwipeGestureRecognizer *leftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(showNextEvent)];
+        UISwipeGestureRecognizer *leftSwipe = [[UISwipeGestureRecognizer alloc]
+                                               initWithTarget:self
+                                               action:@selector(showNextEvent)];
         [leftSwipe setDirection:UISwipeGestureRecognizerDirectionLeft];
         [self addGestureRecognizer:leftSwipe];
         
-        UISwipeGestureRecognizer *rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(showPreviousEvent)];
+        UISwipeGestureRecognizer *rightSwipe = [[UISwipeGestureRecognizer alloc]
+                                                initWithTarget:self
+                                                action:@selector(showPreviousEvent)];
         [rightSwipe setDirection:UISwipeGestureRecognizerDirectionRight];
         [self addGestureRecognizer:rightSwipe];
         [leftSwipe release];
@@ -94,7 +96,11 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
         
         [self setEvents:events];
         [pageControl setNumberOfPages:[events count]];
-        currentTimer = [NSTimer scheduledTimerWithTimeInterval:10.0f target:self selector:@selector(tickEvent) userInfo:nil repeats:YES];
+        currentTimer = [NSTimer scheduledTimerWithTimeInterval:10.0f
+                                                        target:self
+                                                      selector:@selector(tickEvent)
+                                                      userInfo:nil
+                                                       repeats:YES];
         [self displayEventAtIndex:0];    
    }
 }
@@ -191,8 +197,12 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
     NSDate *start = [NSDate dateFromString:event.startTime dateFormat:@"yyyy-MM-dd HH:mm:ss"];
     NSDate *end = [NSDate dateFromString:event.endTime dateFormat:@"yyyy-MM-dd HH:mm:ss"];
     
-    NSString *startTimeString = [NSDate stringFromDate:start dateFormat:@"h:mma" localeIdentifier:@"en_US"];
-    NSString *endTimeString = [NSDate stringFromDate:end dateFormat:@"h:mma" localeIdentifier:@"en_US"];
+    NSString *startTimeString = [NSDate stringFromDate:start
+                                            dateFormat:@"h:mma"
+                                      localeIdentifier:@"en_US"];
+    NSString *endTimeString = [NSDate stringFromDate:end
+                                          dateFormat:@"h:mma"
+                                    localeIdentifier:@"en_US"];
     return [NSString stringWithFormat:@"%@-%@",startTimeString,endTimeString];
 }
 

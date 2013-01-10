@@ -53,7 +53,8 @@
 
 - (void) addActivityIndicator
 {
-    if (_activityIndicator == nil) {
+    if (_activityIndicator == nil)
+    {
         _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         [_activityIndicator setHidesWhenStopped:YES];
     }
@@ -128,7 +129,8 @@
                    options:options
                    success:^(UIImage *image, BOOL cached){
                        [_activityIndicator stopAnimating];
-                       if (success != nil) {
+                       if (success != nil)
+                       {
                            success(image,cached);
                        }     
                    }

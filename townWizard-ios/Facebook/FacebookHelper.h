@@ -11,7 +11,8 @@
 
 @protocol FacebookHelperDelegate;
 
-@interface FacebookHelper : NSObject <FBSessionDelegate> {
+@interface FacebookHelper : NSObject <FBSessionDelegate>
+{
 	Facebook* facebook;
 	id <FacebookHelperDelegate> delegate;
 }
@@ -21,7 +22,9 @@
 @property (nonatomic, retain) id <FacebookHelperDelegate> delegate;
 
 - (void) authorizePermissions:(NSArray*)permissions for:(id <FacebookHelperDelegate>)theDelegate;
-- (void) dialog:(NSString *)action andParams:(NSMutableDictionary *)params andDelegate:(id <FBDialogDelegate>)theDelegate;
+- (void) dialog:(NSString *)action
+      andParams:(NSMutableDictionary *)params
+    andDelegate:(id <FBDialogDelegate>)theDelegate;
 
 @end
 

@@ -10,8 +10,9 @@
 
 @class GeneralViewController;
 
-@interface InputBar : UIActionSheet {
-	UIPickerView		*pickerView;
+@interface InputBar : UIActionSheet
+{
+	UIPickerView *pickerView;
 }
 
 @property (nonatomic, retain) UIPickerView	*pickerView;

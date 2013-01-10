@@ -19,6 +19,9 @@
 
 @implementation SectionCell
 
+@synthesize sectionImage;
+@synthesize accessibilityIndicator;
+
 #pragma mark -
 #pragma mark life cycle
 
@@ -34,6 +37,8 @@
 
 - (void) dealloc
 {
+    [sectionImage release];
+    [accessibilityIndicator release];
     [self setSection:nil];
     [super dealloc];
 }

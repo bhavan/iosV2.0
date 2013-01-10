@@ -13,7 +13,8 @@
 
 @synthesize pickerView;
 
-- (void) initWithDelegate:(id<UIPickerViewDelegate, UIPickerViewDataSource>)owner andPickerValue:(NSInteger)nValue
+- (void) initWithDelegate:(id<UIPickerViewDelegate, UIPickerViewDataSource>)owner
+           andPickerValue:(NSInteger)nValue
 {
 	pickerView = [[[UIPickerView alloc] init] autorelease];
 	pickerView.delegate = owner;

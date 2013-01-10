@@ -11,11 +11,10 @@
 @class ActivityImageView;
 @class Section;
 
-@interface SectionCell : UITableViewCell {
-    IBOutlet ActivityImageView *sectionImage;
-    IBOutlet UIImageView *accessibilityIndicator;
-}
+@interface SectionCell : UITableViewCell
 
+@property (nonatomic, retain) IBOutlet ActivityImageView *sectionImage;
+@property (nonatomic, retain) IBOutlet UIImageView *accessibilityIndicator;
 - (void) updateWithSection:(Section *) section;
 
 @end

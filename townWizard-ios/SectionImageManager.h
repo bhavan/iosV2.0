@@ -16,7 +16,6 @@
 }
 
 + (id) sharedInstance;
-
 - (UIImage *) imageForSection:(Section *) section;
 
 @end

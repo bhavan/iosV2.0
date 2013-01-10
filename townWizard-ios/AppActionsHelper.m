@@ -22,7 +22,8 @@ static AppActionsHelper *actionsHelper = nil;
 + (id) sharedInstance
 {
     @synchronized (self) {
-        if (actionsHelper == nil) {
+        if (actionsHelper == nil)
+        {
             actionsHelper = [[self alloc] init];
         }
     }

@@ -37,17 +37,17 @@
     [self.view addSubview:uploadView];
     [uploadView addUploadTarget:self action:@selector(cameraButtonPressed:)];
     self.partner = [[RequestHelper sharedInstance] currentPartner];
-
+    
 }
 
 - (void)cameraButtonPressed:(id)sender
 {
-	AppDelegate *appdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];  
+	AppDelegate *appdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     NSArray *otherButtonTitles;
     NSInteger menuTag = 1;
 	if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
     {
-		otherButtonTitles = @[@"Choose from Library",@"Take Photo"];	
+		otherButtonTitles = @[@"Choose from Library",@"Take Photo"];
 	}
 	else
     {
@@ -71,27 +71,22 @@
 		return;
 	
 	UIImagePickerController* imageController = [[UIImagePickerController alloc] init];
-	imageController.delegate = self;	
-	
-        if(buttonIndex == 0)
-        {
-			if([UIImagePickerController
-                isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
-            {
-				imageController.sourceType = UIImagePickerControllerSourceTypeCamera;
-				[self presentModalViewController:imageController animated:YES];
-			}
-		}
-		else if(buttonIndex == 1)
-        {
-			if([UIImagePickerController
-                isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
-            {
-				imageController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-				[self presentModalViewController:imageController animated:YES];
-			}
-		}	
-	
+	imageController.delegate = self;
+	UIImagePickerControllerSourceType sourceType;
+    if(buttonIndex == 0)
+    {
+        sourceType = UIImagePickerControllerSourceTypeCamera;
+    }
+    else if(buttonIndex == 1)
+    {
+        sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        
+    }
+	if([UIImagePickerController isSourceTypeAvailable:sourceType])
+    {
+        imageController.sourceType = sourceType;
+        [self presentModalViewController:imageController animated:YES];
+    }
 	[imageController release];
 }
 
@@ -109,9 +104,9 @@
                                                 initWithNibName:@"AddCaptionViewController"
                                                 bundle:nil];
     
-    viewController.partnerSiteURL = self.partner.webSiteUrl;    
-	viewController.m_photo = image;	
-    [picker presentModalViewController:viewController animated:YES];    
+    viewController.partnerSiteURL = self.partner.webSiteUrl;
+	viewController.m_photo = image;
+    [picker presentModalViewController:viewController animated:YES];
 	[viewController release];
 }
 

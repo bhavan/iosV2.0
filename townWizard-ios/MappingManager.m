@@ -23,8 +23,10 @@ static MappingManager *mappingManager = nil;
 
 + (id) sharedInstance
 {
-    @synchronized (self) {
-        if (mappingManager == nil) {
+    @synchronized (self)
+    {
+        if (mappingManager == nil)
+        {
             mappingManager = [[self alloc] init];
         }
     }
@@ -32,7 +34,8 @@ static MappingManager *mappingManager = nil;
 }
 
 
-- (RKObjectMapping *)videoMapping {
+- (RKObjectMapping *)videoMapping
+{
     RKObjectMapping * partnersMapping = [RKObjectMapping mappingForClass:[Video class]];
     
     [partnersMapping mapKeyPath:@"name" toAttribute:@"name"];
@@ -42,7 +45,8 @@ static MappingManager *mappingManager = nil;
     
 }
 
-- (RKObjectMapping *)photoMapping {
+- (RKObjectMapping *)photoMapping
+{
     RKObjectMapping * partnersMapping = [RKObjectMapping mappingForClass:[Photo class]];
     
     [partnersMapping mapKeyPath:@"name" toAttribute:@"name"];
@@ -51,7 +55,8 @@ static MappingManager *mappingManager = nil;
     return partnersMapping;
 }
 
-- (RKObjectMapping *)photoCategoryMapping {
+- (RKObjectMapping *)photoCategoryMapping
+{
     RKObjectMapping * partnersMapping = [RKObjectMapping mappingForClass:[PhotoCategory class]];
     
     
@@ -101,7 +106,8 @@ static MappingManager *mappingManager = nil;
     return mapping;
 }
 
-- (RKObjectMapping *) partnerMapping {
+- (RKObjectMapping *) partnerMapping
+{
     RKObjectMapping * mapping = [RKObjectMapping mappingForClass:[Partner class]];
     [mapping mapKeyPath:@"id" toAttribute:@"partnterId"];
     [mapping mapKeyPath:@"name" toAttribute:@"name"];
@@ -113,7 +119,8 @@ static MappingManager *mappingManager = nil;
     
 }
 
-- (RKObjectMapping *) sectionMapping {
+- (RKObjectMapping *) sectionMapping
+{
     RKObjectMapping * mapping = [RKObjectMapping mappingForClass:[Section class]];
     [mapping mapKeyPath:@"id" toAttribute:@"sectionId"];
     [mapping mapKeyPath:@"display_name" toAttribute:@"displayName"];
