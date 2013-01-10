@@ -68,6 +68,10 @@ static const NSInteger kEventsAlertTag = 700;
 
 - (void)dealloc
 {
+    if(_categotiesList)
+    {
+        [_categotiesList release];
+    }
     [featuredEventsViewer release];
     [eventsList release];
     [_eventsTypeButton release];

@@ -28,13 +28,11 @@
     return self;
 }
 
-
-
 -(void)dealloc
-{
-    [super dealloc];
+{    
     [nameLabel release];
     [thumbImageView release];
+    [super dealloc];
 }
 
 @end
