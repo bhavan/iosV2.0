@@ -9,12 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface EventsView : UIView
-{
-    IBOutlet UIButton *calendarButton;
-    IBOutlet UIButton *eventsTypeButton;
-    IBOutlet UIButton *addEventButton;
-    IBOutlet UIView *tableHeader;
-    IBOutlet UIView *tableFooter;
-}
+
+@property (nonatomic,retain) IBOutlet UIButton *calendarButton;
+@property (nonatomic,retain) IBOutlet UIButton *eventsTypeButton;
+@property (nonatomic,retain) IBOutlet UIButton *addEventButton;
+@property (nonatomic,retain) IBOutlet UIView *tableHeader;
+@property (nonatomic,retain) IBOutlet UIView *tableFooter;
 
 @end

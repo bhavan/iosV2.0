@@ -15,13 +15,15 @@
 #import <EventKit/EventKit.h>
 #import "NSDate+Formatting.h"
 #import "NSString+HTMLStripping.h"
+#import "TWBackgroundView.h"
 
 @implementation AppActionsHelper
 static AppActionsHelper *actionsHelper = nil;
 
 + (id) sharedInstance
 {
-    @synchronized (self) {
+    @synchronized (self)
+    {
         if (actionsHelper == nil)
         {
             actionsHelper = [[self alloc] init];
@@ -31,6 +33,13 @@ static AppActionsHelper *actionsHelper = nil;
 }
 #pragma mark -
 #pragma mark PartnerMethods
+
+- (UIView *)putTWBackgroundWithFrame:(CGRect)frame toView:(UIView *)view
+{
+    TWBackgroundView *backgroundView = [[TWBackgroundView alloc] initWithFrame:frame];
+    [view insertSubview:backgroundView atIndex:0];
+    return [backgroundView autorelease];
+}
 
 - (UIBarButtonItem *) menuButtonWithTarget:(id)target action:(SEL)action
 {
@@ -145,9 +154,12 @@ static AppActionsHelper *actionsHelper = nil;
 		if((buttonIndex == 1) && (phoneNumberToCall.length > 0))
 		{
             [phoneNumberToCall autorelease];
-            phoneNumberToCall = [phoneNumberToCall stringByReplacingOccurrencesOfString:@"-" withString:@""];
-			phoneNumberToCall = [phoneNumberToCall stringByReplacingOccurrencesOfString:@"(" withString:@""];
-			phoneNumberToCall = [phoneNumberToCall stringByReplacingOccurrencesOfString:@")" withString:@""];
+            phoneNumberToCall = [phoneNumberToCall stringByReplacingOccurrencesOfString:@"-"
+                                                                             withString:@""];
+			phoneNumberToCall = [phoneNumberToCall stringByReplacingOccurrencesOfString:@"("
+                                                                             withString:@""];
+			phoneNumberToCall = [phoneNumberToCall stringByReplacingOccurrencesOfString:@")"
+                                                                             withString:@""];
 			phoneNumberToCall = [NSString stringWithFormat:@"tel://%@",phoneNumberToCall];
             
 			[[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumberToCall]];

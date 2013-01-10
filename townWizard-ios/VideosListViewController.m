@@ -15,10 +15,7 @@
 #import "Partner.h"
 #import "Section.h"
 #import "VideoViewController.h"
-#import "TWBackgroundView.h"
-
 #import "RequestHelper.h"
-
 #import <MediaPlayer/MediaPlayer.h>
 
 @interface VideosListViewController ()
@@ -38,9 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    TWBackgroundView *backgroundView = [[TWBackgroundView alloc] initWithFrame:_tableView.frame];
-    [self.view insertSubview:backgroundView atIndex:0];
-    [backgroundView release];
+    [[AppActionsHelper sharedInstance] putTWBackgroundWithFrame:_tableView.frame toView:self.view];   
 }
 
 

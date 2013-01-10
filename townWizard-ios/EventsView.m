@@ -11,6 +11,12 @@
 
 @implementation EventsView
 
+@synthesize calendarButton;
+@synthesize eventsTypeButton;
+@synthesize addEventButton;
+@synthesize tableFooter;
+@synthesize tableHeader;
+
 - (void) awakeFromNib
 {
     [super awakeFromNib];

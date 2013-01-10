@@ -106,12 +106,12 @@ static RequestHelper *requestHelper = nil;
                  withDelegate:(id <RKObjectLoaderDelegate>)delegate
 {
     RKURL *baseURL = [RKURL URLWithBaseURLString:partner.webSiteUrl];
-    RKObjectManager *objectManager = [RKObjectManager sharedManager];    
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
     NSString *token = [RequestHelper xaccessTokenFromPartner:partner];
     
     objectManager.client.baseURL = baseURL;
     [objectManager.client.HTTPHeaders setValue:token forKey:TOKEN_KEY];
-    [objectManager.mappingProvider setObjectMapping:objectMapping forKeyPath:@"data"];    
+    [objectManager.mappingProvider setObjectMapping:objectMapping forKeyPath:@"data"];
     [objectManager loadObjectsAtResourcePath:[NSString stringWithFormat:@"%@",section.url] delegate:delegate];
 }
 
@@ -162,11 +162,11 @@ static RequestHelper *requestHelper = nil;
     
     RKURL *baseURL = [RKURL URLWithBaseURLString:[[self currentPartner] webSiteUrl]];
     objectManager.client.baseURL = baseURL;
-
+    
     NSString *token = [RequestHelper xaccessTokenFromPartner:[self currentPartner]];
     [objectManager.client.HTTPHeaders setValue:token forKey:TOKEN_KEY];
     
-    return objectManager;    
+    return objectManager;
 }
 
 - (void) loadVideosWithDelegate:(id<RKObjectLoaderDelegate>) delegate
@@ -205,21 +205,21 @@ static RequestHelper *requestHelper = nil;
                               end:(NSDate *)endDate
                          delegate:(id<RKObjectLoaderDelegate>) delegate
 {
-      NSDateFormatter *dateFormat = [NSDateFormatter new];
+    NSDateFormatter *dateFormat = [NSDateFormatter new];
     [dateFormat setDateFormat:@"YYYY-MM-dd"];
     NSString *start = [dateFormat stringFromDate:startDate];
-      NSString *end = [dateFormat stringFromDate:endDate];
+    NSString *end = [dateFormat stringFromDate:endDate];
     NSString *resourcePath = [NSString stringWithFormat:@"%@?from=%@&to=%@",
                               [[self currentSection] url],
                               start,
                               end];
     [dateFormat release];
-
+    
     RKObjectManager *objectManager = [self currentObjectManager];
     [[objectManager mappingProvider] setObjectMapping:[[MappingManager sharedInstance] eventsMapping]
                                            forKeyPath:@"data"];
     [objectManager loadObjectsAtResourcePath:[NSString stringWithFormat:@"%@", resourcePath]
-                                  delegate:delegate];
+                                    delegate:delegate];
 }
 
 - (void)loadEventsCategoriesUsingBlock:(void(^)(RKObjectLoader *)) block
@@ -230,7 +230,7 @@ static RequestHelper *requestHelper = nil;
     NSString *resourcePath = [NSString stringWithFormat:@"%@/event_category.php",
                               [[self currentSection] url]];
     [objectManager loadObjectsAtResourcePath:resourcePath usingBlock:block];
-
+    
 }
 
 - (void) loadFeaturedEventUsingBlock:(void(^)(RKObjectLoader *)) block
@@ -255,9 +255,6 @@ static RequestHelper *requestHelper = nil;
     RKURL *baseURL = [RKURL URLWithBaseURLString:API_URL];
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     objectManager.client.baseURL = baseURL;
-    [objectManager.mappingProvider setObjectMapping:[[MappingManager sharedInstance] partnerMapping]
-                                         forKeyPath:@"data"];
-
     [[objectManager mappingProvider] setObjectMapping:[[MappingManager sharedInstance] partnerMapping]
                                            forKeyPath:@"data"];
     [objectManager loadObjectsAtResourcePath:[NSString stringWithFormat:@"/partner/%@",partnerID]
@@ -266,7 +263,9 @@ static RequestHelper *requestHelper = nil;
 
 - (void) loadSectionsUsingBlock:(void(^)(RKObjectLoader *)) block
 {
+    RKURL *baseURL = [RKURL URLWithBaseURLString:API_URL];
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    objectManager.client.baseURL = baseURL;
     [[objectManager mappingProvider] setObjectMapping:[[MappingManager sharedInstance] sectionMapping]
                                            forKeyPath:@"data"];
     NSString *resourcePath = [NSString stringWithFormat:@"/section/partner/%@",[[self currentPartner] partnterId]];

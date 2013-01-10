@@ -2034,6 +2034,21 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		8457A3D8169F01D30069A25B /* EventViews */ = {
+			isa = PBXGroup;
+			children = (
+				D93249691637DE2700409AA9 /* EventsViewer.h */,
+				D932496A1637DE2700409AA9 /* EventsViewer.m */,
+				D953D7551639829E00078A9E /* EventsView.h */,
+				D953D7561639829E00078A9E /* EventsView.m */,
+				D9B37936163A817D00828478 /* EventSectionHeader.h */,
+				D9B37937163A817D00828478 /* EventSectionHeader.m */,
+				840E458C166E48C3007CCF51 /* EventDetailTopView.h */,
+				840E458D166E48C3007CCF51 /* EventDetailTopView.m */,
+			);
+			name = EventViews;
+			sourceTree = "<group>";
+		};
 		8483F23814D03FBE005E4216 = {
 			isa = PBXGroup;
 			children = (
@@ -2138,6 +2153,7 @@
 				D93249281637CD8B00409AA9 /* EventsViewController.xib */,
 				840E4587166E374C007CCF51 /* EventDetailsViewController.xib */,
 				848DFB681626B3F50096A6FF /* VideoViewController.xib */,
+				847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */,
 				847FD37F161ACDAE009FB9CC /* PhotoCategoriesViewController.xib */,
 				84F82C91161AF98E00E0A481 /* PhotoGalleryViewController.xib */,
 				84CAAE38161B2EB100E09E36 /* VideosListViewController.xib */,
@@ -2748,17 +2764,12 @@
 		D93249681637DDF800409AA9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8457A3D8169F01D30069A25B /* EventViews */,
 				8488550414D1A7420030BD03 /* CustomNavigationBar */,
 				D99E72CA163EB45B004EB303 /* UI Elements */,
 				D99E72C9163EB442004EB303 /* Cells */,
-				D93249691637DE2700409AA9 /* EventsViewer.h */,
-				D932496A1637DE2700409AA9 /* EventsViewer.m */,
-				D9B37936163A817D00828478 /* EventSectionHeader.h */,
-				D9B37937163A817D00828478 /* EventSectionHeader.m */,
 				D99E7273163E6EF2004EB303 /* TWBackgroundView.h */,
 				D99E7274163E6EF2004EB303 /* TWBackgroundView.m */,
-				840E458C166E48C3007CCF51 /* EventDetailTopView.h */,
-				840E458D166E48C3007CCF51 /* EventDetailTopView.m */,
 				D98A35F016394DA200E4E75F /* ActivityImageView.h */,
 				D98A35F116394DA200E4E75F /* ActivityImageView.m */,
 				848F71F0162805D9005F02E8 /* PhotoUploadView.h */,
@@ -2872,8 +2883,6 @@
 		D99E726F163E6B6B004EB303 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
-				D953D7551639829E00078A9E /* EventsView.h */,
-				D953D7561639829E00078A9E /* EventsView.m */,
 			);
 			name = Subviews;
 			sourceTree = "<group>";
@@ -2901,7 +2910,6 @@
 			children = (
 				847F875D14D6C81F005EE200 /* PartnerMenuViewController.h */,
 				847F875E14D6C81F005EE200 /* PartnerMenuViewController.m */,
-				847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */,
 			);
 			name = ParnerMenuViewController;
 			sourceTree = "<group>";

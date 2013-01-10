@@ -14,7 +14,7 @@
 
 #import "RequestHelper.h"
 #import "Section.h"
-#import "TWBackgroundView.h"
+
 
 @interface PartnerViewController () <PartnerMenuDelegate>
 @property (nonatomic, retain) PartnerMenuViewController *menuController;
@@ -55,20 +55,19 @@
 {
     [super viewDidLoad];    
     CGRect backgroundViewFrame = [[self view] frame];
-    backgroundViewFrame.origin = CGPointZero;
-   
-    [[[self detailsController] view]
-     insertSubview:[self twBackgroundWithFrame:backgroundViewFrame] atIndex:0];
-    [[[self menuController] view]
-     insertSubview:[self twBackgroundWithFrame:backgroundViewFrame] atIndex:0];
+    backgroundViewFrame.origin = CGPointZero;   
+    [[AppActionsHelper sharedInstance] putTWBackgroundWithFrame:backgroundViewFrame
+                                                         toView:self.detailsController.view];
+    [[AppActionsHelper sharedInstance] putTWBackgroundWithFrame:backgroundViewFrame
+                                                         toView:self.menuController.view];   
 }
 
 - (void) dealloc
 {
+    [_partner release];
     [self setMenuController:nil];
     [self setDetailsController:nil];
     [self setSectionControllerFactory:nil];
-
     [super dealloc];
 }
 
@@ -126,13 +125,6 @@
         UIBarButtonItem *menuButton = [[AppActionsHelper sharedInstance] menuButtonWithTarget:self action:@selector(toggleMasterView)];
         [[(id)controller navigationItem] setLeftBarButtonItem:menuButton];
     }
-}
-
-- (UIView *) twBackgroundWithFrame:(CGRect) frame
-{
-    TWBackgroundView *backgroundView = [[TWBackgroundView alloc] initWithFrame:frame];
-    [[self view] insertSubview:backgroundView atIndex:0];
-    return [backgroundView autorelease];
 }
 
 @end

@@ -12,7 +12,6 @@
 #import "Section.h"
 #import "Appirater.h"
 #import "UIImageView+WebCache.h"
-#import "TWBackgroundView.h"
 #import "EventSectionHeader.h"
 #import "SectionCell.h"
 #import "ActivityImageView.h"
@@ -46,10 +45,9 @@
     [super viewDidLoad];
     CGRect bgFrame = self.view.frame;
     bgFrame.origin = CGPointZero;
-    TWBackgroundView *backgroundView = [[TWBackgroundView alloc] initWithFrame:bgFrame];
-    [self.view insertSubview:backgroundView atIndex:0];
-    [backgroundView release];
-#ifdef PARTNER_ID
+    [[AppActionsHelper sharedInstance] putTWBackgroundWithFrame:bgFrame
+                                                         toView:self.view];
+   #ifdef PARTNER_ID
     _headerView.frame = CGRectMake(0, 0, 320, 84);
 #endif
     if ([self partner] == nil)

@@ -11,7 +11,6 @@
 #import "WebImageGridViewCell.h"
 #import "UIImageView+WebCache.h"
 #import "TownWIzardNavigationBar.h"
-#import "TWBackgroundView.h"
 
 @interface PhotoGalleryViewController () <RKObjectLoaderDelegate>
 @property (nonatomic, retain) NSArray *photos;
@@ -25,9 +24,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    TWBackgroundView *backgroundView = [[TWBackgroundView alloc] initWithFrame:_gridView.frame];
-    [self.view insertSubview:backgroundView atIndex:0];
-    [backgroundView release];
+    [[AppActionsHelper sharedInstance] putTWBackgroundWithFrame:_gridView.frame
+                                                         toView:self.view];
 }
 
 

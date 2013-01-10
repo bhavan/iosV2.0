@@ -14,7 +14,6 @@
 #import "SubMenuViewController.h"
 #import "NSDate+Formatting.h"
 #import "RequestHelper.h"
-#import "TWBackgroundView.h"
 #import "SHK.h"
 #import "NSString+HTMLStripping.h"
 
@@ -57,10 +56,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    TWBackgroundView *backgroundView = [[TWBackgroundView alloc] initWithFrame:self.view.frame];
-    [self.view insertSubview:backgroundView atIndex:0];
-    [backgroundView release];
-    //[self.scrollView addSubview:_topDetailView];
+    [[AppActionsHelper sharedInstance] putTWBackgroundWithFrame:self.view.frame
+                                                         toView:self.view];
+   
     if(_event)
     {
         [self loadWithEvent:_event];
@@ -178,6 +176,7 @@
 
 - (void)dealloc
 {
+    [_event release];
     [_scrollView release];
     [_topDetailView release];
     [_bannerImageView release];

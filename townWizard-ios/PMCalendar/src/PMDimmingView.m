@@ -10,7 +10,6 @@
 #import "PMCalendarConstants.h"
 #import "PMCalendarController.h"
 #import "PMCalendarHelpers.h"
-#import "TWBackgroundView.h"
 
 @implementation PMDimmingView
 
@@ -24,9 +23,8 @@
     }
     
     self.controller = controller;
-    TWBackgroundView *backgroundView = [[TWBackgroundView alloc] initWithFrame:self.frame];
-    [self insertSubview:backgroundView atIndex:0];
-    [backgroundView release];
+    [[AppActionsHelper sharedInstance] putTWBackgroundWithFrame:self.frame toView:self];
+   
     //self.backgroundColor = UIColorMakeRGBA(0, 0, 0, 1.5);
     UIButton *okButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [okButton addTarget:self action:@selector(okButtonPressed) forControlEvents:UIControlEventTouchUpInside];

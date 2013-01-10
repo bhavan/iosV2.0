@@ -177,11 +177,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "townWizard-ios/EventDetailsViewController.m"
-         timestampString = "379345730.71164"
+         timestampString = "379518931.154029"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "77"
-         endingLineNumber = "77"
+         startingLineNumber = "75"
+         endingLineNumber = "75"
          landmarkName = "-updateBannerImage:urlString:"
          landmarkType = "5">
       </FileBreakpoint>
