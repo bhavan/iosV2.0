@@ -12,7 +12,7 @@
 		<key>KIF testing.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>22</integer>
+			<integer>4</integer>
 		</dict>
 		<key>algood.xcscheme</key>
 		<dict>
@@ -52,7 +52,7 @@
 		<key>grayton-cedar.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>13</integer>
+			<integer>6</integer>
 		</dict>
 		<key>hague.xcscheme</key>
 		<dict>
@@ -89,25 +89,20 @@
 			<key>orderHint</key>
 			<integer>18</integer>
 		</dict>
-		<key>townWizard-ios.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>0</integer>
-		</dict>
 		<key>townWizard-partner-template.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>townWizardPartnerTemplate copy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 		<key>townWizardPartnerTemplate.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>4</integer>
-		</dict>
-		<key>townWizardTests.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>5</integer>
 		</dict>
 		<key>tw-p1.xcscheme</key>
 		<dict>

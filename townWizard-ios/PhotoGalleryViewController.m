@@ -44,6 +44,7 @@
 
 - (void)dealloc
 {
+    [self setCategory:nil];
     [self setGridView:nil];
     [super dealloc];
 }
