@@ -16,7 +16,6 @@
 }
 + (id) sharedInstance;
 - (BOOL)townWizardServerReachable;
-- (UIBarButtonItem *) menuButtonWithTarget:(id)target action:(SEL)action;
 - (void)makeCall:(NSString *)phoneNumber;
 - (void)openUrl:(NSString *)urlString fromNavController:(UINavigationController *)navController;
 

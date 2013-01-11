@@ -75,12 +75,11 @@
 	UIImagePickerControllerSourceType sourceType;
     if(buttonIndex == 0)
     {
-        sourceType = UIImagePickerControllerSourceTypeCamera;
+        sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     }
     else if(buttonIndex == 1)
     {
-        sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        
+        sourceType = UIImagePickerControllerSourceTypeCamera;        
     }
 	if([UIImagePickerController isSourceTypeAvailable:sourceType])
     {
@@ -105,7 +104,7 @@
                                                 bundle:nil];
     
     viewController.partnerSiteURL = self.partner.webSiteUrl;
-	viewController.m_photo = image;
+	viewController.photo = image;
     [picker presentModalViewController:viewController animated:YES];
 	[viewController release];
 }

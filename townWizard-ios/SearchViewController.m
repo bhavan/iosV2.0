@@ -21,6 +21,7 @@
 #import "UISearchBar+Customize.h"
 #import "UITableViewCell+Spinner.h"
 #import "UIButton+Extensions.h"
+#import "UIBarButtonItem+TWButtons.h"
 
 @interface SearchViewController()
 - (void) searchForPartnersWithQuery:(NSString *)query offset:(NSInteger)offset;
@@ -72,7 +73,7 @@
     subMenu.partner = defaultPartner;
     [self.navigationController popToRootViewControllerAnimated:NO];
     [self.navigationController pushViewController:subMenu animated:YES];
-    UIBarButtonItem *menuButton = [[AppActionsHelper sharedInstance]
+    UIBarButtonItem *menuButton = [UIBarButtonItem
                                    menuButtonWithTarget:self.masterDetail
                                    action:@selector(toggleMasterView)];
     subMenu.navigationItem.leftBarButtonItem = menuButton;

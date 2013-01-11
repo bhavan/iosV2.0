@@ -14,123 +14,118 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
 
 @implementation AddCaptionViewController
 
-@synthesize m_photo;
+@synthesize photo;
 @synthesize partnerSiteURL;
-@synthesize userName=_userName;
-@synthesize userCaption = _userCaption;
+@synthesize userName;
+@synthesize userCaption;
+@synthesize activityIndicator;
+@synthesize mainImageView;
+@synthesize captionButton;
+@synthesize captionView;
+@synthesize m_navigationBar;
+@synthesize textView;
+@synthesize nameTextField;
 
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
 	
-	m_imageView.image = m_photo;
+	mainImageView.image = photo;
 }
 
 -(NSString *)userCaption
 {
-    if (!_userCaption) return @"";
-    else return _userCaption;
+    if (!userCaption) return @"";
+    else return userCaption;
 }
 
 -(NSString *)userName
 {
-    if (!_userName) return @"";
-    else return _userName;
+    if (!userName) return @"";
+    else return userName;
 }
 
 #pragma mark -
 #pragma mark IBActions
 
-- (IBAction)cancelButtonPressed:(id)sender {
+- (IBAction)cancelButtonPressed:(id)sender
+{
 	[self dismissModalViewControllerAnimated:YES];
 }
 
-- (IBAction)writeButtonPressed:(id)sender {
-	m_captionView.frame = CGRectMake(77.0, 416.0, 165.0, 0.0);
-	if([m_captionView superview] == nil) {
-		[self.view addSubview:m_captionView];
+- (IBAction)writeButtonPressed:(id)sender
+{
+	captionView.frame = CGRectMake(77.0, 416.0, 165.0, 0.0);
+	if([captionView superview] == nil)
+    {
+		[self.view addSubview:captionView];
 	}
 	
 	[UIView beginAnimations:NULL context:nil];
 	[UIView setAnimationDuration:0.35];
-	m_captionView.frame = CGRectMake(0.0, 0.0, 320.0, 460.0);
+	captionView.frame = CGRectMake(0.0, 0.0, 320.0, 460.0);
 	[UIView commitAnimations];
 	
-	[m_txtName becomeFirstResponder];
+	[nameTextField becomeFirstResponder];
 	m_navigationBar.hidden = NO;
 	[self.view bringSubviewToFront:m_navigationBar];
     
-    m_txtName.text = self.userName;
-    m_textView.text = self.userCaption;
+    nameTextField.text = self.userName;
+    textView.text = self.userCaption;
 }
 
-- (IBAction)uploadButtonPressed:(id)sender {
-	[m_activityIndicator startAnimating];
-	[self.view bringSubviewToFront:m_activityIndicator];
+- (IBAction)uploadButtonPressed:(id)sender
+{
+	[activityIndicator startAnimating];
+	[self.view bringSubviewToFront:activityIndicator];
 	//[self dismissModalViewControllerAnimated:YES];
 	[NSThread detachNewThreadSelector:@selector(addPhoto) toTarget:self withObject:nil];
 }
 
-- (void)hideCaptionView:(BOOL)animated {
+- (void)hideCaptionView:(BOOL)animated
+{
 	[UIView beginAnimations:NULL context:nil];
 	[UIView setAnimationDuration:0.35];
-	m_captionView.frame = CGRectMake(77.0, 460.0, 165.0, 0.0);
+	captionView.frame = CGRectMake(77.0, 460.0, 165.0, 0.0);
 	[UIView commitAnimations];
 	m_navigationBar.hidden = YES;
 }
 
-- (IBAction)textCancelButtonPressed:(id)sender {	
+- (IBAction)textCancelButtonPressed:(id)sender
+{
 	[self hideCaptionView:YES];
-	[m_textView resignFirstResponder];
-	[m_txtName resignFirstResponder];
+	[textView resignFirstResponder];
+	[nameTextField resignFirstResponder];
 }
 
-- (IBAction)textDoneButtonPressed:(id)sender {
+- (IBAction)textDoneButtonPressed:(id)sender
+{
 	[self hideCaptionView:YES];
-	[m_textView resignFirstResponder];
-	[m_txtName resignFirstResponder];
-    self.userName = m_txtName.text;
-    self.userCaption = m_textView.text;
-	[m_btnCaption setTitle:m_textView.text forState:UIControlStateNormal];
+	[textView resignFirstResponder];
+	[nameTextField resignFirstResponder];
+    self.userName = nameTextField.text;
+    self.userCaption = textView.text;
+	[captionButton setTitle:textView.text forState:UIControlStateNormal];
 }
 
 #pragma mark -
 #pragma mark Upload photo
 
-- (NSString*) urlStringForUpload {
+- (NSString*) urlStringForUpload
+{
 	return [partnerSiteURL stringByAppendingString:uploadScriptURL];
 }
 
-- (void)addPhoto {
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	
-	NSString *stringBoundary = kBoundaryString;
-	NSMutableData *body = [NSMutableData data];	
-	
-	[body appendData:[[NSString stringWithFormat:@"--%@\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
-	[body appendData:[@"Content-Disposition: form-data; name=\"caption\"\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-	[body appendData:[[NSString stringWithString:self.userCaption] dataUsingEncoding:NSUTF8StringEncoding]];
-	
-	[body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
-	[body appendData:[@"Content-Disposition: form-data; name=\"username\"\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-	[body appendData:[[NSString stringWithString:self.userName] dataUsingEncoding:NSUTF8StringEncoding]];
-	
-	//NSString *m = m_textView.text;
-	[body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
-	[body appendData:[@"Content-Disposition: form-data; name=\"userphoto\"; filename=\"mainphoto.jpg\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-	[body appendData:[@"Content-Type: application/octet-stream\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-	[body appendData:[NSData dataWithData:UIImageJPEGRepresentation(m_photo,1.0)]];
-	[body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
-	
-	[body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
-	[body appendData:[@"Content-Disposition: form-data; name=\"userthumb\"; filename=\"thumb.jpg\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-	[body appendData:[@"Content-Type: application/octet-stream\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-	[body appendData:[NSData dataWithData:UIImageJPEGRepresentation([self buildThumbImage:m_photo],0.5)]];
-	[body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
-	
+- (void)addPhoto
+{
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];	
+	NSData *body = [[RequestHelper sharedInstance] uploadRequestDataForImage:self.photo
+                                                                     caption:self.userCaption
+                                                                    userName:self.userName];
 	NSData *returnData = [self getOutputData:[self urlStringForUpload] BodyData:body];
-	NSString *sReturnValue = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
-	
+	NSString *sReturnValue = [[NSString alloc] initWithData:returnData
+                                                   encoding:NSUTF8StringEncoding];
 	NSString *msg = @"";
 	NSString *title = @"";
 	
@@ -148,58 +143,19 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
 	}
 	[sReturnValue release];
 	
-	[m_activityIndicator stopAnimating];
+	[activityIndicator stopAnimating];
+	[UIAlertView showWithTitle:title
+                       message:msg
+                      delegate:self
+            confirmButtonTitle:@"OK"];
 	
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title 
-                                                    message:msg 
-                                                   delegate:self 
-                                          cancelButtonTitle:@"OK" 
-                                          otherButtonTitles:nil];
-	[alert show];
-	[alert release];	
 	    
 	[pool release];	
 }
 
-- (UIImage*)buildThumbImage:(UIImage*)image {
-	CGSize thumbSize = CGSizeMake(60.0, 60.0);
-	CGSize size = CGSizeMake(58.0, 58.0);
-	CGSize sizeImage = image.size;
-	
-	CGFloat fWidth = size.width;
-	CGFloat fHeight = size.height;
-	
-	if(sizeImage.width > sizeImage.height) {
-		fHeight = (sizeImage.height * fWidth) / sizeImage.width;
-	}
-	else {
-		fWidth = (sizeImage.width * fHeight) / sizeImage.height;
-	}
-	
-	CGFloat fXOffset = 0.0;
-	if(fWidth < size.width) {
-		fXOffset = (size.width - fWidth) / 2.0;
-	}
-	
-	CGFloat fYOffset = 0.0;
-	if(fHeight < size.height) {
-		fYOffset = (size.height - fHeight) / 2.0;
-	}
-	
-	UIGraphicsBeginImageContext(thumbSize);
-	[[UIImage imageNamed:@"Image-Border.png"] drawInRect:CGRectMake(0.0, 0.0, 
-                                                                    thumbSize.width, thumbSize.height)];
-	
-	[image drawInRect:CGRectMake(fXOffset + 1.0, fYOffset + 1.0, fWidth, fHeight)];
-	
-	UIImage* result = UIGraphicsGetImageFromCurrentImageContext();
-	UIGraphicsEndImageContext();
-	
-	return result;
-}
 
-- (NSData *)getOutputData:(NSString *)sUrl BodyData:(NSData *)bodyData {
-	
+- (NSData *)getOutputData:(NSString *)sUrl BodyData:(NSData *)bodyData
+{	
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:sUrl]];
 	[request setHTTPMethod: @"POST"];
 	
@@ -224,8 +180,6 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-   //self.presentingViewController = imagePicker; self.presentingViewController.presentingViewController = SubMenuViewController
-    
     [self.presentingViewController.presentingViewController dismissModalViewControllerAnimated:YES];
 }
 
@@ -234,8 +188,13 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
 
 -(void)cleanUp
 {
-    [m_imageView release];
-	[m_photo release];
+    [mainImageView release];
+    [captionButton release];
+    [captionView release];
+    [textView release];
+	[photo release];
+    [nameTextField release];
+    [activityIndicator release];
     self.userName = nil;
     self.userCaption = nil;
 }
@@ -246,7 +205,8 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
     [super viewDidUnload];
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
     [self cleanUp];
     [super dealloc];
 }

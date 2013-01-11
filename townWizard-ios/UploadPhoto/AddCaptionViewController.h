@@ -9,28 +9,24 @@
 #import <UIKit/UIKit.h>
 
 
-@interface AddCaptionViewController : UIViewController {
-
-	IBOutlet UIImageView *m_imageView;
-	IBOutlet UIButton *m_btnCaption;
-	IBOutlet UINavigationBar *m_navigationBar;	
-	IBOutlet UIView *m_captionView;
-	IBOutlet UITextView *m_textView;
-	IBOutlet UITextField *m_txtName;
-	
-	UIImage *m_photo;
-    IBOutlet UIActivityIndicatorView *m_activityIndicator;
+@interface AddCaptionViewController : UIViewController
+{	
+	UIImage *photo;    
 }
 
-@property (nonatomic, retain) UIImage *m_photo;
-@property (nonatomic,retain) NSString * userName;
-@property (nonatomic,retain) NSString * userCaption;
+@property (nonatomic, retain) IBOutlet UIImageView *mainImageView;
+@property (nonatomic, retain) IBOutlet UIButton *captionButton;
+@property (nonatomic, retain) IBOutlet UINavigationBar *m_navigationBar;
+@property (nonatomic, retain) IBOutlet UIView *captionView;
+@property (nonatomic, retain) IBOutlet UITextView *textView;
+@property (nonatomic, retain) IBOutlet UITextField *nameTextField;
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (nonatomic, retain) UIImage *photo;
+@property (nonatomic, retain) NSString * userName;
+@property (nonatomic, retain) NSString * userCaption;
+@property (nonatomic, retain) NSString * partnerSiteURL;
 
-@property (nonatomic,retain) NSString * partnerSiteURL;
-
-- (UIImage*)buildThumbImage:(UIImage*)image;
 - (NSData *)getOutputData:(NSString *)sUrl BodyData:(NSData *)bodyData;
-
 - (IBAction)cancelButtonPressed:(id)sender;
 - (IBAction)writeButtonPressed:(id)sender;
 - (IBAction)uploadButtonPressed:(id)sender;

@@ -12,6 +12,7 @@
 #import "SectionControllerFactory.h"
 #import "RequestHelper.h"
 #import "Section.h"
+#import "UIBarButtonItem+TWButtons.h"
 
 
 @interface PartnerViewController () <PartnerMenuDelegate>
@@ -120,7 +121,7 @@
         [[self detailsController] setViewControllers:[NSArray arrayWithObject:controller] animated:NO];
         [(TownWizardNavigationBar *)[_detailsController navigationBar]
          updateTitleText:[section displayName]];
-        UIBarButtonItem *menuButton = [[AppActionsHelper sharedInstance] menuButtonWithTarget:self action:@selector(toggleMasterView)];
+        UIBarButtonItem *menuButton = [UIBarButtonItem menuButtonWithTarget:self action:@selector(toggleMasterView)];
         [[(id)controller navigationItem] setLeftBarButtonItem:menuButton];
     }
 }

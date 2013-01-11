@@ -372,7 +372,16 @@
 		84237CB21668A0DE00B3DB18 /* InputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84237CB01668A0DE00B3DB18 /* InputBar.m */; };
 		84237CB61668A3D400B3DB18 /* EventCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 84237CB51668A3D400B3DB18 /* EventCategory.m */; };
 		84237CB71668A3D400B3DB18 /* EventCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 84237CB51668A3D400B3DB18 /* EventCategory.m */; };
-		843AC461169FFF61007DF1F9 /* File.mm in Resources */ = {isa = PBXBuildFile; fileRef = 843AC460169FFF61007DF1F9 /* File.mm */; };
+		843AC46516A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 843AC46416A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m */; };
+		843AC46616A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 843AC46416A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m */; };
+		843AC46716A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 843AC46416A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m */; };
+		843AC46816A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 843AC46416A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m */; };
+		843AC46916A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 843AC46416A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m */; };
+		843AC46C16A03514007DF1F9 /* UIImage+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 843AC46B16A03514007DF1F9 /* UIImage+Extensions.m */; };
+		843AC46D16A03514007DF1F9 /* UIImage+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 843AC46B16A03514007DF1F9 /* UIImage+Extensions.m */; };
+		843AC46E16A03514007DF1F9 /* UIImage+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 843AC46B16A03514007DF1F9 /* UIImage+Extensions.m */; };
+		843AC46F16A03514007DF1F9 /* UIImage+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 843AC46B16A03514007DF1F9 /* UIImage+Extensions.m */; };
+		843AC47016A03514007DF1F9 /* UIImage+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 843AC46B16A03514007DF1F9 /* UIImage+Extensions.m */; };
 		8444637716198FCC00394D41 /* Partner.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444637616198FCC00394D41 /* Partner.m */; };
 		8444637816198FCC00394D41 /* Partner.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444637616198FCC00394D41 /* Partner.m */; };
 		845F8AF21680A2200087E3F2 /* UIView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D9515CA8163835340058BE8C /* UIView+Extensions.m */; };
@@ -1162,7 +1171,10 @@
 		84237CB01668A0DE00B3DB18 /* InputBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputBar.m; sourceTree = "<group>"; };
 		84237CB41668A3D400B3DB18 /* EventCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCategory.h; sourceTree = "<group>"; };
 		84237CB51668A3D400B3DB18 /* EventCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCategory.m; sourceTree = "<group>"; };
-		843AC460169FFF61007DF1F9 /* File.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = File.mm; sourceTree = "<group>"; };
+		843AC46316A006D3007DF1F9 /* UIBarButtonItem+TWButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+TWButtons.h"; sourceTree = "<group>"; };
+		843AC46416A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+TWButtons.m"; sourceTree = "<group>"; };
+		843AC46A16A03514007DF1F9 /* UIImage+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extensions.h"; sourceTree = "<group>"; };
+		843AC46B16A03514007DF1F9 /* UIImage+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extensions.m"; sourceTree = "<group>"; };
 		8444637516198FCC00394D41 /* Partner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Partner.h; sourceTree = "<group>"; };
 		8444637616198FCC00394D41 /* Partner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Partner.m; sourceTree = "<group>"; };
 		847F874714D69038005EE200 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -2125,7 +2137,6 @@
 				8483F25014D03FBE005E4216 /* InfoPlist.strings */,
 				8483F25314D03FBE005E4216 /* main.m */,
 				8483F25514D03FBE005E4216 /* townWizard-ios-Prefix.pch */,
-				843AC460169FFF61007DF1F9 /* File.mm */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -2867,6 +2878,10 @@
 				84E51FFA1697185A00229A58 /* UIButton+Extensions.m */,
 				84FEE075169C59EB00EDC43F /* NSString+HTMLStripping.h */,
 				84FEE076169C59EC00EDC43F /* NSString+HTMLStripping.m */,
+				843AC46316A006D3007DF1F9 /* UIBarButtonItem+TWButtons.h */,
+				843AC46416A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m */,
+				843AC46A16A03514007DF1F9 /* UIImage+Extensions.h */,
+				843AC46B16A03514007DF1F9 /* UIImage+Extensions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -3694,7 +3709,6 @@
 				84ACB3E0167B693C002D0278 /* iconStar@2x.png in Resources */,
 				84ACB462167B724F002D0278 /* cellCircle.png in Resources */,
 				84ACB481167B724F002D0278 /* cellCircle@2x.png in Resources */,
-				843AC461169FFF61007DF1F9 /* File.mm in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4021,6 +4035,8 @@
 				84E51FF816970FFA00229A58 /* UITableViewCell+Spinner.m in Sources */,
 				84E51FFF1697185B00229A58 /* UIButton+Extensions.m in Sources */,
 				84FEE07B169C59EC00EDC43F /* NSString+HTMLStripping.m in Sources */,
+				843AC46916A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m in Sources */,
+				843AC47016A03514007DF1F9 /* UIImage+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4158,6 +4174,8 @@
 				84E51FF416970FFA00229A58 /* UITableViewCell+Spinner.m in Sources */,
 				84E51FFB1697185B00229A58 /* UIButton+Extensions.m in Sources */,
 				84FEE077169C59EC00EDC43F /* NSString+HTMLStripping.m in Sources */,
+				843AC46516A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m in Sources */,
+				843AC46C16A03514007DF1F9 /* UIImage+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4295,6 +4313,8 @@
 				84E51FF516970FFA00229A58 /* UITableViewCell+Spinner.m in Sources */,
 				84E51FFC1697185B00229A58 /* UIButton+Extensions.m in Sources */,
 				84FEE078169C59EC00EDC43F /* NSString+HTMLStripping.m in Sources */,
+				843AC46616A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m in Sources */,
+				843AC46D16A03514007DF1F9 /* UIImage+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4309,6 +4329,8 @@
 				84E51FF716970FFA00229A58 /* UITableViewCell+Spinner.m in Sources */,
 				84E51FFE1697185B00229A58 /* UIButton+Extensions.m in Sources */,
 				84FEE07A169C59EC00EDC43F /* NSString+HTMLStripping.m in Sources */,
+				843AC46816A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m in Sources */,
+				843AC46F16A03514007DF1F9 /* UIImage+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4357,6 +4379,8 @@
 				84E51FF616970FFA00229A58 /* UITableViewCell+Spinner.m in Sources */,
 				84E51FFD1697185B00229A58 /* UIButton+Extensions.m in Sources */,
 				84FEE079169C59EC00EDC43F /* NSString+HTMLStripping.m in Sources */,
+				843AC46716A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m in Sources */,
+				843AC46E16A03514007DF1F9 /* UIImage+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

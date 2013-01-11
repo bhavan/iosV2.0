@@ -16,6 +16,7 @@
 #import "PartnerViewController.h"
 #import "RequestHelper.h"
 #import "UIButton+Extensions.h"
+#import "UIBarButtonItem+TWButtons.h"
 
 #define ROOT_URL @"app30a"
 #define MAP_URL @"showmap"
@@ -40,31 +41,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.webView.delegate = self;
     self.navigationController.navigationBarHidden = NO;
     Section *section = [[RequestHelper sharedInstance] currentSection];
     if(section)
     {
         NSString *urlString = [self urlFromSection:section];
-        [[self webView] loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]]];
-        
+        [[self webView] loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]]];        
     }
-    else if (self.url)
+    else if(self.url)
     {
         [[self webView] loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.url]]];
     }
-    UIImage *buttonImage = [[UIImage imageNamed:@"backButton"]  resizableImageWithCapInsets:UIEdgeInsetsMake(0, 10, 0, 15)];
-    
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 57, 30)];
-    btn.titleLabel.font = [UIFont boldSystemFontOfSize:14.0f];
-    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [btn setTitle:@"  Back" forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(goBackPressed:) forControlEvents:UIControlEventTouchUpInside];
-    [btn setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    back = [[UIBarButtonItem alloc]initWithCustomView:btn];
-    [btn release];
-    
+    back = [[UIBarButtonItem backButtonWithTarget:self action:@selector(goBackPressed:)] retain];
     partnerController = (id)self.navigationController.parentViewController;
 }
 
@@ -108,19 +96,14 @@
     }
 }
 
-
-- (void) viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
 -(void)viewWillDisappear:(BOOL)animated
 {
     [[UIApplication sharedApplication] hideNetworkActivityIndicator];
     [super viewWillDisappear:animated];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
@@ -161,7 +144,9 @@
     }
     else if(!_url && partnerController)
     {
-        self.navigationItem.leftBarButtonItem = [[AppActionsHelper sharedInstance] menuButtonWithTarget:partnerController action:@selector(toggleMasterView)];
+        self.navigationItem.leftBarButtonItem = [UIBarButtonItem
+                                                 menuButtonWithTarget:partnerController                                                 
+                                                               action:@selector(toggleMasterView)];
     }
     
     NSLog(@"Finish loading URL: %@",[webView.request URL]);
@@ -180,7 +165,9 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     }
     else if(!_url && partnerController)
     {
-        self.navigationItem.leftBarButtonItem = [[AppActionsHelper sharedInstance] menuButtonWithTarget:partnerController action:@selector(toggleMasterView)];
+        self.navigationItem.leftBarButtonItem = [UIBarButtonItem
+                                                 menuButtonWithTarget:partnerController
+                                                               action:@selector(toggleMasterView)];
     }
     
     NSLog(@"Loading URL: %@",[request URL]);
@@ -258,7 +245,6 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
                                                latitude:[[components objectAtIndex:2] doubleValue] fromNavController:self.navigationController];
 }
 
-
 - (void)mailUrlPressedWithComponents:(NSArray *)components
 {
     if ([MFMailComposeViewController canSendMail])
@@ -274,16 +260,19 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     else
     {
         // [[UIApplication sharedApplication] openURL:[request URL]];
-    }
-    
+    }    
 }
 
 - (void)fbUrlPressedWithComponents:(NSArray *)components
 {
     if (![[AppDelegate sharedDelegate].facebookHelper.appId isEqual:@""])
     {
-        FacebookPlacesViewController * fpvc = [[FacebookPlacesViewController alloc] initWithLatitude:[[components objectAtIndex:2] doubleValue] andLongitude:[[components objectAtIndex:3] doubleValue]];
-        //initWithLatitude:48.00885 andLongitude:37.8023];        
+        FacebookPlacesViewController * fpvc = [[FacebookPlacesViewController alloc]
+                                               initWithLatitude:
+                                               [[components objectAtIndex:2] doubleValue]
+                                               andLongitude:
+                                               [[components objectAtIndex:3] doubleValue]];
+      
         [self.navigationController pushViewController:fpvc animated:YES];
         [fpvc release];
     }
@@ -291,11 +280,12 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 }
 #pragma mark - MFComposeViewControllerDelegate
 
--(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+-(void)mailComposeController:(MFMailComposeViewController *)controller
+         didFinishWithResult:(MFMailComposeResult)result
+                       error:(NSError *)error
 {
     [controller dismissModalViewControllerAnimated:YES];
 }
-
 
 #pragma mark -
 #pragma mark CleanUp
@@ -303,10 +293,10 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 -(void)cleanUp
 {
     [back release];
+    [_url release];
     self.partner = nil;
     self.section = nil;
-    self.webView = nil;
-    [_url release];
+    self.webView = nil;   
     [[UIApplication sharedApplication] setActivityindicatorToZero];
 }
 

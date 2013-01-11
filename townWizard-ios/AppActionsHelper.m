@@ -41,15 +41,7 @@ static AppActionsHelper *actionsHelper = nil;
     return [backgroundView autorelease];
 }
 
-- (UIBarButtonItem *) menuButtonWithTarget:(id)target action:(SEL)action
-{
-    UIImage *menuButtonImage = [UIImage imageNamed:@"menu_button"];
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setImage:menuButtonImage forState:UIControlStateNormal];
-    [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
-    [button setFrame:CGRectMake(0, 0, menuButtonImage.size.width, menuButtonImage.size.height)];
-    return [[[UIBarButtonItem alloc] initWithCustomView:button] autorelease];
-}
+
 
 - (BOOL)townWizardServerReachable
 {

@@ -16,7 +16,9 @@
 #import "Video.h"
 #import "Event.h"
 #import "MappingManager.h"
+#import "UIImage+Extensions.h"
 
+static NSString* const kBoundaryString = @"0xKhTmLbOuNdArY";
 #define REQUEST_TIMEOUT 30
 
 static RequestHelper *requestHelper = nil;
@@ -270,6 +272,37 @@ static RequestHelper *requestHelper = nil;
                                            forKeyPath:@"data"];
     NSString *resourcePath = [NSString stringWithFormat:@"/section/partner/%@",[[self currentPartner] partnterId]];
     [objectManager loadObjectsAtResourcePath:resourcePath usingBlock:block];
+}
+
+- (NSData *)uploadRequestDataForImage:(UIImage *)image
+                              caption:(NSString *)caption
+                             userName:(NSString *)name
+{
+    NSString *stringBoundary = kBoundaryString;
+    NSMutableData *body = [NSMutableData data];
+	
+	[body appendData:[[NSString stringWithFormat:@"--%@\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[@"Content-Disposition: form-data; name=\"caption\"\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[[NSString stringWithString:caption] dataUsingEncoding:NSUTF8StringEncoding]];
+	
+	[body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[@"Content-Disposition: form-data; name=\"username\"\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[[NSString stringWithString:name] dataUsingEncoding:NSUTF8StringEncoding]];
+	
+	//NSString *m = m_textView.text;
+	[body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[@"Content-Disposition: form-data; name=\"userphoto\"; filename=\"mainphoto.jpg\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[@"Content-Type: application/octet-stream\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[NSData dataWithData:UIImageJPEGRepresentation(image,1.0)]];
+	[body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	
+	[body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[@"Content-Disposition: form-data; name=\"userthumb\"; filename=\"thumb.jpg\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[@"Content-Type: application/octet-stream\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[NSData dataWithData:UIImageJPEGRepresentation([image buildThumbImage],0.5)]];
+	[body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    return body;
+
 }
 
 @end
