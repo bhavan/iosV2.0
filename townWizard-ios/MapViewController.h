@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "MapAnnotation.h"
 #import <MapKit/MapKit.h>
-#import "townWIzardNavigationBar.h"
-
 
 @interface MapViewController : UIViewController <UIAlertViewDelegate> {
 	
@@ -29,8 +27,6 @@
 @property (nonatomic, assign) double longitude;
 @property (nonatomic, assign) BOOL bShowDirection;
 @property (nonatomic, retain) MapAnnotation *placeMarker;
-
-@property (nonatomic, retain) TownWizardNavigationBar * customNavigationBar;
 
 - (void)loadGoogleMap;
 - (IBAction)directionBtnClicked:(id)sender;

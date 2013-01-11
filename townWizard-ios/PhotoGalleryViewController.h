@@ -11,7 +11,6 @@
 #import <MWPhotoBrowser/MWPhotoBrowser.h>
 #import "BaseUploadViewController.h"
 
-@class TownWizardNavigationBar;
 @class Partner;
 
 @interface PhotoGalleryViewController : BaseUploadViewController

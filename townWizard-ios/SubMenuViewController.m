@@ -7,7 +7,6 @@
 //
 
 #import "SubMenuViewController.h"
-#import "TownWizardNavigationBar.h"
 #import "Reachability.h"
 #import "UIApplication+NetworkActivity.h"
 #import "AppDelegate.h"
@@ -284,9 +283,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     if (![[AppDelegate sharedDelegate].facebookHelper.appId isEqual:@""])
     {
         FacebookPlacesViewController * fpvc = [[FacebookPlacesViewController alloc] initWithLatitude:[[components objectAtIndex:2] doubleValue] andLongitude:[[components objectAtIndex:3] doubleValue]];
-        //initWithLatitude:48.00885 andLongitude:37.8023];
-        
-        fpvc.customNavigationBar = self.customNavigationBar;
+        //initWithLatitude:48.00885 andLongitude:37.8023];        
         [self.navigationController pushViewController:fpvc animated:YES];
         [fpvc release];
     }
@@ -305,6 +302,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 
 -(void)cleanUp
 {
+    [back release];
     self.partner = nil;
     self.section = nil;
     self.webView = nil;

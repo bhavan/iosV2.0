@@ -14,16 +14,17 @@
 @implementation MapViewController
 
 @synthesize placeMarker;
-@synthesize customNavigationBar=_customNavigationBar;
 
 - (id) init {
 	self = [self initWithNibName:@"MapViewController" bundle:nil];
 	return self;
 }
 
--(void)viewWillAppear:(BOOL)animated {
+-(void)viewWillAppear:(BOOL)animated
+{
 	[super viewWillAppear:NO];
-	if(bShowDirection == NO) {
+	if(bShowDirection == NO)
+    {
 		directionButton.hidden = YES;
 	}
 }
@@ -40,24 +41,27 @@
 	[self loadGoogleMap];
 }
 
-- (void)menuButtonPressed {
+- (void)menuButtonPressed
+{
     //UIViewController *menuViewController = self.customNavigationBar.menuPage;
     //[self.navigationController popToViewController:menuViewController animated:YES];
     [self.navigationController popViewControllerAnimated:YES];
 }
 #pragma mark -
 
-- (IBAction)directionBtnClicked:(id)sender {
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Directions" 
-         message:@"To give you better directions,\nthe application will close.\nDo you wish to continue?" 
-                                                   delegate:self 
-                                          cancelButtonTitle:@"Yes" 
-                                          otherButtonTitles:@"No", nil];
-	[alert show];
-	[alert release];	
+- (IBAction)directionBtnClicked:(id)sender
+{
+    [UIAlertView showWithTitle:@"Directions"
+                       message:
+     @"To give you better directions,\nthe application will close.\nDo you wish to continue?"
+                      delegate:self
+             cancelButtonTitle:@"Yes"
+            confirmButtonTitle:@"No"];
+		
 }
 
-- (void)loadGoogleMap {
+- (void)loadGoogleMap
+{
 	currentRegion.center.latitude = latitude;
 	currentRegion.center.longitude = longitude;
 	
@@ -167,7 +171,8 @@
 #pragma mark -
 #pragma mark Memory management
 
-- (void)dealloc {
+- (void)dealloc
+{
 	[mapView release];
 	[activityIndicator release];
     [super dealloc];

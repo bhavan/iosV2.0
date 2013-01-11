@@ -11,7 +11,6 @@
 #import "SubMenuViewController.h"
 
 @class MasterDetailController;
-@class TownWizardNavigationBar;
 @class Partner;
 
 @interface SearchViewController : UIViewController 

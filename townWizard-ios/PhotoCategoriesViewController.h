@@ -10,7 +10,6 @@
 #import "BaseUploadViewController.h"
 
 @class Partner;
-@class TownWizardNavigationBar;
 @class Section;
 
 @interface PhotoCategoriesViewController : BaseUploadViewController <UITableViewDataSource, UITableViewDelegate, RKObjectLoaderDelegate>

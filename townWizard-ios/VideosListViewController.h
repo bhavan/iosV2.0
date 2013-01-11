@@ -10,7 +10,6 @@
 
 @class Partner;
 @class Section;
-@class TownWizardNavigationBar;
 
 @interface VideosListViewController : UIViewController  {
 }

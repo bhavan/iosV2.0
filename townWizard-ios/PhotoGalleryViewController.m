@@ -10,7 +10,6 @@
 #import "Photo.h"
 #import "WebImageGridViewCell.h"
 #import "UIImageView+WebCache.h"
-#import "TownWIzardNavigationBar.h"
 
 @interface PhotoGalleryViewController () <RKObjectLoaderDelegate>
 @property (nonatomic, retain) NSArray *photos;
@@ -32,10 +31,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-/*      TownWizardNavigationBar *navBar = (TownWizardNavigationBar *)self.navigationController.navigationBar;
-    NSString *newTitle = [NSString stringWithFormat:@"   %@", [navBar.titleLabel.text stringByReplacingOccurrencesOfString:@"   " withString:@""]];
-  
-    [navBar updateTitleText:newTitle];*/
     [[RequestHelper sharedInstance] loadPhotosFromCategory:[self category] delegate:self];
     [[self gridView] reloadData];
 }

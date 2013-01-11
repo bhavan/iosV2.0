@@ -11,7 +11,6 @@
 #import "Photo.h"
 #import "PhotoCategory.h"
 #import "PhotoGalleryViewController.h"
-#import "TownWIzardNavigationBar.h"
 #import "ImageCell.h"
 #import "UIImageView+WebCache.h"
 #import "TWBackgroundView.h"
@@ -29,14 +28,12 @@
 {
     [super viewDidLoad];
     [[AppActionsHelper sharedInstance] putTWBackgroundWithFrame:_tableView.frame
-                                                         toView:self.view];
-   
+                                                         toView:self.view];   
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
-    
+    [super viewWillAppear:animated]; 
    
     [[RequestHelper sharedInstance] loadPhotoCategoriesWithDelegate:self];
 }

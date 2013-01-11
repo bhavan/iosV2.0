@@ -372,6 +372,7 @@
 		84237CB21668A0DE00B3DB18 /* InputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84237CB01668A0DE00B3DB18 /* InputBar.m */; };
 		84237CB61668A3D400B3DB18 /* EventCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 84237CB51668A3D400B3DB18 /* EventCategory.m */; };
 		84237CB71668A3D400B3DB18 /* EventCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 84237CB51668A3D400B3DB18 /* EventCategory.m */; };
+		843AC461169FFF61007DF1F9 /* File.mm in Resources */ = {isa = PBXBuildFile; fileRef = 843AC460169FFF61007DF1F9 /* File.mm */; };
 		8444637716198FCC00394D41 /* Partner.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444637616198FCC00394D41 /* Partner.m */; };
 		8444637816198FCC00394D41 /* Partner.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444637616198FCC00394D41 /* Partner.m */; };
 		845F8AF21680A2200087E3F2 /* UIView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D9515CA8163835340058BE8C /* UIView+Extensions.m */; };
@@ -1161,6 +1162,7 @@
 		84237CB01668A0DE00B3DB18 /* InputBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputBar.m; sourceTree = "<group>"; };
 		84237CB41668A3D400B3DB18 /* EventCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCategory.h; sourceTree = "<group>"; };
 		84237CB51668A3D400B3DB18 /* EventCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCategory.m; sourceTree = "<group>"; };
+		843AC460169FFF61007DF1F9 /* File.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = File.mm; sourceTree = "<group>"; };
 		8444637516198FCC00394D41 /* Partner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Partner.h; sourceTree = "<group>"; };
 		8444637616198FCC00394D41 /* Partner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Partner.m; sourceTree = "<group>"; };
 		847F874714D69038005EE200 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -2123,6 +2125,7 @@
 				8483F25014D03FBE005E4216 /* InfoPlist.strings */,
 				8483F25314D03FBE005E4216 /* main.m */,
 				8483F25514D03FBE005E4216 /* townWizard-ios-Prefix.pch */,
+				843AC460169FFF61007DF1F9 /* File.mm */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -3691,6 +3694,7 @@
 				84ACB3E0167B693C002D0278 /* iconStar@2x.png in Resources */,
 				84ACB462167B724F002D0278 /* cellCircle.png in Resources */,
 				84ACB481167B724F002D0278 /* cellCircle@2x.png in Resources */,
+				843AC461169FFF61007DF1F9 /* File.mm in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4494,6 +4498,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "townWizard-ios/townWizard-ios-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -4522,6 +4527,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "townWizard-ios/townWizard-ios-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = CONTAINER_APP;
@@ -4595,10 +4601,11 @@
 			baseConfigurationReference = F9F1D3C276FB4E1EA02B2B95 /* Pods-grayton-cedar.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "grayton-cedar/grayton-cedar-Prefix.pch";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -4615,10 +4622,11 @@
 			baseConfigurationReference = F9F1D3C276FB4E1EA02B2B95 /* Pods-grayton-cedar.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "grayton-cedar/grayton-cedar-Prefix.pch";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;

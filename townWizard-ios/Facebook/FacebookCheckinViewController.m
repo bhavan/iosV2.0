@@ -17,8 +17,6 @@
 
 @implementation FacebookCheckinViewController
 
-@synthesize customNavigationBar=_customNavigationBar;
-
 @synthesize messageView;
 @synthesize friendsListView;
 @synthesize place;
@@ -26,7 +24,8 @@
 @synthesize filteredFriends;
 @synthesize searchView;
 
-- (id) initWithSelectedPlace:(Place *)aPlace {
+- (id) initWithSelectedPlace:(Place *)aPlace
+{
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
         self.place = aPlace;
@@ -37,7 +36,8 @@
 
 #pragma mark - View lifecycle
 
-- (void) viewDidLoad {
+- (void) viewDidLoad
+{
     [super viewDidLoad];
     
     //self.navigationItem.hidesBackButton = YES;
@@ -60,7 +60,8 @@
         [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void) viewWillAppear:(BOOL)animated {
+- (void) viewWillAppear:(BOOL)animated
+{
     [super viewWillAppear:animated];
     
 //    [self.customNavigationBar.menuButton addTarget:self 

@@ -7,7 +7,6 @@
 //
 
 #import "VideosListViewController.h"
-#import "TownWIzardNavigationBar.h"
 #import "ImageCell.h"
 #import "Video.h"
 #import "UIImageView+WebCache.h"

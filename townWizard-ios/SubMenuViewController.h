@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MessageUI/MessageUI.h"
 
-@class TownWizardNavigationBar;
+
 @class Partner;
 @class Section;
 @class PartnerViewController;
@@ -35,7 +35,7 @@ MFMailComposeViewControllerDelegate>
 @property (nonatomic, retain) Partner *partner;
 @property (nonatomic, retain) NSString *url;
 @property (nonatomic, retain) Section * section;
-@property (nonatomic, retain) TownWizardNavigationBar * customNavigationBar;
+
 @property (nonatomic, retain) IBOutlet UIWebView *webView;
 @property (nonatomic, assign)  id <SubMenuViewControllerDelegate> delegate;
 

@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class TownWizardNavigationBar;
-
 @interface VideoViewController : UIViewController <UIWebViewDelegate>
 {
     UIWebView *webView;

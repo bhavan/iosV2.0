@@ -14,7 +14,6 @@
 
 @implementation FacebookPlacesViewController
 
-@synthesize customNavigationBar=_customNavigationBar;
 @synthesize latitude;
 @synthesize longitude;
 @synthesize tableView=_tableView;
@@ -221,17 +220,18 @@
 
 
 // Check in place
-- (void) checkIn:(Place *)place {
+- (void) checkIn:(Place *)place
+{
     FacebookCheckinViewController *checkinController =
     [[FacebookCheckinViewController alloc] initWithSelectedPlace:selectedPlace];
-    checkinController.customNavigationBar = self.customNavigationBar;
     [self.navigationController pushViewController:checkinController animated:YES];
     [checkinController release];
 }
 
 #pragma mark - FacebookHelperDelegate
 
-- (void) facebookPermissionGranted {
+- (void) facebookPermissionGranted
+{
     [TestFlight passCheckpoint:@"facebook permission granted"];
     locationUpdated = NO;
     [AppDelegate sharedDelegate].manager.delegate = self;

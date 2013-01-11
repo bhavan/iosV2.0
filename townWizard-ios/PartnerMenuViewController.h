@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class TownWizardNavigationBar;
 @class Partner;
 @class Section;
 @class ActivityImageView;

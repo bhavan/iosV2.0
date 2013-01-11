@@ -7,7 +7,6 @@
 //
 
 #import "VideoViewController.h"
-#import "TownWIzardNavigationBar.h"
 
 @interface VideoViewController ()
 

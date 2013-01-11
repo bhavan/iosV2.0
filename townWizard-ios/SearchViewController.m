@@ -144,6 +144,7 @@
 
 - (void) searchForPartnersWithQuery:(NSString *)query offset:(NSInteger)offset
 {
+    currentSearchQuery = query;
     query = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [[UIApplication sharedApplication] showNetworkActivityIndicator];
     [RequestHelper partnersWithQuery:query offset:offset andDelegate:self];
@@ -168,7 +169,8 @@
     else if([[partners lastObject] isKindOfClass:[Partner class]])
     {
         Partner *partner = [partners lastObject];
-        if(partner && [partner.name isEqualToString:DEFAULT_PARTNER_NAME])
+        if(partner && [partner.name isEqualToString:DEFAULT_PARTNER_NAME]
+           && [currentSearchQuery isEqualToString:DEFAULT_PARTNER_NAME])
         {
             defaultPartner = [partner retain];
             [self.defaultMenu updateWithPartner:defaultPartner];

@@ -7,11 +7,9 @@
 //
 
 #import "PartnerViewController.h"
-
 #import "PartnerMenuViewController.h"
 #import "TownWizardNavigationBar.h"
 #import "SectionControllerFactory.h"
-
 #import "RequestHelper.h"
 #import "Section.h"
 
