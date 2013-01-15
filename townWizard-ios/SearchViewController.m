@@ -39,9 +39,13 @@
     self.searchBar.accessibilityLabel = @"Search";
     [self.searchBar customizeSearchBar];
     selectedPartnerSections = nil;
-    [self.tableView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"searchBg"]]];
+    [self.tableView setBackgroundColor:[UIColor colorWithPatternImage:
+                                        [UIImage imageNamed:@"searchBg"]]];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-    self.tableView.separatorColor = [UIColor colorWithRed:186.0f/255.0f green:186.0f/255.0f blue:186.0f/255.0f alpha:0.7f];
+    self.tableView.separatorColor = [UIColor colorWithRed:186.0f/255.0f
+                                                    green:186.0f/255.0f
+                                                     blue:186.0f/255.0f
+                                                    alpha:0.7f];
     self.partnersList = [NSMutableArray array];
     loadingMorePartnersInProgress = NO;
     [self searchForPartnersWithQuery:nil];
@@ -242,7 +246,7 @@
         Partner *partner = [_partnersList objectAtIndex:indexPath.row];
         [self.searchBar resignFirstResponder];
         
-        if ([partner.iTunesAppId isEqual:@""])
+        if ([partner.iTunesAppId isEqual:@""] || ![partner.iTunesAppId hasPrefix:@"store"])
         {
             [self loadSectionMenuForPartnerWithPartner:partner];
             
@@ -256,8 +260,10 @@
                 [TestFlight passCheckpoint:@"Facebook app id is empty"];
             }
         }
-        else
+        else if([partner.iTunesAppId hasPrefix:@"store"])
         {
+            partner.iTunesAppId = [partner.iTunesAppId stringByReplacingOccurrencesOfString:@"store"
+                                                                                 withString:@""];
             NSString * iTunesAppUrl = [[NSString stringWithFormat:@"http://itunes.apple.com/us/app/id"]
                                        stringByAppendingString:
                                        partner.iTunesAppId];
@@ -357,11 +363,17 @@
     else
     {
         UIAlertView *alertView = [[UIAlertView alloc]
-                                  initWithTitle:NSLocalizedString(@"No connection available!", @"AlertView")
-                                  message:NSLocalizedString(@"Please connect to cellular network or Wi-Fi", @"AlertView")
+                                  initWithTitle:
+                                  NSLocalizedString(@"No connection available!", @"AlertView")
+                                  message
+                                  :NSLocalizedString(@"Please connect to cellular network or Wi-Fi",
+                                                     @"AlertView")
                                   delegate:self
-                                  cancelButtonTitle:NSLocalizedString(@"Cancel", @"AlertView")
-                                  otherButtonTitles:NSLocalizedString(@"Open settings", @"AlertView"), nil];
+                                  cancelButtonTitle:
+                                  NSLocalizedString(@"Cancel", @"AlertView")
+                                  otherButtonTitles:
+                                  NSLocalizedString(@"Open settings", @"AlertView"),
+                                  nil];
         [alertView show];
         [alertView release];
     }
