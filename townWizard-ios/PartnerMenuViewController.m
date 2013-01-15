@@ -163,6 +163,11 @@
 - (void) partnerDetailsLoaded:(Partner *) partner
 {
      [self updateWithPartner:partner];
+    if([partner.iTunesAppId hasPrefix:@"store"])
+    {
+        partner.iTunesAppId = [partner.iTunesAppId stringByReplacingOccurrencesOfString:@"store" withString:@""];
+        
+    }
     [Appirater setAppId:partner.iTunesAppId];
     [AppDelegate sharedDelegate].facebookHelper.appId = partner.facebookAppId;
 
