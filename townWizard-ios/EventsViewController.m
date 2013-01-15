@@ -112,6 +112,7 @@ static const NSInteger kEventsAlertTag = 700;
     [self loadTodayEvents];
     [self loadEventsCategories];
     [self loadFeaturedEvents];
+    
 }
 
 - (void)eventTouched:(Event *)event

@@ -11,6 +11,7 @@
 #import "ActivityImageView.h"
 #import "DDPageControlCustom.h"
 #import "NSDate+Formatting.h"
+#import "EventsView.h"
 
 @interface EventsViewer ()
 @property (nonatomic, retain) NSArray *events;
@@ -138,43 +139,29 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
     [eventTime setText:nil];
     [eventPlace setText:[[event location] name]];
     NSString *urlStr = event.imageURL.absoluteString;
+    UIView *header =  _rootView.tableHeaderView;
+    CGRect headerFrame = header.frame;
     if(event.imageURL && urlStr.length > 3)
     {
         [eventImage setImageWithURL:[event imageURL]];
-        [UIView beginAnimations:@"registerScrollDown" context:NULL];
-        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-        [UIView setAnimationDuration:0.4];
-        self.rootView.transform = CGAffineTransformMakeTranslation(0, 0);
-        CGRect theFrame = self.rootView.frame;
-        if(theFrame.size.height > 480)
-        {
-            theFrame.size.height -= 121.f;
-            self.rootView.frame = theFrame;
-        }
-        
-        [UIView commitAnimations];
+        headerFrame.size.height = 347;
         _isImagePresented = YES;
     }
     else
     {
         [eventImage setImage:nil];
         [eventImage.activityIndicator stopAnimating];
-        [UIView beginAnimations:@"registerScrollUp" context:NULL];
-        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-        [UIView setAnimationDuration:0.4];
-        self.rootView.transform = CGAffineTransformMakeTranslation(0, -121);
-        CGRect theFrame = self.rootView.frame;
-        if(theFrame.size.height <= 480)
-        {
-            
-            theFrame.size.height += 121.f;
-            self.rootView.frame = theFrame;
-        }
-        [UIView commitAnimations];
+        headerFrame.size.height = 227;
         _isImagePresented = NO;
-        //  UITableView *rootTableView = (UITableView *)_rootView;
-        // [rootTableView setContentOffset:CGPointMake(0, 110)];
     }
+  
+    [UIView beginAnimations:@"registerScrollDown" context:NULL];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    [UIView setAnimationDuration:0.4];
+    header.frame = headerFrame;
+    [_rootView setTableHeaderView:header];
+    [UIView commitAnimations];
+
     [eventTime setText:[self eventDateString:event]];
 }
 

@@ -11,6 +11,7 @@
 @class ActivityImageView;
 @class DDPageControlCustom;
 @class Event;
+@class EventsView;
 
 @protocol EventViewerDelegate <NSObject>
 - (void)eventTouched:(Event *) event;
@@ -30,7 +31,7 @@
 }
 
 @property (nonatomic, assign) BOOL isImagePresented;
-@property (nonatomic, retain) UIView *rootView;
+@property (nonatomic, retain) UITableView *rootView;
 @property (nonatomic, retain) id<EventViewerDelegate> delegate;
 
 - (void) displayEvents:(NSArray *) events;
