@@ -135,7 +135,7 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
 
 - (void) updateTitlesWithEvent:(Event *) event
 {
-    [eventName setText:[event title]];
+    [eventName setText:event.title];
     [eventTime setText:nil];
     [eventPlace setText:[[event location] name]];
     NSString *urlStr = event.imageURL.absoluteString;
