@@ -21,4 +21,6 @@
 @property (nonatomic, retain) NSString *startTime;
 @property (nonatomic, retain) NSString *endTime;
 
+- (NSString *) eventDateString;
+
 @end

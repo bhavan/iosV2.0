@@ -7,7 +7,28 @@
 //
 
 #import "Event.h"
+#import "NSDate+Formatting.h"
+
+#define EVENT_DATE_FORMAT @"yyyy-MM-dd HH:mm:ss"
+#define EVENT_TIME_FROMAT @"h:mma"
+#define ALL_DAY_PERIOD @"12:00AM-11:59PM"
 
 @implementation Event
+
+- (NSString *) eventDateString
+{
+    NSDate *start = [NSDate dateFromString:self.startTime dateFormat:EVENT_DATE_FORMAT];
+    NSDate *end = [NSDate dateFromString:self.endTime dateFormat:EVENT_DATE_FORMAT];
+    
+    NSString *startTimeString = [NSDate stringFromDate:start dateFormat:EVENT_TIME_FROMAT localeIdentifier:@"en_US"];
+    NSString *endTimeString = [NSDate stringFromDate:end dateFormat:EVENT_TIME_FROMAT localeIdentifier:@"en_US"];
+    NSString *period = [NSString stringWithFormat:@"%@-%@",startTimeString,endTimeString];
+    if([period isEqualToString:ALL_DAY_PERIOD])
+    {
+        return @"ALL DAY EVENT";
+    }
+    return [NSString stringWithFormat:@"%@-%@",startTimeString,endTimeString];
+}
+
 
 @end

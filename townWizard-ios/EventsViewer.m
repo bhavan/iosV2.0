@@ -162,7 +162,7 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
     [_rootView setTableHeaderView:header];
     [UIView commitAnimations];
 
-    [eventTime setText:[self eventDateString:event]];
+    [eventTime setText:[event eventDateString]];
 }
 
 - (void) showNextEvent
@@ -179,18 +179,6 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
     }
 }
 
-- (NSString *) eventDateString:(Event *) event
-{
-    NSDate *start = [NSDate dateFromString:event.startTime dateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    NSDate *end = [NSDate dateFromString:event.endTime dateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    
-    NSString *startTimeString = [NSDate stringFromDate:start
-                                            dateFormat:@"h:mma"
-                                      localeIdentifier:@"en_US"];
-    NSString *endTimeString = [NSDate stringFromDate:end
-                                          dateFormat:@"h:mma"
-                                    localeIdentifier:@"en_US"];
-    return [NSString stringWithFormat:@"%@-%@",startTimeString,endTimeString];
-}
+
 
 @end
