@@ -108,6 +108,7 @@ static PMThemeEngine* sharedInstance;
                                 , CGPointMake(rect.origin.x + rect.size.width / 2, rect.origin.y)
                                 , 0);
     CGGradientRelease(gradient);
+    CGColorSpaceRelease(colorSpace);
 //    CGColorSpaceRelease(colorSpace);
 }
 

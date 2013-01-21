@@ -284,7 +284,7 @@
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell * cell;    
+    UITableViewCell *cell = nil;
     if (indexPath.section == 0)
     {
         cell = [aTableView dequeueReusableCellWithIdentifier:CellIdentifier];

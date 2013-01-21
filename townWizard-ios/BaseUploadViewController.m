@@ -43,24 +43,13 @@
 - (void)cameraButtonPressed:(id)sender
 {
 	AppDelegate *appdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-    NSArray *otherButtonTitles;
-    NSInteger menuTag = 1;
-	if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
-    {
-		otherButtonTitles = @[@"Choose from Library",@"Take Photo"];
-	}
-	else
-    {
-        otherButtonTitles = @[@"Choose from Library"];
-        menuTag = 2;
-	}
-    UIActionSheet *menu = [[UIActionSheet alloc]
+  
+	UIActionSheet *menu = [[UIActionSheet alloc]
                            initWithTitle: @""
                            delegate:self
                            cancelButtonTitle:@"Cancel"
                            destructiveButtonTitle:nil
-                           otherButtonTitles:@"Choose from Library", nil];
-    [menu setTag:menuTag];
+                           otherButtonTitles:@"Choose from Library", @"Take Photo", nil];
     [menu showInView:appdelegate.window];
     [menu release];
 }
@@ -72,7 +61,7 @@
 	
 	UIImagePickerController* imageController = [[UIImagePickerController alloc] init];
 	imageController.delegate = self;
-	UIImagePickerControllerSourceType sourceType;
+	UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     if(buttonIndex == 0)
     {
         sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
