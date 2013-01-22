@@ -258,7 +258,8 @@ static const NSInteger kEventsAlertTag = 700;
     else
     {
         EventCategory *category = [self.categotiesList objectAtIndex:currentCategory];
-        NSPredicate *pred = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"(categoryName == '%@')", category.title]];
+        NSPredicate *pred = [NSPredicate predicateWithFormat:
+                             [NSString stringWithFormat:@"(categoryName == '%@')", category.title]];
         result = [self.allEvents filteredArrayUsingPredicate:pred];
     }
     return result;
@@ -274,7 +275,8 @@ static const NSInteger kEventsAlertTag = 700;
 
 #pragma mark PMCalendarControllerDelegate methods
 
-- (void)calendarController:(PMCalendarController *)calendarController didChangePeriod:(PMPeriod *)newPeriod
+- (void)calendarController:(PMCalendarController *)calendarController
+           didChangePeriod:(PMPeriod *)newPeriod
 {
     
 }
@@ -323,7 +325,8 @@ static const NSInteger kEventsAlertTag = 700;
     return 0;
 }
 
-- (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+- (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row
+            forComponent:(NSInteger)component
 {
     if(row == 0)
     {
@@ -336,7 +339,8 @@ static const NSInteger kEventsAlertTag = 700;
     }
 }
 
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row
+       inComponent:(NSInteger)component
 {
     if(row == 0)
     {
