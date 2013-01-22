@@ -574,6 +574,11 @@
 		848854C514D16F620030BD03 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854C414D16F620030BD03 /* Reachability.m */; };
 		848854F714D179700030BD03 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848854F614D179700030BD03 /* SystemConfiguration.framework */; };
 		8488550A14D1ABAB0030BD03 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8488550914D1ABAA0030BD03 /* SearchViewController.xib */; };
+		848AFF7916AECC3E0079634B /* SearchHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 848AFF7816AECC3E0079634B /* SearchHelper.m */; };
+		848AFF7A16AECC3E0079634B /* SearchHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 848AFF7816AECC3E0079634B /* SearchHelper.m */; };
+		848AFF7B16AECC3E0079634B /* SearchHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 848AFF7816AECC3E0079634B /* SearchHelper.m */; };
+		848AFF7C16AECC3E0079634B /* SearchHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 848AFF7816AECC3E0079634B /* SearchHelper.m */; };
+		848AFF7D16AECC3E0079634B /* SearchHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 848AFF7816AECC3E0079634B /* SearchHelper.m */; };
 		848DFB691626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
 		848DFB6A1626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
 		848DFB871626B3F50096A6FF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
@@ -1208,6 +1213,8 @@
 		848854F414D1793A0030BD03 /* CFNetwork.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		848854F614D179700030BD03 /* SystemConfiguration.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8488550914D1ABAA0030BD03 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		848AFF7716AECC3E0079634B /* SearchHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchHelper.h; sourceTree = "<group>"; };
+		848AFF7816AECC3E0079634B /* SearchHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchHelper.m; sourceTree = "<group>"; };
 		848DFB661626B3F40096A6FF /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
 		848DFB671626B3F50096A6FF /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
 		848DFB681626B3F50096A6FF /* VideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoViewController.xib; sourceTree = "<group>"; };
@@ -2176,6 +2183,8 @@
 				848854C414D16F620030BD03 /* Reachability.m */,
 				84C6EF7A1670F6770007F031 /* TWShareKitConfigurator.h */,
 				84C6EF7B1670F6770007F031 /* TWShareKitConfigurator.m */,
+				848AFF7716AECC3E0079634B /* SearchHelper.h */,
+				848AFF7816AECC3E0079634B /* SearchHelper.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -4001,6 +4010,7 @@
 				84FEE07B169C59EC00EDC43F /* NSString+HTMLStripping.m in Sources */,
 				843AC46916A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m in Sources */,
 				843AC47016A03514007DF1F9 /* UIImage+Extensions.m in Sources */,
+				848AFF7D16AECC3E0079634B /* SearchHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4140,6 +4150,7 @@
 				84FEE077169C59EC00EDC43F /* NSString+HTMLStripping.m in Sources */,
 				843AC46516A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m in Sources */,
 				843AC46C16A03514007DF1F9 /* UIImage+Extensions.m in Sources */,
+				848AFF7916AECC3E0079634B /* SearchHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4279,6 +4290,7 @@
 				84FEE078169C59EC00EDC43F /* NSString+HTMLStripping.m in Sources */,
 				843AC46616A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m in Sources */,
 				843AC46D16A03514007DF1F9 /* UIImage+Extensions.m in Sources */,
+				848AFF7A16AECC3E0079634B /* SearchHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4295,6 +4307,7 @@
 				84FEE07A169C59EC00EDC43F /* NSString+HTMLStripping.m in Sources */,
 				843AC46816A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m in Sources */,
 				843AC46F16A03514007DF1F9 /* UIImage+Extensions.m in Sources */,
+				848AFF7C16AECC3E0079634B /* SearchHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4345,6 +4358,7 @@
 				84FEE079169C59EC00EDC43F /* NSString+HTMLStripping.m in Sources */,
 				843AC46716A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m in Sources */,
 				843AC46E16A03514007DF1F9 /* UIImage+Extensions.m in Sources */,
+				848AFF7B16AECC3E0079634B /* SearchHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

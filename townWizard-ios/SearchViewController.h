@@ -6,9 +6,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreLocation/CoreLocation.h>
 #import "PartnerMenuViewController.h"
 #import "SubMenuViewController.h"
+#import "SearchHelper.h"
 
 @class MasterDetailController;
 @class Partner;
@@ -17,20 +17,15 @@
 <UISearchBarDelegate,
 UITableViewDelegate,
 UITableViewDataSource,
-CLLocationManagerDelegate,
 PartnerMenuDelegate,
 SubMenuViewControllerDelegate,
-UIAlertViewDelegate,
-RKObjectLoaderDelegate>
+SearchHelperDelegate
+>
 {
     NSArray *selectedPartnerSections;   
-    NSInteger nextOffset;
-    NSString *currentSearchQuery;
-    BOOL loadingMorePartnersInProgress;
-    Partner *defaultPartner;
+    SearchHelper *searchHelper;
 }
 
-@property (nonatomic, retain) NSMutableArray *partnersList;
 @property (nonatomic, retain) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) IBOutlet UIButton * goButton;

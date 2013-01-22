@@ -43,21 +43,21 @@ static NSString *twGAcode = @"@UA-31932515-1";
 {
     [self configureNavBar];
     [self configureLibraries];
-   
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];    
+    
+    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     _manager = [[CLLocationManager alloc] init];
     [_manager startUpdatingLocation];
 #ifdef CONTAINER_APP
     [self startContainerApp];
 #else
-     UIViewController *rootController = [[[PartnerViewController alloc] initWithPartner:nil] autorelease];
+    UIViewController *rootController = [[[PartnerViewController alloc] initWithPartner:nil] autorelease];
     self.window.rootViewController = rootController;
-#endif       
-
-     [self.window makeKeyAndVisible];
+#endif
+    
+    [self.window makeKeyAndVisible];
     [Appirater setDaysUntilPrompt:0];
     [Appirater setUsesUntilPrompt:4];
-    [Appirater setTimeBeforeReminding:1];    
+    [Appirater setTimeBeforeReminding:1];
     [Appirater setDebug:NO];
     [Appirater appLaunched:YES];
     return YES;
@@ -65,9 +65,7 @@ static NSString *twGAcode = @"@UA-31932515-1";
 
 - (void)startContainerApp
 {
-     UIViewController *rootController;    
-    rootController = [[[SearchViewController alloc] init] autorelease];
-    [[self manager] setDelegate:(SearchViewController *)rootController];
+    UIViewController *rootController = [[[SearchViewController alloc] init] autorelease];
     UINavigationController *navController = [[UINavigationController alloc] initWithNavigationBarClass:[TownWizardNavigationBar class] toolbarClass:nil];
     [navController pushViewController:rootController animated:NO];
     // [navController release];

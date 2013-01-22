@@ -11,9 +11,7 @@
 #import "Reachability.h"
 #import "SubMenuViewController.h"
 #import "TownWizardNavigationBar.h"
-#import "UIApplication+NetworkActivity.h"
 #import "AppDelegate.h"
-#import "Partner.h"
 #import "Section.h"
 #import "MasterDetailController.h"
 #import "PartnerCell.h"
@@ -22,11 +20,9 @@
 #import "UITableViewCell+Spinner.h"
 #import "UIButton+Extensions.h"
 #import "UIBarButtonItem+TWButtons.h"
+#import "SearchHelper.h"
 
 @interface SearchViewController()
-- (void) searchForPartnersWithQuery:(NSString *)query offset:(NSInteger)offset;
-- (void) loadNearbyPartners;
-- (void) partnersLoaded:(NSArray *)partners;
 - (void) configureViews;
 @end
 
@@ -37,12 +33,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    searchHelper = [[SearchHelper alloc] initWithDelegate:self];
     self.searchBar.accessibilityLabel = @"Search";
     [self configureViews];
     selectedPartnerSections = nil;
-    self.partnersList = [NSMutableArray array];
-    loadingMorePartnersInProgress = NO;
-    [self searchForPartnersWithQuery:nil];
+    [searchHelper loadNearbyPartners];
 }
 
 - (void)configureViews
@@ -79,21 +74,22 @@
 {
     [[RequestHelper sharedInstance] setCurrentSection:section];
     SubMenuViewController *subMenu = [SubMenuViewController new];
-    subMenu.partner = defaultPartner;
+    subMenu.partner = searchHelper.defaultPartner;
     [self.navigationController popToRootViewControllerAnimated:NO];
     [self.navigationController pushViewController:subMenu animated:YES];
     UIBarButtonItem *menuButton = [UIBarButtonItem
                                    menuButtonWithTarget:self.masterDetail
                                    action:@selector(toggleMasterView)];
     subMenu.navigationItem.leftBarButtonItem = menuButton;
-    [(TownWizardNavigationBar *)[self.navigationController navigationBar] updateTitleText:section.displayName];
+    [(TownWizardNavigationBar *)[self.navigationController navigationBar]
+     updateTitleText:section.displayName];
     [self.masterDetail toggleMasterView];
     [subMenu release];
 }
 
 -(void)infoButtonPressed:(id)sender
 {
-    if(defaultPartner)
+    if(searchHelper.defaultPartner)
     {
         [self.masterDetail toggleMasterView];
     }
@@ -105,112 +101,24 @@
     [self.navigationController popToRootViewControllerAnimated:NO];
 }
 
-#pragma mark -
-#pragma mark RKObjectLoaderDelegate
-
-- (void)objectLoader:(RKObjectLoader *)loader willMapData:(inout id *)mappableData
-{
-    NSMutableDictionary* data = [[*mappableData objectForKey: @"meta"] mutableCopy];
-    if([data objectForKey:@"next_offset"])
-    {
-        nextOffset = [[data objectForKey:@"next_offset"] integerValue];
-    }
-    else
-    {
-        nextOffset = 0;
-    }
-    [data release];
-}
-
-- (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects
-{
-    if (objects)
-    {
-        [self partnersLoaded:objects];
-    }
-}
-
-- (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error
-{
-    NSLog(@"%@",error.description);
-}
-
-- (void) searchForPartnersWithQuery:(NSString *)query
-{
-    [self searchForPartnersWithQuery:query offset:0];
-}
-
-- (void) searchForPartnersWithQuery:(NSString *)query offset:(NSInteger)offset
-{
-    currentSearchQuery = query;
-    query = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    [[UIApplication sharedApplication] showNetworkActivityIndicator];
-    [RequestHelper partnersWithQuery:query offset:offset andDelegate:self];
-    loadingMorePartnersInProgress = NO;
-    if ([_partnersList count])
-    {
-        loadingMorePartnersInProgress = YES;
-    }
-}
+#pragma mark - SearchHelper delegate mathods
 
 - (void)partnersLoaded:(NSArray *)partners
 {
-    if ([partners count] == 0)
-    {
-        [UIAlertView showWithTitle:@"Whoops!"
-                           message:@"Sorry, but it looks like we dont have a TownWizard in your area yet!"
-                          delegate:self
-                 cancelButtonTitle:@"OK"
-                confirmButtonTitle:nil];
-        
-    }
-    else if([[partners lastObject] isKindOfClass:[Partner class]])
-    {
-        Partner *partner = [partners lastObject];
-        if(partner && [partner.name isEqualToString:DEFAULT_PARTNER_NAME]
-           && [currentSearchQuery isEqualToString:DEFAULT_PARTNER_NAME])
-        {
-            defaultPartner = [partner retain];
-            [self.defaultMenu updateWithPartner:defaultPartner];
-            // [self loadNearbyPartners];
-        }
-        else if(partners.count > 0 && loadingMorePartnersInProgress)
-        {
-            [_partnersList addObjectsFromArray:partners];
-            loadingMorePartnersInProgress = NO;
-        }
-        else
-        {
-            _partnersList = [[NSMutableArray alloc]initWithArray:partners];
-            if (defaultPartner == nil)
-            {
-                [self searchForPartnersWithQuery:DEFAULT_PARTNER_NAME];
-            }
-        }
-    }
     [self.tableView reloadData];
     [self.goButton setEnabled:YES];
     [self.goButton removeSpinner];
 }
-
-- (void)loadNearbyPartners
+- (void)defaultPartnerLoaded:(Partner *)defaultPartner
 {
-    [self searchForPartnersWithQuery:nil];
-}
-
--(void)locationManager:(CLLocationManager *)aManager
-   didUpdateToLocation:(CLLocation *)newLocation
-          fromLocation:(CLLocation *)oldLocation
-{
-    [aManager stopUpdatingLocation];
-    [self loadNearbyPartners];
+     [self.defaultMenu updateWithPartner:defaultPartner];
 }
 
 #pragma mark - TableView delegate mathods
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    if (nextOffset == 0)
+    if (searchHelper.nextOffset == 0)
     {
         return 1;
     }    
@@ -221,7 +129,7 @@
 {    
     if (section == 0)
     {
-        return [_partnersList count];
+        return [searchHelper.partnersList count];
     }
     return 1;
 }
@@ -240,7 +148,7 @@
             cell = [[[PartnerCell alloc] initWithStyle:UITableViewCellStyleDefault
                                        reuseIdentifier:CellIdentifier] autorelease];
         }
-        Partner *partner = [_partnersList objectAtIndex:indexPath.row];
+        Partner *partner = [searchHelper.partnersList objectAtIndex:indexPath.row];
         cell.textLabel.text = partner.name;
     }
     else if (indexPath.section == 1)
@@ -257,7 +165,7 @@
         [cell removeSpinnerFromCell];
         cell.textLabel.text = @"Load more";
         
-        if (loadingMorePartnersInProgress)
+        if (searchHelper.loadingMorePartnersInProgress)
         {
             cell.textLabel.text = @"";
             [cell addSpinnerToCell];
@@ -270,15 +178,14 @@
 {
     if (indexPath.section == 0)
     {
-        Partner *partner = [_partnersList objectAtIndex:indexPath.row];
+        Partner *partner = [searchHelper.partnersList objectAtIndex:indexPath.row];
         [self partnerSelected:partner];
     }
     else if (indexPath.section == 1) //Load more button
     {
         UITableViewCell * cell = [self.tableView cellForRowAtIndexPath:indexPath];
         [cell addSpinnerToCell];
-        loadingMorePartnersInProgress = YES;
-        [self searchForPartnersWithQuery:currentSearchQuery offset:nextOffset];
+        [searchHelper loadMorePartners];
     }
     [aTableView deselectRowAtIndexPath:indexPath animated:YES];
 }
@@ -332,18 +239,14 @@
         [self.goButton setEnabled:NO];
         [self.goButton addSpinner];
         [self.goButton setTitle:@"" forState:UIControlStateNormal];
-        if([_partnersList count] > 0)
-        {
-            [_partnersList removeAllObjects];
-            [self.tableView reloadData];
-        }
+       
         NSString *query = aSearchBar.text;
         if ([query isEqual:@""])
         {
             query = nil;
         }
-        [self searchForPartnersWithQuery:query];
-        currentSearchQuery = aSearchBar.text;
+        [searchHelper searchForPartnersWithQuery:query];
+        [self.tableView reloadData];
     }
     else
     {
@@ -374,9 +277,9 @@
 
 - (void)cleanUp
 {
+    [searchHelper release];
     [self setTableView:nil];
     [self setSearchBar:nil];
-    [_partnersList release];
     [[UIApplication sharedApplication] setActivityindicatorToZero];
 }
 

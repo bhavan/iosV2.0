@@ -393,5 +393,44 @@
          landmarkName = "-updateTitlesWithEvent:"
          landmarkType = "5">
       </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "townWizard-ios/SearchViewController.m"
+         timestampString = "380556452.205447"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "150"
+         endingLineNumber = "150"
+         landmarkName = "-tableView:cellForRowAtIndexPath:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "townWizard-ios/SearchHelper.m"
+         timestampString = "380558350.3188"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "99"
+         endingLineNumber = "99"
+         landmarkName = "-partnersLoaded:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "townWizard-ios/SearchViewController.m"
+         timestampString = "380558047.680443"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "235"
+         endingLineNumber = "235"
+         landmarkName = "-searchBarSearchButtonClicked:"
+         landmarkType = "5">
+      </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>
