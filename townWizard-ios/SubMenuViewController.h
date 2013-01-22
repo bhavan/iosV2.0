@@ -25,12 +25,10 @@ UIActionSheetDelegate,
 UIImagePickerControllerDelegate,
 UINavigationControllerDelegate,
 MFMailComposeViewControllerDelegate>
-
 {
     UIBarButtonItem *back;
     PartnerViewController *partnerController;
 }
-
 
 @property (nonatomic, retain) Partner *partner;
 @property (nonatomic, retain) NSString *url;

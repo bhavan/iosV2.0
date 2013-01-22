@@ -186,18 +186,14 @@
 		84129652168DA0E600C47B7F /* post.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C55159074E5006FFF7E /* post.png */; };
 		84129653168DA0E600C47B7F /* post@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C56159074E5006FFF7E /* post@2x.png */; };
 		84129654168DA0E600C47B7F /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C57159074E5006FFF7E /* right.png */; };
-		84129655168DA0E600C47B7F /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C58159074E5006FFF7E /* search.png */; };
 		84129656168DA0E600C47B7F /* tag_320x405.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C59159074E5006FFF7E /* tag_320x405.png */; };
 		84129657168DA0E600C47B7F /* tag640x810.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C5A159074E5006FFF7E /* tag640x810.png */; };
-		84129658168DA0E600C47B7F /* topBar.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C5B159074E5006FFF7E /* topBar.png */; };
 		84129659168DA0E600C47B7F /* PhotoCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847FD37F161ACDAE009FB9CC /* PhotoCategoriesViewController.xib */; };
 		8412965A168DA0E600C47B7F /* PhotoGalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F82C91161AF98E00E0A481 /* PhotoGalleryViewController.xib */; };
 		8412965B168DA0E600C47B7F /* VideosListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosListViewController.xib */; };
 		8412965C168DA0E600C47B7F /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DFB681626B3F50096A6FF /* VideoViewController.xib */; };
 		8412965D168DA0E600C47B7F /* menuStarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7254162810BD005F02E8 /* menuStarButton.png */; };
 		8412965E168DA0E600C47B7F /* menuStarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F7255162810BE005F02E8 /* menuStarButton@2x.png */; };
-		8412965F168DA0E600C47B7F /* twHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 84853232162D3F9200211546 /* twHeader.png */; };
-		84129660168DA0E600C47B7F /* twHeader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84853233162D3F9200211546 /* twHeader@2x.png */; };
 		84129661168DA0E600C47B7F /* friendsbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 848532FF162D5B1500211546 /* friendsbg.png */; };
 		84129662168DA0E600C47B7F /* friendsbg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84853300162D5B1600211546 /* friendsbg@2x.png */; };
 		84129663168DA0E600C47B7F /* statusField.png in Resources */ = {isa = PBXBuildFile; fileRef = 84853301162D5B1700211546 /* statusField.png */; };
@@ -548,12 +544,6 @@
 		8483F25414D03FBE005E4216 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483F25314D03FBE005E4216 /* main.m */; };
 		8483F25814D03FBE005E4216 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483F25714D03FBE005E4216 /* AppDelegate.m */; };
 		8483F25B14D03FBE005E4216 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483F25A14D03FBE005E4216 /* SearchViewController.m */; };
-		84853234162D3F9300211546 /* twHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 84853232162D3F9200211546 /* twHeader.png */; };
-		84853235162D3F9300211546 /* twHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 84853232162D3F9200211546 /* twHeader.png */; };
-		84853252162D3F9300211546 /* twHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 84853232162D3F9200211546 /* twHeader.png */; };
-		84853253162D3F9300211546 /* twHeader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84853233162D3F9200211546 /* twHeader@2x.png */; };
-		84853254162D3F9300211546 /* twHeader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84853233162D3F9200211546 /* twHeader@2x.png */; };
-		84853271162D3F9300211546 /* twHeader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84853233162D3F9200211546 /* twHeader@2x.png */; };
 		84853305162D5B1C00211546 /* friendsbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 848532FF162D5B1500211546 /* friendsbg.png */; };
 		84853306162D5B1C00211546 /* friendsbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 848532FF162D5B1500211546 /* friendsbg.png */; };
 		84853323162D5B1C00211546 /* friendsbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 848532FF162D5B1500211546 /* friendsbg.png */; };
@@ -941,14 +931,10 @@
 		D9FA2C6A159074E5006FFF7E /* post@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C56159074E5006FFF7E /* post@2x.png */; };
 		D9FA2C6B159074E5006FFF7E /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C57159074E5006FFF7E /* right.png */; };
 		D9FA2C6C159074E5006FFF7E /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C57159074E5006FFF7E /* right.png */; };
-		D9FA2C6D159074E5006FFF7E /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C58159074E5006FFF7E /* search.png */; };
-		D9FA2C6E159074E5006FFF7E /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C58159074E5006FFF7E /* search.png */; };
 		D9FA2C6F159074E5006FFF7E /* tag_320x405.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C59159074E5006FFF7E /* tag_320x405.png */; };
 		D9FA2C70159074E5006FFF7E /* tag_320x405.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C59159074E5006FFF7E /* tag_320x405.png */; };
 		D9FA2C71159074E5006FFF7E /* tag640x810.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C5A159074E5006FFF7E /* tag640x810.png */; };
 		D9FA2C72159074E5006FFF7E /* tag640x810.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C5A159074E5006FFF7E /* tag640x810.png */; };
-		D9FA2C73159074E5006FFF7E /* topBar.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C5B159074E5006FFF7E /* topBar.png */; };
-		D9FA2C74159074E5006FFF7E /* topBar.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C5B159074E5006FFF7E /* topBar.png */; };
 		D9FA2C7D1590751B006FFF7E /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C791590751B006FFF7E /* icon.png */; };
 		D9FA2C7E1590751B006FFF7E /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C7A1590751B006FFF7E /* icon@2x.png */; };
 		E61A4DDC14E166BC0039E970 /* UIApplication+NetworkActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = E61A4DDB14E166BC0039E970 /* UIApplication+NetworkActivity.m */; };
@@ -1203,8 +1189,6 @@
 		8483F25714D03FBE005E4216 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8483F25914D03FBE005E4216 /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		8483F25A14D03FBE005E4216 /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
-		84853232162D3F9200211546 /* twHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = twHeader.png; path = images/Interface/twHeader.png; sourceTree = "<group>"; };
-		84853233162D3F9200211546 /* twHeader@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "twHeader@2x.png"; path = "images/Interface/twHeader@2x.png"; sourceTree = "<group>"; };
 		848532FF162D5B1500211546 /* friendsbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = friendsbg.png; path = images/Interface/friendsbg.png; sourceTree = "<group>"; };
 		84853300162D5B1600211546 /* friendsbg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "friendsbg@2x.png"; path = "images/Interface/friendsbg@2x.png"; sourceTree = "<group>"; };
 		84853301162D5B1700211546 /* statusField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = statusField.png; path = images/Interface/statusField.png; sourceTree = "<group>"; };
@@ -1561,10 +1545,8 @@
 		D9FA2C55159074E5006FFF7E /* post.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = post.png; path = Images/Interface/post.png; sourceTree = "<group>"; };
 		D9FA2C56159074E5006FFF7E /* post@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "post@2x.png"; path = "Images/Interface/post@2x.png"; sourceTree = "<group>"; };
 		D9FA2C57159074E5006FFF7E /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = right.png; path = Images/Interface/right.png; sourceTree = "<group>"; };
-		D9FA2C58159074E5006FFF7E /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = search.png; path = Images/Interface/search.png; sourceTree = "<group>"; };
 		D9FA2C59159074E5006FFF7E /* tag_320x405.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tag_320x405.png; path = Images/Interface/tag_320x405.png; sourceTree = "<group>"; };
 		D9FA2C5A159074E5006FFF7E /* tag640x810.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tag640x810.png; path = Images/Interface/tag640x810.png; sourceTree = "<group>"; };
-		D9FA2C5B159074E5006FFF7E /* topBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = topBar.png; path = Images/Interface/topBar.png; sourceTree = "<group>"; };
 		D9FA2C791590751B006FFF7E /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Images/Application/icon.png; sourceTree = "<group>"; };
 		D9FA2C7A1590751B006FFF7E /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "Images/Application/icon@2x.png"; sourceTree = "<group>"; };
 		DB102DBA3B154EE8BB95DF9A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
@@ -2753,12 +2735,8 @@
 				D9FA2C55159074E5006FFF7E /* post.png */,
 				D9FA2C56159074E5006FFF7E /* post@2x.png */,
 				D9FA2C57159074E5006FFF7E /* right.png */,
-				D9FA2C58159074E5006FFF7E /* search.png */,
 				D9FA2C59159074E5006FFF7E /* tag_320x405.png */,
 				D9FA2C5A159074E5006FFF7E /* tag640x810.png */,
-				D9FA2C5B159074E5006FFF7E /* topBar.png */,
-				84853232162D3F9200211546 /* twHeader.png */,
-				84853233162D3F9200211546 /* twHeader@2x.png */,
 				84ACB3A1167B693C002D0278 /* iconStar.png */,
 				84ACB3A2167B693C002D0278 /* iconStar@2x.png */,
 				D9FA2C4F159074B3006FFF7E /* Facebook */,
@@ -3237,18 +3215,14 @@
 				84129652168DA0E600C47B7F /* post.png in Resources */,
 				84129653168DA0E600C47B7F /* post@2x.png in Resources */,
 				84129654168DA0E600C47B7F /* right.png in Resources */,
-				84129655168DA0E600C47B7F /* search.png in Resources */,
 				84129656168DA0E600C47B7F /* tag_320x405.png in Resources */,
 				84129657168DA0E600C47B7F /* tag640x810.png in Resources */,
-				84129658168DA0E600C47B7F /* topBar.png in Resources */,
 				84129659168DA0E600C47B7F /* PhotoCategoriesViewController.xib in Resources */,
 				8412965A168DA0E600C47B7F /* PhotoGalleryViewController.xib in Resources */,
 				8412965B168DA0E600C47B7F /* VideosListViewController.xib in Resources */,
 				8412965C168DA0E600C47B7F /* VideoViewController.xib in Resources */,
 				8412965D168DA0E600C47B7F /* menuStarButton.png in Resources */,
 				8412965E168DA0E600C47B7F /* menuStarButton@2x.png in Resources */,
-				8412965F168DA0E600C47B7F /* twHeader.png in Resources */,
-				84129660168DA0E600C47B7F /* twHeader@2x.png in Resources */,
 				84129661168DA0E600C47B7F /* friendsbg.png in Resources */,
 				84129662168DA0E600C47B7F /* friendsbg@2x.png in Resources */,
 				84129663168DA0E600C47B7F /* statusField.png in Resources */,
@@ -3394,10 +3368,8 @@
 				D9FA2C67159074E5006FFF7E /* post.png in Resources */,
 				D9FA2C69159074E5006FFF7E /* post@2x.png in Resources */,
 				D9FA2C6B159074E5006FFF7E /* right.png in Resources */,
-				D9FA2C6D159074E5006FFF7E /* search.png in Resources */,
 				D9FA2C6F159074E5006FFF7E /* tag_320x405.png in Resources */,
 				D9FA2C71159074E5006FFF7E /* tag640x810.png in Resources */,
-				D9FA2C73159074E5006FFF7E /* topBar.png in Resources */,
 				D9FA2C7D1590751B006FFF7E /* icon.png in Resources */,
 				D9FA2C7E1590751B006FFF7E /* icon@2x.png in Resources */,
 				847FD39E161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
@@ -3406,8 +3378,6 @@
 				848DFB881626B3F50096A6FF /* VideoViewController.xib in Resources */,
 				848F7256162810BF005F02E8 /* menuStarButton.png in Resources */,
 				848F7275162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
-				84853234162D3F9300211546 /* twHeader.png in Resources */,
-				84853253162D3F9300211546 /* twHeader@2x.png in Resources */,
 				84853305162D5B1C00211546 /* friendsbg.png in Resources */,
 				84853324162D5B1C00211546 /* friendsbg@2x.png in Resources */,
 				84853343162D5B1D00211546 /* statusField.png in Resources */,
@@ -3553,18 +3523,14 @@
 				D9FA2C68159074E5006FFF7E /* post.png in Resources */,
 				D9FA2C6A159074E5006FFF7E /* post@2x.png in Resources */,
 				D9FA2C6C159074E5006FFF7E /* right.png in Resources */,
-				D9FA2C6E159074E5006FFF7E /* search.png in Resources */,
 				D9FA2C70159074E5006FFF7E /* tag_320x405.png in Resources */,
 				D9FA2C72159074E5006FFF7E /* tag640x810.png in Resources */,
-				D9FA2C74159074E5006FFF7E /* topBar.png in Resources */,
 				847FD39F161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
 				84F82CB1161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE58161B2EB200E09E36 /* VideosListViewController.xib in Resources */,
 				848DFB891626B3F50096A6FF /* VideoViewController.xib in Resources */,
 				848F7257162810BF005F02E8 /* menuStarButton.png in Resources */,
 				848F7276162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
-				84853235162D3F9300211546 /* twHeader.png in Resources */,
-				84853254162D3F9300211546 /* twHeader@2x.png in Resources */,
 				84853306162D5B1C00211546 /* friendsbg.png in Resources */,
 				84853325162D5B1C00211546 /* friendsbg@2x.png in Resources */,
 				84853344162D5B1D00211546 /* statusField.png in Resources */,
@@ -3737,8 +3703,6 @@
 				848DFBA61626B3F50096A6FF /* VideoViewController.xib in Resources */,
 				848F7274162810BF005F02E8 /* menuStarButton.png in Resources */,
 				848F7293162810BF005F02E8 /* menuStarButton@2x.png in Resources */,
-				84853252162D3F9300211546 /* twHeader.png in Resources */,
-				84853271162D3F9300211546 /* twHeader@2x.png in Resources */,
 				84853323162D5B1C00211546 /* friendsbg.png in Resources */,
 				84853342162D5B1C00211546 /* friendsbg@2x.png in Resources */,
 				84853361162D5B1D00211546 /* statusField.png in Resources */,

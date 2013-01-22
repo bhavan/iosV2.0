@@ -54,7 +54,8 @@
     {
         [self loadPartnerDetails];
     }
-    else {
+    else
+    {
         [self updateWithPartner:self.partner];
     }
 }

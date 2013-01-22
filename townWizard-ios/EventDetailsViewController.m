@@ -42,7 +42,8 @@
     NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
                                     [UIColor blackColor], UITextAttributeTextColor,
                                     [UIColor clearColor], UITextAttributeTextShadowColor,
-                                    [NSValue valueWithUIOffset:UIOffsetMake(0, 0)], UITextAttributeTextShadowOffset,
+                                    [NSValue valueWithUIOffset:UIOffsetMake(0, 0)],
+                                    UITextAttributeTextShadowOffset,
                                     [UIFont boldSystemFontOfSize:13.0f], UITextAttributeFont,
                                     nil];
     [self.navigationItem.leftBarButtonItem setTitleTextAttributes:textAttributes
@@ -143,10 +144,16 @@
     NSDate *startDate = [NSDate dateFromString:_event.startTime dateFormat:@"yyyy-MM-dd HH:mm:ss"];
     NSDate *endDate = [NSDate dateFromString:_event.endTime dateFormat:@"yyyy-MM-dd HH:mm:ss"];
     NSString *eventDatePeriod = [NSString stringWithFormat:@"%@ to %@",
-                                 [NSDate stringFromDate:startDate dateFormat:@"EEEE, LLLL d yyyy - h:mm a"],
-                                 [NSDate stringFromDate:endDate dateFormat:@"h:mm a"]];
-    SHKItem *item = [SHKItem text:[NSString stringWithFormat:@"%@\n\n%@\n%@", _event.title, eventDatePeriod,  [_event.details stringByStrippingHTML]]];
+                                 [NSDate stringFromDate:startDate
+                                             dateFormat:@"EEEE, LLLL d yyyy - h:mm a"],
+                                 [NSDate stringFromDate:endDate
+                                             dateFormat:@"h:mm a"]];
+    SHKItem *item = [SHKItem text:[NSString stringWithFormat:@"%@\n\n%@\n%@",
+                                   _event.title,
+                                   eventDatePeriod,
+                                   [_event.details stringByStrippingHTML]]];
 	SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
+    
 	//[SHK setRootViewController:rootViewController];
 	[actionSheet showInView:self.view];
 }
@@ -163,7 +170,8 @@
     isdescriptionLoaded = YES;
 }
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request
+ navigationType:(UIWebViewNavigationType)navigationType
 {
     if (isdescriptionLoaded)
     {

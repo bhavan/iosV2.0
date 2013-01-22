@@ -7,7 +7,6 @@
 //
 
 #import "SubMenuViewController.h"
-#import "Reachability.h"
 #import "UIApplication+NetworkActivity.h"
 #import "AppDelegate.h"
 #import "FacebookPlacesViewController.h"
@@ -251,7 +250,8 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     {
         MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
         mailer.mailComposeDelegate = self;
-        NSString * emailAddress = [[components objectAtIndex:1] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        NSString * emailAddress = [[components objectAtIndex:1]
+                                   stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSArray *toRecipients = [NSArray arrayWithObjects:emailAddress, nil];
         [mailer setToRecipients:toRecipients];
         [self presentModalViewController:mailer animated:YES];
