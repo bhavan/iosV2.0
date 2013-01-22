@@ -40,7 +40,7 @@ RKObjectLoaderDelegate>
 - (IBAction)dismissKeyboardByTouchingEmptySpaceOnScreen:(id)sender;
 - (IBAction)infoButtonPressed:(id)sender;
 - (IBAction) goButtonPressed:(id)sender;
-- (void) loadSectionMenuForPartnerWithPartner:(Partner *)partnerDict;
+- (void) partnerSelected:(Partner *)partnerDict;
 
 
 @end

@@ -33,18 +33,19 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated]; 
-   
+    [super viewWillAppear:animated];    
     [[RequestHelper sharedInstance] loadPhotoCategoriesWithDelegate:self];
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
     [self setTableView:nil];   
     [self setCategories:nil];
     [super dealloc];
 }
 
-- (void)viewDidUnload {
+- (void)viewDidUnload
+{
     [self setTableView:nil];
     [super viewDidUnload];
 }
@@ -66,24 +67,24 @@
 #pragma mark -
 #pragma mark UITableViewDatasource
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     return [[self categories] count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {    
     static NSString *cellIdentifier = @"categoryCell";
-    ImageCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
-    if(cell == nil) {
+    ImageCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];    
+    if(cell == nil)
+    {
         cell = [[[ImageCell alloc] initWithStyle:UITableViewCellStyleDefault
                                  reuseIdentifier:cellIdentifier] autorelease];
-    }
-    
+    }    
     PhotoCategory *category = [[self categories] objectAtIndex:indexPath.row];
     cell.nameLabel.text = category.name;
-    [cell.thumbImageView setImageWithURL:[NSURL URLWithString:category.thumb]];
-    
+    [cell.thumbImageView setImageWithURL:[NSURL URLWithString:category.thumb]];    
     return cell;
 }
 

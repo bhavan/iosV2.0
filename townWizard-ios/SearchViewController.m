@@ -27,6 +27,7 @@
 - (void) searchForPartnersWithQuery:(NSString *)query offset:(NSInteger)offset;
 - (void) loadNearbyPartners;
 - (void) partnersLoaded:(NSArray *)partners;
+- (void) configureViews;
 @end
 
 @implementation SearchViewController
@@ -37,8 +38,16 @@
 {
     [super viewDidLoad];
     self.searchBar.accessibilityLabel = @"Search";
-    [self.searchBar customizeSearchBar];
+    [self configureViews];
     selectedPartnerSections = nil;
+    self.partnersList = [NSMutableArray array];
+    loadingMorePartnersInProgress = NO;
+    [self searchForPartnersWithQuery:nil];
+}
+
+- (void)configureViews
+{
+    [self.searchBar customizeSearchBar];
     [self.tableView setBackgroundColor:[UIColor colorWithPatternImage:
                                         [UIImage imageNamed:@"searchBg"]]];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
@@ -46,10 +55,6 @@
                                                     green:186.0f/255.0f
                                                      blue:186.0f/255.0f
                                                     alpha:0.7f];
-    self.partnersList = [NSMutableArray array];
-    loadingMorePartnersInProgress = NO;
-    [self searchForPartnersWithQuery:nil];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -83,7 +88,7 @@
     subMenu.navigationItem.leftBarButtonItem = menuButton;
     [(TownWizardNavigationBar *)[self.navigationController navigationBar] updateTitleText:section.displayName];
     [self.masterDetail toggleMasterView];
-    [subMenu release];    
+    [subMenu release];
 }
 
 -(void)infoButtonPressed:(id)sender
@@ -98,18 +103,6 @@
 {
     [self.masterDetail toggleMasterView];
     [self.navigationController popToRootViewControllerAnimated:NO];
-}
-
-- (void)removeSpinnerFromCellAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell * cellWithSpinner = [self.tableView cellForRowAtIndexPath:indexPath];
-    [cellWithSpinner removeSpinnerFromCell];
-}
-//do not use this method in tableView cellAtIndexPath method, cause cellForRowAtIndexPath return nil there
-- (void)addSpinnerToCellAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell * cell = [self.tableView cellForRowAtIndexPath:indexPath];
-    [cell addSpinnerToCell];
 }
 
 #pragma mark -
@@ -168,7 +161,7 @@
                            message:@"Sorry, but it looks like we dont have a TownWizard in your area yet!"
                           delegate:self
                  cancelButtonTitle:@"OK"
-                confirmButtonTitle:nil];       
+                confirmButtonTitle:nil];
         
     }
     else if([[partners lastObject] isKindOfClass:[Partner class]])
@@ -202,14 +195,7 @@
 
 - (void)loadNearbyPartners
 {
-    [self searchForPartnersWithQuery:nil];    
-}
-
-- (void)loadSectionMenuForPartnerWithPartner:(Partner *)aPartner
-{
-    PartnerViewController *controller = [[PartnerViewController alloc] initWithPartner:aPartner];
-    [[self navigationController] pushViewController:controller animated:YES];
-    [controller release];
+    [self searchForPartnersWithQuery:nil];
 }
 
 -(void)locationManager:(CLLocationManager *)aManager
@@ -218,75 +204,36 @@
 {
     [aManager stopUpdatingLocation];
     [self loadNearbyPartners];
-    
 }
 
 #pragma mark - TableView delegate mathods
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    if (nextOffset == 0) return 1;
+    if (nextOffset == 0)
+    {
+        return 1;
+    }    
     return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    if (![_partnersList count]) return 0;
-    
-    if (section ==0) //Partners section
+{    
+    if (section == 0)
+    {
         return [_partnersList count];
-    
-    else return 1; // Load more section
-}
-
-- (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.section == 0)
-    {
-        Partner *partner = [_partnersList objectAtIndex:indexPath.row];
-        [self.searchBar resignFirstResponder];
-        
-        if ([partner.iTunesAppId isEqual:@""] || ![partner.iTunesAppId hasPrefix:@"store"])
-        {
-            [self loadSectionMenuForPartnerWithPartner:partner];
-            
-            if (partner.facebookAppId)
-            {
-                [AppDelegate sharedDelegate].facebookHelper.appId = partner.facebookAppId;
-                [TestFlight passCheckpoint:@"facebook app id is set"];
-            }
-            else {
-                [AppDelegate sharedDelegate].facebookHelper.appId = @"";
-                [TestFlight passCheckpoint:@"Facebook app id is empty"];
-            }
-        }
-        else if([partner.iTunesAppId hasPrefix:@"store"])
-        {
-            partner.iTunesAppId = [partner.iTunesAppId stringByReplacingOccurrencesOfString:@"store"
-                                                                                 withString:@""];
-            NSString * iTunesAppUrl = [[NSString stringWithFormat:@"http://itunes.apple.com/us/app/id"]
-                                       stringByAppendingString:
-                                       partner.iTunesAppId];
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:iTunesAppUrl]];
-        }
     }
-    else if (indexPath.section == 1) //Load more button
-    {
-        [self addSpinnerToCellAtIndexPath:indexPath];
-        loadingMorePartnersInProgress = YES;
-        [self searchForPartnersWithQuery:currentSearchQuery offset:nextOffset];
-    }
-    [aTableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self.searchBar resignFirstResponder];
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)aTableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = nil;
     if (indexPath.section == 0)
     {
+        static NSString *CellIdentifier = @"Cell";
+        
         cell = [aTableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if(cell == nil)
         {
@@ -295,31 +242,70 @@
         }
         Partner *partner = [_partnersList objectAtIndex:indexPath.row];
         cell.textLabel.text = partner.name;
-        cell.textLabel.textColor = [UIColor darkGrayColor];
     }
     else if (indexPath.section == 1)
     {
-        cell = [aTableView dequeueReusableCellWithIdentifier:nil];
+        static NSString *CellIdentifier = @"loadMoreCell";
+        cell = [aTableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if(cell == nil)
         {
             cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                           reuseIdentifier:nil] autorelease];
+                                           reuseIdentifier:CellIdentifier] autorelease];
+            cell.textLabel.textAlignment = UITextAlignmentCenter;
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
+        [cell removeSpinnerFromCell];
+        cell.textLabel.text = @"Load more";
         
         if (loadingMorePartnersInProgress)
         {
             cell.textLabel.text = @"";
             [cell addSpinnerToCell];
         }
-        else
-        {
-            [self removeSpinnerFromCellAtIndexPath:indexPath];
-            cell.textLabel.text = @"Load more";
-            cell.textLabel.textAlignment = UITextAlignmentCenter;
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        }
-    }    
+    }
     return  cell;
+}
+
+- (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0)
+    {
+        Partner *partner = [_partnersList objectAtIndex:indexPath.row];
+        [self partnerSelected:partner];
+    }
+    else if (indexPath.section == 1) //Load more button
+    {
+        UITableViewCell * cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        [cell addSpinnerToCell];
+        loadingMorePartnersInProgress = YES;
+        [self searchForPartnersWithQuery:currentSearchQuery offset:nextOffset];
+    }
+    [aTableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)partnerSelected:(Partner *)partner
+{
+    if ([partner.iTunesAppId isEqual:@""] || ![partner.iTunesAppId hasPrefix:@"store"])
+    {
+        if (!partner.facebookAppId)
+        {
+            partner.facebookAppId = @"";
+        }
+        [AppDelegate sharedDelegate].facebookHelper.appId = partner.facebookAppId;
+        PartnerViewController *controller = [[PartnerViewController alloc] initWithPartner:partner];
+        [[self navigationController] pushViewController:controller animated:YES];
+        [controller release];
+    }
+    else if([partner.iTunesAppId hasPrefix:@"store"])
+    {
+        partner.iTunesAppId = [partner.iTunesAppId stringByReplacingOccurrencesOfString:@"store"
+                                                                             withString:@""];
+        NSString * iTunesAppUrl = [[NSString stringWithFormat:
+                                    @"http://itunes.apple.com/us/app/id"]
+                                   stringByAppendingString:partner.iTunesAppId];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:iTunesAppUrl]];
+    }
+    
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
@@ -346,7 +332,6 @@
         [self.goButton setEnabled:NO];
         [self.goButton addSpinner];
         [self.goButton setTitle:@"" forState:UIControlStateNormal];
-        [self removeSpinnerFromCellAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
         if([_partnersList count] > 0)
         {
             [_partnersList removeAllObjects];
@@ -356,7 +341,7 @@
         if ([query isEqual:@""])
         {
             query = nil;
-        }      
+        }
         [self searchForPartnersWithQuery:query];
         currentSearchQuery = aSearchBar.text;
     }
@@ -365,8 +350,8 @@
         UIAlertView *alertView = [[UIAlertView alloc]
                                   initWithTitle:
                                   NSLocalizedString(@"No connection available!", @"AlertView")
-                                  message
-                                  :NSLocalizedString(@"Please connect to cellular network or Wi-Fi",
+                                  message:
+                                  NSLocalizedString(@"Please connect to cellular network or Wi-Fi",
                                                      @"AlertView")
                                   delegate:self
                                   cancelButtonTitle:
@@ -387,21 +372,23 @@
     }
 }
 
-- (void)viewDidUnload
+- (void)cleanUp
 {
     [self setTableView:nil];
     [self setSearchBar:nil];
     [_partnersList release];
     [[UIApplication sharedApplication] setActivityindicatorToZero];
+}
+
+- (void)viewDidUnload
+{
+    [self cleanUp];
     [super viewDidUnload];
 }
 
 - (void)dealloc
 {
-    [self setTableView:nil];
-    [self setSearchBar:nil];
-    [_partnersList release];
-    [[UIApplication sharedApplication] setActivityindicatorToZero];
+    [self cleanUp];
     [super dealloc];
 }
 

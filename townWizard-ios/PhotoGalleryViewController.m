@@ -75,7 +75,8 @@
 {
     static NSString *cellIdentifier = @"gridCell";
     WebImageGridViewCell *cell = (WebImageGridViewCell *)[aGridView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if(cell == nil) {
+    if(cell == nil)
+    {
         cell = [[[WebImageGridViewCell alloc] initWithFrame:CGRectMake(0, 0, 100, 100)
                                            reuseIdentifier:cellIdentifier] autorelease];
         [cell setSelectionStyle:AQGridViewCellSelectionStyleNone];
