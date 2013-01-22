@@ -12,7 +12,7 @@
 
 + (UIBarButtonItem *) menuButtonWithTarget:(id)target action:(SEL)action
 {
-    UIImage *menuButtonImage = [UIImage imageNamed:@"menu_button"];
+    UIImage *menuButtonImage = [UIImage imageNamed:@"menu"];
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setImage:menuButtonImage forState:UIControlStateNormal];
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
