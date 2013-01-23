@@ -13,10 +13,6 @@
 #import "Partner.h"
 #import "RequestHelper.h"
 
-@interface BaseUploadViewController ()
-
-@end
-
 @implementation BaseUploadViewController
 
 @synthesize partner;
@@ -24,9 +20,6 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
     return self;
 }
 
@@ -36,8 +29,7 @@
     uploadView = [[PhotoUploadView alloc] init];
     [self.view addSubview:uploadView];
     [uploadView addUploadTarget:self action:@selector(cameraButtonPressed:)];
-    self.partner = [[RequestHelper sharedInstance] currentPartner];
-    
+    self.partner = [[RequestHelper sharedInstance] currentPartner];    
 }
 
 - (void)cameraButtonPressed:(id)sender
@@ -54,7 +46,7 @@
     [menu release];
 }
 
--(void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
 	if(buttonIndex == 2) //Cancel button
 		return;
@@ -85,19 +77,14 @@
         didFinishPickingImage:(UIImage *)image
                   editingInfo:(NSDictionary *)editingInfo
 {
-	
-	//[(PhotoGalleryViewController *)parent dismissModalViewControllerAnimated:YES];
-	
 	AddCaptionViewController *viewController = [[AddCaptionViewController alloc]
                                                 initWithNibName:@"AddCaptionViewController"
-                                                bundle:nil];
-    
+                                                bundle:nil];    
     viewController.partnerSiteURL = self.partner.webSiteUrl;
 	viewController.photo = image;
     [picker presentModalViewController:viewController animated:YES];
 	[viewController release];
 }
-
 
 - (void)dealloc
 {

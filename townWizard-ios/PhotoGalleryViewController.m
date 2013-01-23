@@ -27,7 +27,6 @@
                                                          toView:self.view];
 }
 
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -89,7 +88,6 @@
     return cell;
 }
 
-
 #pragma mark -
 #pragma mark AQGridViewDelegate
 
@@ -97,7 +95,6 @@
 {
     [self displayPhotoBrowserWithInitialPageIndex:index];    
 }
-
 
 #pragma mark -
 #pragma mark MWPhotoBrowserDelegate methods

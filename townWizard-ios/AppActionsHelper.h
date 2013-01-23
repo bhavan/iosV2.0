@@ -10,7 +10,7 @@
 
 @class Event;
 
-@interface AppActionsHelper : NSObject
+@interface AppActionsHelper : NSObject <UIAlertViewDelegate>
 {
         NSString *phoneNumberToCall;
 }
@@ -22,5 +22,6 @@
 - (void)openMapWithTitle:(NSString *)title longitude:(double)longitude latitude:(double)latitude fromNavController:(UINavigationController *)navController;
 - (void)saveEvent:(Event *)event;
 - (UIView *)putTWBackgroundWithFrame:(CGRect)frame toView:(UIView *)view;
+- (void)showNoInternetAlert;
 
 @end

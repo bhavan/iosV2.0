@@ -20,7 +20,8 @@
     else return _appId;
 }
 
-- (id) init {
+- (id) init
+{
 	if (self = [super init])
     {
 		//appId = [[[GenericAppAppDelegate sharedDelegate].appConfig configForKey:@"facebook_app_id"] retain];
@@ -51,23 +52,29 @@
 
 #pragma mark FBSessionDelegate
 
-- (void) fbDidLogin {
-	[[NSUserDefaults standardUserDefaults] setObject:self.facebook.accessToken forKey:@"AccessToken"];
-	[[NSUserDefaults standardUserDefaults] setObject:self.facebook.expirationDate forKey:@"ExpirationDate"];
+- (void) fbDidLogin
+{
+	[[NSUserDefaults standardUserDefaults] setObject:self.facebook.accessToken
+                                              forKey:@"AccessToken"];
+	[[NSUserDefaults standardUserDefaults] setObject:self.facebook.expirationDate
+                                              forKey:@"ExpirationDate"];
     if ([delegate respondsToSelector:@selector(facebookPermissionGranted)])
         [delegate facebookPermissionGranted];
     
     [TestFlight passCheckpoint:@"facebook login successful"];
 }
 
-- (void) fbDidNotLogin:(BOOL)cancelled {
+- (void) fbDidNotLogin:(BOOL)cancelled
+{
     if ([delegate respondsToSelector:@selector(facebookPermissionNotGranted)])
         [delegate facebookPermissionNotGranted];
     
     [TestFlight passCheckpoint:@"facebook login failed"];
 }
 
-- (void) dialog:(NSString *)action andParams:(NSMutableDictionary *)params andDelegate:(id <FBDialogDelegate>)theDelegate {
+- (void) dialog:(NSString *)action andParams:(NSMutableDictionary *)params
+    andDelegate:(id <FBDialogDelegate>)theDelegate
+{
 	[params setObject:self.appId forKey:@"api_key"];
 	[self.facebook dialog:action andParams:params andDelegate:theDelegate];
 }

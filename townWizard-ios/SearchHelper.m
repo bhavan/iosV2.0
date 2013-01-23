@@ -59,6 +59,11 @@
 
 - (void) searchForPartnersWithQuery:(NSString *)query
 {
+    NSString *newQuery = query;
+    if ([newQuery isEqual:@""])
+    {
+        newQuery = nil;
+    }
     loadingMorePartnersInProgress = NO;
     [self searchForPartnersWithQuery:query offset:0];
 }
@@ -119,8 +124,7 @@
             if (defaultPartner == nil)
             {
                 [self searchForPartnersWithQuery:DEFAULT_PARTNER_NAME];
-            }
-            
+            }            
         }
     }   
 }

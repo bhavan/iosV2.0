@@ -40,6 +40,8 @@
 - (void)loadEventsWithDatePeriod:(NSDate *)startDate endDate:(NSDate *)endDate;
 - (void)filterEventsByCategoryAndDate;
 - (NSArray *)currentCategotyEvents;
+- (Event *)eventForIndexPath:(NSIndexPath *)indexPath;
+- (void)loadEventsData;
 
 @end
 

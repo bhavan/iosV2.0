@@ -37,7 +37,6 @@
     [[AppActionsHelper sharedInstance] putTWBackgroundWithFrame:_tableView.frame toView:self.view];   
 }
 
-
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -94,13 +93,13 @@
 {
     static NSString *cellIdentifier = @"videosCell";
     ImageCell *cell = [aTableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if(cell == nil) {
+    if(cell == nil)
+    {
         cell = [[[ImageCell alloc] initWithStyle:UITableViewCellStyleDefault
                                  reuseIdentifier:cellIdentifier] autorelease];
     }
     
     Video *video = [[self videos] objectAtIndex:indexPath.row];
-
     cell.nameLabel.text = video.name;
     [cell.thumbImageView setImageWithURL:[NSURL URLWithString:video.thumb]];
     

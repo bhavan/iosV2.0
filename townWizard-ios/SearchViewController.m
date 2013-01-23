@@ -207,12 +207,10 @@
     {
         partner.iTunesAppId = [partner.iTunesAppId stringByReplacingOccurrencesOfString:@"store"
                                                                              withString:@""];
-        NSString * iTunesAppUrl = [[NSString stringWithFormat:
-                                    @"http://itunes.apple.com/us/app/id"]
+        NSString * iTunesAppUrl = [[NSString stringWithFormat: @"http://itunes.apple.com/us/app/id"]
                                    stringByAppendingString:partner.iTunesAppId];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:iTunesAppUrl]];
-    }
-    
+    }    
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
@@ -238,40 +236,13 @@
     {
         [self.goButton setEnabled:NO];
         [self.goButton addSpinner];
-        [self.goButton setTitle:@"" forState:UIControlStateNormal];
-       
-        NSString *query = aSearchBar.text;
-        if ([query isEqual:@""])
-        {
-            query = nil;
-        }
-        [searchHelper searchForPartnersWithQuery:query];
+        [self.goButton setTitle:@"" forState:UIControlStateNormal];       
+        [searchHelper searchForPartnersWithQuery:aSearchBar.text];
         [self.tableView reloadData];
     }
     else
     {
-        UIAlertView *alertView = [[UIAlertView alloc]
-                                  initWithTitle:
-                                  NSLocalizedString(@"No connection available!", @"AlertView")
-                                  message:
-                                  NSLocalizedString(@"Please connect to cellular network or Wi-Fi",
-                                                     @"AlertView")
-                                  delegate:self
-                                  cancelButtonTitle:
-                                  NSLocalizedString(@"Cancel", @"AlertView")
-                                  otherButtonTitles:
-                                  NSLocalizedString(@"Open settings", @"AlertView"),
-                                  nil];
-        [alertView show];
-        [alertView release];
-    }
-}
-
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex == 1)
-    {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"prefs:root=WIFI"]];
+        [[AppActionsHelper sharedInstance] showNoInternetAlert];       
     }
 }
 

@@ -30,9 +30,6 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        
-    }
     return self;
 }
 
@@ -98,14 +95,7 @@
     }
     else
     {
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle:@"No website"
-                              message:nil
-                              delegate:nil
-                              cancelButtonTitle:@"Ok"
-                              otherButtonTitles:nil];
-        [alert show];
-        [alert release];
+        [UIAlertView showWithTitle:@"No website" message:nil confirmButtonTitle:@"Ok"];
     }
 }
 

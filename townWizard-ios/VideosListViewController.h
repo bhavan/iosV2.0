@@ -11,8 +11,7 @@
 @class Partner;
 @class Section;
 
-@interface VideosListViewController : UIViewController  {
-}
+@interface VideosListViewController : UIViewController
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) Section *section;

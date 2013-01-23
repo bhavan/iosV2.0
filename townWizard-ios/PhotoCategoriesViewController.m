@@ -28,7 +28,7 @@
 {
     [super viewDidLoad];
     [[AppActionsHelper sharedInstance] putTWBackgroundWithFrame:_tableView.frame
-                                                         toView:self.view];   
+                                                         toView:self.view];
 }
 
 - (void)viewWillAppear:(BOOL)animated

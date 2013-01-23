@@ -41,8 +41,6 @@ static AppActionsHelper *actionsHelper = nil;
     return [backgroundView autorelease];
 }
 
-
-
 - (BOOL)townWizardServerReachable
 {
     Reachability *r = [Reachability reachabilityWithHostName:@"townwizard.com"];
@@ -52,6 +50,24 @@ static AppActionsHelper *actionsHelper = nil;
         return NO;
     }
     return YES;
+}
+
+- (void)showNoInternetAlert
+{
+    UIAlertView *alertView = [[UIAlertView alloc]
+                              initWithTitle:
+                              NSLocalizedString(@"No connection available!", @"AlertView")
+                              message:
+                              NSLocalizedString(@"Please connect to cellular network or Wi-Fi",
+                                                @"AlertView")
+                              delegate:self
+                              cancelButtonTitle:
+                              NSLocalizedString(@"Cancel", @"AlertView")
+                              otherButtonTitles:
+                              NSLocalizedString(@"Open settings", @"AlertView"),
+                              nil];
+    [alertView show];
+    [alertView release];
 }
 
 
@@ -66,6 +82,14 @@ static AppActionsHelper *actionsHelper = nil;
         [subMenu release];
     }
     
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1)
+    {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"prefs:root=WIFI"]];
+    }
 }
 
 - (void)saveEvent:(Event *)event

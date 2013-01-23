@@ -35,6 +35,13 @@ static const NSInteger kEventsAlertTag = 700;
 #pragma mark -
 #pragma mark events loading
 
+- (void)loadEventsData
+{
+    [self loadTodayEvents];
+    [self loadEventsCategories];
+    [self loadFeaturedEvents];
+}
+
 - (void) loadFeaturedEvents
 {
     [[RequestHelper sharedInstance] loadFeaturedEventUsingBlock:^(RKObjectLoader *loader)
@@ -93,7 +100,7 @@ static const NSInteger kEventsAlertTag = 700;
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error
 {
-    
+    NSLog(@"error: %@", error.localizedDescription);
 }
 
 #pragma mark -
@@ -150,13 +157,10 @@ static const NSInteger kEventsAlertTag = 700;
     }
 }
 
-
 - (void) categoriesLoaded:(NSArray *)categories
 {
     [self setCategotiesList:categories];
 }
-
-
 
 - (void)filterEventsByCategoryAndDate
 {
@@ -198,7 +202,14 @@ static const NSInteger kEventsAlertTag = 700;
     self.sortedDays = [unsortedDays sortedArrayUsingSelector:@selector(compare:)];
     
     [delegate eventsFiltered];
+}
 
+- (Event *)eventForIndexPath:(NSIndexPath *)indexPath
+{
+    NSDate *dateRepresentingThisDay = [self.sortedDays objectAtIndex:indexPath.section];
+    NSArray *eventsOnThisDay = [self.sections objectForKey:dateRepresentingThisDay];
+    Event *event = [eventsOnThisDay objectAtIndex:indexPath.row];
+    return event;
 }
 
 
@@ -221,6 +232,14 @@ static const NSInteger kEventsAlertTag = 700;
 
 - (void)dealloc
 {
+    [self setCategotiesList:nil];
+    [self setEvents:nil];
+    [self setAllEvents:nil];
+    [self setAllFeaturedEvents:nil];
+    [self setCurrentStart:nil];
+    [self setCurrentEnd:nil];
+    [self setSortedDays:nil];
+    [self setBannerUrlString:nil];
     [super dealloc];
 }
 

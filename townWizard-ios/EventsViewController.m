@@ -26,6 +26,8 @@
 @property (nonatomic, strong) PMCalendarController *calendar;
 @property (nonatomic, retain) NSDateFormatter *sectionDateFormatter;
 
+- (void)setupCotrols;
+
 @end
 
 @implementation EventsViewController
@@ -35,7 +37,7 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];   
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     return self;
 }
 
@@ -43,21 +45,23 @@
 {
     [super viewDidLoad];
     self.trackedViewName = @"Events screen";
+    [self setupCotrols];
+    eventsHelper = [[EventsHelper alloc] initWithDelegate:self];
+    [eventsHelper loadEventsData];
+}
+
+- (void)setupCotrols
+{
+    featuredEventsViewer.delegate = self;
     self.calendar = [[[PMCalendarController alloc] initWithThemeName:@"apple calendar"] autorelease];
     self.calendar.delegate = self;
     self.calendar.mondayFirstDayOfWeek = NO;
-
     [self.eventsTypeButton setTitle:ALL_EVENTS_TEXT forState:UIControlStateNormal];
     NSString *newDatePeriod = [NSDate stringFromPeriod:[NSDate date]
                                                    end:[NSDate date]];
     [self.calendarButton setTitle:newDatePeriod forState:UIControlStateNormal];
     self.sectionDateFormatter = [[[NSDateFormatter alloc] init] autorelease];
-    [self.sectionDateFormatter setDateFormat:@"EEEE LLL dd"];
-    eventsHelper = [[EventsHelper alloc] initWithDelegate:self];
-    featuredEventsViewer.delegate = self;
-    [eventsHelper loadTodayEvents];
-    [eventsHelper loadEventsCategories];
-    [eventsHelper loadFeaturedEvents];    
+    [self.sectionDateFormatter setDateFormat:@"EEEE LLL dd"];    
 }
 
 - (void)eventTouched:(Event *)event
@@ -116,7 +120,7 @@
 - (void)calendarController:(PMCalendarController *)calendarController
            didChangePeriod:(PMPeriod *)newPeriod
 {
-    
+    NSLog(@"Event period changed");
 }
 
 - (BOOL)calendarControllerShouldDismissCalendar:(PMCalendarController *)calendarController
@@ -129,7 +133,7 @@
         eventsHelper.currentStart = calendarController.period.startDate;
         eventsHelper.currentEnd = calendarController.period.endDate;
         [eventsHelper loadEventsWithDatePeriod:self.calendar.period.startDate
-                               endDate:self.calendar.period.endDate];
+                                       endDate:self.calendar.period.endDate];
     }
     return YES;
 }
@@ -180,16 +184,8 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row
        inComponent:(NSInteger)component
 {
-    if(row == 0)
-    {
-        eventsHelper.currentCategory = -1;
-    }
-    else
-    {
-        eventsHelper.currentCategory = row-1;
-    }
+    eventsHelper.currentCategory = row-1;
 }
-
 
 #pragma mark -
 #pragma mark UITableViewDataSource
@@ -222,10 +218,7 @@
         cell = [EventCell loadFromXib];
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
-    NSDate *dateRepresentingThisDay = [eventsHelper.sortedDays objectAtIndex:indexPath.section];
-    NSArray *eventsOnThisDay = [eventsHelper.sections objectForKey:dateRepresentingThisDay];
-    Event *event = [eventsOnThisDay objectAtIndex:indexPath.row];
-    [cell updateWithEvent:event];
+    [cell updateWithEvent:[eventsHelper eventForIndexPath:indexPath]];
     return cell;
 }
 
@@ -234,10 +227,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDate *dateRepresentingThisDay = [eventsHelper.sortedDays objectAtIndex:indexPath.section];
-    NSArray *eventsOnThisDay = [eventsHelper.sections objectForKey:dateRepresentingThisDay];
-    Event *event = [eventsOnThisDay objectAtIndex:indexPath.row];
-    [self eventTouched:event];
+    [self eventTouched:[eventsHelper eventForIndexPath:indexPath]];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section

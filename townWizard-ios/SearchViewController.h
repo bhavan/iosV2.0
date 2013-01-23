@@ -34,8 +34,8 @@ SearchHelperDelegate
 
 - (IBAction)dismissKeyboardByTouchingEmptySpaceOnScreen:(id)sender;
 - (IBAction)infoButtonPressed:(id)sender;
-- (IBAction) goButtonPressed:(id)sender;
-- (void) partnerSelected:(Partner *)partnerDict;
+- (IBAction)goButtonPressed:(id)sender;
+- (void)partnerSelected:(Partner *)partnerDict;
 
 
 @end

@@ -113,12 +113,14 @@ static NSString *twGAcode = @"@UA-31932515-1";
     [Appirater appEnteredForeground:YES];
 }
 
--(NSString*) latitude {
+-(NSString*) latitude
+{
     CGFloat lat = [self.manager location].coordinate.latitude;
     return [NSString stringWithFormat:@"%f", lat];
 }
 
--(NSString*) longitude {
+-(NSString*) longitude
+{
     CGFloat lon = [self.manager location].coordinate.longitude;
     return [NSString stringWithFormat:@"%f", lon];
 }

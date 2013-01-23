@@ -29,6 +29,7 @@
 - (NSString *)urlFromSection:(Section*)section;
 - (BOOL)isSectionUrlAbsolute:(NSString *)urlString;
 - (BOOL)parseUrlComponents:(NSArray *)components;
+- (void)setupLeftButton;
 
 @end
 
@@ -126,6 +127,21 @@
     }
 }
 
+- (void)setupLeftButton
+{
+    if(_webView.canGoBack)
+    {
+        self.navigationItem.leftBarButtonItem = back;
+    }
+    else if(!_url && partnerController)
+    {
+        self.navigationItem.leftBarButtonItem = [UIBarButtonItem
+                                                 menuButtonWithTarget:partnerController
+                                                 action:@selector(toggleMasterView)];
+    }
+
+}
+
 #pragma mark -
 #pragma mark webView
 
@@ -137,19 +153,7 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    if(_webView.canGoBack)
-    {
-        self.navigationItem.leftBarButtonItem = back;
-    }
-    else if(!_url && partnerController)
-    {
-        self.navigationItem.leftBarButtonItem = [UIBarButtonItem
-                                                 menuButtonWithTarget:partnerController                                                 
-                                                               action:@selector(toggleMasterView)];
-    }
-    
-    NSLog(@"Finish loading URL: %@",[webView.request URL]);
-    
+    [self setupLeftButton];    
     if (self.view.window) //if webView is not on screen, we are not interested in setting this
         [[UIApplication sharedApplication] setActivityindicatorToZero];
 }
@@ -158,21 +162,9 @@
 shouldStartLoadWithRequest:(NSURLRequest *)request
  navigationType:(UIWebViewNavigationType)navigationType
 {
-    if(_webView.canGoBack)
-    {
-        self.navigationItem.leftBarButtonItem = back;
-    }
-    else if(!_url && partnerController)
-    {
-        self.navigationItem.leftBarButtonItem = [UIBarButtonItem
-                                                 menuButtonWithTarget:partnerController
-                                                               action:@selector(toggleMasterView)];
-    }
-    
-    NSLog(@"Loading URL: %@",[request URL]);
+    [self setupLeftButton];
     NSString *requestString = [[request URL] absoluteString];
-	NSArray *components = [requestString componentsSeparatedByString:@":"];
-    
+	NSArray *components = [requestString componentsSeparatedByString:@":"];    
     if ([components count] >= 2)
     {
         return [self parseUrlComponents:components];
