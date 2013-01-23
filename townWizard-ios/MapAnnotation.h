@@ -17,7 +17,8 @@ typedef enum {
 } MapAnnotationType;
 
 
-@interface MapAnnotation : NSObject <MKAnnotation> {
+@interface MapAnnotation : NSObject <MKAnnotation>
+{
 	CLLocationCoordinate2D	_coordinate;
 	MapAnnotationType		_annotationType;
 }

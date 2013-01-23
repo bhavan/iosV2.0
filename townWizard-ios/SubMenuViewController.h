@@ -33,7 +33,6 @@ MFMailComposeViewControllerDelegate>
 @property (nonatomic, retain) Partner *partner;
 @property (nonatomic, retain) NSString *url;
 @property (nonatomic, retain) Section * section;
-
 @property (nonatomic, retain) IBOutlet UIWebView *webView;
 @property (nonatomic, assign)  id <SubMenuViewControllerDelegate> delegate;
 

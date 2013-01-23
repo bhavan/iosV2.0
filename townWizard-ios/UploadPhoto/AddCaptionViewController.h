@@ -22,9 +22,9 @@
 @property (nonatomic, retain) IBOutlet UITextField *nameTextField;
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, retain) UIImage *photo;
-@property (nonatomic, retain) NSString * userName;
-@property (nonatomic, retain) NSString * userCaption;
-@property (nonatomic, retain) NSString * partnerSiteURL;
+@property (nonatomic, retain) NSString *userName;
+@property (nonatomic, retain) NSString *userCaption;
+@property (nonatomic, retain) NSString *partnerSiteURL;
 
 - (NSData *)getOutputData:(NSString *)sUrl BodyData:(NSData *)bodyData;
 - (IBAction)cancelButtonPressed:(id)sender;

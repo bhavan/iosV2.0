@@ -12,10 +12,14 @@
 
 
 @implementation MapViewController
+@synthesize latitude;
+@synthesize longitude;
+@synthesize bShowDirection;
 
 @synthesize placeMarker;
 
-- (id) init {
+- (id) init
+{
 	self = [self initWithNibName:@"MapViewController" bundle:nil];
 	return self;
 }
@@ -34,17 +38,14 @@
     [super viewWillDisappear:animated];
 }
 
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-
 	[self loadGoogleMap];
 }
 
 - (void)menuButtonPressed
 {
-    //UIViewController *menuViewController = self.customNavigationBar.menuPage;
-    //[self.navigationController popToViewController:menuViewController animated:YES];
     [self.navigationController popViewControllerAnimated:YES];
 }
 #pragma mark -
@@ -63,8 +64,7 @@
 - (void)loadGoogleMap
 {
 	currentRegion.center.latitude = latitude;
-	currentRegion.center.longitude = longitude;
-	
+	currentRegion.center.longitude = longitude;	
 	currentRegion.span.latitudeDelta = 0.009;
 	currentRegion.span.longitudeDelta = 0.009;
 	
@@ -78,7 +78,6 @@
 - (void)loadMarkers
 {
 	NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];	
-
 	NSMutableArray* annots = [[NSMutableArray alloc] init];
 	
 	AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -159,7 +158,8 @@
 	if(buttonIndex == 0)
 	{
 		AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-		NSString *sUrl = [NSString stringWithFormat:@"http://maps.google.com/maps?daddr=%.4f,%.4f&saddr=%.4f,%.4f", 
+		NSString *sUrl = [NSString stringWithFormat:
+                          @"http://maps.google.com/maps?daddr=%.4f,%.4f&saddr=%.4f,%.4f",
                           self.latitude, self.longitude,
                           appDelegate.doubleLatitude, appDelegate.doubleLongitude];
 
@@ -178,9 +178,5 @@
     [super dealloc];
 }
 
-#pragma mark -
 
-@synthesize latitude;
-@synthesize longitude;
-@synthesize bShowDirection;
 @end

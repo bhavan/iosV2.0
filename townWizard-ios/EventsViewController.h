@@ -9,19 +9,21 @@
 #import <UIKit/UIKit.h>
 #import "EventsViewer.h"
 #import "GAITrackedViewController.h"
+#import "EventsHelper.h"
 @class EventsViewer;
 
 
 @interface EventsViewController : GAITrackedViewController <UIPickerViewDelegate, UIPickerViewDataSource, UIActionSheetDelegate,
-    EventViewerDelegate, RKObjectLoaderDelegate>
-{    
+    EventViewerDelegate,
+    EventsHelperDelegate>
+{
+    EventsHelper *eventsHelper;
     IBOutlet EventsViewer *featuredEventsViewer;
     IBOutlet UITableView *eventsList;
-    NSInteger currentCategory;
+
 }
 @property (retain, nonatomic) IBOutlet UIImageView *bannerImageView;
 @property (retain, nonatomic) IBOutlet UIButton *calendarButton;
-@property (nonatomic, retain) NSArray *categotiesList;
 @property (retain, nonatomic) IBOutlet UIButton *eventsTypeButton;
 
 - (IBAction)bannerButtonPressed:(id)sender;

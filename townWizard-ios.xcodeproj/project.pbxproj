@@ -378,6 +378,11 @@
 		843AC47016A03514007DF1F9 /* UIImage+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 843AC46B16A03514007DF1F9 /* UIImage+Extensions.m */; };
 		8444637716198FCC00394D41 /* Partner.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444637616198FCC00394D41 /* Partner.m */; };
 		8444637816198FCC00394D41 /* Partner.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444637616198FCC00394D41 /* Partner.m */; };
+		8448CB3E16AFD80600471BDF /* EventsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8448CB3D16AFD80600471BDF /* EventsHelper.m */; };
+		8448CB3F16AFD80600471BDF /* EventsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8448CB3D16AFD80600471BDF /* EventsHelper.m */; };
+		8448CB4016AFD80600471BDF /* EventsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8448CB3D16AFD80600471BDF /* EventsHelper.m */; };
+		8448CB4116AFD80600471BDF /* EventsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8448CB3D16AFD80600471BDF /* EventsHelper.m */; };
+		8448CB4216AFD80600471BDF /* EventsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8448CB3D16AFD80600471BDF /* EventsHelper.m */; };
 		845F8AF21680A2200087E3F2 /* UIView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D9515CA8163835340058BE8C /* UIView+Extensions.m */; };
 		845F8AF41680A22A0087E3F2 /* SectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D99E72CC163EB4A5004EB303 /* SectionCell.m */; };
 		845F8AF51680A4690087E3F2 /* NSDate+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B3793F163A9DEB00828478 /* NSDate+Formatting.m */; };
@@ -1172,6 +1177,8 @@
 		843AC46B16A03514007DF1F9 /* UIImage+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extensions.m"; sourceTree = "<group>"; };
 		8444637516198FCC00394D41 /* Partner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Partner.h; sourceTree = "<group>"; };
 		8444637616198FCC00394D41 /* Partner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Partner.m; sourceTree = "<group>"; };
+		8448CB3C16AFD80600471BDF /* EventsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsHelper.h; sourceTree = "<group>"; };
+		8448CB3D16AFD80600471BDF /* EventsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsHelper.m; sourceTree = "<group>"; };
 		847F874714D69038005EE200 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		847F875D14D6C81F005EE200 /* PartnerMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartnerMenuViewController.h; sourceTree = "<group>"; };
 		847F875E14D6C81F005EE200 /* PartnerMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartnerMenuViewController.m; sourceTree = "<group>"; };
@@ -2187,6 +2194,8 @@
 				84FCA64B1670CC24004C6079 /* AppActionsHelper.m */,
 				848AFF7716AECC3E0079634B /* SearchHelper.h */,
 				848AFF7816AECC3E0079634B /* SearchHelper.m */,
+				8448CB3C16AFD80600471BDF /* EventsHelper.h */,
+				8448CB3D16AFD80600471BDF /* EventsHelper.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -2882,18 +2891,10 @@
 			children = (
 				D93249261637CD8B00409AA9 /* EventsViewController.h */,
 				D93249271637CD8B00409AA9 /* EventsViewController.m */,
-				D99E726F163E6B6B004EB303 /* Subviews */,
 				840E4585166E3749007CCF51 /* EventDetailsViewController.h */,
 				840E4586166E374B007CCF51 /* EventDetailsViewController.m */,
 			);
 			name = Events;
-			sourceTree = "<group>";
-		};
-		D99E726F163E6B6B004EB303 /* Subviews */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Subviews;
 			sourceTree = "<group>";
 		};
 		D99E7270163E6B7E004EB303 /* PartnerViewController */ = {
@@ -4019,6 +4020,7 @@
 				843AC46916A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m in Sources */,
 				843AC47016A03514007DF1F9 /* UIImage+Extensions.m in Sources */,
 				848AFF7D16AECC3E0079634B /* SearchHelper.m in Sources */,
+				8448CB4216AFD80600471BDF /* EventsHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4159,6 +4161,7 @@
 				843AC46516A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m in Sources */,
 				843AC46C16A03514007DF1F9 /* UIImage+Extensions.m in Sources */,
 				848AFF7916AECC3E0079634B /* SearchHelper.m in Sources */,
+				8448CB3E16AFD80600471BDF /* EventsHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4299,6 +4302,7 @@
 				843AC46616A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m in Sources */,
 				843AC46D16A03514007DF1F9 /* UIImage+Extensions.m in Sources */,
 				848AFF7A16AECC3E0079634B /* SearchHelper.m in Sources */,
+				8448CB3F16AFD80600471BDF /* EventsHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4316,6 +4320,7 @@
 				843AC46816A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m in Sources */,
 				843AC46F16A03514007DF1F9 /* UIImage+Extensions.m in Sources */,
 				848AFF7C16AECC3E0079634B /* SearchHelper.m in Sources */,
+				8448CB4116AFD80600471BDF /* EventsHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4367,6 +4372,7 @@
 				843AC46716A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m in Sources */,
 				843AC46E16A03514007DF1F9 /* UIImage+Extensions.m in Sources */,
 				848AFF7B16AECC3E0079634B /* SearchHelper.m in Sources */,
+				8448CB4016AFD80600471BDF /* EventsHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
