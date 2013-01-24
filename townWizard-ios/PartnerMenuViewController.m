@@ -78,6 +78,11 @@
 - (IBAction)aboutButtonPressed:(id)sender
 {
     NSArray *infoSections = [menu objectForKey:@2];
+    if(!infoSections)
+    {
+        NSDictionary *defaultMenu = [[AppActionsHelper sharedInstance] defaultMenu];
+        infoSections = [defaultMenu objectForKey:@2];
+    }
     for(Section *section in infoSections)
     {
         if([[section.name lowercaseString] isEqualToString:
@@ -195,8 +200,11 @@
         [menu setObject:allSections forKey:@1];
     }
     if(information && information.count > 0)
-    {
+    {        
         [menu setObject:information forKey:@2];
+        if ([self.partner.name isEqualToString:DEFAULT_PARTNER_NAME]) {
+            [[AppActionsHelper sharedInstance] setDefaultMenu:menu];
+        }
     }    
     [sectionsList reloadData];
     if ([_delegate respondsToSelector:@selector(sectionsUpdated:)])

@@ -20,6 +20,8 @@
 @implementation AppActionsHelper
 static AppActionsHelper *actionsHelper = nil;
 
+@synthesize defaultMenu;
+
 + (id) sharedInstance
 {
     @synchronized (self)

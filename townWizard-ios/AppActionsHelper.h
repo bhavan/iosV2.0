@@ -13,7 +13,10 @@
 @interface AppActionsHelper : NSObject <UIAlertViewDelegate>
 {
         NSString *phoneNumberToCall;
+    
 }
+
+@property (nonatomic, retain) NSDictionary *defaultMenu;
 + (id) sharedInstance;
 - (BOOL)townWizardServerReachable;
 - (void)makeCall:(NSString *)phoneNumber;
