@@ -9,6 +9,7 @@
 #import "Event.h"
 #import "NSDate+Formatting.h"
 
+#define EVENT_SORT_DATE_FORMAT @"yyyy-MM-dd H:mm:ss"
 #define EVENT_DATE_FORMAT @"yyyy-MM-dd HH:mm:ss"
 #define EVENT_TIME_FROMAT @"h:mma"
 #define DAY_START @"12:00AM"
@@ -41,5 +42,13 @@
     return [NSString stringWithFormat:@"%@-%@",startTimeString,endTimeString];
 }
 
+- (NSComparisonResult)compareByDate:(Event *)event
+{
+    NSDate *start = [NSDate dateFromString:self.startTime dateFormat:EVENT_SORT_DATE_FORMAT];
+     NSDate *startOther = [NSDate dateFromString:event.startTime dateFormat:EVENT_SORT_DATE_FORMAT];
+    NSComparisonResult res = [start compare:startOther];
+    return res;
+    
+}
 
 @end

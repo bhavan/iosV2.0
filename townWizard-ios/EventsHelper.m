@@ -12,6 +12,8 @@
 #import "EventCategory.h"
 #import "Event.h"
 
+#define EVENT_SORT_DATE_FORMAT @"yyyy-MM-dd H:mm:ss"
+
 @implementation EventsHelper
 
 @synthesize currentEnd;
@@ -200,6 +202,12 @@ static const NSInteger kEventsAlertTag = 700;
     
     NSArray *unsortedDays = [self.sections allKeys];
     self.sortedDays = [unsortedDays sortedArrayUsingSelector:@selector(compare:)];
+    for (NSDate *day in self.sortedDays)
+    {
+        NSArray *days = [self.sections objectForKey:day];
+        NSArray *sortedDays = [days sortedArrayUsingSelector:@selector(compareByDate:)];
+        [self.sections setObject:sortedDays forKey:day];
+    }
     
     [delegate eventsFiltered];
 }

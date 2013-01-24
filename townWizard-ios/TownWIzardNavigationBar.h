@@ -13,8 +13,9 @@
 {
     UIImage *background;
 }
+@property (nonatomic, retain) UILabel *titleLabel;
 
 - (CGRect)calculateTitleFrame;
-- (void) updateTitleText:(NSString *) titleText;
-@property (nonatomic, retain) UILabel *titleLabel;
+- (void)updateTitleText:(NSString *) titleText;
+
 @end

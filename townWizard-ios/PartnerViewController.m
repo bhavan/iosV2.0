@@ -121,7 +121,8 @@
         [[self detailsController] setViewControllers:[NSArray arrayWithObject:controller] animated:NO];
         [(TownWizardNavigationBar *)[_detailsController navigationBar]
          updateTitleText:[section displayName]];
-        UIBarButtonItem *menuButton = [UIBarButtonItem menuButtonWithTarget:self action:@selector(toggleMasterView)];
+        UIBarButtonItem *menuButton = [UIBarButtonItem menuButtonWithTarget:self
+                                                                     action:@selector(toggleMasterView)];
         [[(id)controller navigationItem] setLeftBarButtonItem:menuButton];
     }
 }
