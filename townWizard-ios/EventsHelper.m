@@ -207,8 +207,7 @@ static const NSInteger kEventsAlertTag = 700;
         NSArray *days = [self.sections objectForKey:day];
         NSArray *sortedDays = [days sortedArrayUsingSelector:@selector(compareByDate:)];
         [self.sections setObject:sortedDays forKey:day];
-    }
-    
+    }    
     [delegate eventsFiltered];
 }
 

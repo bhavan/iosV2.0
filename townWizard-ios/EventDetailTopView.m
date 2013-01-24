@@ -33,6 +33,7 @@
                          "</style></head>  \n"
                          "<body><h3>%@</h3><b>%@</b><br><b>%@</b><br><br>%@</body></html>",
                          event.title, event.location.name,event.location.address, event.details];
+    content = [content stringByReplacingOccurrencesOfString:@"img src" withString:@"img width=\"320\" src"];
     [_detailWebView loadHTMLString:content baseURL:nil];
     if(event.location.phone.length > 0)
     {
