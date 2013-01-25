@@ -8,6 +8,7 @@
 
 #import "FacebookFriendCell.h"
 #import "FacebookFriend.h"
+#import <QuartzCore/QuartzCore.h>
 
 #define TEXT_OFFSET 50
 
@@ -25,6 +26,10 @@
 
 - (void) setFriend:(FacebookFriend *)friend {
     currentFriend = friend;
+    
+    [[photo layer] setBorderColor:[[UIColor whiteColor] CGColor]];
+    [[photo layer] setBorderWidth:2.0f];
+    
     [name setText:friend.name];
       
     if (friend.avatar) {

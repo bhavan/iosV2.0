@@ -39,15 +39,13 @@
 - (void) viewDidLoad
 {
     [super viewDidLoad];
-    
+    [searchView setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [messageView setValue:[UIColor redColor] forKeyPath:@"_placeholderLabel.textColor"];
     //self.navigationItem.hidesBackButton = YES;
     
     //[self.friendsListView.layer setCornerRadius:10];
     [friendsListView setBackgroundColor:[UIColor clearColor]];
     [friendsListView setSeparatorColor:[UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:1.]];
-
-    [messageView setValue:[UIColor darkGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
-    [searchView setValue:[UIColor darkGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
     
     checkInProgress = NO;
     
@@ -262,8 +260,7 @@
         FacebookFriend *friend = [filteredFriends objectAtIndex:indexPath.row];
         [cell setFriend:friend];
         
-        cell.accessoryType = [taggedFriends containsObject:friend] ?
-        UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+        cell.accessoryView.hidden = ![taggedFriends containsObject:friend];
 
         return cell;
     }
@@ -277,6 +274,10 @@
         }
         return cell;
     }
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60.0f;
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

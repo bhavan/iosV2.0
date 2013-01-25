@@ -44,12 +44,7 @@
 {
     [self.searchBar customizeSearchBar];
     [self.tableView setBackgroundColor:[UIColor colorWithPatternImage:
-                                        [UIImage imageNamed:@"searchBg"]]];
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-    self.tableView.separatorColor = [UIColor colorWithRed:186.0f/255.0f
-                                                    green:186.0f/255.0f
-                                                     blue:186.0f/255.0f
-                                                    alpha:0.7f];
+                                        [UIImage imageNamed:@"searchBg"]]];   
 }
 
 - (void)viewWillAppear:(BOOL)animated

@@ -19,7 +19,12 @@
         self.selectionStyle = UITableViewCellSelectionStyleGray;
         UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(280, 20, 18, 17)];
         [imgView setImage:[UIImage imageNamed:@"cellCircle"]];
-        [self.contentView addSubview:imgView];        
+        [self.contentView addSubview:imgView];
+        
+        UIImageView *separatorView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"separator"]];
+        separatorView.frame = CGRectMake(0, 48, 320, 2);
+        [self addSubview:separatorView];
+        [separatorView release];
         [imgView release];
     }
     return self;

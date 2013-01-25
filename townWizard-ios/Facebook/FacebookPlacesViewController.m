@@ -75,10 +75,11 @@
     //self.navigationItem.hidesBackButton = YES;
     CGRect bounds = self.view.bounds;
     
-    UITableView * tv = [[UITableView alloc] initWithFrame:CGRectMake(0, 10, bounds.size.width,  bounds.size.height-10) style:UITableViewStylePlain];
+    UITableView * tv = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, bounds.size.width,  bounds.size.height) style:UITableViewStylePlain];
     self.tableView = tv;
+    self.tableView.backgroundColor = [UIColor clearColor];
     [tv release];
-    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
