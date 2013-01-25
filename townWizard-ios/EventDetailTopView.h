@@ -19,7 +19,7 @@
 @property (retain, nonatomic) IBOutlet UIButton *mapButton;
 
 - (void)updateWithEvent:(Event *)event;
-
+- (NSString *)htmlContentfromEvent:(Event *)event;
 
 
 @end

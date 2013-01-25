@@ -27,13 +27,7 @@
 
 - (void)updateWithEvent:(Event *)event
 {
-    NSString *content = [NSString stringWithFormat:@"<html><head>  \n"
-                         "<style type=\"text/css\"> \n"
-                         "body {font-family: \"helvetica\";}\n"
-                         "</style></head>  \n"
-                         "<body><h3>%@</h3><b>%@</b><br><b>%@</b><br><br>%@</body></html>",
-                         event.title, event.location.name,event.location.address, event.details];
-    content = [content stringByReplacingOccurrencesOfString:@"img src" withString:@"img width=\"320\" src"];
+    NSString *content = [self htmlContentfromEvent:event];   
     [_detailWebView loadHTMLString:content baseURL:nil];
     if(event.location.phone.length > 0)
     {
@@ -44,6 +38,29 @@
     {
         _callButton.hidden = YES;
     }
+}
+
+- (NSString *)htmlContentfromEvent:(Event *)event
+{
+    NSMutableString *content = [NSMutableString stringWithFormat:@"<html><head>  \n"
+                                "<style type=\"text/css\"> \n"
+                                "body {font-family: \"helvetica\";}\n"
+                                "</style></head>  \n"
+                                "<body><h3>%@</h3><b>%@</b><br><b>%@</b><br><br>%@</body></html>",
+                                event.title, event.location.name,event.location.address, event.details];
+    
+    NSString *regexStr = @"((width|height)=\"[0-9]+\")";
+    NSError *error = nil;
+    NSRegularExpression *testRegex = [NSRegularExpression regularExpressionWithPattern:regexStr options:0 error:&error];
+    if(error)
+    {
+        NSLog(@"error: %@", error);
+    }
+    [testRegex replaceMatchesInString:content options:0 range:NSMakeRange(0, content.length) withTemplate:@" "];
+    
+    NSString *result = [content stringByReplacingOccurrencesOfString:@"img " withString:@"img width=\"320\" "];
+    return result;
+    
 }
 
 - (void)dealloc
