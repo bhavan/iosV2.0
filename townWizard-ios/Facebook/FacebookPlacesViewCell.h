@@ -10,6 +10,7 @@
 #import "Facebook.h"
 #import "SDWebImageDownloader.h"
 @class Place;
+@class ActivityImageView;
 
 typedef enum {
     FBPC_LOAD_NONE,
@@ -28,8 +29,8 @@ typedef enum {
     UIActivityIndicatorView *checkinsTotalActivity;
     UILabel *checkinsFriendsLabel;
     UIActivityIndicatorView *checkinsFriendsActivity;
-    UIImageView *imageView;
-    UIActivityIndicatorView *imageActivity;
+    ActivityImageView *imageView;
+
     
     Place *place;
     Facebook *facebook;
@@ -44,8 +45,8 @@ typedef enum {
 @property (nonatomic,retain) IBOutlet UIActivityIndicatorView *checkinsTotalActivity;
 @property (nonatomic,retain) IBOutlet UILabel *checkinsFriendsLabel;
 @property (nonatomic,retain) IBOutlet UIActivityIndicatorView *checkinsFriendsActivity;
-@property (nonatomic,retain) IBOutlet UIImageView *imageView;
-@property (nonatomic,retain) IBOutlet UIActivityIndicatorView *imageActivity;
+@property (nonatomic,retain) IBOutlet ActivityImageView *imageView;
+
 
 @property (nonatomic,retain) Place *place;
 @property (nonatomic,copy) NSString *pageId;

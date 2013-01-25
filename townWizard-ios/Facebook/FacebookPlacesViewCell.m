@@ -9,6 +9,7 @@
 #import "FacebookPlacesViewCell.h"
 #import "Place.h"
 #import "JSONKit.h"
+#import "ActivityImageView.h"
 
 @interface FacebookPlacesViewCell()
 
@@ -25,16 +26,16 @@
 @synthesize checkinsFriendsLabel;
 @synthesize checkinsFriendsActivity;
 @synthesize imageView;
-@synthesize imageActivity;
 @synthesize pageId;
 @synthesize facebook;
 @synthesize place;
 
 #pragma mark -
 
-- (void) loadPlace:(Place *)aPlace withFacebook:(Facebook *)aFacebook extended:(BOOL)extended {
+- (void) loadPlace:(Place *)aPlace withFacebook:(Facebook *)aFacebook extended:(BOOL)extended
+{
     self.place = aPlace;
-    [imageView setImage:aPlace.image];
+    [imageView setImageWithURL:[NSURL URLWithString:place.imageUrl]];
 	[self.nameLabel setText:place.name];
 	[self.categoryLabel setText:place.category];
 	[self.addressLabel setText:place.address];
@@ -43,11 +44,7 @@
     if(!place.totalCheckins)
     {
         place.totalCheckins = [NSNumber numberWithInt:0];
-    }
-    if (!place.image)
-    {
-        [imageActivity startAnimating];
-    }
+    }    
     
     checkinsTotalLabel.text = [NSString stringWithFormat:@"%@ total", place.totalCheckins];
     self.facebook = aFacebook;
@@ -93,14 +90,6 @@
     
 }
 
-- (void)imageDownloader:(SDWebImageDownloader *)downloader didFinishWithImage:(UIImage *)loadedImage
-{
-    place.image = loadedImage;
-    [imageView setImage:place.image];
-    [imageActivity stopAnimating];
-}
-
-
 #pragma mark - FBRequestDelegate
 
 - (void)request:(FBRequest *)request didLoad:(id)result
@@ -124,7 +113,6 @@
     self.checkinsFriendsLabel = nil;
     self.checkinsFriendsActivity = nil;
     self.imageView = nil;
-    self.imageActivity = nil;
     self.pageId = nil;
     self.facebook = nil;
     self.place = nil;

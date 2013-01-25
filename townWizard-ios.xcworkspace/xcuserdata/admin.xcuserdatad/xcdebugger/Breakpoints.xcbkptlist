@@ -125,11 +125,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "townWizard-ios/Facebook/FacebookPlacesViewCell.m"
-         timestampString = "378202469.690436"
+         timestampString = "380812109.394715"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "84"
-         endingLineNumber = "84"
+         startingLineNumber = "80"
+         endingLineNumber = "80"
          landmarkName = "-loadCheckins"
          landmarkType = "5">
       </FileBreakpoint>

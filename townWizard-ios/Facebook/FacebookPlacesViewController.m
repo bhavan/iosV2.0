@@ -345,7 +345,7 @@
     {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:CellNib owner:self options:nil];
         cell = (FacebookPlacesViewCell *)[nib objectAtIndex:0];
-        [SDWebImageDownloader downloaderWithURL:[NSURL URLWithString:place.imageUrl] delegate:cell];
+        
     }    
    
     [cell loadPlace:place withFacebook:facebookHelper.facebook extended:showsExtendedInfo];
