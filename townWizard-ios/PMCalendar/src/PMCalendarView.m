@@ -246,7 +246,7 @@
     
     if (needsRedraw)
     {
-        self.daysView.currentDate = currentDate;
+        [self.daysView setCurrentDate:currentDate];
         [self setNeedsDisplay];
         [self periodUpdated];
         if ([_delegate respondsToSelector:@selector(currentDateChanged:)])
@@ -830,7 +830,7 @@
 {
     if (![_currentDate isEqualToDate:currentDate])
     {
-        _currentDate = currentDate;
+        _currentDate = [currentDate retain];
         [self setNeedsDisplay];
     }
 }
