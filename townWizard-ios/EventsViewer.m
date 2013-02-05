@@ -146,6 +146,7 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
         [eventImage setImageWithURL:[event imageURL]];
         headerFrame.size.height = 347;
         _isImagePresented = YES;
+        
     }
     else
     {

@@ -112,7 +112,8 @@
 
 - (void)bannerFounded:(NSURL *)bannerUrl
 {
-    [_bannerImageView setImageWithURL:bannerUrl];
+    [_bannerImageView setImageWithURL:bannerUrl placeholderImage:nil
+                              options:SDWebImageRetryFailed];
 }
 
 #pragma mark PMCalendarControllerDelegate methods

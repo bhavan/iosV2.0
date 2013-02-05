@@ -13,8 +13,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "175"
          endingLineNumber = "175"
-         landmarkName = "-showPreviousEvent"
-         landmarkType = "5">
+         landmarkName = "@implementation EventsViewer"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -196,6 +196,19 @@
          startingLineNumber = "50"
          endingLineNumber = "50"
          landmarkName = "-compareByDate:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Pods/SDWebImage/SDWebImage/UIImageView+WebCache.m"
+         timestampString = "381744131.304849"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "78"
+         endingLineNumber = "78"
+         landmarkName = "-webImageManager:didFinishWithImage:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
