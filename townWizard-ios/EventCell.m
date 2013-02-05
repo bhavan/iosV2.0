@@ -40,7 +40,7 @@
 
 - (void) updateWithEvent:(Event *) event
 {
-    if (![[self event] isEqual:event])
+    if (event && (!self.event || ![self.event isEqual:event]))
     {
         [self setEvent:event];
         [eventTitle setText:[event title]];

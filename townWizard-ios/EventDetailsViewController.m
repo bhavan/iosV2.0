@@ -151,11 +151,20 @@
 #pragma mark -
 #pragma mark UIWebViewDelegate Methods
 - (void)webViewDidFinishLoad:(UIWebView *)webView
-{
-    webView.frame = CGRectMake(0, 0, 320, webView.scrollView.contentSize.height);
-    self.scrollView.contentSize = CGSizeMake(320, webView.frame.size.height+54);
+{  
     CGRect bottomRect = _contentBottomView.frame;
-    bottomRect.origin.y = webView.scrollView.contentSize.height;
+    CGFloat height = [[webView stringByEvaluatingJavaScriptFromString:@"document.height"] floatValue];
+    if(height > webView.scrollView.contentSize.height)
+    {
+        webView.frame = CGRectMake(0, 0, 320, height);        
+        bottomRect.origin.y = height;
+    }
+    else
+    {
+        webView.frame = CGRectMake(0, 0, 320, webView.scrollView.contentSize.height);        
+        bottomRect.origin.y = webView.scrollView.contentSize.height;
+    }
+    self.scrollView.contentSize = CGSizeMake(320, webView.frame.size.height+54);
     _contentBottomView.frame = bottomRect;
     isdescriptionLoaded = YES;
 }
