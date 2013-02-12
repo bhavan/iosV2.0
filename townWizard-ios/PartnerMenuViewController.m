@@ -53,6 +53,7 @@
     if ([self partner] == nil)
     {
         [self loadPartnerDetails];
+        [_delegate startUpdating];
     }
     else
     {
@@ -209,6 +210,7 @@
     [sectionsList reloadData];
     if ([_delegate respondsToSelector:@selector(sectionsUpdated:)])
     {
+        [_delegate stopUpdating];
         [_delegate sectionsUpdated:sections];
     }
 }

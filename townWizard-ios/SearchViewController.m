@@ -65,6 +65,16 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (void)startUpdating
+{
+    
+}
+
+- (void)stopUpdating
+{
+    
+}
+
 - (void) menuSectionTapped:(Section *) section
 {
     [[RequestHelper sharedInstance] setCurrentSection:section];

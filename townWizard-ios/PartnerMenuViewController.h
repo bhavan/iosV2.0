@@ -14,6 +14,8 @@
 
 @protocol PartnerMenuDelegate <NSObject>
 @optional
+- (void) startUpdating;
+- (void) stopUpdating;
 - (void) sectionsUpdated:(NSArray *) sections;
 - (void) menuSectionTapped:(Section *) section;
 - (void) changePartnerButtonTapped;

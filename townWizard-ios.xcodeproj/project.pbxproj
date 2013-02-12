@@ -549,6 +549,8 @@
 		8461268816B2AA38007400B7 /* friendSearchField.png in Resources */ = {isa = PBXBuildFile; fileRef = 8461268516B2AA38007400B7 /* friendSearchField.png */; };
 		8461268916B2AA38007400B7 /* friendSearchField.png in Resources */ = {isa = PBXBuildFile; fileRef = 8461268516B2AA38007400B7 /* friendSearchField.png */; };
 		8461268A16B2AA38007400B7 /* friendSearchField.png in Resources */ = {isa = PBXBuildFile; fileRef = 8461268516B2AA38007400B7 /* friendSearchField.png */; };
+		846FE86F16CA38E4008CC57C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D3982C15EFA77B00302330 /* Default.png */; };
+		846FE87016CA38E7008CC57C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D3982D15EFA77B00302330 /* Default@2x.png */; };
 		847F876014D6C81F005EE200 /* PartnerMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F875E14D6C81F005EE200 /* PartnerMenuViewController.m */; };
 		847F876114D6C81F005EE200 /* PartnerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */; };
 		847FD337161ACCB2009FB9CC /* PhotoCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 847FD336161ACCB2009FB9CC /* PhotoCategory.m */; };
@@ -3457,6 +3459,8 @@
 				8461267E16B29E21007400B7 /* appTag.png in Resources */,
 				8461268316B29E21007400B7 /* appTag@2x.png in Resources */,
 				8461268A16B2AA38007400B7 /* friendSearchField.png in Resources */,
+				846FE86F16CA38E4008CC57C /* Default.png in Resources */,
+				846FE87016CA38E7008CC57C /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4579,7 +4583,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "townWizard-partner/townWizard-partner-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
-				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "PARTNER_ID=84";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "PARTNER_ID=1";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = "${inherited}";
 				INFOPLIST_FILE = "townWizardPartnerTemplate copy-Info.plist";
@@ -4606,7 +4610,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "townWizard-partner/townWizard-partner-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "";
-				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "PARTNER_ID=84";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "PARTNER_ID=1";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = "${inherited}";
 				INFOPLIST_FILE = "townWizardPartnerTemplate copy-Info.plist";

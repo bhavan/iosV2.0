@@ -13,9 +13,15 @@
 #import "RequestHelper.h"
 #import "Section.h"
 #import "UIBarButtonItem+TWButtons.h"
+#import "MBProgressHUD.h"
 
 
 @interface PartnerViewController () <PartnerMenuDelegate>
+{
+    UIImageView *splashImage;
+}
+
+@property (nonatomic, retain) MBProgressHUD *progressHUD;
 @property (nonatomic, retain) PartnerMenuViewController *menuController;
 @property (nonatomic, retain) UINavigationController *detailsController;
 @property (nonatomic, retain) SectionControllerFactory *sectionControllerFactory;
@@ -35,6 +41,7 @@
     
     if (self = [super initWithMasterViewController:menuController detailViewController:detailsController])
     {
+        [self setProgressHUD:[[[MBProgressHUD alloc] initWithView:detailsController.view] autorelease]];
         self.partner = partner;
         [self setMenuController:menuController];
         [[self menuController] setPartner:partner];
@@ -52,18 +59,28 @@
 
 - (void) viewDidLoad
 {
-    [super viewDidLoad];    
+    [super viewDidLoad];
+    splashImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+    [splashImage setImage:[UIImage imageNamed:@"Default"]];
+   
+    //splashImage.hidden = YES;
     CGRect backgroundViewFrame = [[self view] frame];
     backgroundViewFrame.origin = CGPointZero;   
     [[AppActionsHelper sharedInstance] putTWBackgroundWithFrame:backgroundViewFrame
                                                          toView:self.detailsController.view];
     [[AppActionsHelper sharedInstance] putTWBackgroundWithFrame:backgroundViewFrame
-                                                         toView:self.menuController.view];   
+                                                         toView:self.menuController.view];
+    [self.detailsController.view addSubview:splashImage];    
+    [self.view addSubview:_progressHUD];
+    [_progressHUD show:YES];
+
 }
 
 - (void) dealloc
 {
+    [splashImage release];
     [_partner release];
+    [_progressHUD release];
     [self setMenuController:nil];
     [self setDetailsController:nil];
     [self setSectionControllerFactory:nil];
@@ -72,6 +89,18 @@
 
 #pragma mark -
 #pragma mark PartnerMenuDelegate methods
+
+- (void)startUpdating
+{
+    splashImage.hidden = NO;
+    [_progressHUD show:YES];
+}
+
+- (void)stopUpdating
+{
+    splashImage.hidden = YES;
+    [_progressHUD hide:YES];
+}
 
 - (void) sectionsUpdated:(NSArray *) sections
 {   
