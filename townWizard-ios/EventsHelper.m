@@ -95,6 +95,7 @@ static const NSInteger kEventsAlertTag = 700;
     {
         _bannerUrlString = [[NSString alloc] initWithString:[data objectForKey:@"url"]];
         NSString *adImageUrl = [data objectForKey:@"banner"];
+        adImageUrl = [adImageUrl stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         [delegate bannerFounded:[NSURL URLWithString:adImageUrl]];
     }
     [data release];
