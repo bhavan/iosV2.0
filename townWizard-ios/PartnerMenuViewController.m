@@ -49,6 +49,7 @@
                                                          toView:self.view];
    #ifdef PARTNER_ID
     _headerView.frame = CGRectMake(0, 0, 320, 84);
+    _watermarkImage.hidden = YES;
 #endif
     if ([self partner] == nil)
     {
@@ -110,6 +111,7 @@
     [partnerLogo release];
     partnerLogo = nil;
     [self setHeaderView:nil];
+    [self setWatermarkImage:nil];
     [super viewDidUnload];
 }
 
@@ -121,6 +123,7 @@
     [partnerLogo release];
     [menu release];
     [_headerView release];
+    [_watermarkImage release];
     [super dealloc];
 }
 
@@ -349,7 +352,14 @@
 {
     switch ([categoryIndex intValue])
     {
-        case 1: return @"Sections";
+        case 1:
+        {
+#ifdef PARTNER_ID
+      return @"powered by townwizard";
+#endif
+            
+            return @"Sections";
+        }
         case 2: return @"";
         default: return nil;
     }
