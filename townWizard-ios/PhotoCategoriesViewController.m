@@ -84,7 +84,7 @@
     }    
     PhotoCategory *category = [[self categories] objectAtIndex:indexPath.row];
     cell.nameLabel.text = category.name;
-    [cell.thumbImageView setImageWithURL:[NSURL URLWithString:category.thumb]];    
+    [cell.thumbImageView setImageWithURL:[NSURL URLWithString:[category.thumb stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
     return cell;
 }
 

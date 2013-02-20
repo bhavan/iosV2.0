@@ -101,7 +101,7 @@
     
     Video *video = [[self videos] objectAtIndex:indexPath.row];
     cell.nameLabel.text = video.name;
-    [cell.thumbImageView setImageWithURL:[NSURL URLWithString:video.thumb]];
+    [cell.thumbImageView setImageWithURL:[NSURL URLWithString:[video.thumb stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
     
     return cell;
 }

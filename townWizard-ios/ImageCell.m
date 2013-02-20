@@ -18,7 +18,8 @@
     {
         thumbImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10.0, 4.0, 66.0, 66.0)];
         
-        nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(80, 8, 200, 40)];
+        nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(80, 5, 200, 60)];
+        nameLabel.numberOfLines = 2;
         nameLabel.textColor = [UIColor blackColor];
         nameLabel.backgroundColor = [UIColor clearColor];
         [self.contentView addSubview:nameLabel];

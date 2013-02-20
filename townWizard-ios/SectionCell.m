@@ -60,7 +60,8 @@
 {
     [self setSection:section];
     [section setName:[[section name] stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"]];
-    [section setDisplayName:[[section displayName] stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"]];
+    [section setDisplayName:[[section displayName]
+                             stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"]];
     [[self textLabel] setText:[section displayName]];
     
     UIImage *image = [[SectionImageManager sharedInstance] imageForSection:section];
@@ -71,7 +72,8 @@
     else if (image == nil && [section imageUrl])
     {
         NSString *urlString = [[[RequestHelper sharedInstance] currentPartner] webSiteUrl];
-        urlString = [urlString stringByAppendingString:[section imageUrl]];
+        urlString = [[urlString stringByAppendingString:[section imageUrl]]
+                     stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         [sectionImage setImageWithURL:[NSURL URLWithString:urlString]];
     }
      

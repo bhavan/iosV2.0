@@ -82,7 +82,7 @@
     }
     
     Photo *photo = [[self photos] objectAtIndex:index];  
-    [[cell imageView] setImageWithURL:[NSURL URLWithString:[photo thumb]]
+    [[cell imageView] setImageWithURL:[NSURL URLWithString:[[photo thumb] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]
                      placeholderImage:nil
                               options:SDWebImageCacheMemoryOnly];
     return cell;

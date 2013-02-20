@@ -35,7 +35,7 @@
 - (void) loadPlace:(Place *)aPlace withFacebook:(Facebook *)aFacebook extended:(BOOL)extended
 {
     self.place = aPlace;
-    [imageView setImageWithURL:[NSURL URLWithString:place.imageUrl]];
+    [imageView setImageWithURL:[NSURL URLWithString:[place.imageUrl stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
 	[self.nameLabel setText:place.name];
 	[self.categoryLabel setText:place.category];
 	[self.addressLabel setText:place.address];
