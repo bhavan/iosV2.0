@@ -73,7 +73,7 @@
     {
         NSString *urlString = [[[RequestHelper sharedInstance] currentPartner] webSiteUrl];
         urlString = [[urlString stringByAppendingString:[section imageUrl]]
-                     stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                     stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         [sectionImage setImageWithURL:[NSURL URLWithString:urlString]];
     }
      

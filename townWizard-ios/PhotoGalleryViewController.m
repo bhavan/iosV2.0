@@ -81,8 +81,10 @@
         [cell setSelectionStyle:AQGridViewCellSelectionStyleNone];
     }
     
-    Photo *photo = [[self photos] objectAtIndex:index];  
-    [[cell imageView] setImageWithURL:[NSURL URLWithString:[[photo thumb] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]
+    Photo *photo = [[self photos] objectAtIndex:index];
+    NSString *thumbUrl = [[photo thumb]
+                          stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    [[cell imageView] setImageWithURL:[NSURL URLWithString:thumbUrl]
                      placeholderImage:nil
                               options:SDWebImageCacheMemoryOnly];
     return cell;

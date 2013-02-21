@@ -73,7 +73,7 @@
         [partnerLogo setImageWithURL:[NSURL URLWithString:
                                       [NSString stringWithFormat:@"%@%@",
                                        SERVER_URL,
-                                       [self.partner.headerImageUrl stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]]];
+                                       [self.partner.headerImageUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]]];
     }    
 }
 

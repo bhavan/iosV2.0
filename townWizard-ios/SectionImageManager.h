@@ -13,6 +13,7 @@
 @interface SectionImageManager : NSObject
 {
     NSDictionary *images;
+    NSDictionary* containImages;
 }
 
 + (id) sharedInstance;

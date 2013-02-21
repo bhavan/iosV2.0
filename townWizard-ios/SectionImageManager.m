@@ -29,12 +29,10 @@ static SectionImageManager *sectionImageManager = nil;
     if (self = [super init])
     {
         images = [@{
-        @"videos" : @"video",
         @"photos" : @"profile",
         @"weather" : @"weather",
         @"news feed" : @"news",
         @"news" : @"news",
-        @"places" : @"towndirrectory",
         @"restaurants" : @"restaurants",
         @"events" : @"events",
         @"offers" : @"offer",
@@ -48,12 +46,20 @@ static SectionImageManager *sectionImageManager = nil;
         @"talk of the town blog" : @"talk",
         @"ratings & reviews" : @"ratings",
         @"check-ins & hotspots" : @"checkins",
-        @"help & support" : @"help",
-        @"about us" : @"about",
+        @"help & support" : @"help",      
         @"advertise with us" : @"advertise",
         @"contact us" : @"contacts"
         } retain];
-;
+        
+        containImages = [@{@"video" : @"icon_video",
+                          @"about" : @"icon_question",
+                          @"facebook" : @"icon_facebook",
+                          @"home" : @"icon_home",
+                          @"google +" : @"icon_googlePlus",
+                          @"places" : @"icon_places",
+                          @"shopping" : @"icon_shopping",
+                          @"twitter" : @"icon_twitter",} retain];
+
     }
     return self;
 }
@@ -65,12 +71,25 @@ static SectionImageManager *sectionImageManager = nil;
     {
        imageName = [images objectForKey:[[section displayName] lowercaseString]];
     }
+    if(!imageName)
+    {
+        for (NSString *key in [containImages allKeys])
+        {
+            NSRange range = [section.displayName rangeOfString:key options:NSCaseInsensitiveSearch];
+            if(range.length == key.length)
+            {
+                imageName = [containImages objectForKey:key];
+            }
+        }
+        
+    }
     return [UIImage imageNamed:imageName];
 }
 
 
 - (void)dealloc
 {
+    [containImages release];
     [images release];
     [super dealloc];
 }
