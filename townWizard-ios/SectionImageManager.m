@@ -32,7 +32,7 @@ static SectionImageManager *sectionImageManager = nil;
         @"photos" : @"profile",
         @"weather" : @"weather",
         @"news feed" : @"news",
-        @"news" : @"news",
+       // @"news" : @"news",
         @"restaurants" : @"restaurants",
         @"events" : @"events",
         @"offers" : @"offer",
@@ -66,11 +66,11 @@ static SectionImageManager *sectionImageManager = nil;
 
 - (UIImage *) imageForSection:(Section *) section
 {
-    NSString *imageName = [images objectForKey:[[section name] lowercaseString]];
-    if(!imageName)
+    NSString *imageName = [images objectForKey:[[section displayName] lowercaseString]];
+   /* if(!imageName)
     {
        imageName = [images objectForKey:[[section displayName] lowercaseString]];
-    }
+    }*/
     if(!imageName)
     {
         for (NSString *key in [containImages allKeys])
