@@ -8,6 +8,9 @@
 
 #define MASTER_WIDTH 280
 
+const NSTimeInterval kGHRevealSidebarDefaultAnimationDuration = 0.25;
+const CGFloat kGHRevealSidebarFlickVelocity = 1000.0f;
+
 #import "MasterDetailController.h"
 #import <QuartzCore/QuartzCore.h>
 
@@ -49,8 +52,7 @@
 - (void) dealloc
 {
     [_masterView release];
-    [_detailView release];
-    
+    [_detailView release];    
     [super dealloc];
 }
 
@@ -126,7 +128,7 @@
     [self.view addSubview:self.masterView];
     [self.view addSubview:self.detailView];
     
-    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(performSwipe:)];
+  /*  UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(performSwipe:)];
     [swipe setNumberOfTouchesRequired:1];
     [swipe setDirection:UISwipeGestureRecognizerDirectionRight];
     
@@ -138,19 +140,71 @@
     [swipe setDirection:UISwipeGestureRecognizerDirectionLeft];
     
     [self.detailView addGestureRecognizer:swipe];
-    [swipe release];
+    [swipe release];*/
+    
+    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self
+                                                                                 action:@selector(dragContentView:)];
+    panGesture.cancelsTouchesInView = YES;
+    [self.detailView addGestureRecognizer:panGesture];
+    [panGesture release];
     
     self.masterView = NO;
 }
 
-- (void) performSwipe:(UISwipeGestureRecognizer*) swipe
+- (void)dragContentView:(UIPanGestureRecognizer *)panGesture {
+	CGFloat translation = [panGesture translationInView:self.view].x;
+	if (panGesture.state == UIGestureRecognizerStateChanged) {
+		if (self.masterVisible) {
+			if (translation > 0.0f)
+            {
+                _detailView.frame = CGRectOffset(_detailView.bounds, MASTER_WIDTH, 0.0f);
+				self.masterVisible = YES;
+			}
+            else if (translation < -MASTER_WIDTH)
+            {
+				_detailView.frame = _detailView.bounds;
+				self.masterVisible = NO;
+			}
+            else
+            {
+				_detailView.frame = CGRectOffset(_detailView.bounds, (MASTER_WIDTH + translation), 0.0f);
+			}
+		}
+        else
+        {
+			if (translation < 0.0f)
+            {
+				_detailView.frame = _detailView.bounds;
+				self.masterVisible = NO;
+			}
+            else if (translation > MASTER_WIDTH)
+            {
+				_detailView.frame = CGRectOffset(_detailView.bounds, MASTER_WIDTH, 0.0f);
+				self.masterVisible = YES;
+			}
+            else
+            {
+				_detailView.frame = CGRectOffset(_detailView.bounds, translation, 0.0f);
+			}
+		}
+	} else if (panGesture.state == UIGestureRecognizerStateEnded) {
+		CGFloat velocity = [panGesture velocityInView:self.view].x;
+		BOOL show = (fabs(velocity) > kGHRevealSidebarFlickVelocity)
+        ? (velocity > 0)
+        : (translation > (MASTER_WIDTH / 2));
+		[self showMaster:show];
+		
+	}
+}
+
+/*- (void) performSwipe:(UISwipeGestureRecognizer*) swipe
 {
     UISwipeGestureRecognizerDirection direction = [swipe direction];
     
     switch (direction) 
     {
         case UISwipeGestureRecognizerDirectionLeft:
-            
+            NSLog(@"SwipeLeft");
             if(self.masterVisible)
                 [self showMaster:NO];
             
@@ -166,7 +220,9 @@
         default:
             break;
     }
-}
+}*/
+
+
 
 - (void) showMaster:(BOOL) shouldShow
 {
