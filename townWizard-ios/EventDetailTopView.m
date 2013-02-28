@@ -27,7 +27,8 @@
 
 - (void)updateWithEvent:(Event *)event
 {
-    NSString *content = [self htmlContentfromEvent:event];   
+    [self setEvent:event];
+    NSString *content = [self htmlContentfromEvent:_event];
     [_detailWebView loadHTMLString:content baseURL:nil];
     if(event.location.phone.length > 0)
     {
@@ -64,7 +65,8 @@
 }
 
 - (void)dealloc
-{    
+{
+    [_event release];
     [_callButton release];
     [_webButton release];
     [_mapButton release];

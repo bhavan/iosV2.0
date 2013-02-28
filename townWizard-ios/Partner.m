@@ -10,4 +10,15 @@
 
 @implementation Partner
 
+- (void)dealloc
+{
+    [_partnterId release];
+    [_name release];
+    [_iTunesAppId release];
+    [_facebookAppId release];
+    [_headerImageUrl release];
+    [_webSiteUrl release];
+    [super dealloc];
+}
+
 @end

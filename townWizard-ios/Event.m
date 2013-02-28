@@ -51,4 +51,17 @@
     
 }
 
+- (void)dealloc
+{
+    [_title release];
+    [_categoryName release];
+    [_location release];
+    [_featured release];
+    [_details release];
+    [_imageURL release];
+    [_startTime release];
+    [_endTime release];
+    [super dealloc];
+}
+
 @end

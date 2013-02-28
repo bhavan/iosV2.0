@@ -9,11 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface Photo : NSObject
-{
-    NSString *name;
-    NSString *thumb;
-    NSString *picture;
-}
 
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *thumb;

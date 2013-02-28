@@ -65,7 +65,7 @@
 
 - (void)loadWithEvent:(Event *)event
 {
-    _event = event;
+    [self setEvent:event];
     [_topDetailView updateWithEvent:event];
 }
 
@@ -193,6 +193,7 @@
 
 - (void)viewDidUnload
 {
+    [self setEvent:nil];
     [self setScrollView:nil];
     [self setTopDetailView:nil];
     [self setBannerImageView:nil];

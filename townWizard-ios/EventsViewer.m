@@ -71,22 +71,6 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
     }
 }
 
-- (void) dealloc
-{
-    [currentTimer invalidate];
-    currentTimer = nil;
-    [eventImage release];
-    [eventName release];
-    [eventPlace release];
-    [eventTime release];
-    [pageControl release];
-    [detailsView release];
-    [self setRootView:nil];
-    [self setEvents:nil];
-    
-    [super dealloc];
-}
-
 #pragma mark -
 #pragma mark public methods
 
@@ -180,6 +164,21 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
     }
 }
 
+- (void) dealloc
+{
+    [currentTimer invalidate];
+    currentTimer = nil;
+    [eventImage release];
+    [eventName release];
+    [eventPlace release];
+    [eventTime release];
+    [pageControl release];
+    [detailsView release];
+    [self setRootView:nil];
+    [_events release];;
+    
+    [super dealloc];
+}
 
 
 @end

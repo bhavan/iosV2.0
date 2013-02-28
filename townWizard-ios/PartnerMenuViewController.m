@@ -47,10 +47,10 @@
     bgFrame.origin = CGPointZero;
     [[AppActionsHelper sharedInstance] putTWBackgroundWithFrame:bgFrame
                                                          toView:self.view];
-   #ifdef PARTNER_ID
+#ifdef PARTNER_ID
     _headerView.frame = CGRectMake(0, 0, 320, 84);
-    _watermarkImage.hidden = YES;
 #endif
+    
     if ([self partner] == nil)
     {
         [self loadPartnerDetails];
@@ -74,7 +74,7 @@
                                       [NSString stringWithFormat:@"%@%@",
                                        SERVER_URL,
                                        [self.partner.headerImageUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]]];
-    }    
+    }
 }
 
 - (IBAction)aboutButtonPressed:(id)sender
@@ -94,9 +94,9 @@
             {
                 [[self delegate] menuSectionTapped:section];
             }
-            break;            
+            break;
         }
-    }    
+    }
 }
 
 
@@ -111,7 +111,7 @@
     [partnerLogo release];
     partnerLogo = nil;
     [self setHeaderView:nil];
-    [self setWatermarkImage:nil];
+    
     [super viewDidUnload];
 }
 
@@ -123,7 +123,7 @@
     [partnerLogo release];
     [menu release];
     [_headerView release];
-    [_watermarkImage release];
+
     [super dealloc];
 }
 
@@ -154,17 +154,17 @@
 - (void) loadPartnerSections
 {
     [[RequestHelper sharedInstance] loadSectionsUsingBlock:^(RKObjectLoader *loader)
-    {
-        [loader setOnDidLoadObjects:^(NSArray *objects)
-        {
-            [self sectionsLoaded:objects];
-        }];
-        [loader setOnDidFailWithError:^(NSError *error)
-        {
-            NSLog(@"%@",error.localizedDescription);
-            [self changePartnerButtonPressed:nil];
-        }];
-    }];
+     {
+         [loader setOnDidLoadObjects:^(NSArray *objects)
+          {
+              [self sectionsLoaded:objects];
+          }];
+         [loader setOnDidFailWithError:^(NSError *error)
+          {
+              NSLog(@"%@",error.localizedDescription);
+              [self changePartnerButtonPressed:nil];
+          }];
+     }];
 }
 
 #pragma mark -
@@ -175,12 +175,12 @@
     [self updateWithPartner:partner];
     if([partner.iTunesAppId hasPrefix:@"store"])
     {
-        partner.iTunesAppId = [partner.iTunesAppId stringByReplacingOccurrencesOfString:@"store" withString:@""];        
+        partner.iTunesAppId = [partner.iTunesAppId stringByReplacingOccurrencesOfString:@"store" withString:@""];
     }
     [Appirater setAppId:partner.iTunesAppId];
     [AppDelegate sharedDelegate].facebookHelper.appId = partner.facebookAppId;
-
-     [[RequestHelper sharedInstance] setCurrentPartner:partner];
+    
+    [[RequestHelper sharedInstance] setCurrentPartner:partner];
     [self loadPartnerSections];
 }
 
@@ -204,12 +204,12 @@
         [menu setObject:allSections forKey:@1];
     }
     if(information && information.count > 0)
-    {        
+    {
         [menu setObject:information forKey:@2];
         if ([self.partner.name isEqualToString:DEFAULT_PARTNER_NAME]) {
             [[AppActionsHelper sharedInstance] setDefaultMenu:menu];
         }
-    }    
+    }
     [sectionsList reloadData];
     if ([_delegate respondsToSelector:@selector(sectionsUpdated:)])
     {
@@ -273,7 +273,7 @@
     
     NSString *category = [[menu allKeys] objectAtIndex:indexPath.section];
     Section *section = [[menu objectForKey:category] objectAtIndex:indexPath.row];
-    [cell updateWithSection:section];    
+    [cell updateWithSection:section];
     return cell;
 }
 
@@ -329,24 +329,24 @@
 - (NSArray *) predefinedSectionsNames
 {
     return @[
-    //            @"News Feed",
-    //            @"Events",
-    //            @"Offers",
-    //            @"Nightlife",
-    //            @"Entertainment",
-    //            @"Town Dirrectory",
-    //            @"Your Profile",
-    //            @"Your Saved Items",
-    //            @"Settings & Preferences",
-    //            @"Best in Town Lists",
-    //            @"Talk of the Town Blog",
-    //            @"Ratings & Reviews",
-    //            @"Check-ins & Hotspots",
-    @"Help & Support",
-    @"About TownWizard",
-    @"Advertise with TownWizard",
-    @"Contact TownWizard"
-    ];
+             //            @"News Feed",
+             //            @"Events",
+             //            @"Offers",
+             //            @"Nightlife",
+             //            @"Entertainment",
+             //            @"Town Dirrectory",
+             //            @"Your Profile",
+             //            @"Your Saved Items",
+             //            @"Settings & Preferences",
+             //            @"Best in Town Lists",
+             //            @"Talk of the Town Blog",
+             //            @"Ratings & Reviews",
+             //            @"Check-ins & Hotspots",
+             @"Help & Support",
+             @"About TownWizard",
+             @"Advertise with TownWizard",
+             @"Contact TownWizard"
+             ];
 }
 
 - (NSString *) categoryName:(NSNumber *) categoryIndex
@@ -355,11 +355,8 @@
     {
         case 1:
         {
-#ifdef PARTNER_ID
-      return @"powered by townwizard";
-#endif
+            return @"powered by townwizard";
             
-            return @"Sections";
         }
         case 2: return @"";
         default: return nil;

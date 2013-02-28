@@ -373,7 +373,7 @@ static NSString *const kSHKFacebookUserInfo =@"kSHKFacebookUserInfo";
 - (void)request:(FBRequest*)aRequest didFailWithError:(NSError*)error 
 {
     //if user revoked app permissions
-    if (error.domain == @"facebookErrDomain" && error.code == 10000) {
+    if ([error.domain isEqual: @"facebookErrDomain"] && error.code == 10000) {
         [self shouldReloginWithPendingAction:SHKPendingSend];
     } else {
         [self sendDidFailWithError:error];

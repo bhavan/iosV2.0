@@ -17,6 +17,7 @@
 @property (retain, nonatomic) IBOutlet UIButton *callButton;
 @property (retain, nonatomic) IBOutlet UIButton *webButton;
 @property (retain, nonatomic) IBOutlet UIButton *mapButton;
+@property (retain, nonatomic) Event *event;
 
 - (void)updateWithEvent:(Event *)event;
 - (NSString *)htmlContentfromEvent:(Event *)event;

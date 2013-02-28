@@ -9,12 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface PhotoCategory : NSObject
-{
-    NSString *categoryId;
-    NSString *thumb;
-    NSString *name;
-    NSNumber *numPhotos;
-}
+
 @property (nonatomic, retain) NSString *categoryId;
 @property (nonatomic, retain) NSString *thumb;
 @property (nonatomic, retain) NSString *name;

@@ -144,16 +144,19 @@ const CGFloat kGHRevealSidebarFlickVelocity = 1000.0f;
     
     UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self
                                                                                  action:@selector(dragContentView:)];
-    panGesture.cancelsTouchesInView = YES;
+    panGesture.cancelsTouchesInView = NO;
+    panGesture.delaysTouchesBegan = NO;
     [self.detailView addGestureRecognizer:panGesture];
     [panGesture release];
     
     self.masterView = NO;
 }
 
-- (void)dragContentView:(UIPanGestureRecognizer *)panGesture {
+- (void)dragContentView:(UIPanGestureRecognizer *)panGesture
+{
 	CGFloat translation = [panGesture translationInView:self.view].x;
-	if (panGesture.state == UIGestureRecognizerStateChanged) {
+	if (panGesture.state == UIGestureRecognizerStateChanged)
+    {
 		if (self.masterVisible) {
 			if (translation > 0.0f)
             {

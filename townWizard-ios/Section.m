@@ -10,4 +10,16 @@
 
 @implementation Section
 
+- (void)dealloc
+{
+    [_sectionId release];
+    [_displayName release];
+    [_name release];
+    [_url release];
+    [_imageUrl release];
+    [_partnerID release];
+    [_uiType release];
+    [super dealloc];
+}
+
 @end

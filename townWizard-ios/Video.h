@@ -9,11 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface Video : NSObject
-{
-    NSString *name;
-    NSString *thumb;
-    NSString *url;
-}
 
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *thumb;

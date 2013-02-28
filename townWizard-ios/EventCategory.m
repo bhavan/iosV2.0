@@ -10,4 +10,10 @@
 
 @implementation EventCategory
 
+- (void) dealloc
+{
+    [_title release];
+    [super dealloc];
+}
+
 @end

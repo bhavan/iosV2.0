@@ -113,7 +113,7 @@
     {
         for (Section *section in sections)
         {
-            if ([[section name] isEqualToString:@"News"])
+            if ([[section name] isEqualToString:@"News"] || [[section name] isEqualToString:@"Home"])
             {
                 [self displayControllerForSection:section];
                 return;

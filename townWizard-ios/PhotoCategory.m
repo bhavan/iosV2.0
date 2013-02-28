@@ -10,5 +10,13 @@
 
 @implementation PhotoCategory
 
-@synthesize categoryId, name, thumb, numPhotos;
+- (void)dealloc
+{
+    [_categoryId release];
+    [_thumb release];
+    [_name release];
+    [_numPhotos release];
+    [super dealloc];
+}
+
 @end

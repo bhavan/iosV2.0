@@ -10,4 +10,16 @@
 
 @implementation Location
 
+- (void)dealloc
+{
+    [_latitude release];
+    [_longitude release];
+    [_zip release];
+    [_address release];
+    [_name release];
+    [_phone release];
+    [_website release];
+    [super dealloc];
+}
+
 @end

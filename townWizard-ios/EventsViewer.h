@@ -32,7 +32,7 @@
 
 @property (nonatomic, assign) BOOL isImagePresented;
 @property (nonatomic, retain) UITableView *rootView;
-@property (nonatomic, retain) id<EventViewerDelegate> delegate;
+@property (nonatomic, assign) id<EventViewerDelegate> delegate;
 
 - (void) displayEvents:(NSArray *) events;
 

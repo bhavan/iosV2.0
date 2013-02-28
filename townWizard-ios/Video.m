@@ -9,6 +9,13 @@
 #import "Video.h"
 
 @implementation Video
-@synthesize name, thumb, url;
+
+- (void)dealloc
+{    
+    [_name release];
+    [_thumb release];
+    [_url release];
+    [super dealloc];
+}
 
 @end

@@ -9,6 +9,14 @@
 #import "Photo.h"
 
 @implementation Photo
-@synthesize name, thumb, picture;
+
+- (void)dealloc
+{
+    [_name release];
+    [_thumb release];
+    [_picture release];
+    [super dealloc];
+}
+
 
 @end
