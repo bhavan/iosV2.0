@@ -30,20 +30,20 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
     {
         [pageControl setNumberOfPages:0];
         
-        UISwipeGestureRecognizer *leftSwipe = [[UISwipeGestureRecognizer alloc]
-                                               initWithTarget:self
-                                               action:@selector(showNextEvent)];
-        [leftSwipe setDirection:UISwipeGestureRecognizerDirectionLeft];
-        [self addGestureRecognizer:leftSwipe];
+        UITapGestureRecognizer *doubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showCurrentEvent)];
+        doubleTapGesture.numberOfTapsRequired = 2;
+        [self addGestureRecognizer:doubleTapGesture];
+        [doubleTapGesture release];
         
-        UISwipeGestureRecognizer *rightSwipe = [[UISwipeGestureRecognizer alloc]
-                                                initWithTarget:self
-                                                action:@selector(showPreviousEvent)];
-        [rightSwipe setDirection:UISwipeGestureRecognizerDirectionRight];
-        [self addGestureRecognizer:rightSwipe];
-        [leftSwipe release];
-        [rightSwipe release];
-                
+        UITapGestureRecognizer *singleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showNextEvent)];
+        singleTapGesture.numberOfTapsRequired = 1;
+        [singleTapGesture requireGestureRecognizerToFail:doubleTapGesture];
+
+        [self addGestureRecognizer:singleTapGesture];
+        [singleTapGesture release];
+        
+        
+    
         [eventPlace setText:nil];
         [eventName setText:nil];
         [eventTime setText:nil];
@@ -63,13 +63,10 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
     
 }
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+/*- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if(_delegate)
-    {
-        [_delegate eventTouched:[_events objectAtIndex:currentEventIndex]];
-    }
-}
+    [self showNextEvent];
+}*/
 
 #pragma mark -
 #pragma mark public methods
@@ -92,16 +89,7 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
 
 - (void)tickEvent
 {
-    if(currentEventIndex >= _events.count-1)
-    {
-        currentEventIndex = 0;
-    }
-    else
-    {
-        currentEventIndex++;
-    }
-    
-    [self displayEventAtIndex:currentEventIndex];
+    [self showNextEvent];
 }
 
 #pragma mark -
@@ -150,11 +138,26 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
     [eventTime setText:[event eventDateString]];
 }
 
+- (void)showCurrentEvent
+{
+    if(_delegate)
+    {
+        [_delegate eventTouched:[_events objectAtIndex:currentEventIndex]];
+    }
+}
+
 - (void) showNextEvent
 {
-    if (currentEventIndex < [[self events] count] - 1) {
-        [self displayEventAtIndex:currentEventIndex + 1];
+    if(currentEventIndex >= _events.count-1)
+    {
+        currentEventIndex = 0;
     }
+    else
+    {
+        currentEventIndex++;
+    }
+    
+    [self displayEventAtIndex:currentEventIndex];
 }
 
 - (void) showPreviousEvent
