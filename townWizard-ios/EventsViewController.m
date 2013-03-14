@@ -128,13 +128,21 @@
 {
     if(!calendarController.isCalendarCanceled)
     {
-        NSString *newDatePeriod = [NSDate stringFromPeriod:calendarController.period.startDate
-                                                       end:calendarController.period.endDate];
+        NSDate *start = calendarController.period.startDate;
+        NSDate *end = calendarController.period.endDate;
+        if([start compare:end] == NSOrderedDescending)
+        {
+            start = calendarController.period.endDate;
+            end = calendarController.period.startDate;
+        }
+        
+        NSString *newDatePeriod = [NSDate stringFromPeriod:start
+                                                       end:end];
         [self.calendarButton setTitle:newDatePeriod forState:UIControlStateNormal];
-        eventsHelper.currentStart = calendarController.period.startDate;
-        eventsHelper.currentEnd = calendarController.period.endDate;
-        [eventsHelper loadEventsWithDatePeriod:self.calendar.period.startDate
-                                       endDate:self.calendar.period.endDate];
+        eventsHelper.currentStart = start;
+        eventsHelper.currentEnd = end;
+        [eventsHelper loadEventsWithDatePeriod:start
+                                       endDate:end];
     }
     return YES;
 }

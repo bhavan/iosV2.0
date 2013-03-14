@@ -296,7 +296,7 @@
     EventSectionHeader *header = [[EventSectionHeader alloc] initWithFrame:headerFrame];
     NSNumber *categoryIndex = [[menu allKeys] objectAtIndex:section];
     [[header title] setText:[self categoryName:categoryIndex]];
-    header.title.textColor = [UIColor colorWithWhite:0.800 alpha:1.000];
+    header.title.textColor = [UIColor colorWithRed:172.0/255.0 green:172.0/255.0 blue:172.0/255.0 alpha:1.000];
     return [header autorelease];
 }
 
