@@ -111,12 +111,13 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
     [eventTime setText:nil];
     [eventPlace setText:[[event location] name]];
     NSString *urlStr = event.imageURL.absoluteString;
-    UIView *header =  _rootView.tableHeaderView;
+    UIView *header =  _rootView.tableHeader;
     CGRect headerFrame = header.frame;
     if(event.imageURL && urlStr.length > 3)
     {
         [eventImage setImageWithURL:[event imageURL]];
         headerFrame.size.height = 347;
+          [_rootView.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
         _isImagePresented = YES;
         
     }
@@ -124,7 +125,8 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
     {
         [eventImage setImage:nil];
         [eventImage.activityIndicator stopAnimating];
-        headerFrame.size.height = 227;
+        headerFrame.size.height = 230;
+          [_rootView.scrollView setContentOffset:CGPointMake(0, 115) animated:YES];
         _isImagePresented = NO;
     }
   
@@ -132,7 +134,7 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
     [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
     [UIView setAnimationDuration:0.4];
     header.frame = headerFrame;
-    [_rootView setTableHeaderView:header];
+    [_rootView.tableView setTableHeaderView:header];
     [UIView commitAnimations];
 
     [eventTime setText:[event eventDateString]];

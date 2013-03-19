@@ -19,6 +19,7 @@
 #import "UIImageView+WebCache.h"
 #import "UIView+Extensions.h"
 
+
 #define ALL_EVENTS_TEXT @"ALL EVENTS"
 
 @interface EventsViewController () <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, PMCalendarControllerDelegate>
@@ -101,7 +102,7 @@
 
 - (void)didLoadFeaturedEvents:(NSArray *)events
 {
-    [featuredEventsViewer setRootView:eventsList];
+    [featuredEventsViewer setRootView:self.view];
     [featuredEventsViewer displayEvents:events];
 }
 
@@ -112,8 +113,28 @@
 
 - (void)bannerFounded:(NSURL *)bannerUrl
 {
-    [_bannerImageView setImageWithURL:bannerUrl placeholderImage:nil
-                              options:SDWebImageRetryFailed];
+    [_bannerImageView setImageWithURL:bannerUrl
+                              success:^(UIImage *image, BOOL cached)
+     {
+         NSLog(@"image founded");
+     }
+                              failure:^(NSError *error)
+     {
+          NSLog(@"image failure");
+        /* CGRect bannerFrame = _bannerImageView.frame;
+         bannerFrame.size.height = 0;
+         _bannerImageView.frame = bannerFrame;
+         _bannerButton.frame = bannerFrame;*/
+       //  _bannerButton.hidden = YES;
+       //  _bannerImageView.hidden = YES;
+         CGRect headerFrame = _tableHeader.frame;
+         headerFrame.size.height -= 50;
+         _tableHeader.frame = headerFrame;
+         [eventsList setTableHeaderView:_tableHeader];
+         
+         
+         
+     }];
 }
 
 #pragma mark PMCalendarControllerDelegate methods
@@ -249,7 +270,6 @@
     return [header autorelease];
 }
 
-
 - (void)viewDidUnload
 {
     [featuredEventsViewer release];
@@ -260,6 +280,9 @@
     [self setEventsTypeButton:nil];
     [self setCalendarButton:nil];
     [self setBannerImageView:nil];
+    [self setBannerButton:nil];
+    [self setScrollView:nil];
+    [self setTableHeader:nil];
     [super viewDidUnload];
 }
 
@@ -271,6 +294,9 @@
     [_calendarButton release];
     [_bannerImageView release];
     [eventsHelper release];
+    [_bannerButton release];
+    [_scrollView release];
+    [_tableHeader release];
     [super dealloc];
 }
 

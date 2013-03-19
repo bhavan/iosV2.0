@@ -15,5 +15,8 @@
 @property (nonatomic,retain) IBOutlet UIButton *addEventButton;
 @property (nonatomic,retain) IBOutlet UIView *tableHeader;
 @property (nonatomic,retain) IBOutlet UIView *tableFooter;
+@property (retain, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (retain, nonatomic) IBOutlet UITableView *tableView;
+
 
 @end

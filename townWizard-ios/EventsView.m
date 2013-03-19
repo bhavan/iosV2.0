@@ -32,6 +32,8 @@
     [addEventButton release];
     [tableHeader release];
     [tableFooter release];
+    [_scrollView release];
+    [_tableView release];
     [super dealloc];
 }
 

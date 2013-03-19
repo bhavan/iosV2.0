@@ -22,6 +22,9 @@
     IBOutlet UITableView *eventsList;
 
 }
+@property (retain, nonatomic) IBOutlet UIView *tableHeader;
+@property (retain, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (retain, nonatomic) IBOutlet UIButton *bannerButton;
 @property (retain, nonatomic) IBOutlet UIImageView *bannerImageView;
 @property (retain, nonatomic) IBOutlet UIButton *calendarButton;
 @property (retain, nonatomic) IBOutlet UIButton *eventsTypeButton;
