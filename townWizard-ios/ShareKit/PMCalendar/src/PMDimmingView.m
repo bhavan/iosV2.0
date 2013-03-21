@@ -23,8 +23,9 @@
     }
     
     self.controller = controller;
+    self.backgroundColor = UIColorMakeRGBA(0, 0, 0, 0.3);
     [[AppActionsHelper sharedInstance] putTWBackgroundWithFrame:self.frame toView:self];
-   
+    
     //self.backgroundColor = UIColorMakeRGBA(0, 0, 0, 1.5);
     UIButton *okButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [okButton addTarget:self action:@selector(okButtonPressed) forControlEvents:UIControlEventTouchUpInside];
@@ -54,24 +55,22 @@
 
 - (void)cancelButtonPressed
 {
-     self.controller.isCalendarCanceled = YES;
+    self.controller.isCalendarCanceled = YES;
     if (![self.controller.delegate respondsToSelector:@selector(calendarControllerShouldDismissCalendar:)]
         || [self.controller.delegate calendarControllerShouldDismissCalendar:self.controller])
     {
-       
+        
         [self.controller dismissCalendarAnimated:YES];
     }
 }
 
-
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+/*- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
- /*   if (![self.controller.delegate respondsToSelector:@selector(calendarControllerShouldDismissCalendar:)]
+    if (![self.controller.delegate respondsToSelector:@selector(calendarControllerShouldDismissCalendar:)]
         || [self.controller.delegate calendarControllerShouldDismissCalendar:self.controller])
     {
         [self.controller dismissCalendarAnimated:YES];
-    }*/
-}
+    }
+}*/
 
 @end

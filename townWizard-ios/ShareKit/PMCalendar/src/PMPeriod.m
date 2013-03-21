@@ -21,7 +21,7 @@
     result.startDate = startDate;
     result.endDate = endDate;
     
-    return [result autorelease];
+    return result;
 }
 
 + (id) oneDayPeriodWithDate:(NSDate *) date
@@ -31,7 +31,7 @@
     result.startDate = [date dateWithoutTime];
     result.endDate = result.startDate;
 
-    return [result autorelease];
+    return result;
 }
 
 - (BOOL) isEqual:(id) object
@@ -48,7 +48,7 @@
 
 - (NSInteger) lengthInDays
 {
-    return [self.endDate timeIntervalSinceDate:self.startDate] / (60 * 60 * 24);
+    return [self.endDate daysSinceDate:self.startDate];
 }
 
 - (NSString *) description
@@ -71,7 +71,7 @@
         result.endDate = _startDate;
     }
     
-    return [result autorelease];
+    return result;
 }
 
 - (BOOL) containsDate:(NSDate *) date
@@ -85,6 +85,15 @@
     }
     
     return NO;
+}
+
+- (id) copyWithZone:(NSZone *) zone
+{
+    PMPeriod *copiedPeriod = [[PMPeriod alloc] init];
+    copiedPeriod.startDate = [_startDate copyWithZone: zone];
+    copiedPeriod.endDate = [_endDate copyWithZone: zone];
+    
+    return copiedPeriod;
 }
 
 @end

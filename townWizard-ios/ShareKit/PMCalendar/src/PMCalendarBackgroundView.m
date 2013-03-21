@@ -14,6 +14,7 @@
 
 @interface PMCalendarBackgroundView ()
 
+@property (nonatomic, assign) CGRect initialFrame;
 - (void)redrawComponent;
 
 @end
@@ -22,13 +23,13 @@
 
 @synthesize arrowDirection = _arrowDirection;
 @synthesize arrowPosition = _arrowPosition;
+@synthesize initialFrame = _initialFrame;
 
 #pragma mark - UIView overridden methods -
 
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [super dealloc];
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -45,6 +46,7 @@
                                                  name:kPMCalendarRedrawNotification
                                                object:nil];
     self.backgroundColor = [UIColor clearColor];
+    self.initialFrame = frame;
     
     return self;
 }
@@ -216,8 +218,8 @@
     
     // backgound box. doesn't include arrow:
     CGRect boxBounds = CGRectMake(0, 0
-                                  , self.bounds.size.width - arrowSize.height
-                                  , self.bounds.size.height - arrowSize.height);
+                                  , self.frame.size.width - arrowSize.height
+                                  , self.frame.size.height - arrowSize.height);
 
     CGFloat width = boxBounds.size.width - (shadowPadding.left + shadowPadding.right);
     CGFloat height = boxBounds.size.height - (shadowPadding.top + shadowPadding.bottom);
@@ -225,7 +227,7 @@
     NSDictionary *shadowDict = [[PMThemeEngine sharedInstance] elementOfGenericType:PMThemeShadowGenericType
                                                                             subtype:PMThemeMainSubtype
                                                                                type:PMThemeBackgroundElementType];
-    PMThemeShadow *innerShadow = [[[PMThemeShadow alloc] initWithShadowDict:shadowDict] autorelease];
+    PMThemeShadow *innerShadow = [[PMThemeShadow alloc] initWithShadowDict:shadowDict];
 
     CGPoint tl = CGPointZero;
 

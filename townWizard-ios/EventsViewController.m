@@ -54,7 +54,6 @@
 - (void)setupCotrols
 {
     featuredEventsViewer.delegate = self;
-    self.calendar = [[[PMCalendarController alloc] initWithThemeName:@"apple calendar"] autorelease];
     self.calendar.delegate = self;
     self.calendar.mondayFirstDayOfWeek = NO;
     [self.eventsTypeButton setTitle:ALL_EVENTS_TEXT forState:UIControlStateNormal];
@@ -93,6 +92,10 @@
 
 - (IBAction)dateSelectButtonPressed:(id)sender
 {
+    [self.calendar release];
+    self.calendar = [[[PMCalendarController alloc] initWithThemeName:@"apple calendar"] autorelease];
+    self.calendar.delegate = self;
+    self.calendar.mondayFirstDayOfWeek = NO;
     [self.calendar presentCalendarFromRect:CGRectMake(0, 0, 320, 0)
                                     inView:self.view
                   permittedArrowDirections:PMCalendarArrowDirectionAny
@@ -145,7 +148,7 @@
     NSLog(@"Event period changed");
 }
 
-- (BOOL)calendarControllerShouldDismissCalendar:(PMCalendarController *)calendarController
+- (void)calendarControllerDidDismissCalendar:(PMCalendarController *)calendarController
 {
     if(!calendarController.isCalendarCanceled)
     {
@@ -165,7 +168,6 @@
         [eventsHelper loadEventsWithDatePeriod:start
                                        endDate:end];
     }
-    return YES;
 }
 
 #pragma mark -

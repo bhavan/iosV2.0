@@ -23,14 +23,14 @@
 
 - (NSDate *) dateByAddingDays:(NSInteger) days months:(NSInteger) months years:(NSInteger) years
 {
-	NSDateComponents *dateComponents = [[[NSDateComponents alloc] init] autorelease];
+	NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
 	dateComponents.day = days;
 	dateComponents.month = months;
 	dateComponents.year = years;
-	NSDate *result = [[NSCalendar currentCalendar] dateByAddingComponents:dateComponents
-                                                                   toDate:self
-                                                                  options:0];
-    return result;
+	
+    return [[NSCalendar currentCalendar] dateByAddingComponents:dateComponents
+                                                         toDate:self
+                                                        options:0];    
 }
 
 - (NSDate *) dateByAddingDays:(NSInteger) days
@@ -59,6 +59,17 @@
 	return monthStartDate;
 }
 
+- (NSDate *) midnightDate
+{
+    NSDate *midnightDate = nil;
+	[[NSCalendar currentCalendar] rangeOfUnit:NSDayCalendarUnit
+                                    startDate:&midnightDate
+                                     interval:NULL
+                                      forDate:self];
+    
+	return midnightDate;
+}
+
 - (NSUInteger) numberOfDaysInMonth
 {
     return [[NSCalendar currentCalendar] rangeOfUnit:NSDayCalendarUnit 
@@ -71,7 +82,7 @@
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     
     NSDateComponents *weekdayComponents = [gregorian components:NSWeekdayCalendarUnit fromDate:self];
-    [gregorian release];
+    
     return [weekdayComponents weekday];
 }
 
@@ -79,14 +90,23 @@
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:format];
-	NSString *result = [formatter stringFromDate:self];
-    [formatter release];
-	return result;
+		
+	return [formatter stringFromDate:self];
 }
 
 - (NSInteger) daysSinceDate:(NSDate *) date
 {
-    return [self timeIntervalSinceDate:date] / (60 * 60 * 24);
+    return round([self timeIntervalSinceDate:date] / (60 * 60 * 24));
+}
+
+- (BOOL) isBefore:(NSDate *) date
+{
+	return [self timeIntervalSinceDate:date] < 0;
+}
+
+- (BOOL) isAfter:(NSDate *) date
+{
+	return [self timeIntervalSinceDate:date] > 0;
 }
 
 @end

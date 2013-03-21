@@ -11,6 +11,7 @@
 #import <CoreText/CoreText.h>
 
 static PMThemeEngine* sharedInstance;
+
 @interface PMThemeEngine ()
 
 @property (nonatomic, strong) NSDictionary *themeDict;
@@ -99,7 +100,7 @@ static PMThemeEngine* sharedInstance;
         i++;
     }
     CGGradientRef gradient = CGGradientCreateWithColors(colorSpace
-                                                        , (CFArrayRef)gradientColorsArray
+                                                        , (__bridge CFArrayRef)gradientColorsArray
                                                         , gradientLocations);
     
     CGContextDrawLinearGradient(context
@@ -108,7 +109,6 @@ static PMThemeEngine* sharedInstance;
                                 , CGPointMake(rect.origin.x + rect.size.width / 2, rect.origin.y)
                                 , 0);
     CGGradientRelease(gradient);
-    CGColorSpaceRelease(colorSpace);
 //    CGColorSpaceRelease(colorSpace);
 }
 
@@ -337,7 +337,7 @@ static PMThemeEngine* sharedInstance;
         CGPoint textPoint = CGPointMake((int)(realRect.origin.x + (realRect.size.width - sz.width) / 2)
                                         , (int)(realRect.origin.y + realRect.size.height - 1));
 
-        CTFontRef font = CTFontCreateWithName((CFStringRef)[usedFont fontName]
+        CTFontRef font = CTFontCreateWithName((__bridge CFStringRef)[usedFont fontName]
                                               , usedFont.pointSize
                                               , NULL);
         
@@ -346,7 +346,7 @@ static PMThemeEngine* sharedInstance;
         CFTypeRef values[] = { font, kCFBooleanTrue };
         CFDictionaryRef attr = CFDictionaryCreate(NULL, (const void **)&keys, (const void **)&values,
                                                   sizeof(keys) / sizeof(keys[0]), &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
-        CFAttributedStringRef attrString = CFAttributedStringCreate(NULL, (CFStringRef)string, attr);
+        CFAttributedStringRef attrString = CFAttributedStringCreate(NULL, (__bridge CFStringRef)string, attr);
         CFRelease(attr);
         
         // Draw the string
@@ -401,45 +401,59 @@ static PMThemeEngine* sharedInstance;
                                                                              subtype:themeElementSubtype];
     id colorObj = [themeDictionary elementInThemeDictOfGenericType:PMThemeColorGenericType];
 
-    CGContextSaveGState(context);
     NSDictionary *shadowDict = [themeDictionary elementInThemeDictOfGenericType:PMThemeShadowGenericType];
-    
-    if (shadowDict)
+    CGContextSaveGState(context);
     {
-        CGSize shadowOffset = [[shadowDict elementInThemeDictOfGenericType:PMThemeOffsetGenericType] pmThemeGenerateSize];
-        UIColor *shadowColor = [PMThemeEngine colorFromString:[shadowDict elementInThemeDictOfGenericType:PMThemeColorGenericType]];
-        NSNumber *blurRadius = [shadowDict elementInThemeDictOfGenericType:PMThemeShadowBlurRadiusType];
-        CGContextSetShadowWithColor(context
-                                    , shadowOffset
-                                    , blurRadius?[blurRadius floatValue]:sharedInstance.shadowBlurRadius
-                                    , shadowColor.CGColor);
+        if (shadowDict)
+        {
+            CGSize shadowOffset = [[shadowDict elementInThemeDictOfGenericType:PMThemeOffsetGenericType] pmThemeGenerateSize];
+            UIColor *shadowColor = [PMThemeEngine colorFromString:[shadowDict elementInThemeDictOfGenericType:PMThemeColorGenericType]];
+            NSNumber *blurRadius = [shadowDict elementInThemeDictOfGenericType:PMThemeShadowBlurRadiusType];
+            CGContextSetShadowWithColor(context
+                                        , shadowOffset
+                                        , blurRadius?[blurRadius floatValue]:sharedInstance.shadowBlurRadius
+                                        , shadowColor.CGColor);
+            if (![shadowDict objectForKey:@"Type"])
+            {
+                [shadowColor setFill];
+                [path fill];
+            }
+        }
     }
-    [path addClip];
-
-    if ([colorObj isKindOfClass:[NSString class]]) // plain color
+    if (![shadowDict objectForKey:@"Type"])
     {
-        [[PMThemeEngine colorFromString:colorObj] setFill];
+        CGContextRestoreGState(context);
+
+        CGContextSaveGState(context);
+    }
+    {
+        [path addClip];
+
+        if ([colorObj isKindOfClass:[NSString class]]) // plain color
+        {
+            [[PMThemeEngine colorFromString:colorObj] setFill];
+            
+            [path fill];
+        }
+        else
+        {
+            [PMThemeEngine drawGradientInContext:context
+                                          inRect:path.bounds
+                                       fromArray:colorObj];
+        }
+
+        NSDictionary *stroke = [themeDictionary elementInThemeDictOfGenericType:PMThemeStrokeGenericType];
         
-        [path fill];
-    }
-    else
-    {
-        [PMThemeEngine drawGradientInContext:context
-                                      inRect:path.bounds
-                                   fromArray:colorObj];
-    }
+        if (stroke)
+        {
+            NSString *strokeColorStr = [stroke elementInThemeDictOfGenericType:PMThemeColorGenericType];
+            UIColor *strokeColor = [PMThemeEngine colorFromString:strokeColorStr];
+            [strokeColor setStroke];
+            path.lineWidth = [[stroke elementInThemeDictOfGenericType:PMThemeSizeWidthGenericType] floatValue]; // TODO: make separate stroke width generic type
 
-    NSDictionary *stroke = [themeDictionary elementInThemeDictOfGenericType:PMThemeStrokeGenericType];
-    
-    if (stroke)
-    {
-        NSString *strokeColorStr = [stroke elementInThemeDictOfGenericType:PMThemeColorGenericType];
-        UIColor *strokeColor = [PMThemeEngine colorFromString:strokeColorStr];
-        [strokeColor setStroke];
-        path.lineWidth = [[stroke elementInThemeDictOfGenericType:PMThemeSizeWidthGenericType] floatValue]; // TODO: make separate stroke width generic type
-        [path stroke];
+            [path stroke];
+        }
     }
-    
     CGContextRestoreGState(context);
 }
 
