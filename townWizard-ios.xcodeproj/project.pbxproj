@@ -1130,6 +1130,15 @@
 		F6A8866116FB446E00DD8D68 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6A8864816FB446E00DD8D68 /* background@2x.png */; };
 		F6A8866216FB446E00DD8D68 /* default.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6A8864916FB446E00DD8D68 /* default.plist */; };
 		F6A8866316FB446E00DD8D68 /* default.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6A8864916FB446E00DD8D68 /* default.plist */; };
+		F6F7941016FC3B8600CAA7FA /* PMCalendarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A8863616FB446E00DD8D68 /* PMCalendarController.m */; };
+		F6F7941116FC3BAC00CAA7FA /* NSDate+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A8863116FB446E00DD8D68 /* NSDate+Helpers.m */; };
+		F6F7941216FC3BAC00CAA7FA /* PMCalendarBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A8863316FB446E00DD8D68 /* PMCalendarBackgroundView.m */; };
+		F6F7941316FC3BAC00CAA7FA /* PMCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A8863916FB446E00DD8D68 /* PMCalendarView.m */; };
+		F6F7941416FC3BAC00CAA7FA /* PMDimmingView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A8863B16FB446E00DD8D68 /* PMDimmingView.m */; };
+		F6F7941516FC3BAC00CAA7FA /* PMPeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A8863D16FB446E00DD8D68 /* PMPeriod.m */; };
+		F6F7941616FC3BAC00CAA7FA /* PMSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A8863F16FB446E00DD8D68 /* PMSelectionView.m */; };
+		F6F7941716FC3BAC00CAA7FA /* PMThemeEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A8864216FB446E00DD8D68 /* PMThemeEngine.m */; };
+		F6F7941816FC3BAC00CAA7FA /* PMThemeShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A8864416FB446E00DD8D68 /* PMThemeShadow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -4561,6 +4570,15 @@
 				843AC46D16A03514007DF1F9 /* UIImage+Extensions.m in Sources */,
 				848AFF7A16AECC3E0079634B /* SearchHelper.m in Sources */,
 				8448CB3F16AFD80600471BDF /* EventsHelper.m in Sources */,
+				F6F7941016FC3B8600CAA7FA /* PMCalendarController.m in Sources */,
+				F6F7941116FC3BAC00CAA7FA /* NSDate+Helpers.m in Sources */,
+				F6F7941216FC3BAC00CAA7FA /* PMCalendarBackgroundView.m in Sources */,
+				F6F7941316FC3BAC00CAA7FA /* PMCalendarView.m in Sources */,
+				F6F7941416FC3BAC00CAA7FA /* PMDimmingView.m in Sources */,
+				F6F7941516FC3BAC00CAA7FA /* PMPeriod.m in Sources */,
+				F6F7941616FC3BAC00CAA7FA /* PMSelectionView.m in Sources */,
+				F6F7941716FC3BAC00CAA7FA /* PMThemeEngine.m in Sources */,
+				F6F7941816FC3BAC00CAA7FA /* PMThemeShadow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
