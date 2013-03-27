@@ -84,7 +84,7 @@
  * Currently selected period. Could be a real period or a "one-day" (-[PMPeriod oneDayPeriodWithDate:])
  * period which effectively selects one day.
  */
-@property (nonatomic, strong) PMPeriod *period;
+@property (nonatomic, retain) PMPeriod *period;
 
 /**
  * Reflects PMPeriod allowed to select from.
@@ -93,7 +93,7 @@
  * I.e. if allowed period is set to 23.02.2001 - 19.08.2020, user will not be able to see
  * dates before 01.02.2001 and after 31.08.2020.
  */
-@property (nonatomic, strong) PMPeriod *allowedPeriod;
+@property (nonatomic, retain) PMPeriod *allowedPeriod;
 
 /**
  * If set to YES, monday is used as a starting day of week. If NO, Sunday.

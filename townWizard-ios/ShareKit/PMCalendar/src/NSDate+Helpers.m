@@ -23,7 +23,7 @@
 
 - (NSDate *) dateByAddingDays:(NSInteger) days months:(NSInteger) months years:(NSInteger) years
 {
-	NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+	NSDateComponents *dateComponents = [[[NSDateComponents alloc] init] autorelease];
 	dateComponents.day = days;
 	dateComponents.month = months;
 	dateComponents.year = years;
@@ -82,13 +82,14 @@
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     
     NSDateComponents *weekdayComponents = [gregorian components:NSWeekdayCalendarUnit fromDate:self];
+    [gregorian release];
     
     return [weekdayComponents weekday];
 }
 
 - (NSString *) dateStringWithFormat:(NSString *) format
 {
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    NSDateFormatter *formatter = [[[NSDateFormatter alloc] init] autorelease];
     [formatter setDateFormat:format];
 		
 	return [formatter stringFromDate:self];

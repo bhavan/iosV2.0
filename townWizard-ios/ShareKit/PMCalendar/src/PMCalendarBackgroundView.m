@@ -21,15 +21,12 @@
 
 @implementation PMCalendarBackgroundView
 
-@synthesize arrowDirection = _arrowDirection;
-@synthesize arrowPosition = _arrowPosition;
-@synthesize initialFrame = _initialFrame;
-
 #pragma mark - UIView overridden methods -
 
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [super dealloc];
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -227,7 +224,7 @@
     NSDictionary *shadowDict = [[PMThemeEngine sharedInstance] elementOfGenericType:PMThemeShadowGenericType
                                                                             subtype:PMThemeMainSubtype
                                                                                type:PMThemeBackgroundElementType];
-    PMThemeShadow *innerShadow = [[PMThemeShadow alloc] initWithShadowDict:shadowDict];
+    PMThemeShadow *innerShadow = [[[PMThemeShadow alloc] initWithShadowDict:shadowDict] autorelease];
 
     CGPoint tl = CGPointZero;
 

@@ -22,12 +22,12 @@
 /**
  * Selected period. See PMCalendarController for more information.
  */
-@property (nonatomic, strong) PMPeriod *period;
+@property (nonatomic, retain) PMPeriod *period;
 
 /**
  * Period allowed for selection. See PMCalendarController for more information.
  */
-@property (nonatomic, strong) PMPeriod *allowedPeriod;
+@property (nonatomic, retain) PMPeriod *allowedPeriod;
 
 /**
  * Is monday a first day of week. See PMCalendarController for more information.
@@ -45,7 +45,7 @@
 @property (nonatomic, assign) BOOL allowsLongPressMonthChange;
 @property (nonatomic, assign) id<PMCalendarViewDelegate> delegate;
 
-@property (nonatomic, strong) NSDate *currentDate;
+@property (nonatomic, retain) NSDate *currentDate;
 
 @end
 

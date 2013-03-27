@@ -17,10 +17,10 @@
 
 @interface PMDaysView : UIView
 
-@property (nonatomic, strong) UIFont *font;
-@property (nonatomic, strong) NSDate *currentDate; // month to show
-@property (nonatomic, strong) PMPeriod *selectedPeriod;
-@property (nonatomic, strong) NSArray *rects;
+@property (nonatomic, retain) UIFont *font;
+@property (nonatomic, retain) NSDate *currentDate; // month to show
+@property (nonatomic, retain) PMPeriod *selectedPeriod;
+@property (nonatomic, retain) NSArray *rects;
 @property (nonatomic, assign) BOOL mondayFirstDayOfWeek;
 @property (nonatomic, assign) CGRect initialFrame;
 
@@ -30,15 +30,15 @@
 
 @interface PMCalendarView ()
 
-@property (nonatomic, strong) UIFont *font;
-@property (nonatomic, strong) UITapGestureRecognizer *tapGestureRecognizer;
-@property (nonatomic, strong) UILongPressGestureRecognizer *longPressGestureRecognizer;
-@property (nonatomic, strong) UIPanGestureRecognizer *panGestureRecognizer;
-@property (nonatomic, strong) NSTimer *longPressTimer;
-@property (nonatomic, strong) NSTimer *panTimer;
+@property (nonatomic, retain) UIFont *font;
+@property (nonatomic, retain) UITapGestureRecognizer *tapGestureRecognizer;
+@property (nonatomic, retain) UILongPressGestureRecognizer *longPressGestureRecognizer;
+@property (nonatomic, retain) UIPanGestureRecognizer *panGestureRecognizer;
+@property (nonatomic, retain) NSTimer *longPressTimer;
+@property (nonatomic, retain) NSTimer *panTimer;
 @property (nonatomic, assign) CGPoint panPoint;
-@property (nonatomic, strong) PMDaysView *daysView;
-@property (nonatomic, strong) PMSelectionView *selectionView;
+@property (nonatomic, retain) PMDaysView *daysView;
+@property (nonatomic, retain) PMSelectionView *selectionView;
 @property (nonatomic, assign) CGRect initialFrame;
 
 - (NSInteger) indexForDate: (NSDate *)date;
@@ -55,27 +55,21 @@
     NSInteger fontSize;
 }
 
-@synthesize period = _period;
-@synthesize allowedPeriod = _allowedPeriod;
-@synthesize mondayFirstDayOfWeek = _mondayFirstDayOfWeek;
-@synthesize currentDate = _currentDate;
-@synthesize delegate = _delegate;
-@synthesize font = _font;
-@synthesize tapGestureRecognizer = _tapGestureRecognizer;
-@synthesize longPressGestureRecognizer = _longPressGestureRecognizer;
-@synthesize panGestureRecognizer = _panGestureRecognizer;
-@synthesize longPressTimer = _longPressTimer;
-@synthesize panTimer = _panTimer;
-@synthesize panPoint = _panPoint;
-@synthesize daysView = _daysView;
-@synthesize selectionView = _selectionView;
-@synthesize allowsPeriodSelection = _allowsPeriodSelection;
-@synthesize allowsLongPressMonthChange = _allowsLongPressMonthChange;
-@synthesize initialFrame = _initialFrame;
-
 - (void)dealloc
 {
+    [_font release];
+    [_tapGestureRecognizer release];
+    [_longPressGestureRecognizer release];
+    [_panGestureRecognizer release];
+    [_longPressTimer release];
+    [_panTimer release];
+    [_daysView release];
+    [_selectionView release];
+    [_period release];
+    [_allowedPeriod release];
+    [_currentDate release];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [super dealloc];
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -90,22 +84,22 @@
     self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.mondayFirstDayOfWeek = NO;
     
-    self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapHandling:)];
+    self.tapGestureRecognizer = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapHandling:)] autorelease];
     self.tapGestureRecognizer.numberOfTapsRequired = 1;
     self.tapGestureRecognizer.numberOfTouchesRequired = 1;
     self.tapGestureRecognizer.delegate = self;
     [self addGestureRecognizer:self.tapGestureRecognizer];
 
-    self.panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panHandling:)];
+    self.panGestureRecognizer = [[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panHandling:)] autorelease];
     self.panGestureRecognizer.delegate = self;
     [self addGestureRecognizer:self.panGestureRecognizer];
     
     self.allowsLongPressMonthChange = YES;
 
-    self.selectionView = [[PMSelectionView alloc] initWithFrame:CGRectInset(self.bounds, -kPMThemeInnerPadding.width, -kPMThemeInnerPadding.height)];
+    self.selectionView = [[[PMSelectionView alloc] initWithFrame:CGRectInset(self.bounds, -kPMThemeInnerPadding.width, -kPMThemeInnerPadding.height)] autorelease];
     [self addSubview:self.selectionView];
 
-    self.daysView = [[PMDaysView alloc] initWithFrame:self.bounds];
+    self.daysView = [[[PMDaysView alloc] initWithFrame:self.bounds] autorelease];
     self.daysView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self addSubview:self.daysView];
     
@@ -132,7 +126,7 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     NSArray *dayTitles = [dateFormatter shortStandaloneWeekdaySymbols];
     NSArray *monthTitles = [dateFormatter standaloneMonthSymbols];
-
+    [dateFormatter release];
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGFloat headerHeight = kPMThemeHeaderHeight;
     UIEdgeInsets shadowPadding = kPMThemeShadowPadding;
@@ -280,6 +274,7 @@
                                                              | NSMonthCalendarUnit
                                                              | NSYearCalendarUnit
                                                  fromDate:_currentDate];
+    [gregorian release];
     
     BOOL needsRedraw = NO;
     
@@ -373,7 +368,7 @@
 
 - (void)setPeriod:(PMPeriod *)period
 {
-    PMPeriod *localPeriod = [period copy];
+    PMPeriod *localPeriod = [[period copy] autorelease];
     if (self.allowedPeriod)
     {
         if ([localPeriod.startDate isBefore:self.allowedPeriod.startDate])
@@ -664,6 +659,7 @@
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [super dealloc];
 }
 
 - (void)redrawComponent

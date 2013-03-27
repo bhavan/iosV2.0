@@ -92,7 +92,7 @@
 
 - (IBAction)dateSelectButtonPressed:(id)sender
 {
-    [self.calendar release];
+    self.calendar = nil;
     self.calendar = [[[PMCalendarController alloc] initWithThemeName:@"apple calendar"] autorelease];
     self.calendar.delegate = self;
     self.calendar.mondayFirstDayOfWeek = NO;
@@ -105,7 +105,7 @@
 
 - (void)didLoadFeaturedEvents:(NSArray *)events
 {
-    [featuredEventsViewer setRootView:self.view];
+    [featuredEventsViewer setRootView:(EventsView *)self.view];
     [featuredEventsViewer displayEvents:events];
 }
 

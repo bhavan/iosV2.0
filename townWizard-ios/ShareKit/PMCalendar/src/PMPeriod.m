@@ -21,7 +21,7 @@
     result.startDate = startDate;
     result.endDate = endDate;
     
-    return result;
+    return [result autorelease];
 }
 
 + (id) oneDayPeriodWithDate:(NSDate *) date
@@ -31,7 +31,7 @@
     result.startDate = [date dateWithoutTime];
     result.endDate = result.startDate;
 
-    return result;
+    return [result autorelease];
 }
 
 - (BOOL) isEqual:(id) object
@@ -71,7 +71,7 @@
         result.endDate = _startDate;
     }
     
-    return result;
+    return [result autorelease];
 }
 
 - (BOOL) containsDate:(NSDate *) date
@@ -90,8 +90,8 @@
 - (id) copyWithZone:(NSZone *) zone
 {
     PMPeriod *copiedPeriod = [[PMPeriod alloc] init];
-    copiedPeriod.startDate = [_startDate copyWithZone: zone];
-    copiedPeriod.endDate = [_endDate copyWithZone: zone];
+    copiedPeriod.startDate = [[_startDate copyWithZone: zone] autorelease];
+    copiedPeriod.endDate = [[_endDate copyWithZone: zone] autorelease];
     
     return copiedPeriod;
 }

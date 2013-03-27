@@ -100,7 +100,7 @@ static PMThemeEngine* sharedInstance;
         i++;
     }
     CGGradientRef gradient = CGGradientCreateWithColors(colorSpace
-                                                        , (__bridge CFArrayRef)gradientColorsArray
+                                                        , ( CFArrayRef)gradientColorsArray
                                                         , gradientLocations);
     
     CGContextDrawLinearGradient(context
@@ -337,7 +337,7 @@ static PMThemeEngine* sharedInstance;
         CGPoint textPoint = CGPointMake((int)(realRect.origin.x + (realRect.size.width - sz.width) / 2)
                                         , (int)(realRect.origin.y + realRect.size.height - 1));
 
-        CTFontRef font = CTFontCreateWithName((__bridge CFStringRef)[usedFont fontName]
+        CTFontRef font = CTFontCreateWithName(( CFStringRef)[usedFont fontName]
                                               , usedFont.pointSize
                                               , NULL);
         
@@ -346,7 +346,7 @@ static PMThemeEngine* sharedInstance;
         CFTypeRef values[] = { font, kCFBooleanTrue };
         CFDictionaryRef attr = CFDictionaryCreate(NULL, (const void **)&keys, (const void **)&values,
                                                   sizeof(keys) / sizeof(keys[0]), &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
-        CFAttributedStringRef attrString = CFAttributedStringCreate(NULL, (__bridge CFStringRef)string, attr);
+        CFAttributedStringRef attrString = CFAttributedStringCreate(NULL, ( CFStringRef)string, attr);
         CFRelease(attr);
         
         // Draw the string
