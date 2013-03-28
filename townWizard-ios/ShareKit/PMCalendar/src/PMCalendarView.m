@@ -446,7 +446,6 @@
     
     NSInteger days = row * 7 + col - monthStartDay;
     NSDate *selectedDate = [monthStartDate dateByAddingDays:days];
-
     return selectedDate;
 }
 

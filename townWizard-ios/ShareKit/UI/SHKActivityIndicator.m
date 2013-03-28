@@ -188,8 +188,7 @@ static SHKActivityIndicator *_currentIndicator = nil;
 			centerMessageLabel.adjustsFontSizeToFitWidth = YES;
 			
 			[self addSubview:centerMessageLabel];
-		}
-		
+		}		
 		centerMessageLabel.text = message;
 	}
 }
@@ -211,11 +210,9 @@ static SHKActivityIndicator *_currentIndicator = nil;
 			subMessageLabel.textAlignment = UITextAlignmentCenter;
 			subMessageLabel.shadowColor = [UIColor darkGrayColor];
 			subMessageLabel.shadowOffset = CGSizeMake(1,1);
-			subMessageLabel.adjustsFontSizeToFitWidth = YES;
-			
+			subMessageLabel.adjustsFontSizeToFitWidth = YES;			
 			[self addSubview:subMessageLabel];
-		}
-		
+		}		
 		subMessageLabel.text = message;
 	}
 }
@@ -231,8 +228,7 @@ static SHKActivityIndicator *_currentIndicator = nil;
 		spinner.frame = CGRectMake(round(self.bounds.size.width/2 - spinner.frame.size.width/2),
 								round(self.bounds.size.height/2 - spinner.frame.size.height/2),
 								spinner.frame.size.width,
-								spinner.frame.size.height);		
-		
+								spinner.frame.size.height);				
 	}
 	
 	[self addSubview:spinner];
