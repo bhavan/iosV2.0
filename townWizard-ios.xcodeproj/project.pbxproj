@@ -1088,6 +1088,10 @@
 		F686D19716D78C9D0065CC45 /* icon_twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F66A8E6916D64838004CE66A /* icon_twitter@2x.png */; };
 		F686D19816D78C9D0065CC45 /* icon_video.png in Resources */ = {isa = PBXBuildFile; fileRef = F66A8E6A16D64839004CE66A /* icon_video.png */; };
 		F686D19916D78C9D0065CC45 /* icon_video@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F66A8E6B16D6483A004CE66A /* icon_video@2x.png */; };
+		F68CFDA91705B29A00227885 /* apple calendar.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6A8864616FB446E00DD8D68 /* apple calendar.plist */; };
+		F68CFDAA1705B29A00227885 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = F6A8864716FB446E00DD8D68 /* background.png */; };
+		F68CFDAB1705B29A00227885 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6A8864816FB446E00DD8D68 /* background@2x.png */; };
+		F68CFDAC1705B29A00227885 /* default.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6A8864916FB446E00DD8D68 /* default.plist */; };
 		F68E224E16DC9638007C8E59 /* icon_facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = F66A8E5C16D64828004CE66A /* icon_facebook.png */; };
 		F68E224F16DC9638007C8E59 /* icon_facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F66A8E5D16D64829004CE66A /* icon_facebook@2x.png */; };
 		F68E225016DC9638007C8E59 /* icon_googlePlus.png in Resources */ = {isa = PBXBuildFile; fileRef = F66A8E5E16D6482A004CE66A /* icon_googlePlus.png */; };
@@ -3903,6 +3907,10 @@
 				F68E225B16DC9638007C8E59 /* icon_twitter@2x.png in Resources */,
 				F68E225C16DC9638007C8E59 /* icon_video.png in Resources */,
 				F68E225D16DC9638007C8E59 /* icon_video@2x.png in Resources */,
+				F68CFDA91705B29A00227885 /* apple calendar.plist in Resources */,
+				F68CFDAA1705B29A00227885 /* background.png in Resources */,
+				F68CFDAB1705B29A00227885 /* background@2x.png in Resources */,
+				F68CFDAC1705B29A00227885 /* default.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
