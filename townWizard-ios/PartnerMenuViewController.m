@@ -42,6 +42,8 @@
 
 - (void) viewDidLoad
 {
+    self.view.backgroundColor = [UIColor lightGrayColor];
+  
     [super viewDidLoad];
     CGRect bgFrame = self.view.frame;
     bgFrame.origin = CGPointZero;
@@ -60,6 +62,14 @@
     {
         [self updateWithPartner:self.partner];
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[AppActionsHelper sharedInstance] putTWBackgroundWithFrame:self.view.frame
+                                                         toView:self.view];
+
 }
 
 - (void) updateWithPartner:(Partner *)updatedPartner
@@ -206,7 +216,8 @@
     if(information && information.count > 0)
     {
         [menu setObject:information forKey:@2];
-        if ([self.partner.name isEqualToString:DEFAULT_PARTNER_NAME]) {
+        if ([self.partner.name isEqualToString:DEFAULT_PARTNER_NAME])
+        {
             [[AppActionsHelper sharedInstance] setDefaultMenu:menu];
         }
     }

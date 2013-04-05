@@ -47,8 +47,8 @@
                                 "<style type=\"text/css\"> \n"
                                 "body {font-family: \"helvetica\";}\n"
                                 "</style></head>  \n"
-                                "<body><h3>%@</h3><b>%@</b><br><b>%@</b><br><br>%@</body></html>",
-                                event.title, event.location.name,event.location.address, event.details];
+                                "<body><h3>%@</h3><b>%@</b><br><b>%@</b><br><b>%@</b><br><br>%@</body></html>",
+                                event.title, event.startTime, event.location.name,event.location.address, event.details];
     
     NSString *regexStr = @"((width|height)=\"[0-9]+\")";
     NSError *error = nil;
