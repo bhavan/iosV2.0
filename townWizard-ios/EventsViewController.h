@@ -21,6 +21,7 @@
     IBOutlet EventsViewer *featuredEventsViewer;
     IBOutlet UITableView *eventsList;
 
+
 }
 @property (retain, nonatomic) IBOutlet UIView *tableHeader;
 @property (retain, nonatomic) IBOutlet UIScrollView *scrollView;

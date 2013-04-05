@@ -85,11 +85,33 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
                                                        repeats:YES];
         [self displayEventAtIndex:0];    
    }
+    else
+    {
+        [self hideFeaturedArea];        
+    }
 }
 
 - (void)tickEvent
 {
     [self showNextEvent];
+}
+
+- (void)hideFeaturedArea
+{
+    UIView *header =  _rootView.tableHeader;
+    CGRect headerFrame = header.frame;
+    headerFrame.size.height = 130;
+    [_rootView.scrollView setContentOffset:CGPointMake(0, 215) animated:YES];
+
+    
+    [UIView beginAnimations:@"registerScrollDown" context:NULL];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    [UIView setAnimationDuration:0.4];
+    header.frame = headerFrame;
+    [_rootView.tableView setTableHeaderView:header];
+    [UIView commitAnimations];
+
+    
 }
 
 #pragma mark -

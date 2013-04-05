@@ -26,6 +26,7 @@
 
 @property (nonatomic, strong) PMCalendarController *calendar;
 @property (nonatomic, retain) NSDateFormatter *sectionDateFormatter;
+@property (nonatomic, retain)  NSArray *featuredEvents;
 
 - (void)setupCotrols;
 
@@ -51,6 +52,19 @@
     [eventsHelper loadEventsData];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if(self.featuredEvents)
+    {
+        [featuredEventsViewer displayEvents:self.featuredEvents];
+    }
+    if (_bannerImageView.image == nil)
+    {
+        [self hideBannerArea];
+    }
+}
+
 - (void)setupCotrols
 {
     featuredEventsViewer.delegate = self;
@@ -61,7 +75,7 @@
                                                    end:[NSDate date]];
     [self.calendarButton setTitle:newDatePeriod forState:UIControlStateNormal];
     self.sectionDateFormatter = [[[NSDateFormatter alloc] init] autorelease];
-    [self.sectionDateFormatter setDateFormat:@"EEEE LLL dd"];    
+    [self.sectionDateFormatter setDateFormat:@"EEEE LLL dd"];
 }
 
 - (void)eventTouched:(Event *)event
@@ -105,6 +119,7 @@
 
 - (void)didLoadFeaturedEvents:(NSArray *)events
 {
+    self.featuredEvents = events;
     [featuredEventsViewer setRootView:(EventsView *)self.view];
     [featuredEventsViewer displayEvents:events];
 }
@@ -123,21 +138,17 @@
      }
                               failure:^(NSError *error)
      {
-          NSLog(@"image failure");
-        /* CGRect bannerFrame = _bannerImageView.frame;
-         bannerFrame.size.height = 0;
-         _bannerImageView.frame = bannerFrame;
-         _bannerButton.frame = bannerFrame;*/
-       //  _bannerButton.hidden = YES;
-       //  _bannerImageView.hidden = YES;
-         CGRect headerFrame = _tableHeader.frame;
-         headerFrame.size.height -= 50;
-         _tableHeader.frame = headerFrame;
-         [eventsList setTableHeaderView:_tableHeader];
-         
-         
-         
+         NSLog(@"image failure");
+         [self hideBannerArea];
      }];
+}
+
+- (void)hideBannerArea
+{
+    CGRect headerFrame = _tableHeader.frame;
+    headerFrame.size.height -= 50;
+    _tableHeader.frame = headerFrame;
+    [eventsList setTableHeaderView:_tableHeader];
 }
 
 #pragma mark PMCalendarControllerDelegate methods
