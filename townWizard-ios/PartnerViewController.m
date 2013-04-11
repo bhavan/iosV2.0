@@ -73,7 +73,6 @@
     [self.detailsController.view addSubview:splashImage];    
     [self.view addSubview:_progressHUD];
     [_progressHUD show:YES];
-
 }
 
 - (void) dealloc

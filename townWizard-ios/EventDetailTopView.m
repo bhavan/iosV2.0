@@ -11,6 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "Event.h"
 #import "UIButton+Extensions.h"
+#import "NSDate+Formatting.h"
 
 @implementation EventDetailTopView
 
@@ -43,12 +44,18 @@
 
 - (NSString *)htmlContentfromEvent:(Event *)event
 {
+    NSDate *startDate = [NSDate dateFromString:event.startTime dateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString *startFormated = [NSDate stringFromDate:startDate dateFormat:@"HH:mma"];
+    NSDate *endDate = [NSDate dateFromString:event.endTime dateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString *endFormated = [NSDate stringFromDate:endDate dateFormat:@"HH:mma - EEEE, LLLL d, YYYY"];
+    NSString *eventPeriod = [NSString stringWithFormat:@"%@ - %@", startFormated, endFormated];
+    
     NSMutableString *content = [NSMutableString stringWithFormat:@"<html><head>  \n"
                                 "<style type=\"text/css\"> \n"
                                 "body {font-family: \"helvetica\";}\n"
                                 "</style></head>  \n"
                                 "<body><h3>%@</h3><b>%@</b><br><b>%@</b><br><b>%@</b><br><br>%@</body></html>",
-                                event.title, event.startTime, event.location.name,event.location.address, event.details];
+                                event.title, eventPeriod, event.location.name,event.location.address, event.details];
     
     NSString *regexStr = @"((width|height)=\"[0-9]+\")";
     NSError *error = nil;
