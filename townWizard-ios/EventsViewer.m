@@ -60,7 +60,6 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
     [detailsView setBackgroundColor:detailsViewColor];
     [eventImage setBackgroundColor:[UIColor clearColor]];
     [pageControl setIndicatorSpace:kEventsViewerIndicatorSpace];
-    
 }
 
 /*- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event

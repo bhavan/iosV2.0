@@ -45,9 +45,9 @@
 - (NSString *)htmlContentfromEvent:(Event *)event
 {
     NSDate *startDate = [NSDate dateFromString:event.startTime dateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    NSString *startFormated = [NSDate stringFromDate:startDate dateFormat:@"HH:mma"];
+    NSString *startFormated = [NSDate stringFromDate:startDate dateFormat:@"hh:mma"];
     NSDate *endDate = [NSDate dateFromString:event.endTime dateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    NSString *endFormated = [NSDate stringFromDate:endDate dateFormat:@"HH:mma - EEEE, LLLL d, YYYY"];
+    NSString *endFormated = [NSDate stringFromDate:endDate dateFormat:@"hh:mma - EEEE, LLLL d, YYYY"];
     NSString *eventPeriod = [NSString stringWithFormat:@"%@ - %@", startFormated, endFormated];
     
     NSMutableString *content = [NSMutableString stringWithFormat:@"<html><head>  \n"

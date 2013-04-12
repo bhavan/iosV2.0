@@ -4912,8 +4912,8 @@
 					armv6,
 					"$(ARCHS_STANDARD_32_BIT)",
 				);
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Anton Sakharov (HHBSSF4JT8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Anton Sakharov (HHBSSF4JT8)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -4950,8 +4950,8 @@
 					UIKit,
 				);
 				PRODUCT_NAME = TownWizard;
-				PROVISIONING_PROFILE = "E63A425A-634C-40B6-9116-7C8D83F8C36F";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E63A425A-634C-40B6-9116-7C8D83F8C36F";
+				PROVISIONING_PROFILE = "35B3C06A-4914-4E9E-9EDA-7F90B36A2181";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "35B3C06A-4914-4E9E-9EDA-7F90B36A2181";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
