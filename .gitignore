@@ -3,3 +3,6 @@ build
 DerivedData
 .DS*
 townWizard-ios.xcodeproj/xcuserdata/*
+Pods/Pods.xcodeproj/xcuserdata/*.xcuserdatad/
+townWizard-ios.xcworkspace/xcuserdata/*.xcuserdatad/
+
