@@ -69,13 +69,15 @@
     {
         image = [UIImage imageNamed:@"iconStar"];
     }
-    else if (image == nil && [section imageUrl])
-    {
-        NSString *urlString = [[[RequestHelper sharedInstance] currentPartner] webSiteUrl];
-        urlString = [[urlString stringByAppendingString:[section imageUrl]]
-                     stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        [sectionImage setImageWithURL:[NSURL URLWithString:urlString]];
-    }
+    // bhavan: following "else if" will never execut as image==nil is always false.
+    // keepign this logic to implement menu image download from url.
+    //else if (image == nil && [section imageUrl])
+    //{
+    //    NSString *urlString = [[[RequestHelper sharedInstance] currentPartner] webSiteUrl];
+    //    urlString = [[urlString stringByAppendingString:[section imageUrl]]
+    //                 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    //    [sectionImage setImageWithURL:[NSURL URLWithString:urlString]];
+    //}
      
      [sectionImage setImage:image];
 }

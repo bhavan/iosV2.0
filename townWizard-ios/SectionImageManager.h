@@ -13,7 +13,8 @@
 @interface SectionImageManager : NSObject
 {
     NSDictionary *images;
-    NSDictionary* containImages;
+    // bhavan: containImages no longer used
+    // NSDictionary* containImages;
 }
 
 + (id) sharedInstance;

@@ -76,10 +76,24 @@
     {
         urlString = @"http://www.townwizardoncontainerapp.com";
     }
-    urlString = [urlString stringByAppendingFormat:@"?lat=%f&lon=%f",
-                 [AppDelegate sharedDelegate].doubleLatitude,
-                 [AppDelegate sharedDelegate].doubleLongitude];
     
+    // bhavan: append latitude/longitude with either "?" or "&" based on if other query string parameters exist
+    NSRange searchRange = [urlString rangeOfString:@"?"];
+    
+    if (searchRange.length != 0)
+    {
+        // "?" exists, i.e. urlString has other query string paramerts 
+        urlString = [urlString stringByAppendingFormat:@"&lat=%f&lon=%f",
+                     [AppDelegate sharedDelegate].doubleLatitude,
+                     [AppDelegate sharedDelegate].doubleLongitude];
+    }
+    else
+    {
+        // "?" is not there; no other query string parameter in urlString
+        urlString = [urlString stringByAppendingFormat:@"?lat=%f&lon=%f",
+                     [AppDelegate sharedDelegate].doubleLatitude,
+                     [AppDelegate sharedDelegate].doubleLongitude];
+    }
     return urlString;
 }
 
