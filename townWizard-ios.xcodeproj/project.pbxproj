@@ -9265,7 +9265,7 @@
 		016B80BB17184678009873E0 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		0171C711178DF76100A1125E /* Zagreb Centar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zagreb Centar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0171C712178DF76200A1125E /* townWizardPartnerTemplate copy 217-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 217-Info.plist"; path = "/Users/DarrenNelson/Documents/Temp/Grayton-04-12-13/townWizardPartnerTemplate copy 217-Info.plist"; sourceTree = "<absolute>"; };
-		01749BAD17B93EF100CDAF5E /* Gouda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gouda.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		01749BAD17B93EF100CDAF5E /* GoudAgenda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoudAgenda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01749BAE17B93EF100CDAF5E /* townWizardPartnerTemplate copy 225-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 225-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/iosV2.0/townWizardPartnerTemplate copy 225-Info.plist"; sourceTree = "<absolute>"; };
 		017BE4551726E6420056DB32 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		017BE4561726E6420056DB32 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -11348,7 +11348,7 @@
 				010DC9E217AAEA2B004B2939 /* Lac La Biche.app */,
 				01F370A017AC0F3D00C783C6 /* Nantucket.app */,
 				01C5033417B91A4D00A45D0A /* Cedar Valley.app */,
-				01749BAD17B93EF100CDAF5E /* Gouda.app */,
+				01749BAD17B93EF100CDAF5E /* GoudAgenda.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -12563,7 +12563,7 @@
 			);
 			name = goudanl;
 			productName = "townWizard-partner";
-			productReference = 01749BAD17B93EF100CDAF5E /* Gouda.app */;
+			productReference = 01749BAD17B93EF100CDAF5E /* GoudAgenda.app */;
 			productType = "com.apple.product-type.application";
 		};
 		01804121177CA4AE005B3794 /* daressalaamtz */ = {
@@ -24271,7 +24271,7 @@
 					"-framework",
 					UIKit,
 				);
-				PRODUCT_NAME = Gouda;
+				PRODUCT_NAME = GoudAgenda;
 				PROVISIONING_PROFILE = "6F9BA718-23E5-4588-9405-0D4515C8CAA7";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6F9BA718-23E5-4588-9405-0D4515C8CAA7";
 				WRAPPER_EXTENSION = app;
@@ -24326,7 +24326,7 @@
 					"-framework",
 					UIKit,
 				);
-				PRODUCT_NAME = Gouda;
+				PRODUCT_NAME = GoudAgenda;
 				PROVISIONING_PROFILE = "6F9BA718-23E5-4588-9405-0D4515C8CAA7";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6F9BA718-23E5-4588-9405-0D4515C8CAA7";
 				WRAPPER_EXTENSION = app;
