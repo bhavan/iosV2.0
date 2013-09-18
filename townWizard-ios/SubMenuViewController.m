@@ -25,12 +25,8 @@
 #define TEL_URL @"tel"
 #define CALL_URL @"makecall"
 
-@interface SubMenuViewController (PrivateMethods)
-- (NSString *)urlFromSection:(Section*)section;
-- (BOOL)isSectionUrlAbsolute:(NSString *)urlString;
-- (BOOL)parseUrlComponents:(NSArray *)components;
-- (void)setupLeftButton;
-
+@interface SubMenuViewController ()
+@property (nonatomic,assign) BOOL webViewReloaded;
 @end
 
 @implementation SubMenuViewController
@@ -41,19 +37,30 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     self.navigationController.navigationBarHidden = NO;
+    back = [[UIBarButtonItem backButtonWithTarget:self action:@selector(goBackPressed:)] retain];
+    partnerController = (id)self.navigationController.parentViewController;
+    
+    [self loadWebViewPage];
+}
+
+- (void)loadWebViewPage {
     Section *section = [[RequestHelper sharedInstance] currentSection];
     if(section)
     {
         NSString *urlString = [self urlFromSection:section];
-        [[self webView] loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]]];        
+        NSURL *url = [NSURL URLWithString:urlString];
+//        NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url
+//                                                      cachePolicy:NSURLRequestReloadIgnoringCacheData
+//                                                  timeoutInterval:60];
+        NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+        [[self webView] loadRequest:request];
     }
     else if(self.url)
     {
         [[self webView] loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.url]]];
     }
-    back = [[UIBarButtonItem backButtonWithTarget:self action:@selector(goBackPressed:)] retain];
-    partnerController = (id)self.navigationController.parentViewController;
 }
 
 - (NSString *)urlFromSection:(Section*)section
@@ -167,6 +174,9 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
+    NSLog(@"success");
+    
+    [self setWebViewReloaded:NO];
     [self setupLeftButton];    
     if (self.view.window) //if webView is not on screen, we are not interested in setting this
         [[UIApplication sharedApplication] setActivityindicatorToZero];
@@ -186,6 +196,15 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     [[UIApplication sharedApplication] showNetworkActivityIndicator];
     
     return YES;
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    NSLog(@"fail");
+    
+    if (![self webViewReloaded]) {
+        [self setWebViewReloaded:YES];
+        [self loadWebViewPage];
+    }
 }
 
 - (BOOL)parseUrlComponents:(NSArray *)components
