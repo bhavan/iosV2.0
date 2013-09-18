@@ -60,7 +60,7 @@
 - (void) viewDidLoad
 {
     [super viewDidLoad];
-    splashImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+    splashImage = [[UIImageView alloc] initWithFrame:[[self view] frame]];
     [splashImage setImage:[UIImage imageNamed:@"Default"]];
    
     //splashImage.hidden = YES;
@@ -153,6 +153,10 @@
                                                                      action:@selector(toggleMasterView)];
         [[(id)controller navigationItem] setLeftBarButtonItem:menuButton];
     }
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return YES;
 }
 
 @end

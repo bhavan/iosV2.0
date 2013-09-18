@@ -41,13 +41,19 @@ static const CGFloat kTWBarTitleFontSize = 18;
     [super dealloc];
 }
 
-#pragma mark -
-#pragma mark drawing
+//#pragma mark -
+//#pragma mark drawing
+//
+//- (void) drawRect:(CGRect)rect
+//{
+//    [background drawInRect:[self bounds]];
+//}
 
-- (void) drawRect:(CGRect)rect
-{
-    [background drawInRect:[self bounds]];
-}
+//- (void)drawRect:(CGRect)rect {
+//    [super drawRect:rect];
+//    
+//    NSLog(@"rect %@", NSStringFromCGRect(rect));
+//}
 
 #pragma mark -
 #pragma mark layout

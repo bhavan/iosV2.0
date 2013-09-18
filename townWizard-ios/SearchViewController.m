@@ -265,10 +265,16 @@
     [super viewDidUnload];
 }
 
+//- (BOOL)prefersStatusBarHidden
+//{
+//    return YES;
+//}
+
 - (void)dealloc
 {
     [self cleanUp];
     [super dealloc];
 }
+
 
 @end

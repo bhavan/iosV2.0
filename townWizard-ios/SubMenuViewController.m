@@ -317,4 +317,10 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     [self cleanUp];
     [super dealloc];
 }
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
 @end

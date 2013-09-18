@@ -42,6 +42,8 @@ static NSString *twGAcode = @"@UA-31932515-1";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [application setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+
     [self configureNavBar];
     [self configureLibraries];
     

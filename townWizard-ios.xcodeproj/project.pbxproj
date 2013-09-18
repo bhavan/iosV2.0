@@ -11155,21 +11155,18 @@
 		0107292717C660E80031308C /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		0107292817C660E80031308C /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		010DC9E217AAEA2B004B2939 /* Lac La Biche.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lac La Biche.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		010DC9E317AAEA2B004B2939 /* townWizardPartnerTemplate copy 222-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 222-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/iosV2.0/townWizardPartnerTemplate copy 222-Info.plist"; sourceTree = "<absolute>"; };
 		010DC9E517AAEAD0004B2939 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		010DC9E617AAEAD0004B2939 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		010DC9E717AAEAD0004B2939 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		010DC9E817AAEAD0004B2939 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		010DC9E917AAEAD0004B2939 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		01182C3A1779E0C300391779 /* Space Coast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Coast.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		01182C3B1779E0C300391779 /* townWizardPartnerTemplate copy 213-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 213-Info.plist"; path = "/Users/DarrenNelson/Documents/Temp/Grayton-04-12-13/townWizardPartnerTemplate copy 213-Info.plist"; sourceTree = "<absolute>"; };
 		012998021721DC0B00C95006 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		012998031721DC0B00C95006 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		012998041721DC0B00C95006 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		012998051721DC0B00C95006 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		012998061721DC0B00C95006 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		0129C42717831D31007A2D3D /* townWizardPartnerTemplate copy 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "townWizardPartnerTemplate copy 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0129C42817831D32007A2D3D /* townWizardPartnerTemplate copy 216-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 216-Info.plist"; path = "/Users/DarrenNelson/Documents/Temp/Grayton-04-12-13/townWizardPartnerTemplate copy 216-Info.plist"; sourceTree = "<absolute>"; };
 		012A32DD17459FFA0024D14E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		012A32DE17459FFA0024D14E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		012A32DF17459FFA0024D14E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -11181,9 +11178,7 @@
 		012BCD2A179621F200B96EED /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		012BCD2B179621F200B96EED /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		012FA96A1726D0A700D13ABA /* Tuscaloosa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tuscaloosa.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		012FA96B1726D0A700D13ABA /* townWizardPartnerTemplate copy 25-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 25-Info.plist"; path = "/Users/DarrenNelson/Documents/Temp/Grayton-04-12-13/townWizardPartnerTemplate copy 25-Info.plist"; sourceTree = "<absolute>"; };
 		013CD3351755532300A1290C /* Carrabelle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carrabelle.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		013CD3361755532300A1290C /* townWizardPartnerTemplate copy 210-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 210-Info.plist"; path = "/Users/DarrenNelson/Documents/Temp/Grayton-04-12-13/townWizardPartnerTemplate copy 210-Info.plist"; sourceTree = "<absolute>"; };
 		013CD3381755539900A1290C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		013CD3391755539900A1290C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		013CD33A1755539900A1290C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -11195,21 +11190,18 @@
 		01561ED717A8370300DE6318 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		01561ED817A8370300DE6318 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		015CFDB2174D4D8C0094DC6E /* PC Beach Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PC Beach Life.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		015CFDB3174D4D8C0094DC6E /* townWizardPartnerTemplate copy 29-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 29-Info.plist"; path = "/Users/DarrenNelson/Documents/Temp/Grayton-04-12-13/townWizardPartnerTemplate copy 29-Info.plist"; sourceTree = "<absolute>"; };
 		015CFDB5174D4F240094DC6E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		015CFDB6174D4F240094DC6E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		015CFDB7174D4F240094DC6E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		015CFDB8174D4F240094DC6E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		015CFDB9174D4F240094DC6E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		0166BBBA17D8BAD700FF1FD7 /* Gooi Alive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gooi Alive.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0166BBBB17D8BAD800FF1FD7 /* townWizardPartnerTemplate copy 229-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 229-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/iosV2.0/townWizardPartnerTemplate copy 229-Info.plist"; sourceTree = "<absolute>"; };
 		0166BBBD17D8BD3100FF1FD7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		0166BBBE17D8BD3100FF1FD7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0166BBBF17D8BD3100FF1FD7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		0166BBC017D8BD3100FF1FD7 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		0166BBC117D8BD3100FF1FD7 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		0166BD0F17D8C84000FF1FD7 /* Marshall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marshall.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0166BD1017D8C84100FF1FD7 /* townWizardPartnerTemplate copy 230-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 230-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/iosV2.0/townWizardPartnerTemplate copy 230-Info.plist"; sourceTree = "<absolute>"; };
 		0166BD1217D8D06200FF1FD7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		0166BD1317D8D06200FF1FD7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0166BD1417D8D06200FF1FD7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -11221,114 +11213,92 @@
 		016B80BA17184678009873E0 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		016B80BB17184678009873E0 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		0171C711178DF76100A1125E /* Zagreb Centar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zagreb Centar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0171C712178DF76200A1125E /* townWizardPartnerTemplate copy 217-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 217-Info.plist"; path = "/Users/DarrenNelson/Documents/Temp/Grayton-04-12-13/townWizardPartnerTemplate copy 217-Info.plist"; sourceTree = "<absolute>"; };
 		01749BAD17B93EF100CDAF5E /* GoudAgenda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoudAgenda.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		01749BAE17B93EF100CDAF5E /* townWizardPartnerTemplate copy 225-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 225-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/iosV2.0/townWizardPartnerTemplate copy 225-Info.plist"; sourceTree = "<absolute>"; };
 		017BE4551726E6420056DB32 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		017BE4561726E6420056DB32 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		017BE4571726E6420056DB32 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		017BE4581726E6420056DB32 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		017BE4591726E6420056DB32 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		01804269177CA4AE005B3794 /* Dar City Guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dar City Guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0180426A177CA4AE005B3794 /* townWizardPartnerTemplate copy 214-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 214-Info.plist"; path = "/Users/DarrenNelson/Documents/Temp/Grayton-04-12-13/townWizardPartnerTemplate copy 214-Info.plist"; sourceTree = "<absolute>"; };
 		0180426C177CA6B1005B3794 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		0180426D177CA6B1005B3794 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0180426E177CA6B1005B3794 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		0180426F177CA6B1005B3794 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		01804270177CA6B1005B3794 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		018043BE177CABF6005B3794 /* Harford Live.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Harford Live.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		018043BF177CABF6005B3794 /* townWizardPartnerTemplate copy 215-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 215-Info.plist"; path = "/Users/DarrenNelson/Documents/Temp/Grayton-04-12-13/townWizardPartnerTemplate copy 215-Info.plist"; sourceTree = "<absolute>"; };
 		018043C1177CAE99005B3794 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		018043C2177CAE99005B3794 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		018043C3177CAE99005B3794 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		018043C4177CAE99005B3794 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		018043C5177CAE99005B3794 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		0187A3BD17A8219800DEF30D /* Bronx 360.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bronx 360.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0187A3BE17A8219900DEF30D /* townWizardPartnerTemplate copy 220-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 220-Info.plist"; path = "/Users/DarrenNelson/Documents/Temp/Grayton-04-12-13/townWizardPartnerTemplate copy 220-Info.plist"; sourceTree = "<absolute>"; };
 		0196D00F17960A01009B559C /* Sherwood Pk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sherwood Pk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0196D01017960A02009B559C /* townWizardPartnerTemplate copy 218-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 218-Info.plist"; path = "/Users/DarrenNelson/Documents/Temp/Grayton-04-12-13/townWizardPartnerTemplate copy 218-Info.plist"; sourceTree = "<absolute>"; };
 		0199B02F17C2517200DEF5A5 /* Jackson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jackson.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0199B03017C2517200DEF5A5 /* townWizardPartnerTemplate copy 226-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 226-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/iosV2.0/townWizardPartnerTemplate copy 226-Info.plist"; sourceTree = "<absolute>"; };
 		0199B03217C2547000DEF5A5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		0199B03317C2547000DEF5A5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0199B03417C2547000DEF5A5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		0199B03517C2547000DEF5A5 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		0199B03617C2547000DEF5A5 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		0199F03417A1A26000C8B01B /* Temecula Vine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Temecula Vine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0199F03517A1A26000C8B01B /* townWizardPartnerTemplate copy 219-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 219-Info.plist"; path = "/Users/DarrenNelson/Documents/Temp/Grayton-04-12-13/townWizardPartnerTemplate copy 219-Info.plist"; sourceTree = "<absolute>"; };
 		01A24A56176747C9006FE59C /* Fayette Social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fayette Social.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		01A24A57176747CA006FE59C /* townWizardPartnerTemplate copy 212-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 212-Info.plist"; path = "/Users/DarrenNelson/Documents/Temp/Grayton-04-12-13/townWizardPartnerTemplate copy 212-Info.plist"; sourceTree = "<absolute>"; };
 		01A24A591767616A006FE59C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		01A24A5A1767616A006FE59C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		01A24A5B1767616A006FE59C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		01A24A5C1767616A006FE59C /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		01A24A5D1767616A006FE59C /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		01A2938017C6565F0070B002 /* Brooklyn 360.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Brooklyn 360.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		01A2938117C656600070B002 /* townWizardPartnerTemplate copy 227-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 227-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/iosV2.0/townWizardPartnerTemplate copy 227-Info.plist"; sourceTree = "<absolute>"; };
 		01A7342D1718318E003505A5 /* Saint George.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Saint George.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		01A7342E1718318F003505A5 /* townWizardPartnerTemplate copy 2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 2-Info.plist"; path = "/Users/DarrenNelson/Documents/Temp/Grayton-04-12-13/townWizardPartnerTemplate copy 2-Info.plist"; sourceTree = "<absolute>"; };
 		01A7343017183BCD003505A5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		01A7343117183BCD003505A5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		01A7343217183BCD003505A5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		01A7343317183BCD003505A5 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		01A7343417183BCD003505A5 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		01A7358217183FB8003505A5 /* Grande Prairie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grande Prairie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		01A7358317183FB8003505A5 /* townWizardPartnerTemplate copy 22-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 22-Info.plist"; path = "/Users/DarrenNelson/Documents/Temp/Grayton-04-12-13/townWizardPartnerTemplate copy 22-Info.plist"; sourceTree = "<absolute>"; };
 		01AD3000178E19AE00A204BF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		01AD3001178E19AE00A204BF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		01AD3002178E19AE00A204BF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		01AD3003178E19AE00A204BF /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		01AD3004178E19AE00A204BF /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		01B6BC33174595A6009D7A6E /* Orlando.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Orlando.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		01B6BC34174595A6009D7A6E /* townWizardPartnerTemplate copy 28-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 28-Info.plist"; path = "/Users/DarrenNelson/Documents/Temp/Grayton-04-12-13/townWizardPartnerTemplate copy 28-Info.plist"; sourceTree = "<absolute>"; };
 		01BA79171721CECA00397BCB /* Bozeman Vibe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bozeman Vibe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		01BA79181721CECB00397BCB /* townWizardPartnerTemplate copy 24-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 24-Info.plist"; path = "/Users/DarrenNelson/Documents/Temp/Grayton-04-12-13/townWizardPartnerTemplate copy 24-Info.plist"; sourceTree = "<absolute>"; };
 		01C5033417B91A4D00A45D0A /* Cedar Valley.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cedar Valley.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		01C5033517B91A4E00A45D0A /* townWizardPartnerTemplate copy 224-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 224-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/iosV2.0/townWizardPartnerTemplate copy 224-Info.plist"; sourceTree = "<absolute>"; };
 		01C5033717B925DE00A45D0A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		01C5033817B925DE00A45D0A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		01C5033917B925DE00A45D0A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		01C5033A17B925DE00A45D0A /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		01C5033B17B925DE00A45D0A /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		01C743AB1758D13300174827 /* All Wichita.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "All Wichita.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		01C743AC1758D13400174827 /* townWizardPartnerTemplate copy 211-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 211-Info.plist"; path = "/Users/DarrenNelson/Documents/Temp/Grayton-04-12-13/townWizardPartnerTemplate copy 211-Info.plist"; sourceTree = "<absolute>"; };
 		01C743AE1758D4EF00174827 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		01C743AF1758D4EF00174827 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		01C743B01758D4EF00174827 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		01C743B11758D4EF00174827 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		01C743B21758D4EF00174827 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		01D5281D17A96BA40050BFE6 /* NE Colorado.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NE Colorado.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		01D5281E17A96BA40050BFE6 /* townWizardPartnerTemplate copy 221-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 221-Info.plist"; path = "/Users/DarrenNelson/Documents/Temp/Grayton-04-12-13/townWizardPartnerTemplate copy 221-Info.plist"; sourceTree = "<absolute>"; };
 		01D5282017A96FD00050BFE6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		01D5282117A96FD00050BFE6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		01D5282217A96FD00050BFE6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		01D5282317A96FD00050BFE6 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		01D5282417A96FD00050BFE6 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		01D8036917DA2E5C00F7751D /* Hammond.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hammond.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		01D8036A17DA2E5D00F7751D /* townWizardPartnerTemplate copy 231-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 231-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/iosV2.0/townWizardPartnerTemplate copy 231-Info.plist"; sourceTree = "<absolute>"; };
 		01D8036C17DA38DC00F7751D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		01D8036D17DA38DC00F7751D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		01D8036E17DA38DC00F7751D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		01D8036F17DA38DC00F7751D /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		01D8037017DA38DC00F7751D /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		01DF13B717D639A600C822AC /* Oakland.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Oakland.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		01DF13B817D639A700C822AC /* townWizardPartnerTemplate copy 228-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 228-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/iosV2.0/townWizardPartnerTemplate copy 228-Info.plist"; sourceTree = "<absolute>"; };
 		01DF13BA17D63C4000C822AC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		01DF13BB17D63C4000C822AC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		01DF13BC17D63C4000C822AC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		01DF13BD17D63C4000C822AC /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		01DF13BE17D63C4000C822AC /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		01E047111732FDBC0082C15E /* Yellowknife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yellowknife.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		01E047121732FDBC0082C15E /* townWizardPartnerTemplate copy 27-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 27-Info.plist"; path = "/Users/DarrenNelson/Documents/Temp/Grayton-04-12-13/townWizardPartnerTemplate copy 27-Info.plist"; sourceTree = "<absolute>"; };
 		01E047141733180A0082C15E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		01E047151733180A0082C15E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		01E047161733180A0082C15E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		01E047171733180A0082C15E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		01E047181733180A0082C15E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		01E9B6641729658C00BEF32B /* Scheveningen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scheveningen.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		01E9B6651729658C00BEF32B /* townWizardPartnerTemplate copy 26-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 26-Info.plist"; path = "/Users/DarrenNelson/Documents/Temp/Grayton-04-12-13/townWizardPartnerTemplate copy 26-Info.plist"; sourceTree = "<absolute>"; };
 		01EBDC281718802B00FB5BBF /* Destin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Destin.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		01EBDC291718802B00FB5BBF /* townWizardPartnerTemplate copy 23-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 23-Info.plist"; path = "/Users/DarrenNelson/Documents/Temp/Grayton-04-12-13/townWizardPartnerTemplate copy 23-Info.plist"; sourceTree = "<absolute>"; };
 		01EBDC2B171880C900FB5BBF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		01EBDC2C171880C900FB5BBF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		01EBDC2D171880C900FB5BBF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -11345,7 +11315,6 @@
 		01F27E0C172981AF00A5E0E6 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		01F27E0D172981AF00A5E0E6 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		01F370A017AC0F3D00C783C6 /* Nantucket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nantucket.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		01F370A117AC0F3E00C783C6 /* townWizardPartnerTemplate copy 223-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 223-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/iosV2.0/townWizardPartnerTemplate copy 223-Info.plist"; sourceTree = "<absolute>"; };
 		01F370A317AC133F00C783C6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		01F370A417AC133F00C783C6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		01F370A517AC133F00C783C6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -11376,7 +11345,6 @@
 		8411CA09166F541000455DC6 /* button_toolbar_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_toolbar_bg@2x.png"; sourceTree = "<group>"; };
 		8411CA16166F739900455DC6 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		841296D9168DA0E600C47B7F /* townWizardPartnerTemplate copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "townWizardPartnerTemplate copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		841296DB168DA0E700C47B7F /* townWizardPartnerTemplate copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy-Info.plist"; path = "/Volumes/work/Projects/iPhoneV1.1/townWizardPartnerTemplate copy-Info.plist"; sourceTree = "<absolute>"; };
 		84189BFA1675D9EB00A07AB3 /* DefaultSHKConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultSHKConfigurator.h; sourceTree = "<group>"; };
 		84189BFB1675D9EB00A07AB3 /* DefaultSHKConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultSHKConfigurator.m; sourceTree = "<group>"; };
 		84189BFC1675D9EB00A07AB3 /* LegacySHKConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LegacySHKConfigurator.h; sourceTree = "<group>"; };
@@ -13477,38 +13445,6 @@
 				8483F24414D03FBE005E4216 /* Products */,
 				DB102DBA3B154EE8BB95DF9A /* Pods.xcconfig */,
 				F9F1D3C276FB4E1EA02B2B95 /* Pods-grayton-cedar.xcconfig */,
-				841296DB168DA0E700C47B7F /* townWizardPartnerTemplate copy-Info.plist */,
-				01A7342E1718318F003505A5 /* townWizardPartnerTemplate copy 2-Info.plist */,
-				01A7358317183FB8003505A5 /* townWizardPartnerTemplate copy 22-Info.plist */,
-				01EBDC291718802B00FB5BBF /* townWizardPartnerTemplate copy 23-Info.plist */,
-				01BA79181721CECB00397BCB /* townWizardPartnerTemplate copy 24-Info.plist */,
-				012FA96B1726D0A700D13ABA /* townWizardPartnerTemplate copy 25-Info.plist */,
-				01E9B6651729658C00BEF32B /* townWizardPartnerTemplate copy 26-Info.plist */,
-				01E047121732FDBC0082C15E /* townWizardPartnerTemplate copy 27-Info.plist */,
-				01B6BC34174595A6009D7A6E /* townWizardPartnerTemplate copy 28-Info.plist */,
-				015CFDB3174D4D8C0094DC6E /* townWizardPartnerTemplate copy 29-Info.plist */,
-				013CD3361755532300A1290C /* townWizardPartnerTemplate copy 210-Info.plist */,
-				01C743AC1758D13400174827 /* townWizardPartnerTemplate copy 211-Info.plist */,
-				01A24A57176747CA006FE59C /* townWizardPartnerTemplate copy 212-Info.plist */,
-				01182C3B1779E0C300391779 /* townWizardPartnerTemplate copy 213-Info.plist */,
-				0180426A177CA4AE005B3794 /* townWizardPartnerTemplate copy 214-Info.plist */,
-				018043BF177CABF6005B3794 /* townWizardPartnerTemplate copy 215-Info.plist */,
-				0129C42817831D32007A2D3D /* townWizardPartnerTemplate copy 216-Info.plist */,
-				0171C712178DF76200A1125E /* townWizardPartnerTemplate copy 217-Info.plist */,
-				0196D01017960A02009B559C /* townWizardPartnerTemplate copy 218-Info.plist */,
-				0199F03517A1A26000C8B01B /* townWizardPartnerTemplate copy 219-Info.plist */,
-				0187A3BE17A8219900DEF30D /* townWizardPartnerTemplate copy 220-Info.plist */,
-				01D5281E17A96BA40050BFE6 /* townWizardPartnerTemplate copy 221-Info.plist */,
-				010DC9E317AAEA2B004B2939 /* townWizardPartnerTemplate copy 222-Info.plist */,
-				01F370A117AC0F3E00C783C6 /* townWizardPartnerTemplate copy 223-Info.plist */,
-				01C5033517B91A4E00A45D0A /* townWizardPartnerTemplate copy 224-Info.plist */,
-				01749BAE17B93EF100CDAF5E /* townWizardPartnerTemplate copy 225-Info.plist */,
-				0199B03017C2517200DEF5A5 /* townWizardPartnerTemplate copy 226-Info.plist */,
-				01A2938117C656600070B002 /* townWizardPartnerTemplate copy 227-Info.plist */,
-				01DF13B817D639A700C822AC /* townWizardPartnerTemplate copy 228-Info.plist */,
-				0166BBBB17D8BAD800FF1FD7 /* townWizardPartnerTemplate copy 229-Info.plist */,
-				0166BD1017D8C84100FF1FD7 /* townWizardPartnerTemplate copy 230-Info.plist */,
-				01D8036A17DA2E5D00F7751D /* townWizardPartnerTemplate copy 231-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -31556,7 +31492,7 @@
 				);
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "townWizard-ios/townWizard-ios-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -31608,7 +31544,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = CONTAINER_APP;
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "townWizard-ios/townWizard-ios-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",

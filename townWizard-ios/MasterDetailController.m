@@ -124,9 +124,18 @@ const CGFloat kGHRevealSidebarFlickVelocity = 1000.0f;
     masterFrame.size.width = MASTER_WIDTH;
     
     self.masterController.view.frame = masterFrame;
+
+    //test
+    [self addChildViewController:self.masterController];
+    [self.masterController didMoveToParentViewController:self];
+    
+    [self addChildViewController:self.detailController];
+    [self.detailController didMoveToParentViewController:self];
+    //test
     
     [self.view addSubview:self.masterView];
     [self.view addSubview:self.detailView];
+    
     
   /*  UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(performSwipe:)];
     [swipe setNumberOfTouchesRequired:1];
