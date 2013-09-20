@@ -389,10 +389,4 @@
     return sections;
 }
 
-- (BOOL)prefersStatusBarHidden
-{
-    return YES;
-}
-
-
 @end

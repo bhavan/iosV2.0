@@ -38,6 +38,7 @@
     UINavigationController *detailsController = [[[UINavigationController alloc]
                                                   initWithNavigationBarClass:[TownWizardNavigationBar class]
                                                   toolbarClass:nil] autorelease];
+    detailsController.navigationBar.translucent = NO;
     
     if (self = [super initWithMasterViewController:menuController detailViewController:detailsController])
     {

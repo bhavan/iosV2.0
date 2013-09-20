@@ -51,9 +51,6 @@
     {
         NSString *urlString = [self urlFromSection:section];
         NSURL *url = [NSURL URLWithString:urlString];
-//        NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url
-//                                                      cachePolicy:NSURLRequestReloadIgnoringCacheData
-//                                                  timeoutInterval:60];
         NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
         [[self webView] loadRequest:request];
     }
@@ -174,8 +171,6 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    NSLog(@"success");
-    
     [self setWebViewReloaded:NO];
     [self setupLeftButton];    
     if (self.view.window) //if webView is not on screen, we are not interested in setting this
@@ -199,8 +194,6 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    NSLog(@"fail");
-    
     if (![self webViewReloaded]) {
         [self setWebViewReloaded:YES];
         [self loadWebViewPage];
@@ -335,11 +328,6 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 {
     [self cleanUp];
     [super dealloc];
-}
-
-- (BOOL)prefersStatusBarHidden
-{
-    return YES;
 }
 
 @end
