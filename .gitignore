@@ -6,3 +6,7 @@ townWizard-ios.xcodeproj/xcuserdata/*
 Pods/Pods.xcodeproj/xcuserdata/*.xcuserdatad/
 townWizard-ios.xcworkspace/xcuserdata/*.xcuserdatad/
 
+*.xcworkspace
+xcuserdata
+Pods
+Podfile.lock
