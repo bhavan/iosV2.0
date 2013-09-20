@@ -56,6 +56,14 @@ static const CGFloat kTWBarTitleFontSize = 18;
 {
     [super layoutSubviews];    
     [[self titleLabel] setFrame:[self calculateTitleFrame]];
+    
+    UINavigationItem *item = [[self items] lastObject];
+    UIView *buttonView = [[item leftBarButtonItem] customView];
+    
+    CGRect buttonViewFrame = [buttonView frame];
+    buttonViewFrame.origin.x = 5;
+    
+    [buttonView setFrame:buttonViewFrame];
 }
 
 - (CGRect)calculateTitleFrame
