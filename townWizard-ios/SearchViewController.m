@@ -166,6 +166,7 @@
                                            reuseIdentifier:CellIdentifier] autorelease];
             cell.textLabel.textAlignment = UITextAlignmentCenter;
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.backgroundColor = [UIColor clearColor];
         }
         [cell removeSpinnerFromCell];
         cell.textLabel.text = @"Load more";

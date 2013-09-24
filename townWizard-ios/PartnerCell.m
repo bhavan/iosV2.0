@@ -16,6 +16,8 @@
     if (self)
     {
         self.textLabel.textColor = [UIColor darkGrayColor];
+        self.backgroundColor = [UIColor clearColor];
+        self.contentView.backgroundColor = [UIColor clearColor];
         self.selectionStyle = UITableViewCellSelectionStyleGray;
         UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(280, 20, 18, 17)];
         [imgView setImage:[UIImage imageNamed:@"cellCircle"]];
