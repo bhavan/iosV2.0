@@ -10779,6 +10779,39 @@
 		D90D0DF6158F06500026828E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483F24B14D03FBE005E4216 /* CoreGraphics.framework */; };
 		D90D0DFC158F06500026828E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D90D0DFA158F06500026828E /* InfoPlist.strings */; };
 		D90D0DFE158F06500026828E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D90D0DFD158F06500026828E /* main.m */; };
+		D915D64E17FAC4450026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D64F17FAC4720026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D65017FAC4730026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D65117FAC4750026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D65217FAC4760026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D65317FAC4770026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D65417FAC4790026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D65517FAC47B0026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D65617FAC47F0026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D65717FAC4810026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D65817FAC4820026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D65917FAC4840026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D65A17FAC4850026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D65B17FAC4870026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D65C17FAC4890026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D65D17FAC48B0026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D65E17FAC48C0026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D65F17FAC48E0026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D66017FAC48F0026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D66117FAC4900026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D66217FAC4920026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D66317FAC4930026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D66417FAC4C70026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D66517FAC4C80026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D66617FAC4C90026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D66717FAC4CB0026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D66817FAC4CC0026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D66917FAC4CD0026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D66A17FAC4CE0026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D66B17FAC4D00026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D66C17FAC4D10026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D66D17FAC4D30026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
+		D915D66E17FAC4D40026566C /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E63F272014E9448B0040F281 /* FBDialog.bundle */; };
 		D928245916318F6800E19A61 /* PartnerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D928245816318F6700E19A61 /* PartnerViewController.m */; };
 		D928245A16318F6800E19A61 /* PartnerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D928245816318F6700E19A61 /* PartnerViewController.m */; };
 		D928247716318F6800E19A61 /* PartnerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D928245816318F6700E19A61 /* PartnerViewController.m */; };
@@ -15456,6 +15489,7 @@
 				010DC9AF17AAEA2B004B2939 /* tw_bg_logo.png in Resources */,
 				010DC9B017AAEA2B004B2939 /* tw_bg_logo@2x.png in Resources */,
 				010DC9B117AAEA2B004B2939 /* SHKSharers.plist in Resources */,
+				D915D66517FAC4C80026566C /* FBDialog.bundle in Resources */,
 				010DC9B217AAEA2B004B2939 /* ShareKit.bundle in Resources */,
 				010DC9B317AAEA2B004B2939 /* EventCell.xib in Resources */,
 				010DC9B417AAEA2B004B2939 /* SectionCell.xib in Resources */,
@@ -15637,6 +15671,7 @@
 				01182C071779E0C300391779 /* tw_bg_logo.png in Resources */,
 				01182C081779E0C300391779 /* tw_bg_logo@2x.png in Resources */,
 				01182C091779E0C300391779 /* SHKSharers.plist in Resources */,
+				D915D65C17FAC4890026566C /* FBDialog.bundle in Resources */,
 				01182C0A1779E0C300391779 /* ShareKit.bundle in Resources */,
 				01182C0B1779E0C300391779 /* EventCell.xib in Resources */,
 				01182C0C1779E0C300391779 /* SectionCell.xib in Resources */,
@@ -15738,6 +15773,7 @@
 				0129C3A417831D31007A2D3D /* goButton.png in Resources */,
 				0129C3A517831D31007A2D3D /* goButton@2x.png in Resources */,
 				0129C3A617831D31007A2D3D /* searchTop.png in Resources */,
+				D915D65F17FAC48E0026566C /* FBDialog.bundle in Resources */,
 				0129C3A717831D31007A2D3D /* searchTop@2x.png in Resources */,
 				0129C3A817831D31007A2D3D /* searchBg.png in Resources */,
 				0129C3A917831D31007A2D3D /* searchBg@2x.png in Resources */,
@@ -15994,6 +16030,7 @@
 				012FA9371726D0A600D13ABA /* tw_bg_logo.png in Resources */,
 				012FA9381726D0A600D13ABA /* tw_bg_logo@2x.png in Resources */,
 				012FA9391726D0A600D13ABA /* SHKSharers.plist in Resources */,
+				D915D65417FAC4790026566C /* FBDialog.bundle in Resources */,
 				012FA93A1726D0A600D13ABA /* ShareKit.bundle in Resources */,
 				012FA93B1726D0A600D13ABA /* EventCell.xib in Resources */,
 				012FA93C1726D0A600D13ABA /* SectionCell.xib in Resources */,
@@ -16175,6 +16212,7 @@
 				013CD3021755532300A1290C /* tw_bg_logo.png in Resources */,
 				013CD3031755532300A1290C /* tw_bg_logo@2x.png in Resources */,
 				013CD3041755532300A1290C /* SHKSharers.plist in Resources */,
+				D915D65917FAC4840026566C /* FBDialog.bundle in Resources */,
 				013CD3051755532300A1290C /* ShareKit.bundle in Resources */,
 				013CD3061755532300A1290C /* EventCell.xib in Resources */,
 				013CD3071755532300A1290C /* SectionCell.xib in Resources */,
@@ -16356,6 +16394,7 @@
 				015CFD7F174D4D8C0094DC6E /* tw_bg_logo.png in Resources */,
 				015CFD80174D4D8C0094DC6E /* tw_bg_logo@2x.png in Resources */,
 				015CFD81174D4D8C0094DC6E /* SHKSharers.plist in Resources */,
+				D915D65817FAC4820026566C /* FBDialog.bundle in Resources */,
 				015CFD82174D4D8C0094DC6E /* ShareKit.bundle in Resources */,
 				015CFD83174D4D8C0094DC6E /* EventCell.xib in Resources */,
 				015CFD84174D4D8C0094DC6E /* SectionCell.xib in Resources */,
@@ -16537,6 +16576,7 @@
 				0166BB8717D8BAD700FF1FD7 /* tw_bg_logo.png in Resources */,
 				0166BB8817D8BAD700FF1FD7 /* tw_bg_logo@2x.png in Resources */,
 				0166BB8917D8BAD700FF1FD7 /* SHKSharers.plist in Resources */,
+				D915D66C17FAC4D10026566C /* FBDialog.bundle in Resources */,
 				0166BB8A17D8BAD700FF1FD7 /* ShareKit.bundle in Resources */,
 				0166BB8B17D8BAD700FF1FD7 /* EventCell.xib in Resources */,
 				0166BB8C17D8BAD700FF1FD7 /* SectionCell.xib in Resources */,
@@ -16718,6 +16758,7 @@
 				0166BCDC17D8C84000FF1FD7 /* tw_bg_logo.png in Resources */,
 				0166BCDD17D8C84000FF1FD7 /* tw_bg_logo@2x.png in Resources */,
 				0166BCDE17D8C84000FF1FD7 /* SHKSharers.plist in Resources */,
+				D915D66D17FAC4D30026566C /* FBDialog.bundle in Resources */,
 				0166BCDF17D8C84000FF1FD7 /* ShareKit.bundle in Resources */,
 				0166BCE017D8C84000FF1FD7 /* EventCell.xib in Resources */,
 				0166BCE117D8C84000FF1FD7 /* SectionCell.xib in Resources */,
@@ -16899,6 +16940,7 @@
 				0171C6DE178DF76100A1125E /* tw_bg_logo.png in Resources */,
 				0171C6DF178DF76100A1125E /* tw_bg_logo@2x.png in Resources */,
 				0171C6E0178DF76100A1125E /* SHKSharers.plist in Resources */,
+				D915D66017FAC48F0026566C /* FBDialog.bundle in Resources */,
 				0171C6E1178DF76100A1125E /* ShareKit.bundle in Resources */,
 				0171C6E2178DF76100A1125E /* EventCell.xib in Resources */,
 				0171C6E3178DF76100A1125E /* SectionCell.xib in Resources */,
@@ -17080,6 +17122,7 @@
 				01749B7A17B93EF100CDAF5E /* tw_bg_logo.png in Resources */,
 				01749B7B17B93EF100CDAF5E /* tw_bg_logo@2x.png in Resources */,
 				01749B7C17B93EF100CDAF5E /* SHKSharers.plist in Resources */,
+				D915D66817FAC4CC0026566C /* FBDialog.bundle in Resources */,
 				01749B7D17B93EF100CDAF5E /* ShareKit.bundle in Resources */,
 				01749B7E17B93EF100CDAF5E /* EventCell.xib in Resources */,
 				01749B7F17B93EF100CDAF5E /* SectionCell.xib in Resources */,
@@ -17261,6 +17304,7 @@
 				01804236177CA4AE005B3794 /* tw_bg_logo.png in Resources */,
 				01804237177CA4AE005B3794 /* tw_bg_logo@2x.png in Resources */,
 				01804238177CA4AE005B3794 /* SHKSharers.plist in Resources */,
+				D915D65D17FAC48B0026566C /* FBDialog.bundle in Resources */,
 				01804239177CA4AE005B3794 /* ShareKit.bundle in Resources */,
 				0180423A177CA4AE005B3794 /* EventCell.xib in Resources */,
 				0180423B177CA4AE005B3794 /* SectionCell.xib in Resources */,
@@ -17442,6 +17486,7 @@
 				0180438B177CABF6005B3794 /* tw_bg_logo.png in Resources */,
 				0180438C177CABF6005B3794 /* tw_bg_logo@2x.png in Resources */,
 				0180438D177CABF6005B3794 /* SHKSharers.plist in Resources */,
+				D915D65E17FAC48C0026566C /* FBDialog.bundle in Resources */,
 				0180438E177CABF6005B3794 /* ShareKit.bundle in Resources */,
 				0180438F177CABF6005B3794 /* EventCell.xib in Resources */,
 				01804390177CABF6005B3794 /* SectionCell.xib in Resources */,
@@ -17623,6 +17668,7 @@
 				0187A38A17A8219800DEF30D /* tw_bg_logo.png in Resources */,
 				0187A38B17A8219800DEF30D /* tw_bg_logo@2x.png in Resources */,
 				0187A38C17A8219800DEF30D /* SHKSharers.plist in Resources */,
+				D915D66317FAC4930026566C /* FBDialog.bundle in Resources */,
 				0187A38D17A8219800DEF30D /* ShareKit.bundle in Resources */,
 				0187A38E17A8219800DEF30D /* EventCell.xib in Resources */,
 				0187A38F17A8219800DEF30D /* SectionCell.xib in Resources */,
@@ -17804,6 +17850,7 @@
 				0196CFDC17960A01009B559C /* tw_bg_logo.png in Resources */,
 				0196CFDD17960A01009B559C /* tw_bg_logo@2x.png in Resources */,
 				0196CFDE17960A01009B559C /* SHKSharers.plist in Resources */,
+				D915D66117FAC4900026566C /* FBDialog.bundle in Resources */,
 				0196CFDF17960A01009B559C /* ShareKit.bundle in Resources */,
 				0196CFE017960A01009B559C /* EventCell.xib in Resources */,
 				0196CFE117960A01009B559C /* SectionCell.xib in Resources */,
@@ -17985,6 +18032,7 @@
 				0199AFFC17C2517200DEF5A5 /* tw_bg_logo.png in Resources */,
 				0199AFFD17C2517200DEF5A5 /* tw_bg_logo@2x.png in Resources */,
 				0199AFFE17C2517200DEF5A5 /* SHKSharers.plist in Resources */,
+				D915D66917FAC4CD0026566C /* FBDialog.bundle in Resources */,
 				0199AFFF17C2517200DEF5A5 /* ShareKit.bundle in Resources */,
 				0199B00017C2517200DEF5A5 /* EventCell.xib in Resources */,
 				0199B00117C2517200DEF5A5 /* SectionCell.xib in Resources */,
@@ -18086,6 +18134,7 @@
 				0199EFB117A1A26000C8B01B /* goButton.png in Resources */,
 				0199EFB217A1A26000C8B01B /* goButton@2x.png in Resources */,
 				0199EFB317A1A26000C8B01B /* searchTop.png in Resources */,
+				D915D66217FAC4920026566C /* FBDialog.bundle in Resources */,
 				0199EFB417A1A26000C8B01B /* searchTop@2x.png in Resources */,
 				0199EFB517A1A26000C8B01B /* searchBg.png in Resources */,
 				0199EFB617A1A26000C8B01B /* searchBg@2x.png in Resources */,
@@ -18342,6 +18391,7 @@
 				01A24A23176747C9006FE59C /* tw_bg_logo.png in Resources */,
 				01A24A24176747C9006FE59C /* tw_bg_logo@2x.png in Resources */,
 				01A24A25176747C9006FE59C /* SHKSharers.plist in Resources */,
+				D915D65B17FAC4870026566C /* FBDialog.bundle in Resources */,
 				01A24A26176747C9006FE59C /* ShareKit.bundle in Resources */,
 				01A24A27176747C9006FE59C /* EventCell.xib in Resources */,
 				01A24A28176747C9006FE59C /* SectionCell.xib in Resources */,
@@ -18523,6 +18573,7 @@
 				01A2934D17C6565F0070B002 /* tw_bg_logo.png in Resources */,
 				01A2934E17C6565F0070B002 /* tw_bg_logo@2x.png in Resources */,
 				01A2934F17C6565F0070B002 /* SHKSharers.plist in Resources */,
+				D915D66A17FAC4CE0026566C /* FBDialog.bundle in Resources */,
 				01A2935017C6565F0070B002 /* ShareKit.bundle in Resources */,
 				01A2935117C6565F0070B002 /* EventCell.xib in Resources */,
 				01A2935217C6565F0070B002 /* SectionCell.xib in Resources */,
@@ -18704,6 +18755,7 @@
 				01A733FA1718318E003505A5 /* tw_bg_logo.png in Resources */,
 				01A733FB1718318E003505A5 /* tw_bg_logo@2x.png in Resources */,
 				01A733FC1718318E003505A5 /* SHKSharers.plist in Resources */,
+				D915D65017FAC4730026566C /* FBDialog.bundle in Resources */,
 				01A733FD1718318E003505A5 /* ShareKit.bundle in Resources */,
 				01A733FE1718318E003505A5 /* EventCell.xib in Resources */,
 				01A733FF1718318E003505A5 /* SectionCell.xib in Resources */,
@@ -18885,6 +18937,7 @@
 				01A7354F17183FB8003505A5 /* tw_bg_logo.png in Resources */,
 				01A7355017183FB8003505A5 /* tw_bg_logo@2x.png in Resources */,
 				01A7355117183FB8003505A5 /* SHKSharers.plist in Resources */,
+				D915D65117FAC4750026566C /* FBDialog.bundle in Resources */,
 				01A7355217183FB8003505A5 /* ShareKit.bundle in Resources */,
 				01A7355317183FB8003505A5 /* EventCell.xib in Resources */,
 				01A7355417183FB8003505A5 /* SectionCell.xib in Resources */,
@@ -19066,6 +19119,7 @@
 				01B6BC00174595A6009D7A6E /* tw_bg_logo.png in Resources */,
 				01B6BC01174595A6009D7A6E /* tw_bg_logo@2x.png in Resources */,
 				01B6BC02174595A6009D7A6E /* SHKSharers.plist in Resources */,
+				D915D65717FAC4810026566C /* FBDialog.bundle in Resources */,
 				01B6BC03174595A6009D7A6E /* ShareKit.bundle in Resources */,
 				01B6BC04174595A6009D7A6E /* EventCell.xib in Resources */,
 				01B6BC05174595A6009D7A6E /* SectionCell.xib in Resources */,
@@ -19247,6 +19301,7 @@
 				01BA78E41721CECA00397BCB /* tw_bg_logo.png in Resources */,
 				01BA78E51721CECA00397BCB /* tw_bg_logo@2x.png in Resources */,
 				01BA78E61721CECA00397BCB /* SHKSharers.plist in Resources */,
+				D915D65317FAC4770026566C /* FBDialog.bundle in Resources */,
 				01BA78E71721CECA00397BCB /* ShareKit.bundle in Resources */,
 				01BA78E81721CECA00397BCB /* EventCell.xib in Resources */,
 				01BA78E91721CECA00397BCB /* SectionCell.xib in Resources */,
@@ -19428,6 +19483,7 @@
 				01C5030117B91A4D00A45D0A /* tw_bg_logo.png in Resources */,
 				01C5030217B91A4D00A45D0A /* tw_bg_logo@2x.png in Resources */,
 				01C5030317B91A4D00A45D0A /* SHKSharers.plist in Resources */,
+				D915D66717FAC4CB0026566C /* FBDialog.bundle in Resources */,
 				01C5030417B91A4D00A45D0A /* ShareKit.bundle in Resources */,
 				01C5030517B91A4D00A45D0A /* EventCell.xib in Resources */,
 				01C5030617B91A4D00A45D0A /* SectionCell.xib in Resources */,
@@ -19609,6 +19665,7 @@
 				01C743781758D13300174827 /* tw_bg_logo.png in Resources */,
 				01C743791758D13300174827 /* tw_bg_logo@2x.png in Resources */,
 				01C7437A1758D13300174827 /* SHKSharers.plist in Resources */,
+				D915D65A17FAC4850026566C /* FBDialog.bundle in Resources */,
 				01C7437B1758D13300174827 /* ShareKit.bundle in Resources */,
 				01C7437C1758D13300174827 /* EventCell.xib in Resources */,
 				01C7437D1758D13300174827 /* SectionCell.xib in Resources */,
@@ -19790,6 +19847,7 @@
 				01D527EA17A96BA40050BFE6 /* tw_bg_logo.png in Resources */,
 				01D527EB17A96BA40050BFE6 /* tw_bg_logo@2x.png in Resources */,
 				01D527EC17A96BA40050BFE6 /* SHKSharers.plist in Resources */,
+				D915D66417FAC4C70026566C /* FBDialog.bundle in Resources */,
 				01D527ED17A96BA40050BFE6 /* ShareKit.bundle in Resources */,
 				01D527EE17A96BA40050BFE6 /* EventCell.xib in Resources */,
 				01D527EF17A96BA40050BFE6 /* SectionCell.xib in Resources */,
@@ -19971,6 +20029,7 @@
 				01D8033617DA2E5C00F7751D /* tw_bg_logo.png in Resources */,
 				01D8033717DA2E5C00F7751D /* tw_bg_logo@2x.png in Resources */,
 				01D8033817DA2E5C00F7751D /* SHKSharers.plist in Resources */,
+				D915D66E17FAC4D40026566C /* FBDialog.bundle in Resources */,
 				01D8033917DA2E5C00F7751D /* ShareKit.bundle in Resources */,
 				01D8033A17DA2E5C00F7751D /* EventCell.xib in Resources */,
 				01D8033B17DA2E5C00F7751D /* SectionCell.xib in Resources */,
@@ -20152,6 +20211,7 @@
 				01DF138417D639A600C822AC /* tw_bg_logo.png in Resources */,
 				01DF138517D639A600C822AC /* tw_bg_logo@2x.png in Resources */,
 				01DF138617D639A600C822AC /* SHKSharers.plist in Resources */,
+				D915D66B17FAC4D00026566C /* FBDialog.bundle in Resources */,
 				01DF138717D639A600C822AC /* ShareKit.bundle in Resources */,
 				01DF138817D639A600C822AC /* EventCell.xib in Resources */,
 				01DF138917D639A600C822AC /* SectionCell.xib in Resources */,
@@ -20333,6 +20393,7 @@
 				01E046DE1732FDBC0082C15E /* tw_bg_logo.png in Resources */,
 				01E046DF1732FDBC0082C15E /* tw_bg_logo@2x.png in Resources */,
 				01E046E01732FDBC0082C15E /* SHKSharers.plist in Resources */,
+				D915D65617FAC47F0026566C /* FBDialog.bundle in Resources */,
 				01E046E11732FDBC0082C15E /* ShareKit.bundle in Resources */,
 				01E046E21732FDBC0082C15E /* EventCell.xib in Resources */,
 				01E046E31732FDBC0082C15E /* SectionCell.xib in Resources */,
@@ -20514,6 +20575,7 @@
 				01E9B6311729658B00BEF32B /* tw_bg_logo.png in Resources */,
 				01E9B6321729658B00BEF32B /* tw_bg_logo@2x.png in Resources */,
 				01E9B6331729658B00BEF32B /* SHKSharers.plist in Resources */,
+				D915D65517FAC47B0026566C /* FBDialog.bundle in Resources */,
 				01E9B6341729658B00BEF32B /* ShareKit.bundle in Resources */,
 				01E9B6351729658B00BEF32B /* EventCell.xib in Resources */,
 				01E9B6361729658B00BEF32B /* SectionCell.xib in Resources */,
@@ -20695,6 +20757,7 @@
 				01EBDBF51718802B00FB5BBF /* tw_bg_logo.png in Resources */,
 				01EBDBF61718802B00FB5BBF /* tw_bg_logo@2x.png in Resources */,
 				01EBDBF71718802B00FB5BBF /* SHKSharers.plist in Resources */,
+				D915D65217FAC4760026566C /* FBDialog.bundle in Resources */,
 				01EBDBF81718802B00FB5BBF /* ShareKit.bundle in Resources */,
 				01EBDBF91718802B00FB5BBF /* EventCell.xib in Resources */,
 				01EBDBFA1718802B00FB5BBF /* SectionCell.xib in Resources */,
@@ -20876,6 +20939,7 @@
 				01F3706D17AC0F3D00C783C6 /* tw_bg_logo.png in Resources */,
 				01F3706E17AC0F3D00C783C6 /* tw_bg_logo@2x.png in Resources */,
 				01F3706F17AC0F3D00C783C6 /* SHKSharers.plist in Resources */,
+				D915D66617FAC4C90026566C /* FBDialog.bundle in Resources */,
 				01F3707017AC0F3D00C783C6 /* ShareKit.bundle in Resources */,
 				01F3707117AC0F3D00C783C6 /* EventCell.xib in Resources */,
 				01F3707217AC0F3D00C783C6 /* SectionCell.xib in Resources */,
@@ -21337,6 +21401,7 @@
 				84ACB260167B5D8C002D0278 /* goButton.png in Resources */,
 				84ACB27F167B5D8C002D0278 /* goButton@2x.png in Resources */,
 				84ACB2DF167B5DED002D0278 /* searchTop.png in Resources */,
+				D915D64E17FAC4450026566C /* FBDialog.bundle in Resources */,
 				84ACB2FE167B5DED002D0278 /* searchTop@2x.png in Resources */,
 				84ACB31F167B5F1D002D0278 /* searchBg.png in Resources */,
 				84ACB33E167B5F1D002D0278 /* searchBg@2x.png in Resources */,
@@ -21466,6 +21531,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D915D64F17FAC4720026566C /* FBDialog.bundle in Resources */,
 				D9DBA40F163820CA006AE83D /* InfoPlist.strings in Resources */,
 				D9DBA417163820CB006AE83D /* Default.png in Resources */,
 				D9DBA419163820CB006AE83D /* Default@2x.png in Resources */,

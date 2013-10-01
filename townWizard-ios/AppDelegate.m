@@ -76,13 +76,17 @@ static NSString *twGAcode = @"@UA-31932515-1";
 - (void)startContainerApp
 {
     UIViewController *rootController = [[[SearchViewController alloc] init] autorelease];
-    UINavigationController *navController = [[UINavigationController alloc] initWithNavigationBarClass:[TownWizardNavigationBar class] toolbarClass:nil];
+    UINavigationController *navController = [[UINavigationController alloc] initWithNavigationBarClass:[TownWizardNavigationBar class]
+                                                                                          toolbarClass:nil];
     [navController pushViewController:rootController animated:NO];
-    // [navController release];
+
     PartnerMenuViewController *menuController = [PartnerMenuViewController new];
     menuController.delegate = (SearchViewController *)rootController;
     ((SearchViewController *)rootController).defaultMenu = menuController;
-    self.window.rootViewController = [[[MasterDetailController alloc] initWithMasterViewController:menuController detailViewController:navController] autorelease];
+    
+    MasterDetailController *masterDetails = [[MasterDetailController alloc] initWithMasterViewController:menuController
+                                                                                    detailViewController:navController];
+    self.window.rootViewController = [masterDetails autorelease];
     [navController release];
     
     //self.viewController = self.window.rootViewController;

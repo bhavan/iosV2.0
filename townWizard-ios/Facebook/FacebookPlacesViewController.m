@@ -100,22 +100,14 @@
         
         NSArray *permissions =  [NSArray arrayWithObjects:
                                  @"publish_stream",
-                                 //@"read_stream",
-                                 //@"offline_access",
                                  @"publish_checkins",
                                  @"friends_checkins", nil];
         [facebookHelper authorizePermissions:permissions for:self];
     }
-    //        [self.customNavigationBar.menuButton addTarget:self
-    //                                                action:@selector(menuButtonPressed)
-    //                                      forControlEvents:UIControlEventTouchUpInside];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
 {
-    //    [self.customNavigationBar.menuButton removeTarget:self
-    //                                               action:@selector(menuButtonPressed)
-    //                                     forControlEvents:UIControlEventTouchUpInside];
     [[AppDelegate sharedDelegate].manager stopUpdatingLocation];
     [super viewWillDisappear:animated];
 }
