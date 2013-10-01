@@ -17,6 +17,8 @@
 #import "RequestHelper.h"
 #import <MediaPlayer/MediaPlayer.h>
 
+static NSString *const kYoutubeThumbnailFormat = @"http://img.youtube.com/vi/%@/0.jpg";
+
 @interface VideosListViewController ()
     <UITableViewDataSource,
     UITableViewDelegate,
@@ -101,7 +103,7 @@
     
     Video *video = [[self videos] objectAtIndex:indexPath.row];
     cell.nameLabel.text = video.name;
-    [cell.thumbImageView setImageWithURL:[NSURL URLWithString:[video.thumb stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
+    [cell.thumbImageView setImageWithURL:[video thumbURL]];
     
     return cell;
 }

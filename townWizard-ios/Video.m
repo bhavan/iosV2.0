@@ -8,6 +8,8 @@
 
 #import "Video.h"
 
+static NSString *const kYoutubeThumbURLFormat = @"http://img.youtube.com/vi/%@/0.jpg";
+
 @implementation Video
 
 - (void)dealloc
@@ -16,6 +18,40 @@
     [_thumb release];
     [_url release];
     [super dealloc];
+}
+
+- (NSURL *)thumbURL {
+    NSString *urlString = self.thumb;
+    if (urlString == nil) {
+        NSString *youtubeVideoID = [self youtubeVideoID];
+        if ([youtubeVideoID length]) {
+            urlString = [NSString stringWithFormat:kYoutubeThumbURLFormat,youtubeVideoID];
+        }
+    }
+    
+    urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    return [NSURL URLWithString:urlString];
+}
+
+- (NSString *)youtubeVideoID {
+    NSURL *videoURL = [NSURL URLWithString:[self url]];
+    NSDictionary *queryParams = [self parseQueryString:[videoURL query]];
+    return [queryParams objectForKey:@"v"];
+}
+
+- (NSDictionary *)parseQueryString:(NSString *)query {
+    NSMutableDictionary *queryParams = [NSMutableDictionary dictionary];
+
+    NSArray *queryComponents = [query componentsSeparatedByString:@"&"];
+    for (NSString *param in queryComponents) {
+        NSArray *paramComponents = [param componentsSeparatedByString:@"="];
+        if([paramComponents count] < 2) {
+            continue;
+        }
+        [queryParams setObject:paramComponents[1] forKey:paramComponents[0]];
+    }
+    
+    return queryParams;
 }
 
 @end
