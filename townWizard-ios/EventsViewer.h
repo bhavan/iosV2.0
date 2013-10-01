@@ -27,7 +27,6 @@
     IBOutlet DDPageControlCustom *pageControl;
     IBOutlet UIView *detailsView;
     NSInteger currentEventIndex;
-    NSTimer *currentTimer;
 }
 
 @property (nonatomic, assign) BOOL isImagePresented;

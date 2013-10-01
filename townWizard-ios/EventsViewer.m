@@ -18,6 +18,7 @@
 @end
 
 static const CGFloat kEventsViewerIndicatorSpace = 11;
+static const NSTimeInterval kEventDisplayingTime = 10;
 
 @implementation EventsViewer
 
@@ -30,19 +31,23 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
     {
         [pageControl setNumberOfPages:0];
         
-        UITapGestureRecognizer *doubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showCurrentEvent)];
-        doubleTapGesture.numberOfTapsRequired = 2;
-        [self addGestureRecognizer:doubleTapGesture];
-        [doubleTapGesture release];
-        
-        UITapGestureRecognizer *singleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showNextEvent)];
-        singleTapGesture.numberOfTapsRequired = 1;
-        [singleTapGesture requireGestureRecognizerToFail:doubleTapGesture];
-
+        UITapGestureRecognizer *singleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                           action:@selector(showCurrentEvent)];
+        [singleTapGesture setNumberOfTapsRequired:1];
         [self addGestureRecognizer:singleTapGesture];
         [singleTapGesture release];
         
+        UISwipeGestureRecognizer *leftSwipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self
+                                                                                               action:@selector(showNextEvent)];
+        [leftSwipeGesture setDirection:UISwipeGestureRecognizerDirectionLeft];
+        [self addGestureRecognizer:leftSwipeGesture];
+        [leftSwipeGesture release];
         
+        UISwipeGestureRecognizer *rightSwipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self
+                                                                                                action:@selector(showPreviousEvent)];
+        [rightSwipeGesture setDirection:UISwipeGestureRecognizerDirectionRight];
+        [self addGestureRecognizer:rightSwipeGesture];
+        [rightSwipeGesture release];
     
         [eventPlace setText:nil];
         [eventName setText:nil];
@@ -62,11 +67,6 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
     [pageControl setIndicatorSpace:kEventsViewerIndicatorSpace];
 }
 
-/*- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    [self showNextEvent];
-}*/
-
 #pragma mark -
 #pragma mark public methods
 
@@ -77,12 +77,7 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
         
         [self setEvents:events];
         [pageControl setNumberOfPages:[events count]];
-        currentTimer = [NSTimer scheduledTimerWithTimeInterval:10.0f
-                                                        target:self
-                                                      selector:@selector(tickEvent)
-                                                      userInfo:nil
-                                                       repeats:YES];
-        [self displayEventAtIndex:0];    
+        [self displayEventAtIndex:0];
    }
     else
     {
@@ -123,6 +118,9 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
         currentEventIndex = eventIndex;
         [self updateTitlesWithEvent:[[self events] objectAtIndex:eventIndex]];
         [pageControl setCurrentPage:eventIndex];
+        
+        [NSObject cancelPreviousPerformRequestsWithTarget:self];
+        [self performSelector:@selector(showNextEvent) withObject:nil afterDelay:kEventDisplayingTime];
     }
 }
 
@@ -185,15 +183,14 @@ static const CGFloat kEventsViewerIndicatorSpace = 11;
 
 - (void) showPreviousEvent
 {
-    if (currentEventIndex > 0) {
-        [self displayEventAtIndex:currentEventIndex - 1];
-    }
+    NSInteger eventNumber = (currentEventIndex + self.events.count - 1) % self.events.count;
+    [self displayEventAtIndex:eventNumber];
 }
 
 - (void) dealloc
 {
-    [currentTimer invalidate];
-    currentTimer = nil;
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+
     [eventImage release];
     [eventName release];
     [eventPlace release];
