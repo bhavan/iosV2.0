@@ -54,7 +54,7 @@
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error
 {
-    NSLog(@"%@",error.description);
+    [delegate partnersLoadingFailed:error];
 }
 
 - (void) searchForPartnersWithQuery:(NSString *)query
@@ -86,8 +86,9 @@
     currentSearchQuery = query;
     query = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [[UIApplication sharedApplication] showNetworkActivityIndicator];
+
+    [self cancelRequests];
     [RequestHelper partnersWithQuery:query offset:offset andDelegate:self];
-   
 }
 
 - (void)partnersLoaded:(NSArray *)partners
@@ -139,6 +140,11 @@
     [partnersList release];
     [defaultPartner release];
     [super dealloc];
+}
+
+- (void)cancelRequests {
+    RKRequestQueue *queue = [[RKObjectManager sharedManager] requestQueue];
+    [queue cancelAllRequests];
 }
 
 

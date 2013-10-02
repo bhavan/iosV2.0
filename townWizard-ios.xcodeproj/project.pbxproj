@@ -15304,6 +15304,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0460;
+				TargetAttributes = {
+					01EBDAE01718802B00FB5BBF = {
+						DevelopmentTeam = L94VC9ZZXC;
+					};
+				};
 			};
 			buildConfigurationList = 8483F23D14D03FBE005E4216 /* Build configuration list for PBXProject "townWizard-ios" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -31163,8 +31168,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DB102DBA3B154EE8BB95DF9A /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Destin Shines, Inc.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Destin Shines, Inc.";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
@@ -31208,8 +31213,8 @@
 					UIKit,
 				);
 				PRODUCT_NAME = Destin;
-				PROVISIONING_PROFILE = "D9DDEEC4-5DCB-478C-91D5-01B7B48E864E";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D9DDEEC4-5DCB-478C-91D5-01B7B48E864E";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -31218,8 +31223,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DB102DBA3B154EE8BB95DF9A /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Destin Shines, Inc.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Destin Shines, Inc.";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
@@ -31263,8 +31268,8 @@
 					UIKit,
 				);
 				PRODUCT_NAME = Destin;
-				PROVISIONING_PROFILE = "D9DDEEC4-5DCB-478C-91D5-01B7B48E864E";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D9DDEEC4-5DCB-478C-91D5-01B7B48E864E";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -31601,8 +31606,8 @@
 					armv6,
 					"$(ARCHS_STANDARD_32_BIT)",
 				);
-				CODE_SIGN_IDENTITY = "iPhone Developer: Anton Sakharov (HHBSSF4JT8)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Anton Sakharov (HHBSSF4JT8)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -31639,8 +31644,8 @@
 					UIKit,
 				);
 				PRODUCT_NAME = TownWizard;
-				PROVISIONING_PROFILE = "35B3C06A-4914-4E9E-9EDA-7F90B36A2181";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "35B3C06A-4914-4E9E-9EDA-7F90B36A2181";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

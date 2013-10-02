@@ -23,4 +23,6 @@
                         message:(NSString *)message
              confirmButtonTitle:(NSString *)confirmTitle;
 
++ (UIAlertView *)showConnectionProblemMessage;
+
 @end

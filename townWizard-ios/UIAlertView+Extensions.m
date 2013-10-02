@@ -46,4 +46,9 @@
                       delegate:nil
             confirmButtonTitle:confirmTitle];
 }
+
++ (UIAlertView *)showConnectionProblemMessage {
+    return [self showWithTitle:@"No data connectivity" message:nil confirmButtonTitle:@"OK"];
+}
+
 @end

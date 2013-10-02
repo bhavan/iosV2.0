@@ -15,6 +15,7 @@
 #import "PartnerViewController.h"
 #import "RequestHelper.h"
 #import "UIButton+Extensions.h"
+#import "UIAlertView+Extensions.h"
 #import "UIBarButtonItem+TWButtons.h"
 
 #define ROOT_URL @"app30a"
@@ -27,6 +28,7 @@
 
 @interface SubMenuViewController ()
 @property (nonatomic,assign) BOOL webViewReloaded;
+@property (retain, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @end
 
 @implementation SubMenuViewController
@@ -167,6 +169,8 @@
 {
     webView.scalesPageToFit = YES;
     [[UIApplication sharedApplication] showNetworkActivityIndicator];
+
+    [[self activityIndicator] startAnimating];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
@@ -175,6 +179,8 @@
     [self setupLeftButton];    
     if (self.view.window) //if webView is not on screen, we are not interested in setting this
         [[UIApplication sharedApplication] setActivityindicatorToZero];
+    
+    [[self activityIndicator] stopAnimating];
 }
 
 - (BOOL)webView:(UIWebView *)webView
@@ -197,6 +203,10 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     if (![self webViewReloaded]) {
         [self setWebViewReloaded:YES];
         [self loadWebViewPage];
+    }
+    else {
+        [[self activityIndicator] stopAnimating];
+        [UIAlertView showConnectionProblemMessage];
     }
 }
 
@@ -321,12 +331,14 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 - (void)viewDidUnload
 {
     [self cleanUp];
+    [self setActivityIndicator:nil];
     [super viewDidUnload];
 }
 
 - (void)dealloc
 {
     [self cleanUp];
+    [_activityIndicator release];
     [super dealloc];
 }
 

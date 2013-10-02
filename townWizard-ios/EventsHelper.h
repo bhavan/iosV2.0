@@ -13,6 +13,8 @@
 - (void)eventsFiltered;
 - (void)didLoadFeaturedEvents:(NSArray *)events;
 - (void)bannerFounded:(NSURL *)bannerUrl;
+
+- (void)eventsLoadingFailed:(NSError *)error;
 @end
 
 @interface EventsHelper : NSObject <RKObjectLoaderDelegate>

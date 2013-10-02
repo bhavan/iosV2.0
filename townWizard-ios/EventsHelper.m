@@ -103,7 +103,7 @@ static const NSInteger kEventsAlertTag = 700;
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error
 {
-    NSLog(@"error: %@", error.localizedDescription);
+    [delegate eventsLoadingFailed:error];
 }
 
 #pragma mark -
@@ -111,7 +111,7 @@ static const NSInteger kEventsAlertTag = 700;
 
 - (void ) featuredEventsLoadingFailed:(NSError *) error
 {
-    NSLog(@"erroro = %@",error);
+    [delegate eventsLoadingFailed:error];
 }
 
 - (void) featuredEventsLoaded:(NSArray *) featuredEvents
@@ -126,12 +126,7 @@ static const NSInteger kEventsAlertTag = 700;
 
 - (void) eventsLoadingFailed:(NSError *) error
 {
-    UIAlertView *alert = [UIAlertView showWithTitle:@"Error"
-                                            message:@"Evens loading error. Do you want to try again"
-                                           delegate:self
-                                  cancelButtonTitle:@"NO"
-                                 confirmButtonTitle:@"YES"];
-    [alert setTag:kEventsAlertTag];
+    [delegate eventsLoadingFailed:error];
 }
 
 - (void) eventsLoaded:(NSArray *) events

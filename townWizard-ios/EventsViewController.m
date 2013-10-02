@@ -28,6 +28,8 @@
 @property (nonatomic, retain) NSDateFormatter *sectionDateFormatter;
 @property (nonatomic, retain)  NSArray *featuredEvents;
 
+@property (nonatomic, retain) UIAlertView *alert;
+
 - (void)setupCotrols;
 
 @end
@@ -120,12 +122,22 @@
 - (void)didLoadFeaturedEvents:(NSArray *)events
 {
     self.featuredEvents = events;
+    self.alert = nil;
+
     [featuredEventsViewer setRootView:(EventsView *)self.view];
     [featuredEventsViewer displayEvents:events];
 }
 
+- (void)eventsLoadingFailed:(NSError *)error {
+    if (self.alert == nil) {
+        self.alert = [UIAlertView showConnectionProblemMessage];
+    }
+}
+
 - (void)eventsFiltered
 {
+    self.alert = nil;
+    
     [eventsList reloadData];
 }
 

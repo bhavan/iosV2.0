@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @protocol SearchHelperDelegate <NSObject>
-
 - (void)partnersLoaded:(NSArray *)partners;
-- (void)defaultPartnerLoaded:(Partner *)defaultPartner;
+- (void)partnersLoadingFailed:(NSError *)error;
 
+- (void)defaultPartnerLoaded:(Partner *)defaultPartner;
 @end
 
 @interface SearchHelper : NSObject <

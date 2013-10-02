@@ -231,6 +231,10 @@
 
 - (BOOL)isInfoSection:(Section *)section
 {
+    if (![section isKindOfClass:[Section class]]) {
+        return NO;
+    }
+    
     section.name = [section.name stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
     NSString *lowerName = [section.name lowercaseString];
     lowerName = [lowerName stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];

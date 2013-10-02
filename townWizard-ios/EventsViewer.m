@@ -48,11 +48,6 @@ static const NSTimeInterval kEventDisplayingTime = 10;
         [rightSwipeGesture setDirection:UISwipeGestureRecognizerDirectionRight];
         [self addGestureRecognizer:rightSwipeGesture];
         [rightSwipeGesture release];
-    
-        [eventPlace setText:nil];
-        [eventName setText:nil];
-        [eventTime setText:nil];
-        [eventImage setBackgroundColor:[UIColor clearColor]];
     }
     return self;
 }
@@ -65,6 +60,11 @@ static const NSTimeInterval kEventDisplayingTime = 10;
     [detailsView setBackgroundColor:detailsViewColor];
     [eventImage setBackgroundColor:[UIColor clearColor]];
     [pageControl setIndicatorSpace:kEventsViewerIndicatorSpace];
+    
+    [eventPlace setText:nil];
+    [eventName setText:nil];
+    [eventTime setText:nil];
+    [eventImage setBackgroundColor:[UIColor clearColor]];
 }
 
 #pragma mark -

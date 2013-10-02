@@ -20,6 +20,7 @@
 #import "UITableViewCell+Spinner.h"
 #import "UIButton+Extensions.h"
 #import "UIBarButtonItem+TWButtons.h"
+#import "UIAlertView+Extensions.h"
 #import "SearchHelper.h"
 
 @interface SearchViewController()
@@ -114,9 +115,17 @@
     [self.goButton setEnabled:YES];
     [self.goButton removeSpinner];
 }
+
 - (void)defaultPartnerLoaded:(Partner *)defaultPartner
 {
      [self.defaultMenu updateWithPartner:defaultPartner];
+}
+
+- (void)partnersLoadingFailed:(NSError *)error {
+    [self.goButton setEnabled:YES];
+    [self.goButton removeSpinner];
+    
+    [UIAlertView showConnectionProblemMessage];
 }
 
 #pragma mark - TableView delegate mathods
