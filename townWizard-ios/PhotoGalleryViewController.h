@@ -23,6 +23,7 @@
 }
 
 @property (retain, nonatomic) IBOutlet AQGridView *gridView;
+@property (retain, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, retain) PhotoCategory *category;
 
 @end

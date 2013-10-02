@@ -235,5 +235,6 @@
     </objects>
     <resources>
         <image name="shadow_bot.png" width="1" height="5"/>
+        <image name="shadow_bot.png" width="1" height="5"/>
     </resources>
 </document>

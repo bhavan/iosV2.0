@@ -9,7 +9,7 @@
 #import "VideoViewController.h"
 
 @interface VideoViewController ()
-
+@property (retain, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @end
 
 @implementation VideoViewController
@@ -39,23 +39,34 @@
 }
 
 
-- (BOOL)webView:(UIWebView *)webView
-shouldStartLoadWithRequest:(NSURLRequest *)request
- navigationType:(UIWebViewNavigationType)navigationType
-{
-    return YES;
-}
-
 - (void)dealloc
 {
     [webView release];
     [videoUrl release];
+    [_activityIndicator release];
     [super dealloc];
 }
 
 - (void)viewDidUnload
 {
     [self setWebView:nil];
+    [self setActivityIndicator:nil];
     [super viewDidUnload];
 }
+
+#pragma mark - UIWebViewDelegate 
+
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+    [[self activityIndicator] startAnimating];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [[self activityIndicator] stopAnimating];
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    [[self activityIndicator] stopAnimating];
+    [UIAlertView showConnectionProblemMessage];
+}
+
 @end

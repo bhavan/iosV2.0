@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideosListViewController">
             <connections>
+                <outlet property="activityIndicator" destination="G5t-Yg-t8x" id="Kvr-L9-JmA"/>
                 <outlet property="tableView" destination="4" id="22"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
@@ -24,6 +25,10 @@
                         <outlet property="delegate" destination="-1" id="24"/>
                     </connections>
                 </tableView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="G5t-Yg-t8x">
+                    <rect key="frame" x="150" y="230" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

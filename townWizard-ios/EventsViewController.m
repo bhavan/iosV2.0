@@ -308,6 +308,7 @@
     [self setBannerButton:nil];
     [self setScrollView:nil];
     [self setTableHeader:nil];
+    [self setActivityIndicator:nil];
     [super viewDidUnload];
 }
 
@@ -322,6 +323,7 @@
     [_bannerButton release];
     [_scrollView release];
     [_tableHeader release];
+    [_activityIndicator release];
     [super dealloc];
 }
 

@@ -30,7 +30,12 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [[RequestHelper sharedInstance] loadPhotosFromCategory:[self category] delegate:self];
+    
+    if ([[self photos] count] == 0) {
+        [[RequestHelper sharedInstance] loadPhotosFromCategory:[self category] delegate:self];
+        [[self activityIndicator] startAnimating];
+    }
+    
     [[self gridView] reloadData];
 }
 
@@ -38,12 +43,14 @@
 {
     [self setCategory:nil];
     [self setGridView:nil];
+    [_activityIndicator release];
     [super dealloc];
 }
 
 - (void)viewDidUnload
 {
     [self setGridView:nil];
+    [self setActivityIndicator:nil];
     [super viewDidUnload];
 }
 
@@ -52,13 +59,14 @@
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error
 {
-    //display alert
-    NSLog(@"%@",error.description);
+    [[self activityIndicator] stopAnimating];
+    [UIAlertView showConnectionProblemMessage];
 }
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects
 {
     [self setPhotos:objects];
+    [[self activityIndicator] stopAnimating];
     [[self gridView] reloadData];
 }
 

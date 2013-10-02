@@ -14,6 +14,7 @@
 @interface VideosListViewController : UIViewController
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (retain, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, retain) Section *section;
 
 @end

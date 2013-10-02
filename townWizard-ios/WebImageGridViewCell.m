@@ -25,6 +25,9 @@
     if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier])
     {
         self.imageView = [[[UIImageView alloc] initWithFrame:CGRectZero] autorelease];
+        [self.imageView setContentMode:UIViewContentModeScaleAspectFill];
+        [self.imageView setClipsToBounds:YES];
+        
         [[self contentView] addSubview:[self imageView]];
     }
     return self;

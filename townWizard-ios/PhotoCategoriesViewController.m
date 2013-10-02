@@ -13,6 +13,7 @@
 #import "PhotoGalleryViewController.h"
 #import "ImageCell.h"
 #import "UIImageView+WebCache.h"
+#import "UIAlertView+Extensions.h"
 #import "TWBackgroundView.h"
 
 @interface PhotoCategoriesViewController ()
@@ -34,19 +35,25 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];    
-    [[RequestHelper sharedInstance] loadPhotoCategoriesWithDelegate:self];
+    
+    if ([[self categories] count] == 0) {
+        [[RequestHelper sharedInstance] loadPhotoCategoriesWithDelegate:self];
+        [[self activityIndicator] startAnimating];
+    }
 }
 
 - (void)dealloc
 {
     [self setTableView:nil];   
     [self setCategories:nil];
+    [_activityIndicator release];
     [super dealloc];
 }
 
 - (void)viewDidUnload
 {
     [self setTableView:nil];
+    [self setActivityIndicator:nil];
     [super viewDidUnload];
 }
 
@@ -55,11 +62,13 @@
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error
 {
-    NSLog(@"%@",error.description);
+    [UIAlertView showConnectionProblemMessage];
+    [[self activityIndicator] stopAnimating];
 }
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects
 {
+    [[self activityIndicator] stopAnimating];
     [self setCategories:objects];
     [[self tableView] reloadData];
 }

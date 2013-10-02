@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideoViewController">
             <connections>
+                <outlet property="activityIndicator" destination="5xf-yK-VTp" id="lDv-LW-rLw"/>
                 <outlet property="view" destination="1" id="3"/>
                 <outlet property="webView" destination="4" id="11"/>
             </connections>
@@ -23,6 +24,10 @@
                         <outlet property="delegate" destination="-1" id="12"/>
                     </connections>
                 </webView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="5xf-yK-VTp">
+                    <rect key="frame" x="150" y="230" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>

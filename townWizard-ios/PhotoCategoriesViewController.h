@@ -17,6 +17,8 @@
 }
 
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
+@property (retain, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
 @property (nonatomic, retain, readonly) NSArray *categories;
 
 @end

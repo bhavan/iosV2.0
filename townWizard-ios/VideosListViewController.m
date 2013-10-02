@@ -42,7 +42,12 @@ static NSString *const kYoutubeThumbnailFormat = @"http://img.youtube.com/vi/%@/
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self loadVideos];
+    
+    if ([[self videos] count] == 0) {
+        [self loadVideos];
+        [self.activityIndicator startAnimating];
+    }
+    
 }
 
 - (void)dealloc
@@ -50,6 +55,7 @@ static NSString *const kYoutubeThumbnailFormat = @"http://img.youtube.com/vi/%@/
     [self setSection:nil];
     [self setTableView:nil];
     [self setVideos:nil];
+    [_activityIndicator release];
     [super dealloc];
 }
 
@@ -57,6 +63,7 @@ static NSString *const kYoutubeThumbnailFormat = @"http://img.youtube.com/vi/%@/
 {
     [self setTableView:nil];
     [self setSection:nil];
+    [self setActivityIndicator:nil];
     [super viewDidUnload];
 }
 
@@ -73,13 +80,15 @@ static NSString *const kYoutubeThumbnailFormat = @"http://img.youtube.com/vi/%@/
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error
 {
-    NSLog(@"ololo %@",error.description);
+    [self.activityIndicator stopAnimating];
+    [UIAlertView showConnectionProblemMessage];
 }
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects
 {
     [self setVideos:objects];
     [[self tableView] reloadData];
+    [[self activityIndicator] stopAnimating];
 }
 
 #pragma mark -
