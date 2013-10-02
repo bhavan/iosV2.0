@@ -102,6 +102,7 @@ static MappingManager *mappingManager = nil;
     [mapping mapKeyPath:@"name" toAttribute:@"name"];
     [mapping mapKeyPath:@"phone" toAttribute:@"phone"];
     [mapping mapKeyPath:@"website" toAttribute:@"website"];
+    [mapping mapKeyPath:@"city" toAttribute:@"city"];
 
     return mapping;
 }
@@ -115,6 +116,9 @@ static MappingManager *mappingManager = nil;
     [mapping mapKeyPath:@"facebook_app_id" toAttribute:@"facebookAppId"];
     [mapping mapKeyPath:@"image" toAttribute:@"headerImageUrl"];
     [mapping mapKeyPath:@"website_url" toAttribute:@"webSiteUrl"];
+    
+    [mapping hasMany:@"locations" withMapping:[self locationMapping]];
+    
     return mapping;
     
 }

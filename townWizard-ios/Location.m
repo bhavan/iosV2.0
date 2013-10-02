@@ -19,6 +19,8 @@
     [_name release];
     [_phone release];
     [_website release];
+    [_city release];
+    
     [super dealloc];
 }
 

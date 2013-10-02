@@ -75,6 +75,8 @@
 - (void) updateWithPartner:(Partner *)updatedPartner
 {
     self.partner = updatedPartner;
+    self.trackedViewName = [[[updatedPartner locations] firstObject] city];
+    
     [[RequestHelper sharedInstance] setCurrentPartner:updatedPartner];
     [self loadPartnerSections];
     NSString *imageURLString = [[self partner] headerImageUrl];

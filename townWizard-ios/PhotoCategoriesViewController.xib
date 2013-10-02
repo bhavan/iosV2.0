@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotoCategoriesViewController">
             <connections>
-                <outlet property="activityIndicator" destination="flo-nw-can" id="wei-yg-G6P"/>
+                <outlet property="activityIndicator" destination="flo-nw-can" id="E20-2W-a3I"/>
                 <outlet property="tableView" destination="4" id="11"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>

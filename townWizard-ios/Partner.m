@@ -18,6 +18,8 @@
     [_facebookAppId release];
     [_headerImageUrl release];
     [_webSiteUrl release];
+    [_locations release];
+
     [super dealloc];
 }
 

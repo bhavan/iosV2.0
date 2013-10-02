@@ -28002,7 +28002,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -28057,7 +28058,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -28112,7 +28114,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -28167,7 +28170,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -28222,7 +28226,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -28275,7 +28280,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -28328,7 +28334,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -28383,7 +28390,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -28438,7 +28446,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -28493,7 +28502,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -28548,7 +28558,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -28603,7 +28614,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -28658,7 +28670,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -28713,7 +28726,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -28768,7 +28782,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -28823,7 +28838,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -28878,7 +28894,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -28933,7 +28950,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -28988,7 +29006,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -29043,7 +29062,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -29098,7 +29118,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -29153,7 +29174,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -29208,7 +29230,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -29263,7 +29286,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -29318,7 +29342,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -29373,7 +29398,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -29428,7 +29454,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -29483,7 +29510,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -29538,7 +29566,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -29593,7 +29622,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -29648,7 +29678,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -29701,7 +29732,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -29754,7 +29786,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -29809,7 +29842,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -29864,7 +29898,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -29919,7 +29954,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -29974,7 +30010,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -30029,7 +30066,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -30084,7 +30122,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -30139,7 +30178,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -30194,7 +30234,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -30249,7 +30290,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -30304,7 +30346,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -30359,7 +30402,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -30414,7 +30458,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -30469,7 +30514,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -30524,7 +30570,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -30579,7 +30626,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -30634,7 +30682,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -30689,7 +30738,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -30744,7 +30794,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -30799,7 +30850,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -30854,7 +30906,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -30909,7 +30962,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -30964,7 +31018,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -31019,7 +31074,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -31074,7 +31130,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -31129,7 +31186,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -31184,7 +31242,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -31239,7 +31298,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -31294,7 +31354,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -31349,7 +31410,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -31404,7 +31466,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -31457,7 +31520,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -31564,7 +31628,10 @@
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "townWizard-ios/townWizard-ios-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lGoogleAnalytics",
@@ -31616,7 +31683,10 @@
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "townWizard-ios/townWizard-ios-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lGoogleAnalytics",
@@ -31670,7 +31740,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -31723,7 +31794,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\"",
+					"\\\"$(SRCROOT)/townWizard-ios/TestFlightSDK1.1\\\"",
+					/Users/kirpichenko/Projects/townwizard/GoogleAnalytics,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",

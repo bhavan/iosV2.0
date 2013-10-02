@@ -54,6 +54,7 @@
 {
     [self setTableView:nil];
     [self setActivityIndicator:nil];
+    [self setActivityIndicator:nil];
     [super viewDidUnload];
 }
 

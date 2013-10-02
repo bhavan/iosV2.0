@@ -24,6 +24,7 @@
 #define DEFAULT_PARTNER_NAME @"TownWizardApps"
 #define TOKEN_KEY @"X-ACCESS-TOKEN"
 
+#import "GAI.h"
 #import "RequestHelper.h"
 #import "UIView+Extensions.h"
 #import "UIAlertView+Extensions.h"

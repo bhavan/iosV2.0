@@ -11,7 +11,7 @@
 @class PhotoUploadView;
 @class Partner;
 
-@interface BaseUploadViewController : UIViewController <UIActionSheetDelegate,
+@interface BaseUploadViewController : GAITrackedViewController <UIActionSheetDelegate,
 UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 {
     PhotoUploadView *uploadView;

@@ -21,7 +21,7 @@
 - (void) changePartnerButtonTapped;
 @end
 
-@interface PartnerMenuViewController : UIViewController
+@interface PartnerMenuViewController : GAITrackedViewController
 {
     IBOutlet UIActivityIndicatorView *activityIndicator;
     IBOutlet UITableView *sectionsList;

@@ -13,7 +13,6 @@
 #import "SHKConfiguration.h"
 #import "TWShareKitConfigurator.h"
 #import "PartnerViewController.h"
-#import "GAI.h"
 #import <RestKit/RestKit.h>
 #import "Appirater.h"
 #import "Reachability.h"
@@ -34,7 +33,8 @@
 
 static NSString *partnerId = @"1";
 static NSString* teamToken = @"5c115b5c0ce101b8b0367b329e68db27_MzE2NjMyMDExLTExLTA3IDAzOjQ5OjEyLjkyNjU4Ng";
-static NSString *twGAcode = @"@UA-31932515-1";
+static NSString *twGAcode = @"UA-31932515-2";
+
 
 @synthesize viewController = _viewController;
 @synthesize facebookHelper=_facebookHelper;

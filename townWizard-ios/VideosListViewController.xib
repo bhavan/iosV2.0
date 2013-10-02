@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideosListViewController">
             <connections>
-                <outlet property="activityIndicator" destination="G5t-Yg-t8x" id="Kvr-L9-JmA"/>
+                <outlet property="activityIndicator" destination="G5t-Yg-t8x" id="YzG-P6-Dzm"/>
                 <outlet property="tableView" destination="4" id="22"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
