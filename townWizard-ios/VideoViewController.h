@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VideoViewController : UIViewController <UIWebViewDelegate>
+@interface VideoViewController : GAITrackedViewController <UIWebViewDelegate>
 {
     UIWebView *webView;
 }

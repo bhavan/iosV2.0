@@ -123,16 +123,13 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     [aTableView deselectRowAtIndexPath:indexPath animated:NO];
 
     Video *video = [[self videos] objectAtIndex:indexPath.row];
-    VideoViewController *subMenu = [[VideoViewController new] autorelease];
-    subMenu.videoUrl = video.url;    
-    [self.navigationController pushViewController:subMenu animated:YES];
+    NSString *trackedViewName = [[self trackedViewName] stringByAppendingFormat:@" : %@", [video name]];
     
-//    NSURL *videoURL = [NSURL URLWithString:[video url]];
-//    MPMoviePlayerController *controller = [[MPMoviePlayerController alloc] initWithContentURL:videoURL];
-//    [[controller view] setFrame:[[self view] bounds]];
-//    [[self view] addSubview:[controller view]];
-//    [controller play];
-//    [controller release];
+    VideoViewController *controller = [[VideoViewController new] autorelease];
+    controller.videoUrl = video.url;
+    controller.trackedViewName = trackedViewName;
+
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end

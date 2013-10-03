@@ -48,7 +48,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.trackedViewName = @"Events screen";
+
     [self setupCotrols];
     eventsHelper = [[EventsHelper alloc] initWithDelegate:self];
     [eventsHelper loadEventsData];
@@ -82,11 +82,15 @@
 
 - (void)eventTouched:(Event *)event
 {
-    EventDetailsViewController *eventDetails = [EventDetailsViewController new];
+    NSString *trackedViewName = [[self trackedViewName] stringByAppendingFormat:@" : %@", [event title]];
+
+    EventDetailsViewController *eventDetails = [[EventDetailsViewController new] autorelease];
+    [eventDetails setTrackedViewName:trackedViewName];
     [eventDetails loadWithEvent:event];
+
     [self.navigationController pushViewController:eventDetails animated:YES];
+    
     [eventDetails updateBannerImage:_bannerImageView.image urlString:eventsHelper.bannerUrlString];
-    [eventDetails release];
 }
 
 - (IBAction)bannerButtonPressed:(id)sender

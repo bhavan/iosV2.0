@@ -11,7 +11,7 @@
 @class Partner;
 @class Section;
 
-@interface VideosListViewController : UIViewController
+@interface VideosListViewController : GAITrackedViewController
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (retain, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;

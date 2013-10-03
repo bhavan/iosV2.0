@@ -10,8 +10,8 @@
 #import "EventsViewer.h"
 #import "GAITrackedViewController.h"
 #import "EventsHelper.h"
-@class EventsViewer;
 
+@class EventsViewer;
 
 @interface EventsViewController : GAITrackedViewController <UIPickerViewDelegate, UIPickerViewDataSource, UIActionSheetDelegate,
     EventViewerDelegate,

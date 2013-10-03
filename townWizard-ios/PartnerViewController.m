@@ -146,14 +146,33 @@
     if (![currentSection isEqual:section])
     {
         [[RequestHelper sharedInstance] setCurrentSection:section];
-         UIViewController *controller = [[self sectionControllerFactory] sectionControllerForSection:section];
-        [[self detailsController] setViewControllers:[NSArray arrayWithObject:controller] animated:NO];
-        [(TownWizardNavigationBar *)[_detailsController navigationBar]
-         updateTitleText:[section displayName]];
-        UIBarButtonItem *menuButton = [UIBarButtonItem menuButtonWithTarget:self
-                                                                     action:@selector(toggleMasterView)];
-        [[(id)controller navigationItem] setLeftBarButtonItem:menuButton];
+        
+        UIViewController *controller = [self controllerForSection:section];
+        UINavigationController *navigationController = [self detailsController];
+        [navigationController setViewControllers:@[controller] animated:NO];
+
+        TownWizardNavigationBar *navigationBar = (TownWizardNavigationBar *)[[self detailsController] navigationBar];
+        [navigationBar updateTitleText:[section displayName]];
+        
+        UIBarButtonItem *menuButton = [UIBarButtonItem menuButtonWithTarget:self action:@selector(toggleMasterView)];
+        [[controller navigationItem] setLeftBarButtonItem:menuButton];
     }
+}
+
+- (UIViewController *)controllerForSection:(Section *)section {
+    UIViewController *controller = [[self sectionControllerFactory] sectionControllerForSection:section];
+
+    if ([controller isKindOfClass:[GAITrackedViewController class]]) {
+        Partner *partner = [[RequestHelper sharedInstance] currentPartner];
+        
+        NSString *cityName = [[[partner locations] firstObject] city];
+        NSString *sectionName = [section name];
+        NSString *trackedViewName = [NSString stringWithFormat:@"%@ : %@", cityName, sectionName];
+        
+        [(GAITrackedViewController *)controller setTrackedViewName:trackedViewName];
+    }
+    
+    return controller;
 }
 
 - (BOOL)prefersStatusBarHidden {

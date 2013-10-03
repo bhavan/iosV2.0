@@ -105,8 +105,13 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
+    PhotoCategory *category = [[self categories] objectAtIndex:indexPath.row];
+    NSString *trackedViewName = [[self trackedViewName] stringByAppendingFormat:@" : %@", [category name]];
+    
     PhotoGalleryViewController *controller = [[PhotoGalleryViewController new] autorelease];
-    [controller setCategory:[[self categories] objectAtIndex:indexPath.row]];
+    [controller setCategory:category];
+    [controller setTrackedViewName:trackedViewName];
+    
     [[self navigationController] pushViewController:controller animated:YES];
 }
 
