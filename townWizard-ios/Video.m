@@ -20,16 +20,9 @@ static NSString *const kYoutubeThumbURLFormat = @"http://img.youtube.com/vi/%@/0
     [super dealloc];
 }
 
-- (NSURL *)thumbURL {
-    NSString *urlString = self.thumb;
-    if (urlString == nil) {
-        NSString *youtubeVideoID = [self youtubeVideoID];
-        if ([youtubeVideoID length]) {
-            urlString = [NSString stringWithFormat:kYoutubeThumbURLFormat,youtubeVideoID];
-        }
-    }
-    
-    urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+- (NSURL *)youtubeThumbURL {
+    NSString *youtubeVideoID = [self youtubeVideoID];
+    NSString *urlString = [NSString stringWithFormat:kYoutubeThumbURLFormat,youtubeVideoID];
     return [NSURL URLWithString:urlString];
 }
 

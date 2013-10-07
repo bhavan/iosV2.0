@@ -14,6 +14,6 @@
 @property (nonatomic, retain) NSString *thumb;
 @property (nonatomic, retain) NSString *url;
 
-- (NSURL *)thumbURL;
+@property (nonatomic, retain) NSURL *youtubeThumbURL;
 
 @end

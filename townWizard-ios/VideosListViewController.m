@@ -112,7 +112,7 @@ static NSString *const kYoutubeThumbnailFormat = @"http://img.youtube.com/vi/%@/
     
     Video *video = [[self videos] objectAtIndex:indexPath.row];
     cell.nameLabel.text = video.name;
-    [cell.thumbImageView setImageWithURL:[video thumbURL]];
+    [cell.thumbImageView setImageWithURL:[video youtubeThumbURL]];
     
     return cell;
 }
