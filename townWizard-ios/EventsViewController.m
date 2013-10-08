@@ -82,15 +82,35 @@
 
 - (void)eventTouched:(Event *)event
 {
-    NSString *trackedViewName = [[self trackedViewName] stringByAppendingFormat:@" : %@", [event title]];
+    [self openEvent:event];
+    [self trackFeaturedEventOpening:event];
+}
 
+// track featured event tap
+- (void)trackFeaturedEventOpening:(Event *)event {
+    Partner *partner = [[RequestHelper sharedInstance] currentPartner];
+    NSString *cityName = [[[partner locations] firstObject] city];
+    NSString *eventName = [event title];
+    
+    if ([cityName length]) {
+        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+        [tracker trackEventWithCategory:cityName withAction:@"featured-event"
+                              withLabel:eventName withValue:nil];
+    }
+}
+
+
+- (void)openEvent:(Event *)event {
+    NSString *trackedViewName = [[self trackedViewName] stringByAppendingFormat:@" : %@", [event title]];
+    
     EventDetailsViewController *eventDetails = [[EventDetailsViewController new] autorelease];
     [eventDetails setTrackedViewName:trackedViewName];
     [eventDetails loadWithEvent:event];
-
+    
     [self.navigationController pushViewController:eventDetails animated:YES];
     
     [eventDetails updateBannerImage:_bannerImageView.image urlString:eventsHelper.bannerUrlString];
+
 }
 
 - (IBAction)bannerButtonPressed:(id)sender
@@ -286,7 +306,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self eventTouched:[eventsHelper eventForIndexPath:indexPath]];
+    [self openEvent:[eventsHelper eventForIndexPath:indexPath]];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section

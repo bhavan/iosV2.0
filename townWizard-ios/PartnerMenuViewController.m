@@ -17,6 +17,7 @@
 #import "ActivityImageView.h"
 #import "FacebookHelper.h"
 #import "AppDelegate.h"
+
 #define ABOUT_SECTION_NAME @"about us"
 #define HELP_SETCION_NAME @"help & support"
 #define ADVERTISE_SECTION_NAME @"advertise with us"
@@ -78,7 +79,10 @@
     self.trackedViewName = [[[updatedPartner locations] firstObject] city];
     
     [[RequestHelper sharedInstance] setCurrentPartner:updatedPartner];
+
     [self loadPartnerSections];
+    [self trackPartnersInfoDisplayingGoogleAnalyticsEvent];
+    
     NSString *imageURLString = [[self partner] headerImageUrl];
     if (imageURLString && ![imageURLString isEqualToString:@""])
     {
@@ -194,6 +198,17 @@
     
     [[RequestHelper sharedInstance] setCurrentPartner:partner];
     [self loadPartnerSections];
+}
+
+- (void)trackPartnersInfoDisplayingGoogleAnalyticsEvent {
+    Partner *partner = [[RequestHelper sharedInstance] currentPartner];
+    NSString *cityName = [[[partner locations] firstObject] city];
+    
+    if ([cityName length]) {
+        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+        [tracker trackEventWithCategory:cityName withAction:@"splash-screen"
+                              withLabel:@"Show partner info" withValue:nil];
+    }    
 }
 
 - (void) sectionsLoaded:(NSArray *) sections

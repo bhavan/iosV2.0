@@ -51,7 +51,7 @@ const CGFloat kGHRevealSidebarFlickVelocity = 1000.0f;
 
 - (void) dealloc
 {
-    [_masterView release];
+    [_masterView release];          
     [_detailView release];    
     [super dealloc];
 }
@@ -61,7 +61,21 @@ const CGFloat kGHRevealSidebarFlickVelocity = 1000.0f;
 - (void) toggleMasterView
 {
     [self showMaster:!self.masterVisible];
+    [self trackMenuButtonTappingGoogleAnalyticsEvent];
 }
+
+// track menu button tap as google analytics event
+- (void)trackMenuButtonTappingGoogleAnalyticsEvent {
+    Partner *partner = [[RequestHelper sharedInstance] currentPartner];
+    NSString *cityName = [[[partner locations] firstObject] city];
+    
+    if ([cityName length]) {
+        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+        [tracker trackEventWithCategory:cityName withAction:@"menu-button-clicked"
+                              withLabel:@"Menu button clicked" withValue:nil];
+    }
+}
+
 
 - (void) changeDetailView:(UIViewController *)detailController
 {
