@@ -88,15 +88,10 @@
 
 // track featured event tap
 - (void)trackFeaturedEventOpening:(Event *)event {
-    Partner *partner = [[RequestHelper sharedInstance] currentPartner];
-    NSString *cityName = [[[partner locations] firstObject] city];
-    NSString *eventName = [event title];
-    
-    if ([cityName length]) {
-        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-        [tracker trackEventWithCategory:cityName withAction:@"featured-event"
-                              withLabel:eventName withValue:nil];
-    }
+    GoogleAnalyticsEvent *analyticsEvent = [[GoogleAnalyticsEvent new] autorelease];
+    [analyticsEvent setEventName:@"featured-event"];
+    [analyticsEvent setEventDescription:[event title]];
+    [analyticsEvent send];
 }
 
 

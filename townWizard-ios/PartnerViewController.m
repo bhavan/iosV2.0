@@ -130,6 +130,17 @@
 {
     [self displayControllerForSection:section];    
     [self toggleMasterView];
+    
+    Section *currentSection = [[RequestHelper sharedInstance] currentSection];
+    [self trackSectionTap:currentSection];
+}
+
+- (void)trackSectionTap:(Section *)section
+{
+    GoogleAnalyticsEvent *analyticsEvent = [[GoogleAnalyticsEvent new] autorelease];
+    [analyticsEvent setEventName:@"menu-item-clicked"];
+    [analyticsEvent setEventDescription:[section name]];
+    [analyticsEvent send];
 }
 
 - (void) changePartnerButtonTapped

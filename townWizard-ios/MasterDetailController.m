@@ -66,14 +66,10 @@ const CGFloat kGHRevealSidebarFlickVelocity = 1000.0f;
 
 // track menu button tap as google analytics event
 - (void)trackMenuButtonTappingGoogleAnalyticsEvent {
-    Partner *partner = [[RequestHelper sharedInstance] currentPartner];
-    NSString *cityName = [[[partner locations] firstObject] city];
-    
-    if ([cityName length]) {
-        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-        [tracker trackEventWithCategory:cityName withAction:@"menu-button-clicked"
-                              withLabel:@"Menu button clicked" withValue:nil];
-    }
+    GoogleAnalyticsEvent *analyticsEvent = [[GoogleAnalyticsEvent new] autorelease];
+    [analyticsEvent setEventName:@"menu-button-clicked"];
+    [analyticsEvent setEventDescription:@"Menu button clicked"];
+    [analyticsEvent send];
 }
 
 

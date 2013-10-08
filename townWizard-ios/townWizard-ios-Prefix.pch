@@ -29,5 +29,6 @@
     #import "UIAlertView+Extensions.h"
     #import "MappingManager.h"
     #import "AppActionsHelper.h"
+    #import "GoogleAnalyticsEvent.h"
 
 #endif

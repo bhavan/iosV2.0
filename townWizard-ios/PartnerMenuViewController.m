@@ -201,14 +201,10 @@
 }
 
 - (void)trackPartnersInfoDisplayingGoogleAnalyticsEvent {
-    Partner *partner = [[RequestHelper sharedInstance] currentPartner];
-    NSString *cityName = [[[partner locations] firstObject] city];
-    
-    if ([cityName length]) {
-        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-        [tracker trackEventWithCategory:cityName withAction:@"splash-screen"
-                              withLabel:@"Show partner info" withValue:nil];
-    }    
+    GoogleAnalyticsEvent *analyticsEvent = [[GoogleAnalyticsEvent new] autorelease];
+    [analyticsEvent setEventName:@"splash-screen"];
+    [analyticsEvent setEventDescription:@"Show partner info"];
+    [analyticsEvent send];
 }
 
 - (void) sectionsLoaded:(NSArray *) sections
