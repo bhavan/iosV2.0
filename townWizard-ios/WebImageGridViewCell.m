@@ -25,6 +25,8 @@
     if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier])
     {
         self.imageView = [[[UIImageView alloc] initWithFrame:CGRectZero] autorelease];
+
+        //Save images ratio during drawing
         [self.imageView setContentMode:UIViewContentModeScaleAspectFill];
         [self.imageView setClipsToBounds:YES];
         

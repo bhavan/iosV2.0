@@ -31,18 +31,21 @@ static const NSTimeInterval kEventDisplayingTime = 10;
     {
         [pageControl setNumberOfPages:0];
         
+        //notify delegate that event was taped
         UITapGestureRecognizer *singleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                            action:@selector(showCurrentEvent)];
         [singleTapGesture setNumberOfTapsRequired:1];
         [self addGestureRecognizer:singleTapGesture];
         [singleTapGesture release];
         
+        //swipe left to show next event
         UISwipeGestureRecognizer *leftSwipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self
                                                                                                action:@selector(showNextEvent)];
         [leftSwipeGesture setDirection:UISwipeGestureRecognizerDirectionLeft];
         [self addGestureRecognizer:leftSwipeGesture];
         [leftSwipeGesture release];
         
+        //swipe right to show previous event
         UISwipeGestureRecognizer *rightSwipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self
                                                                                                 action:@selector(showPreviousEvent)];
         [rightSwipeGesture setDirection:UISwipeGestureRecognizerDirectionRight];

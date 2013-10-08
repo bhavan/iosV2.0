@@ -87,7 +87,10 @@
     query = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [[UIApplication sharedApplication] showNetworkActivityIndicator];
 
+    //cancel previous request before new one starts
+    //applications shouldn't receive results of the previous search
     [self cancelRequests];
+    
     [RequestHelper partnersWithQuery:query offset:offset andDelegate:self];
 }
 

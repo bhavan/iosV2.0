@@ -248,6 +248,7 @@
 
 - (BOOL)isInfoSection:(Section *)section
 {
+    //sometimes method called wiht object of non Section class
     if (![section isKindOfClass:[Section class]]) {
         return NO;
     }
