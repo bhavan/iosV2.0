@@ -23,6 +23,9 @@
 #define ADVERTISE_SECTION_NAME @"advertise with us"
 #define CONTACTUS_SECTION_NAME @"contact us"
 
+static NSInteger const kPartnerDetailsLoadingFailed = 500;
+static NSInteger const kPartnerSectionsLoadingFailed = 501;
+
 @interface PartnerMenuViewController () <UITableViewDelegate, UITableViewDataSource>
 @end
 
@@ -43,9 +46,11 @@
 
 - (void) viewDidLoad
 {
+    [super viewDidLoad];
+
     self.view.backgroundColor = [UIColor lightGrayColor];
   
-    [super viewDidLoad];
+    
     CGRect bgFrame = self.view.frame;
     bgFrame.origin = CGPointZero;
     [[AppActionsHelper sharedInstance] putTWBackgroundWithFrame:bgFrame
@@ -72,6 +77,35 @@
                                                          toView:self.view];
 
 }
+
+- (void)viewDidUnload
+{
+    [sectionsList release]; sectionsList = nil;
+    [activityIndicator release]; activityIndicator = nil;
+    [searchField release]; searchField = nil;
+    [partnerLogo release]; partnerLogo = nil;
+    
+    [self setHeaderView:nil];
+    
+    [super viewDidUnload];
+}
+
+- (void)dealloc
+{
+    [activityIndicator release];
+    [sectionsList release];
+    [searchField release];
+    [partnerLogo release];
+    
+    [menu release];
+    
+    [self setHeaderView:nil];
+    [self setPartner:nil];
+    
+    [super dealloc];
+}
+
+#pragma mark - load partner info
 
 - (void) updateWithPartner:(Partner *)updatedPartner
 {
@@ -115,71 +149,50 @@
     }
 }
 
-
-- (void)viewDidUnload
-{
-    [sectionsList release];
-    sectionsList = nil;
-    [activityIndicator release];
-    activityIndicator = nil;
-    [searchField release];
-    searchField = nil;
-    [partnerLogo release];
-    partnerLogo = nil;
-    [self setHeaderView:nil];
-    
-    [super viewDidUnload];
-}
-
-- (void)dealloc
-{
-    [activityIndicator release];
-    [sectionsList release];
-    [searchField release];
-    [partnerLogo release];
-    [menu release];
-    [_headerView release];
-
-    [super dealloc];
-}
-
-
-#pragma mark -
-#pragma mark autorotation
+#pragma mark - appearance
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma mark -
-#pragma mark loading
+#pragma mark - load partner details
 
 - (void) loadPartnerDetails
 {
+    NSLog(@"load11");
 #ifdef PARTNER_ID
-    [[RequestHelper sharedInstance] loadPartnerDetails:[NSString stringWithFormat:@"%d",PARTNER_ID]
-                                            usingBlock:^(RKObjectLoader *loader) {
-                                                [loader setOnDidLoadObject:^(id object){
-                                                    [self partnerDetailsLoaded:object];
-                                                }];
-                                            }];
+    id successBlock = ^(id object) {
+        [self partnerDetailsLoaded:object];
+    };
+    
+    id failureBlock = ^(NSError *error) {
+        [self showLoadingErrorWithTag:kPartnerDetailsLoadingFailed];
+    };
+    
+    RequestHelper *helper = [RequestHelper sharedInstance];
+    [helper loadPartnerDetails:[NSString stringWithFormat:@"%d",PARTNER_ID]
+                    usingBlock:^(RKObjectLoader *loader) {
+                        [loader setOnDidLoadObject:successBlock];
+                        [loader setOnDidFailLoadWithError:failureBlock];
+                    }];
 #endif
 }
 
 - (void) loadPartnerSections
 {
-    [[RequestHelper sharedInstance] loadSectionsUsingBlock:^(RKObjectLoader *loader)
-     {
-         [loader setOnDidLoadObjects:^(NSArray *objects)
-          {
-              [self sectionsLoaded:objects];
-          }];
-         [loader setOnDidFailWithError:^(NSError *error)
-          {
-              NSLog(@"%@",error.localizedDescription);
-              [self changePartnerButtonPressed:nil];
-          }];
+    id successBlock = ^(NSArray *objects) {
+        [self sectionsLoaded:objects];
+    };
+    
+    id failureBlock = ^(NSError *error) {
+        [self showLoadingErrorWithTag:kPartnerSectionsLoadingFailed];
+    };
+    
+    RequestHelper *helper = [RequestHelper sharedInstance];
+    [helper loadSectionsUsingBlock:^(RKObjectLoader *loader) {
+         [loader setOnDidLoadObjects:successBlock];
+         [loader setOnDidFailLoadWithError:failureBlock];
      }];
 }
 
@@ -197,14 +210,6 @@
     [AppDelegate sharedDelegate].facebookHelper.appId = partner.facebookAppId;
     
     [[RequestHelper sharedInstance] setCurrentPartner:partner];
-    [self loadPartnerSections];
-}
-
-- (void)trackPartnersInfoDisplayingGoogleAnalyticsEvent {
-    GoogleAnalyticsEvent *analyticsEvent = [[GoogleAnalyticsEvent new] autorelease];
-    [analyticsEvent setEventName:@"splash-screen"];
-    [analyticsEvent setEventDescription:@"Show partner info"];
-    [analyticsEvent send];
 }
 
 - (void) sectionsLoaded:(NSArray *) sections
@@ -330,52 +335,14 @@
 }
 
 #pragma mark -
-#pragma mark UITextFieldDelegate methods
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    if ([textField isFirstResponder])
-    {
-        [textField resignFirstResponder];
-    }
-    return YES;
-}
-
-#pragma mark -
-#pragma mark UIScrollViewDelegate methods
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    if ([searchField isFirstResponder])
-    {
-        [searchField resignFirstResponder];
-    }
-}
-
-#pragma mark -
 #pragma mark test
 
-- (NSArray *) predefinedSectionsNames
+- (NSArray *)predefinedSectionsNames
 {
-    return @[
-             //            @"News Feed",
-             //            @"Events",
-             //            @"Offers",
-             //            @"Nightlife",
-             //            @"Entertainment",
-             //            @"Town Dirrectory",
-             //            @"Your Profile",
-             //            @"Your Saved Items",
-             //            @"Settings & Preferences",
-             //            @"Best in Town Lists",
-             //            @"Talk of the Town Blog",
-             //            @"Ratings & Reviews",
-             //            @"Check-ins & Hotspots",
-             @"Help & Support",
+    return @[@"Help & Support",
              @"About TownWizard",
              @"Advertise with TownWizard",
-             @"Contact TownWizard"
-             ];
+             @"Contact TownWizard"];
 }
 
 - (NSString *) categoryName:(NSNumber *) categoryIndex
@@ -405,6 +372,51 @@
         [section release];
     }
     return sections;
+}
+
+#pragma amrk - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (![self isPartnerApplication] && buttonIndex == 0) {
+        [self changePartnerButtonPressed:nil];
+    }
+    else {
+        [self reloadDataWithTag:[alertView tag]];
+    }
+}
+
+#pragma mark - private methods
+
+- (BOOL)isPartnerApplication {
+    return PARTNER_ID;
+}
+
+- (void)showLoadingErrorWithTag:(NSInteger)tag {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No data connectivity"
+                                                    message:@"Do you want to retry?"
+                                                   delegate:self
+                                          cancelButtonTitle:[self isPartnerApplication] ? nil : @"Cancel"
+                                          otherButtonTitles:@"Retry", nil];
+    [alert setTag:tag];
+    [alert show];
+    
+    [alert release];
+}
+
+- (void)reloadDataWithTag:(NSInteger)tag {
+    if (tag == kPartnerDetailsLoadingFailed) {
+        [self loadPartnerDetails];
+    }
+    else if (tag == kPartnerSectionsLoadingFailed) {
+        [self loadPartnerSections];
+    }
+}
+
+- (void)trackPartnersInfoDisplayingGoogleAnalyticsEvent {
+    GoogleAnalyticsEvent *analyticsEvent = [[GoogleAnalyticsEvent new] autorelease];
+    [analyticsEvent setEventName:@"splash-screen"];
+    [analyticsEvent setEventDescription:@"Show partner info"];
+    [analyticsEvent send];
 }
 
 @end

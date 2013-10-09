@@ -27,7 +27,6 @@
 #define CALL_URL @"makecall"
 
 @interface SubMenuViewController ()
-@property (nonatomic,assign) BOOL webViewReloaded;
 @property (retain, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @end
 
@@ -48,18 +47,18 @@
 }
 
 - (void)loadWebViewPage {
+    NSString *urlString = self.url;
     Section *section = [[RequestHelper sharedInstance] currentSection];
+
     if(section)
     {
-        NSString *urlString = [self urlFromSection:section];
-        NSURL *url = [NSURL URLWithString:urlString];
-        NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-        [[self webView] loadRequest:request];
+        urlString = [self urlFromSection:section];
     }
-    else if(self.url)
-    {
-        [[self webView] loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.url]]];
-    }
+    
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url cachePolicy:NSURLCacheStorageNotAllowed
+                                            timeoutInterval:15];
+    [[self webView] loadRequest:urlRequest];
 }
 
 - (NSString *)urlFromSection:(Section*)section
@@ -168,18 +167,13 @@
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
     webView.scalesPageToFit = YES;
-    [[UIApplication sharedApplication] showNetworkActivityIndicator];
 
-    [[self activityIndicator] startAnimating];
+    [[self activityIndicator] stopAnimating];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    [self setWebViewReloaded:NO];
-    [self setupLeftButton];    
-    if (self.view.window) //if webView is not on screen, we are not interested in setting this
-        [[UIApplication sharedApplication] setActivityindicatorToZero];
-    
+    [self setupLeftButton];
     [[self activityIndicator] stopAnimating];
 }
 
@@ -188,6 +182,8 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
  navigationType:(UIWebViewNavigationType)navigationType
 {
     [self setupLeftButton];
+    [[self activityIndicator] startAnimating];
+    
     NSString *requestString = [[request URL] absoluteString];
 	NSArray *components = [requestString componentsSeparatedByString:@":"];    
     if ([components count] >= 2)
@@ -200,14 +196,8 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    if (![self webViewReloaded]) {
-        [self setWebViewReloaded:YES];
-        [self loadWebViewPage];
-    }
-    else {
-        [[self activityIndicator] stopAnimating];
-        [UIAlertView showConnectionProblemMessage];
-    }
+    [[self activityIndicator] stopAnimating];
+    [UIAlertView showConnectionProblemMessage];
 }
 
 - (BOOL)parseUrlComponents:(NSArray *)components
