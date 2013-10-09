@@ -57,7 +57,7 @@
     
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url cachePolicy:NSURLCacheStorageNotAllowed
-                                            timeoutInterval:15];
+                                            timeoutInterval:20.];
     [[self webView] loadRequest:urlRequest];
 }
 

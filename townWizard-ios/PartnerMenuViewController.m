@@ -388,7 +388,11 @@ static NSInteger const kPartnerSectionsLoadingFailed = 501;
 #pragma mark - private methods
 
 - (BOOL)isPartnerApplication {
-    return PARTNER_ID;
+#ifdef PARTNER_ID
+    return YES;
+#else
+    return NO;
+#endif
 }
 
 - (void)showLoadingErrorWithTag:(NSInteger)tag {
