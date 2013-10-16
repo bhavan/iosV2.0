@@ -64,12 +64,6 @@ static NSString *twGAcode = @"UA-31932515-2";
     [Appirater setDebug:NO];
     [Appirater appLaunched:YES];
     
-
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(reachabilityDidChangedMethod)
-                                                 name:kReachabilityChangedNotification
-                                               object:nil];
-    [self reachabilityDidChangedMethod];
     return YES;
 }
 
@@ -122,27 +116,9 @@ static NSString *twGAcode = @"UA-31932515-2";
     [[GAI sharedInstance] trackerWithTrackingId:twGAcode];
 }
 
-- (void)reachabilityDidChangedMethod
-{
-    Reachability *reachability = [Reachability reachabilityForInternetConnection];
-    NetworkStatus internetStatus = [reachability currentReachabilityStatus];
-    if (internetStatus == NotReachable)
-    {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"No Data Connection Available"
-                                                            message:nil
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"Ok"
-                                                  otherButtonTitles:nil, nil];
-        [alertView show];
-
-    }
-}
-
-
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     [Appirater appEnteredForeground:YES];
-    [self reachabilityDidChangedMethod];
 }
 
 -(NSString*) latitude
