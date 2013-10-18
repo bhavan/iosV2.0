@@ -37,9 +37,6 @@
                                 0);
     CGGradientRelease(gradient);
     CGColorSpaceRelease(colorSpace);
-    
-    UIImage *logo = [UIImage imageNamed:@"tw_bg_logo"];
-    [logo drawAtPoint:CGPointMake(40, 180)];
 }
 
 - (void)dealloc
