@@ -9,6 +9,8 @@
 #import "PhotoUploadView.h"
 #import "EventSectionHeader.h"
 
+#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+
 @interface PhotoUploadView ()
 @property (nonatomic, retain) UIButton *uploadButton;
 
@@ -25,7 +27,15 @@
 
 - (id)init
 {
-    self = [super initWithFrame:CGRectMake(0, 0, 320, 34)];
+    if (SYSTEM_VERSION_LESS_THAN(@"7.0")) // ios 6 and lower
+    {
+        self = [super initWithFrame:CGRectMake(0, 0, 320, 34)];
+    }
+    else                                    // ios 7
+    {
+        self = [super initWithFrame:CGRectMake(0, 44, 320, 34)];
+    }
+    
     if(self)
     {
         [self initializeControls];
@@ -36,10 +46,15 @@
 
 - (void)initializeControls
 {
-    EventSectionHeader *header = [[EventSectionHeader alloc] initWithFrame:CGRectMake(0, 8, 320, 27)];
+    int headerSectionY = (SYSTEM_VERSION_LESS_THAN(@"7.0")) ? 8 : 0;
+    int lblPhotoY = (SYSTEM_VERSION_LESS_THAN(@"7.0")) ? 0 : -4;
+    int uploadButtonY = (SYSTEM_VERSION_LESS_THAN(@"7.0")) ? 2 : -2;
+    
+    
+    EventSectionHeader *header = [[EventSectionHeader alloc] initWithFrame:CGRectMake(0, headerSectionY, 320, 27)];
     [self addSubview:header];
     [header release];
-    UILabel *lblPhotoHeader = [[UILabel alloc] initWithFrame:CGRectMake(8, 0, 250, 32)];
+    UILabel *lblPhotoHeader = [[UILabel alloc] initWithFrame:CGRectMake(8, lblPhotoY, 250, 32)];
     lblPhotoHeader.text = @"UPLOAD YOUR PHOTOS";
     lblPhotoHeader.font = [UIFont systemFontOfSize:13.0];
     lblPhotoHeader.backgroundColor = [UIColor clearColor];
@@ -49,7 +64,7 @@
     
     self.uploadButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [_uploadButton setImage:[UIImage imageNamed:@"Btn-Camera.png"] forState:UIControlStateNormal];
-    _uploadButton.frame = CGRectMake(282, 2, 25, 25);
+    _uploadButton.frame = CGRectMake(282, uploadButtonY, 25, 25);
     [self addSubview:_uploadButton];
     
 }
