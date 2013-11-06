@@ -113,7 +113,7 @@
                     </state>
                 </button>
                 <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" id="26">
-                    <rect key="frame" x="15" y="107" width="290" height="110"/>
+                    <rect key="frame" x="15" y="107" width="290" height="108"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <accessibility key="accessibilityConfiguration" label="Photo comment"/>
