@@ -14,9 +14,13 @@
 #import "Section.h"
 #import "UIBarButtonItem+TWButtons.h"
 #import "MBProgressHUD.h"
+#import "AppDelegate.h"
+#import "MenuButtonTutorialViewController.h"
+
+#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
 
 
-@interface PartnerViewController () <PartnerMenuDelegate>
+@interface PartnerViewController () <PartnerMenuDelegate, MenuButtonTutorialViewControllerDelegate>
 {
     UIImageView *splashImage;
 }
@@ -25,6 +29,11 @@
 @property (nonatomic, retain) PartnerMenuViewController *menuController;
 @property (nonatomic, retain) UINavigationController *detailsController;
 @property (nonatomic, retain) SectionControllerFactory *sectionControllerFactory;
+
+@property (nonatomic, retain) UIWindow *tutorialWindow;
+@property (nonatomic, retain) UIWindow *mainWindow;
+@property (nonatomic, retain) MenuButtonTutorialViewController *menuButtonTutorialViewController;
+
 @end
 
 @implementation PartnerViewController
@@ -74,13 +83,21 @@
     [self.detailsController.view addSubview:splashImage];    
     [self.view addSubview:_progressHUD];
     [_progressHUD show:YES];
+
+
+
+
 }
 
 - (void) dealloc
 {
+    self.menuButtonTutorialViewController.delegate = nil;
+
     [splashImage release];
     [_partner release];
     [_progressHUD release];
+    [_tutorialWindow release];
+    [_mainWindow release];
     [self setMenuController:nil];
     [self setDetailsController:nil];
     [self setSectionControllerFactory:nil];
@@ -157,6 +174,7 @@
     if (![currentSection isEqual:section])
     {
         [[RequestHelper sharedInstance] setCurrentSection:section];
+
         
         UIViewController *controller = [self controllerForSection:section];
         UINavigationController *navigationController = [self detailsController];
@@ -167,6 +185,12 @@
         
         UIBarButtonItem *menuButton = [UIBarButtonItem menuButtonWithTarget:self action:@selector(toggleMasterView)];
         [[controller navigationItem] setLeftBarButtonItem:menuButton];
+
+        if ( ! self.tutorialWindow)
+        {
+            [self showMenuTutorial];
+        }
+
     }
 }
 
@@ -188,6 +212,99 @@
 
 - (BOOL)prefersStatusBarHidden {
     return YES;
+}
+
+- (void)showMenuTutorial
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+
+    // reset user default for debug
+    NSString *domainName = [[NSBundle mainBundle] bundleIdentifier];
+    [userDefaults removePersistentDomainForName:domainName];
+
+
+    BOOL showTutorial;
+    id test = [userDefaults objectForKey:@"showTutorialScreen"];
+    if ( ! test)  // first app run
+    {
+        [userDefaults setBool:YES
+                       forKey:@"showTutorialScreen"];
+        showTutorial = YES;
+        [userDefaults synchronize];
+    }
+    else
+    {
+        showTutorial = [(NSNumber *)test boolValue];
+    }
+
+
+
+    if (showTutorial)
+        [self showTutorialWindow];
+}
+
+- (void)showTutorialWindow
+{
+    // get current main app window
+    AppDelegate* myDelegate = (((AppDelegate *) [[UIApplication sharedApplication] delegate]));
+    self.mainWindow = myDelegate.window;
+
+    // instantiate new tutorial window
+    self.tutorialWindow = [[[UIWindow alloc] initWithFrame:self.view.bounds] autorelease];
+    self.tutorialWindow.backgroundColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.7];
+
+    // instantiate new tutorial VC
+    self.menuButtonTutorialViewController = [[[MenuButtonTutorialViewController alloc] initWithNibName:@"MenuButtonTutorialViewController"
+                                                                                                                             bundle:nil] autorelease];
+    self.menuButtonTutorialViewController.delegate = self;
+
+    // show tutorial window
+    [self.tutorialWindow makeKeyAndVisible];
+
+    // animate
+    [UIView transitionWithView:self.mainWindow
+                      duration:0.5
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:^{
+                        BOOL oldState = [UIView areAnimationsEnabled];
+                        [UIView setAnimationsEnabled:NO];
+                        self.tutorialWindow.rootViewController = self.menuButtonTutorialViewController;
+                        [UIView setAnimationsEnabled:oldState];
+                    }
+                    completion:nil
+    ];
+}
+
+
+- (void)menuButtonTutorialViewController:(MenuButtonTutorialViewController *)menuButtonTutorialViewController
+                          dismissPressed:(UIButton *)sender
+{
+    // animate back to main window
+    [UIView transitionWithView:self.mainWindow
+                      duration:0.5
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:^{
+                        self.tutorialWindow.rootViewController = nil;
+                        self.tutorialWindow.backgroundColor = [UIColor clearColor];
+
+                    }
+                    completion:^(BOOL finished){
+                        [self.mainWindow makeKeyAndVisible];
+                    }
+    ];
+
+    [_mainWindow release];
+}
+
+- (void)menuButtonTutorialViewController:(MenuButtonTutorialViewController *)menuButtonTutorialViewController
+                         dontShowPressed:(UIButton *)sender
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setBool:NO forKey:@"showTutorialScreen"];
+    [userDefaults synchronize];
+
+    [self menuButtonTutorialViewController:menuButtonTutorialViewController
+                            dismissPressed:sender];
 }
 
 @end

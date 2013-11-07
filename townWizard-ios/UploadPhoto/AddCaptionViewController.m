@@ -61,11 +61,16 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
     {
 		[self.view addSubview:captionView];
 	}
-	
-	[UIView beginAnimations:NULL context:nil];
-	[UIView setAnimationDuration:0.35];
-	captionView.frame = CGRectMake(0.0, 0.0, 320.0, 460.0);
-	[UIView commitAnimations];
+
+    [UIView animateWithDuration:0.35
+                          delay:0.0
+                        options:UIViewAnimationOptionTransitionFlipFromBottom
+                     animations:^{
+                         captionView.frame = CGRectMake(0.0, 0.0, 320.0, 460.0);
+                     }
+                     completion:^(BOOL finished) {
+                         captionView.hidden = NO;
+                     }];
 	
 	[nameTextField becomeFirstResponder];
 	m_navigationBar.hidden = NO;
@@ -85,10 +90,15 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
 
 - (void)hideCaptionView:(BOOL)animated
 {
-	[UIView beginAnimations:NULL context:nil];
-	[UIView setAnimationDuration:0.35];
-	captionView.frame = CGRectMake(77.0, 460.0, 165.0, 0.0);
-	[UIView commitAnimations];
+    [UIView animateWithDuration:0.35
+                          delay:0.0
+                        options:UIViewAnimationOptionTransitionFlipFromTop
+                     animations:^{
+                         captionView.frame = CGRectMake(77.0, 460.0, 165.0, 0.0);
+                     }
+                     completion:^(BOOL finished) {
+                         captionView.hidden = YES;
+                     }];
 	m_navigationBar.hidden = YES;
 }
 
