@@ -10012,6 +10012,76 @@
 		01FF3EE8177A09F3008A6021 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01FF3EE3177A09F3008A6021 /* Icon@2x.png */; };
 		0B31FC042C5344889FE2A1E9 /* libPods-grayton-cedar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE26395A995941CEB04FA3F0 /* libPods-grayton-cedar.a */; };
 		299EAB611D5941DF876920BD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59FBA4CF79134DFAAB1477F7 /* libPods.a */; };
+		71965D62182A984C0069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D63182A984C0069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965D64182A98660069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D65182A98670069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D66182A986A0069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D67182A986B0069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D68182A986C0069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D69182A986C0069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D6A182A986D0069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D6B182A986D0069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D6C182A986E0069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D6D182A986E0069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D6E182A986F0069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D6F182A98700069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D70182A98710069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D71182A98710069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D72182A98720069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D73182A98720069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D74182A98730069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D75182A98740069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D76182A98750069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D77182A98750069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D78182A98760069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D79182A98760069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D7A182A98770069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D7B182A98780069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D7C182A98780069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D7D182A98790069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D7E182A98790069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D7F182A987A0069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D80182A987B0069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D81182A987C0069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D82182A987C0069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D83182A987F0069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D84182A987F0069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D85182A98800069F8E2 /* MenuButtonTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */; };
+		71965D86182A9EFB0069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965D88182A9EFE0069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965D89182A9EFE0069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965D8A182A9EFF0069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965D8B182A9EFF0069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965D8C182A9F000069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965D8D182A9F010069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965D8E182A9F010069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965D8F182A9F020069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965D90182A9F020069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965D91182A9F030069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965D92182A9F030069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965D93182A9F040069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965D94182A9F050069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965D95182A9F050069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965D96182A9F060069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965D97182A9F060069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965D98182A9F070069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965D99182A9F080069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965D9A182A9F080069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965D9B182A9F090069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965D9C182A9F090069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965D9D182A9F0A0069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965D9E182A9F0A0069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965D9F182A9F0B0069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965DA1182A9F0D0069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965DA2182A9F0D0069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965DA3182A9F0E0069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965DA4182A9F0E0069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965DA5182A9F0F0069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965DA6182A9F0F0069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965DA7182A9F110069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965DA8182A9F120069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
+		71965DA9182A9F130069F8E2 /* MenuButtonTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */; };
 		8406AB701630319C00B807EB /* MasterDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8406AB6F1630319B00B807EB /* MasterDetailController.m */; };
 		8406AB711630319C00B807EB /* MasterDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8406AB6F1630319B00B807EB /* MasterDetailController.m */; };
 		8406AB8E1630319C00B807EB /* MasterDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8406AB6F1630319B00B807EB /* MasterDetailController.m */; };
@@ -11334,6 +11404,9 @@
 		3D8DDAFA15A47AB6001D48D2 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		3D8DDAFB15A47AB6001D48D2 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		59FBA4CF79134DFAAB1477F7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		71965D5F182A984C0069F8E2 /* MenuButtonTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuButtonTutorialViewController.h; sourceTree = "<group>"; };
+		71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuButtonTutorialViewController.m; sourceTree = "<group>"; };
+		71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuButtonTutorialViewController.xib; sourceTree = "<group>"; };
 		8406AB6E1630319B00B807EB /* MasterDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterDetailController.h; sourceTree = "<group>"; };
 		8406AB6F1630319B00B807EB /* MasterDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterDetailController.m; sourceTree = "<group>"; };
 		840E4585166E3749007CCF51 /* EventDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailsViewController.h; sourceTree = "<group>"; };
@@ -13113,6 +13186,15 @@
 			path = "townWizard-partner/Images/tw-p93";
 			sourceTree = SOURCE_ROOT;
 		};
+		71965D5E182A97F70069F8E2 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				71965D5F182A984C0069F8E2 /* MenuButtonTutorialViewController.h */,
+				71965D60182A984C0069F8E2 /* MenuButtonTutorialViewController.m */,
+			);
+			name = Tutorial;
+			sourceTree = "<group>";
+		};
 		840E4581166E3509007CCF51 /* Photo */ = {
 			isa = PBXGroup;
 			children = (
@@ -13546,6 +13628,7 @@
 		848854A714D141E30030BD03 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				71965D5E182A97F70069F8E2 /* Tutorial */,
 				D99E7272163E6BCB004EB303 /* ParnerMenuViewController */,
 				D99E7270163E6B7E004EB303 /* PartnerViewController */,
 				84E51FE3169705B500229A58 /* SearchViewController */,
@@ -13567,6 +13650,7 @@
 			children = (
 				841C6C0C1695C7C40066B0F9 /* Cells */,
 				D93249281637CD8B00409AA9 /* EventsViewController.xib */,
+				71965D61182A984C0069F8E2 /* MenuButtonTutorialViewController.xib */,
 				840E4587166E374C007CCF51 /* EventDetailsViewController.xib */,
 				848DFB681626B3F50096A6FF /* VideoViewController.xib */,
 				847F875F14D6C81F005EE200 /* PartnerMenuViewController.xib */,
@@ -15434,6 +15518,7 @@
 				010DC99917AAEA2B004B2939 /* talk@2x.png in Resources */,
 				010DC99A17AAEA2B004B2939 /* towndirrectory.png in Resources */,
 				010DC99B17AAEA2B004B2939 /* towndirrectory@2x.png in Resources */,
+				71965D9F182A9F0B0069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				010DC99C17AAEA2B004B2939 /* shadow_bot.png in Resources */,
 				010DC99D17AAEA2B004B2939 /* shadow_bot@2x.png in Resources */,
 				010DC99E17AAEA2B004B2939 /* events_pattern_bg.png in Resources */,
@@ -15615,6 +15700,7 @@
 				01182BF11779E0C300391779 /* talk@2x.png in Resources */,
 				01182BF21779E0C300391779 /* towndirrectory.png in Resources */,
 				01182BF31779E0C300391779 /* towndirrectory@2x.png in Resources */,
+				71965D96182A9F060069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				01182BF41779E0C300391779 /* shadow_bot.png in Resources */,
 				01182BF51779E0C300391779 /* shadow_bot@2x.png in Resources */,
 				01182BF61779E0C300391779 /* events_pattern_bg.png in Resources */,
@@ -15846,6 +15932,7 @@
 				0129C41017831D31007A2D3D /* icon_googlePlus@2x.png in Resources */,
 				0129C41117831D31007A2D3D /* icon_home.png in Resources */,
 				0129C41217831D31007A2D3D /* icon_home@2x.png in Resources */,
+				71965D99182A9F080069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				0129C41317831D31007A2D3D /* icon_places.png in Resources */,
 				0129C41417831D31007A2D3D /* icon_places@2x.png in Resources */,
 				0129C41517831D31007A2D3D /* icon_question.png in Resources */,
@@ -15972,6 +16059,7 @@
 				012FA9211726D0A600D13ABA /* talk@2x.png in Resources */,
 				012FA9221726D0A600D13ABA /* towndirrectory.png in Resources */,
 				012FA9231726D0A600D13ABA /* towndirrectory@2x.png in Resources */,
+				71965D8E182A9F010069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				012FA9241726D0A600D13ABA /* shadow_bot.png in Resources */,
 				012FA9251726D0A600D13ABA /* shadow_bot@2x.png in Resources */,
 				012FA9261726D0A600D13ABA /* events_pattern_bg.png in Resources */,
@@ -16153,6 +16241,7 @@
 				013CD2EC1755532300A1290C /* talk@2x.png in Resources */,
 				013CD2ED1755532300A1290C /* towndirrectory.png in Resources */,
 				013CD2EE1755532300A1290C /* towndirrectory@2x.png in Resources */,
+				71965D93182A9F040069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				013CD2EF1755532300A1290C /* shadow_bot.png in Resources */,
 				013CD2F01755532300A1290C /* shadow_bot@2x.png in Resources */,
 				013CD2F11755532300A1290C /* events_pattern_bg.png in Resources */,
@@ -16334,6 +16423,7 @@
 				015CFD69174D4D8C0094DC6E /* talk@2x.png in Resources */,
 				015CFD6A174D4D8C0094DC6E /* towndirrectory.png in Resources */,
 				015CFD6B174D4D8C0094DC6E /* towndirrectory@2x.png in Resources */,
+				71965D92182A9F030069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				015CFD6C174D4D8C0094DC6E /* shadow_bot.png in Resources */,
 				015CFD6D174D4D8C0094DC6E /* shadow_bot@2x.png in Resources */,
 				015CFD6E174D4D8C0094DC6E /* events_pattern_bg.png in Resources */,
@@ -16515,6 +16605,7 @@
 				0166BB7117D8BAD700FF1FD7 /* talk@2x.png in Resources */,
 				0166BB7217D8BAD700FF1FD7 /* towndirrectory.png in Resources */,
 				0166BB7317D8BAD700FF1FD7 /* towndirrectory@2x.png in Resources */,
+				71965DA7182A9F110069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				0166BB7417D8BAD700FF1FD7 /* shadow_bot.png in Resources */,
 				0166BB7517D8BAD700FF1FD7 /* shadow_bot@2x.png in Resources */,
 				0166BB7617D8BAD700FF1FD7 /* events_pattern_bg.png in Resources */,
@@ -16696,6 +16787,7 @@
 				0166BCC617D8C84000FF1FD7 /* talk@2x.png in Resources */,
 				0166BCC717D8C84000FF1FD7 /* towndirrectory.png in Resources */,
 				0166BCC817D8C84000FF1FD7 /* towndirrectory@2x.png in Resources */,
+				71965DA8182A9F120069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				0166BCC917D8C84000FF1FD7 /* shadow_bot.png in Resources */,
 				0166BCCA17D8C84000FF1FD7 /* shadow_bot@2x.png in Resources */,
 				0166BCCB17D8C84000FF1FD7 /* events_pattern_bg.png in Resources */,
@@ -16877,6 +16969,7 @@
 				0171C6C8178DF76100A1125E /* talk@2x.png in Resources */,
 				0171C6C9178DF76100A1125E /* towndirrectory.png in Resources */,
 				0171C6CA178DF76100A1125E /* towndirrectory@2x.png in Resources */,
+				71965D9A182A9F080069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				0171C6CB178DF76100A1125E /* shadow_bot.png in Resources */,
 				0171C6CC178DF76100A1125E /* shadow_bot@2x.png in Resources */,
 				0171C6CD178DF76100A1125E /* events_pattern_bg.png in Resources */,
@@ -17058,6 +17151,7 @@
 				01749B6417B93EF100CDAF5E /* talk@2x.png in Resources */,
 				01749B6517B93EF100CDAF5E /* towndirrectory.png in Resources */,
 				01749B6617B93EF100CDAF5E /* towndirrectory@2x.png in Resources */,
+				71965DA3182A9F0E0069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				01749B6717B93EF100CDAF5E /* shadow_bot.png in Resources */,
 				01749B6817B93EF100CDAF5E /* shadow_bot@2x.png in Resources */,
 				01749B6917B93EF100CDAF5E /* events_pattern_bg.png in Resources */,
@@ -17239,6 +17333,7 @@
 				01804220177CA4AE005B3794 /* talk@2x.png in Resources */,
 				01804221177CA4AE005B3794 /* towndirrectory.png in Resources */,
 				01804222177CA4AE005B3794 /* towndirrectory@2x.png in Resources */,
+				71965D97182A9F060069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				01804223177CA4AE005B3794 /* shadow_bot.png in Resources */,
 				01804224177CA4AE005B3794 /* shadow_bot@2x.png in Resources */,
 				01804225177CA4AE005B3794 /* events_pattern_bg.png in Resources */,
@@ -17420,6 +17515,7 @@
 				01804375177CABF6005B3794 /* talk@2x.png in Resources */,
 				01804376177CABF6005B3794 /* towndirrectory.png in Resources */,
 				01804377177CABF6005B3794 /* towndirrectory@2x.png in Resources */,
+				71965D98182A9F070069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				01804378177CABF6005B3794 /* shadow_bot.png in Resources */,
 				01804379177CABF6005B3794 /* shadow_bot@2x.png in Resources */,
 				0180437A177CABF6005B3794 /* events_pattern_bg.png in Resources */,
@@ -17601,6 +17697,7 @@
 				0187A37417A8219800DEF30D /* talk@2x.png in Resources */,
 				0187A37517A8219800DEF30D /* towndirrectory.png in Resources */,
 				0187A37617A8219800DEF30D /* towndirrectory@2x.png in Resources */,
+				71965D9D182A9F0A0069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				0187A37717A8219800DEF30D /* shadow_bot.png in Resources */,
 				0187A37817A8219800DEF30D /* shadow_bot@2x.png in Resources */,
 				0187A37917A8219800DEF30D /* events_pattern_bg.png in Resources */,
@@ -17782,6 +17879,7 @@
 				0196CFC617960A01009B559C /* talk@2x.png in Resources */,
 				0196CFC717960A01009B559C /* towndirrectory.png in Resources */,
 				0196CFC817960A01009B559C /* towndirrectory@2x.png in Resources */,
+				71965D9B182A9F090069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				0196CFC917960A01009B559C /* shadow_bot.png in Resources */,
 				0196CFCA17960A01009B559C /* shadow_bot@2x.png in Resources */,
 				0196CFCB17960A01009B559C /* events_pattern_bg.png in Resources */,
@@ -17963,6 +18061,7 @@
 				0199AFE617C2517200DEF5A5 /* talk@2x.png in Resources */,
 				0199AFE717C2517200DEF5A5 /* towndirrectory.png in Resources */,
 				0199AFE817C2517200DEF5A5 /* towndirrectory@2x.png in Resources */,
+				71965DA4182A9F0E0069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				0199AFE917C2517200DEF5A5 /* shadow_bot.png in Resources */,
 				0199AFEA17C2517200DEF5A5 /* shadow_bot@2x.png in Resources */,
 				0199AFEB17C2517200DEF5A5 /* events_pattern_bg.png in Resources */,
@@ -18194,6 +18293,7 @@
 				0199F01D17A1A26000C8B01B /* icon_googlePlus@2x.png in Resources */,
 				0199F01E17A1A26000C8B01B /* icon_home.png in Resources */,
 				0199F01F17A1A26000C8B01B /* icon_home@2x.png in Resources */,
+				71965D9C182A9F090069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				0199F02017A1A26000C8B01B /* icon_places.png in Resources */,
 				0199F02117A1A26000C8B01B /* icon_places@2x.png in Resources */,
 				0199F02217A1A26000C8B01B /* icon_question.png in Resources */,
@@ -18320,6 +18420,7 @@
 				01A24A0D176747C9006FE59C /* talk@2x.png in Resources */,
 				01A24A0E176747C9006FE59C /* towndirrectory.png in Resources */,
 				01A24A0F176747C9006FE59C /* towndirrectory@2x.png in Resources */,
+				71965D95182A9F050069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				01A24A10176747C9006FE59C /* shadow_bot.png in Resources */,
 				01A24A11176747C9006FE59C /* shadow_bot@2x.png in Resources */,
 				01A24A12176747C9006FE59C /* events_pattern_bg.png in Resources */,
@@ -18501,6 +18602,7 @@
 				01A2933717C6565F0070B002 /* talk@2x.png in Resources */,
 				01A2933817C6565F0070B002 /* towndirrectory.png in Resources */,
 				01A2933917C6565F0070B002 /* towndirrectory@2x.png in Resources */,
+				71965DA5182A9F0F0069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				01A2933A17C6565F0070B002 /* shadow_bot.png in Resources */,
 				01A2933B17C6565F0070B002 /* shadow_bot@2x.png in Resources */,
 				01A2933C17C6565F0070B002 /* events_pattern_bg.png in Resources */,
@@ -18682,6 +18784,7 @@
 				01A733E41718318E003505A5 /* talk@2x.png in Resources */,
 				01A733E51718318E003505A5 /* towndirrectory.png in Resources */,
 				01A733E61718318E003505A5 /* towndirrectory@2x.png in Resources */,
+				71965D86182A9EFB0069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				01A733E71718318E003505A5 /* shadow_bot.png in Resources */,
 				01A733E81718318E003505A5 /* shadow_bot@2x.png in Resources */,
 				01A733E91718318E003505A5 /* events_pattern_bg.png in Resources */,
@@ -18863,6 +18966,7 @@
 				01A7353917183FB8003505A5 /* talk@2x.png in Resources */,
 				01A7353A17183FB8003505A5 /* towndirrectory.png in Resources */,
 				01A7353B17183FB8003505A5 /* towndirrectory@2x.png in Resources */,
+				71965D8B182A9EFF0069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				01A7353C17183FB8003505A5 /* shadow_bot.png in Resources */,
 				01A7353D17183FB8003505A5 /* shadow_bot@2x.png in Resources */,
 				01A7353E17183FB8003505A5 /* events_pattern_bg.png in Resources */,
@@ -19044,6 +19148,7 @@
 				01B6BBEA174595A6009D7A6E /* talk@2x.png in Resources */,
 				01B6BBEB174595A6009D7A6E /* towndirrectory.png in Resources */,
 				01B6BBEC174595A6009D7A6E /* towndirrectory@2x.png in Resources */,
+				71965D91182A9F030069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				01B6BBED174595A6009D7A6E /* shadow_bot.png in Resources */,
 				01B6BBEE174595A6009D7A6E /* shadow_bot@2x.png in Resources */,
 				01B6BBEF174595A6009D7A6E /* events_pattern_bg.png in Resources */,
@@ -19225,6 +19330,7 @@
 				01BA78CE1721CECA00397BCB /* talk@2x.png in Resources */,
 				01BA78CF1721CECA00397BCB /* towndirrectory.png in Resources */,
 				01BA78D01721CECA00397BCB /* towndirrectory@2x.png in Resources */,
+				71965D8D182A9F010069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				01BA78D11721CECA00397BCB /* shadow_bot.png in Resources */,
 				01BA78D21721CECA00397BCB /* shadow_bot@2x.png in Resources */,
 				01BA78D31721CECA00397BCB /* events_pattern_bg.png in Resources */,
@@ -19406,6 +19512,7 @@
 				01C502EB17B91A4D00A45D0A /* talk@2x.png in Resources */,
 				01C502EC17B91A4D00A45D0A /* towndirrectory.png in Resources */,
 				01C502ED17B91A4D00A45D0A /* towndirrectory@2x.png in Resources */,
+				71965DA1182A9F0D0069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				01C502EE17B91A4D00A45D0A /* shadow_bot.png in Resources */,
 				01C502EF17B91A4D00A45D0A /* shadow_bot@2x.png in Resources */,
 				01C502F017B91A4D00A45D0A /* events_pattern_bg.png in Resources */,
@@ -19587,6 +19694,7 @@
 				01C743621758D13300174827 /* talk@2x.png in Resources */,
 				01C743631758D13300174827 /* towndirrectory.png in Resources */,
 				01C743641758D13300174827 /* towndirrectory@2x.png in Resources */,
+				71965D94182A9F050069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				01C743651758D13300174827 /* shadow_bot.png in Resources */,
 				01C743661758D13300174827 /* shadow_bot@2x.png in Resources */,
 				01C743671758D13300174827 /* events_pattern_bg.png in Resources */,
@@ -19768,6 +19876,7 @@
 				01D527D417A96BA40050BFE6 /* talk@2x.png in Resources */,
 				01D527D517A96BA40050BFE6 /* towndirrectory.png in Resources */,
 				01D527D617A96BA40050BFE6 /* towndirrectory@2x.png in Resources */,
+				71965D9E182A9F0A0069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				01D527D717A96BA40050BFE6 /* shadow_bot.png in Resources */,
 				01D527D817A96BA40050BFE6 /* shadow_bot@2x.png in Resources */,
 				01D527D917A96BA40050BFE6 /* events_pattern_bg.png in Resources */,
@@ -19949,6 +20058,7 @@
 				01D8032017DA2E5C00F7751D /* talk@2x.png in Resources */,
 				01D8032117DA2E5C00F7751D /* towndirrectory.png in Resources */,
 				01D8032217DA2E5C00F7751D /* towndirrectory@2x.png in Resources */,
+				71965DA9182A9F130069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				01D8032317DA2E5C00F7751D /* shadow_bot.png in Resources */,
 				01D8032417DA2E5C00F7751D /* shadow_bot@2x.png in Resources */,
 				01D8032517DA2E5C00F7751D /* events_pattern_bg.png in Resources */,
@@ -20130,6 +20240,7 @@
 				01DF136E17D639A600C822AC /* talk@2x.png in Resources */,
 				01DF136F17D639A600C822AC /* towndirrectory.png in Resources */,
 				01DF137017D639A600C822AC /* towndirrectory@2x.png in Resources */,
+				71965DA6182A9F0F0069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				01DF137117D639A600C822AC /* shadow_bot.png in Resources */,
 				01DF137217D639A600C822AC /* shadow_bot@2x.png in Resources */,
 				01DF137317D639A600C822AC /* events_pattern_bg.png in Resources */,
@@ -20311,6 +20422,7 @@
 				01E046C81732FDBC0082C15E /* talk@2x.png in Resources */,
 				01E046C91732FDBC0082C15E /* towndirrectory.png in Resources */,
 				01E046CA1732FDBC0082C15E /* towndirrectory@2x.png in Resources */,
+				71965D90182A9F020069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				01E046CB1732FDBC0082C15E /* shadow_bot.png in Resources */,
 				01E046CC1732FDBC0082C15E /* shadow_bot@2x.png in Resources */,
 				01E046CD1732FDBC0082C15E /* events_pattern_bg.png in Resources */,
@@ -20492,6 +20604,7 @@
 				01E9B61B1729658B00BEF32B /* talk@2x.png in Resources */,
 				01E9B61C1729658B00BEF32B /* towndirrectory.png in Resources */,
 				01E9B61D1729658B00BEF32B /* towndirrectory@2x.png in Resources */,
+				71965D8F182A9F020069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				01E9B61E1729658B00BEF32B /* shadow_bot.png in Resources */,
 				01E9B61F1729658B00BEF32B /* shadow_bot@2x.png in Resources */,
 				01E9B6201729658B00BEF32B /* events_pattern_bg.png in Resources */,
@@ -20673,6 +20786,7 @@
 				01EBDBDF1718802B00FB5BBF /* talk@2x.png in Resources */,
 				01EBDBE01718802B00FB5BBF /* towndirrectory.png in Resources */,
 				01EBDBE11718802B00FB5BBF /* towndirrectory@2x.png in Resources */,
+				71965D8C182A9F000069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				01EBDBE21718802B00FB5BBF /* shadow_bot.png in Resources */,
 				01EBDBE31718802B00FB5BBF /* shadow_bot@2x.png in Resources */,
 				01EBDBE41718802B00FB5BBF /* events_pattern_bg.png in Resources */,
@@ -20854,6 +20968,7 @@
 				01F3705717AC0F3D00C783C6 /* talk@2x.png in Resources */,
 				01F3705817AC0F3D00C783C6 /* towndirrectory.png in Resources */,
 				01F3705917AC0F3D00C783C6 /* towndirrectory@2x.png in Resources */,
+				71965DA2182A9F0D0069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				01F3705A17AC0F3D00C783C6 /* shadow_bot.png in Resources */,
 				01F3705B17AC0F3D00C783C6 /* shadow_bot@2x.png in Resources */,
 				01F3705C17AC0F3D00C783C6 /* events_pattern_bg.png in Resources */,
@@ -20947,6 +21062,7 @@
 				8412964D168DA0E600C47B7F /* AddCaptionViewController.xib in Resources */,
 				8412964E168DA0E600C47B7F /* InfoPlist.strings in Resources */,
 				8412964F168DA0E600C47B7F /* back_arrow_retina.png in Resources */,
+				71965D89182A9EFE0069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				84129650168DA0E600C47B7F /* back_arrow.png in Resources */,
 				84129651168DA0E600C47B7F /* left.png in Resources */,
 				84129654168DA0E600C47B7F /* right.png in Resources */,
@@ -21133,6 +21249,7 @@
 				D9FA2C7D1590751B006FFF7E /* icon.png in Resources */,
 				D9FA2C7E1590751B006FFF7E /* icon@2x.png in Resources */,
 				847FD39E161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */,
+				71965D63182A984C0069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				84F82CB0161AF98E00E0A481 /* PhotoGalleryViewController.xib in Resources */,
 				84CAAE57161B2EB200E09E36 /* VideosListViewController.xib in Resources */,
 				848DFB881626B3F50096A6FF /* VideoViewController.xib in Resources */,
@@ -21445,6 +21562,7 @@
 				F68E225116DC9638007C8E59 /* icon_googlePlus@2x.png in Resources */,
 				F68E225216DC9638007C8E59 /* icon_home.png in Resources */,
 				F68E225316DC9638007C8E59 /* icon_home@2x.png in Resources */,
+				71965D8A182A9EFF0069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				F68E225416DC9638007C8E59 /* icon_places.png in Resources */,
 				F68E225516DC9638007C8E59 /* icon_places@2x.png in Resources */,
 				F68E225616DC9638007C8E59 /* icon_question.png in Resources */,
@@ -21540,6 +21658,7 @@
 				84853342162D5B1C00211546 /* friendsbg@2x.png in Resources */,
 				84853361162D5B1D00211546 /* statusField.png in Resources */,
 				84853380162D5B1D00211546 /* statusField@2x.png in Resources */,
+				71965D88182A9EFE0069F8E2 /* MenuButtonTutorialViewController.xib in Resources */,
 				8485339F162D5B1D00211546 /* tagFriends.png in Resources */,
 				848533BE162D5B1D00211546 /* tagFriends@2x.png in Resources */,
 				D93249661637CD8B00409AA9 /* EventsViewController.xib in Resources */,
@@ -23084,6 +23203,7 @@
 				010DC8D817AAEA2B004B2939 /* ResizableButton.m in Sources */,
 				010DC8D917AAEA2B004B2939 /* EventCell.m in Sources */,
 				010DC8DA17AAEA2B004B2939 /* EventSectionHeader.m in Sources */,
+				71965D7C182A98780069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				010DC8DB17AAEA2B004B2939 /* TWBackgroundView.m in Sources */,
 				010DC8DC17AAEA2B004B2939 /* ActivityImageView.m in Sources */,
 				010DC8DD17AAEA2B004B2939 /* SectionImageManager.m in Sources */,
@@ -23225,6 +23345,7 @@
 				01182B301779E0C300391779 /* ResizableButton.m in Sources */,
 				01182B311779E0C300391779 /* EventCell.m in Sources */,
 				01182B321779E0C300391779 /* EventSectionHeader.m in Sources */,
+				71965D73182A98720069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				01182B331779E0C300391779 /* TWBackgroundView.m in Sources */,
 				01182B341779E0C300391779 /* ActivityImageView.m in Sources */,
 				01182B351779E0C300391779 /* SectionImageManager.m in Sources */,
@@ -23366,6 +23487,7 @@
 				0129C31D17831D31007A2D3D /* ResizableButton.m in Sources */,
 				0129C31E17831D31007A2D3D /* EventCell.m in Sources */,
 				0129C31F17831D31007A2D3D /* EventSectionHeader.m in Sources */,
+				71965D76182A98750069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				0129C32017831D31007A2D3D /* TWBackgroundView.m in Sources */,
 				0129C32117831D31007A2D3D /* ActivityImageView.m in Sources */,
 				0129C32217831D31007A2D3D /* SectionImageManager.m in Sources */,
@@ -23507,6 +23629,7 @@
 				012FA8601726D0A600D13ABA /* ResizableButton.m in Sources */,
 				012FA8611726D0A600D13ABA /* EventCell.m in Sources */,
 				012FA8621726D0A600D13ABA /* EventSectionHeader.m in Sources */,
+				71965D6B182A986D0069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				012FA8631726D0A600D13ABA /* TWBackgroundView.m in Sources */,
 				012FA8641726D0A600D13ABA /* ActivityImageView.m in Sources */,
 				012FA8651726D0A600D13ABA /* SectionImageManager.m in Sources */,
@@ -23648,6 +23771,7 @@
 				013CD22B1755532300A1290C /* ResizableButton.m in Sources */,
 				013CD22C1755532300A1290C /* EventCell.m in Sources */,
 				013CD22D1755532300A1290C /* EventSectionHeader.m in Sources */,
+				71965D70182A98710069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				013CD22E1755532300A1290C /* TWBackgroundView.m in Sources */,
 				013CD22F1755532300A1290C /* ActivityImageView.m in Sources */,
 				013CD2301755532300A1290C /* SectionImageManager.m in Sources */,
@@ -23789,6 +23913,7 @@
 				015CFCA8174D4D8C0094DC6E /* ResizableButton.m in Sources */,
 				015CFCA9174D4D8C0094DC6E /* EventCell.m in Sources */,
 				015CFCAA174D4D8C0094DC6E /* EventSectionHeader.m in Sources */,
+				71965D6F182A98700069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				015CFCAB174D4D8C0094DC6E /* TWBackgroundView.m in Sources */,
 				015CFCAC174D4D8C0094DC6E /* ActivityImageView.m in Sources */,
 				015CFCAD174D4D8C0094DC6E /* SectionImageManager.m in Sources */,
@@ -23930,6 +24055,7 @@
 				0166BAB017D8BAD700FF1FD7 /* ResizableButton.m in Sources */,
 				0166BAB117D8BAD700FF1FD7 /* EventCell.m in Sources */,
 				0166BAB217D8BAD700FF1FD7 /* EventSectionHeader.m in Sources */,
+				71965D83182A987F0069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				0166BAB317D8BAD700FF1FD7 /* TWBackgroundView.m in Sources */,
 				0166BAB417D8BAD700FF1FD7 /* ActivityImageView.m in Sources */,
 				0166BAB517D8BAD700FF1FD7 /* SectionImageManager.m in Sources */,
@@ -24071,6 +24197,7 @@
 				0166BC0517D8C84000FF1FD7 /* ResizableButton.m in Sources */,
 				0166BC0617D8C84000FF1FD7 /* EventCell.m in Sources */,
 				0166BC0717D8C84000FF1FD7 /* EventSectionHeader.m in Sources */,
+				71965D84182A987F0069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				0166BC0817D8C84000FF1FD7 /* TWBackgroundView.m in Sources */,
 				0166BC0917D8C84000FF1FD7 /* ActivityImageView.m in Sources */,
 				0166BC0A17D8C84000FF1FD7 /* SectionImageManager.m in Sources */,
@@ -24212,6 +24339,7 @@
 				0171C607178DF76100A1125E /* ResizableButton.m in Sources */,
 				0171C608178DF76100A1125E /* EventCell.m in Sources */,
 				0171C609178DF76100A1125E /* EventSectionHeader.m in Sources */,
+				71965D77182A98750069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				0171C60A178DF76100A1125E /* TWBackgroundView.m in Sources */,
 				0171C60B178DF76100A1125E /* ActivityImageView.m in Sources */,
 				0171C60C178DF76100A1125E /* SectionImageManager.m in Sources */,
@@ -24353,6 +24481,7 @@
 				01749AA317B93EF100CDAF5E /* ResizableButton.m in Sources */,
 				01749AA417B93EF100CDAF5E /* EventCell.m in Sources */,
 				01749AA517B93EF100CDAF5E /* EventSectionHeader.m in Sources */,
+				71965D7F182A987A0069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				01749AA617B93EF100CDAF5E /* TWBackgroundView.m in Sources */,
 				01749AA717B93EF100CDAF5E /* ActivityImageView.m in Sources */,
 				01749AA817B93EF100CDAF5E /* SectionImageManager.m in Sources */,
@@ -24494,6 +24623,7 @@
 				0180415F177CA4AE005B3794 /* ResizableButton.m in Sources */,
 				01804160177CA4AE005B3794 /* EventCell.m in Sources */,
 				01804161177CA4AE005B3794 /* EventSectionHeader.m in Sources */,
+				71965D74182A98730069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				01804162177CA4AE005B3794 /* TWBackgroundView.m in Sources */,
 				01804163177CA4AE005B3794 /* ActivityImageView.m in Sources */,
 				01804164177CA4AE005B3794 /* SectionImageManager.m in Sources */,
@@ -24635,6 +24765,7 @@
 				018042B4177CABF6005B3794 /* ResizableButton.m in Sources */,
 				018042B5177CABF6005B3794 /* EventCell.m in Sources */,
 				018042B6177CABF6005B3794 /* EventSectionHeader.m in Sources */,
+				71965D75182A98740069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				018042B7177CABF6005B3794 /* TWBackgroundView.m in Sources */,
 				018042B8177CABF6005B3794 /* ActivityImageView.m in Sources */,
 				018042B9177CABF6005B3794 /* SectionImageManager.m in Sources */,
@@ -24776,6 +24907,7 @@
 				0187A2B317A8219800DEF30D /* ResizableButton.m in Sources */,
 				0187A2B417A8219800DEF30D /* EventCell.m in Sources */,
 				0187A2B517A8219800DEF30D /* EventSectionHeader.m in Sources */,
+				71965D7A182A98770069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				0187A2B617A8219800DEF30D /* TWBackgroundView.m in Sources */,
 				0187A2B717A8219800DEF30D /* ActivityImageView.m in Sources */,
 				0187A2B817A8219800DEF30D /* SectionImageManager.m in Sources */,
@@ -24917,6 +25049,7 @@
 				0196CF0517960A01009B559C /* ResizableButton.m in Sources */,
 				0196CF0617960A01009B559C /* EventCell.m in Sources */,
 				0196CF0717960A01009B559C /* EventSectionHeader.m in Sources */,
+				71965D78182A98760069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				0196CF0817960A01009B559C /* TWBackgroundView.m in Sources */,
 				0196CF0917960A01009B559C /* ActivityImageView.m in Sources */,
 				0196CF0A17960A01009B559C /* SectionImageManager.m in Sources */,
@@ -25058,6 +25191,7 @@
 				0199AF2517C2517200DEF5A5 /* ResizableButton.m in Sources */,
 				0199AF2617C2517200DEF5A5 /* EventCell.m in Sources */,
 				0199AF2717C2517200DEF5A5 /* EventSectionHeader.m in Sources */,
+				71965D80182A987B0069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				0199AF2817C2517200DEF5A5 /* TWBackgroundView.m in Sources */,
 				0199AF2917C2517200DEF5A5 /* ActivityImageView.m in Sources */,
 				0199AF2A17C2517200DEF5A5 /* SectionImageManager.m in Sources */,
@@ -25199,6 +25333,7 @@
 				0199EF2A17A1A26000C8B01B /* ResizableButton.m in Sources */,
 				0199EF2B17A1A26000C8B01B /* EventCell.m in Sources */,
 				0199EF2C17A1A26000C8B01B /* EventSectionHeader.m in Sources */,
+				71965D79182A98760069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				0199EF2D17A1A26000C8B01B /* TWBackgroundView.m in Sources */,
 				0199EF2E17A1A26000C8B01B /* ActivityImageView.m in Sources */,
 				0199EF2F17A1A26000C8B01B /* SectionImageManager.m in Sources */,
@@ -25340,6 +25475,7 @@
 				01A2494C176747C9006FE59C /* ResizableButton.m in Sources */,
 				01A2494D176747C9006FE59C /* EventCell.m in Sources */,
 				01A2494E176747C9006FE59C /* EventSectionHeader.m in Sources */,
+				71965D72182A98720069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				01A2494F176747C9006FE59C /* TWBackgroundView.m in Sources */,
 				01A24950176747C9006FE59C /* ActivityImageView.m in Sources */,
 				01A24951176747C9006FE59C /* SectionImageManager.m in Sources */,
@@ -25481,6 +25617,7 @@
 				01A2927617C6565F0070B002 /* ResizableButton.m in Sources */,
 				01A2927717C6565F0070B002 /* EventCell.m in Sources */,
 				01A2927817C6565F0070B002 /* EventSectionHeader.m in Sources */,
+				71965D81182A987C0069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				01A2927917C6565F0070B002 /* TWBackgroundView.m in Sources */,
 				01A2927A17C6565F0070B002 /* ActivityImageView.m in Sources */,
 				01A2927B17C6565F0070B002 /* SectionImageManager.m in Sources */,
@@ -25622,6 +25759,7 @@
 				01A733231718318E003505A5 /* ResizableButton.m in Sources */,
 				01A733241718318E003505A5 /* EventCell.m in Sources */,
 				01A733251718318E003505A5 /* EventSectionHeader.m in Sources */,
+				71965D67182A986B0069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				01A733261718318E003505A5 /* TWBackgroundView.m in Sources */,
 				01A733271718318E003505A5 /* ActivityImageView.m in Sources */,
 				01A733281718318E003505A5 /* SectionImageManager.m in Sources */,
@@ -25763,6 +25901,7 @@
 				01A7347817183FB8003505A5 /* ResizableButton.m in Sources */,
 				01A7347917183FB8003505A5 /* EventCell.m in Sources */,
 				01A7347A17183FB8003505A5 /* EventSectionHeader.m in Sources */,
+				71965D68182A986C0069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				01A7347B17183FB8003505A5 /* TWBackgroundView.m in Sources */,
 				01A7347C17183FB8003505A5 /* ActivityImageView.m in Sources */,
 				01A7347D17183FB8003505A5 /* SectionImageManager.m in Sources */,
@@ -25904,6 +26043,7 @@
 				01B6BB29174595A6009D7A6E /* ResizableButton.m in Sources */,
 				01B6BB2A174595A6009D7A6E /* EventCell.m in Sources */,
 				01B6BB2B174595A6009D7A6E /* EventSectionHeader.m in Sources */,
+				71965D6E182A986F0069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				01B6BB2C174595A6009D7A6E /* TWBackgroundView.m in Sources */,
 				01B6BB2D174595A6009D7A6E /* ActivityImageView.m in Sources */,
 				01B6BB2E174595A6009D7A6E /* SectionImageManager.m in Sources */,
@@ -26045,6 +26185,7 @@
 				01BA780D1721CECA00397BCB /* ResizableButton.m in Sources */,
 				01BA780E1721CECA00397BCB /* EventCell.m in Sources */,
 				01BA780F1721CECA00397BCB /* EventSectionHeader.m in Sources */,
+				71965D6A182A986D0069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				01BA78101721CECA00397BCB /* TWBackgroundView.m in Sources */,
 				01BA78111721CECA00397BCB /* ActivityImageView.m in Sources */,
 				01BA78121721CECA00397BCB /* SectionImageManager.m in Sources */,
@@ -26186,6 +26327,7 @@
 				01C5022A17B91A4D00A45D0A /* ResizableButton.m in Sources */,
 				01C5022B17B91A4D00A45D0A /* EventCell.m in Sources */,
 				01C5022C17B91A4D00A45D0A /* EventSectionHeader.m in Sources */,
+				71965D7E182A98790069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				01C5022D17B91A4D00A45D0A /* TWBackgroundView.m in Sources */,
 				01C5022E17B91A4D00A45D0A /* ActivityImageView.m in Sources */,
 				01C5022F17B91A4D00A45D0A /* SectionImageManager.m in Sources */,
@@ -26327,6 +26469,7 @@
 				01C742A11758D13300174827 /* ResizableButton.m in Sources */,
 				01C742A21758D13300174827 /* EventCell.m in Sources */,
 				01C742A31758D13300174827 /* EventSectionHeader.m in Sources */,
+				71965D71182A98710069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				01C742A41758D13300174827 /* TWBackgroundView.m in Sources */,
 				01C742A51758D13300174827 /* ActivityImageView.m in Sources */,
 				01C742A61758D13300174827 /* SectionImageManager.m in Sources */,
@@ -26468,6 +26611,7 @@
 				01D5271317A96BA40050BFE6 /* ResizableButton.m in Sources */,
 				01D5271417A96BA40050BFE6 /* EventCell.m in Sources */,
 				01D5271517A96BA40050BFE6 /* EventSectionHeader.m in Sources */,
+				71965D7B182A98780069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				01D5271617A96BA40050BFE6 /* TWBackgroundView.m in Sources */,
 				01D5271717A96BA40050BFE6 /* ActivityImageView.m in Sources */,
 				01D5271817A96BA40050BFE6 /* SectionImageManager.m in Sources */,
@@ -26609,6 +26753,7 @@
 				01D8025F17DA2E5C00F7751D /* ResizableButton.m in Sources */,
 				01D8026017DA2E5C00F7751D /* EventCell.m in Sources */,
 				01D8026117DA2E5C00F7751D /* EventSectionHeader.m in Sources */,
+				71965D85182A98800069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				01D8026217DA2E5C00F7751D /* TWBackgroundView.m in Sources */,
 				01D8026317DA2E5C00F7751D /* ActivityImageView.m in Sources */,
 				01D8026417DA2E5C00F7751D /* SectionImageManager.m in Sources */,
@@ -26750,6 +26895,7 @@
 				01DF12AD17D639A600C822AC /* ResizableButton.m in Sources */,
 				01DF12AE17D639A600C822AC /* EventCell.m in Sources */,
 				01DF12AF17D639A600C822AC /* EventSectionHeader.m in Sources */,
+				71965D82182A987C0069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				01DF12B017D639A600C822AC /* TWBackgroundView.m in Sources */,
 				01DF12B117D639A600C822AC /* ActivityImageView.m in Sources */,
 				01DF12B217D639A600C822AC /* SectionImageManager.m in Sources */,
@@ -26891,6 +27037,7 @@
 				01E046071732FDBC0082C15E /* ResizableButton.m in Sources */,
 				01E046081732FDBC0082C15E /* EventCell.m in Sources */,
 				01E046091732FDBC0082C15E /* EventSectionHeader.m in Sources */,
+				71965D6D182A986E0069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				01E0460A1732FDBC0082C15E /* TWBackgroundView.m in Sources */,
 				01E0460B1732FDBC0082C15E /* ActivityImageView.m in Sources */,
 				01E0460C1732FDBC0082C15E /* SectionImageManager.m in Sources */,
@@ -27032,6 +27179,7 @@
 				01E9B55A1729658B00BEF32B /* ResizableButton.m in Sources */,
 				01E9B55B1729658B00BEF32B /* EventCell.m in Sources */,
 				01E9B55C1729658B00BEF32B /* EventSectionHeader.m in Sources */,
+				71965D6C182A986E0069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				01E9B55D1729658B00BEF32B /* TWBackgroundView.m in Sources */,
 				01E9B55E1729658B00BEF32B /* ActivityImageView.m in Sources */,
 				01E9B55F1729658B00BEF32B /* SectionImageManager.m in Sources */,
@@ -27173,6 +27321,7 @@
 				01EBDB1E1718802B00FB5BBF /* ResizableButton.m in Sources */,
 				01EBDB1F1718802B00FB5BBF /* EventCell.m in Sources */,
 				01EBDB201718802B00FB5BBF /* EventSectionHeader.m in Sources */,
+				71965D69182A986C0069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				01EBDB211718802B00FB5BBF /* TWBackgroundView.m in Sources */,
 				01EBDB221718802B00FB5BBF /* ActivityImageView.m in Sources */,
 				01EBDB231718802B00FB5BBF /* SectionImageManager.m in Sources */,
@@ -27314,6 +27463,7 @@
 				01F36F9617AC0F3D00C783C6 /* ResizableButton.m in Sources */,
 				01F36F9717AC0F3D00C783C6 /* EventCell.m in Sources */,
 				01F36F9817AC0F3D00C783C6 /* EventSectionHeader.m in Sources */,
+				71965D7D182A98790069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				01F36F9917AC0F3D00C783C6 /* TWBackgroundView.m in Sources */,
 				01F36F9A17AC0F3D00C783C6 /* ActivityImageView.m in Sources */,
 				01F36F9B17AC0F3D00C783C6 /* SectionImageManager.m in Sources */,
@@ -27455,6 +27605,7 @@
 				841295F5168DA0E600C47B7F /* ResizableButton.m in Sources */,
 				841295F6168DA0E600C47B7F /* EventCell.m in Sources */,
 				841295F7168DA0E600C47B7F /* EventSectionHeader.m in Sources */,
+				71965D65182A98670069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				841295F8168DA0E600C47B7F /* TWBackgroundView.m in Sources */,
 				841295F9168DA0E600C47B7F /* ActivityImageView.m in Sources */,
 				841295FA168DA0E600C47B7F /* SectionImageManager.m in Sources */,
@@ -27596,6 +27747,7 @@
 				84237CB61668A3D400B3DB18 /* EventCategory.m in Sources */,
 				840E4588166E374C007CCF51 /* EventDetailsViewController.m in Sources */,
 				840E458E166E48C4007CCF51 /* EventDetailTopView.m in Sources */,
+				71965D62182A984C0069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				84FCA64C1670CC24004C6079 /* AppActionsHelper.m in Sources */,
 				84C6EF7C1670F6770007F031 /* TWShareKitConfigurator.m in Sources */,
 				84189C7B1675D9ED00A07AB3 /* DefaultSHKConfigurator.m in Sources */,
@@ -27737,6 +27889,7 @@
 				845F8AFF1680A49A0087E3F2 /* ResizableButton.m in Sources */,
 				845F8B011680A4A80087E3F2 /* EventCell.m in Sources */,
 				845F8B051680A4B70087E3F2 /* EventSectionHeader.m in Sources */,
+				71965D64182A98660069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				845F8B071680A4BB0087E3F2 /* TWBackgroundView.m in Sources */,
 				845F8B0A1680A4CD0087E3F2 /* ActivityImageView.m in Sources */,
 				845F8B0B1680A4D30087E3F2 /* SectionImageManager.m in Sources */,
@@ -27824,6 +27977,7 @@
 				84FEE07A169C59EC00EDC43F /* NSString+HTMLStripping.m in Sources */,
 				843AC46816A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m in Sources */,
 				843AC46F16A03514007DF1F9 /* UIImage+Extensions.m in Sources */,
+				71965D66182A986A0069F8E2 /* MenuButtonTutorialViewController.m in Sources */,
 				848AFF7C16AECC3E0079634B /* SearchHelper.m in Sources */,
 				8448CB4116AFD80600471BDF /* EventsHelper.m in Sources */,
 			);
