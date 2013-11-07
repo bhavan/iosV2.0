@@ -186,10 +186,9 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 
     // reset user default for debug
-#ifndef NDEBUG
-    NSString *domainName = [[NSBundle mainBundle] bundleIdentifier];
-    [userDefaults removePersistentDomainForName:domainName];
-#endif
+//    NSString *domainName = [[NSBundle mainBundle] bundleIdentifier];
+//    [userDefaults removePersistentDomainForName:domainName];
+
 
     BOOL showTutorial;
     id test = [userDefaults objectForKey:@"showTutorialScreen"];
