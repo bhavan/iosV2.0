@@ -219,8 +219,8 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 
     // reset user default for debug
-    NSString *domainName = [[NSBundle mainBundle] bundleIdentifier];
-    [userDefaults removePersistentDomainForName:domainName];
+    //NSString *domainName = [[NSBundle mainBundle] bundleIdentifier];
+    //[userDefaults removePersistentDomainForName:domainName];
 
 
     BOOL showTutorial;
