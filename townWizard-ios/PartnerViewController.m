@@ -293,7 +293,7 @@
                     }
     ];
 
-    [_mainWindow release];
+    //[_mainWindow release];
 }
 
 - (void)menuButtonTutorialViewController:(MenuButtonTutorialViewController *)menuButtonTutorialViewController
