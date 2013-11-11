@@ -37,6 +37,12 @@
 
     [self.descriptionLabel setTextColor:[UIColor whiteColor]];
     [self.menuButtonLabel setTextColor:[UIColor whiteColor]];
+    
+    if ( ! SYSTEM_VERSION_LESS_THAN(@"7.0"))
+    {
+        self.dismissButton.backgroundColor = [UIColor whiteColor];
+        self.dontShowButton.backgroundColor = [UIColor whiteColor];
+    }
 
 }
 
