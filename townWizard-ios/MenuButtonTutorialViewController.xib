@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuButtonTutorialViewController">
             <connections>
+                <outlet property="arrowImageView" destination="rEx-nx-IvA" id="EnV-My-AB3"/>
                 <outlet property="descriptionLabel" destination="Xxd-7q-PhG" id="TQW-6O-x1c"/>
                 <outlet property="dismissButton" destination="7oG-DN-crN" id="aI0-gE-ba3"/>
                 <outlet property="dontShowButton" destination="vbd-7N-ill" id="Awm-G9-5sn"/>
-                <outlet property="menuButtonImageView" destination="R8x-Eq-U7g" id="Xi2-I1-PG2"/>
+                <outlet property="menuButton" destination="63y-ct-nTt" id="0Dl-Eg-sWN"/>
                 <outlet property="menuButtonLabel" destination="xuI-M5-Msj" id="lx4-IP-7Gm"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
@@ -54,15 +55,22 @@
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu.png" id="R8x-Eq-U7g">
-                    <rect key="frame" x="5" y="7" width="33" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white_arrow.png" id="rEx-nx-IvA">
                     <rect key="frame" x="29" y="-4" width="50" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="63y-ct-nTt">
+                    <rect key="frame" x="5" y="7" width="33" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" image="menu.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="menuButtonHit:" destination="-1" eventType="touchUpInside" id="hPM-WN-QZo"/>
+                    </connections>
+                </button>
             </subviews>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>

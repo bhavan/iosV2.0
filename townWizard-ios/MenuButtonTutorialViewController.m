@@ -12,24 +12,22 @@
 
 @interface MenuButtonTutorialViewController ()
 
-@property (retain, nonatomic) IBOutlet UIImageView *menuButtonImageView;
+
+@property (retain, nonatomic) IBOutlet UIButton *menuButton;
 @property (retain, nonatomic) IBOutlet UILabel *menuButtonLabel;
 @property (retain, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (retain, nonatomic) IBOutlet UIButton *dismissButton;
 @property (retain, nonatomic) IBOutlet UIButton *dontShowButton;
+@property (retain, nonatomic) IBOutlet UIImageView *arrowImageView;
 
 @end
 
 @implementation MenuButtonTutorialViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+
+// ****************************************************************
+#pragma mark - View Controller Lifecycle
+// ****************************************************************
 
 - (void)viewDidLoad
 {
@@ -43,13 +41,11 @@
         self.dismissButton.backgroundColor = [UIColor whiteColor];
         self.dontShowButton.backgroundColor = [UIColor whiteColor];
     }
-
 }
 
-- (void)didReceiveMemoryWarning
+-(void)viewDidAppear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self bounceAnimations];
 }
 
 - (BOOL)prefersStatusBarHidden {
@@ -57,22 +53,30 @@
 }
 
 - (void)dealloc {
-    [_menuButtonImageView release];
+    _delegate = nil;
     [_menuButtonLabel release];
     [_descriptionLabel release];
     [_dismissButton release];
     [_dontShowButton release];
+    [_arrowImageView release];
+    [_menuButton release];
     [super dealloc];
 }
 
 - (void)viewDidUnload {
-    [self setMenuButtonImageView:nil];
     [self setMenuButtonLabel:nil];
     [self setDescriptionLabel:nil];
     [self setDismissButton:nil];
     [self setDontShowButton:nil];
+    [self setArrowImageView:nil];
+    [self setMenuButton:nil];
     [super viewDidUnload];
 }
+
+
+// ****************************************************************
+#pragma mark - Actions
+// ****************************************************************
 
 - (IBAction)dismissButtonPressed:(UIButton *)sender
 {
@@ -84,6 +88,41 @@
 {
     [self.delegate menuButtonTutorialViewController:self
                                     dontShowPressed:sender];
+}
+
+- (IBAction)menuButtonHit:(id)sender
+{
+    if (self.delegate)
+    {
+        if ([(NSObject *)self.delegate respondsToSelector:@selector(menuButtonTutorialViewController:menuButtonHit:)])
+        {
+            [self.delegate menuButtonTutorialViewController:self menuButtonHit:sender];
+        }
+    }
+}
+
+
+
+// ****************************************************************
+#pragma mark - Animations
+// ****************************************************************
+
+- (void)bounceAnimations
+{
+    CGAffineTransform scaleUpTransform = CGAffineTransformMakeScale(1.1f, 1.1f);
+    CGAffineTransform scaleDownTransform = CGAffineTransformMakeScale(1.0f, 1.0f);  // use this <1.0 for more pulsing
+
+    //self.arrowImageView.transform = scaleDownTransform;
+    //self.menuButtonLabel.transform = scaleDownTransform;
+    
+    [UIView animateWithDuration:0.125f
+                          delay:0.0f
+                        options:UIViewAnimationOptionRepeat | UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionAutoreverse | UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         self.arrowImageView.transform = scaleUpTransform;
+                         self.menuButtonLabel.transform = scaleUpTransform;
+    }
+                     completion: nil];
 }
 
 @end

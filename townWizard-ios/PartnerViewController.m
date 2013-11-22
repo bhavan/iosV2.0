@@ -251,33 +251,32 @@
 
     // instantiate new tutorial window
     self.tutorialWindow = [[[UIWindow alloc] initWithFrame:self.view.bounds] autorelease];
-    self.tutorialWindow.backgroundColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.7];
+    self.tutorialWindow.backgroundColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.9];
 
     // instantiate new tutorial VC
     self.menuButtonTutorialViewController = [[[MenuButtonTutorialViewController alloc] initWithNibName:@"MenuButtonTutorialViewController"
-                                                                                                                             bundle:nil] autorelease];
+                                                                                                bundle:nil] autorelease];
     self.menuButtonTutorialViewController.delegate = self;
 
     // show tutorial window
     [self.tutorialWindow makeKeyAndVisible];
 
     // animate
+    __block typeof(self) weakSelf = self;
     [UIView transitionWithView:self.mainWindow
                       duration:0.5
                        options:UIViewAnimationOptionTransitionCrossDissolve
                     animations:^{
                         BOOL oldState = [UIView areAnimationsEnabled];
                         [UIView setAnimationsEnabled:NO];
-                        self.tutorialWindow.rootViewController = self.menuButtonTutorialViewController;
+                        weakSelf.tutorialWindow.rootViewController = self.menuButtonTutorialViewController;
                         [UIView setAnimationsEnabled:oldState];
                     }
                     completion:nil
     ];
 }
 
-
-- (void)menuButtonTutorialViewController:(MenuButtonTutorialViewController *)menuButtonTutorialViewController
-                          dismissPressed:(UIButton *)sender
+- (void)dismissTutorialWithCompletionBlock:(void(^)(void))callback
 {
     // animate back to main window
     [UIView transitionWithView:self.mainWindow
@@ -290,10 +289,18 @@
                     }
                     completion:^(BOOL finished){
                         [self.mainWindow makeKeyAndVisible];
+                        if (callback)
+                        {
+                            callback();
+                        }
                     }
     ];
+}
 
-    //[_mainWindow release];
+- (void)menuButtonTutorialViewController:(MenuButtonTutorialViewController *)menuButtonTutorialViewController
+                          dismissPressed:(UIButton *)sender
+{
+    [self dismissTutorialWithCompletionBlock:nil];
 }
 
 - (void)menuButtonTutorialViewController:(MenuButtonTutorialViewController *)menuButtonTutorialViewController
@@ -303,8 +310,18 @@
     [userDefaults setBool:NO forKey:@"showTutorialScreen"];
     [userDefaults synchronize];
 
-    [self menuButtonTutorialViewController:menuButtonTutorialViewController
-                            dismissPressed:sender];
+    [self dismissTutorialWithCompletionBlock:nil];
 }
+
+- (void)menuButtonTutorialViewController:(MenuButtonTutorialViewController *)menuButtonTutorialViewController
+                           menuButtonHit:(UIButton *)menuButton
+{
+    __block typeof(self) weakSelf = self;
+    [self dismissTutorialWithCompletionBlock:^{
+        [weakSelf toggleMasterView];
+    }];
+}
+
+
 
 @end

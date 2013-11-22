@@ -16,6 +16,8 @@
 - (void)menuButtonTutorialViewController:(MenuButtonTutorialViewController *)menuButtonTutorialViewController dismissPressed:(UIButton *)sender;
 - (void)menuButtonTutorialViewController:(MenuButtonTutorialViewController *)menuButtonTutorialViewController dontShowPressed:(UIButton *)sender;
 
+@optional
+- (void)menuButtonTutorialViewController:(MenuButtonTutorialViewController *)menuButtonTutorialViewController menuButtonHit:(UIButton *)menuButton;
 @end
 
 
@@ -24,6 +26,7 @@
 @interface MenuButtonTutorialViewController : UIViewController
 
 @property (nonatomic, assign) id <MenuButtonTutorialViewControllerDelegate> delegate;
+
 
 @end
 
