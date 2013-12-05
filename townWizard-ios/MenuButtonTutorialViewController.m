@@ -38,9 +38,18 @@
 
     self.menuButtonLabel.text = NSLocalizedString(@"MENU BUTTON", nil);
     self.descriptionLabel.text = NSLocalizedString(@"TUTOR_DESCR_TEXT", nil);
-    self.dismissButton.titleLabel.text = NSLocalizedString(@"DISMISS_BTN_LABEL", nil);
-    self.dontShowButton.titleLabel.text = NSLocalizedString(@"DONTSHOW_BTN_LABEL", nil);
+    [self.dismissButton setTitle:NSLocalizedString(@"DISMISS_BTN_LABEL", nil) forState:UIControlStateNormal];
+    [self.dontShowButton setTitle:NSLocalizedString(@"DONTSHOW_BTN_LABEL", nil)
+                         forState:UIControlStateNormal];
     [self.dontShowButton sizeToFit];
+
+    CGRect frame = self.dontShowButton.frame;
+    frame.size.width +=10;
+    if (frame.size.width < self.dismissButton.frame.size.width)
+        frame.size.width = self.dismissButton.frame.size.width;
+    frame.size.height = 40;
+    frame.origin.x = (self.view.frame.size.width - frame.size.width)*.5f;
+    self.dontShowButton.frame = frame;
 
     if ( ! SYSTEM_VERSION_LESS_THAN(@"7.0"))
     {
