@@ -35,7 +35,13 @@
 
     [self.descriptionLabel setTextColor:[UIColor whiteColor]];
     [self.menuButtonLabel setTextColor:[UIColor whiteColor]];
-    
+
+    self.menuButtonLabel.text = NSLocalizedString(@"MENU BUTTON", nil);
+    self.descriptionLabel.text = NSLocalizedString(@"TUTOR_DESCR_TEXT", nil);
+    self.dismissButton.titleLabel.text = NSLocalizedString(@"DISMISS_BTN_LABEL", nil);
+    self.dontShowButton.titleLabel.text = NSLocalizedString(@"DONTSHOW_BTN_LABEL", nil);
+    [self.dontShowButton sizeToFit];
+
     if ( ! SYSTEM_VERSION_LESS_THAN(@"7.0"))
     {
         self.dismissButton.backgroundColor = [UIColor whiteColor];
@@ -101,8 +107,6 @@
     }
 }
 
-
-
 // ****************************************************************
 #pragma mark - Animations
 // ****************************************************************
@@ -112,9 +116,6 @@
     CGAffineTransform scaleUpTransform = CGAffineTransformMakeScale(1.1f, 1.1f);
     CGAffineTransform scaleDownTransform = CGAffineTransformMakeScale(1.0f, 1.0f);  // use this <1.0 for more pulsing
 
-    //self.arrowImageView.transform = scaleDownTransform;
-    //self.menuButtonLabel.transform = scaleDownTransform;
-    
     [UIView animateWithDuration:0.125f
                           delay:0.0f
                         options:UIViewAnimationOptionRepeat | UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionAutoreverse | UIViewAnimationOptionCurveLinear

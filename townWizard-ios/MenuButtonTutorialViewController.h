@@ -6,9 +6,6 @@
 //
 //
 
-#import <UIKit/UIKit.h>
-
-
 @class MenuButtonTutorialViewController;
 
 @protocol MenuButtonTutorialViewControllerDelegate
@@ -20,13 +17,9 @@
 - (void)menuButtonTutorialViewController:(MenuButtonTutorialViewController *)menuButtonTutorialViewController menuButtonHit:(UIButton *)menuButton;
 @end
 
-
-
-
 @interface MenuButtonTutorialViewController : UIViewController
 
 @property (nonatomic, assign) id <MenuButtonTutorialViewControllerDelegate> delegate;
-
 
 @end
 

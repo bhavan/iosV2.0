@@ -1,0 +1,8 @@
+/****************************************************************************/
+/* Localization file */
+
+
+"MENU BUTTON" = "BOTON DE MENU";
+"TUTOR_DESCR_TEXT" = "CLIQUE EN EL BOTON DE MENU PARA TENER ACCESO A MAS CONTENIDO";
+"DISMISS_BTN_LABEL" = "OK list";
+"DONTSHOW_BTN_LABEL" = "No muestre esta pantalla de nuevo";
