@@ -2,7 +2,7 @@
 /* Localization file */
 
 
-"MENU BUTTON" = "BOTON DE MENU";
-"TUTOR_DESCR_TEXT" = "CLIQUE EN EL BOTON DE MENU PARA TENER ACCESO A MAS CONTENIDO";
-"DISMISS_BTN_LABEL" = "OK list";
-"DONTSHOW_BTN_LABEL" = "No muestre esta pantalla de nuevo";
+"MENU BUTTON" = "Tecla Menú";
+"TUTOR_DESCR_TEXT" = "Presione la tecla de menú para acceder a mas contenido local";
+"DISMISS_BTN_LABEL" = "Ok, hecho";
+"DONTSHOW_BTN_LABEL" = "No mostrar de nuevo";

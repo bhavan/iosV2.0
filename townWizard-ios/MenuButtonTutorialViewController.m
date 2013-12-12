@@ -53,8 +53,8 @@
 
     if ( ! SYSTEM_VERSION_LESS_THAN(@"7.0"))
     {
-        self.dismissButton.backgroundColor = [UIColor whiteColor];
-        self.dontShowButton.backgroundColor = [UIColor whiteColor];
+        self.dismissButton.backgroundColor = [UIColor darkGrayColor];
+        self.dontShowButton.backgroundColor = [UIColor darkGrayColor];
     }
 }
 
