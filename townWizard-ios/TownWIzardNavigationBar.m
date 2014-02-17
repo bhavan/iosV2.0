@@ -7,7 +7,6 @@
 //
 
 #import "TownWizardNavigationBar.h"
-#import <QuartzCore/QuartzCore.h>
 
 static const CGFloat kTWBarOriginX = 160;
 static const CGFloat kTWBarTitleFontSize = 18;
