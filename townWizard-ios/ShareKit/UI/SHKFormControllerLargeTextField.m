@@ -103,7 +103,7 @@
 																														target:self
 																														action:@selector(cancel)] autorelease];
     NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                    [UIColor whiteColor], UITextAttributeTextColor,
+                                    [UIColor blueColor], UITextAttributeTextColor,
                                     [UIColor clearColor], UITextAttributeTextShadowColor,
                                     [NSValue valueWithUIOffset:UIOffsetMake(0, 0)], UITextAttributeTextShadowOffset,
                                     [UIFont boldSystemFontOfSize:13.0f], UITextAttributeFont,

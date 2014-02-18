@@ -108,7 +108,10 @@
 			doShare = [shareDelegate aboutToShareItem:item withSharer:sharer];
 		}
 		if(doShare)
-			[sharer share];
+        {
+            [sharer performSelector:@selector(share) withObject:nil afterDelay:0.5];
+        }
+
 	}
 	
 	// More
