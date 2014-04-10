@@ -136,6 +136,7 @@
 
 - (IBAction)goBackPressed:(id)sender
 {
+    [self.webView stopLoading];
     if(self.webView.canGoBack)
     {
         [self.webView goBack];
@@ -197,6 +198,8 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     [[self activityIndicator] stopAnimating];
+    if (error.code == -999)
+        return;
     [UIAlertView showConnectionProblemMessage];
 }
 
