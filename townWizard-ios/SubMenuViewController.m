@@ -200,7 +200,9 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     [[self activityIndicator] stopAnimating];
     if (error.code == -999)
         return;
-    [UIAlertView showConnectionProblemMessage];
+    [UIAlertView showWithTitle:@"Connection error"
+                       message:error.localizedDescription
+            confirmButtonTitle:@"Ok"];
 }
 
 - (BOOL)parseUrlComponents:(NSArray *)components
