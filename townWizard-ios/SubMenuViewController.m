@@ -17,6 +17,7 @@
 #import "UIButton+Extensions.h"
 #import "UIAlertView+Extensions.h"
 #import "UIBarButtonItem+TWButtons.h"
+#import "MBProgressHUD.h"
 
 #define ROOT_URL @"app30a"
 #define MAP_URL @"showmap"
@@ -27,7 +28,7 @@
 #define CALL_URL @"makecall"
 
 @interface SubMenuViewController ()
-@property (retain, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property(nonatomic, assign) BOOL progressPresented;
 @end
 
 @implementation SubMenuViewController
@@ -40,6 +41,7 @@
     [super viewDidLoad];
 
     self.navigationController.navigationBarHidden = NO;
+    self.progressPresented = NO;
     back = [[UIBarButtonItem backButtonWithTarget:self action:@selector(goBackPressed:)] retain];
     partnerController = (id)self.navigationController.parentViewController;
     
@@ -165,26 +167,17 @@
 #pragma mark -
 #pragma mark webView
 
-- (void)webViewDidStartLoad:(UIWebView *)webView
-{
-    webView.scalesPageToFit = YES;
-
-    [[self activityIndicator] stopAnimating];
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
-    [self setupLeftButton];
-    [[self activityIndicator] stopAnimating];
-}
-
 - (BOOL)webView:(UIWebView *)webView
 shouldStartLoadWithRequest:(NSURLRequest *)request
  navigationType:(UIWebViewNavigationType)navigationType
 {
     [self setupLeftButton];
-    [[self activityIndicator] startAnimating];
-    
+    if (! self.progressPresented) {
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = @"Loading";
+        self.progressPresented = YES;
+    }
+
     NSString *requestString = [[request URL] absoluteString];
 	NSArray *components = [requestString componentsSeparatedByString:@":"];    
     if ([components count] >= 2)
@@ -196,14 +189,41 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     return YES;
 }
 
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    webView.scalesPageToFit = YES;
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    if (self.progressPresented) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        self.progressPresented = NO;
+    }
+
+    [self setupLeftButton];
+}
+
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    [[self activityIndicator] stopAnimating];
     if (error.code == -999)
         return;
+
+    if (self.progressPresented) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        self.progressPresented = NO;
+    }
     [UIAlertView showWithTitle:@"Connection error"
                        message:error.localizedDescription
             confirmButtonTitle:@"Ok"];
 }
+
+
+
+
+
+
+
+#pragma mark - Private
 
 - (BOOL)parseUrlComponents:(NSArray *)components
 {
@@ -326,14 +346,12 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 - (void)viewDidUnload
 {
     [self cleanUp];
-    [self setActivityIndicator:nil];
     [super viewDidUnload];
 }
 
 - (void)dealloc
 {
     [self cleanUp];
-    [_activityIndicator release];
     [super dealloc];
 }
 
