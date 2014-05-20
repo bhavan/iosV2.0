@@ -293,7 +293,7 @@ static RequestHelper *requestHelper = nil;
 	[body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[@"Content-Disposition: form-data; name=\"userphoto\"; filename=\"mainphoto.jpg\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[@"Content-Type: application/octet-stream\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-	[body appendData:[NSData dataWithData:UIImageJPEGRepresentation(image,1.0)]];
+	[body appendData:[NSData dataWithData:UIImageJPEGRepresentation(image,0.7)]];
 	[body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
 	
 	[body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
