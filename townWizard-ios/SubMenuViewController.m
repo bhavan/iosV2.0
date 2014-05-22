@@ -107,14 +107,7 @@
 - (BOOL)isSectionUrlAbsolute:(NSString *)urlString
 {
     NSRange range = [urlString rangeOfString:@"http://"];
-    if(range.length > 0)
-    {
-        return YES;
-    }
-    else
-    {
-        return NO;
-    }
+    return range.length > 0;
 }
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -172,21 +165,23 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
  navigationType:(UIWebViewNavigationType)navigationType
 {
     [self setupLeftButton];
-    if (! self.progressPresented) {
-        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        hud.labelText = @"Loading";
-        self.progressPresented = YES;
-    }
 
     NSString *requestString = [[request URL] absoluteString];
-	NSArray *components = [requestString componentsSeparatedByString:@":"];    
+	NSArray *components = [requestString componentsSeparatedByString:@":"];
+
+    BOOL shouldStartLoad = YES;
+
     if ([components count] >= 2)
     {
-        return [self parseUrlComponents:components];
+        shouldStartLoad = [self parseUrlComponents:components];
     }
-    [[UIApplication sharedApplication] showNetworkActivityIndicator];
+
+    if (shouldStartLoad)
+    {
+        [self showProgressHUD];
+    }
     
-    return YES;
+    return shouldStartLoad;
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
@@ -196,11 +191,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    if (self.progressPresented) {
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-        self.progressPresented = NO;
-    }
-
+    [self hideProgressHUD];
     [self setupLeftButton];
 }
 
@@ -208,10 +199,8 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     if (error.code == -999)
         return;
 
-    if (self.progressPresented) {
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-        self.progressPresented = NO;
-    }
+    [self hideProgressHUD];
+
     [UIAlertView showWithTitle:@"Connection error"
                        message:error.localizedDescription
             confirmButtonTitle:@"Ok"];
@@ -222,26 +211,44 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 
 
 
-
 #pragma mark - Private
+
+
+- (void)showProgressHUD
+{
+    [[UIApplication sharedApplication] showNetworkActivityIndicator];
+    if (! self.progressPresented) {
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = @"Loading";
+        self.progressPresented = YES;
+    }
+}
+
+- (void)hideProgressHUD
+{
+    [[UIApplication sharedApplication] hideNetworkActivityIndicator];
+    if (self.progressPresented) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        self.progressPresented = NO;
+    }
+}
 
 - (BOOL)parseUrlComponents:(NSArray *)components
 {
-    NSString *rootUrlType = [[components objectAtIndex:0] lowercaseString];
+    NSString *rootUrlType = [components[0] lowercaseString];
     NSString *urlType = rootUrlType;
     if([rootUrlType isEqualToString:ROOT_URL])
     {
-        urlType = [[components objectAtIndex:1] lowercaseString];
+        urlType = [components[1] lowercaseString];
     }
     return [self actionForUrlType:urlType withComponents:components];
-    
 }
 
 - (BOOL)actionForUrlType:(NSString *)urlType withComponents:(NSArray *)components
 {
     if( [urlType isEqualToString:CALL_URL])
     {
-        [[AppActionsHelper sharedInstance] makeCall:[components objectAtIndex:2]];
+        [[AppActionsHelper sharedInstance] makeCall:components[2]];
         return NO;
     }
     else if( [urlType isEqualToString:DETAILS_URL])
@@ -260,7 +267,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     }
     else if([urlType isEqualToString:TEL_URL])
     {
-        [[AppActionsHelper sharedInstance] makeCall:[components objectAtIndex:1]];
+        [[AppActionsHelper sharedInstance] makeCall:components[1]];
         return NO;
     }
     else if([urlType isEqualToString:MAIL_URL])
@@ -277,14 +284,14 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     NSString *title = @"";
     if(components.count > 4)
     {
-        title = [components objectAtIndex:4];
+        title = components[4];
         title = [[title stringByReplacingOccurrencesOfString:@"+" withString:@" "]
                  stringByReplacingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
     }
     
     [[AppActionsHelper sharedInstance] openMapWithTitle:title
-                                              longitude:[[components objectAtIndex:3] doubleValue]
-                                               latitude:[[components objectAtIndex:2] doubleValue] fromNavController:self.navigationController];
+                                              longitude:[components[3] doubleValue]
+                                               latitude:[components[2] doubleValue] fromNavController:self.navigationController];
 }
 
 - (void)mailUrlPressedWithComponents:(NSArray *)components
@@ -293,9 +300,9 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     {
         MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
         mailer.mailComposeDelegate = self;
-        NSString * emailAddress = [[components objectAtIndex:1]
+        NSString * emailAddress = [components[1]
                                    stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        NSArray *toRecipients = [NSArray arrayWithObjects:emailAddress, nil];
+        NSArray *toRecipients = @[ emailAddress ];
         [mailer setToRecipients:toRecipients];
         [self presentModalViewController:mailer animated:YES];
         [mailer release];
@@ -312,9 +319,9 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     {
         FacebookPlacesViewController * fpvc = [[FacebookPlacesViewController alloc]
                                                initWithLatitude:
-                                               [[components objectAtIndex:2] doubleValue]
+                                               [components[2] doubleValue]
                                                andLongitude:
-                                               [[components objectAtIndex:3] doubleValue]];
+                                               [components[3] doubleValue]];
       
         [self.navigationController pushViewController:fpvc animated:YES];
         [fpvc release];
