@@ -17,6 +17,7 @@
 #import "Event.h"
 #import "MappingManager.h"
 #import "UIImage+Extensions.h"
+#import "UIImage+Resize.h"
 
 static NSString* const kBoundaryString = @"0xKhTmLbOuNdArY";
 #define REQUEST_TIMEOUT 30
@@ -280,6 +281,7 @@ static RequestHelper *requestHelper = nil;
 {
     NSString *stringBoundary = kBoundaryString;
     NSMutableData *body = [NSMutableData data];
+    UIImage *resizedImage = [image resizedImageToFitInSize:CGSizeMake(1000, 1000) scaleIfSmaller:NO];
 	
 	[body appendData:[[NSString stringWithFormat:@"--%@\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[@"Content-Disposition: form-data; name=\"caption\"\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
@@ -293,7 +295,7 @@ static RequestHelper *requestHelper = nil;
 	[body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[@"Content-Disposition: form-data; name=\"userphoto\"; filename=\"mainphoto.jpg\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[@"Content-Type: application/octet-stream\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-	[body appendData:[NSData dataWithData:UIImageJPEGRepresentation(image,0.7)]];
+	[body appendData:[NSData dataWithData:UIImageJPEGRepresentation(resizedImage, 0.7)]];
 	[body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
 	
 	[body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
