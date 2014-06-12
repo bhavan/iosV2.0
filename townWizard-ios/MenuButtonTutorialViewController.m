@@ -51,10 +51,12 @@
     frame.origin.x = (self.view.frame.size.width - frame.size.width)*.5f;
     self.dontShowButton.frame = frame;
 
-    if ( ! SYSTEM_VERSION_LESS_THAN(@"7.0"))
+    if (SYSTEM_VERSION_LESS_THAN(@"7.0"))
     {
-        self.dismissButton.backgroundColor = [UIColor darkGrayColor];
-        self.dontShowButton.backgroundColor = [UIColor darkGrayColor];
+        self.dismissButton.backgroundColor = [UIColor clearColor];
+        self.dontShowButton.backgroundColor = [UIColor clearColor];
+        self.dismissButton.titleLabel.textColor = [UIColor darkGrayColor];
+        self.dontShowButton.titleLabel.textColor = [UIColor darkGrayColor];
     }
 }
 

@@ -21,7 +21,7 @@
                                             delegate:delegate
                                    cancelButtonTitle:cancelTitle
                                    otherButtonTitles:confirmTitle, nil];
-    [alert show];
+    [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:YES];
     return [alert autorelease];
 }
 
