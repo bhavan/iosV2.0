@@ -16,6 +16,8 @@
 #import <RestKit/RestKit.h>
 #import "Appirater.h"
 #import "Reachability.h"
+#import <Crashlytics/Crashlytics.h>
+
 
 #ifdef RUN_KIF_TESTS
 #import "EXTestController.h"
@@ -42,8 +44,10 @@ static NSString *twGAcode = @"UA-31932515-2";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [Crashlytics startWithAPIKey:@"341746f5f38b7ccfb8af75a95f511d70f1278b9c"];
+    
     [application setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
-
+    
     [self configureNavBar];
     [self configureLibraries];
     
