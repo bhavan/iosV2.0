@@ -45,7 +45,9 @@ static const CGFloat kTWBarTitleFontSize = 18;
 
 - (void) drawRect:(CGRect)rect
 {
-    [background drawInRect:[self bounds]];
+    if ([background respondsToSelector:@selector(drawInRect:)]) {
+        [background drawInRect:[self bounds]];
+    }
 }
 
 #pragma mark -
