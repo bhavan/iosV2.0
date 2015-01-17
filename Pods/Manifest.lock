@@ -1,0 +1,101 @@
+PODS:
+  - Appirater (0.0.4)
+  - AQGridView (1.3)
+  - cocoa-oauth (0.0.1):
+    - NSData+Base64 (~> 1.0)
+  - FileMD5Hash (1.0.0)
+  - GoogleAnalytics-iOS-SDK (2.0beta4)
+  - ISO8601DateFormatter (0.7)
+  - JSONKit (1.5pre)
+  - LibComponentLogging-Core (1.3.3)
+  - LibComponentLogging-NSLog (1.1.1):
+    - LibComponentLogging-Core (>= 1.3.1)
+  - MBProgressHUD (0.9)
+  - MWPhotoBrowser (0.0.1):
+    - MBProgressHUD
+    - SDWebImage
+  - NSData+Base64 (1.0.0)
+  - RestKit (0.10.3):
+    - RestKit/JSON (= 0.10.3)
+  - RestKit/JSON (0.10.3):
+    - RestKit/Network
+    - RestKit/ObjectMapping
+    - RestKit/ObjectMapping/CoreData
+    - RestKit/ObjectMapping/JSON
+    - RestKit/UI
+  - RestKit/Network (0.10.3):
+    - cocoa-oauth
+    - FileMD5Hash (= 1.0.0)
+    - LibComponentLogging-NSLog (>= 1.0.4)
+    - SOCKit
+  - RestKit/ObjectMapping (0.10.3):
+    - ISO8601DateFormatter (>= 0.6)
+    - RestKit/Network
+    - RestKit/ObjectMapping/Core (= 0.10.3)
+    - RestKit/ObjectMapping/CoreData (= 0.10.3)
+    - RestKit/ObjectMapping/JSON (= 0.10.3)
+    - RestKit/ObjectMapping/XML (= 0.10.3)
+  - RestKit/ObjectMapping/Core (0.10.3):
+    - ISO8601DateFormatter (>= 0.6)
+    - RestKit/Network
+  - RestKit/ObjectMapping/CoreData (0.10.3):
+    - ISO8601DateFormatter (>= 0.6)
+    - RestKit/Network
+    - RestKit/ObjectMapping/Core
+  - RestKit/ObjectMapping/JSON (0.10.3):
+    - ISO8601DateFormatter (>= 0.6)
+    - JSONKit (>= 1.5pre)
+    - RestKit/Network
+    - RestKit/ObjectMapping/Core
+  - RestKit/ObjectMapping/XML (0.10.3):
+    - ISO8601DateFormatter (>= 0.6)
+    - RestKit/Network
+    - RestKit/ObjectMapping/Core
+    - XMLReader
+  - RestKit/UI (0.10.3)
+  - SDWebImage (2.7):
+    - SDWebImage/Main (= 2.7)
+  - SDWebImage/Main (2.7)
+  - SOCKit (1.1)
+  - XMLReader (0.0.2)
+
+DEPENDENCIES:
+  - Appirater (= 0.0.4)
+  - AQGridView (= 1.3)
+  - FileMD5Hash (from `https://github.com/JoeKun/FileMD5Hash.git`, commit `6aab7463f2406ea035ee6683bf47690e9b22695d`)
+  - GoogleAnalytics-iOS-SDK (= 2.0beta4)
+  - MWPhotoBrowser (= 0.0.1)
+  - RestKit (from `RestKit.podspec`)
+  - SDWebImage (= 2.7)
+
+EXTERNAL SOURCES:
+  FileMD5Hash:
+    :commit: 6aab7463f2406ea035ee6683bf47690e9b22695d
+    :git: https://github.com/JoeKun/FileMD5Hash.git
+  RestKit:
+    :podspec: RestKit.podspec
+
+CHECKOUT OPTIONS:
+  FileMD5Hash:
+    :commit: 6aab7463f2406ea035ee6683bf47690e9b22695d
+    :git: https://github.com/JoeKun/FileMD5Hash.git
+
+SPEC CHECKSUMS:
+  Appirater: f75e3cee30b744604507fc31cf108e02ca273965
+  AQGridView: ea23eba433713b5b36efc258f58b38a6b4c3cc35
+  cocoa-oauth: 418c70e6ce4130fa7ebdf05232018c8f391030d8
+  FileMD5Hash: 2ccc29da3a192c7ab85e7547f9e14a5894b9b30c
+  GoogleAnalytics-iOS-SDK: 7b20550d822fa9c86331ccda734bdf8c7ff6f752
+  ISO8601DateFormatter: 59731cd880cf87e71b4fa95f0d6b713dcbc4cbce
+  JSONKit: efef3bbd3372ff33f96b9c6f34cf4fe18e74ab69
+  LibComponentLogging-Core: 769c6f596b96348911fe75f9825728213d334941
+  LibComponentLogging-NSLog: ae0ad111653e6c955e3f93b95386285fcdf94ab3
+  MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
+  MWPhotoBrowser: 700c1da228ed36cb549e010844d1d77a35be1323
+  NSData+Base64: aae92a2e3f0bd88b29fe6093551ded3f5c062548
+  RestKit: 010aa3daa6a5ff89718a1dfaf36af135c5dbce9e
+  SDWebImage: ea31e976ca878c825f19efb8617777bd8f3548a2
+  SOCKit: d8d0dd3688ae1026c12367570da8fa8e1a6980fb
+  XMLReader: 2264fd2f8167343285a9943929c3b7e4b74626c0
+
+COCOAPODS: 0.35.0
