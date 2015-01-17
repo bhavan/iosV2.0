@@ -10,9 +10,7 @@
 #import "MasterDetailController.h"
 
 @interface TownWizardNavigationBar : UINavigationBar<UINavigationBarDelegate>
-{
-    UIImage *background;
-}
+
 @property (nonatomic, retain) UILabel *titleLabel;
 
 - (CGRect)calculateTitleFrame;

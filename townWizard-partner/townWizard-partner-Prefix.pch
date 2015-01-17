@@ -11,8 +11,6 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
-    #import "TestFlight.h"   
-    #import <RestKit/RestKit.h>
 
 //#define SERVER_URL @"http://container.mlsdev.com/"//@"http://townwizard.com/api/v1/"
 #define SERVER_URL @"http://www.townwizardcontainerapp.com"
@@ -24,14 +22,13 @@
 #define DEFAULT_PARTNER_NAME @"TownWizardApps"
 #define TOKEN_KEY @"X-ACCESS-TOKEN"
 
-#import "GAI.h"
+//#import "GAI.h"
 #import "RequestHelper.h"
 #import "UIView+Extensions.h"
 #import "UIAlertView+Extensions.h"
 #import "MappingManager.h"
 #import "AppActionsHelper.h"
 #import "GoogleAnalyticsEvent.h"
-
 
 
 #endif

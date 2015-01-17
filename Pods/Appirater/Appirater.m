@@ -63,7 +63,6 @@ static BOOL _debug = NO;
 - (BOOL)ratingConditionsHaveBeenMet;
 - (void)incrementUseCount;
 - (void)hideRatingAlert;
-- (void)restartTracking;
 @end
 
 @implementation Appirater 
@@ -174,8 +173,8 @@ static BOOL _debug = NO;
 		return NO;
 	
 	// has the user previously declined to rate this version of the app?
-	/*if ([userDefaults boolForKey:kAppiraterDeclinedToRate])
-		return NO;*/
+	if ([userDefaults boolForKey:kAppiraterDeclinedToRate])
+		return NO;
 	
 	// has the user already rated the app?
 	if ([userDefaults boolForKey:kAppiraterRatedCurrentVersion])
@@ -275,25 +274,16 @@ static BOOL _debug = NO;
 	else
 	{
 		// it's a new version of the app, so restart tracking
-        [self restartTracking];
-    }
+		[userDefaults setObject:version forKey:kAppiraterCurrentVersion];
+		[userDefaults setDouble:0 forKey:kAppiraterFirstUseDate];
+		[userDefaults setInteger:0 forKey:kAppiraterUseCount];
+		[userDefaults setInteger:1 forKey:kAppiraterSignificantEventCount];
+		[userDefaults setBool:NO forKey:kAppiraterRatedCurrentVersion];
+		[userDefaults setBool:NO forKey:kAppiraterDeclinedToRate];
+		[userDefaults setDouble:0 forKey:kAppiraterReminderRequestDate];
+	}
 	
-	
-}
-
-- (void)restartTracking
-{
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString*)kCFBundleVersionKey];
-    [userDefaults setObject:version forKey:kAppiraterCurrentVersion];
-    [userDefaults setDouble:0 forKey:kAppiraterFirstUseDate];
-    [userDefaults setInteger:0 forKey:kAppiraterUseCount];
-    [userDefaults setInteger:1 forKey:kAppiraterSignificantEventCount];
-    [userDefaults setBool:NO forKey:kAppiraterRatedCurrentVersion];
-    [userDefaults setBool:NO forKey:kAppiraterDeclinedToRate];
-    [userDefaults setDouble:0 forKey:kAppiraterReminderRequestDate];
-    [userDefaults synchronize];
-
+	[userDefaults synchronize];
 }
 
 - (void)incrementAndRate:(BOOL)canPromptForRating {
@@ -393,9 +383,8 @@ static BOOL _debug = NO;
 		case 0:
 		{
 			// they don't want to rate it
-			/*[userDefaults setBool:YES forKey:kAppiraterDeclinedToRate];
-			[userDefaults synchronize];*/
-            [self restartTracking];
+			[userDefaults setBool:YES forKey:kAppiraterDeclinedToRate];
+			[userDefaults synchronize];
 			break;
 		}
 		case 1:

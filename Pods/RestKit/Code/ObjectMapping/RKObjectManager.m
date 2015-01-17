@@ -331,6 +331,7 @@ static dispatch_queue_t defaultMappingQueue = nil;
 
     // Yield to the block for setup
     block(loader);
+
     [loader send];
 }
 

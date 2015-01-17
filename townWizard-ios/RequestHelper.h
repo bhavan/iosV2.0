@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <RestKit.h>
 #import "Partner.h"
 
 @class Section;

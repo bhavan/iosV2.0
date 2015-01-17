@@ -143,13 +143,11 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
 	{
 		msg = @"We will review and post\nyour photo ASAP.\nCheck back soon!";
 		title = @"Thank you!";
-        [TestFlight passCheckpoint:@"Photo uploaded!"];
 	}
 	else
 	{
 		msg = @"Error while uploading Photo";
 		title = @"Server Error";
-        [TestFlight passCheckpoint:@"Error while uploading photo"];
 	}
 	[sReturnValue release];
 	

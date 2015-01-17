@@ -149,7 +149,6 @@ extern NSString *const kAppiraterReminderRequestDate;
  */
 + (void)rateApp;
 
-
 @end
 
 @interface Appirater(Configuration)

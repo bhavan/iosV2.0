@@ -149,8 +149,6 @@
     
     if (error)
     {// we will force authorizing permission, and use delegate callback
-        
-        [TestFlight passCheckpoint:@"Some error, possibly permission revoked"];
         NSArray *permissions =  [NSArray arrayWithObjects:
                                  @"publish_stream",
                                  //@"read_stream",
@@ -225,14 +223,12 @@
 
 - (void) facebookPermissionGranted
 {
-    [TestFlight passCheckpoint:@"facebook permission granted"];
     locationUpdated = NO;
     [AppDelegate sharedDelegate].manager.delegate = self;
     if ([CLLocationManager locationServicesEnabled])
         //[[AppDelegate sharedDelegate].manager startUpdatingLocation];
         [self loadPlaces];
     else {
-        [TestFlight passCheckpoint:@"Location services disabled"];
         UIAlertView *alertView = [[UIAlertView alloc]
                                   initWithTitle:NSLocalizedString(@"Location services disabled!", @"AlertView")
                                   message:NSLocalizedString(@"You can enable them in settings", @"AlertView")
@@ -262,7 +258,6 @@
 
 -(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
 {
-    [TestFlight passCheckpoint:@"Location manager changed authorization status"];
     if (status == kCLAuthorizationStatusAuthorized)
     {
         locationUpdated = NO;
@@ -274,7 +269,6 @@
 {
     if (error.code == kCLErrorDenied)
     {
-        [TestFlight passCheckpoint:@"Location services for this device are disabled"];
         UIAlertView *alertView = [[UIAlertView alloc]
                                   initWithTitle:NSLocalizedString(@"Location services for this app are disabled!", @"AlertView")
                                   message:NSLocalizedString(@"You can enable them in settings", @"AlertView")
@@ -289,7 +283,6 @@
 }
 
 - (void) facebookPermissionNotGranted {
-    [TestFlight passCheckpoint:@"facebook permission denied"];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

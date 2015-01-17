@@ -14,6 +14,7 @@
 #import "TWShareKitConfigurator.h"
 #import "PartnerViewController.h"
 #import <RestKit/RestKit.h>
+#import <GAI.h>
 #import "Appirater.h"
 #import "Reachability.h"
 
@@ -32,7 +33,6 @@
 @dynamic longitude;
 
 static NSString *partnerId = @"1";
-static NSString* teamToken = @"5c115b5c0ce101b8b0367b329e68db27_MzE2NjMyMDExLTExLTA3IDAzOjQ5OjEyLjkyNjU4Ng";
 static NSString *twGAcode = @"UA-31932515-2";
 
 
@@ -112,7 +112,6 @@ static NSString *twGAcode = @"UA-31932515-2";
     RKURL *baseURL = [RKURL URLWithBaseURLString:API_URL];
     RKObjectManager *objectManager = [RKObjectManager objectManagerWithBaseURL:baseURL];
     objectManager.client.baseURL = baseURL;
-    [TestFlight takeOff:teamToken];
     [[GAI sharedInstance] trackerWithTrackingId:twGAcode];
 }
 

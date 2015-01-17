@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GAITrackedViewController.h>
 
 @class PhotoUploadView;
 @class Partner;

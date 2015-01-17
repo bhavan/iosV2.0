@@ -60,16 +60,12 @@
                                               forKey:@"ExpirationDate"];
     if ([delegate respondsToSelector:@selector(facebookPermissionGranted)])
         [delegate facebookPermissionGranted];
-    
-    [TestFlight passCheckpoint:@"facebook login successful"];
 }
 
 - (void) fbDidNotLogin:(BOOL)cancelled
 {
     if ([delegate respondsToSelector:@selector(facebookPermissionNotGranted)])
         [delegate facebookPermissionNotGranted];
-    
-    [TestFlight passCheckpoint:@"facebook login failed"];
 }
 
 - (void) dialog:(NSString *)action andParams:(NSMutableDictionary *)params

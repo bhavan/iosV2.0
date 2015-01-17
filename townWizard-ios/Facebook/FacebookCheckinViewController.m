@@ -213,7 +213,6 @@
                                     delegate:nil
                            cancelButtonTitle:@"Continue" 
                            otherButtonTitles:nil] autorelease] show];
-        [TestFlight passCheckpoint:@"Facebook check-in successful"];
 
         checkInProgress = NO;
         
