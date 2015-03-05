@@ -10,6 +10,7 @@
 
 #import "RequestHelper.h"
 #import "GAI.h"
+#import <GoogleAnalytics-iOS-SDK/GAIDictionaryBuilder.h>
 
 @implementation GoogleAnalyticsEvent
 
@@ -30,10 +31,10 @@
     
     if ([cityName length]) {
         id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-        [tracker trackEventWithCategory:[NSString stringWithFormat:@"%@:",cityName]
-                             withAction:[self eventName]
-                              withLabel:[self eventDescription]
-                              withValue:nil];
+        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:[NSString stringWithFormat:@"%@:",cityName]
+                                                             action:[self eventName]
+                                                              label:[self eventDescription]
+                                                              value:nil] build]];
     }
 }
 

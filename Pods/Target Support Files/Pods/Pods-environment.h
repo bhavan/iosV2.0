@@ -26,23 +26,21 @@
 
 // GoogleAnalytics-iOS-SDK
 #define COCOAPODS_POD_AVAILABLE_GoogleAnalytics_iOS_SDK
-// This library does not follow semantic-versioning,
-// so we were not able to define version macros.
-// Please contact the author.
-// Version: 2.0beta4.
+#define COCOAPODS_VERSION_MAJOR_GoogleAnalytics_iOS_SDK 3
+#define COCOAPODS_VERSION_MINOR_GoogleAnalytics_iOS_SDK 10
+#define COCOAPODS_VERSION_PATCH_GoogleAnalytics_iOS_SDK 0
+
+// GoogleAnalytics-iOS-SDK/Core
+#define COCOAPODS_POD_AVAILABLE_GoogleAnalytics_iOS_SDK_Core
+#define COCOAPODS_VERSION_MAJOR_GoogleAnalytics_iOS_SDK_Core 3
+#define COCOAPODS_VERSION_MINOR_GoogleAnalytics_iOS_SDK_Core 10
+#define COCOAPODS_VERSION_PATCH_GoogleAnalytics_iOS_SDK_Core 0
 
 // ISO8601DateFormatter
 #define COCOAPODS_POD_AVAILABLE_ISO8601DateFormatter
 #define COCOAPODS_VERSION_MAJOR_ISO8601DateFormatter 0
 #define COCOAPODS_VERSION_MINOR_ISO8601DateFormatter 7
 #define COCOAPODS_VERSION_PATCH_ISO8601DateFormatter 0
-
-// JSONKit
-#define COCOAPODS_POD_AVAILABLE_JSONKit
-// This library does not follow semantic-versioning,
-// so we were not able to define version macros.
-// Please contact the author.
-// Version: 1.5pre.
 
 // LibComponentLogging-Core
 #define COCOAPODS_POD_AVAILABLE_LibComponentLogging_Core

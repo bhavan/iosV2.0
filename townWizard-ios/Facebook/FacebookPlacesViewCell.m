@@ -8,7 +8,6 @@
 
 #import "FacebookPlacesViewCell.h"
 #import "Place.h"
-#import "JSONKit.h"
 #import "ActivityImageView.h"
 
 @interface FacebookPlacesViewCell()
@@ -94,9 +93,7 @@
 
 - (void)request:(FBRequest *)request didLoad:(id)result
 {
-    NSString *resultJson = [[NSString alloc] initWithData:request.responseText encoding:NSUTF8StringEncoding];
-    NSDictionary *jsonDict = [resultJson objectFromJSONString];
-    [resultJson release];
+    NSDictionary * jsonDict = [NSJSONSerialization JSONObjectWithData:request.responseText options:NSJSONReadingAllowFragments error:nil];
     place.friendsCheckins = [NSNumber numberWithInt:[[jsonDict objectForKey:@"data"] count]];
     [self updateExtendedInfo];
     

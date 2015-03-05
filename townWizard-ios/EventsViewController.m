@@ -96,10 +96,10 @@
 
 
 - (void)openEvent:(Event *)event {
-    NSString *trackedViewName = [[self trackedViewName] stringByAppendingFormat:@" : %@", [event title]];
+    NSString *trackedViewName = [[self screenName] stringByAppendingFormat:@" : %@", [event title]];
     
     EventDetailsViewController *eventDetails = [[EventDetailsViewController new] autorelease];
-    [eventDetails setTrackedViewName:trackedViewName];
+    [eventDetails setScreenName:trackedViewName];
     [eventDetails loadWithEvent:event];
     
     [self.navigationController pushViewController:eventDetails animated:YES];

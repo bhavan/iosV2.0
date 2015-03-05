@@ -10,7 +10,6 @@
 #import "Place.h"
 #import "FacebookCheckinViewController.h"
 #import "AppDelegate.h"
-#import "JSONKit.h"
 
 @implementation FacebookPlacesViewController
 
@@ -140,9 +139,7 @@
 
 // Parse places request response
 - (void) parseResponseToPlaces:(NSData*)data{
-	NSString *response = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-	
-	NSDictionary *json = [response objectFromJSONString];
+    NSDictionary * json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
 	
 	NSArray *parts = [json objectForKey:@"data"];
 	NSDictionary * error = [json objectForKey:@"error"];
@@ -161,7 +158,6 @@
          authorize:[AppDelegate sharedDelegate].facebookHelper.appId
          permissions:permissions
          delegate:[AppDelegate sharedDelegate].facebookHelper];
-        [response release];
         return;
     }
     if(parts.count==0)
@@ -204,7 +200,6 @@
             [p release];
         }
     }
-	[response release];
 }
 
 

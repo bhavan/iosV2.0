@@ -86,7 +86,7 @@ static RequestHelper *requestHelper = nil;
     objectManager.client.baseURL = baseURL;
     [objectManager.mappingProvider setObjectMapping:[[MappingManager sharedInstance] partnerMapping]
                                          forKeyPath:@"data"];
-    NSString *resourcePath = [NSString stringWithFormat:@"/partner?%@&offset=%d",queryParam,offset];
+    NSString *resourcePath = [NSString stringWithFormat:@"/partner?%@&offset=%@",queryParam,@(offset)];
     [objectManager loadObjectsAtResourcePath:resourcePath delegate:delegate];
 }
 

@@ -110,7 +110,7 @@ static NSInteger const kPartnerSectionsLoadingFailed = 501;
 - (void) updateWithPartner:(Partner *)updatedPartner
 {
     self.partner = updatedPartner;
-    self.trackedViewName = [[[updatedPartner locations] firstObject] city];
+    self.screenName = [[[updatedPartner locations] firstObject] city];
     
     [[RequestHelper sharedInstance] setCurrentPartner:updatedPartner];
 

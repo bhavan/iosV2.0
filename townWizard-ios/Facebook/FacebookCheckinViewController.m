@@ -11,7 +11,6 @@
 #import "FacebookFriendCell.h"
 #import "FacebookHelper.h"
 #import "AppDelegate.h"
-#import "JSONKit.h"
 
 #define IMAGE_RECT CGRectMake(2,2,40,40)
 
@@ -187,9 +186,7 @@
     if ([request.url hasSuffix:@"me/friends"]) {
         [taggedFriends removeAllObjects];
         NSMutableArray *friendsList = [NSMutableArray array];
-        NSString *resultJson = [[NSString alloc] initWithData:request.responseText encoding:NSUTF8StringEncoding];
-        NSDictionary *jsonDict = [resultJson objectFromJSONString];
-        [resultJson release];
+        NSDictionary * jsonDict = [NSJSONSerialization JSONObjectWithData:request.responseText options:0 error:nil];
         for (NSDictionary *friendInfo in [jsonDict objectForKey:@"data"])
         {
             

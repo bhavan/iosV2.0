@@ -123,11 +123,11 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     [aTableView deselectRowAtIndexPath:indexPath animated:NO];
 
     Video *video = [[self videos] objectAtIndex:indexPath.row];
-    NSString *trackedViewName = [[self trackedViewName] stringByAppendingFormat:@" : %@", [video name]];
+    NSString *trackedViewName = [[self screenName] stringByAppendingFormat:@" : %@", [video name]];
     
     VideoViewController *controller = [[VideoViewController new] autorelease];
     controller.videoUrl = video.url;
-    controller.trackedViewName = trackedViewName;
+    controller.screenName = trackedViewName;
 
     [self.navigationController pushViewController:controller animated:YES];
 }

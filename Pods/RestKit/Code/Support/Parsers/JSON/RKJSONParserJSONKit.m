@@ -19,7 +19,6 @@
 //
 
 #import "RKJSONParserJSONKit.h"
-#import "JSONKit.h"
 #import "RKLog.h"
 
 // Set Logging Component
@@ -34,12 +33,16 @@
 - (NSDictionary *)objectFromString:(NSString *)string error:(NSError **)error
 {
     RKLogTrace(@"string='%@'", string);
-    return [string objectFromJSONStringWithParseOptions:JKParseOptionStrict error:error];
+    NSData * utf8data = [string dataUsingEncoding:NSUTF8StringEncoding];
+    return [NSJSONSerialization JSONObjectWithData:utf8data options:NSJSONReadingAllowFragments error:error];
+//    return [string objectFromJSONStringWithParseOptions:JKParseOptionStrict error:error];
 }
 
 - (NSString *)stringFromObject:(id)object error:(NSError **)error
 {
-    return [object JSONStringWithOptions:JKSerializeOptionNone error:error];
+    NSData *data = [NSJSONSerialization dataWithJSONObject:object options:0 error:error];
+    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//    return [object JSONStringWithOptions:JKSerializeOptionNone error:error];
 }
 
 @end

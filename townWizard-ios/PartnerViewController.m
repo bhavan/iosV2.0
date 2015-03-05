@@ -204,7 +204,7 @@
         NSString *sectionName = [section name];
         NSString *trackedViewName = [NSString stringWithFormat:@"%@ : %@", cityName, sectionName];
         
-        [(GAITrackedViewController *)controller setTrackedViewName:trackedViewName];
+        [(GAITrackedViewController *)controller setScreenName:trackedViewName];
     }
     
     return controller;

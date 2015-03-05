@@ -2326,7 +2326,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		01035E58189BF0D40000EB44 /* townWizardPartnerTemplate copy 247-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 247-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/release2.6/townWizardPartnerTemplate copy 247-Info.plist"; sourceTree = "<absolute>"; };
 		01035E5A189BF6A90000EB44 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		01035E5B189BF6A90000EB44 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		01035E5C189BF6A90000EB44 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -2336,7 +2335,6 @@
 		01035E60189BF6A90000EB44 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
 		01035E61189BF6A90000EB44 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		01035E62189BF6A90000EB44 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		01070B4D18A2CE4D007B4F23 /* townWizardPartnerTemplate copy 250-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 250-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/release2.6/townWizardPartnerTemplate copy 250-Info.plist"; sourceTree = "<absolute>"; };
 		01070B4F18A2CF14007B4F23 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		01070B5018A2CF14007B4F23 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		01070B5118A2CF14007B4F23 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -2357,7 +2355,6 @@
 		010DC9E817AAEAD0004B2939 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		010DC9E917AAEAD0004B2939 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		01274AFA18B64E78005E9895 /* Saloy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Saloy.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		01274AFB18B64E79005E9895 /* townWizardPartnerTemplate copy 251-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 251-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/release2.7/townWizardPartnerTemplate copy 251-Info.plist"; sourceTree = "<absolute>"; };
 		01274AFD18B65377005E9895 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		01274AFE18B65377005E9895 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		01274AFF18B65377005E9895 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -2391,7 +2388,6 @@
 		01383F11180487D300370266 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
 		01383F12180487D300370266 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		01383F13180487D300370266 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		013A618F190EC1C600D2CD42 /* townWizardPartnerTemplate copy 256-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 256-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/release2.9/townWizardPartnerTemplate copy 256-Info.plist"; sourceTree = "<absolute>"; };
 		013A6191190EC51C00D2CD42 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		013A6192190EC51C00D2CD42 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		013A6193190EC51C00D2CD42 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -2406,7 +2402,6 @@
 		013CD33A1755539900A1290C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		013CD33B1755539900A1290C /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		013CD33C1755539900A1290C /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		013E36B918FD723F00990777 /* townWizardPartnerTemplate copy 254-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 254-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/release2.8/townWizardPartnerTemplate copy 254-Info.plist"; sourceTree = "<absolute>"; };
 		013E36BB18FD73FF00990777 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		013E36BC18FD73FF00990777 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		013E36BD18FD73FF00990777 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -2435,7 +2430,6 @@
 		0156B51517F9EF6300937238 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
 		0156B51617F9EF6300937238 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		0156B51717F9EF6300937238 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		015C2C861818471B00ED0A81 /* townWizardPartnerTemplate copy 239-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 239-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/release2.5/townWizardPartnerTemplate copy 239-Info.plist"; sourceTree = "<absolute>"; };
 		015C2C88181847D600ED0A81 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		015C2C89181847D600ED0A81 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		015C2C8A181847D600ED0A81 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -2450,7 +2444,6 @@
 		015CFDB7174D4F240094DC6E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		015CFDB8174D4F240094DC6E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		015CFDB9174D4F240094DC6E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		015D36C918A1675F0006D4DD /* townWizardPartnerTemplate copy 248-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 248-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/release2.6/townWizardPartnerTemplate copy 248-Info.plist"; sourceTree = "<absolute>"; };
 		015D36CB18A169390006D4DD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		015D36CC18A1693A0006D4DD /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		015D36CD18A1693A0006D4DD /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -2469,7 +2462,6 @@
 		015D76D8189BCCC8001C51A7 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
 		015D76D9189BCCC8001C51A7 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		015D76DA189BCCC8001C51A7 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		016526491899500200B58146 /* townWizardPartnerTemplate copy 245-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 245-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/release2.6/townWizardPartnerTemplate copy 245-Info.plist"; sourceTree = "<absolute>"; };
 		0165264B189952E100B58146 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		0165264C189952E100B58146 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0165264D189952E100B58146 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -2484,7 +2476,6 @@
 		0165B01E17F62BB00095EA84 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
 		0165B01F17F62BB00095EA84 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
 		0165B13B1805F9B500E186DA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		01664BAA18FDE7FE0017DB81 /* townWizardPartnerTemplate copy 255-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 255-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/release2.8/townWizardPartnerTemplate copy 255-Info.plist"; sourceTree = "<absolute>"; };
 		0166BBBD17D8BD3100FF1FD7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		0166BBBE17D8BD3100FF1FD7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0166BBBF17D8BD3100FF1FD7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -2495,7 +2486,6 @@
 		0166BD1417D8D06200FF1FD7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		0166BD1517D8D06200FF1FD7 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		0166BD1617D8D06200FF1FD7 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		01685ADB192133C800AD3595 /* townWizardPartnerTemplate copy 258-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 258-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/release2.9/townWizardPartnerTemplate copy 258-Info.plist"; sourceTree = "<absolute>"; };
 		01685ADD1921369300AD3595 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		01685ADE1921369300AD3595 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		01685ADF1921369300AD3595 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -2506,7 +2496,6 @@
 		016B80B917184678009873E0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		016B80BA17184678009873E0 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		016B80BB17184678009873E0 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		016BE42F1819C25E00504D73 /* destin copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "destin copy-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/release2.5/destin copy-Info.plist"; sourceTree = "<absolute>"; };
 		016DFCAB18EDF561000DA1E0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		016DFCAC18EDF561000DA1E0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		016DFCAD18EDF561000DA1E0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -2531,7 +2520,6 @@
 		018043C3177CAE99005B3794 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		018043C4177CAE99005B3794 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		018043C5177CAE99005B3794 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		0187785018BCE30100DE7A70 /* townWizardPartnerTemplate copy 252-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 252-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/release2.7/townWizardPartnerTemplate copy 252-Info.plist"; sourceTree = "<absolute>"; };
 		0187785218BCE52400DE7A70 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		0187785318BCE52400DE7A70 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0187785418BCE52400DE7A70 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -2541,7 +2529,6 @@
 		0187785818BCE52400DE7A70 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
 		0187785918BCE52400DE7A70 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		0187785A18BCE52400DE7A70 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		018E448B189AC01E006519AE /* townWizardPartnerTemplate copy 246-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 246-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/release2.6/townWizardPartnerTemplate copy 246-Info.plist"; sourceTree = "<absolute>"; };
 		01908B5417FCDE4800F60223 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		01908B5517FCDE4800F60223 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		01908B5617FCDE4800F60223 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -2561,7 +2548,6 @@
 		01A24A5B1767616A006FE59C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		01A24A5C1767616A006FE59C /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		01A24A5D1767616A006FE59C /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		01A657ED18985BCB0026D105 /* townWizardPartnerTemplate copy 244-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 244-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/release2.6/townWizardPartnerTemplate copy 244-Info.plist"; sourceTree = "<absolute>"; };
 		01A657EF18985D370026D105 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		01A657F018985D370026D105 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		01A657F118985D370026D105 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -2572,7 +2558,6 @@
 		01A657F618985D370026D105 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		01A657F718985D370026D105 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		01A6FAB1192BF94800529EA2 /* My LBI Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My LBI Life.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		01A6FAB2192BF94900529EA2 /* townWizardPartnerTemplate copy 259-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 259-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/release2.9/townWizardPartnerTemplate copy 259-Info.plist"; sourceTree = "<absolute>"; };
 		01A6FAB4192C0C2B00529EA2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		01A6FAB5192C0C2B00529EA2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		01A6FAB6192C0C2B00529EA2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -2587,7 +2572,6 @@
 		01A7343217183BCD003505A5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		01A7343317183BCD003505A5 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		01A7343417183BCD003505A5 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		01A9664818A29129007F0012 /* townWizardPartnerTemplate copy 249-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 249-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/release2.6/townWizardPartnerTemplate copy 249-Info.plist"; sourceTree = "<absolute>"; };
 		01A9664A18A297C4007F0012 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		01A9664B18A297C4007F0012 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		01A9664C18A297C4007F0012 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -2602,7 +2586,6 @@
 		01AD3002178E19AE00A204BF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		01AD3003178E19AE00A204BF /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		01AD3004178E19AE00A204BF /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		01AFA50C188DD99D003FEF35 /* townWizardPartnerTemplate copy 241-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 241-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/release2.6/townWizardPartnerTemplate copy 241-Info.plist"; sourceTree = "<absolute>"; };
 		01AFA50E188DDA09003FEF35 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		01AFA50F188DDA09003FEF35 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		01AFA510188DDA09003FEF35 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -2612,7 +2595,6 @@
 		01AFA514188DDA09003FEF35 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
 		01AFA515188DDA09003FEF35 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		01AFA516188DDA09003FEF35 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		01C3DDDF18EDDC1B00BA47A3 /* townWizardPartnerTemplate copy 253-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 253-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/release2.7/townWizardPartnerTemplate copy 253-Info.plist"; sourceTree = "<absolute>"; };
 		01C5033717B925DE00A45D0A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		01C5033817B925DE00A45D0A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		01C5033917B925DE00A45D0A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -2623,9 +2605,7 @@
 		01C743B01758D4EF00174827 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		01C743B11758D4EF00174827 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		01C743B21758D4EF00174827 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		01CA3CFF188442F10004956F /* townWizardPartnerTemplate copy 240-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 240-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/release2.6/townWizardPartnerTemplate copy 240-Info.plist"; sourceTree = "<absolute>"; };
 		01CF9DD31954921100E75837 /* Go Lake Lure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Go Lake Lure.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		01CF9DD41954921100E75837 /* townWizardPartnerTemplate copy 260-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 260-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/release2.10/townWizardPartnerTemplate copy 260-Info.plist"; sourceTree = "<absolute>"; };
 		01CF9DD619549D9E00E75837 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		01CF9DD719549D9E00E75837 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		01CF9DD819549D9E00E75837 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -2655,7 +2635,6 @@
 		01D8036F17DA38DC00F7751D /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		01D8037017DA38DC00F7751D /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		01DD0D8B1897FC5F00356772 /* MemphisPop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemphisPop.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		01DD0D8C1897FC5F00356772 /* townWizardPartnerTemplate copy 243-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 243-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/release2.6/townWizardPartnerTemplate copy 243-Info.plist"; sourceTree = "<absolute>"; };
 		01DD0D8E1898066200356772 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		01DD0D8F1898066200356772 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		01DD0D901898066200356772 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -2675,7 +2654,6 @@
 		01E047161733180A0082C15E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		01E047171733180A0082C15E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		01E047181733180A0082C15E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		01E4105E190EEF3200C5EC3A /* townWizardPartnerTemplate copy 257-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 257-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/release2.9/townWizardPartnerTemplate copy 257-Info.plist"; sourceTree = "<absolute>"; };
 		01E41060190EF5DA00C5EC3A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		01E41061190EF5DA00C5EC3A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		01E41062190EF5DA00C5EC3A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -2694,7 +2672,6 @@
 		01E7ECE017FC7A780003EC1A /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
 		01E7ECE117FC7A790003EC1A /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		01E7ECE217FC7A790003EC1A /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		01E920F1189707E90082EF86 /* townWizardPartnerTemplate copy 242-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate copy 242-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/release2.6/townWizardPartnerTemplate copy 242-Info.plist"; sourceTree = "<absolute>"; };
 		01E920F318970F720082EF86 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		01E920F418970F720082EF86 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		01E920F518970F720082EF86 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -4718,29 +4695,6 @@
 				D90D0DF7158F06500026828E /* townWizard-partner */,
 				8483F24614D03FBE005E4216 /* Frameworks */,
 				8483F24414D03FBE005E4216 /* Products */,
-				015C2C861818471B00ED0A81 /* townWizardPartnerTemplate copy 239-Info.plist */,
-				016BE42F1819C25E00504D73 /* destin copy-Info.plist */,
-				01CA3CFF188442F10004956F /* townWizardPartnerTemplate copy 240-Info.plist */,
-				01AFA50C188DD99D003FEF35 /* townWizardPartnerTemplate copy 241-Info.plist */,
-				01E920F1189707E90082EF86 /* townWizardPartnerTemplate copy 242-Info.plist */,
-				01DD0D8C1897FC5F00356772 /* townWizardPartnerTemplate copy 243-Info.plist */,
-				01A657ED18985BCB0026D105 /* townWizardPartnerTemplate copy 244-Info.plist */,
-				016526491899500200B58146 /* townWizardPartnerTemplate copy 245-Info.plist */,
-				018E448B189AC01E006519AE /* townWizardPartnerTemplate copy 246-Info.plist */,
-				01035E58189BF0D40000EB44 /* townWizardPartnerTemplate copy 247-Info.plist */,
-				015D36C918A1675F0006D4DD /* townWizardPartnerTemplate copy 248-Info.plist */,
-				01A9664818A29129007F0012 /* townWizardPartnerTemplate copy 249-Info.plist */,
-				01070B4D18A2CE4D007B4F23 /* townWizardPartnerTemplate copy 250-Info.plist */,
-				01274AFB18B64E79005E9895 /* townWizardPartnerTemplate copy 251-Info.plist */,
-				0187785018BCE30100DE7A70 /* townWizardPartnerTemplate copy 252-Info.plist */,
-				01C3DDDF18EDDC1B00BA47A3 /* townWizardPartnerTemplate copy 253-Info.plist */,
-				013E36B918FD723F00990777 /* townWizardPartnerTemplate copy 254-Info.plist */,
-				01664BAA18FDE7FE0017DB81 /* townWizardPartnerTemplate copy 255-Info.plist */,
-				013A618F190EC1C600D2CD42 /* townWizardPartnerTemplate copy 256-Info.plist */,
-				01E4105E190EEF3200C5EC3A /* townWizardPartnerTemplate copy 257-Info.plist */,
-				01685ADB192133C800AD3595 /* townWizardPartnerTemplate copy 258-Info.plist */,
-				01A6FAB2192BF94900529EA2 /* townWizardPartnerTemplate copy 259-Info.plist */,
-				01CF9DD41954921100E75837 /* townWizardPartnerTemplate copy 260-Info.plist */,
 				32D670C7D033A4EEDEF010EB /* Pods */,
 			);
 			sourceTree = "<group>";

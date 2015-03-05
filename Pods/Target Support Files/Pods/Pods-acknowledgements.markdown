@@ -225,7 +225,7 @@ Copyright 2012. Arash Payan. This library is distributed under the terms of the 
 
 ## GoogleAnalytics-iOS-SDK
 
-Copyright 2009 - 2012 Google, Inc. All rights reserved.
+Copyright 2009 - 2014 Google, Inc. All rights reserved.
 
 
 ## ISO8601DateFormatter
