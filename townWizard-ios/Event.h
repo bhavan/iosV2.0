@@ -23,4 +23,6 @@
 
 - (NSString *) eventDateString;
 
+- (NSComparisonResult)compareByDate:(Event *)event;
+
 @end

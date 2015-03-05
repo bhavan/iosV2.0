@@ -65,7 +65,7 @@
 	if([UIImagePickerController isSourceTypeAvailable:sourceType])
     {
         imageController.sourceType = sourceType;
-        [self presentModalViewController:imageController animated:YES];
+        [self presentViewController:imageController animated:YES completion:nil];
     }
 	[imageController release];
 }

@@ -123,7 +123,7 @@ BOOL SHKinit;
 	if (currentView != nil)
 	{
 		self.pendingView = vc;
-		[[currentView parentViewController] dismissModalViewControllerAnimated:YES];
+		[[currentView parentViewController] dismissViewControllerAnimated:YES completion:nil];
 		return;
 	}
 		
@@ -141,7 +141,7 @@ BOOL SHKinit;
 		nav.navigationBar.barStyle = nav.toolbar.barStyle = [SHK barStyle];
         nav.navigationBar.tintColor = SHKCONFIG_WITH_ARGUMENT(barTintForView:,vc);
 		
-		[topViewController presentModalViewController:nav animated:YES];			
+		[topViewController presentViewController:nav animated:YES completion:nil];
 		self.currentView = nav;
 	}
 	
@@ -155,7 +155,7 @@ BOOL SHKinit;
 			vc.modalTransitionStyle = [SHK modalTransitionStyle];
 
 
-		[topViewController presentModalViewController:vc animated:YES];
+		[topViewController presentViewController:vc animated:YES completion:nil];
 		[(UINavigationController *)vc navigationBar].barStyle = 
 		[(UINavigationController *)vc toolbar].barStyle = [SHK barStyle];
 		[(UINavigationController *)vc navigationBar].tintColor = SHKCONFIG_WITH_ARGUMENT(barTintForView:,vc);
@@ -218,7 +218,7 @@ BOOL SHKinit;
 		if ([currentView parentViewController] != nil)
 		{
 			self.isDismissingView = YES;
-			[[currentView parentViewController] dismissModalViewControllerAnimated:animated];
+			[[currentView parentViewController] dismissViewControllerAnimated:animated completion:nil];
 		}
 		// for iOS5
 		else if([currentView respondsToSelector:@selector(presentingViewController)] &&
@@ -267,8 +267,8 @@ BOOL SHKinit;
 - (UIViewController *)getTopViewController:(UIViewController *)aRootViewController
 {
 	UIViewController *result = aRootViewController;
-	while (result.modalViewController != nil)
-		result = result.modalViewController;
+	while (result.presentedViewController != nil)
+		result = result.presentedViewController;
 	return result;
 }
 			

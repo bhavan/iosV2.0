@@ -304,7 +304,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
                                    stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSArray *toRecipients = @[ emailAddress ];
         [mailer setToRecipients:toRecipients];
-        [self presentModalViewController:mailer animated:YES];
+        [self presentViewController:mailer animated:YES completion:nil];
         [mailer release];
     }
     else
@@ -334,7 +334,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
          didFinishWithResult:(MFMailComposeResult)result
                        error:(NSError *)error
 {
-    [controller dismissModalViewControllerAnimated:YES];
+    [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark -

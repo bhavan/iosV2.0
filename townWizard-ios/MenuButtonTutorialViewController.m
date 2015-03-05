@@ -125,7 +125,6 @@
 - (void)bounceAnimations
 {
     CGAffineTransform scaleUpTransform = CGAffineTransformMakeScale(1.1f, 1.1f);
-    CGAffineTransform scaleDownTransform = CGAffineTransformMakeScale(1.0f, 1.0f);  // use this <1.0 for more pulsing
 
     [UIView animateWithDuration:1.125f
                           delay:0.0f

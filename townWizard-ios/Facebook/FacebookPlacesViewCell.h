@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Facebook.h"
 #import "SDWebImageDownloader.h"
+#import "ActivityImageView.h"
+
 @class Place;
-@class ActivityImageView;
 
 typedef enum {
     FBPC_LOAD_NONE,

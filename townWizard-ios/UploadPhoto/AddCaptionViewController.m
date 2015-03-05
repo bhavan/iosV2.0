@@ -51,7 +51,7 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
 
 - (IBAction)cancelButtonPressed:(id)sender
 {
-	[self dismissModalViewControllerAnimated:YES];
+	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)writeButtonPressed:(id)sender
@@ -188,7 +188,7 @@ static NSString * const uploadScriptURL = @"/components/com_shines/iuploadphoto.
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    [self.presentingViewController.presentingViewController dismissModalViewControllerAnimated:YES];
+    [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark -
