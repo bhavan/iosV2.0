@@ -3101,6 +3101,7 @@
 		95F857C915EE6E1A009C4B7C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		95F857CA15EE6E1A009C4B7C /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		95F857CB15EE6E1A009C4B7C /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		9AA087EF1AA9FB880047FB04 /* updating_libraries.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = updating_libraries.md; sourceTree = "<group>"; };
 		CE26395A995941CEB04FA3F0 /* libPods-grayton-cedar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-grayton-cedar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90A3BFD180D260900356558 /* GoogleAnalyticsEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleAnalyticsEvent.h; sourceTree = "<group>"; };
 		D90A3BFE180D260900356558 /* GoogleAnalyticsEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleAnalyticsEvent.m; sourceTree = "<group>"; };
@@ -4691,6 +4692,7 @@
 		8483F23814D03FBE005E4216 = {
 			isa = PBXGroup;
 			children = (
+				9AA087EE1AA9FB640047FB04 /* Documentation */,
 				8483F24D14D03FBE005E4216 /* TownWizard-ios */,
 				D90D0DF7158F06500026828E /* townWizard-partner */,
 				8483F24614D03FBE005E4216 /* Frameworks */,
@@ -5218,6 +5220,14 @@
 			name = brunei;
 			path = "townWizard-partner/Images/brunei";
 			sourceTree = SOURCE_ROOT;
+		};
+		9AA087EE1AA9FB640047FB04 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				9AA087EF1AA9FB880047FB04 /* updating_libraries.md */,
+			);
+			name = Documentation;
+			sourceTree = "<group>";
 		};
 		D90D0DF7158F06500026828E /* townWizard-partner */ = {
 			isa = PBXGroup;
