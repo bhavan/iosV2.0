@@ -18,6 +18,7 @@
 #import "MappingManager.h"
 #import "UIImage+Extensions.h"
 #import "UIImage+Resize.h"
+#import "PartnerAPIClient.h"
 
 static NSString* const kBoundaryString = @"0xKhTmLbOuNdArY";
 #define REQUEST_TIMEOUT 30
@@ -36,6 +37,11 @@ static RequestHelper *requestHelper = nil;
     return requestHelper;
 }
 
+-(void)setCurrentPartner:(Partner *)currentPartner
+{
+    _currentPartner = currentPartner;
+    [PartnerAPIClient setupWithBaseURL:[NSURL URLWithString:currentPartner.webSiteUrl]];
+}
 
 + (NSString *) md5:(NSString *) input
 {
@@ -63,6 +69,11 @@ static RequestHelper *requestHelper = nil;
     
     NSString *resultToken = [NSString stringWithFormat:@"%@%@",lastToken, timeToken];
     return resultToken;
+}
+
++(NSString *)xaccessTokenFromCurrentPartner
+{
+    return [self xaccessTokenFromPartner:[[self sharedInstance] currentPartner]];
 }
 
 
@@ -128,17 +139,6 @@ static RequestHelper *requestHelper = nil;
                             withDelegate:delegate];
 }
 
-+ (void)videosWithPartner:(Partner *)partner
-               andSection:(Section *)section
-              andDelegate:(id <RKObjectLoaderDelegate>)delegate
-{
-    [RequestHelper modelsListWithMapping:[[MappingManager sharedInstance] videoMapping]
-                             fromPartner:partner
-                              andSection:section
-                            withDelegate:delegate];
-}
-
-
 + (void)photosWithPartner:(Partner *)partner
                   section:(Section *)section
              fromCategory:(PhotoCategory *)category
@@ -170,13 +170,6 @@ static RequestHelper *requestHelper = nil;
     [objectManager.client.HTTPHeaders setValue:token forKey:TOKEN_KEY];
     
     return objectManager;
-}
-
-- (void) loadVideosWithDelegate:(id<RKObjectLoaderDelegate>) delegate
-{
-    RKObjectManager *objectManager = [self currentObjectManager];
-    [objectManager.mappingProvider setObjectMapping:[[MappingManager sharedInstance] videoMapping]  forKeyPath:@"data"];
-    [objectManager loadObjectsAtResourcePath:[[self currentSection] url] delegate:delegate];
 }
 
 - (void) loadPhotoCategoriesWithDelegate:(id<RKObjectLoaderDelegate>) delegate

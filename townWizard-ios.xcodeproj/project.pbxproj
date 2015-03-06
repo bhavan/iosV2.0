@@ -40,7 +40,6 @@
 		012748C318B64E78005E9895 /* WebImageGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F82CCF161AFB8700E0A481 /* WebImageGridViewCell.m */; };
 		012748C418B64E78005E9895 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
 		012748C518B64E78005E9895 /* VideosListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosListViewController.m */; };
-		012748C618B64E78005E9895 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
 		012748C718B64E78005E9895 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
 		012748C818B64E78005E9895 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
 		012748C918B64E78005E9895 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
@@ -369,7 +368,6 @@
 		01A6F87A192BF94800529EA2 /* WebImageGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F82CCF161AFB8700E0A481 /* WebImageGridViewCell.m */; };
 		01A6F87B192BF94800529EA2 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
 		01A6F87C192BF94800529EA2 /* VideosListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosListViewController.m */; };
-		01A6F87D192BF94800529EA2 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
 		01A6F87E192BF94800529EA2 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
 		01A6F87F192BF94800529EA2 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
 		01A6F880192BF94800529EA2 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
@@ -698,7 +696,6 @@
 		01CF9B9B1954921100E75837 /* WebImageGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F82CCF161AFB8700E0A481 /* WebImageGridViewCell.m */; };
 		01CF9B9C1954921100E75837 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
 		01CF9B9D1954921100E75837 /* VideosListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosListViewController.m */; };
-		01CF9B9E1954921100E75837 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
 		01CF9B9F1954921100E75837 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
 		01CF9BA01954921100E75837 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
 		01CF9BA11954921100E75837 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
@@ -1036,7 +1033,6 @@
 		01DD0B541897FC5F00356772 /* WebImageGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F82CCF161AFB8700E0A481 /* WebImageGridViewCell.m */; };
 		01DD0B551897FC5F00356772 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
 		01DD0B561897FC5F00356772 /* VideosListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosListViewController.m */; };
-		01DD0B571897FC5F00356772 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
 		01DD0B581897FC5F00356772 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
 		01DD0B591897FC5F00356772 /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
 		01DD0B5A1897FC5F00356772 /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
@@ -1363,7 +1359,6 @@
 		01EBDB001718802B00FB5BBF /* WebImageGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F82CCF161AFB8700E0A481 /* WebImageGridViewCell.m */; };
 		01EBDB011718802B00FB5BBF /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAADF6161B27CB00E09E36 /* ImageCell.m */; };
 		01EBDB021718802B00FB5BBF /* VideosListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosListViewController.m */; };
-		01EBDB031718802B00FB5BBF /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
 		01EBDB041718802B00FB5BBF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DFB671626B3F50096A6FF /* VideoViewController.m */; };
 		01EBDB051718802B00FB5BBF /* PhotoUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F71F1162805D9005F02E8 /* PhotoUploadView.m */; };
 		01EBDB061718802B00FB5BBF /* BaseUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7213162808C0005F02E8 /* BaseUploadViewController.m */; };
@@ -1982,8 +1977,6 @@
 		84CAAE3A161B2EB200E09E36 /* VideosListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE37161B2EB100E09E36 /* VideosListViewController.m */; };
 		84CAAE57161B2EB200E09E36 /* VideosListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosListViewController.xib */; };
 		84CAAE58161B2EB200E09E36 /* VideosListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CAAE38161B2EB100E09E36 /* VideosListViewController.xib */; };
-		84CAAE77161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
-		84CAAE78161B2F2C00E09E36 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CAAE76161B2F2C00E09E36 /* Video.m */; };
 		84E51F901696BD8900229A58 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E51F8F1696BD8900229A58 /* Default.png */; };
 		84E51F921696BD9000229A58 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E51F911696BD9000229A58 /* Default@2x.png */; };
 		84E51F941696BD9600229A58 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E51F931696BD9600229A58 /* Default-568h@2x.png */; };
@@ -2116,6 +2109,27 @@
 		9AA087D01AA9DE410047FB04 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087CB1AA9DE410047FB04 /* Section.m */; };
 		9AA087D11AA9DE410047FB04 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087CB1AA9DE410047FB04 /* Section.m */; };
 		9AA087D21AA9DE410047FB04 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087CB1AA9DE410047FB04 /* Section.m */; };
+		9AA087D51AA9E9240047FB04 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087D41AA9E9240047FB04 /* Video.m */; };
+		9AA087D61AA9E9240047FB04 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087D41AA9E9240047FB04 /* Video.m */; };
+		9AA087D71AA9E9240047FB04 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087D41AA9E9240047FB04 /* Video.m */; };
+		9AA087D81AA9E9240047FB04 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087D41AA9E9240047FB04 /* Video.m */; };
+		9AA087D91AA9E9240047FB04 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087D41AA9E9240047FB04 /* Video.m */; };
+		9AA087DA1AA9E9240047FB04 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087D41AA9E9240047FB04 /* Video.m */; };
+		9AA087DB1AA9E9240047FB04 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087D41AA9E9240047FB04 /* Video.m */; };
+		9AA087DE1AA9E9A60047FB04 /* VideosRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087DD1AA9E9A60047FB04 /* VideosRequestFactory.m */; };
+		9AA087DF1AA9E9A60047FB04 /* VideosRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087DD1AA9E9A60047FB04 /* VideosRequestFactory.m */; };
+		9AA087E01AA9E9A60047FB04 /* VideosRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087DD1AA9E9A60047FB04 /* VideosRequestFactory.m */; };
+		9AA087E11AA9E9A60047FB04 /* VideosRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087DD1AA9E9A60047FB04 /* VideosRequestFactory.m */; };
+		9AA087E21AA9E9A60047FB04 /* VideosRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087DD1AA9E9A60047FB04 /* VideosRequestFactory.m */; };
+		9AA087E31AA9E9A60047FB04 /* VideosRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087DD1AA9E9A60047FB04 /* VideosRequestFactory.m */; };
+		9AA087E41AA9E9A60047FB04 /* VideosRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087DD1AA9E9A60047FB04 /* VideosRequestFactory.m */; };
+		9AA087E71AA9EA870047FB04 /* PartnerAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087E61AA9EA870047FB04 /* PartnerAPIClient.m */; };
+		9AA087E81AA9EA870047FB04 /* PartnerAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087E61AA9EA870047FB04 /* PartnerAPIClient.m */; };
+		9AA087E91AA9EA870047FB04 /* PartnerAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087E61AA9EA870047FB04 /* PartnerAPIClient.m */; };
+		9AA087EA1AA9EA870047FB04 /* PartnerAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087E61AA9EA870047FB04 /* PartnerAPIClient.m */; };
+		9AA087EB1AA9EA870047FB04 /* PartnerAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087E61AA9EA870047FB04 /* PartnerAPIClient.m */; };
+		9AA087EC1AA9EA870047FB04 /* PartnerAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087E61AA9EA870047FB04 /* PartnerAPIClient.m */; };
+		9AA087ED1AA9EA870047FB04 /* PartnerAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087E61AA9EA870047FB04 /* PartnerAPIClient.m */; };
 		9B2AFA421A2A4B35B2953F89 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59FBA4CF79134DFAAB1477F7 /* libPods.a */; };
 		D90A3BFF180D260A00356558 /* GoogleAnalyticsEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D90A3BFE180D260900356558 /* GoogleAnalyticsEvent.m */; };
 		D90A3C01180D26C900356558 /* GoogleAnalyticsEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D90A3BFE180D260900356558 /* GoogleAnalyticsEvent.m */; };
@@ -2993,8 +3007,6 @@
 		84CAAE36161B2EB100E09E36 /* VideosListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideosListViewController.h; sourceTree = "<group>"; };
 		84CAAE37161B2EB100E09E36 /* VideosListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideosListViewController.m; sourceTree = "<group>"; };
 		84CAAE38161B2EB100E09E36 /* VideosListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideosListViewController.xib; sourceTree = "<group>"; };
-		84CAAE75161B2F2C00E09E36 /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video.h; sourceTree = "<group>"; };
-		84CAAE76161B2F2C00E09E36 /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Video.m; sourceTree = "<group>"; };
 		84E51F8F1696BD8900229A58 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		84E51F911696BD9000229A58 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		84E51F931696BD9600229A58 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -3166,6 +3178,12 @@
 		9AA087C21AA9D8B10047FB04 /* PartnerRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PartnerRequestFactory.m; path = Factories/PartnerRequestFactory.m; sourceTree = "<group>"; };
 		9AA087CA1AA9DE410047FB04 /* Section.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Section.h; sourceTree = "<group>"; };
 		9AA087CB1AA9DE410047FB04 /* Section.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Section.m; sourceTree = "<group>"; };
+		9AA087D31AA9E9240047FB04 /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video.h; sourceTree = "<group>"; };
+		9AA087D41AA9E9240047FB04 /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Video.m; sourceTree = "<group>"; };
+		9AA087DC1AA9E9A60047FB04 /* VideosRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideosRequestFactory.h; path = Factories/VideosRequestFactory.h; sourceTree = "<group>"; };
+		9AA087DD1AA9E9A60047FB04 /* VideosRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideosRequestFactory.m; path = Factories/VideosRequestFactory.m; sourceTree = "<group>"; };
+		9AA087E51AA9EA870047FB04 /* PartnerAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PartnerAPIClient.h; path = API/PartnerAPIClient.h; sourceTree = "<group>"; };
+		9AA087E61AA9EA870047FB04 /* PartnerAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PartnerAPIClient.m; path = API/PartnerAPIClient.m; sourceTree = "<group>"; };
 		CE26395A995941CEB04FA3F0 /* libPods-grayton-cedar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-grayton-cedar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90A3BFD180D260900356558 /* GoogleAnalyticsEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleAnalyticsEvent.h; sourceTree = "<group>"; };
 		D90A3BFE180D260900356558 /* GoogleAnalyticsEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleAnalyticsEvent.m; sourceTree = "<group>"; };
@@ -4718,8 +4736,6 @@
 				847FD336161ACCB2009FB9CC /* PhotoCategory.m */,
 				847FD356161ACCC8009FB9CC /* Photo.h */,
 				847FD357161ACCC8009FB9CC /* Photo.m */,
-				84CAAE75161B2F2C00E09E36 /* Video.h */,
-				84CAAE76161B2F2C00E09E36 /* Video.m */,
 				D932498A1637E0F300409AA9 /* Event.h */,
 				D932498B1637E0F300409AA9 /* Event.m */,
 				84237CB41668A3D400B3DB18 /* EventCategory.h */,
@@ -5282,6 +5298,8 @@
 			children = (
 				9AA087321AA9B01C0047FB04 /* APIClient.h */,
 				9AA087331AA9B01C0047FB04 /* APIClient.m */,
+				9AA087E51AA9EA870047FB04 /* PartnerAPIClient.h */,
+				9AA087E61AA9EA870047FB04 /* PartnerAPIClient.m */,
 				9AA087341AA9B01C0047FB04 /* Models */,
 				9AA0873A1AA9B01C0047FB04 /* Request */,
 				9AA0874A1AA9B01C0047FB04 /* Response */,
@@ -5292,6 +5310,8 @@
 		9AA087341AA9B01C0047FB04 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9AA087D31AA9E9240047FB04 /* Video.h */,
+				9AA087D41AA9E9240047FB04 /* Video.m */,
 				9AA087CA1AA9DE410047FB04 /* Section.h */,
 				9AA087CB1AA9DE410047FB04 /* Section.m */,
 				9AA087AE1AA9D3B60047FB04 /* Partner.h */,
@@ -5343,6 +5363,8 @@
 			children = (
 				9AA087C11AA9D8B10047FB04 /* PartnerRequestFactory.h */,
 				9AA087C21AA9D8B10047FB04 /* PartnerRequestFactory.m */,
+				9AA087DC1AA9E9A60047FB04 /* VideosRequestFactory.h */,
+				9AA087DD1AA9E9A60047FB04 /* VideosRequestFactory.m */,
 			);
 			name = RequestFactory;
 			sourceTree = "<group>";
@@ -7369,6 +7391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AA087EB1AA9EA870047FB04 /* PartnerAPIClient.m in Sources */,
 				012748A318B64E78005E9895 /* SearchViewController.m in Sources */,
 				012748A418B64E78005E9895 /* AppDelegate.m in Sources */,
 				012748A518B64E78005E9895 /* TownWIzardNavigationBar.m in Sources */,
@@ -7405,13 +7428,13 @@
 				012748C318B64E78005E9895 /* WebImageGridViewCell.m in Sources */,
 				012748C418B64E78005E9895 /* ImageCell.m in Sources */,
 				012748C518B64E78005E9895 /* VideosListViewController.m in Sources */,
-				012748C618B64E78005E9895 /* Video.m in Sources */,
 				012748C718B64E78005E9895 /* VideoViewController.m in Sources */,
 				012748C818B64E78005E9895 /* PhotoUploadView.m in Sources */,
 				012748C918B64E78005E9895 /* BaseUploadViewController.m in Sources */,
 				012748CA18B64E78005E9895 /* MasterDetailController.m in Sources */,
 				012748CB18B64E78005E9895 /* PartnerViewController.m in Sources */,
 				012748CC18B64E78005E9895 /* SectionControllerFactory.m in Sources */,
+				9AA087E21AA9E9A60047FB04 /* VideosRequestFactory.m in Sources */,
 				012748CD18B64E78005E9895 /* EventsViewController.m in Sources */,
 				012748CE18B64E78005E9895 /* EventsViewer.m in Sources */,
 				012748CF18B64E78005E9895 /* Event.m in Sources */,
@@ -7427,6 +7450,7 @@
 				012748D818B64E78005E9895 /* SHKMail.m in Sources */,
 				012748D918B64E78005E9895 /* PartnerCell.m in Sources */,
 				012748DA18B64E78005E9895 /* UIView+Extensions.m in Sources */,
+				9AA087D91AA9E9240047FB04 /* Video.m in Sources */,
 				012748DB18B64E78005E9895 /* SectionCell.m in Sources */,
 				012748DC18B64E78005E9895 /* NSDate+Formatting.m in Sources */,
 				012748DD18B64E78005E9895 /* NSDateFormatter+Extensions.m in Sources */,
@@ -7520,6 +7544,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AA087EC1AA9EA870047FB04 /* PartnerAPIClient.m in Sources */,
 				01A6F85A192BF94800529EA2 /* SearchViewController.m in Sources */,
 				01A6F85B192BF94800529EA2 /* AppDelegate.m in Sources */,
 				01A6F85C192BF94800529EA2 /* TownWIzardNavigationBar.m in Sources */,
@@ -7556,13 +7581,13 @@
 				01A6F87A192BF94800529EA2 /* WebImageGridViewCell.m in Sources */,
 				01A6F87B192BF94800529EA2 /* ImageCell.m in Sources */,
 				01A6F87C192BF94800529EA2 /* VideosListViewController.m in Sources */,
-				01A6F87D192BF94800529EA2 /* Video.m in Sources */,
 				01A6F87E192BF94800529EA2 /* VideoViewController.m in Sources */,
 				01A6F87F192BF94800529EA2 /* PhotoUploadView.m in Sources */,
 				01A6F880192BF94800529EA2 /* BaseUploadViewController.m in Sources */,
 				01A6F881192BF94800529EA2 /* MasterDetailController.m in Sources */,
 				01A6F882192BF94800529EA2 /* PartnerViewController.m in Sources */,
 				01A6F883192BF94800529EA2 /* SectionControllerFactory.m in Sources */,
+				9AA087E31AA9E9A60047FB04 /* VideosRequestFactory.m in Sources */,
 				01A6F884192BF94800529EA2 /* EventsViewController.m in Sources */,
 				01A6F885192BF94800529EA2 /* EventsViewer.m in Sources */,
 				01A6F886192BF94800529EA2 /* Event.m in Sources */,
@@ -7578,6 +7603,7 @@
 				01A6F88F192BF94800529EA2 /* SHKMail.m in Sources */,
 				01A6F890192BF94800529EA2 /* PartnerCell.m in Sources */,
 				01A6F891192BF94800529EA2 /* UIView+Extensions.m in Sources */,
+				9AA087DA1AA9E9240047FB04 /* Video.m in Sources */,
 				01A6F892192BF94800529EA2 /* SectionCell.m in Sources */,
 				01A6F893192BF94800529EA2 /* NSDate+Formatting.m in Sources */,
 				01A6F894192BF94800529EA2 /* NSDateFormatter+Extensions.m in Sources */,
@@ -7671,6 +7697,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AA087ED1AA9EA870047FB04 /* PartnerAPIClient.m in Sources */,
 				01CF9B7B1954921100E75837 /* SearchViewController.m in Sources */,
 				01CF9B7C1954921100E75837 /* AppDelegate.m in Sources */,
 				01CF9B7D1954921100E75837 /* TownWIzardNavigationBar.m in Sources */,
@@ -7707,13 +7734,13 @@
 				01CF9B9B1954921100E75837 /* WebImageGridViewCell.m in Sources */,
 				01CF9B9C1954921100E75837 /* ImageCell.m in Sources */,
 				01CF9B9D1954921100E75837 /* VideosListViewController.m in Sources */,
-				01CF9B9E1954921100E75837 /* Video.m in Sources */,
 				01CF9B9F1954921100E75837 /* VideoViewController.m in Sources */,
 				01CF9BA01954921100E75837 /* PhotoUploadView.m in Sources */,
 				01CF9BA11954921100E75837 /* BaseUploadViewController.m in Sources */,
 				01CF9BA21954921100E75837 /* MasterDetailController.m in Sources */,
 				01CF9BA31954921100E75837 /* PartnerViewController.m in Sources */,
 				01CF9BA41954921100E75837 /* SectionControllerFactory.m in Sources */,
+				9AA087E41AA9E9A60047FB04 /* VideosRequestFactory.m in Sources */,
 				01CF9BA51954921100E75837 /* EventsViewController.m in Sources */,
 				01CF9BA61954921100E75837 /* EventsViewer.m in Sources */,
 				01CF9BA71954921100E75837 /* Event.m in Sources */,
@@ -7729,6 +7756,7 @@
 				01CF9BB01954921100E75837 /* SHKMail.m in Sources */,
 				01CF9BB11954921100E75837 /* PartnerCell.m in Sources */,
 				01CF9BB21954921100E75837 /* UIView+Extensions.m in Sources */,
+				9AA087DB1AA9E9240047FB04 /* Video.m in Sources */,
 				01CF9BB31954921100E75837 /* SectionCell.m in Sources */,
 				01CF9BB41954921100E75837 /* NSDate+Formatting.m in Sources */,
 				01CF9BB51954921100E75837 /* NSDateFormatter+Extensions.m in Sources */,
@@ -7822,6 +7850,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AA087EA1AA9EA870047FB04 /* PartnerAPIClient.m in Sources */,
 				01DD0B341897FC5F00356772 /* SearchViewController.m in Sources */,
 				01DD0B351897FC5F00356772 /* AppDelegate.m in Sources */,
 				01DD0B361897FC5F00356772 /* TownWIzardNavigationBar.m in Sources */,
@@ -7858,13 +7887,13 @@
 				01DD0B541897FC5F00356772 /* WebImageGridViewCell.m in Sources */,
 				01DD0B551897FC5F00356772 /* ImageCell.m in Sources */,
 				01DD0B561897FC5F00356772 /* VideosListViewController.m in Sources */,
-				01DD0B571897FC5F00356772 /* Video.m in Sources */,
 				01DD0B581897FC5F00356772 /* VideoViewController.m in Sources */,
 				01DD0B591897FC5F00356772 /* PhotoUploadView.m in Sources */,
 				01DD0B5A1897FC5F00356772 /* BaseUploadViewController.m in Sources */,
 				01DD0B5B1897FC5F00356772 /* MasterDetailController.m in Sources */,
 				01DD0B5C1897FC5F00356772 /* PartnerViewController.m in Sources */,
 				01DD0B5D1897FC5F00356772 /* SectionControllerFactory.m in Sources */,
+				9AA087E11AA9E9A60047FB04 /* VideosRequestFactory.m in Sources */,
 				01DD0B5E1897FC5F00356772 /* EventsViewController.m in Sources */,
 				01DD0B5F1897FC5F00356772 /* EventsViewer.m in Sources */,
 				01DD0B601897FC5F00356772 /* Event.m in Sources */,
@@ -7880,6 +7909,7 @@
 				01DD0B691897FC5F00356772 /* SHKMail.m in Sources */,
 				01DD0B6A1897FC5F00356772 /* PartnerCell.m in Sources */,
 				01DD0B6B1897FC5F00356772 /* UIView+Extensions.m in Sources */,
+				9AA087D81AA9E9240047FB04 /* Video.m in Sources */,
 				01DD0B6C1897FC5F00356772 /* SectionCell.m in Sources */,
 				01DD0B6D1897FC5F00356772 /* NSDate+Formatting.m in Sources */,
 				01DD0B6E1897FC5F00356772 /* NSDateFormatter+Extensions.m in Sources */,
@@ -7973,6 +8003,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AA087E91AA9EA870047FB04 /* PartnerAPIClient.m in Sources */,
 				01EBDAE21718802B00FB5BBF /* SearchViewController.m in Sources */,
 				01EBDAE31718802B00FB5BBF /* AppDelegate.m in Sources */,
 				01EBDAE41718802B00FB5BBF /* TownWIzardNavigationBar.m in Sources */,
@@ -8009,13 +8040,13 @@
 				01EBDB001718802B00FB5BBF /* WebImageGridViewCell.m in Sources */,
 				01EBDB011718802B00FB5BBF /* ImageCell.m in Sources */,
 				01EBDB021718802B00FB5BBF /* VideosListViewController.m in Sources */,
-				01EBDB031718802B00FB5BBF /* Video.m in Sources */,
 				01EBDB041718802B00FB5BBF /* VideoViewController.m in Sources */,
 				01EBDB051718802B00FB5BBF /* PhotoUploadView.m in Sources */,
 				01EBDB061718802B00FB5BBF /* BaseUploadViewController.m in Sources */,
 				01EBDB071718802B00FB5BBF /* MasterDetailController.m in Sources */,
 				01EBDB081718802B00FB5BBF /* PartnerViewController.m in Sources */,
 				01EBDB091718802B00FB5BBF /* SectionControllerFactory.m in Sources */,
+				9AA087E01AA9E9A60047FB04 /* VideosRequestFactory.m in Sources */,
 				01EBDB0A1718802B00FB5BBF /* EventsViewController.m in Sources */,
 				01EBDB0B1718802B00FB5BBF /* EventsViewer.m in Sources */,
 				01EBDB0C1718802B00FB5BBF /* Event.m in Sources */,
@@ -8031,6 +8062,7 @@
 				01EBDB151718802B00FB5BBF /* SHKMail.m in Sources */,
 				01EBDB161718802B00FB5BBF /* PartnerCell.m in Sources */,
 				01EBDB171718802B00FB5BBF /* UIView+Extensions.m in Sources */,
+				9AA087D71AA9E9240047FB04 /* Video.m in Sources */,
 				01EBDB181718802B00FB5BBF /* SectionCell.m in Sources */,
 				01EBDB191718802B00FB5BBF /* NSDate+Formatting.m in Sources */,
 				01EBDB1A1718802B00FB5BBF /* NSDateFormatter+Extensions.m in Sources */,
@@ -8124,6 +8156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AA087E71AA9EA870047FB04 /* PartnerAPIClient.m in Sources */,
 				8483F25414D03FBE005E4216 /* main.m in Sources */,
 				8483F25814D03FBE005E4216 /* AppDelegate.m in Sources */,
 				8483F25B14D03FBE005E4216 /* SearchViewController.m in Sources */,
@@ -8160,13 +8193,13 @@
 				84F82CD0161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
 				84CAADF7161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE39161B2EB200E09E36 /* VideosListViewController.m in Sources */,
-				84CAAE77161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB691626B3F50096A6FF /* VideoViewController.m in Sources */,
 				848F71F2162805DA005F02E8 /* PhotoUploadView.m in Sources */,
 				848F7214162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 				8406AB701630319C00B807EB /* MasterDetailController.m in Sources */,
 				D928245916318F6800E19A61 /* PartnerViewController.m in Sources */,
 				D928247B1631981F00E19A61 /* SectionControllerFactory.m in Sources */,
+				9AA087DE1AA9E9A60047FB04 /* VideosRequestFactory.m in Sources */,
 				D93249291637CD8B00409AA9 /* EventsViewController.m in Sources */,
 				D932496B1637DE2700409AA9 /* EventsViewer.m in Sources */,
 				D932498C1637E0F300409AA9 /* Event.m in Sources */,
@@ -8182,6 +8215,7 @@
 				D9B37940163A9DEB00828478 /* NSDate+Formatting.m in Sources */,
 				D9B37943163A9E3D00828478 /* NSDateFormatter+Extensions.m in Sources */,
 				D9B37947163AB38000828478 /* DDPageControl.m in Sources */,
+				9AA087D51AA9E9240047FB04 /* Video.m in Sources */,
 				D9B3794A163AB40E00828478 /* DDPageControlCustom.m in Sources */,
 				D99E7275163E6EF2004EB303 /* TWBackgroundView.m in Sources */,
 				D99E72C8163E88F5004EB303 /* ResizableButton.m in Sources */,
@@ -8275,6 +8309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AA087E81AA9EA870047FB04 /* PartnerAPIClient.m in Sources */,
 				D9FA2C4A15906C9A006FFF7E /* SearchViewController.m in Sources */,
 				D9FA2C4915906AFB006FFF7E /* AppDelegate.m in Sources */,
 				D9FA2C1315905E37006FFF7E /* TownWIzardNavigationBar.m in Sources */,
@@ -8311,13 +8346,13 @@
 				84F82CD1161AFB8700E0A481 /* WebImageGridViewCell.m in Sources */,
 				84CAADF8161B27CC00E09E36 /* ImageCell.m in Sources */,
 				84CAAE3A161B2EB200E09E36 /* VideosListViewController.m in Sources */,
-				84CAAE78161B2F2C00E09E36 /* Video.m in Sources */,
 				848DFB6A1626B3F50096A6FF /* VideoViewController.m in Sources */,
 				848F71F3162805DA005F02E8 /* PhotoUploadView.m in Sources */,
 				848F7215162808C0005F02E8 /* BaseUploadViewController.m in Sources */,
 				8406AB711630319C00B807EB /* MasterDetailController.m in Sources */,
 				D928245A16318F6800E19A61 /* PartnerViewController.m in Sources */,
 				D928247C1631981F00E19A61 /* SectionControllerFactory.m in Sources */,
+				9AA087DF1AA9E9A60047FB04 /* VideosRequestFactory.m in Sources */,
 				D932492A1637CD8B00409AA9 /* EventsViewController.m in Sources */,
 				D932496C1637DE2700409AA9 /* EventsViewer.m in Sources */,
 				D932498D1637E0F300409AA9 /* Event.m in Sources */,
@@ -8333,6 +8368,7 @@
 				84189E6B167601E000A07AB3 /* SHKMail.m in Sources */,
 				84ACB3E4167B6D84002D0278 /* PartnerCell.m in Sources */,
 				845F8AF21680A2200087E3F2 /* UIView+Extensions.m in Sources */,
+				9AA087D61AA9E9240047FB04 /* Video.m in Sources */,
 				845F8AF41680A22A0087E3F2 /* SectionCell.m in Sources */,
 				845F8AF51680A4690087E3F2 /* NSDate+Formatting.m in Sources */,
 				845F8AF71680A46D0087E3F2 /* NSDateFormatter+Extensions.m in Sources */,

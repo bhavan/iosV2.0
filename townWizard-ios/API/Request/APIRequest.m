@@ -8,7 +8,6 @@
 
 #import "APIRequest.h"
 #import "RequestSerializer.h"
-#import "APIClient.h"
 
 @implementation APIRequest
 
@@ -17,7 +16,7 @@
     if (self = [super init])
     {
         _method = @"GET";
-        _requiresAuthentication = NO;
+        _requiresXAccessToken = NO;
         _requestSerializerClass = [RequestSerializer class];
         _parameters = @{};
     }
@@ -38,17 +37,23 @@
     _requestSerializerClass = requestSerializerClass;
 }
 
--(NSMutableURLRequest *)URLRequest
+-(NSMutableURLRequest *)URLRequestWithBaseURL:(NSURL *)baseURL
 {
-    APIClient * client = [APIClient sharedClient];
     RequestSerializer * requestSerializer = [self.requestSerializerClass serializer];
     
-    NSString * urlString = [[NSURL URLWithString:self.path relativeToURL:client.baseURL] absoluteString];
+    NSString * urlString = [[NSURL URLWithString:self.path relativeToURL:baseURL] absoluteString];
     
-    return [requestSerializer requestWithMethod:self.method
-                                      URLString:urlString
-                                     parameters:self.parameters
-                                          error:nil];
+    NSMutableURLRequest * request = [requestSerializer requestWithMethod:self.method
+                                                               URLString:urlString
+                                                              parameters:self.parameters
+                                                                   error:nil];
+    if (self.requiresXAccessToken)
+    {
+        [request setValue:[RequestHelper xaccessTokenFromCurrentPartner]
+       forHTTPHeaderField:TOKEN_KEY];
+    }
+    
+    return request;
 }
 
 @end

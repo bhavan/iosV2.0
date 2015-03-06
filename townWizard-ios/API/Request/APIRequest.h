@@ -33,13 +33,13 @@
 /**
  Default - NO
  */
-@property (nonatomic, assign) BOOL requiresAuthentication;
+@property (nonatomic, assign) BOOL requiresXAccessToken;
 
 /**
  Request serializer class. Default - GPRequestSerializer
  */
 @property (nonatomic, assign) Class requestSerializerClass;
 
--(NSMutableURLRequest *)URLRequest;
+-(NSMutableURLRequest *)URLRequestWithBaseURL:(NSURL *)baseURL;
 
 @end

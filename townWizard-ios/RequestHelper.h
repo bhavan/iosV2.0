@@ -24,6 +24,8 @@
 + (id) sharedInstance;
 
 + (NSString *) md5:(NSString *) input;
+
++ (NSString *)xaccessTokenFromCurrentPartner;
 + (NSString *)xaccessTokenFromPartner:(Partner *)partner;
 
 + (void)partnersWithQuery:(NSString *)query offset:(NSInteger)offset andDelegate:(id <RKObjectLoaderDelegate>)delegate;
@@ -37,17 +39,11 @@
 
 + (void)photosWithPartner:(Partner *)partner section:(Section *)section fromCategory:(PhotoCategory *)category andDelegate:(id <RKObjectLoaderDelegate>)delegate;
 
-+ (void)videosWithPartner:(Partner *)partner
-               andSection:(Section *)section
-              andDelegate:(id <RKObjectLoaderDelegate>)delegate;
-
 + (void)modelsListWithMapping:(RKObjectMapping *)objectMapping
                   fromPartner:(Partner *)partner
                    andSection:(Section *)section
                  withDelegate:(id <RKObjectLoaderDelegate>)delegate;
 
-
-- (void) loadVideosWithDelegate:(id<RKObjectLoaderDelegate>) delegate;
 - (void) loadPhotoCategoriesWithDelegate:(id<RKObjectLoaderDelegate>) delegate;
 - (void) loadPhotosFromCategory:(PhotoCategory *) category delegate:(id<RKObjectLoaderDelegate>) delegate;
 - (void) loadEventsCategoriesUsingBlock:(void(^)(RKObjectLoader *)) block;

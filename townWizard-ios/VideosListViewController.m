@@ -16,11 +16,12 @@
 #import "VideoViewController.h"
 #import "RequestHelper.h"
 #import <MediaPlayer/MediaPlayer.h>
+#import "PartnerAPIClient.h"
+#import "VideosRequestFactory.h"
 
 @interface VideosListViewController ()
     <UITableViewDataSource,
-    UITableViewDelegate,
-    RKObjectLoaderDelegate>
+    UITableViewDelegate>
 
 @property (nonatomic, retain) NSArray *videos;
 
@@ -70,23 +71,16 @@
 
 - (void) loadVideos
 {
-    [[RequestHelper sharedInstance] loadVideosWithDelegate:self];
-}
-
-#pragma mark -
-#pragma mark RKObjectLoaderDelegate
-
-- (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error
-{
-    [self.activityIndicator stopAnimating];
-    [UIAlertView showConnectionProblemMessage];
-}
-
-- (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects
-{
-    [self setVideos:objects];
-    [[self tableView] reloadData];
-    [[self activityIndicator] stopAnimating];
+    APIRequest * request = [VideosRequestFactory videosRequestForURL:[[[RequestHelper sharedInstance] currentSection] url]];
+    [[PartnerAPIClient sharedClient] performRequest:request
+                                            success:^(id result, APIResponse *response) {
+                                                [self setVideos:result];
+                                                [[self tableView] reloadData];
+                                                [[self activityIndicator] stopAnimating];
+                                            } failure:^(ParsedError *error) {
+                                                [self.activityIndicator stopAnimating];
+                                                [UIAlertView showConnectionProblemMessage];
+                                            }];
 }
 
 #pragma mark -

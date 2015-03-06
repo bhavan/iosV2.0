@@ -47,4 +47,11 @@ static NSString *const kYoutubeThumbURLFormat = @"http://img.youtube.com/vi/%@/0
     return queryParams;
 }
 
++(EKObjectMapping *)objectMapping
+{
+    EKObjectMapping *mapping = [[EKObjectMapping alloc] initWithObjectClass:self];
+    [mapping mapPropertiesFromArray:@[@"name",@"thumb",@"url"]];
+    return [mapping autorelease];
+}
+
 @end

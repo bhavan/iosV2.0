@@ -55,7 +55,7 @@
              }
          }
      };
-    NSURLSessionTask * task = [self.sessionManager dataTaskWithRequest:request.URLRequest
+    NSURLSessionTask * task = [self.sessionManager dataTaskWithRequest:[request URLRequestWithBaseURL:self.baseURL]
                                                      completionHandler:completionHandler];
     [task resume];
     

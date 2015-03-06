@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EKObjectMapping.h"
 
-@interface Video : NSObject
+@interface Video : EKObjectModel
 
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *thumb;

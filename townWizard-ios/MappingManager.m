@@ -33,18 +33,6 @@ static MappingManager *mappingManager = nil;
     return mappingManager;
 }
 
-
-- (RKObjectMapping *)videoMapping
-{
-    RKObjectMapping * partnersMapping = [RKObjectMapping mappingForClass:[Video class]];
-    
-    [partnersMapping mapKeyPath:@"name" toAttribute:@"name"];
-    [partnersMapping mapKeyPath:@"thumb" toAttribute:@"thumb"];
-    [partnersMapping mapKeyPath:@"url" toAttribute:@"url"];
-    return partnersMapping;
-    
-}
-
 - (RKObjectMapping *)photoMapping
 {
     RKObjectMapping * partnersMapping = [RKObjectMapping mappingForClass:[Photo class]];
