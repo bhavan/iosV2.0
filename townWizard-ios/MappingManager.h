@@ -17,7 +17,6 @@
 - (RKObjectMapping *) eventsMapping;
 - (RKObjectMapping *) locationMapping;
 - (RKObjectMapping *) partnerMapping;
-- (RKObjectMapping *) sectionMapping;
 - (RKObjectMapping *) eventCategoriesMapping;
 - (RKObjectMapping *) photoCategoryMapping;
 - (RKObjectMapping *) photoMapping;

@@ -55,9 +55,6 @@
 - (void) loadFeaturedEventUsingBlock:(void(^)(RKObjectLoader *)) block;
 - (void) loadEventsWithDatePeriod:(NSDate *)startDate end:(NSDate *)endDate
                          delegate:(id<RKObjectLoaderDelegate>) delegate;
-- (void) loadPartnerDetails:(NSString *) partnerID
-                 usingBlock:(void(^)(RKObjectLoader *)) block;
-- (void) loadSectionsUsingBlock:(void(^)(RKObjectLoader *)) block;
 
 - (NSData *)uploadRequestDataForImage:(UIImage *)image
                               caption:(NSString *)caption

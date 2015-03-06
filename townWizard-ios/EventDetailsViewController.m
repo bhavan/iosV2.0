@@ -37,7 +37,7 @@
 {
     [super viewWillAppear:animated];
     NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                    [UIColor blackColor], UITextAttributeTextColor,
+                                    [UIColor blackColor], NSForegroundColorAttributeName,
                                     [UIColor clearColor], UITextAttributeTextShadowColor,
                                     [NSValue valueWithUIOffset:UIOffsetMake(0, 0)],
                                     UITextAttributeTextShadowOffset,

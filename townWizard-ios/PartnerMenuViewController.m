@@ -17,6 +17,8 @@
 #import "ActivityImageView.h"
 #import "FacebookHelper.h"
 #import "AppDelegate.h"
+#import "APIClient.h"
+#import "PartnerRequestFactory.h"
 
 #define ABOUT_SECTION_NAME @"about us"
 #define HELP_SETCION_NAME @"help & support"
@@ -160,40 +162,26 @@ static NSInteger const kPartnerSectionsLoadingFailed = 501;
 
 - (void) loadPartnerDetails
 {
-    NSLog(@"load11");
 #ifdef PARTNER_ID
-    id successBlock = ^(id object) {
-        [self partnerDetailsLoaded:object];
-    };
-    
-    id failureBlock = ^(NSError *error) {
-        [self showLoadingErrorWithTag:kPartnerDetailsLoadingFailed];
-    };
-    
-    RequestHelper *helper = [RequestHelper sharedInstance];
-    [helper loadPartnerDetails:[NSString stringWithFormat:@"%d",PARTNER_ID]
-                    usingBlock:^(RKObjectLoader *loader) {
-                        [loader setOnDidLoadObject:successBlock];
-                        [loader setOnDidFailLoadWithError:failureBlock];
-                    }];
+    APIRequest * request = [PartnerRequestFactory partnerDetailsRequestWithPartnerId:[NSString stringWithFormat:@"%d",PARTNER_ID]];
+    [[APIClient sharedClient] performRequest:request
+                                     success:^(id result, APIResponse *response) {
+                                         [self partnerDetailsLoaded:result];
+                                     } failure:^(ParsedError *error) {
+                                         [self showLoadingErrorWithTag:kPartnerDetailsLoadingFailed];
+                                     }];
 #endif
 }
 
 - (void) loadPartnerSections
 {
-    id successBlock = ^(NSArray *objects) {
-        [self sectionsLoaded:objects];
-    };
-    
-    id failureBlock = ^(NSError *error) {
-        [self showLoadingErrorWithTag:kPartnerSectionsLoadingFailed];
-    };
-    
-    RequestHelper *helper = [RequestHelper sharedInstance];
-    [helper loadSectionsUsingBlock:^(RKObjectLoader *loader) {
-         [loader setOnDidLoadObjects:successBlock];
-         [loader setOnDidFailLoadWithError:failureBlock];
-     }];
+    APIRequest * request = [PartnerRequestFactory partnerSectionsRequestWithPartnerId:[NSString stringWithFormat:@"%d",PARTNER_ID]];
+    [[APIClient sharedClient] performRequest:request
+                                     success:^(id result, APIResponse *response) {
+                                         [self sectionsLoaded:result];
+                                     } failure:^(ParsedError *error) {
+                                         [self showLoadingErrorWithTag:kPartnerSectionsLoadingFailed];
+                                     }];
 }
 
 #pragma mark -

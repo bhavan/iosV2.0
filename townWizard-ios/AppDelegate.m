@@ -17,6 +17,7 @@
 #import <GAI.h>
 #import "Appirater.h"
 #import "Reachability.h"
+#import "APIClient.h"
 
 #ifdef RUN_KIF_TESTS
 #import "EXTestController.h"
@@ -55,6 +56,7 @@ static NSString *twGAcode = @"UA-31932515-2";
 #else
     UIViewController *rootController = [[[PartnerViewController alloc] initWithPartner:nil] autorelease];
     self.window.rootViewController = rootController;
+    [APIClient setupWithBaseURL:[NSURL URLWithString:API_URL]];
 #endif
     
     [self.window makeKeyAndVisible];
@@ -95,7 +97,7 @@ static NSString *twGAcode = @"UA-31932515-2";
     UIImage *buttonImage = [[UIImage imageNamed:@"backButton"]  resizableImageWithCapInsets:UIEdgeInsetsMake(0, 16, 0, 10)];
     [[UIBarButtonItem appearanceWhenContainedIn:[TownWizardNavigationBar class], nil] setBackButtonBackgroundImage:buttonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                    [UIColor blackColor], UITextAttributeTextColor,
+                                    [UIColor blackColor], NSForegroundColorAttributeName,
                                     [UIColor clearColor], UITextAttributeTextShadowColor,
                                     [NSValue valueWithUIOffset:UIOffsetMake(0, 0)], UITextAttributeTextShadowOffset,
                                     [UIFont boldSystemFontOfSize:13.0f], UITextAttributeFont,

@@ -33,8 +33,6 @@
 		012748BA18B64E78005E9895 /* SubMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854AA14D142430030BD03 /* SubMenuViewController.m */; };
 		012748BB18B64E78005E9895 /* PartnerMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F875E14D6C81F005EE200 /* PartnerMenuViewController.m */; };
 		012748BC18B64E78005E9895 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D90D0DFD158F06500026828E /* main.m */; };
-		012748BD18B64E78005E9895 /* Partner.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444637616198FCC00394D41 /* Partner.m */; };
-		012748BE18B64E78005E9895 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 848226C31619AE7D00201600 /* Section.m */; };
 		012748BF18B64E78005E9895 /* PhotoCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 847FD336161ACCB2009FB9CC /* PhotoCategory.m */; };
 		012748C018B64E78005E9895 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 847FD357161ACCC8009FB9CC /* Photo.m */; };
 		012748C118B64E78005E9895 /* PhotoCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847FD37E161ACDAE009FB9CC /* PhotoCategoriesViewController.m */; };
@@ -53,7 +51,6 @@
 		012748CE18B64E78005E9895 /* EventsViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = D932496A1637DE2700409AA9 /* EventsViewer.m */; };
 		012748CF18B64E78005E9895 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = D932498B1637E0F300409AA9 /* Event.m */; };
 		012748D018B64E78005E9895 /* MappingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D93249AC1637E28100409AA9 /* MappingManager.m */; };
-		012748D118B64E78005E9895 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = D93249CE1638019300409AA9 /* Location.m */; };
 		012748D218B64E78005E9895 /* InputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84237CB01668A0DE00B3DB18 /* InputBar.m */; };
 		012748D318B64E78005E9895 /* EventCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 84237CB51668A3D400B3DB18 /* EventCategory.m */; };
 		012748D418B64E78005E9895 /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840E4586166E374B007CCF51 /* EventDetailsViewController.m */; };
@@ -365,8 +362,6 @@
 		01A6F871192BF94800529EA2 /* SubMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854AA14D142430030BD03 /* SubMenuViewController.m */; };
 		01A6F872192BF94800529EA2 /* PartnerMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F875E14D6C81F005EE200 /* PartnerMenuViewController.m */; };
 		01A6F873192BF94800529EA2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D90D0DFD158F06500026828E /* main.m */; };
-		01A6F874192BF94800529EA2 /* Partner.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444637616198FCC00394D41 /* Partner.m */; };
-		01A6F875192BF94800529EA2 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 848226C31619AE7D00201600 /* Section.m */; };
 		01A6F876192BF94800529EA2 /* PhotoCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 847FD336161ACCB2009FB9CC /* PhotoCategory.m */; };
 		01A6F877192BF94800529EA2 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 847FD357161ACCC8009FB9CC /* Photo.m */; };
 		01A6F878192BF94800529EA2 /* PhotoCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847FD37E161ACDAE009FB9CC /* PhotoCategoriesViewController.m */; };
@@ -385,7 +380,6 @@
 		01A6F885192BF94800529EA2 /* EventsViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = D932496A1637DE2700409AA9 /* EventsViewer.m */; };
 		01A6F886192BF94800529EA2 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = D932498B1637E0F300409AA9 /* Event.m */; };
 		01A6F887192BF94800529EA2 /* MappingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D93249AC1637E28100409AA9 /* MappingManager.m */; };
-		01A6F888192BF94800529EA2 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = D93249CE1638019300409AA9 /* Location.m */; };
 		01A6F889192BF94800529EA2 /* InputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84237CB01668A0DE00B3DB18 /* InputBar.m */; };
 		01A6F88A192BF94800529EA2 /* EventCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 84237CB51668A3D400B3DB18 /* EventCategory.m */; };
 		01A6F88B192BF94800529EA2 /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840E4586166E374B007CCF51 /* EventDetailsViewController.m */; };
@@ -697,8 +691,6 @@
 		01CF9B921954921100E75837 /* SubMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854AA14D142430030BD03 /* SubMenuViewController.m */; };
 		01CF9B931954921100E75837 /* PartnerMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F875E14D6C81F005EE200 /* PartnerMenuViewController.m */; };
 		01CF9B941954921100E75837 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D90D0DFD158F06500026828E /* main.m */; };
-		01CF9B951954921100E75837 /* Partner.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444637616198FCC00394D41 /* Partner.m */; };
-		01CF9B961954921100E75837 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 848226C31619AE7D00201600 /* Section.m */; };
 		01CF9B971954921100E75837 /* PhotoCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 847FD336161ACCB2009FB9CC /* PhotoCategory.m */; };
 		01CF9B981954921100E75837 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 847FD357161ACCC8009FB9CC /* Photo.m */; };
 		01CF9B991954921100E75837 /* PhotoCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847FD37E161ACDAE009FB9CC /* PhotoCategoriesViewController.m */; };
@@ -717,7 +709,6 @@
 		01CF9BA61954921100E75837 /* EventsViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = D932496A1637DE2700409AA9 /* EventsViewer.m */; };
 		01CF9BA71954921100E75837 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = D932498B1637E0F300409AA9 /* Event.m */; };
 		01CF9BA81954921100E75837 /* MappingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D93249AC1637E28100409AA9 /* MappingManager.m */; };
-		01CF9BA91954921100E75837 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = D93249CE1638019300409AA9 /* Location.m */; };
 		01CF9BAA1954921100E75837 /* InputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84237CB01668A0DE00B3DB18 /* InputBar.m */; };
 		01CF9BAB1954921100E75837 /* EventCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 84237CB51668A3D400B3DB18 /* EventCategory.m */; };
 		01CF9BAC1954921100E75837 /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840E4586166E374B007CCF51 /* EventDetailsViewController.m */; };
@@ -1038,8 +1029,6 @@
 		01DD0B4B1897FC5F00356772 /* SubMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854AA14D142430030BD03 /* SubMenuViewController.m */; };
 		01DD0B4C1897FC5F00356772 /* PartnerMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F875E14D6C81F005EE200 /* PartnerMenuViewController.m */; };
 		01DD0B4D1897FC5F00356772 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D90D0DFD158F06500026828E /* main.m */; };
-		01DD0B4E1897FC5F00356772 /* Partner.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444637616198FCC00394D41 /* Partner.m */; };
-		01DD0B4F1897FC5F00356772 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 848226C31619AE7D00201600 /* Section.m */; };
 		01DD0B501897FC5F00356772 /* PhotoCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 847FD336161ACCB2009FB9CC /* PhotoCategory.m */; };
 		01DD0B511897FC5F00356772 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 847FD357161ACCC8009FB9CC /* Photo.m */; };
 		01DD0B521897FC5F00356772 /* PhotoCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847FD37E161ACDAE009FB9CC /* PhotoCategoriesViewController.m */; };
@@ -1058,7 +1047,6 @@
 		01DD0B5F1897FC5F00356772 /* EventsViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = D932496A1637DE2700409AA9 /* EventsViewer.m */; };
 		01DD0B601897FC5F00356772 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = D932498B1637E0F300409AA9 /* Event.m */; };
 		01DD0B611897FC5F00356772 /* MappingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D93249AC1637E28100409AA9 /* MappingManager.m */; };
-		01DD0B621897FC5F00356772 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = D93249CE1638019300409AA9 /* Location.m */; };
 		01DD0B631897FC5F00356772 /* InputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84237CB01668A0DE00B3DB18 /* InputBar.m */; };
 		01DD0B641897FC5F00356772 /* EventCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 84237CB51668A3D400B3DB18 /* EventCategory.m */; };
 		01DD0B651897FC5F00356772 /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840E4586166E374B007CCF51 /* EventDetailsViewController.m */; };
@@ -1368,8 +1356,6 @@
 		01EBDAF71718802B00FB5BBF /* SubMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848854AA14D142430030BD03 /* SubMenuViewController.m */; };
 		01EBDAF81718802B00FB5BBF /* PartnerMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F875E14D6C81F005EE200 /* PartnerMenuViewController.m */; };
 		01EBDAF91718802B00FB5BBF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D90D0DFD158F06500026828E /* main.m */; };
-		01EBDAFA1718802B00FB5BBF /* Partner.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444637616198FCC00394D41 /* Partner.m */; };
-		01EBDAFB1718802B00FB5BBF /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 848226C31619AE7D00201600 /* Section.m */; };
 		01EBDAFC1718802B00FB5BBF /* PhotoCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 847FD336161ACCB2009FB9CC /* PhotoCategory.m */; };
 		01EBDAFD1718802B00FB5BBF /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 847FD357161ACCC8009FB9CC /* Photo.m */; };
 		01EBDAFE1718802B00FB5BBF /* PhotoCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847FD37E161ACDAE009FB9CC /* PhotoCategoriesViewController.m */; };
@@ -1388,7 +1374,6 @@
 		01EBDB0B1718802B00FB5BBF /* EventsViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = D932496A1637DE2700409AA9 /* EventsViewer.m */; };
 		01EBDB0C1718802B00FB5BBF /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = D932498B1637E0F300409AA9 /* Event.m */; };
 		01EBDB0D1718802B00FB5BBF /* MappingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D93249AC1637E28100409AA9 /* MappingManager.m */; };
-		01EBDB0E1718802B00FB5BBF /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = D93249CE1638019300409AA9 /* Location.m */; };
 		01EBDB0F1718802B00FB5BBF /* InputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84237CB01668A0DE00B3DB18 /* InputBar.m */; };
 		01EBDB101718802B00FB5BBF /* EventCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 84237CB51668A3D400B3DB18 /* EventCategory.m */; };
 		01EBDB111718802B00FB5BBF /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840E4586166E374B007CCF51 /* EventDetailsViewController.m */; };
@@ -1757,8 +1742,6 @@
 		843AC46616A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 843AC46416A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m */; };
 		843AC46C16A03514007DF1F9 /* UIImage+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 843AC46B16A03514007DF1F9 /* UIImage+Extensions.m */; };
 		843AC46D16A03514007DF1F9 /* UIImage+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 843AC46B16A03514007DF1F9 /* UIImage+Extensions.m */; };
-		8444637716198FCC00394D41 /* Partner.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444637616198FCC00394D41 /* Partner.m */; };
-		8444637816198FCC00394D41 /* Partner.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444637616198FCC00394D41 /* Partner.m */; };
 		8448CB3E16AFD80600471BDF /* EventsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8448CB3D16AFD80600471BDF /* EventsHelper.m */; };
 		8448CB3F16AFD80600471BDF /* EventsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8448CB3D16AFD80600471BDF /* EventsHelper.m */; };
 		845F8AF21680A2200087E3F2 /* UIView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D9515CA8163835340058BE8C /* UIView+Extensions.m */; };
@@ -1922,8 +1905,6 @@
 		847FD39E161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847FD37F161ACDAE009FB9CC /* PhotoCategoriesViewController.xib */; };
 		847FD39F161ACDAE009FB9CC /* PhotoCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847FD37F161ACDAE009FB9CC /* PhotoCategoriesViewController.xib */; };
 		84818E0614D7DE0600BBCD7F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84818E0514D7DE0600BBCD7F /* CoreLocation.framework */; };
-		848226C41619AE7D00201600 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 848226C31619AE7D00201600 /* Section.m */; };
-		848226C61619AE8900201600 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 848226C31619AE7D00201600 /* Section.m */; };
 		8483F24814D03FBE005E4216 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483F24714D03FBE005E4216 /* UIKit.framework */; };
 		8483F24A14D03FBE005E4216 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483F24914D03FBE005E4216 /* Foundation.framework */; };
 		8483F24C14D03FBE005E4216 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483F24B14D03FBE005E4216 /* CoreGraphics.framework */; };
@@ -2065,6 +2046,76 @@
 		84FE2FEC167739290097EA4A /* backButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84FE2FE8167739290097EA4A /* backButton@2x.png */; };
 		84FEE077169C59EC00EDC43F /* NSString+HTMLStripping.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEE076169C59EC00EDC43F /* NSString+HTMLStripping.m */; };
 		84FEE078169C59EC00EDC43F /* NSString+HTMLStripping.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEE076169C59EC00EDC43F /* NSString+HTMLStripping.m */; };
+		9AA087521AA9B01C0047FB04 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087331AA9B01C0047FB04 /* APIClient.m */; };
+		9AA087531AA9B01C0047FB04 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087331AA9B01C0047FB04 /* APIClient.m */; };
+		9AA087541AA9B01C0047FB04 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087331AA9B01C0047FB04 /* APIClient.m */; };
+		9AA087551AA9B01C0047FB04 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087331AA9B01C0047FB04 /* APIClient.m */; };
+		9AA087561AA9B01C0047FB04 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087331AA9B01C0047FB04 /* APIClient.m */; };
+		9AA087571AA9B01C0047FB04 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087331AA9B01C0047FB04 /* APIClient.m */; };
+		9AA087581AA9B01C0047FB04 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087331AA9B01C0047FB04 /* APIClient.m */; };
+		9AA087671AA9B01C0047FB04 /* APIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA0873C1AA9B01C0047FB04 /* APIRequest.m */; };
+		9AA087681AA9B01C0047FB04 /* APIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA0873C1AA9B01C0047FB04 /* APIRequest.m */; };
+		9AA087691AA9B01C0047FB04 /* APIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA0873C1AA9B01C0047FB04 /* APIRequest.m */; };
+		9AA0876A1AA9B01C0047FB04 /* APIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA0873C1AA9B01C0047FB04 /* APIRequest.m */; };
+		9AA0876B1AA9B01C0047FB04 /* APIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA0873C1AA9B01C0047FB04 /* APIRequest.m */; };
+		9AA0876C1AA9B01C0047FB04 /* APIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA0873C1AA9B01C0047FB04 /* APIRequest.m */; };
+		9AA0876D1AA9B01C0047FB04 /* APIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA0873C1AA9B01C0047FB04 /* APIRequest.m */; };
+		9AA087911AA9B01C0047FB04 /* RequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087491AA9B01C0047FB04 /* RequestSerializer.m */; };
+		9AA087921AA9B01C0047FB04 /* RequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087491AA9B01C0047FB04 /* RequestSerializer.m */; };
+		9AA087931AA9B01C0047FB04 /* RequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087491AA9B01C0047FB04 /* RequestSerializer.m */; };
+		9AA087941AA9B01C0047FB04 /* RequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087491AA9B01C0047FB04 /* RequestSerializer.m */; };
+		9AA087951AA9B01C0047FB04 /* RequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087491AA9B01C0047FB04 /* RequestSerializer.m */; };
+		9AA087961AA9B01C0047FB04 /* RequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087491AA9B01C0047FB04 /* RequestSerializer.m */; };
+		9AA087971AA9B01C0047FB04 /* RequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087491AA9B01C0047FB04 /* RequestSerializer.m */; };
+		9AA087981AA9B01C0047FB04 /* APIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA0874C1AA9B01C0047FB04 /* APIResponse.m */; };
+		9AA087991AA9B01C0047FB04 /* APIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA0874C1AA9B01C0047FB04 /* APIResponse.m */; };
+		9AA0879A1AA9B01C0047FB04 /* APIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA0874C1AA9B01C0047FB04 /* APIResponse.m */; };
+		9AA0879B1AA9B01C0047FB04 /* APIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA0874C1AA9B01C0047FB04 /* APIResponse.m */; };
+		9AA0879C1AA9B01C0047FB04 /* APIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA0874C1AA9B01C0047FB04 /* APIResponse.m */; };
+		9AA0879D1AA9B01C0047FB04 /* APIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA0874C1AA9B01C0047FB04 /* APIResponse.m */; };
+		9AA0879E1AA9B01C0047FB04 /* APIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA0874C1AA9B01C0047FB04 /* APIResponse.m */; };
+		9AA0879F1AA9B01C0047FB04 /* ParsedError.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA0874F1AA9B01C0047FB04 /* ParsedError.m */; };
+		9AA087A01AA9B01C0047FB04 /* ParsedError.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA0874F1AA9B01C0047FB04 /* ParsedError.m */; };
+		9AA087A11AA9B01C0047FB04 /* ParsedError.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA0874F1AA9B01C0047FB04 /* ParsedError.m */; };
+		9AA087A21AA9B01C0047FB04 /* ParsedError.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA0874F1AA9B01C0047FB04 /* ParsedError.m */; };
+		9AA087A31AA9B01C0047FB04 /* ParsedError.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA0874F1AA9B01C0047FB04 /* ParsedError.m */; };
+		9AA087A41AA9B01C0047FB04 /* ParsedError.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA0874F1AA9B01C0047FB04 /* ParsedError.m */; };
+		9AA087A51AA9B01C0047FB04 /* ParsedError.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA0874F1AA9B01C0047FB04 /* ParsedError.m */; };
+		9AA087A61AA9B01C0047FB04 /* ModelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087511AA9B01C0047FB04 /* ModelFactory.m */; };
+		9AA087A71AA9B01C0047FB04 /* ModelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087511AA9B01C0047FB04 /* ModelFactory.m */; };
+		9AA087A81AA9B01C0047FB04 /* ModelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087511AA9B01C0047FB04 /* ModelFactory.m */; };
+		9AA087A91AA9B01C0047FB04 /* ModelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087511AA9B01C0047FB04 /* ModelFactory.m */; };
+		9AA087AA1AA9B01C0047FB04 /* ModelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087511AA9B01C0047FB04 /* ModelFactory.m */; };
+		9AA087AB1AA9B01C0047FB04 /* ModelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087511AA9B01C0047FB04 /* ModelFactory.m */; };
+		9AA087AC1AA9B01C0047FB04 /* ModelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087511AA9B01C0047FB04 /* ModelFactory.m */; };
+		9AA087B01AA9D3B60047FB04 /* Partner.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087AF1AA9D3B60047FB04 /* Partner.m */; };
+		9AA087B11AA9D3B60047FB04 /* Partner.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087AF1AA9D3B60047FB04 /* Partner.m */; };
+		9AA087B21AA9D3B60047FB04 /* Partner.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087AF1AA9D3B60047FB04 /* Partner.m */; };
+		9AA087B31AA9D3B60047FB04 /* Partner.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087AF1AA9D3B60047FB04 /* Partner.m */; };
+		9AA087B41AA9D3B60047FB04 /* Partner.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087AF1AA9D3B60047FB04 /* Partner.m */; };
+		9AA087B51AA9D3B60047FB04 /* Partner.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087AF1AA9D3B60047FB04 /* Partner.m */; };
+		9AA087B61AA9D3B60047FB04 /* Partner.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087AF1AA9D3B60047FB04 /* Partner.m */; };
+		9AA087B91AA9D4250047FB04 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087B81AA9D4250047FB04 /* Location.m */; };
+		9AA087BA1AA9D4250047FB04 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087B81AA9D4250047FB04 /* Location.m */; };
+		9AA087BB1AA9D4260047FB04 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087B81AA9D4250047FB04 /* Location.m */; };
+		9AA087BC1AA9D4260047FB04 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087B81AA9D4250047FB04 /* Location.m */; };
+		9AA087BD1AA9D4260047FB04 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087B81AA9D4250047FB04 /* Location.m */; };
+		9AA087BE1AA9D4260047FB04 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087B81AA9D4250047FB04 /* Location.m */; };
+		9AA087BF1AA9D4260047FB04 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087B81AA9D4250047FB04 /* Location.m */; };
+		9AA087C31AA9D8B10047FB04 /* PartnerRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087C21AA9D8B10047FB04 /* PartnerRequestFactory.m */; };
+		9AA087C41AA9D8B10047FB04 /* PartnerRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087C21AA9D8B10047FB04 /* PartnerRequestFactory.m */; };
+		9AA087C51AA9D8B10047FB04 /* PartnerRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087C21AA9D8B10047FB04 /* PartnerRequestFactory.m */; };
+		9AA087C61AA9D8B10047FB04 /* PartnerRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087C21AA9D8B10047FB04 /* PartnerRequestFactory.m */; };
+		9AA087C71AA9D8B10047FB04 /* PartnerRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087C21AA9D8B10047FB04 /* PartnerRequestFactory.m */; };
+		9AA087C81AA9D8B10047FB04 /* PartnerRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087C21AA9D8B10047FB04 /* PartnerRequestFactory.m */; };
+		9AA087C91AA9D8B10047FB04 /* PartnerRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087C21AA9D8B10047FB04 /* PartnerRequestFactory.m */; };
+		9AA087CC1AA9DE410047FB04 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087CB1AA9DE410047FB04 /* Section.m */; };
+		9AA087CD1AA9DE410047FB04 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087CB1AA9DE410047FB04 /* Section.m */; };
+		9AA087CE1AA9DE410047FB04 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087CB1AA9DE410047FB04 /* Section.m */; };
+		9AA087CF1AA9DE410047FB04 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087CB1AA9DE410047FB04 /* Section.m */; };
+		9AA087D01AA9DE410047FB04 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087CB1AA9DE410047FB04 /* Section.m */; };
+		9AA087D11AA9DE410047FB04 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087CB1AA9DE410047FB04 /* Section.m */; };
+		9AA087D21AA9DE410047FB04 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA087CB1AA9DE410047FB04 /* Section.m */; };
 		9B2AFA421A2A4B35B2953F89 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59FBA4CF79134DFAAB1477F7 /* libPods.a */; };
 		D90A3BFF180D260A00356558 /* GoogleAnalyticsEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D90A3BFE180D260900356558 /* GoogleAnalyticsEvent.m */; };
 		D90A3C01180D26C900356558 /* GoogleAnalyticsEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D90A3BFE180D260900356558 /* GoogleAnalyticsEvent.m */; };
@@ -2090,8 +2141,6 @@
 		D932498D1637E0F300409AA9 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = D932498B1637E0F300409AA9 /* Event.m */; };
 		D93249AD1637E28100409AA9 /* MappingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D93249AC1637E28100409AA9 /* MappingManager.m */; };
 		D93249AE1637E28100409AA9 /* MappingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D93249AC1637E28100409AA9 /* MappingManager.m */; };
-		D93249CF1638019300409AA9 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = D93249CE1638019300409AA9 /* Location.m */; };
-		D93249D01638019300409AA9 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = D93249CE1638019300409AA9 /* Location.m */; };
 		D934E9171647E3870011E289 /* navigation_bar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D934E9151647E3870011E289 /* navigation_bar_bg.png */; };
 		D934E9181647E3870011E289 /* navigation_bar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D934E9161647E3870011E289 /* navigation_bar_bg@2x.png */; };
 		D9515C9D163832C00058BE8C /* EventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9515C9C163832C00058BE8C /* EventCell.m */; };
@@ -2861,8 +2910,6 @@
 		843AC46416A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+TWButtons.m"; sourceTree = "<group>"; };
 		843AC46A16A03514007DF1F9 /* UIImage+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extensions.h"; sourceTree = "<group>"; };
 		843AC46B16A03514007DF1F9 /* UIImage+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extensions.m"; sourceTree = "<group>"; };
-		8444637516198FCC00394D41 /* Partner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Partner.h; sourceTree = "<group>"; };
-		8444637616198FCC00394D41 /* Partner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Partner.m; sourceTree = "<group>"; };
 		8448CB3C16AFD80600471BDF /* EventsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsHelper.h; sourceTree = "<group>"; };
 		8448CB3D16AFD80600471BDF /* EventsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsHelper.m; sourceTree = "<group>"; };
 		8461266616B29E21007400B7 /* separator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = separator.png; sourceTree = "<group>"; };
@@ -2883,8 +2930,6 @@
 		847FD37E161ACDAE009FB9CC /* PhotoCategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCategoriesViewController.m; sourceTree = "<group>"; };
 		847FD37F161ACDAE009FB9CC /* PhotoCategoriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoCategoriesViewController.xib; sourceTree = "<group>"; };
 		84818E0514D7DE0600BBCD7F /* CoreLocation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		848226C21619AE7D00201600 /* Section.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Section.h; sourceTree = "<group>"; };
-		848226C31619AE7D00201600 /* Section.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Section.m; sourceTree = "<group>"; };
 		8483F24314D03FBE005E4216 /* TownWizard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TownWizard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8483F24714D03FBE005E4216 /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8483F24914D03FBE005E4216 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -3101,6 +3146,26 @@
 		95F857C915EE6E1A009C4B7C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		95F857CA15EE6E1A009C4B7C /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		95F857CB15EE6E1A009C4B7C /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		9AA087321AA9B01C0047FB04 /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APIClient.h; path = API/APIClient.h; sourceTree = "<group>"; };
+		9AA087331AA9B01C0047FB04 /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APIClient.m; path = API/APIClient.m; sourceTree = "<group>"; };
+		9AA0873B1AA9B01C0047FB04 /* APIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIRequest.h; sourceTree = "<group>"; };
+		9AA0873C1AA9B01C0047FB04 /* APIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIRequest.m; sourceTree = "<group>"; };
+		9AA087481AA9B01C0047FB04 /* RequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestSerializer.h; sourceTree = "<group>"; };
+		9AA087491AA9B01C0047FB04 /* RequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestSerializer.m; sourceTree = "<group>"; };
+		9AA0874B1AA9B01C0047FB04 /* APIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIResponse.h; sourceTree = "<group>"; };
+		9AA0874C1AA9B01C0047FB04 /* APIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIResponse.m; sourceTree = "<group>"; };
+		9AA0874E1AA9B01C0047FB04 /* ParsedError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParsedError.h; sourceTree = "<group>"; };
+		9AA0874F1AA9B01C0047FB04 /* ParsedError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParsedError.m; sourceTree = "<group>"; };
+		9AA087501AA9B01C0047FB04 /* ModelFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelFactory.h; sourceTree = "<group>"; };
+		9AA087511AA9B01C0047FB04 /* ModelFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelFactory.m; sourceTree = "<group>"; };
+		9AA087AE1AA9D3B60047FB04 /* Partner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Partner.h; sourceTree = "<group>"; };
+		9AA087AF1AA9D3B60047FB04 /* Partner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Partner.m; sourceTree = "<group>"; };
+		9AA087B71AA9D4250047FB04 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		9AA087B81AA9D4250047FB04 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		9AA087C11AA9D8B10047FB04 /* PartnerRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PartnerRequestFactory.h; path = Factories/PartnerRequestFactory.h; sourceTree = "<group>"; };
+		9AA087C21AA9D8B10047FB04 /* PartnerRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PartnerRequestFactory.m; path = Factories/PartnerRequestFactory.m; sourceTree = "<group>"; };
+		9AA087CA1AA9DE410047FB04 /* Section.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Section.h; sourceTree = "<group>"; };
+		9AA087CB1AA9DE410047FB04 /* Section.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Section.m; sourceTree = "<group>"; };
 		CE26395A995941CEB04FA3F0 /* libPods-grayton-cedar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-grayton-cedar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90A3BFD180D260900356558 /* GoogleAnalyticsEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleAnalyticsEvent.h; sourceTree = "<group>"; };
 		D90A3BFE180D260900356558 /* GoogleAnalyticsEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleAnalyticsEvent.m; sourceTree = "<group>"; };
@@ -3122,8 +3187,6 @@
 		D932498B1637E0F300409AA9 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		D93249AB1637E28100409AA9 /* MappingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MappingManager.h; sourceTree = "<group>"; };
 		D93249AC1637E28100409AA9 /* MappingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MappingManager.m; sourceTree = "<group>"; };
-		D93249CD1638019200409AA9 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
-		D93249CE1638019300409AA9 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		D934E9151647E3870011E289 /* navigation_bar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navigation_bar_bg.png; path = Resources/Images/navigation_bar_bg.png; sourceTree = "<group>"; };
 		D934E9161647E3870011E289 /* navigation_bar_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navigation_bar_bg@2x.png"; path = "Resources/Images/navigation_bar_bg@2x.png"; sourceTree = "<group>"; };
 		D9515C9B163832C00058BE8C /* EventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCell.h; sourceTree = "<group>"; };
@@ -4651,10 +4714,6 @@
 		8444637416198E6300394D41 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8444637516198FCC00394D41 /* Partner.h */,
-				8444637616198FCC00394D41 /* Partner.m */,
-				848226C21619AE7D00201600 /* Section.h */,
-				848226C31619AE7D00201600 /* Section.m */,
 				847FD335161ACCB2009FB9CC /* PhotoCategory.h */,
 				847FD336161ACCB2009FB9CC /* PhotoCategory.m */,
 				847FD356161ACCC8009FB9CC /* Photo.h */,
@@ -4663,8 +4722,6 @@
 				84CAAE76161B2F2C00E09E36 /* Video.m */,
 				D932498A1637E0F300409AA9 /* Event.h */,
 				D932498B1637E0F300409AA9 /* Event.m */,
-				D93249CD1638019200409AA9 /* Location.h */,
-				D93249CE1638019300409AA9 /* Location.m */,
 				84237CB41668A3D400B3DB18 /* EventCategory.h */,
 				84237CB51668A3D400B3DB18 /* EventCategory.m */,
 				D90A3BFD180D260900356558 /* GoogleAnalyticsEvent.h */,
@@ -4740,6 +4797,7 @@
 		8483F24D14D03FBE005E4216 /* TownWizard-ios */ = {
 			isa = PBXGroup;
 			children = (
+				9AA087311AA9AF6C0047FB04 /* API */,
 				84F68D9E168AE7CC00A78C12 /* Externals */,
 				D9515CA61638351E0058BE8C /* Categories */,
 				D93249681637DDF800409AA9 /* Views */,
@@ -5218,6 +5276,76 @@
 			name = brunei;
 			path = "townWizard-partner/Images/brunei";
 			sourceTree = SOURCE_ROOT;
+		};
+		9AA087311AA9AF6C0047FB04 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				9AA087321AA9B01C0047FB04 /* APIClient.h */,
+				9AA087331AA9B01C0047FB04 /* APIClient.m */,
+				9AA087341AA9B01C0047FB04 /* Models */,
+				9AA0873A1AA9B01C0047FB04 /* Request */,
+				9AA0874A1AA9B01C0047FB04 /* Response */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		9AA087341AA9B01C0047FB04 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9AA087CA1AA9DE410047FB04 /* Section.h */,
+				9AA087CB1AA9DE410047FB04 /* Section.m */,
+				9AA087AE1AA9D3B60047FB04 /* Partner.h */,
+				9AA087AF1AA9D3B60047FB04 /* Partner.m */,
+				9AA087B71AA9D4250047FB04 /* Location.h */,
+				9AA087B81AA9D4250047FB04 /* Location.m */,
+			);
+			name = Models;
+			path = API/Models;
+			sourceTree = "<group>";
+		};
+		9AA0873A1AA9B01C0047FB04 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				9AA087C01AA9D8910047FB04 /* RequestFactory */,
+				9AA0873B1AA9B01C0047FB04 /* APIRequest.h */,
+				9AA0873C1AA9B01C0047FB04 /* APIRequest.m */,
+				9AA087481AA9B01C0047FB04 /* RequestSerializer.h */,
+				9AA087491AA9B01C0047FB04 /* RequestSerializer.m */,
+			);
+			name = Request;
+			path = API/Request;
+			sourceTree = "<group>";
+		};
+		9AA0874A1AA9B01C0047FB04 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				9AA0874B1AA9B01C0047FB04 /* APIResponse.h */,
+				9AA0874C1AA9B01C0047FB04 /* APIResponse.m */,
+				9AA0874D1AA9B01C0047FB04 /* Error */,
+				9AA087501AA9B01C0047FB04 /* ModelFactory.h */,
+				9AA087511AA9B01C0047FB04 /* ModelFactory.m */,
+			);
+			name = Response;
+			path = API/Response;
+			sourceTree = "<group>";
+		};
+		9AA0874D1AA9B01C0047FB04 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				9AA0874E1AA9B01C0047FB04 /* ParsedError.h */,
+				9AA0874F1AA9B01C0047FB04 /* ParsedError.m */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		9AA087C01AA9D8910047FB04 /* RequestFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9AA087C11AA9D8B10047FB04 /* PartnerRequestFactory.h */,
+				9AA087C21AA9D8B10047FB04 /* PartnerRequestFactory.m */,
+			);
+			name = RequestFactory;
+			sourceTree = "<group>";
 		};
 		D90D0DF7158F06500026828E /* townWizard-partner */ = {
 			isa = PBXGroup;
@@ -7247,6 +7375,7 @@
 				012748A618B64E78005E9895 /* FacebookHelper.m in Sources */,
 				012748A718B64E78005E9895 /* Facebook.m in Sources */,
 				012748A818B64E78005E9895 /* MenuButtonTutorialViewController.m in Sources */,
+				9AA087D01AA9DE410047FB04 /* Section.m in Sources */,
 				012748A918B64E78005E9895 /* FBDialog.m in Sources */,
 				012748AA18B64E78005E9895 /* FBLoginDialog.m in Sources */,
 				012748AB18B64E78005E9895 /* FBRequest.m in Sources */,
@@ -7254,6 +7383,7 @@
 				012748AD18B64E78005E9895 /* RequestHelper.m in Sources */,
 				012748AE18B64E78005E9895 /* UIApplication+NetworkActivity.m in Sources */,
 				012748AF18B64E78005E9895 /* DataHolder.m in Sources */,
+				9AA087561AA9B01C0047FB04 /* APIClient.m in Sources */,
 				012748B018B64E78005E9895 /* FacebookCheckinViewController.m in Sources */,
 				012748B118B64E78005E9895 /* GoogleAnalyticsEvent.m in Sources */,
 				012748B218B64E78005E9895 /* FacebookFriend.m in Sources */,
@@ -7263,12 +7393,11 @@
 				012748B618B64E78005E9895 /* Place.m in Sources */,
 				012748B718B64E78005E9895 /* AddCaptionViewController.m in Sources */,
 				012748B818B64E78005E9895 /* MapAnnotation.m in Sources */,
+				9AA087A31AA9B01C0047FB04 /* ParsedError.m in Sources */,
 				012748B918B64E78005E9895 /* MapViewController.m in Sources */,
 				012748BA18B64E78005E9895 /* SubMenuViewController.m in Sources */,
 				012748BB18B64E78005E9895 /* PartnerMenuViewController.m in Sources */,
 				012748BC18B64E78005E9895 /* main.m in Sources */,
-				012748BD18B64E78005E9895 /* Partner.m in Sources */,
-				012748BE18B64E78005E9895 /* Section.m in Sources */,
 				012748BF18B64E78005E9895 /* PhotoCategory.m in Sources */,
 				012748C018B64E78005E9895 /* Photo.m in Sources */,
 				012748C118B64E78005E9895 /* PhotoCategoriesViewController.m in Sources */,
@@ -7287,13 +7416,14 @@
 				012748CE18B64E78005E9895 /* EventsViewer.m in Sources */,
 				012748CF18B64E78005E9895 /* Event.m in Sources */,
 				012748D018B64E78005E9895 /* MappingManager.m in Sources */,
-				012748D118B64E78005E9895 /* Location.m in Sources */,
 				012748D218B64E78005E9895 /* InputBar.m in Sources */,
+				9AA0879C1AA9B01C0047FB04 /* APIResponse.m in Sources */,
 				012748D318B64E78005E9895 /* EventCategory.m in Sources */,
 				012748D418B64E78005E9895 /* EventDetailsViewController.m in Sources */,
 				012748D518B64E78005E9895 /* EventDetailTopView.m in Sources */,
 				012748D618B64E78005E9895 /* AppActionsHelper.m in Sources */,
 				012748D718B64E78005E9895 /* TWShareKitConfigurator.m in Sources */,
+				9AA087B41AA9D3B60047FB04 /* Partner.m in Sources */,
 				012748D818B64E78005E9895 /* SHKMail.m in Sources */,
 				012748D918B64E78005E9895 /* PartnerCell.m in Sources */,
 				012748DA18B64E78005E9895 /* UIView+Extensions.m in Sources */,
@@ -7331,8 +7461,10 @@
 				012748FA18B64E78005E9895 /* OADataFetcher.m in Sources */,
 				012748FB18B64E78005E9895 /* OAHMAC_SHA1SignatureProvider.m in Sources */,
 				012748FC18B64E78005E9895 /* OAMutableURLRequest.m in Sources */,
+				9AA087BD1AA9D4260047FB04 /* Location.m in Sources */,
 				012748FD18B64E78005E9895 /* OAPlaintextSignatureProvider.m in Sources */,
 				012748FE18B64E78005E9895 /* OARequestParameter.m in Sources */,
+				9AA087C71AA9D8B10047FB04 /* PartnerRequestFactory.m in Sources */,
 				012748FF18B64E78005E9895 /* OAServiceTicket.m in Sources */,
 				0127490018B64E78005E9895 /* OAToken.m in Sources */,
 				0127490118B64E78005E9895 /* Base64Transcoder.c in Sources */,
@@ -7358,6 +7490,7 @@
 				0127491518B64E78005E9895 /* SHKFormFieldSettings.m in Sources */,
 				0127491618B64E78005E9895 /* SHKFormOptionController.m in Sources */,
 				0127491718B64E78005E9895 /* SHKOAuthView.m in Sources */,
+				9AA0876B1AA9B01C0047FB04 /* APIRequest.m in Sources */,
 				0127491818B64E78005E9895 /* SHKShareMenu.m in Sources */,
 				0127491918B64E78005E9895 /* SHKViewControllerWrapper.m in Sources */,
 				0127491A18B64E78005E9895 /* UISearchBar+Customize.m in Sources */,
@@ -7365,6 +7498,7 @@
 				0127491C18B64E78005E9895 /* UIButton+Extensions.m in Sources */,
 				0127491D18B64E78005E9895 /* NSString+HTMLStripping.m in Sources */,
 				0127491E18B64E78005E9895 /* UIBarButtonItem+TWButtons.m in Sources */,
+				9AA087AA1AA9B01C0047FB04 /* ModelFactory.m in Sources */,
 				0127491F18B64E78005E9895 /* UIImage+Extensions.m in Sources */,
 				0127492018B64E78005E9895 /* SearchHelper.m in Sources */,
 				0127492118B64E78005E9895 /* EventsHelper.m in Sources */,
@@ -7373,6 +7507,7 @@
 				0127492418B64E78005E9895 /* PMCalendarBackgroundView.m in Sources */,
 				0127492518B64E78005E9895 /* PMCalendarView.m in Sources */,
 				0127492618B64E78005E9895 /* PMDimmingView.m in Sources */,
+				9AA087951AA9B01C0047FB04 /* RequestSerializer.m in Sources */,
 				0127492718B64E78005E9895 /* PMPeriod.m in Sources */,
 				0127492818B64E78005E9895 /* PMSelectionView.m in Sources */,
 				0127492918B64E78005E9895 /* PMThemeEngine.m in Sources */,
@@ -7391,6 +7526,7 @@
 				01A6F85D192BF94800529EA2 /* FacebookHelper.m in Sources */,
 				01A6F85E192BF94800529EA2 /* Facebook.m in Sources */,
 				01A6F85F192BF94800529EA2 /* MenuButtonTutorialViewController.m in Sources */,
+				9AA087D11AA9DE410047FB04 /* Section.m in Sources */,
 				01A6F860192BF94800529EA2 /* FBDialog.m in Sources */,
 				01A6F861192BF94800529EA2 /* FBLoginDialog.m in Sources */,
 				01A6F862192BF94800529EA2 /* FBRequest.m in Sources */,
@@ -7398,6 +7534,7 @@
 				01A6F864192BF94800529EA2 /* RequestHelper.m in Sources */,
 				01A6F865192BF94800529EA2 /* UIApplication+NetworkActivity.m in Sources */,
 				01A6F866192BF94800529EA2 /* DataHolder.m in Sources */,
+				9AA087571AA9B01C0047FB04 /* APIClient.m in Sources */,
 				01A6F867192BF94800529EA2 /* FacebookCheckinViewController.m in Sources */,
 				01A6F868192BF94800529EA2 /* GoogleAnalyticsEvent.m in Sources */,
 				01A6F869192BF94800529EA2 /* FacebookFriend.m in Sources */,
@@ -7407,12 +7544,11 @@
 				01A6F86D192BF94800529EA2 /* Place.m in Sources */,
 				01A6F86E192BF94800529EA2 /* AddCaptionViewController.m in Sources */,
 				01A6F86F192BF94800529EA2 /* MapAnnotation.m in Sources */,
+				9AA087A41AA9B01C0047FB04 /* ParsedError.m in Sources */,
 				01A6F870192BF94800529EA2 /* MapViewController.m in Sources */,
 				01A6F871192BF94800529EA2 /* SubMenuViewController.m in Sources */,
 				01A6F872192BF94800529EA2 /* PartnerMenuViewController.m in Sources */,
 				01A6F873192BF94800529EA2 /* main.m in Sources */,
-				01A6F874192BF94800529EA2 /* Partner.m in Sources */,
-				01A6F875192BF94800529EA2 /* Section.m in Sources */,
 				01A6F876192BF94800529EA2 /* PhotoCategory.m in Sources */,
 				01A6F877192BF94800529EA2 /* Photo.m in Sources */,
 				01A6F878192BF94800529EA2 /* PhotoCategoriesViewController.m in Sources */,
@@ -7431,13 +7567,14 @@
 				01A6F885192BF94800529EA2 /* EventsViewer.m in Sources */,
 				01A6F886192BF94800529EA2 /* Event.m in Sources */,
 				01A6F887192BF94800529EA2 /* MappingManager.m in Sources */,
-				01A6F888192BF94800529EA2 /* Location.m in Sources */,
 				01A6F889192BF94800529EA2 /* InputBar.m in Sources */,
+				9AA0879D1AA9B01C0047FB04 /* APIResponse.m in Sources */,
 				01A6F88A192BF94800529EA2 /* EventCategory.m in Sources */,
 				01A6F88B192BF94800529EA2 /* EventDetailsViewController.m in Sources */,
 				01A6F88C192BF94800529EA2 /* EventDetailTopView.m in Sources */,
 				01A6F88D192BF94800529EA2 /* AppActionsHelper.m in Sources */,
 				01A6F88E192BF94800529EA2 /* TWShareKitConfigurator.m in Sources */,
+				9AA087B51AA9D3B60047FB04 /* Partner.m in Sources */,
 				01A6F88F192BF94800529EA2 /* SHKMail.m in Sources */,
 				01A6F890192BF94800529EA2 /* PartnerCell.m in Sources */,
 				01A6F891192BF94800529EA2 /* UIView+Extensions.m in Sources */,
@@ -7475,8 +7612,10 @@
 				01A6F8B1192BF94800529EA2 /* OADataFetcher.m in Sources */,
 				01A6F8B2192BF94800529EA2 /* OAHMAC_SHA1SignatureProvider.m in Sources */,
 				01A6F8B3192BF94800529EA2 /* OAMutableURLRequest.m in Sources */,
+				9AA087BE1AA9D4260047FB04 /* Location.m in Sources */,
 				01A6F8B4192BF94800529EA2 /* OAPlaintextSignatureProvider.m in Sources */,
 				01A6F8B5192BF94800529EA2 /* OARequestParameter.m in Sources */,
+				9AA087C81AA9D8B10047FB04 /* PartnerRequestFactory.m in Sources */,
 				01A6F8B6192BF94800529EA2 /* OAServiceTicket.m in Sources */,
 				01A6F8B7192BF94800529EA2 /* OAToken.m in Sources */,
 				01A6F8B8192BF94800529EA2 /* Base64Transcoder.c in Sources */,
@@ -7502,6 +7641,7 @@
 				01A6F8CC192BF94800529EA2 /* SHKFormFieldSettings.m in Sources */,
 				01A6F8CD192BF94800529EA2 /* SHKFormOptionController.m in Sources */,
 				01A6F8CE192BF94800529EA2 /* SHKOAuthView.m in Sources */,
+				9AA0876C1AA9B01C0047FB04 /* APIRequest.m in Sources */,
 				01A6F8CF192BF94800529EA2 /* SHKShareMenu.m in Sources */,
 				01A6F8D0192BF94800529EA2 /* SHKViewControllerWrapper.m in Sources */,
 				01A6F8D1192BF94800529EA2 /* UISearchBar+Customize.m in Sources */,
@@ -7509,6 +7649,7 @@
 				01A6F8D3192BF94800529EA2 /* UIButton+Extensions.m in Sources */,
 				01A6F8D4192BF94800529EA2 /* NSString+HTMLStripping.m in Sources */,
 				01A6F8D5192BF94800529EA2 /* UIBarButtonItem+TWButtons.m in Sources */,
+				9AA087AB1AA9B01C0047FB04 /* ModelFactory.m in Sources */,
 				01A6F8D6192BF94800529EA2 /* UIImage+Extensions.m in Sources */,
 				01A6F8D7192BF94800529EA2 /* SearchHelper.m in Sources */,
 				01A6F8D8192BF94800529EA2 /* EventsHelper.m in Sources */,
@@ -7517,6 +7658,7 @@
 				01A6F8DB192BF94800529EA2 /* PMCalendarBackgroundView.m in Sources */,
 				01A6F8DC192BF94800529EA2 /* PMCalendarView.m in Sources */,
 				01A6F8DD192BF94800529EA2 /* PMDimmingView.m in Sources */,
+				9AA087961AA9B01C0047FB04 /* RequestSerializer.m in Sources */,
 				01A6F8DE192BF94800529EA2 /* PMPeriod.m in Sources */,
 				01A6F8DF192BF94800529EA2 /* PMSelectionView.m in Sources */,
 				01A6F8E0192BF94800529EA2 /* PMThemeEngine.m in Sources */,
@@ -7535,6 +7677,7 @@
 				01CF9B7E1954921100E75837 /* FacebookHelper.m in Sources */,
 				01CF9B7F1954921100E75837 /* Facebook.m in Sources */,
 				01CF9B801954921100E75837 /* MenuButtonTutorialViewController.m in Sources */,
+				9AA087D21AA9DE410047FB04 /* Section.m in Sources */,
 				01CF9B811954921100E75837 /* FBDialog.m in Sources */,
 				01CF9B821954921100E75837 /* FBLoginDialog.m in Sources */,
 				01CF9B831954921100E75837 /* FBRequest.m in Sources */,
@@ -7542,6 +7685,7 @@
 				01CF9B851954921100E75837 /* RequestHelper.m in Sources */,
 				01CF9B861954921100E75837 /* UIApplication+NetworkActivity.m in Sources */,
 				01CF9B871954921100E75837 /* DataHolder.m in Sources */,
+				9AA087581AA9B01C0047FB04 /* APIClient.m in Sources */,
 				01CF9B881954921100E75837 /* FacebookCheckinViewController.m in Sources */,
 				01CF9B891954921100E75837 /* GoogleAnalyticsEvent.m in Sources */,
 				01CF9B8A1954921100E75837 /* FacebookFriend.m in Sources */,
@@ -7551,12 +7695,11 @@
 				01CF9B8E1954921100E75837 /* Place.m in Sources */,
 				01CF9B8F1954921100E75837 /* AddCaptionViewController.m in Sources */,
 				01CF9B901954921100E75837 /* MapAnnotation.m in Sources */,
+				9AA087A51AA9B01C0047FB04 /* ParsedError.m in Sources */,
 				01CF9B911954921100E75837 /* MapViewController.m in Sources */,
 				01CF9B921954921100E75837 /* SubMenuViewController.m in Sources */,
 				01CF9B931954921100E75837 /* PartnerMenuViewController.m in Sources */,
 				01CF9B941954921100E75837 /* main.m in Sources */,
-				01CF9B951954921100E75837 /* Partner.m in Sources */,
-				01CF9B961954921100E75837 /* Section.m in Sources */,
 				01CF9B971954921100E75837 /* PhotoCategory.m in Sources */,
 				01CF9B981954921100E75837 /* Photo.m in Sources */,
 				01CF9B991954921100E75837 /* PhotoCategoriesViewController.m in Sources */,
@@ -7575,13 +7718,14 @@
 				01CF9BA61954921100E75837 /* EventsViewer.m in Sources */,
 				01CF9BA71954921100E75837 /* Event.m in Sources */,
 				01CF9BA81954921100E75837 /* MappingManager.m in Sources */,
-				01CF9BA91954921100E75837 /* Location.m in Sources */,
 				01CF9BAA1954921100E75837 /* InputBar.m in Sources */,
+				9AA0879E1AA9B01C0047FB04 /* APIResponse.m in Sources */,
 				01CF9BAB1954921100E75837 /* EventCategory.m in Sources */,
 				01CF9BAC1954921100E75837 /* EventDetailsViewController.m in Sources */,
 				01CF9BAD1954921100E75837 /* EventDetailTopView.m in Sources */,
 				01CF9BAE1954921100E75837 /* AppActionsHelper.m in Sources */,
 				01CF9BAF1954921100E75837 /* TWShareKitConfigurator.m in Sources */,
+				9AA087B61AA9D3B60047FB04 /* Partner.m in Sources */,
 				01CF9BB01954921100E75837 /* SHKMail.m in Sources */,
 				01CF9BB11954921100E75837 /* PartnerCell.m in Sources */,
 				01CF9BB21954921100E75837 /* UIView+Extensions.m in Sources */,
@@ -7619,8 +7763,10 @@
 				01CF9BD21954921100E75837 /* OADataFetcher.m in Sources */,
 				01CF9BD31954921100E75837 /* OAHMAC_SHA1SignatureProvider.m in Sources */,
 				01CF9BD41954921100E75837 /* OAMutableURLRequest.m in Sources */,
+				9AA087BF1AA9D4260047FB04 /* Location.m in Sources */,
 				01CF9BD51954921100E75837 /* OAPlaintextSignatureProvider.m in Sources */,
 				01CF9BD61954921100E75837 /* OARequestParameter.m in Sources */,
+				9AA087C91AA9D8B10047FB04 /* PartnerRequestFactory.m in Sources */,
 				01CF9BD71954921100E75837 /* OAServiceTicket.m in Sources */,
 				01CF9BD81954921100E75837 /* OAToken.m in Sources */,
 				01CF9BD91954921100E75837 /* Base64Transcoder.c in Sources */,
@@ -7646,6 +7792,7 @@
 				01CF9BED1954921100E75837 /* SHKFormFieldSettings.m in Sources */,
 				01CF9BEE1954921100E75837 /* SHKFormOptionController.m in Sources */,
 				01CF9BEF1954921100E75837 /* SHKOAuthView.m in Sources */,
+				9AA0876D1AA9B01C0047FB04 /* APIRequest.m in Sources */,
 				01CF9BF01954921100E75837 /* SHKShareMenu.m in Sources */,
 				01CF9BF11954921100E75837 /* SHKViewControllerWrapper.m in Sources */,
 				01CF9BF21954921100E75837 /* UISearchBar+Customize.m in Sources */,
@@ -7653,6 +7800,7 @@
 				01CF9BF41954921100E75837 /* UIButton+Extensions.m in Sources */,
 				01CF9BF51954921100E75837 /* NSString+HTMLStripping.m in Sources */,
 				01CF9BF61954921100E75837 /* UIBarButtonItem+TWButtons.m in Sources */,
+				9AA087AC1AA9B01C0047FB04 /* ModelFactory.m in Sources */,
 				01CF9BF71954921100E75837 /* UIImage+Extensions.m in Sources */,
 				01CF9BF81954921100E75837 /* SearchHelper.m in Sources */,
 				01CF9BF91954921100E75837 /* EventsHelper.m in Sources */,
@@ -7661,6 +7809,7 @@
 				01CF9BFC1954921100E75837 /* PMCalendarBackgroundView.m in Sources */,
 				01CF9BFD1954921100E75837 /* PMCalendarView.m in Sources */,
 				01CF9BFE1954921100E75837 /* PMDimmingView.m in Sources */,
+				9AA087971AA9B01C0047FB04 /* RequestSerializer.m in Sources */,
 				01CF9BFF1954921100E75837 /* PMPeriod.m in Sources */,
 				01CF9C001954921100E75837 /* PMSelectionView.m in Sources */,
 				01CF9C011954921100E75837 /* PMThemeEngine.m in Sources */,
@@ -7679,6 +7828,7 @@
 				01DD0B371897FC5F00356772 /* FacebookHelper.m in Sources */,
 				01DD0B381897FC5F00356772 /* Facebook.m in Sources */,
 				01DD0B391897FC5F00356772 /* MenuButtonTutorialViewController.m in Sources */,
+				9AA087CF1AA9DE410047FB04 /* Section.m in Sources */,
 				01DD0B3A1897FC5F00356772 /* FBDialog.m in Sources */,
 				01DD0B3B1897FC5F00356772 /* FBLoginDialog.m in Sources */,
 				01DD0B3C1897FC5F00356772 /* FBRequest.m in Sources */,
@@ -7686,6 +7836,7 @@
 				01DD0B3E1897FC5F00356772 /* RequestHelper.m in Sources */,
 				01DD0B3F1897FC5F00356772 /* UIApplication+NetworkActivity.m in Sources */,
 				01DD0B401897FC5F00356772 /* DataHolder.m in Sources */,
+				9AA087551AA9B01C0047FB04 /* APIClient.m in Sources */,
 				01DD0B411897FC5F00356772 /* FacebookCheckinViewController.m in Sources */,
 				01DD0B421897FC5F00356772 /* GoogleAnalyticsEvent.m in Sources */,
 				01DD0B431897FC5F00356772 /* FacebookFriend.m in Sources */,
@@ -7695,12 +7846,11 @@
 				01DD0B471897FC5F00356772 /* Place.m in Sources */,
 				01DD0B481897FC5F00356772 /* AddCaptionViewController.m in Sources */,
 				01DD0B491897FC5F00356772 /* MapAnnotation.m in Sources */,
+				9AA087A21AA9B01C0047FB04 /* ParsedError.m in Sources */,
 				01DD0B4A1897FC5F00356772 /* MapViewController.m in Sources */,
 				01DD0B4B1897FC5F00356772 /* SubMenuViewController.m in Sources */,
 				01DD0B4C1897FC5F00356772 /* PartnerMenuViewController.m in Sources */,
 				01DD0B4D1897FC5F00356772 /* main.m in Sources */,
-				01DD0B4E1897FC5F00356772 /* Partner.m in Sources */,
-				01DD0B4F1897FC5F00356772 /* Section.m in Sources */,
 				01DD0B501897FC5F00356772 /* PhotoCategory.m in Sources */,
 				01DD0B511897FC5F00356772 /* Photo.m in Sources */,
 				01DD0B521897FC5F00356772 /* PhotoCategoriesViewController.m in Sources */,
@@ -7719,13 +7869,14 @@
 				01DD0B5F1897FC5F00356772 /* EventsViewer.m in Sources */,
 				01DD0B601897FC5F00356772 /* Event.m in Sources */,
 				01DD0B611897FC5F00356772 /* MappingManager.m in Sources */,
-				01DD0B621897FC5F00356772 /* Location.m in Sources */,
 				01DD0B631897FC5F00356772 /* InputBar.m in Sources */,
+				9AA0879B1AA9B01C0047FB04 /* APIResponse.m in Sources */,
 				01DD0B641897FC5F00356772 /* EventCategory.m in Sources */,
 				01DD0B651897FC5F00356772 /* EventDetailsViewController.m in Sources */,
 				01DD0B661897FC5F00356772 /* EventDetailTopView.m in Sources */,
 				01DD0B671897FC5F00356772 /* AppActionsHelper.m in Sources */,
 				01DD0B681897FC5F00356772 /* TWShareKitConfigurator.m in Sources */,
+				9AA087B31AA9D3B60047FB04 /* Partner.m in Sources */,
 				01DD0B691897FC5F00356772 /* SHKMail.m in Sources */,
 				01DD0B6A1897FC5F00356772 /* PartnerCell.m in Sources */,
 				01DD0B6B1897FC5F00356772 /* UIView+Extensions.m in Sources */,
@@ -7763,8 +7914,10 @@
 				01DD0B8B1897FC5F00356772 /* OADataFetcher.m in Sources */,
 				01DD0B8C1897FC5F00356772 /* OAHMAC_SHA1SignatureProvider.m in Sources */,
 				01DD0B8D1897FC5F00356772 /* OAMutableURLRequest.m in Sources */,
+				9AA087BC1AA9D4260047FB04 /* Location.m in Sources */,
 				01DD0B8E1897FC5F00356772 /* OAPlaintextSignatureProvider.m in Sources */,
 				01DD0B8F1897FC5F00356772 /* OARequestParameter.m in Sources */,
+				9AA087C61AA9D8B10047FB04 /* PartnerRequestFactory.m in Sources */,
 				01DD0B901897FC5F00356772 /* OAServiceTicket.m in Sources */,
 				01DD0B911897FC5F00356772 /* OAToken.m in Sources */,
 				01DD0B921897FC5F00356772 /* Base64Transcoder.c in Sources */,
@@ -7790,6 +7943,7 @@
 				01DD0BA61897FC5F00356772 /* SHKFormFieldSettings.m in Sources */,
 				01DD0BA71897FC5F00356772 /* SHKFormOptionController.m in Sources */,
 				01DD0BA81897FC5F00356772 /* SHKOAuthView.m in Sources */,
+				9AA0876A1AA9B01C0047FB04 /* APIRequest.m in Sources */,
 				01DD0BA91897FC5F00356772 /* SHKShareMenu.m in Sources */,
 				01DD0BAA1897FC5F00356772 /* SHKViewControllerWrapper.m in Sources */,
 				01DD0BAB1897FC5F00356772 /* UISearchBar+Customize.m in Sources */,
@@ -7797,6 +7951,7 @@
 				01DD0BAD1897FC5F00356772 /* UIButton+Extensions.m in Sources */,
 				01DD0BAE1897FC5F00356772 /* NSString+HTMLStripping.m in Sources */,
 				01DD0BAF1897FC5F00356772 /* UIBarButtonItem+TWButtons.m in Sources */,
+				9AA087A91AA9B01C0047FB04 /* ModelFactory.m in Sources */,
 				01DD0BB01897FC5F00356772 /* UIImage+Extensions.m in Sources */,
 				01DD0BB11897FC5F00356772 /* SearchHelper.m in Sources */,
 				01DD0BB21897FC5F00356772 /* EventsHelper.m in Sources */,
@@ -7805,6 +7960,7 @@
 				01DD0BB51897FC5F00356772 /* PMCalendarBackgroundView.m in Sources */,
 				01DD0BB61897FC5F00356772 /* PMCalendarView.m in Sources */,
 				01DD0BB71897FC5F00356772 /* PMDimmingView.m in Sources */,
+				9AA087941AA9B01C0047FB04 /* RequestSerializer.m in Sources */,
 				01DD0BB81897FC5F00356772 /* PMPeriod.m in Sources */,
 				01DD0BB91897FC5F00356772 /* PMSelectionView.m in Sources */,
 				01DD0BBA1897FC5F00356772 /* PMThemeEngine.m in Sources */,
@@ -7823,6 +7979,7 @@
 				01EBDAE51718802B00FB5BBF /* FacebookHelper.m in Sources */,
 				01EBDAE61718802B00FB5BBF /* Facebook.m in Sources */,
 				71ACEF26182B94A700A42C77 /* MenuButtonTutorialViewController.m in Sources */,
+				9AA087CE1AA9DE410047FB04 /* Section.m in Sources */,
 				01EBDAE71718802B00FB5BBF /* FBDialog.m in Sources */,
 				01EBDAE81718802B00FB5BBF /* FBLoginDialog.m in Sources */,
 				01EBDAE91718802B00FB5BBF /* FBRequest.m in Sources */,
@@ -7830,6 +7987,7 @@
 				01EBDAEB1718802B00FB5BBF /* RequestHelper.m in Sources */,
 				01EBDAEC1718802B00FB5BBF /* UIApplication+NetworkActivity.m in Sources */,
 				01EBDAED1718802B00FB5BBF /* DataHolder.m in Sources */,
+				9AA087541AA9B01C0047FB04 /* APIClient.m in Sources */,
 				01EBDAEE1718802B00FB5BBF /* FacebookCheckinViewController.m in Sources */,
 				D90A3C06180D26D700356558 /* GoogleAnalyticsEvent.m in Sources */,
 				01EBDAEF1718802B00FB5BBF /* FacebookFriend.m in Sources */,
@@ -7839,12 +7997,11 @@
 				01EBDAF31718802B00FB5BBF /* Place.m in Sources */,
 				01EBDAF41718802B00FB5BBF /* AddCaptionViewController.m in Sources */,
 				01EBDAF51718802B00FB5BBF /* MapAnnotation.m in Sources */,
+				9AA087A11AA9B01C0047FB04 /* ParsedError.m in Sources */,
 				01EBDAF61718802B00FB5BBF /* MapViewController.m in Sources */,
 				01EBDAF71718802B00FB5BBF /* SubMenuViewController.m in Sources */,
 				01EBDAF81718802B00FB5BBF /* PartnerMenuViewController.m in Sources */,
 				01EBDAF91718802B00FB5BBF /* main.m in Sources */,
-				01EBDAFA1718802B00FB5BBF /* Partner.m in Sources */,
-				01EBDAFB1718802B00FB5BBF /* Section.m in Sources */,
 				01EBDAFC1718802B00FB5BBF /* PhotoCategory.m in Sources */,
 				01EBDAFD1718802B00FB5BBF /* Photo.m in Sources */,
 				01EBDAFE1718802B00FB5BBF /* PhotoCategoriesViewController.m in Sources */,
@@ -7863,13 +8020,14 @@
 				01EBDB0B1718802B00FB5BBF /* EventsViewer.m in Sources */,
 				01EBDB0C1718802B00FB5BBF /* Event.m in Sources */,
 				01EBDB0D1718802B00FB5BBF /* MappingManager.m in Sources */,
-				01EBDB0E1718802B00FB5BBF /* Location.m in Sources */,
 				01EBDB0F1718802B00FB5BBF /* InputBar.m in Sources */,
+				9AA0879A1AA9B01C0047FB04 /* APIResponse.m in Sources */,
 				01EBDB101718802B00FB5BBF /* EventCategory.m in Sources */,
 				01EBDB111718802B00FB5BBF /* EventDetailsViewController.m in Sources */,
 				01EBDB121718802B00FB5BBF /* EventDetailTopView.m in Sources */,
 				01EBDB131718802B00FB5BBF /* AppActionsHelper.m in Sources */,
 				01EBDB141718802B00FB5BBF /* TWShareKitConfigurator.m in Sources */,
+				9AA087B21AA9D3B60047FB04 /* Partner.m in Sources */,
 				01EBDB151718802B00FB5BBF /* SHKMail.m in Sources */,
 				01EBDB161718802B00FB5BBF /* PartnerCell.m in Sources */,
 				01EBDB171718802B00FB5BBF /* UIView+Extensions.m in Sources */,
@@ -7907,8 +8065,10 @@
 				01EBDB371718802B00FB5BBF /* OADataFetcher.m in Sources */,
 				01EBDB381718802B00FB5BBF /* OAHMAC_SHA1SignatureProvider.m in Sources */,
 				01EBDB391718802B00FB5BBF /* OAMutableURLRequest.m in Sources */,
+				9AA087BB1AA9D4260047FB04 /* Location.m in Sources */,
 				01EBDB3A1718802B00FB5BBF /* OAPlaintextSignatureProvider.m in Sources */,
 				01EBDB3B1718802B00FB5BBF /* OARequestParameter.m in Sources */,
+				9AA087C51AA9D8B10047FB04 /* PartnerRequestFactory.m in Sources */,
 				01EBDB3C1718802B00FB5BBF /* OAServiceTicket.m in Sources */,
 				01EBDB3D1718802B00FB5BBF /* OAToken.m in Sources */,
 				01EBDB3E1718802B00FB5BBF /* Base64Transcoder.c in Sources */,
@@ -7934,6 +8094,7 @@
 				01EBDB521718802B00FB5BBF /* SHKFormFieldSettings.m in Sources */,
 				01EBDB531718802B00FB5BBF /* SHKFormOptionController.m in Sources */,
 				01EBDB541718802B00FB5BBF /* SHKOAuthView.m in Sources */,
+				9AA087691AA9B01C0047FB04 /* APIRequest.m in Sources */,
 				01EBDB551718802B00FB5BBF /* SHKShareMenu.m in Sources */,
 				01EBDB561718802B00FB5BBF /* SHKViewControllerWrapper.m in Sources */,
 				01EBDB571718802B00FB5BBF /* UISearchBar+Customize.m in Sources */,
@@ -7941,6 +8102,7 @@
 				01EBDB591718802B00FB5BBF /* UIButton+Extensions.m in Sources */,
 				01EBDB5A1718802B00FB5BBF /* NSString+HTMLStripping.m in Sources */,
 				01EBDB5B1718802B00FB5BBF /* UIBarButtonItem+TWButtons.m in Sources */,
+				9AA087A81AA9B01C0047FB04 /* ModelFactory.m in Sources */,
 				01EBDB5C1718802B00FB5BBF /* UIImage+Extensions.m in Sources */,
 				01EBDB5D1718802B00FB5BBF /* SearchHelper.m in Sources */,
 				01EBDB5E1718802B00FB5BBF /* EventsHelper.m in Sources */,
@@ -7949,6 +8111,7 @@
 				01EBDB611718802B00FB5BBF /* PMCalendarBackgroundView.m in Sources */,
 				01EBDB621718802B00FB5BBF /* PMCalendarView.m in Sources */,
 				01EBDB631718802B00FB5BBF /* PMDimmingView.m in Sources */,
+				9AA087931AA9B01C0047FB04 /* RequestSerializer.m in Sources */,
 				01EBDB641718802B00FB5BBF /* PMPeriod.m in Sources */,
 				01EBDB651718802B00FB5BBF /* PMSelectionView.m in Sources */,
 				01EBDB661718802B00FB5BBF /* PMThemeEngine.m in Sources */,
@@ -7967,6 +8130,7 @@
 				848854AC14D142430030BD03 /* SubMenuViewController.m in Sources */,
 				848854B414D146490030BD03 /* RequestHelper.m in Sources */,
 				71ACEF20182B94A700A42C77 /* MenuButtonTutorialViewController.m in Sources */,
+				9AA087CC1AA9DE410047FB04 /* Section.m in Sources */,
 				848854C514D16F620030BD03 /* Reachability.m in Sources */,
 				847F876014D6C81F005EE200 /* PartnerMenuViewController.m in Sources */,
 				E61A4DDC14E166BC0039E970 /* UIApplication+NetworkActivity.m in Sources */,
@@ -7974,6 +8138,7 @@
 				E691FF9014E50981003DE64B /* MapViewController.m in Sources */,
 				E691000A14E550B3003DE64B /* AddCaptionViewController.m in Sources */,
 				E691001F14E56B7E003DE64B /* TownWIzardNavigationBar.m in Sources */,
+				9AA087521AA9B01C0047FB04 /* APIClient.m in Sources */,
 				E63F272714E9448B0040F281 /* Facebook.m in Sources */,
 				D90A3BFF180D260A00356558 /* GoogleAnalyticsEvent.m in Sources */,
 				E63F272914E9448B0040F281 /* FBDialog.m in Sources */,
@@ -7983,12 +8148,11 @@
 				E63F278B14E960CA0040F281 /* FacebookCheckinViewController.m in Sources */,
 				E63F278D14E960CA0040F281 /* FacebookFriend.m in Sources */,
 				E63F278E14E960CA0040F281 /* FacebookFriendCell.m in Sources */,
+				9AA0879F1AA9B01C0047FB04 /* ParsedError.m in Sources */,
 				E63F279014E960CA0040F281 /* FacebookPlacesViewCell.m in Sources */,
 				E63F279114E960CA0040F281 /* FacebookPlacesViewController.m in Sources */,
 				E63F279214E960CA0040F281 /* Place.m in Sources */,
 				E63F279614E9613D0040F281 /* DataHolder.m in Sources */,
-				8444637716198FCC00394D41 /* Partner.m in Sources */,
-				848226C41619AE7D00201600 /* Section.m in Sources */,
 				847FD337161ACCB2009FB9CC /* PhotoCategory.m in Sources */,
 				847FD358161ACCC8009FB9CC /* Photo.m in Sources */,
 				847FD380161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
@@ -8007,13 +8171,14 @@
 				D932496B1637DE2700409AA9 /* EventsViewer.m in Sources */,
 				D932498C1637E0F300409AA9 /* Event.m in Sources */,
 				D93249AD1637E28100409AA9 /* MappingManager.m in Sources */,
-				D93249CF1638019300409AA9 /* Location.m in Sources */,
 				D9515C9D163832C00058BE8C /* EventCell.m in Sources */,
+				9AA087981AA9B01C0047FB04 /* APIResponse.m in Sources */,
 				D9515CA9163835340058BE8C /* UIView+Extensions.m in Sources */,
 				D98A35EE163929C800E4E75F /* UIAlertView+Extensions.m in Sources */,
 				D98A35F216394DA200E4E75F /* ActivityImageView.m in Sources */,
 				D953D7571639829E00078A9E /* EventsView.m in Sources */,
 				D9B37938163A817D00828478 /* EventSectionHeader.m in Sources */,
+				9AA087B01AA9D3B60047FB04 /* Partner.m in Sources */,
 				D9B37940163A9DEB00828478 /* NSDate+Formatting.m in Sources */,
 				D9B37943163A9E3D00828478 /* NSDateFormatter+Extensions.m in Sources */,
 				D9B37947163AB38000828478 /* DDPageControl.m in Sources */,
@@ -8051,8 +8216,10 @@
 				84189C8F1675D9ED00A07AB3 /* OAMutableURLRequest.m in Sources */,
 				84189C901675D9ED00A07AB3 /* OAPlaintextSignatureProvider.m in Sources */,
 				84189C911675D9ED00A07AB3 /* OARequestParameter.m in Sources */,
+				9AA087B91AA9D4250047FB04 /* Location.m in Sources */,
 				84189C921675D9ED00A07AB3 /* OAServiceTicket.m in Sources */,
 				84189C931675D9ED00A07AB3 /* OAToken.m in Sources */,
+				9AA087C31AA9D8B10047FB04 /* PartnerRequestFactory.m in Sources */,
 				84189C941675D9ED00A07AB3 /* SHKRequest.m in Sources */,
 				84189C951675D9ED00A07AB3 /* SHKXMLResponseParser.m in Sources */,
 				84189C961675D9ED00A07AB3 /* SHK.m in Sources */,
@@ -8078,6 +8245,7 @@
 				84189CB01675D9ED00A07AB3 /* SHKShareMenu.m in Sources */,
 				84189CB11675D9ED00A07AB3 /* SHKViewControllerWrapper.m in Sources */,
 				84189CB51675DA7200A07AB3 /* SSKeychain.m in Sources */,
+				9AA087671AA9B01C0047FB04 /* APIRequest.m in Sources */,
 				84189E6A167601E000A07AB3 /* SHKMail.m in Sources */,
 				84ACB3E3167B6D84002D0278 /* PartnerCell.m in Sources */,
 				84E51FED16970EC100229A58 /* UISearchBar+Customize.m in Sources */,
@@ -8085,6 +8253,7 @@
 				84E51FFB1697185B00229A58 /* UIButton+Extensions.m in Sources */,
 				84FEE077169C59EC00EDC43F /* NSString+HTMLStripping.m in Sources */,
 				843AC46516A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m in Sources */,
+				9AA087A61AA9B01C0047FB04 /* ModelFactory.m in Sources */,
 				843AC46C16A03514007DF1F9 /* UIImage+Extensions.m in Sources */,
 				848AFF7916AECC3E0079634B /* SearchHelper.m in Sources */,
 				8448CB3E16AFD80600471BDF /* EventsHelper.m in Sources */,
@@ -8093,6 +8262,7 @@
 				F6A8864E16FB446E00DD8D68 /* PMCalendarController.m in Sources */,
 				F6A8865016FB446E00DD8D68 /* PMCalendarView.m in Sources */,
 				F6A8865216FB446E00DD8D68 /* PMDimmingView.m in Sources */,
+				9AA087911AA9B01C0047FB04 /* RequestSerializer.m in Sources */,
 				F6A8865416FB446E00DD8D68 /* PMPeriod.m in Sources */,
 				F6A8865616FB446E00DD8D68 /* PMSelectionView.m in Sources */,
 				F6A8865816FB446E00DD8D68 /* PMThemeEngine.m in Sources */,
@@ -8111,6 +8281,7 @@
 				D9FA2C1415905E37006FFF7E /* FacebookHelper.m in Sources */,
 				D9FA2C1515905E37006FFF7E /* Facebook.m in Sources */,
 				71ACEF21182B94A700A42C77 /* MenuButtonTutorialViewController.m in Sources */,
+				9AA087CD1AA9DE410047FB04 /* Section.m in Sources */,
 				D9FA2C1615905E37006FFF7E /* FBDialog.m in Sources */,
 				D9FA2C1715905E37006FFF7E /* FBLoginDialog.m in Sources */,
 				D9FA2C1815905E37006FFF7E /* FBRequest.m in Sources */,
@@ -8118,6 +8289,7 @@
 				D9FA2C1A15905E37006FFF7E /* RequestHelper.m in Sources */,
 				D9FA2C1B15905E37006FFF7E /* UIApplication+NetworkActivity.m in Sources */,
 				D9FA2C1C15905E37006FFF7E /* DataHolder.m in Sources */,
+				9AA087531AA9B01C0047FB04 /* APIClient.m in Sources */,
 				D9FA2C1D15905E37006FFF7E /* FacebookCheckinViewController.m in Sources */,
 				D90A3C01180D26C900356558 /* GoogleAnalyticsEvent.m in Sources */,
 				D9FA2C1E15905E37006FFF7E /* FacebookFriend.m in Sources */,
@@ -8127,12 +8299,11 @@
 				D9FA2C2215905E37006FFF7E /* Place.m in Sources */,
 				D9FA2C2315905E37006FFF7E /* AddCaptionViewController.m in Sources */,
 				D9FA2C2415905E37006FFF7E /* MapAnnotation.m in Sources */,
+				9AA087A01AA9B01C0047FB04 /* ParsedError.m in Sources */,
 				D9FA2C2515905E37006FFF7E /* MapViewController.m in Sources */,
 				D9FA2C2615905E37006FFF7E /* SubMenuViewController.m in Sources */,
 				D9FA2C2715905E37006FFF7E /* PartnerMenuViewController.m in Sources */,
 				D90D0DFE158F06500026828E /* main.m in Sources */,
-				8444637816198FCC00394D41 /* Partner.m in Sources */,
-				848226C61619AE8900201600 /* Section.m in Sources */,
 				847FD338161ACCB2009FB9CC /* PhotoCategory.m in Sources */,
 				847FD359161ACCC8009FB9CC /* Photo.m in Sources */,
 				847FD381161ACDAE009FB9CC /* PhotoCategoriesViewController.m in Sources */,
@@ -8151,13 +8322,14 @@
 				D932496C1637DE2700409AA9 /* EventsViewer.m in Sources */,
 				D932498D1637E0F300409AA9 /* Event.m in Sources */,
 				D93249AE1637E28100409AA9 /* MappingManager.m in Sources */,
-				D93249D01638019300409AA9 /* Location.m in Sources */,
 				84237CB21668A0DE00B3DB18 /* InputBar.m in Sources */,
+				9AA087991AA9B01C0047FB04 /* APIResponse.m in Sources */,
 				84237CB71668A3D400B3DB18 /* EventCategory.m in Sources */,
 				840E4589166E374C007CCF51 /* EventDetailsViewController.m in Sources */,
 				840E458F166E48C4007CCF51 /* EventDetailTopView.m in Sources */,
 				84FCA64D1670CC24004C6079 /* AppActionsHelper.m in Sources */,
 				84C6EF7D1670F6770007F031 /* TWShareKitConfigurator.m in Sources */,
+				9AA087B11AA9D3B60047FB04 /* Partner.m in Sources */,
 				84189E6B167601E000A07AB3 /* SHKMail.m in Sources */,
 				84ACB3E4167B6D84002D0278 /* PartnerCell.m in Sources */,
 				845F8AF21680A2200087E3F2 /* UIView+Extensions.m in Sources */,
@@ -8195,8 +8367,10 @@
 				845F8BCA1680A6520087E3F2 /* OADataFetcher.m in Sources */,
 				845F8BCB1680A6520087E3F2 /* OAHMAC_SHA1SignatureProvider.m in Sources */,
 				845F8BCC1680A6520087E3F2 /* OAMutableURLRequest.m in Sources */,
+				9AA087BA1AA9D4250047FB04 /* Location.m in Sources */,
 				845F8BCD1680A6520087E3F2 /* OAPlaintextSignatureProvider.m in Sources */,
 				845F8BCE1680A6520087E3F2 /* OARequestParameter.m in Sources */,
+				9AA087C41AA9D8B10047FB04 /* PartnerRequestFactory.m in Sources */,
 				845F8BCF1680A6520087E3F2 /* OAServiceTicket.m in Sources */,
 				845F8BD01680A6520087E3F2 /* OAToken.m in Sources */,
 				845F8BDA1680A6610087E3F2 /* Base64Transcoder.c in Sources */,
@@ -8222,6 +8396,7 @@
 				845F8BFF1680A6CE0087E3F2 /* SHKFormFieldSettings.m in Sources */,
 				845F8C001680A6CE0087E3F2 /* SHKFormOptionController.m in Sources */,
 				845F8C011680A6CE0087E3F2 /* SHKOAuthView.m in Sources */,
+				9AA087681AA9B01C0047FB04 /* APIRequest.m in Sources */,
 				845F8C021680A6CE0087E3F2 /* SHKShareMenu.m in Sources */,
 				845F8C031680A6CE0087E3F2 /* SHKViewControllerWrapper.m in Sources */,
 				84E51FEE16970EC100229A58 /* UISearchBar+Customize.m in Sources */,
@@ -8229,6 +8404,7 @@
 				84E51FFC1697185B00229A58 /* UIButton+Extensions.m in Sources */,
 				84FEE078169C59EC00EDC43F /* NSString+HTMLStripping.m in Sources */,
 				843AC46616A006D3007DF1F9 /* UIBarButtonItem+TWButtons.m in Sources */,
+				9AA087A71AA9B01C0047FB04 /* ModelFactory.m in Sources */,
 				843AC46D16A03514007DF1F9 /* UIImage+Extensions.m in Sources */,
 				848AFF7A16AECC3E0079634B /* SearchHelper.m in Sources */,
 				8448CB3F16AFD80600471BDF /* EventsHelper.m in Sources */,
@@ -8237,6 +8413,7 @@
 				F6F7941216FC3BAC00CAA7FA /* PMCalendarBackgroundView.m in Sources */,
 				F6F7941316FC3BAC00CAA7FA /* PMCalendarView.m in Sources */,
 				F6F7941416FC3BAC00CAA7FA /* PMDimmingView.m in Sources */,
+				9AA087921AA9B01C0047FB04 /* RequestSerializer.m in Sources */,
 				F6F7941516FC3BAC00CAA7FA /* PMPeriod.m in Sources */,
 				F6F7941616FC3BAC00CAA7FA /* PMSelectionView.m in Sources */,
 				F6F7941716FC3BAC00CAA7FA /* PMThemeEngine.m in Sources */,
@@ -8294,7 +8471,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = "${inherited}";
 				INFOPLIST_FILE = "townWizardPartnerTemplate copy 251-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
@@ -8321,7 +8498,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = "${inherited}";
 				INFOPLIST_FILE = "townWizardPartnerTemplate copy 251-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
@@ -8348,7 +8525,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = "${inherited}";
 				INFOPLIST_FILE = "townWizardPartnerTemplate copy 259-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
@@ -8375,7 +8552,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = "${inherited}";
 				INFOPLIST_FILE = "townWizardPartnerTemplate copy 259-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
@@ -8402,7 +8579,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = "${inherited}";
 				INFOPLIST_FILE = "townWizardPartnerTemplate copy 260-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
@@ -8429,7 +8606,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = "${inherited}";
 				INFOPLIST_FILE = "townWizardPartnerTemplate copy 260-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
@@ -8456,7 +8633,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = "${inherited}";
 				INFOPLIST_FILE = "townWizardPartnerTemplate copy 243-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
@@ -8483,7 +8660,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = "${inherited}";
 				INFOPLIST_FILE = "townWizardPartnerTemplate copy 243-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
@@ -8497,8 +8674,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1FB204FFD338A2FF53A20E6D /* Pods.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Destin Shines, Inc. (L59U23UQPW)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Destin Shines, Inc. (L59U23UQPW)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
@@ -8510,13 +8687,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = "${inherited}";
 				INFOPLIST_FILE = "townWizardPartnerTemplate copy 23-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
 				PRODUCT_NAME = Destin;
-				PROVISIONING_PROFILE = "BF0A7D3E-1445-47F9-90D1-88C9175CD0F6";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BF0A7D3E-1445-47F9-90D1-88C9175CD0F6";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -8538,7 +8715,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = "${inherited}";
 				INFOPLIST_FILE = "townWizardPartnerTemplate copy 23-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
@@ -8644,7 +8821,7 @@
 				);
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "townWizard-ios/townWizard-ios-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = TownWizard;
@@ -8668,7 +8845,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = CONTAINER_APP;
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "townWizard-ios/townWizard-ios-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = TownWizard;
@@ -8695,7 +8872,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = "${inherited}";
 				INFOPLIST_FILE = "townWizard-partner/townWizard-partner-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -8721,7 +8898,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = "${inherited}";
 				INFOPLIST_FILE = "townWizard-partner/townWizard-partner-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

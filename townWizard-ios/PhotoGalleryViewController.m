@@ -128,7 +128,6 @@
 - (void) displayPhotoBrowserWithInitialPageIndex:(NSInteger) index
 {
     MWPhotoBrowser *browser = [[[MWPhotoBrowser alloc] initWithDelegate:self] autorelease];
-    [browser setWantsFullScreenLayout:YES];
     [browser setDisplayActionButton:NO];
     [browser setInitialPageIndex:index];
 

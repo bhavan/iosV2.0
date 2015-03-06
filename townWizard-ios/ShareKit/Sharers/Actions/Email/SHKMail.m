@@ -185,7 +185,7 @@
 	[mailController setSubject:item.title];
 	[mailController setMessageBody:body isHTML:isHTML];
     NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                    [UIColor whiteColor], UITextAttributeTextColor,
+                                    [UIColor whiteColor], NSForegroundColorAttributeName,
                                     [UIColor clearColor], UITextAttributeTextShadowColor,
                                     [NSValue valueWithUIOffset:UIOffsetMake(0, 0)], UITextAttributeTextShadowOffset,
                                     [UIFont boldSystemFontOfSize:13.0f], UITextAttributeFont,

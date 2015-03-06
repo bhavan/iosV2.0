@@ -7,8 +7,6 @@
 //
 
 #import "TownWizardNavigationBar.h"
-
-static const CGFloat kTWBarOriginX = 160;
 static const CGFloat kTWBarTitleFontSize = 18;
 
 @implementation TownWizardNavigationBar

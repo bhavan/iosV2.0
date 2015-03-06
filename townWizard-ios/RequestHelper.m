@@ -253,28 +253,6 @@ static RequestHelper *requestHelper = nil;
                                   usingBlock:block];
 }
 
-- (void) loadPartnerDetails:(NSString *) partnerID usingBlock:(void(^)(RKObjectLoader *)) block
-{
-    RKURL *baseURL = [RKURL URLWithBaseURLString:API_URL];
-    RKObjectManager *objectManager = [RKObjectManager sharedManager];
-    objectManager.client.baseURL = baseURL;
-    [[objectManager mappingProvider] setObjectMapping:[[MappingManager sharedInstance] partnerMapping]
-                                           forKeyPath:@"data"];
-    [objectManager loadObjectsAtResourcePath:[NSString stringWithFormat:@"/partner/%@",partnerID]
-                                  usingBlock:block];
-}
-
-- (void) loadSectionsUsingBlock:(void(^)(RKObjectLoader *)) block
-{
-    RKURL *baseURL = [RKURL URLWithBaseURLString:API_URL];
-    RKObjectManager *objectManager = [RKObjectManager sharedManager];
-    objectManager.client.baseURL = baseURL;
-    [[objectManager mappingProvider] setObjectMapping:[[MappingManager sharedInstance] sectionMapping]
-                                           forKeyPath:@"data"];
-    NSString *resourcePath = [NSString stringWithFormat:@"/section/partner/%@",[[self currentPartner] partnterId]];
-    [objectManager loadObjectsAtResourcePath:resourcePath usingBlock:block];
-}
-
 - (NSData *)uploadRequestDataForImage:(UIImage *)image
                               caption:(NSString *)caption
                              userName:(NSString *)name
