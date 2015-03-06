@@ -102,11 +102,13 @@
 	self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
 																														target:self
 																														action:@selector(cancel)] autorelease];
+    NSShadow * shadow = [NSShadow new];
+    shadow.shadowColor = [UIColor clearColor];
+    shadow.shadowOffset = CGSizeMake(0, 0);
     NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                    [UIColor blueColor], UITextAttributeTextColor,
-                                    [UIColor clearColor], UITextAttributeTextShadowColor,
-                                    [NSValue valueWithUIOffset:UIOffsetMake(0, 0)], UITextAttributeTextShadowOffset,
-                                    [UIFont boldSystemFontOfSize:13.0f], UITextAttributeFont,
+                                    [UIColor blueColor], NSForegroundColorAttributeName,
+                                    shadow,NSShadowAttributeName,
+                                    [UIFont boldSystemFontOfSize:13.0f], NSFontAttributeName,
                                     nil];
 
    
@@ -139,13 +141,6 @@
 			keyboardHeight = keyboardFrame.size.height;
 		else
 			keyboardHeight = keyboardFrame.size.width;
-	}
-	
-	// < 3.2
-	else 
-	{
-		[[notification.userInfo valueForKey:UIKeyboardBoundsUserInfoKey] getValue:&keyboardFrame];
-		keyboardHeight = keyboardFrame.size.height;
 	}
 	
 	// Find the bottom of the screen (accounting for keyboard overlay)
@@ -193,7 +188,7 @@
 	}
 	
 	NSInteger count = (self.image?(self.maxTextLength - self.imageTextLength):self.maxTextLength) - self.textView.text.length;
-	counter.text = [NSString stringWithFormat:@"%@%i", self.image ? [NSString stringWithFormat:@"Image %@ ",count>0?@"+":@""]:@"", count];
+	counter.text = [NSString stringWithFormat:@"%@%zd", self.image ? [NSString stringWithFormat:@"Image %@ ",count>0?@"+":@""]:@"", count];
 	
 	if (count >= 0) {
 		

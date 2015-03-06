@@ -149,11 +149,14 @@
         index = index % 7;
         NSString *dayTitle = [dayTitles objectAtIndex:index];
         //// dayHeader Drawing
-        CGSize sz = [dayTitle sizeWithFont:dayFont];
+        CGSize size = [dayTitle sizeWithAttributes:@{NSFontAttributeName: dayFont}];
+        
+        size = CGSizeMake(ceilf(size.width), ceilf(size.height));
+        
         CGRect dayHeaderFrame = CGRectMake(floor(i * hDiff) - 1
-                                           , headerHeight + (kPMThemeDayTitlesInHeaderIntOffset * vDiff - sz.height) / 2
+                                           , headerHeight + (kPMThemeDayTitlesInHeaderIntOffset * vDiff - size.height) / 2
                                            , hDiff
-                                           , sz.height);
+                                           , size.height);
 
         [[PMThemeEngine sharedInstance] drawString:dayTitle
                                           withFont:dayFont
@@ -163,13 +166,16 @@
                                          inContext:context];
     }
     
-    int month = currentMonth;
-    int year = currentYear;
+    NSInteger month = currentMonth;
+    NSInteger year = currentYear;
     
-	NSString *monthTitle = [NSString stringWithFormat:@"%@ %d", [monthTitles objectAtIndex:(month - 1)], year];
+	NSString *monthTitle = [NSString stringWithFormat:@"%@ %zd", [monthTitles objectAtIndex:(month - 1)], year];
     //// Month Header Drawing
+    CGSize size = [monthTitle sizeWithAttributes:@{NSFontAttributeName: monthFont}];
+    
+    size = CGSizeMake(ceilf(size.width), ceilf(size.height));
     CGRect textFrame = CGRectMake(0
-                                  , (headerHeight - [monthTitle sizeWithFont:monthFont].height) / 2
+                                  , (headerHeight - size.height) / 2
                                   , width
                                   , monthFont.pointSize);
     
@@ -335,7 +341,7 @@
     NSInteger index = [self indexForDate:_period.startDate];
     NSInteger length = [_period lengthInDays];
     
-    int numDaysInMonth      = [_currentDate numberOfDaysInMonth];
+    NSInteger numDaysInMonth      = [_currentDate numberOfDaysInMonth];
     NSDate *monthStartDate  = [_currentDate monthStartDate];
     NSInteger monthStartDay = [monthStartDate weekday];
     monthStartDay           = (monthStartDay + (self.mondayFirstDayOfWeek?5:6)) % 7;
@@ -430,7 +436,7 @@
     CGFloat yInCalendar = point.y - (kPMThemeHeaderHeight + ((kPMThemeDayTitlesInHeader)?0:vDiff));
     NSInteger row = yInCalendar / vDiff;
     
-    int numDaysInMonth      = [_currentDate numberOfDaysInMonth];
+    NSInteger numDaysInMonth      = [_currentDate numberOfDaysInMonth];
     NSDate *monthStartDate  = [_currentDate monthStartDate];
     NSInteger monthStartDay = [monthStartDate weekday];
     monthStartDay           = (monthStartDay + (self.mondayFirstDayOfWeek?5:6)) % 7;
@@ -718,17 +724,17 @@
     // digits drawing
 	NSDate *dateOnFirst = [_currentDate monthStartDate];
 	int weekdayOfFirst = ([dateOnFirst weekday] + (_mondayFirstDayOfWeek?5:6)) % 7 + 1;
-	int numDaysInMonth = [dateOnFirst numberOfDaysInMonth];
+	NSInteger numDaysInMonth = [dateOnFirst numberOfDaysInMonth];
     NSDate *monthStartDate = [_currentDate monthStartDate];
-    int todayIndex = [[[NSDate date] dateWithoutTime] daysSinceDate:monthStartDate] + weekdayOfFirst - 1;
+    NSInteger todayIndex = [[[NSDate date] dateWithoutTime] daysSinceDate:monthStartDate] + weekdayOfFirst - 1;
 
     //Find number of days in previous month
     NSDate *prevDateOnFirst = [[_currentDate dateByAddingMonths:-1] monthStartDate];
-    int numDaysInPrevMonth = [prevDateOnFirst numberOfDaysInMonth];
+    NSInteger numDaysInPrevMonth = [prevDateOnFirst numberOfDaysInMonth];
     NSDate *firstDateInCal = [monthStartDate dateByAddingDays:(-weekdayOfFirst + 1)];
     
-    int selectionStartIndex = [[self.selectedPeriod normalizedPeriod].startDate daysSinceDate:firstDateInCal];
-    int selectionEndIndex = [[self.selectedPeriod normalizedPeriod].endDate daysSinceDate:firstDateInCal];
+    NSInteger selectionStartIndex = [[self.selectedPeriod normalizedPeriod].startDate daysSinceDate:firstDateInCal];
+    NSInteger selectionEndIndex = [[self.selectedPeriod normalizedPeriod].endDate daysSinceDate:firstDateInCal];
     NSDictionary *todayBGDict = [[PMThemeEngine sharedInstance] themeDictForType:PMThemeCalendarDigitsTodayElementType
                                                                          subtype:PMThemeBackgroundSubtype];
     NSDictionary *todaySelectedBGDict = [[PMThemeEngine sharedInstance] themeDictForType:PMThemeCalendarDigitsTodaySelectedElementType
@@ -743,11 +749,11 @@
     //Draw the text for each of those days.
     for(int i = 0; i <= weekdayOfFirst-2; i++) 
     {
-        int day = numDaysInPrevMonth - weekdayOfFirst + 2 + i;
+        NSInteger day = numDaysInPrevMonth - weekdayOfFirst + 2 + i;
         BOOL selected = (i >= selectionStartIndex) && (i <= selectionEndIndex);
         BOOL isToday = (i == todayIndex);
 
-        NSString *string = [NSString stringWithFormat:@"%d", day];
+        NSString *string = [NSString stringWithFormat:@"%zd", day];
         CGRect dayHeader2Frame = CGRectFromString([self.rects objectAtIndex:i]);
         
         PMThemeElementType type = PMThemeCalendarDigitsInactiveElementType;
@@ -876,7 +882,7 @@
         //Draw the text for each of those days.
         for ( int i = weekdayOfNextFirst; i < 7; i++ ) 
         {
-            int index = numDaysInMonth + weekdayOfFirst + i - weekdayOfNextFirst - 1;
+            NSInteger index = numDaysInMonth + weekdayOfFirst + i - weekdayOfNextFirst - 1;
             int day = i - weekdayOfNextFirst + 1;
             BOOL isToday = (numDaysInMonth + day - 1 == todayIndex);
             BOOL selected = (index >= selectionStartIndex) && (index <= selectionEndIndex);

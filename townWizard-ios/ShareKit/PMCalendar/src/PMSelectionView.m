@@ -90,18 +90,18 @@
             }
         }
 
-        int tempStart = MAX(MIN(_startIndex, _endIndex), 0);
-        int tempEnd = MAX(_startIndex, _endIndex);
+        NSInteger tempStart = MAX(MIN(_startIndex, _endIndex), 0);
+        NSInteger tempEnd = MAX(_startIndex, _endIndex);
         
-        int rowStart = tempStart / 7;
-        int rowEnd = tempEnd / 7;
+        NSInteger rowStart = tempStart / 7;
+        NSInteger rowEnd = tempEnd / 7;
         int colStart = tempStart % 7;
         int colEnd = tempEnd % 7;
         UIEdgeInsets rectInset = [[[PMThemeEngine sharedInstance] elementOfGenericType:PMThemeEdgeInsetsGenericType
                                                                                subtype:PMThemeBackgroundSubtype
                                                                                   type:PMThemeSelectionElementType] pmThemeGenerateEdgeInsets];
         
-        for (int i = rowStart; i <= rowEnd; i++)
+        for (NSInteger i = rowStart; i <= rowEnd; i++)
         {
             //// selectedRect Drawing
             int thisRowStartCell = 0;

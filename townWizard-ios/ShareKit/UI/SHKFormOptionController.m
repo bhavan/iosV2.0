@@ -142,7 +142,7 @@
 	NSString* curIndexs = [settings.optionPickerInfo objectForKey:@"curIndexes"];
 	if(![curIndexs isEqualToString:@"-1"]){
 		NSArray* indexes = [curIndexs componentsSeparatedByString:@","];
-		isSelected = [indexes containsObject:[[NSNumber numberWithInt:indexPath.row]stringValue]];
+		isSelected = [indexes containsObject:[@(indexPath.row) stringValue]];
 	}
 
 	cell.accessoryType = isSelected ? UITableViewCellAccessoryCheckmark:UITableViewCellAccessoryNone;
@@ -180,12 +180,12 @@
 	if(allowMultiple){
 		NSString* curIndexs = [settings.optionPickerInfo objectForKey:@"curIndexes"];
 		if ([curIndexs isEqualToString:@"-1"]) {	// no prev selecion
-			[settings.optionPickerInfo setValue:[[NSNumber numberWithInt:indexPath.row]stringValue] forKey:@"curIndexes"];
+			[settings.optionPickerInfo setValue:[@(indexPath.row) stringValue] forKey:@"curIndexes"];
 		}else{
 			NSArray* indexes = [curIndexs componentsSeparatedByString:@","];
-			NSUInteger loc = [indexes indexOfObject:[[NSNumber numberWithInt:indexPath.row]stringValue]];
+			NSUInteger loc = [indexes indexOfObject:[@(indexPath.row) stringValue]];
 			if (loc == NSNotFound) {	// append
-				[settings.optionPickerInfo setValue:[NSString stringWithFormat:@"%@,%@", curIndexs, [[NSNumber numberWithInt:indexPath.row]stringValue]] forKey:@"curIndexes"];
+				[settings.optionPickerInfo setValue:[NSString stringWithFormat:@"%@,%@", curIndexs, [@(indexPath.row) stringValue]] forKey:@"curIndexes"];
 			}else {						// remove
 				NSMutableArray* tmpA = [NSMutableArray arrayWithArray:indexes];
 				[tmpA removeObjectAtIndex:loc];
@@ -197,7 +197,7 @@
 		}
 		[tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
 	}else{
-		[settings.optionPickerInfo setValue:[[NSNumber numberWithInt:indexPath.row]stringValue] forKey:@"curIndexes"];
+		[settings.optionPickerInfo setValue:[@(indexPath.row) stringValue] forKey:@"curIndexes"];
 		[client SHKFormOptionController:self pickedOption:[[settings.optionPickerInfo objectForKey:@"itemsList"] objectAtIndex:indexPath.row]];
 	}
 }

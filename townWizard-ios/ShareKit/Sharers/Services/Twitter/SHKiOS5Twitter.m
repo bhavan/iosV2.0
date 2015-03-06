@@ -69,7 +69,7 @@
         SHKLog(@"User info not possible to download on iOS5+. You can get Twitter enabled user info from Accounts framework");
         return;
     }
-    
+    /*
     TWTweetComposeViewController *iOS5twitter = [[TWTweetComposeViewController alloc] init];
     
     [iOS5twitter addImage:self.item.image];    
@@ -101,7 +101,7 @@
     
     self.currentTopViewController = [[SHK currentHelper] rootViewForCustomUIDisplay];
     [self.currentTopViewController presentViewController:iOS5twitter animated:YES completion:nil];
-    [iOS5twitter release];
+    [iOS5twitter release];*/
 }
 
 @end

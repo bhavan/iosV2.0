@@ -36,12 +36,13 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    NSShadow * shadow = [NSShadow new];
+    shadow.shadowColor = [UIColor clearColor];
+    shadow.shadowOffset = CGSizeMake(0, 0);
     NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                    [UIColor blackColor], UITextAttributeTextColor,
-                                    [UIColor clearColor], UITextAttributeTextShadowColor,
-                                    [NSValue valueWithUIOffset:UIOffsetMake(0, 0)],
-                                    UITextAttributeTextShadowOffset,
-                                    [UIFont boldSystemFontOfSize:13.0f], UITextAttributeFont,
+                                    [UIColor blackColor], NSForegroundColorAttributeName,
+                                    shadow, NSShadowAttributeName,
+                                    [UIFont boldSystemFontOfSize:13.0f], NSFontAttributeName,
                                     nil];
     [self.navigationItem.leftBarButtonItem setTitleTextAttributes:textAttributes
                                                          forState:UIControlStateNormal];

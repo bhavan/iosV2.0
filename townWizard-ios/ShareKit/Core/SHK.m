@@ -74,12 +74,16 @@ BOOL SHKinit;
 	
 	if (!SHKinit)
 	{
-		SHKSwizzle([MFMailComposeViewController class], @selector(viewDidDisappear:), @selector(SHKviewDidDisappear:));			
-		
-		if (NSClassFromString(@"MFMessageComposeViewController") != nil)
-			SHKSwizzle([MFMessageComposeViewController class], @selector(viewDidDisappear:), @selector(SHKviewDidDisappear:));	
-		
-		SHKinit = YES;
+        
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+        SHKSwizzle([MFMailComposeViewController class], @selector(viewDidDisappear:), @selector(SHKviewDidDisappear:));
+        
+        if (NSClassFromString(@"MFMessageComposeViewController") != nil)
+            SHKSwizzle([MFMessageComposeViewController class], @selector(viewDidDisappear:), @selector(SHKviewDidDisappear:));
+        
+        SHKinit = YES;
+#pragma clang diagnostic pop
 	}
 }
 
