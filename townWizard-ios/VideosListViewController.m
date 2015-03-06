@@ -17,8 +17,6 @@
 #import "RequestHelper.h"
 #import <MediaPlayer/MediaPlayer.h>
 
-static NSString *const kYoutubeThumbnailFormat = @"http://img.youtube.com/vi/%@/0.jpg";
-
 @interface VideosListViewController ()
     <UITableViewDataSource,
     UITableViewDelegate,

@@ -68,11 +68,13 @@
 																				  style:UIBarButtonItemStyleDone
 																				 target:self
 																				 action:@selector(validateForm)] autorelease];
+        NSShadow * shadow = [NSShadow new];
+        shadow.shadowColor = [UIColor clearColor];
+        shadow.shadowOffset = CGSizeMake(0, 0);
         NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
                                         [UIColor whiteColor], NSForegroundColorAttributeName,
-                                        [UIColor clearColor], UITextAttributeTextShadowColor,
-                                        [NSValue valueWithUIOffset:UIOffsetMake(0, 0)], UITextAttributeTextShadowOffset,
-                                        [UIFont boldSystemFontOfSize:13.0f], UITextAttributeFont,
+                                        shadow, NSShadowAttributeName,
+                                        [UIFont boldSystemFontOfSize:13.0f], NSFontAttributeName,
                                         nil];
         
         [self.navigationItem.leftBarButtonItem setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
@@ -109,7 +111,6 @@
 		if (sections.count == 1)
 		{
 			CGFloat newWidth = 0;
-			CGSize size;
 			
 			for (SHKFormFieldSettings *field in fields)
 			{
@@ -118,8 +119,10 @@
 					field.type != SHKFormFieldTypeTextNoCorrect &&
 					field.type != SHKFormFieldTypePassword)
 					continue;
-				
-				size = [field.label sizeWithFont:[UIFont boldSystemFontOfSize:17]];
+                
+                CGSize size = [field.label sizeWithAttributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:17.0f]}];
+                
+                size = CGSizeMake(ceilf(size.width), ceilf(size.height));
 				if (size.width > newWidth)
 					newWidth = size.width;
 			}
@@ -189,7 +192,7 @@
     SHKCustomFormFieldCell* cell = (SHKCustomFormFieldCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil)
 	{
-		cell = [[[SHKCustomFormFieldCell alloc] initWithStyle:(SHKFormFieldTypeOptionPicker ? UITableViewCellStyleValue1 : UITableViewCellStyleDefault) 
+		cell = [[[SHKCustomFormFieldCell alloc] initWithStyle:UITableViewCellStyleValue1
 											  reuseIdentifier:CellIdentifier] autorelease];
 		cell.form = self;
 		

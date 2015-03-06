@@ -144,7 +144,7 @@ const CGFloat kGHRevealSidebarFlickVelocity = 1000.0f;
     [self.view addSubview:self.masterView];
     [self.view addSubview:self.detailView];
     
-    self.masterView = NO;
+    self.masterView = nil;
 }
 
 - (void) showMaster:(BOOL) shouldShow

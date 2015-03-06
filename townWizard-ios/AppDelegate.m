@@ -96,11 +96,13 @@ static NSString *twGAcode = @"UA-31932515-2";
 {
     UIImage *buttonImage = [[UIImage imageNamed:@"backButton"]  resizableImageWithCapInsets:UIEdgeInsetsMake(0, 16, 0, 10)];
     [[UIBarButtonItem appearanceWhenContainedIn:[TownWizardNavigationBar class], nil] setBackButtonBackgroundImage:buttonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    NSShadow * shadow = [NSShadow new];
+    shadow.shadowColor = [UIColor clearColor];
+    shadow.shadowOffset = CGSizeMake(0, 0);
     NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
                                     [UIColor blackColor], NSForegroundColorAttributeName,
-                                    [UIColor clearColor], UITextAttributeTextShadowColor,
-                                    [NSValue valueWithUIOffset:UIOffsetMake(0, 0)], UITextAttributeTextShadowOffset,
-                                    [UIFont boldSystemFontOfSize:13.0f], UITextAttributeFont,
+                                    shadow, NSShadowAttributeName,
+                                    [UIFont boldSystemFontOfSize:13.0f], NSFontAttributeName,
                                     nil];
     [[UIBarButtonItem appearanceWhenContainedIn:[TownWizardNavigationBar class], nil] setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
 }

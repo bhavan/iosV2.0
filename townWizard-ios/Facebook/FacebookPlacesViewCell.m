@@ -94,7 +94,7 @@
 - (void)request:(FBRequest *)request didLoad:(id)result
 {
     NSDictionary * jsonDict = [NSJSONSerialization JSONObjectWithData:request.responseText options:NSJSONReadingAllowFragments error:nil];
-    place.friendsCheckins = [NSNumber numberWithInt:[[jsonDict objectForKey:@"data"] count]];
+    place.friendsCheckins = @([[jsonDict objectForKey:@"data"] count]);
     [self updateExtendedInfo];
     
 }
