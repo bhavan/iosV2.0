@@ -47,5 +47,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location will be used to determine distance to the points of interest.</string>
 </dict>
 </plist>

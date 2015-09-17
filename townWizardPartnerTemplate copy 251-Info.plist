@@ -45,6 +45,8 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location will be used to determine distance to the points of interest.</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 </dict>

@@ -49,7 +49,16 @@ static NSString *twGAcode = @"UA-31932515-2";
     
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     _manager = [[CLLocationManager alloc] init];
+    
+    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1) {
+        CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+        if (status == kCLAuthorizationStatusNotDetermined) {
+            [_manager requestWhenInUseAuthorization];
+        }
+    }
+
     [_manager startUpdatingLocation];
+    
 #ifdef CONTAINER_APP
     [self startContainerApp];
 #else
