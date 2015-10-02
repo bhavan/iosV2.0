@@ -48,5 +48,9 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Location will be used to determine distance to the points of interest.</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+	<key>NSAllowsArbitraryLoads</key><true/>
+	</dict>
 </dict>
 </plist>
