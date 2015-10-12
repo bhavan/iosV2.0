@@ -10,7 +10,7 @@ project profile (target)
 3) General setting
 	bundle ideatefied: com.townwizard.<partner-name>
 	use plist file created in step #2
-	version, build = 2.11
+	version, build = 2.13
 	Team = Town Wizard, Inc. (ignore the warning about profile, it will be addressed in step #5)
 
 4) Info
@@ -21,7 +21,7 @@ project profile (target)
 		Enable Bitcode = No
 	Code Signing
 		code signing identity = iPhone Developer: Bhavan Shah (your dev id)
-		Provisioning Profile = iOSTeam Provisioning Profile: * (this will fix warning in step #3)
+		Provisioning Profile = iOSTeam Provisioning Profile: com.townwizard.* (this will fix warning in step #3)
 	Packaging
 		Info.plist: ensure it is the one created in step #2
 		Product Name = <partner name>
