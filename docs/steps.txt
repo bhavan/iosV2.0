@@ -1,0 +1,56 @@
+project profile (target)
+
+1) Copy guam traget; rename it to <partner name>
+	on the target; manage schema and rename the copy…
+
+2) creation of plist file
+	- copy townWizardPartnerTemplate-guam-Info.plist
+	- rename to townWizardPartnerTemplate-<PARETNER-Name>-Info.plist
+
+3) General setting
+	bundle ideatefied: com.townwizard.<partner-name>
+	use plist file created in step #2
+	version, build = 2.11
+	Team = Town Wizard, Inc. (ignore the warning about profile, it will be addressed in step #5)
+
+4) Info
+	ensure NSAppTransportSecurity has NSAllowsArbitraryLoads set to YES
+
+5) BuildSettings
+	Build Options
+		Enable Bitcode = No
+	Code Signing
+		code signing identity = iPhone Developer: Bhavan Shah (your dev id)
+		Provisioning Profile = iOSTeam Provisioning Profile: * (this will fix warning in step #3)
+	Packaging
+		Info.plist: ensure it is the one created in step #2
+		Product Name = <partner name>
+	Apple LLVM 7.0 - Preprocessing
+		Partner_ID=partner’s id in the container app
+
+6) Create image folder
+	create directory: iosV2.0/townWizard-partner/Images/<partner-folder-name>
+	copy required images there….
+	
+	in Xcode: go to tonwWizard-parther -> Supporting Files. Right click, select “add files to townwizard-ios”
+	select the ImageFolder created…
+	checkbox <partner-folder> [also keep townwizrd-container…
+	drag and drop files in to BuildPhase->Copy Bundle Resources…
+
+
+——
+First run on simulator
+Then run on device
+
+——
+
+To publish:
+product -> clean
+product -> achieve: use provisioning profile
+	iOSTeam Provisiong Profile: com.townwizard.*
+ 
+        
+
+
+
+
