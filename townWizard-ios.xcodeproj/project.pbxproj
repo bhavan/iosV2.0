@@ -2929,7 +2929,7 @@
 		01AFA514188DDA09003FEF35 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
 		01AFA515188DDA09003FEF35 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		01AFA516188DDA09003FEF35 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		01BD40D71BBF0D4100E48F05 /* Guam Fan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guam Fan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		01BD40D71BBF0D4100E48F05 /* Guam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01BD40D81BBF0D4200E48F05 /* townWizardPartnerTemplate-guam-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "townWizardPartnerTemplate-guam-Info.plist"; path = "/Users/DarrenNelson/Google Drive/TownWizard/iosV2.0/townWizardPartnerTemplate-guam-Info.plist"; sourceTree = "<absolute>"; };
 		01C5033717B925DE00A45D0A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		01C5033817B925DE00A45D0A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -5089,7 +5089,7 @@
 				01274AFA18B64E78005E9895 /* Saloy.app */,
 				01A6FAB1192BF94800529EA2 /* My LBI Life.app */,
 				01CF9DD31954921100E75837 /* Go Lake Lure.app */,
-				01BD40D71BBF0D4100E48F05 /* Guam Fan.app */,
+				01BD40D71BBF0D4100E48F05 /* Guam.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -6199,7 +6199,7 @@
 			);
 			name = guam;
 			productName = "townWizard-partner";
-			productReference = 01BD40D71BBF0D4100E48F05 /* Guam Fan.app */;
+			productReference = 01BD40D71BBF0D4100E48F05 /* Guam.app */;
 			productType = "com.apple.product-type.application";
 		};
 		01CF9B791954921100E75837 /* lakelure */ = {
@@ -6295,6 +6295,9 @@
 			attributes = {
 				LastUpgradeCheck = 0610;
 				TargetAttributes = {
+					012748A118B64E78005E9895 = {
+						DevelopmentTeam = A465A5S86U;
+					};
 					01A6F858192BF94800529EA2 = {
 						DevelopmentTeam = 4KGKP729N3;
 					};
@@ -9025,8 +9028,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1FB204FFD338A2FF53A20E6D /* Pods.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Town Wizard, Inc.";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Darren Nelson (DB6ESYHW76)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Darren Nelson (DB6ESYHW76)";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
@@ -9043,7 +9047,7 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
 				PRODUCT_NAME = Saloy;
-				PROVISIONING_PROFILE = "42D0D77A-B983-40A4-9F70-1E66C494C4E6";
+				PROVISIONING_PROFILE = "29399fb8-7391-4a80-821e-6de327f7fc43";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -9052,8 +9056,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 37321AC889F5E400773766FA /* Pods.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Town Wizard, Inc.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Darren Nelson (DB6ESYHW76)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Darren Nelson (DB6ESYHW76)";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
@@ -9070,7 +9075,7 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
 				PRODUCT_NAME = Saloy;
-				PROVISIONING_PROFILE = "42D0D77A-B983-40A4-9F70-1E66C494C4E6";
+				PROVISIONING_PROFILE = "29399fb8-7391-4a80-821e-6de327f7fc43";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -9151,7 +9156,7 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.townwizard.guam;
-				PRODUCT_NAME = "Guam Fan";
+				PRODUCT_NAME = Guam;
 				PROVISIONING_PROFILE = "29399fb8-7391-4a80-821e-6de327f7fc43";
 				WRAPPER_EXTENSION = app;
 			};
@@ -9179,7 +9184,7 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.townwizard.guam;
-				PRODUCT_NAME = "Guam Fan";
+				PRODUCT_NAME = Guam;
 				PROVISIONING_PROFILE = "29399fb8-7391-4a80-821e-6de327f7fc43";
 				WRAPPER_EXTENSION = app;
 			};
